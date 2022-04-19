@@ -11,7 +11,9 @@ import os, sys, time, gzip, glob
 #from collections import Counter
 
 ###
-SERVER = "Singularity: Proj ENCODE FCC"
+SERVER = "Singularity: singularity_proj_combeffect"
+#SERVER = "Duke Server: DCC"
+#SERVER = "Duke Server: HARDAC"
 
 ### set paths
 FD_WORK = "/mount/work"
@@ -21,10 +23,10 @@ FD_PRJ  = "/mount/project"
 FD_SRC  = os.path.join(FD_WORK, "source")
 FD_EXE  = os.path.join(FD_WORK, "exe")
 FD_ANN  = os.path.join(FD_WORK, "annotation")
-FD_RES  = os.path.join(FD_WORK, "out", "proj_encode_fcc")
+FD_RES  = os.path.join(FD_WORK, "out", "proj_combeffect_encode_fcc")
 
 if True:
-    print(f"You are on Duke Server: {SERVER}")
+    print(f"You are in: {SERVER}")
     print(f"BASE DIRECTORY:     {FD_WORK}") 
     print(f"PATH OF SOURCE:     {FD_SRC}")
     print(f"PATH OF EXECUTABLE: {FD_EXE}")

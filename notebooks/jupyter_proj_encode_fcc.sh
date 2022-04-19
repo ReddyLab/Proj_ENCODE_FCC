@@ -27,6 +27,7 @@ FD_HOME=${FD_SING}/home
 
 ### Run jupyter lab
 singularity exec \
+    --nv \
     -H ${FD_HOME}:/home \
     -B ${FD_WORK}:/mount/work \
     -B ${FD_PRJ}:/mount/project \
