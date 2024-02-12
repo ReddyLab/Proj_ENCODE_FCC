@@ -1,0 +1,43 @@
+{
+    "backgroundColor": "255,255,255",
+    "name": "K562 intact Hi-C (Deep)",
+    "url": "https://s3.us-east-1.wasabisys.com/aiden-suhas/hic_files/FINAL_GRCh38_processing/K562/total/inter.hic",
+    "normalization": "RU",
+    "state": "23,23,3,0,0,640,640,1,RU",
+    "locus": "chr8:127,530,000-128,150,000",
+    "tracks": [
+        {
+            "name": "K562 intact Hi-C (Deep)",
+            "url": "https://www.dropbox.com/sh/13ihnis7exi9lrp/AADgaBk0RoNDRAC62F5QpPFDa/K562/3.15.23/localizedList_primary_10.bedpe?dl=0"
+        },
+        {
+            "name": "PVT1",
+            "url": "https://www.encodeproject.org/files/ENCFF005DTR/@@download/ENCFF005DTR.bed.gz",
+            "color": "#525252",
+            "displayMode": "SQUISHED"
+        },
+        {
+            "name": "PVT1",
+            "url": "https://www.encodeproject.org/files/ENCFF298GWM/@@download/ENCFF298GWM.bigWig",
+            "color": "#525252"
+        },
+        {
+            "name": "MYC",
+            "url": "https://www.encodeproject.org/files/ENCFF240IPT/@@download/ENCFF240IPT.bed.gz",
+            "color": "#525252",
+            "displayMode": "SQUISHED"
+        },
+        {
+            "name": "MYC",
+            "url": "https://www.encodeproject.org/files/ENCFF309PDY/@@download/ENCFF309PDY.bigWig",
+            "color": "#525252"
+        },
+        {
+            "url": "https://hgdownload.soe.ucsc.edu/goldenPath/hg38/database/ncbiRefSeq.txt.gz",
+            "type": "annotation",
+            "format": "refgene",
+            "name": " ",
+            "color": "#252525"
+        }
+    ]
+}

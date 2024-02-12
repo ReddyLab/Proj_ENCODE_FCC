@@ -1,0 +1,54 @@
+{
+    "backgroundColor": "255,255,255",
+    "name": "K562 intact Hi-C (Deep)",
+    "url": "https://s3.us-east-1.wasabisys.com/aiden-suhas/hic_files/FINAL_GRCh38_processing/K562/total/inter.hic",
+    "normalization": "RU",
+    "state": "23,23,3,0,0,640,640,1,RU",
+    "locus": "chr11:5,130,000-5,550,000",
+    "tracks": [
+        {
+            "name": "K562 intact Hi-C (Deep)",
+            "url": "https://www.dropbox.com/sh/13ihnis7exi9lrp/AADgaBk0RoNDRAC62F5QpPFDa/K562/3.15.23/localizedList_primary_10.bedpe?dl=0"
+        },
+        {
+            "name": "HBE1",
+            "url": "https://www.encodeproject.org/files/ENCFF845YHV/@@download/ENCFF845YHV.bed.gz",
+            "color": "#525252",
+            "displayMode": "SQUISHED"
+        },
+        {
+            "name": "HBE1",
+            "url": "https://www.encodeproject.org/files/ENCFF283BAT/@@download/ENCFF283BAT.bigWig",
+            "color": "#525252"
+        },
+        {
+            "name": "HBG2",
+            "url": "https://www.encodeproject.org/files/ENCFF910PDZ/@@download/ENCFF910PDZ.bed.gz",
+            "color": "#525252",
+            "displayMode": "SQUISHED"
+        },
+        {
+            "name": "HBG2",
+            "url": "https://www.encodeproject.org/files/ENCFF110XZR/@@download/ENCFF110XZR.bigWig",
+            "color": "#525252"
+        },
+        {
+            "name": "HBG1",
+            "url": "https://www.encodeproject.org/files/ENCFF811PPJ/@@download/ENCFF811PPJ.bed.gz",
+            "color": "#525252",
+            "displayMode": "SQUISHED"
+        },
+        {
+            "name": "HBG1",
+            "url": "https://www.encodeproject.org/files/ENCFF422LBX/@@download/ENCFF422LBX.bigWig",
+            "color": "#525252"
+        },
+        {
+            "url": "https://hgdownload.soe.ucsc.edu/goldenPath/hg38/database/ncbiRefSeq.txt.gz",
+            "type": "annotation",
+            "format": "refgene",
+            "name": " ",
+            "color": "#252525"
+        }
+    ]
+}

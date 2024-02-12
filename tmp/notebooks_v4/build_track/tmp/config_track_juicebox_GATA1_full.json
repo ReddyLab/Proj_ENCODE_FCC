@@ -1,0 +1,66 @@
+{
+    "backgroundColor": "255,255,255",
+    "name": "K562 intact Hi-C (Deep)",
+    "url": "https://s3.us-east-1.wasabisys.com/aiden-suhas/hic_files/FINAL_GRCh38_processing/K562/total/inter.hic",
+    "normalization": "RU",
+    "state": "23,23,3,0,0,1000,1000,1,RU",
+    "locus": "chrX:48,750,000-48,850,000",
+    "tracks": [
+        {
+            "name": "K562 intact Hi-C (Deep)",
+            "url": "https://www.dropbox.com/sh/13ihnis7exi9lrp/AADgaBk0RoNDRAC62F5QpPFDa/K562/3.15.23/localizedList_primary_10.bedpe?dl=0"
+        },
+        {
+            "name": " ",
+            "url": "https://www.dropbox.com/s/mol02qgqrq5uusx/KS91_K562_hg38_ASTARRseq_Input.all_reps.masked.union_narrowPeak.q5.bed.gz?dl=0",
+            "color": "#525252",
+            "displayMode": "SQUISHED"
+        },
+        {
+            "name": "ATAC",
+            "url": "https://www.dropbox.com/s/kd5wgdc5dbsaox0/STARRseq_ATAC.K562.TR.hg38.Input.mean.SUBSET.unstranded.bw?dl=0",
+            "color": "#525252"
+        },
+        {
+            "name": "TSS",
+            "url": "https://www.dropbox.com/s/k4tyfmukig60y43/K562.TSS.selected_by_highest_Pol2_signal.bed.gz?dl=0",
+            "color": "#525252",
+            "displayMode": "SQUISHED"
+        },
+        {
+            "name": "POLR2A",
+            "url": "https://www.encodeproject.org/files/ENCFF914WIS/@@download/ENCFF914WIS.bigWig",
+            "color": "#525252"
+        },
+        {
+            "name": "HDAC6",
+            "url": "https://www.encodeproject.org/files/ENCFF632PQY/@@download/ENCFF632PQY.bed.gz",
+            "color": "#08519c",
+            "displayMode": "SQUISHED"
+        },
+        {
+            "name": "HDAC6",
+            "url": "https://www.encodeproject.org/files/ENCFF514PCW/@@download/ENCFF514PCW.bigWig",
+            "color": "#08519c"
+        },
+        {
+            "name": "GATA1",
+            "url": "https://www.encodeproject.org/files/ENCFF413WYU/@@download/ENCFF413WYU.bed.gz",
+            "color": "#08519c",
+            "displayMode": "SQUISHED"
+        },
+        {
+            "name": "GATA1",
+            "url": "https://www.encodeproject.org/files/ENCFF669ISH/@@download/ENCFF669ISH.bigWig",
+            "color": "#08519c"
+        },
+        {
+            "url": "https://hgdownload.soe.ucsc.edu/goldenPath/hg38/database/ncbiRefSeq.txt.gz",
+            "type": "annotation",
+            "format": "refgene",
+            "name": " ",
+            "color": "#252525"
+        }
+    ],
+    "id": "jb_9185460"
+}

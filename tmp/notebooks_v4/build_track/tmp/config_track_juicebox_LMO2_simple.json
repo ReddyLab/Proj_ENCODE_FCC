@@ -1,0 +1,54 @@
+{
+    "backgroundColor": "255,255,255",
+    "name": "K562 intact Hi-C (Deep)",
+    "url": "https://s3.us-east-1.wasabisys.com/aiden-suhas/hic_files/FINAL_GRCh38_processing/K562/total/inter.hic",
+    "normalization": "RU",
+    "state": "23,23,3,0,0,640,640,1,RU",
+    "locus": "chr11:33,820,000-34,120,000",
+    "tracks": [
+        {
+            "name": "K562 intact Hi-C (Deep)",
+            "url": "https://www.dropbox.com/sh/13ihnis7exi9lrp/AADgaBk0RoNDRAC62F5QpPFDa/K562/3.15.23/localizedList_primary_10.bedpe?dl=0"
+        },
+        {
+            "name": "CAT",
+            "url": "https://www.encodeproject.org/files/ENCFF619FXH/@@download/ENCFF619FXH.bed.gz",
+            "color": "#525252",
+            "displayMode": "SQUISHED"
+        },
+        {
+            "name": "CAT",
+            "url": "https://www.encodeproject.org/files/ENCFF965PMF/@@download/ENCFF965PMF.bigWig",
+            "color": "#525252"
+        },
+        {
+            "name": "CAPRIN1",
+            "url": "https://www.encodeproject.org/files/ENCFF863AVQ/@@download/ENCFF863AVQ.bed.gz",
+            "color": "#525252",
+            "displayMode": "SQUISHED"
+        },
+        {
+            "name": "CAPRIN1",
+            "url": "https://www.encodeproject.org/files/ENCFF444UXP/@@download/ENCFF444UXP.bigWig",
+            "color": "#525252"
+        },
+        {
+            "name": "LMO2",
+            "url": "https://www.encodeproject.org/files/ENCFF469FXP/@@download/ENCFF469FXP.bed.gz",
+            "color": "#525252",
+            "displayMode": "SQUISHED"
+        },
+        {
+            "name": "LMO2",
+            "url": "https://www.encodeproject.org/files/ENCFF114EMW/@@download/ENCFF114EMW.bigWig",
+            "color": "#525252"
+        },
+        {
+            "url": "https://hgdownload.soe.ucsc.edu/goldenPath/hg38/database/ncbiRefSeq.txt.gz",
+            "type": "annotation",
+            "format": "refgene",
+            "name": " ",
+            "color": "#252525"
+        }
+    ]
+}

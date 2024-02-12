@@ -1,0 +1,102 @@
+{
+    "reference": {
+        "id": "hg38",
+        "name": "Human (GRCh38/hg38)",
+        "fastaURL": "https://igv-genepattern-org.s3.amazonaws.com/genomes/seq/hg38/hg38.fa",
+        "indexURL": "https://igv-genepattern-org.s3.amazonaws.com/genomes/seq/hg38/hg38.fa.fai",
+        "cytobandURL": "https://s3.amazonaws.com/igv.org.genomes/hg38/annotations/cytoBandIdeo.txt.gz",
+        "aliasURL": "https://s3.amazonaws.com/igv.org.genomes/hg38/hg38_alias.tab",
+        "chromosomeOrder": "chr1, chr2, chr3, chr4, chr5, chr6, chr7, chr8, chr9, chr10, chr11, chr12, chr13, chr14, chr15, chr16, chr17, chr18, chr19, chr20, chr21, chr22, chrX, chrY"
+    },
+    "locus": "chrX:48,780,000-48,810,000",
+    "roi": [],
+    "tracks": [
+        {
+            "name": "CRISPRi-HCRFF (GATA1; Log2FC)",
+            "path": "https://www.encodeproject.org/files/ENCFF669ISH/@@download/ENCFF669ISH.bigWig",
+            "url": "https://www.encodeproject.org/files/ENCFF669ISH/@@download/ENCFF669ISH.bigWig",
+            "height": 50,
+            "color": "#f768a1",
+            "altColor": "#f768a1"
+        },
+        {
+            "name": "CRISPRi-HCRFF (GATA1; CASA)",
+            "path": "https://www.encodeproject.org/files/ENCFF413WYU/@@download/ENCFF413WYU.bed.gz",
+            "url": "https://www.encodeproject.org/files/ENCFF413WYU/@@download/ENCFF413WYU.bed.gz",
+            "height": 30,
+            "color": "#dd3497",
+            "altColor": "#dd3497",
+            "displayMode": "SQUISHED"
+        },
+        {
+            "name": "CRISPRi-HCRFF (HDAC6; Log2FC)",
+            "path": "https://www.encodeproject.org/files/ENCFF514PCW/@@download/ENCFF514PCW.bigWig",
+            "url": "https://www.encodeproject.org/files/ENCFF514PCW/@@download/ENCFF514PCW.bigWig",
+            "height": 50,
+            "color": "#f768a1",
+            "altColor": "#f768a1"
+        },
+        {
+            "name": "CRISPRi-HCRFF (HDAC6; CASA)",
+            "path": "https://www.encodeproject.org/files/ENCFF632PQY/@@download/ENCFF632PQY.bed.gz",
+            "url": "https://www.encodeproject.org/files/ENCFF632PQY/@@download/ENCFF632PQY.bed.gz",
+            "height": 30,
+            "color": "#dd3497",
+            "altColor": "#dd3497",
+            "displayMode": "SQUISHED"
+        },
+        {
+            "name": "CRISPRi-Growth (ZScore)",
+            "path": "https://www.dropbox.com/s/r3zbytf9zxrffbm/CRISPRi_growth.K562.Gersbach.hg38.ZScore.unstranded.bw?dl=0",
+            "url": "https://www.dropbox.com/s/r3zbytf9zxrffbm/CRISPRi_growth.K562.Gersbach.hg38.ZScore.unstranded.bw?dl=0",
+            "height": 50,
+            "color": "#7a0177",
+            "altColor": "#7a0177"
+        },
+        {
+            "name": "LentiMPRA (ZScore)",
+            "path": "https://www.dropbox.com/s/zxu7p49kmroj5q7/MPRA_Lenti.K562.Nadav.hg38.ZScore.mean.SUBSET.unstranded.bw?dl=0",
+            "url": "https://www.dropbox.com/s/zxu7p49kmroj5q7/MPRA_Lenti.K562.Nadav.hg38.ZScore.mean.SUBSET.unstranded.bw?dl=0",
+            "height": 50,
+            "color": "#ff8802",
+            "altColor": "#ff8802"
+        },
+        {
+            "name": "Tiling MPRA (Log2FC)",
+            "path": "https://www.dropbox.com/s/283ddjnmdc5jp2b/MPRA_Tiling.K562.Tewhey.hg38.Log2FC_norm.mean.MERGE.stranded_pos.bw?dl=0",
+            "url": "https://www.dropbox.com/s/283ddjnmdc5jp2b/MPRA_Tiling.K562.Tewhey.hg38.Log2FC_norm.mean.MERGE.stranded_pos.bw?dl=0",
+            "height": 50,
+            "color": "#66c2a5",
+            "altColor": "#66c2a5"
+        },
+        {
+            "name": "WSTARR (pLog2FC)",
+            "path": "https://www.dropbox.com/s/xx5m06d8ura06m7/STARRseq_WHG.K562.TR.hg38.pLog2FC.mean.SUBSET.unstranded.bw?dl=0",
+            "url": "https://www.dropbox.com/s/xx5m06d8ura06m7/STARRseq_WHG.K562.TR.hg38.pLog2FC.mean.SUBSET.unstranded.bw?dl=0",
+            "height": 50,
+            "color": "#8da0cb",
+            "altColor": "#8da0cb"
+        },
+        {
+            "name": "ASTARR (pLog2FC)",
+            "path": "https://www.dropbox.com/s/cf3twad05jffz9d/STARRseq_ATAC.K562.TR.hg38.pLog2FC.mean.SUBSET.unstranded.bw?dl=0",
+            "url": "https://www.dropbox.com/s/cf3twad05jffz9d/STARRseq_ATAC.K562.TR.hg38.pLog2FC.mean.SUBSET.unstranded.bw?dl=0",
+            "height": 50,
+            "color": "#ff726e",
+            "altColor": "#ff726e"
+        },
+        {
+            "name": "Refseq Genes",
+            "format": "refgene",
+            "url": "https://hgdownload.soe.ucsc.edu/goldenPath/hg38/database/ncbiRefSeq.txt.gz",
+            "indexed": false,
+            "removable": false,
+            "order": 1000000,
+            "infoURL": "https://www.ncbi.nlm.nih.gov/gene/?term=$$",
+            "type": "annotation",
+            "height": 70,
+            "color": "rgb(0, 0, 150)",
+            "altColor": "rgb(0, 0, 150)"
+        }
+    ]
+}

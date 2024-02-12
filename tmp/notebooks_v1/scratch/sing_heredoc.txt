@@ -1,0 +1,10 @@
+Slurm Array Index: 
+Time Stamp:         05-02-22+15:19:05
+
+/mount/project/scratch/A.bed
+/mount/project/scratch/B.bed
+X: ${X}
+Y: 20
+
+Done!
+Run Time: 1 seconds

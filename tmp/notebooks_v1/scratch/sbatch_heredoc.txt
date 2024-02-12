@@ -1,0 +1,12 @@
+A.bed
+add_starrseq_to_abc_copy.ipynb
+B.bed
+bedtools_coverage.ipynb
+mp_benchmark.ipynb
+mp_benchmark.py
+R_bins_barplot.ipynb
+R_slice_window.ipynb
+sbatch_heredoc.txt
+search_alex_code.ipynb
+Sing_heredoc.ipynb
+sing_heredoc.txt

@@ -1,0 +1,118 @@
+{
+    "reference": {
+        "id": "hg38",
+        "name": "Human (GRCh38/hg38)",
+        "fastaURL": "https://igv-genepattern-org.s3.amazonaws.com/genomes/seq/hg38/hg38.fa",
+        "indexURL": "https://igv-genepattern-org.s3.amazonaws.com/genomes/seq/hg38/hg38.fa.fai",
+        "cytobandURL": "https://s3.amazonaws.com/igv.org.genomes/hg38/annotations/cytoBandIdeo.txt.gz",
+        "aliasURL": "https://s3.amazonaws.com/igv.org.genomes/hg38/hg38_alias.tab",
+        "chromosomeOrder": "chr1, chr2, chr3, chr4, chr5, chr6, chr7, chr8, chr9, chr10, chr11, chr12, chr13, chr14, chr15, chr16, chr17, chr18, chr19, chr20, chr21, chr22, chrX, chrY"
+    },
+    "locus": "chr8:127,530,000-128,150,000",
+    "roi": [],
+    "tracks": [
+        {
+            "name": "CRISPRi-HCRFF (MYC; Interact)",
+            "path": "https://www.encodeproject.org/files/ENCFF456WGW/@@download/ENCFF456WGW.bigInteract",
+            "url": "https://www.encodeproject.org/files/ENCFF456WGW/@@download/ENCFF456WGW.bigInteract",
+            "height": 70,
+            "color": "#dd3497",
+            "altColor": "#dd3497"
+        },
+        {
+            "name": "CRISPRi-HCRFF (MYC; Log2FC)",
+            "path": "https://www.encodeproject.org/files/ENCFF309PDY/@@download/ENCFF309PDY.bigWig",
+            "url": "https://www.encodeproject.org/files/ENCFF309PDY/@@download/ENCFF309PDY.bigWig",
+            "height": 50,
+            "color": "#f768a1",
+            "altColor": "#f768a1"
+        },
+        {
+            "name": "CRISPRi-HCRFF (MYC; CASA)",
+            "path": "https://www.encodeproject.org/files/ENCFF240IPT/@@download/ENCFF240IPT.bed.gz",
+            "url": "https://www.encodeproject.org/files/ENCFF240IPT/@@download/ENCFF240IPT.bed.gz",
+            "height": 30,
+            "color": "#dd3497",
+            "altColor": "#dd3497",
+            "displayMode": "SQUISHED"
+        },
+        {
+            "name": "CRISPRi-HCRFF (PVT1; Interact)",
+            "path": "https://www.encodeproject.org/files/ENCFF853CKU/@@download/ENCFF853CKU.bigInteract",
+            "url": "https://www.encodeproject.org/files/ENCFF853CKU/@@download/ENCFF853CKU.bigInteract",
+            "height": 70,
+            "color": "#dd3497",
+            "altColor": "#dd3497"
+        },
+        {
+            "name": "CRISPRi-HCRFF (PVT1; Log2FC)",
+            "path": "https://www.encodeproject.org/files/ENCFF298GWM/@@download/ENCFF298GWM.bigWig",
+            "url": "https://www.encodeproject.org/files/ENCFF298GWM/@@download/ENCFF298GWM.bigWig",
+            "height": 50,
+            "color": "#f768a1",
+            "altColor": "#f768a1"
+        },
+        {
+            "name": "CRISPRi-HCRFF (PVT1; CASA)",
+            "path": "https://www.encodeproject.org/files/ENCFF005DTR/@@download/ENCFF005DTR.bed.gz",
+            "url": "https://www.encodeproject.org/files/ENCFF005DTR/@@download/ENCFF005DTR.bed.gz",
+            "height": 30,
+            "color": "#dd3497",
+            "altColor": "#dd3497",
+            "displayMode": "SQUISHED"
+        },
+        {
+            "name": "ChIP-seq (POLR2A; K562)",
+            "path": "https://www.encodeproject.org/files/ENCFF914WIS/@@download/ENCFF914WIS.bigWig",
+            "url": "https://www.encodeproject.org/files/ENCFF914WIS/@@download/ENCFF914WIS.bigWig",
+            "height": 50,
+            "color": "#525252",
+            "altColor": "#525252"
+        },
+        {
+            "name": "TSS",
+            "path": "https://www.dropbox.com/s/k4tyfmukig60y43/K562.TSS.selected_by_highest_Pol2_signal.bed.gz?dl=0",
+            "url": "https://www.dropbox.com/s/k4tyfmukig60y43/K562.TSS.selected_by_highest_Pol2_signal.bed.gz?dl=0",
+            "height": 50,
+            "displayMode": "EXPAND",
+            "color": "#525252",
+            "altColor": "#525252"
+        },
+        {
+            "name": "ATAC (CPM)",
+            "path": "https://www.dropbox.com/s/kd5wgdc5dbsaox0/STARRseq_ATAC.K562.TR.hg38.Input.mean.SUBSET.unstranded.bw?dl=0",
+            "url": "https://www.dropbox.com/s/kd5wgdc5dbsaox0/STARRseq_ATAC.K562.TR.hg38.Input.mean.SUBSET.unstranded.bw?dl=0",
+            "height": 50,
+            "color": "#969696",
+            "altColor": "#969696"
+        },
+        {
+            "name": " ",
+            "path": "https://www.dropbox.com/s/mol02qgqrq5uusx/KS91_K562_hg38_ASTARRseq_Input.all_reps.masked.union_narrowPeak.q5.bed.gz?dl=0",
+            "url": "https://www.dropbox.com/s/mol02qgqrq5uusx/KS91_K562_hg38_ASTARRseq_Input.all_reps.masked.union_narrowPeak.q5.bed.gz?dl=0",
+            "height": 30,
+            "color": "#525252",
+            "altColor": "#525252",
+            "displayMode": "SQUISHED"
+        },
+        {
+            "name": "Refseq Genes",
+            "format": "refgene",
+            "url": "https://hgdownload.soe.ucsc.edu/goldenPath/hg38/database/ncbiRefSeq.txt.gz",
+            "infoURL": "https://www.ncbi.nlm.nih.gov/gene/?term=$$",
+            "type": "annotation",
+            "height": 70,
+            "color": "rgb(0, 0, 150)",
+            "altColor": "rgb(0, 0, 150)"
+        },
+        {
+            "name": "Intact Hi-C (Deep)",
+            "path": "https://www.dropbox.com/sh/13ihnis7exi9lrp/AADgaBk0RoNDRAC62F5QpPFDa/K562/3.15.23/localizedList_primary_10.bedpe?dl=0",
+            "url": "https://www.dropbox.com/sh/13ihnis7exi9lrp/AADgaBk0RoNDRAC62F5QpPFDa/K562/3.15.23/localizedList_primary_10.bedpe?dl=0",
+            "height": 200,
+            "color": "#225ea8",
+            "altColor": "#225ea8",
+            "arcOrientation": "false"
+        }
+    ]
+}

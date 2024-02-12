@@ -1,0 +1,33 @@
+{
+    "backgroundColor": "255,255,255",
+    "url": "https://s3.us-east-1.wasabisys.com/aiden-suhas/hic_files/FINAL_GRCh38_processing/K562/total/inter.hic",
+    "name": "K562 intact Hi-C (Deep)",
+    "locus": "chr8:127,290,850-129,727,450",
+    "state": "23,23,8,0,0,640,640,1,RU",
+    "tracks": [
+        {
+            "name": "CRISPRi-HCRFF (MYC; Log2FC)",
+            "url": "https://www.encodeproject.org/files/ENCFF309PDY/@@download/ENCFF309PDY.bigWig"
+        },
+        {
+            "name": "CRISPRi-HCRFF (MYC; CASA)",
+            "url": "https://www.encodeproject.org/files/ENCFF240IPT/@@download/ENCFF240IPT.bed.gz",
+            "displayMode": "SQUISHED"
+        },
+        {
+            "name": "CRISPRi-HCRFF (PVT1; Log2FC)",
+            "url": "https://www.encodeproject.org/files/ENCFF298GWM/@@download/ENCFF298GWM.bigWig"
+        },
+        {
+            "name": "CRISPRi-HCRFF (PVT1; CASA)",
+            "url": "https://www.encodeproject.org/files/ENCFF005DTR/@@download/ENCFF005DTR.bed.gz",
+            "displayMode": "SQUISHED"
+        },
+        {
+            "url": "https://hgdownload.soe.ucsc.edu/goldenPath/hg38/database/ncbiRefSeq.txt.gz",
+            "type": "annotation",
+            "format": "refgene",
+            "name": "Refseq Genes"
+        }
+    ]
+}
