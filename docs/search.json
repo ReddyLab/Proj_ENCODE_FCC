@@ -2,9 +2,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Site",
+    "title": "ENCODE Project: Functional characterization of regulatory regions and their physical interactions",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "text": "This is part of the ENCODE FCC Project. In this part, we integrated the STARR/MPRA/CRISPRi/Hi-C assays with genomic annotations of chromatin states (cCREs/ChromHMM) and TF binding sites in order to:\n\nQualitative analyze the regulatory regions identified in STARR/MPRA/CRISPRi assays\nQuantitative analyze the regulatory effects measured in STARR/MPRA/CRISPRi assays\nStudy the physical interactions of regulatory regions using intact Hi-C assay"
   },
   {
     "objectID": "about.html",
