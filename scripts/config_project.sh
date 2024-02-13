@@ -13,13 +13,14 @@ FD_PRJ=${FD_REPO}/Proj_CombEffect_ENCODE_FCC
 FD_RES=${FD_PRJ}/results
 FD_EXE=${FD_PRJ}/scripts
 FD_DAT=${FD_PRJ}/data
+FD_NBK=${FD_PRJ}/notebooks
 FD_DOC=${FD_PRJ}/docs
 FD_LOG=${FD_PRJ}/log
 FD_APP=${FD_PRJ}/app
 FD_REF=${FD_PRJ}/references
 
 ### set singularity
-FP_SIF=${FD_APP}/singularity_proj_encode_fcc.sif
+FP_PRJ_SIF=${FD_APP}/singularity_proj_encode_fcc.sif
 
 ### fun show environment
 show_env() {
@@ -35,6 +36,7 @@ show_env() {
     echo "PROJECT RESULTS (FD_RES): ${FD_RES}"
     echo "PROJECT SCRIPTS (FD_EXE): ${FD_EXE}"
     echo "PROJECT DATA    (FD_DAT): ${FD_DAT}"
+    echo "PROJECT NOTE    (FD_NBK): ${FD_NBK}"
     echo "PROJECT DOCS    (FD_DOC): ${FD_DOC}"
     echo "PROJECT LOG     (FD_LOG): ${FD_LOG}"
     echo "PROJECT APP     (FD_APP): ${FD_APP}"

@@ -23,6 +23,7 @@ shift $((OPTIND -1))
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 source ${SCRIPT_DIR}/config_project.sh
 FD_HOME=${FD_SING}/home
+FP_SIF=${FP_PRJ_SIF}
 
 ### Show
 echo "N_PORT:         ${N_PORT}"

@@ -4,7 +4,9 @@
 ### Stackoverflow: how-can-i-get-the-source-directory-of-a-bash-script-from-within-the-script-itself
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 source ${SCRIPT_DIR}/config_project.sh
-FP_SIF=${FP_PRJ_SIF}
+
+###
+FP_SIF=${FD_SING}/toolbox/singularity_rocker_verse.sif
 
 ### execute
 singularity exec \
