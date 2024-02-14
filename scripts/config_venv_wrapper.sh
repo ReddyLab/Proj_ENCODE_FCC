@@ -7,16 +7,20 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 if [ -d /.singularity.d ]; then
     ### workspace info
     SERVER="Singularity"
-    echo "in singularity"
+    
+    ### get directories
+    source ${SCRIPT_DIR}/config_path_sing.sh
 fi
 
 ### identify Duke HARDAC environment 
 if echo $(pwd -P) | grep -q "gpfs"; then
     ### workspace info
-    SERVER=HARDAC
+    SERVER="Duke HARDAC"
     NODE=all
     
     ### get directories
     source ${SCRIPT_DIR}/config_path_duke_hardac.sh
 fi
+
+### identify Duke DCC environment
 
