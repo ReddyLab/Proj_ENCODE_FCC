@@ -22,6 +22,12 @@ FD_REF=${FD_PRJ}/references
 ### set singularity
 FP_PRJ_SIF=${FD_APP}/singularity_proj_encode_fcc.sif
 
+### Hack to handle broken pipes - IGNORE.
+cleanup () {
+    :
+}
+trap "cleanup" SIGPIPE
+
 ### fun show environment
 show_env() {
     echo "You are working on             ${SERVER}"
