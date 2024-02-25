@@ -186,10 +186,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#working-environment" id="toc-working-environment" class="nav-link active" data-scroll-target="#working-environment">Working Environment</a></li>
-  <li><a href="#data-dictionary" id="toc-data-dictionary" class="nav-link" data-scroll-target="#data-dictionary">Data Dictionary</a></li>
+  <li><a href="#data-dictionary" id="toc-data-dictionary" class="nav-link active" data-scroll-target="#data-dictionary">Data Dictionary</a>
+  <ul class="collapse">
+  <li><a href="#fcc-assays-done-in-k562" id="toc-fcc-assays-done-in-k562" class="nav-link" data-scroll-target="#fcc-assays-done-in-k562">FCC assays done in K562</a></li>
+  <li><a href="#hi-c-assays-done-in-k562" id="toc-hi-c-assays-done-in-k562" class="nav-link" data-scroll-target="#hi-c-assays-done-in-k562">Hi-C assays done in K562</a></li>
+  <li><a href="#chromatin-states-of-k562" id="toc-chromatin-states-of-k562" class="nav-link" data-scroll-target="#chromatin-states-of-k562">Chromatin states of K562</a></li>
+  <li><a href="#tss-annotation-of-k562" id="toc-tss-annotation-of-k562" class="nav-link" data-scroll-target="#tss-annotation-of-k562">TSS annotation of K562</a></li>
+  </ul></li>
   <li><a href="#reference-files" id="toc-reference-files" class="nav-link" data-scroll-target="#reference-files">Reference files</a></li>
+  <li><a href="#working-environment" id="toc-working-environment" class="nav-link" data-scroll-target="#working-environment">Working Environment</a></li>
   <li><a href="#some-naming-convention-in-these-analyses" id="toc-some-naming-convention-in-these-analyses" class="nav-link" data-scroll-target="#some-naming-convention-in-these-analyses">Some naming convention in these analyses</a></li>
+  <li><a href="#more-information" id="toc-more-information" class="nav-link" data-scroll-target="#more-information">More information</a></li>
   </ul>
 </nav>
     </div>
@@ -213,6 +220,42 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<section id="data-dictionary" class="level1">
+<h1>Data Dictionary</h1>
+<p>Below are the main data used in the analyses. We express our sincere appreciation to the research teams and individuals involved in conducting, processing, and sharing the experiments and data that underpin our analyses.</p>
+<section id="fcc-assays-done-in-k562" class="level2">
+<h2 class="anchored" data-anchor-id="fcc-assays-done-in-k562">FCC assays done in K562</h2>
+<ul>
+<li>ATAC-STARR (ASTARR): sequenced fragments (proccessed by Alex; experiment done by Keith)</li>
+<li>WHG-STARR (WSTARR): sequenced fragments (proccessed by Alex; experiment done by Kari)</li>
+<li>Tiling MPRA (TMPRA): raw barcode count table (proccessed by Hannah)</li>
+<li>Lenti-MPRA (LMPRA): log2 fold change of each element (shared by Vikram from the Lenti-MPRA study)</li>
+<li>CRISPRi-HCR FlowFISH (CRISPRi-HCRFF): z scores (proccessed by Jin Woo)</li>
+<li>CRISPRi-Growth screen (CRISPRi-Growth): z scores (proccessed by Jin Woo)</li>
+<li>ATAC peaks: MACS peaks called of the ASTARR input libraries (procccessed by Alex)</li>
+</ul>
+</section>
+<section id="hi-c-assays-done-in-k562" class="level2">
+<h2 class="anchored" data-anchor-id="hi-c-assays-done-in-k562">Hi-C assays done in K562</h2>
+</section>
+<section id="chromatin-states-of-k562" class="level2">
+<h2 class="anchored" data-anchor-id="chromatin-states-of-k562">Chromatin states of K562</h2>
+<ul>
+<li>ENCODE candidate cis-regulatory elements (cCREs)</li>
+<li>ENCODE ChromHMM</li>
+</ul>
+</section>
+<section id="tss-annotation-of-k562" class="level2">
+<h2 class="anchored" data-anchor-id="tss-annotation-of-k562">TSS annotation of K562</h2>
+</section>
+</section>
+<section id="reference-files" class="level1">
+<h1>Reference files</h1>
+<ul>
+<li>K562 ChIP-seq table from the ENCODE flagship</li>
+<li>K562 Accessible regions (ATAC/DHS regions) used for testing assay coverage</li>
+</ul>
+</section>
 <section id="working-environment" class="level1">
 <h1>Working Environment</h1>
 <pre><code>PROJECT
@@ -234,12 +277,6 @@ ul.task-list li input[type="checkbox"] {
 ├── log
 ├── README.md
 └── .gitignore</code></pre>
-</section>
-<section id="data-dictionary" class="level1">
-<h1>Data Dictionary</h1>
-</section>
-<section id="reference-files" class="level1">
-<h1>Reference files</h1>
 </section>
 <section id="some-naming-convention-in-these-analyses" class="level1">
 <h1>Some naming convention in these analyses</h1>
@@ -282,6 +319,19 @@ CRISPRi_Growth_K562_Gersbach_Alex</code></pre>
 <li>MYC = MYC region</li>
 <li>GATA1 = GATA1 region</li>
 </ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="more-information" class="level1">
+<h1>More information</h1>
+<ul>
+<li>Lenti-MPRA study
+<ul>
+<li><a href="https://www.biorxiv.org/content/10.1101/2023.03.05.531189v1.full">Massively parallel characterization of transcriptional regulatory elements in three diverse human cell types</a></li>
+</ul></li>
+<li>CRISPR study
+<ul>
+<li><a href="https://www.biorxiv.org/content/10.1101/2022.12.21.520137v1">Multi-center integrated analysis of non-coding CRISPR screens</a></li>
 </ul></li>
 </ul>
 
