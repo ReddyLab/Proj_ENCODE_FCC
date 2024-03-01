@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ENCODE FCC Project - ENCODE ATAC/DNase Peaks: Download the peak data</title>
+<title>ENCODE FCC Project - Get K562 STARR-seq data from Reddy lab</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -151,7 +151,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notebooks/01_data_download/region_ocr_01_create_download_script_R.html">01 Download data</a></li><li class="breadcrumb-item"><a href="../../notebooks/01_data_download/region_ocr_02_run_download_data_SH.html">ENCODE ATAC/DNase Peaks: Download the peak data</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notebooks/01_data_download/region_ocr_01_create_download_script_R.html">01 Download data</a></li><li class="breadcrumb-item"><a href="../../notebooks/01_data_download/fcc_starrmpra_01_acquire_STARR_data_alex_SH.html">Get K562 STARR-seq data from Reddy lab</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -188,13 +188,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notebooks/01_data_download/region_ocr_02_run_download_data_SH.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../notebooks/01_data_download/region_ocr_02_run_download_data_SH.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">ENCODE ATAC/DNase Peaks: Download the peak data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notebooks/01_data_download/fcc_starrmpra_01_acquire_STARR_data_alex_SH.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notebooks/01_data_download/fcc_starrmpra_01_acquire_STARR_data_alex_SH.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Get K562 STARR-seq data from Reddy lab</span></a>
   </div>
 </li>
@@ -275,7 +275,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#run-download-script" id="toc-run-download-script" class="nav-link active" data-scroll-target="#run-download-script">Run download script</a></li>
+  <li><a href="#check-existence-of-starr-data" id="toc-check-existence-of-starr-data" class="nav-link active" data-scroll-target="#check-existence-of-starr-data">Check existence of STARR data</a></li>
+  <li><a href="#set-data-directories-and-copy-the-data-files" id="toc-set-data-directories-and-copy-the-data-files" class="nav-link" data-scroll-target="#set-data-directories-and-copy-the-data-files">Set data directories and copy the data files</a></li>
   </ul>
 </nav>
     </div>
@@ -284,7 +285,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">ENCODE ATAC/DNase Peaks: Download the peak data</h1>
+<h1 class="title">Get K562 STARR-seq data from Reddy lab</h1>
 </div>
 
 
@@ -299,7 +300,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p><strong>set environment</strong></p>
+<p>In this analysis, we are using the fragment counts data processed and shared by Alex from the Reddy lab.</p>
+<p><strong>Set environment</strong></p>
 <div class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> ../run_config_project.sh</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">show_env</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -325,15 +327,221 @@ PROJECT IMAGE   (FP_PRJ_SIF):  /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_F
 </code></pre>
 </div>
 </div>
-<section id="run-download-script" class="level2">
-<h2 class="anchored" data-anchor-id="run-download-script">Run download script</h2>
+<section id="check-existence-of-starr-data" class="level2">
+<h2 class="anchored" data-anchor-id="check-existence-of-starr-data">Check existence of STARR data</h2>
+<pre><code>### WSTARR
+FD_WGS_WSTARR=${FD_ALEX}/encode4_duke/data/starr_seq
+FP_WGS_WSTARR=($(ls ${FD_WGS_WSTARR}/fragments/*.fragments.counts.txt.gz))
+
+### ASTARR
+FP_WGS_ASTARR_INP=($(ls ${FD_WGS_ASTARR_INP}/merged2/*counts.txt.gz))
+FP_WGS_ASTARR_OUT=($(ls ${FD_WGS_ASTARR_OUT}/*f3q10.fragments.counts.txt.gz))
+FP_WGS_ASTARR=("${FP_WGS_ASTARR_INP[@]}" "${FP_WGS_ASTARR_OUT[@]}")
+
+FN_WGS_ASTARR_INP_PEAKS=(
+    
+    ### MACS peak set (union)
+    KS91_K562_hg38_ASTARRseq_Input.all_reps.masked.union_narrowPeak.q5.bed
+    
+    ### MACS peak set (intersect; overlap)
+    KS91_K562_hg38_ASTARRseq_Input.q5.in_all.max_overlaps.bed
+)</code></pre>
 <div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="va">FD_OUT</span><span class="op">=</span><span class="va">${FD_DAT}</span>/external/encode_open_chromatin</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="va">${FD_OUT}</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> +x ./run_download.sh</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="ex">./run_download.sh</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FD_WGS_WSTARR}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>fragments  metadata  motifs  peaks  processed_raw_reads  qc  raw_reads</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> FPATH <span class="kw">in</span> <span class="va">${FP_WGS_WSTARR</span><span class="op">[@]</span><span class="va">}</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ls</span> <span class="va">${FPATH}</span> <span class="kw">|</span> <span class="fu">xargs</span> <span class="at">-n</span> 1 basename</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>A001-input-K562-rep1.masked.dedup.fragments.counts.txt.gz
+A001-input-K562-rep2.masked.dedup.fragments.counts.txt.gz
+A001-input-K562-rep3.masked.dedup.fragments.counts.txt.gz
+A001-input-K562-rep4.masked.dedup.fragments.counts.txt.gz
+A001-K562-rep1.masked.dedup.fragments.counts.txt.gz
+A001-K562-rep2.masked.dedup.fragments.counts.txt.gz
+A001-K562-rep3.masked.dedup.fragments.counts.txt.gz</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> FPATH <span class="kw">in</span> <span class="va">${FP_WGS_ASTARR</span><span class="op">[@]</span><span class="va">}</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ls</span> <span class="va">${FPATH}</span> <span class="kw">|</span> <span class="fu">xargs</span> <span class="at">-n</span> 1 basename</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>KS91_K562_hg38_ASTARRseq_Input_rep1.masked.dedup.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Input_rep2.masked.dedup.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Input_rep3.masked.dedup.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Input_rep4.masked.dedup.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Input_rep5.masked.dedup.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Input_rep6.masked.dedup.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Output_rep1.f3q10.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Output_rep2.f3q10.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Output_rep3.f3q10.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Output_rep4.f3q10.fragments.counts.txt.gz</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> FPATH <span class="kw">in</span> <span class="va">${FP_WGS_ASTARR_INP_PEAKS</span><span class="op">[@]</span><span class="va">}</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ls</span> <span class="va">${FPATH}</span> <span class="kw">|</span> <span class="fu">xargs</span> <span class="at">-n</span> 1 basename</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>KS91_K562_hg38_ASTARRseq_Input.all_reps.masked.union_narrowPeak.q5.bed
+KS91_K562_hg38_ASTARRseq_Input.q5.in_all.max_overlaps.bed</code></pre>
+</div>
+</div>
+</section>
+<section id="set-data-directories-and-copy-the-data-files" class="level2">
+<h2 class="anchored" data-anchor-id="set-data-directories-and-copy-the-data-files">Set data directories and copy the data files</h2>
+<p><strong>Create data directories</strong></p>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> <span class="va">${FD_DAT}</span>/processed/A001_K562_hg38_WSTARRseq/fragments</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> <span class="va">${FD_DAT}</span>/processed/KS91_K562_hg38_ASTARRseq_210401/fragments</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> <span class="va">${FD_DAT}</span>/processed/KS91_K562_hg38_ASTARRseq_210401/peaks</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Copy data files</strong></p>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="va">FD_OUT</span><span class="op">=</span><span class="va">${FD_DAT}</span>/processed/A001_K562_hg38_WSTARRseq/fragments</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> FPATH <span class="kw">in</span> <span class="va">${FP_WGS_WSTARR</span><span class="op">[@]</span><span class="va">}</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="va">FNAME</span><span class="op">=</span><span class="va">$(</span><span class="fu">basename</span> <span class="va">${FPATH})</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cp</span> <span class="va">${FPATH}</span> <span class="va">${FD_OUT}</span>/<span class="va">${FNAME}</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">${FPATH}</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">${FNAME}</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>/data/reddylab/Alex/encode4_duke/data/starr_seq/fragments/A001-input-K562-rep1.masked.dedup.fragments.counts.txt.gz
+A001-input-K562-rep1.masked.dedup.fragments.counts.txt.gz
+
+/data/reddylab/Alex/encode4_duke/data/starr_seq/fragments/A001-input-K562-rep2.masked.dedup.fragments.counts.txt.gz
+A001-input-K562-rep2.masked.dedup.fragments.counts.txt.gz
+
+/data/reddylab/Alex/encode4_duke/data/starr_seq/fragments/A001-input-K562-rep3.masked.dedup.fragments.counts.txt.gz
+A001-input-K562-rep3.masked.dedup.fragments.counts.txt.gz
+
+/data/reddylab/Alex/encode4_duke/data/starr_seq/fragments/A001-input-K562-rep4.masked.dedup.fragments.counts.txt.gz
+A001-input-K562-rep4.masked.dedup.fragments.counts.txt.gz
+
+/data/reddylab/Alex/encode4_duke/data/starr_seq/fragments/A001-K562-rep1.masked.dedup.fragments.counts.txt.gz
+A001-K562-rep1.masked.dedup.fragments.counts.txt.gz
+
+/data/reddylab/Alex/encode4_duke/data/starr_seq/fragments/A001-K562-rep2.masked.dedup.fragments.counts.txt.gz
+A001-K562-rep2.masked.dedup.fragments.counts.txt.gz
+
+/data/reddylab/Alex/encode4_duke/data/starr_seq/fragments/A001-K562-rep3.masked.dedup.fragments.counts.txt.gz
+A001-K562-rep3.masked.dedup.fragments.counts.txt.gz
+</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="va">FD_OUT</span><span class="op">=</span><span class="va">${FD_DAT}</span>/processed/KS91_K562_hg38_ASTARRseq_210401/fragments</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> FPATH <span class="kw">in</span> <span class="va">${FP_WGS_ASTARR</span><span class="op">[@]</span><span class="va">}</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="va">FNAME</span><span class="op">=</span><span class="va">$(</span><span class="fu">basename</span> <span class="va">${FPATH})</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cp</span> <span class="va">${FPATH}</span> <span class="va">${FD_OUT}</span>/<span class="va">${FNAME}</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">${FPATH}</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">${FNAME}</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>/data/reddylab/Alex/encode4_duke/processing/atac_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-blacklist-removal/merged2/KS91_K562_hg38_ASTARRseq_Input_rep1.masked.dedup.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Input_rep1.masked.dedup.fragments.counts.txt.gz
+
+/data/reddylab/Alex/encode4_duke/processing/atac_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-blacklist-removal/merged2/KS91_K562_hg38_ASTARRseq_Input_rep2.masked.dedup.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Input_rep2.masked.dedup.fragments.counts.txt.gz
+
+/data/reddylab/Alex/encode4_duke/processing/atac_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-blacklist-removal/merged2/KS91_K562_hg38_ASTARRseq_Input_rep3.masked.dedup.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Input_rep3.masked.dedup.fragments.counts.txt.gz
+
+/data/reddylab/Alex/encode4_duke/processing/atac_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-blacklist-removal/merged2/KS91_K562_hg38_ASTARRseq_Input_rep4.masked.dedup.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Input_rep4.masked.dedup.fragments.counts.txt.gz
+
+/data/reddylab/Alex/encode4_duke/processing/atac_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-blacklist-removal/merged2/KS91_K562_hg38_ASTARRseq_Input_rep5.masked.dedup.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Input_rep5.masked.dedup.fragments.counts.txt.gz
+
+/data/reddylab/Alex/encode4_duke/processing/atac_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-blacklist-removal/merged2/KS91_K562_hg38_ASTARRseq_Input_rep6.masked.dedup.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Input_rep6.masked.dedup.fragments.counts.txt.gz
+
+/data/reddylab/Alex/encode4_duke/processing/starr_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-umis/KS91_K562_hg38_ASTARRseq_Output_rep1.f3q10.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Output_rep1.f3q10.fragments.counts.txt.gz
+
+/data/reddylab/Alex/encode4_duke/processing/starr_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-umis/KS91_K562_hg38_ASTARRseq_Output_rep2.f3q10.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Output_rep2.f3q10.fragments.counts.txt.gz
+
+/data/reddylab/Alex/encode4_duke/processing/starr_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-umis/KS91_K562_hg38_ASTARRseq_Output_rep3.f3q10.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Output_rep3.f3q10.fragments.counts.txt.gz
+
+/data/reddylab/Alex/encode4_duke/processing/starr_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-umis/KS91_K562_hg38_ASTARRseq_Output_rep4.f3q10.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Output_rep4.f3q10.fragments.counts.txt.gz
+</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="va">FD_OUT</span><span class="op">=</span><span class="va">${FD_DAT}</span>/processed/KS91_K562_hg38_ASTARRseq_210401/peaks</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> FPATH <span class="kw">in</span> <span class="va">${FP_WGS_ASTARR_INP_PEAKS</span><span class="op">[@]</span><span class="va">}</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    <span class="va">FNAME</span><span class="op">=</span><span class="va">$(</span><span class="fu">basename</span> <span class="va">${FPATH})</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cp</span> <span class="va">${FPATH}</span> <span class="va">${FD_OUT}</span>/<span class="va">${FNAME}</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">${FPATH}</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">${FNAME}</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>/data/reddylab/Alex/encode4_duke/processing/atac_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-blacklist-removal/KS91_K562_hg38_ASTARRseq_Input.all_reps.masked.union_narrowPeak.q5.bed
+KS91_K562_hg38_ASTARRseq_Input.all_reps.masked.union_narrowPeak.q5.bed
+
+/data/reddylab/Alex/encode4_duke/processing/atac_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-blacklist-removal/KS91_K562_hg38_ASTARRseq_Input.q5.in_all.max_overlaps.bed
+KS91_K562_hg38_ASTARRseq_Input.q5.in_all.max_overlaps.bed
+</code></pre>
+</div>
+</div>
+<p><strong>Check results</strong></p>
+<div class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FD_DAT}</span>/processed/A001_K562_hg38_WSTARRseq/fragments</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>A001-input-K562-rep1.masked.dedup.fragments.counts.txt.gz
+A001-input-K562-rep2.masked.dedup.fragments.counts.txt.gz
+A001-input-K562-rep3.masked.dedup.fragments.counts.txt.gz
+A001-input-K562-rep4.masked.dedup.fragments.counts.txt.gz
+A001-K562-rep1.masked.dedup.fragments.counts.txt.gz
+A001-K562-rep2.masked.dedup.fragments.counts.txt.gz
+A001-K562-rep3.masked.dedup.fragments.counts.txt.gz</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FD_DAT}</span>/processed/KS91_K562_hg38_ASTARRseq_210401/<span class="pp">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>/data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/data/processed/KS91_K562_hg38_ASTARRseq_210401/fragments:
+KS91_K562_hg38_ASTARRseq_Input_rep1.masked.dedup.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Input_rep2.masked.dedup.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Input_rep3.masked.dedup.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Input_rep4.masked.dedup.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Input_rep5.masked.dedup.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Input_rep6.masked.dedup.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Output_rep1.f3q10.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Output_rep2.f3q10.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Output_rep3.f3q10.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Output_rep4.f3q10.fragments.counts.txt.gz
+
+/data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/data/processed/KS91_K562_hg38_ASTARRseq_210401/peaks:
+KS91_K562_hg38_ASTARRseq_Input.all_reps.masked.union_narrowPeak.q5.bed
+KS91_K562_hg38_ASTARRseq_Input.q5.in_all.max_overlaps.bed</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">du</span> <span class="at">-sh</span> <span class="va">${FD_DAT}</span>/processed/A001_K562_hg38_WSTARRseq/fragments</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>9.8G    /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/data/processed/A001_K562_hg38_WSTARRseq/fragments</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">du</span> <span class="at">-sh</span> <span class="va">${FD_DAT}</span>/processed/KS91_K562_hg38_ASTARRseq_210401</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>24G /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/data/processed/KS91_K562_hg38_ASTARRseq_210401</code></pre>
+</div>
 </div>
 
 
