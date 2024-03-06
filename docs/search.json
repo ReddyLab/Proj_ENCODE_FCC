@@ -63,6 +63,34 @@
     "text": "The ENCODE consortium has identified millions of elements with regulatory potential throughout the human genome. These technologies have been utilized to evaluate the functionality of these elements by systematically measuring their regulatory effects. Together, tens of billions of DNA fragments were assayed in high-throughput reporter assays and millions of locations were perturbed in CRISPR screens.\nThe compilation and analysis of data and results involve joint effort spanning multiple laboratories and collaboration across various ENCODE working groups. Among them, the ENCODE Functional Characterization Center (FCC) working group has systematically studied the regulatory regions and their effects as identified and quantified by these functional assays. The group developed analysis methods and sequence models to identify similarities and differences among those identified regulatory elements, based on their regulatory activities and sequence features. Furthermore, the group has integrated multiple genomic annotations, ChIP-seq data, and physical interactions from ENCODE, providing a comprehensive characterization of these regulatory regions."
   },
   {
+    "objectID": "02_prepare/data_21_peak_calling.html",
+    "href": "02_prepare/data_21_peak_calling.html",
+    "title": "Peak calling",
+    "section": "",
+    "text": "This page provides an overview of the peak calling methodologies applied to our functional characterization data. Our approach incorporates the results from various screen analysis tools to ensure comprehensive analysis for assay comparisons.\n\nUnified processing pipeline for enhancer calling in high-throughput reporter assays\nAn unified processing pipeline has been developed by Junke from the Yu Lab to standardize the enhancer calling process for high-throughput reporter assays.\n\n\nApplying ChIP-seq differential peak calling (csaw) on ATAC-STARR-seq assay\nThe csaw tool has been utilized for differential peak calling in ATAC-STARR assay data to identify cis-regulatory element from the chromatin accessible regions. This process was conducted by Alex.\n\n\nCRISPR activity screen analysis (CASA) on CRISPRi-HCR Flow-FISH data\nThe CASA analysis pipeline, developed by the Sabeti Lab, has been applied to CRISPRi-HCR Flow-FISH data to identify regulatory elements. The results of significant regions can be downloaded from the ENCODE portal as follows:\n\n\nCalling DHS regions using DESeq analysis for CRISPRi-Growth\nFor the analysis of CRISPRi-Growth data, DHS (DNase I hypersensitive sites) regions with significant effect on cell fittness have been identified using DESeq analysis, performed by Alex."
+  },
+  {
+    "objectID": "02_prepare/data_12_chromatin_states.html",
+    "href": "02_prepare/data_12_chromatin_states.html",
+    "title": "Chromatin States",
+    "section": "",
+    "text": "candidate cis-Regulatory Elements (cCREs)\n\n\nChromatin states predicted by ChromHMM"
+  },
+  {
+    "objectID": "02_prepare/data_22_others.html",
+    "href": "02_prepare/data_22_others.html",
+    "title": "Other Annotations",
+    "section": "",
+    "text": "Define transcription start sites (TSS) in K562"
+  },
+  {
+    "objectID": "02_prepare/data_01_fcc.html",
+    "href": "02_prepare/data_01_fcc.html",
+    "title": "FCC Data",
+    "section": "",
+    "text": "WHG-STARR-seq\n\n\nATAC-STARR-seq\n\n\nTiling MPRA\n\n\nLenti-MPRA\n\n\nCRISPRi-HCR FlowFISH\n\n\nCRISPRi Growth screen\n\n\nCRISPR E2G benchmark data"
+  },
+  {
     "objectID": "notebooks/02_prepare/region_ocr_04_create_ocr_metadata_R.html",
     "href": "notebooks/02_prepare/region_ocr_04_create_ocr_metadata_R.html",
     "title": "Prepare ENCODE ATAC/DNase Peaks 04",
