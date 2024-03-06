@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>ENCODE FCC Project - Prepare ENCODE ATAC/DNase Peaks 02</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">ENCODE FCC Project</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html" rel="" target="">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../report.html" rel="" target="">
+ <span class="menu-text">Report</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../data.html" rel="" target="">
+ <span class="menu-text">Data</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../analyses.html" rel="" target="">
+ <span class="menu-text">Analyses</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../results.html" rel="" target="">
+ <span class="menu-text">Results</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+    <a href="https://github.com/ReddyLab/Proj_CombEffect_ENCODE_FCC" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Prepare ENCODE ATAC/DNase Peaks 02</li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+ <span class="menu-text">01 Setup</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../01_setup/work_dir.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Working Directory</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../01_setup/work_env.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Working Environment</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">02 Prepare</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+ <span class="menu-text">Test Notebook</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notebooks/test/test_notebook.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Test ipynb for documentation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#run-the-download-script" id="toc-run-the-download-script" class="nav-link active" data-scroll-target="#run-the-download-script">Run the download script</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Prepare ENCODE ATAC/DNase Peaks 02</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li></ul></div></div>
+<p class="subtitle lead">Download the peak data</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p><strong>set environment</strong></p>
+<div class="cell" data-execution_count="1">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> ../run_config_project.sh</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">show_env</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>You are working on             Duke Server: HARDAC
+BASE DIRECTORY (FD_BASE):      /data/reddylab/Kuei
+REPO DIRECTORY (FD_REPO):      /data/reddylab/Kuei/repo
+WORK DIRECTORY (FD_WORK):      /data/reddylab/Kuei/work
+DATA DIRECTORY (FD_DATA):      /data/reddylab/Kuei/data
+CONTAINER DIR. (FD_SING):      /data/reddylab/Kuei/container
+
+You are working with           ENCODE FCC
+PATH OF PROJECT (FD_PRJ):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC
+PROJECT RESULTS (FD_RES):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/results
+PROJECT SCRIPTS (FD_EXE):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/scripts
+PROJECT DATA    (FD_DAT):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/data
+PROJECT NOTE    (FD_NBK):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/notebooks
+PROJECT DOCS    (FD_DOC):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/docs
+PROJECT LOG     (FD_LOG):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/log
+PROJECT APP     (FD_APP):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/app
+PROJECT REF     (FD_REF):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/references
+PROJECT IMAGE   (FP_PRJ_SIF):  /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/app/singularity_proj_encode_fcc.sif
+</code></pre>
+</div>
+</div>
+<section id="run-the-download-script" class="level2">
+<h2 class="anchored" data-anchor-id="run-the-download-script">Run the download script</h2>
+<p>Run the script that was generated in the previous step</p>
+<p><strong>Execute</strong></p>
+<div class="cell" data-execution_count="2">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="va">FD_OUT</span><span class="op">=</span><span class="va">${FD_DAT}</span>/external/encode_open_chromatin</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="va">${FD_OUT}</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> +x ./run_download.sh</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="ex">./run_download.sh</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p><strong>Check results</strong></p>
+<div class="cell" data-execution_count="3">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FD_OUT}</span>/<span class="pp">*</span>.bed.gz <span class="kw">|</span> <span class="fu">xargs</span> <span class="at">-n</span> 1 basename</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>K562.hg38.ENCSR000EKS.ENCFF274YGF.DNase.bed.gz
+K562.hg38.ENCSR000EOT.ENCFF185XRG.DNase.bed.gz
+K562.hg38.ENCSR483RKN.ENCFF558BLC.ATAC.bed.gz
+K562.hg38.ENCSR483RKN.ENCFF925CYR.ATAC.bed.gz
+K562.hg38.ENCSR868FGK.ENCFF333TAT.ATAC.bed.gz
+K562.hg38.ENCSR868FGK.ENCFF948AFM.ATAC.bed.gz</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="4">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> <span class="va">${FD_OUT}</span>/run_download.log.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>--2024-03-06 10:56:32--  https://www.encodeproject.org/files/ENCFF333TAT/@@download/ENCFF333TAT.bed.gz
+Resolving www.encodeproject.org (www.encodeproject.org)... 34.211.244.144
+Connecting to www.encodeproject.org (www.encodeproject.org)|34.211.244.144|:443... connected.
+HTTP request sent, awaiting response... 307 Temporary Redirect
+Location: https://encode-public.s3.amazonaws.com/2021/03/16/f9c5229c-df01-48d5-b8df-10d060edd52f/ENCFF333TAT.bed.gz?response-content-disposition=attachment%3B%20filename%3DENCFF333TAT.bed.gz&amp;AWSAccessKeyId=ASIATGZNGCNXYPKN2W2F&amp;Signature=iwVsc7DEaGt8isxbmQOMYQWd5IA%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjELD%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCQBsMTJ2RahmI96Jwnwflz6BlqndF%2Be%2BOfN4u0YmfK%2FwIhANUMo%2FO8SUh404%2FoFzfC600zz%2FLc5WXtQn9sA1My18bvKrwFCKn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMMjIwNzQ4NzE0ODYzIgxz4YZz5Umj4Ib0CKUqkAVvCppDBn3Q4UmUOOymgA2T%2F2OTR1iAvlhnyxHpxmZUtnRh2h7JyhMBRka141WBNbhTPusqX44Hhq9V94kLgsQZ7ipEDSIEPnXyZvHCtSzgybeVLZk07lXTT8lweIPaO6hMaF0LG9mpvZysKlps6OE89kqy52WNFhCz3R8cht9aWrqobcnM%2BdQ5iAE3O3dl0NycGgXD7SMsGoMfW6zFXdaaWAEH13mVPNsqJ46lVfVq8kTOiiS95QGkNXPre%2FENX18edF6Mlmv8OORevHQXtwrpyBtGZLdmUSYjWUcu%2FrW6Ct%2FUuZNBrU4aQ9c58yXpMuZsmvQIwlo8FBpETfCIL51CDIGhwlfBmy1Lv62cWjISHpWGDebXHlcgmQMEaowqhQ432Om1B6MDumPpGPwX%2BEfWTjVGFL14j9WsHCtbDxZghSY80GmlJG0nScqFcnK5xoQo0Gahf6rWQt2c5vwplN6C24v4jkEfmSc86MTFkXo4EB76H%2FUj6eq2o7EyMm%2BaPtPBSuKMdL8hboUuD8rtagAkKU%2BBgFVUxaJXO7U40loSghQt9EbGQTfPggljz44Hpe7IOg7sHUJIaDZW48LzO%2F13EWO%2FhopmEQ8q%2FzOKQbfnW%2BAn8%2B4Kwj490BJx7HRCUzzIzeRyArSkYRB3kIy8JU%2F7kTL4fvqUJ66N1%2FyaDpH8VU%2FAAkeI3bKFXJC5rdYbHuhZfO5jwBq0A2NAvS%2BKDVTDAxd8Feark23Mc7Qk%2B56NxSm7UfyGw6sXssK%2BNFzFVqy3YD%2F3hHgZQoBqRLxQPTUpf4%2FHL8k9Asl5XymTHDs0HibpnoMf5rMijYIUqy8wNjIeo5iHl3hBq7VCnj%2F95l50N0mNDZgpKVkgneKieSCj%2BTDRoaKvBjqwAZScetUG%2BfVJZk2JfERkfltwcZIzNzDSvUoK4f6D7MwBTVDao7EPhQFAqQ3Fvb6ZKsWyQxlAl3neM2X5U8Afdf6n59zqDIhhrQ7%2BqIklrtmYjnXBGVU2uYM1KlB%2FYp1TUlrgfY20FIRDepRzOHXFZVNHzanyzy8lR2UK8uZ2%2FS4vvcEN9JnaFeGVyOQzxh%2BzW%2BUt%2BvFX9CCfo%2BoXpHFWoMvedAJNBZvoysAMH1ZV1N5K&amp;Expires=1709870193 [following]
+--2024-03-06 10:56:33--  https://encode-public.s3.amazonaws.com/2021/03/16/f9c5229c-df01-48d5-b8df-10d060edd52f/ENCFF333TAT.bed.gz?response-content-disposition=attachment%3B%20filename%3DENCFF333TAT.bed.gz&amp;AWSAccessKeyId=ASIATGZNGCNXYPKN2W2F&amp;Signature=iwVsc7DEaGt8isxbmQOMYQWd5IA%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjELD%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCQBsMTJ2RahmI96Jwnwflz6BlqndF%2Be%2BOfN4u0YmfK%2FwIhANUMo%2FO8SUh404%2FoFzfC600zz%2FLc5WXtQn9sA1My18bvKrwFCKn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMMjIwNzQ4NzE0ODYzIgxz4YZz5Umj4Ib0CKUqkAVvCppDBn3Q4UmUOOymgA2T%2F2OTR1iAvlhnyxHpxmZUtnRh2h7JyhMBRka141WBNbhTPusqX44Hhq9V94kLgsQZ7ipEDSIEPnXyZvHCtSzgybeVLZk07lXTT8lweIPaO6hMaF0LG9mpvZysKlps6OE89kqy52WNFhCz3R8cht9aWrqobcnM%2BdQ5iAE3O3dl0NycGgXD7SMsGoMfW6zFXdaaWAEH13mVPNsqJ46lVfVq8kTOiiS95QGkNXPre%2FENX18edF6Mlmv8OORevHQXtwrpyBtGZLdmUSYjWUcu%2FrW6Ct%2FUuZNBrU4aQ9c58yXpMuZsmvQIwlo8FBpETfCIL51CDIGhwlfBmy1Lv62cWjISHpWGDebXHlcgmQMEaowqhQ432Om1B6MDumPpGPwX%2BEfWTjVGFL14j9WsHCtbDxZghSY80GmlJG0nScqFcnK5xoQo0Gahf6rWQt2c5vwplN6C24v4jkEfmSc86MTFkXo4EB76H%2FUj6eq2o7EyMm%2BaPtPBSuKMdL8hboUuD8rtagAkKU%2BBgFVUxaJXO7U40loSghQt9EbGQTfPggljz44Hpe7IOg7sHUJIaDZW48LzO%2F13EWO%2FhopmEQ8q%2FzOKQbfnW%2BAn8%2B4Kwj490BJx7HRCUzzIzeRyArSkYRB3kIy8JU%2F7kTL4fvqUJ66N1%2FyaDpH8VU%2FAAkeI3bKFXJC5rdYbHuhZfO5jwBq0A2NAvS%2BKDVTDAxd8Feark23Mc7Qk%2B56NxSm7UfyGw6sXssK%2BNFzFVqy3YD%2F3hHgZQoBqRLxQPTUpf4%2FHL8k9Asl5XymTHDs0HibpnoMf5rMijYIUqy8wNjIeo5iHl3hBq7VCnj%2F95l50N0mNDZgpKVkgneKieSCj%2BTDRoaKvBjqwAZScetUG%2BfVJZk2JfERkfltwcZIzNzDSvUoK4f6D7MwBTVDao7EPhQFAqQ3Fvb6ZKsWyQxlAl3neM2X5U8Afdf6n59zqDIhhrQ7%2BqIklrtmYjnXBGVU2uYM1KlB%2FYp1TUlrgfY20FIRDepRzOHXFZVNHzanyzy8lR2UK8uZ2%2FS4vvcEN9JnaFeGVyOQzxh%2BzW%2BUt%2BvFX9CCfo%2BoXpHFWoMvedAJNBZvoysAMH1ZV1N5K&amp;Expires=1709870193
+Resolving encode-public.s3.amazonaws.com (encode-public.s3.amazonaws.com)... 52.218.183.137, 52.92.181.57, 52.92.209.241, ...
+Connecting to encode-public.s3.amazonaws.com (encode-public.s3.amazonaws.com)|52.218.183.137|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 7067871 (6.7M) [binary/octet-stream]
+Saving to: ‘K562.hg38.ENCSR868FGK.ENCFF333TAT.ATAC.bed.gz’
+
+     0K .......... .......... .......... .......... ..........  0%  310K 22s
+    50K .......... .......... .......... .......... ..........  1% 99.2M 11s
+   100K .......... .......... .......... .......... ..........  2%  616K 11s
+   150K .......... .......... .......... .......... ..........  2%  149M 8s
+   200K .......... .......... .......... .......... ..........  3%  168M 6s
+   250K .......... .......... .......... .......... ..........  4%  633K 7s
+   300K .......... .......... .......... .......... ..........  5% 83.9M 6s
+   350K .......... .......... .......... .......... ..........  5%  135M 5s
+   400K .......... .......... .......... .......... ..........  6%  117M 5s
+   450K .......... .......... .......... .......... ..........  7%  124M 4s
+   500K .......... .......... .......... .......... ..........  7%  137M 4s
+   550K .......... .......... .......... .......... ..........  8% 1.29M 4s
+   600K .......... .......... .......... .......... ..........  9% 1.18M 4s
+   650K .......... .......... .......... .......... .......... 10%  118M 4s
+   700K .......... .......... .......... .......... .......... 10%  113M 3s
+   750K .......... .......... .......... .......... .......... 11%  103M 3s
+   800K .......... .......... .......... .......... .......... 12%  131M 3s
+   850K .......... .......... .......... .......... .......... 13% 95.4M 3s
+   900K .......... .......... .......... .......... .......... 13%  121M 3s
+   950K .......... .......... .......... .......... .......... 14%  125M 2s
+  1000K .......... .......... .......... .......... .......... 15%  102M 2s
+  1050K .......... .......... .......... .......... .......... 15%  111M 2s
+  1100K .......... .......... .......... .......... .......... 16%  120M 2s
+  1150K .......... .......... .......... .......... .......... 17% 1.41M 2s
+  1200K .......... .......... .......... .......... .......... 18% 1.18M 2s
+  1250K .......... .......... .......... .......... .......... 18%  114M 2s
+  1300K .......... .......... .......... .......... .......... 19%  139M 2s
+  1350K .......... .......... .......... .......... .......... 20%  114M 2s
+  1400K .......... .......... .......... .......... .......... 21%  129M 2s
+  1450K .......... .......... .......... .......... .......... 21%  104M 2s
+  1500K .......... .......... .......... .......... .......... 22%  106M 2s
+  1550K .......... .......... .......... .......... .......... 23%  123M 2s
+  1600K .......... .......... .......... .......... .......... 23%  108M 2s
+  1650K .......... .......... .......... .......... .......... 24%  104M 1s
+  1700K .......... .......... .......... .......... .......... 25% 84.9M 1s
+  1750K .......... .......... .......... .......... .......... 26%  144M 1s
+  1800K .......... .......... .......... .......... .......... 26%  130M 1s
+  1850K .......... .......... .......... .......... .......... 27%  129M 1s
+  1900K .......... .......... .......... .......... .......... 28% 87.0M 1s
+  1950K .......... .......... .......... .......... .......... 28%  130M 1s
+  2000K .......... .......... .......... .......... .......... 29%  119M 1s
+  2050K .......... .......... .......... .......... .......... 30% 1.54M 1s
+  2100K .......... .......... .......... .......... .......... 31% 1.16M 1s
+  2150K .......... .......... .......... .......... .......... 31%  128M 1s
+  2200K .......... .......... .......... .......... .......... 32%  114M 1s
+  2250K .......... .......... .......... .......... .......... 33%  104M 1s
+  2300K .......... .......... .......... .......... .......... 34%  129M 1s
+  2350K .......... .......... .......... .......... .......... 34% 85.2M 1s
+  2400K .......... .......... .......... .......... .......... 35%  136M 1s
+  2450K .......... .......... .......... .......... .......... 36%  134M 1s
+  2500K .......... .......... .......... .......... .......... 36% 99.3M 1s
+  2550K .......... .......... .......... .......... .......... 37%  108M 1s
+  2600K .......... .......... .......... .......... .......... 38%  131M 1s
+  2650K .......... .......... .......... .......... .......... 39%  125M 1s
+  2700K .......... .......... .......... .......... .......... 39%  111M 1s
+  2750K .......... .......... .......... .......... .......... 40% 90.7M 1s
+  2800K .......... .......... .......... .......... .......... 41%  101M 1s
+  2850K .......... .......... .......... .......... .......... 42%  129M 1s
+  2900K .......... .......... .......... .......... .......... 42%  130M 1s
+  2950K .......... .......... .......... .......... .......... 43%  102M 1s
+  3000K .......... .......... .......... .......... .......... 44%  131M 1s
+  3050K .......... .......... .......... .......... .......... 44% 95.2M 1s
+  3100K .......... .......... .......... .......... .......... 45%  138M 1s
+  3150K .......... .......... .......... .......... .......... 46% 92.0M 1s
+  3200K .......... .......... .......... .......... .......... 47%  127M 1s
+  3250K .......... .......... .......... .......... .......... 47%  112M 1s
+  3300K .......... .......... .......... .......... .......... 48%  127M 1s
+  3350K .......... .......... .......... .......... .......... 49% 93.8M 1s
+  3400K .......... .......... .......... .......... .......... 49%  122M 1s
+  3450K .......... .......... .......... .......... .......... 50%  141M 1s
+  3500K .......... .......... .......... .......... .......... 51%  110M 1s
+  3550K .......... .......... .......... .......... .......... 52% 90.6M 1s
+  3600K .......... .......... .......... .......... .......... 52%  129M 1s
+  3650K .......... .......... .......... .......... .......... 53% 99.8M 1s
+  3700K .......... .......... .......... .......... .......... 54%  129M 0s
+  3750K .......... .......... .......... .......... .......... 55%  117M 0s
+  3800K .......... .......... .......... .......... .......... 55%  112M 0s
+  3850K .......... .......... .......... .......... .......... 56% 98.8M 0s
+  3900K .......... .......... .......... .......... .......... 57%  132M 0s
+  3950K .......... .......... .......... .......... .......... 57% 91.3M 0s
+  4000K .......... .......... .......... .......... .......... 58%  128M 0s
+  4050K .......... .......... .......... .......... .......... 59%  131M 0s
+  4100K .......... .......... .......... .......... .......... 60% 9.20M 0s
+  4150K .......... .......... .......... .......... .......... 60%  195M 0s
+  4200K .......... .......... .......... .......... .......... 61% 2.86M 0s
+  4250K .......... .......... .......... .......... .......... 62%  135M 0s
+  4300K .......... .......... .......... .......... .......... 63% 1.18M 0s
+  4350K .......... .......... .......... .......... .......... 63% 55.5M 0s
+  4400K .......... .......... .......... .......... .......... 64%  129M 0s
+  4450K .......... .......... .......... .......... .......... 65%  108M 0s
+  4500K .......... .......... .......... .......... .......... 65%  101M 0s
+  4550K .......... .......... .......... .......... .......... 66%  120M 0s
+  4600K .......... .......... .......... .......... .......... 67%  129M 0s
+  4650K .......... .......... .......... .......... .......... 68%  110M 0s
+  4700K .......... .......... .......... .......... .......... 68%  130M 0s
+  4750K .......... .......... .......... .......... .......... 69% 90.1M 0s
+  4800K .......... .......... .......... .......... .......... 70%  101M 0s
+  4850K .......... .......... .......... .......... .......... 70% 77.3M 0s
+  4900K .......... .......... .......... .......... .......... 71%  214M 0s
+  4950K .......... .......... .......... .......... .......... 72%  129M 0s
+  5000K .......... .......... .......... .......... .......... 73%  131M 0s
+  5050K .......... .......... .......... .......... .......... 73%  107M 0s
+  5100K .......... .......... .......... .......... .......... 74%  100M 0s
+  5150K .......... .......... .......... .......... .......... 75%  115M 0s
+  5200K .......... .......... .......... .......... .......... 76%  102M 0s
+  5250K .......... .......... .......... .......... .......... 76%  130M 0s
+  5300K .......... .......... .......... .......... .......... 77%  129M 0s
+  5350K .......... .......... .......... .......... .......... 78%  101M 0s
+  5400K .......... .......... .......... .......... .......... 78%  125M 0s
+  5450K .......... .......... .......... .......... .......... 79%  103M 0s
+  5500K .......... .......... .......... .......... .......... 80%  130M 0s
+  5550K .......... .......... .......... .......... .......... 81% 91.2M 0s
+  5600K .......... .......... .......... .......... .......... 81%  130M 0s
+  5650K .......... .......... .......... .......... .......... 82%  110M 0s
+  5700K .......... .......... .......... .......... .......... 83%  121M 0s
+  5750K .......... .......... .......... .......... .......... 84% 98.3M 0s
+  5800K .......... .......... .......... .......... .......... 84%  127M 0s
+  5850K .......... .......... .......... .......... .......... 85%  129M 0s
+  5900K .......... .......... .......... .......... .......... 86%  104M 0s
+  5950K .......... .......... .......... .......... .......... 86% 97.0M 0s
+  6000K .......... .......... .......... .......... .......... 87%  125M 0s
+  6050K .......... .......... .......... .......... .......... 88%  103M 0s
+  6100K .......... .......... .......... .......... .......... 89%  130M 0s
+  6150K .......... .......... .......... .......... .......... 89%  123M 0s
+  6200K .......... .......... .......... .......... .......... 90%  113M 0s
+  6250K .......... .......... .......... .......... .......... 91%  100M 0s
+  6300K .......... .......... .......... .......... .......... 91%  131M 0s
+  6350K .......... .......... .......... .......... .......... 92% 92.6M 0s
+  6400K .......... .......... .......... .......... .......... 93%  132M 0s
+  6450K .......... .......... .......... .......... .......... 94%  111M 0s
+  6500K .......... .......... .......... .......... .......... 94%  100M 0s
+  6550K .......... .......... .......... .......... .......... 95%  121M 0s
+  6600K .......... .......... .......... .......... .......... 96%  129M 0s
+  6650K .......... .......... .......... .......... .......... 97%  111M 0s
+  6700K .......... .......... .......... .......... .......... 97%  132M 0s
+  6750K .......... .......... .......... .......... .......... 98% 89.6M 0s
+  6800K .......... .......... .......... .......... .......... 99% 94.4M 0s
+  6850K .......... .......... .......... .......... .......... 99%  198M 0s
+  6900K ..                                                    100% 4230G=0.7s
+
+2024-03-06 10:56:34 (10.1 MB/s) - ‘K562.hg38.ENCSR868FGK.ENCFF333TAT.ATAC.bed.gz’ saved [7067871/7067871]
+
+--2024-03-06 10:56:34--  https://www.encodeproject.org/files/ENCFF948AFM/@@download/ENCFF948AFM.bed.gz
+Resolving www.encodeproject.org (www.encodeproject.org)... 34.211.244.144
+Connecting to www.encodeproject.org (www.encodeproject.org)|34.211.244.144|:443... connected.
+HTTP request sent, awaiting response... 307 Temporary Redirect
+Location: https://encode-public.s3.amazonaws.com/2021/03/16/48703b8d-05a4-451a-974b-0e3f489253a8/ENCFF948AFM.bed.gz?response-content-disposition=attachment%3B%20filename%3DENCFF948AFM.bed.gz&amp;AWSAccessKeyId=ASIATGZNGCNXYPKN2W2F&amp;Signature=OFSpYmuGqLjPIBSR40H3t0dgDAM%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjELD%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCQBsMTJ2RahmI96Jwnwflz6BlqndF%2Be%2BOfN4u0YmfK%2FwIhANUMo%2FO8SUh404%2FoFzfC600zz%2FLc5WXtQn9sA1My18bvKrwFCKn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMMjIwNzQ4NzE0ODYzIgxz4YZz5Umj4Ib0CKUqkAVvCppDBn3Q4UmUOOymgA2T%2F2OTR1iAvlhnyxHpxmZUtnRh2h7JyhMBRka141WBNbhTPusqX44Hhq9V94kLgsQZ7ipEDSIEPnXyZvHCtSzgybeVLZk07lXTT8lweIPaO6hMaF0LG9mpvZysKlps6OE89kqy52WNFhCz3R8cht9aWrqobcnM%2BdQ5iAE3O3dl0NycGgXD7SMsGoMfW6zFXdaaWAEH13mVPNsqJ46lVfVq8kTOiiS95QGkNXPre%2FENX18edF6Mlmv8OORevHQXtwrpyBtGZLdmUSYjWUcu%2FrW6Ct%2FUuZNBrU4aQ9c58yXpMuZsmvQIwlo8FBpETfCIL51CDIGhwlfBmy1Lv62cWjISHpWGDebXHlcgmQMEaowqhQ432Om1B6MDumPpGPwX%2BEfWTjVGFL14j9WsHCtbDxZghSY80GmlJG0nScqFcnK5xoQo0Gahf6rWQt2c5vwplN6C24v4jkEfmSc86MTFkXo4EB76H%2FUj6eq2o7EyMm%2BaPtPBSuKMdL8hboUuD8rtagAkKU%2BBgFVUxaJXO7U40loSghQt9EbGQTfPggljz44Hpe7IOg7sHUJIaDZW48LzO%2F13EWO%2FhopmEQ8q%2FzOKQbfnW%2BAn8%2B4Kwj490BJx7HRCUzzIzeRyArSkYRB3kIy8JU%2F7kTL4fvqUJ66N1%2FyaDpH8VU%2FAAkeI3bKFXJC5rdYbHuhZfO5jwBq0A2NAvS%2BKDVTDAxd8Feark23Mc7Qk%2B56NxSm7UfyGw6sXssK%2BNFzFVqy3YD%2F3hHgZQoBqRLxQPTUpf4%2FHL8k9Asl5XymTHDs0HibpnoMf5rMijYIUqy8wNjIeo5iHl3hBq7VCnj%2F95l50N0mNDZgpKVkgneKieSCj%2BTDRoaKvBjqwAZScetUG%2BfVJZk2JfERkfltwcZIzNzDSvUoK4f6D7MwBTVDao7EPhQFAqQ3Fvb6ZKsWyQxlAl3neM2X5U8Afdf6n59zqDIhhrQ7%2BqIklrtmYjnXBGVU2uYM1KlB%2FYp1TUlrgfY20FIRDepRzOHXFZVNHzanyzy8lR2UK8uZ2%2FS4vvcEN9JnaFeGVyOQzxh%2BzW%2BUt%2BvFX9CCfo%2BoXpHFWoMvedAJNBZvoysAMH1ZV1N5K&amp;Expires=1709870194 [following]
+--2024-03-06 10:56:34--  https://encode-public.s3.amazonaws.com/2021/03/16/48703b8d-05a4-451a-974b-0e3f489253a8/ENCFF948AFM.bed.gz?response-content-disposition=attachment%3B%20filename%3DENCFF948AFM.bed.gz&amp;AWSAccessKeyId=ASIATGZNGCNXYPKN2W2F&amp;Signature=OFSpYmuGqLjPIBSR40H3t0dgDAM%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjELD%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCQBsMTJ2RahmI96Jwnwflz6BlqndF%2Be%2BOfN4u0YmfK%2FwIhANUMo%2FO8SUh404%2FoFzfC600zz%2FLc5WXtQn9sA1My18bvKrwFCKn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMMjIwNzQ4NzE0ODYzIgxz4YZz5Umj4Ib0CKUqkAVvCppDBn3Q4UmUOOymgA2T%2F2OTR1iAvlhnyxHpxmZUtnRh2h7JyhMBRka141WBNbhTPusqX44Hhq9V94kLgsQZ7ipEDSIEPnXyZvHCtSzgybeVLZk07lXTT8lweIPaO6hMaF0LG9mpvZysKlps6OE89kqy52WNFhCz3R8cht9aWrqobcnM%2BdQ5iAE3O3dl0NycGgXD7SMsGoMfW6zFXdaaWAEH13mVPNsqJ46lVfVq8kTOiiS95QGkNXPre%2FENX18edF6Mlmv8OORevHQXtwrpyBtGZLdmUSYjWUcu%2FrW6Ct%2FUuZNBrU4aQ9c58yXpMuZsmvQIwlo8FBpETfCIL51CDIGhwlfBmy1Lv62cWjISHpWGDebXHlcgmQMEaowqhQ432Om1B6MDumPpGPwX%2BEfWTjVGFL14j9WsHCtbDxZghSY80GmlJG0nScqFcnK5xoQo0Gahf6rWQt2c5vwplN6C24v4jkEfmSc86MTFkXo4EB76H%2FUj6eq2o7EyMm%2BaPtPBSuKMdL8hboUuD8rtagAkKU%2BBgFVUxaJXO7U40loSghQt9EbGQTfPggljz44Hpe7IOg7sHUJIaDZW48LzO%2F13EWO%2FhopmEQ8q%2FzOKQbfnW%2BAn8%2B4Kwj490BJx7HRCUzzIzeRyArSkYRB3kIy8JU%2F7kTL4fvqUJ66N1%2FyaDpH8VU%2FAAkeI3bKFXJC5rdYbHuhZfO5jwBq0A2NAvS%2BKDVTDAxd8Feark23Mc7Qk%2B56NxSm7UfyGw6sXssK%2BNFzFVqy3YD%2F3hHgZQoBqRLxQPTUpf4%2FHL8k9Asl5XymTHDs0HibpnoMf5rMijYIUqy8wNjIeo5iHl3hBq7VCnj%2F95l50N0mNDZgpKVkgneKieSCj%2BTDRoaKvBjqwAZScetUG%2BfVJZk2JfERkfltwcZIzNzDSvUoK4f6D7MwBTVDao7EPhQFAqQ3Fvb6ZKsWyQxlAl3neM2X5U8Afdf6n59zqDIhhrQ7%2BqIklrtmYjnXBGVU2uYM1KlB%2FYp1TUlrgfY20FIRDepRzOHXFZVNHzanyzy8lR2UK8uZ2%2FS4vvcEN9JnaFeGVyOQzxh%2BzW%2BUt%2BvFX9CCfo%2BoXpHFWoMvedAJNBZvoysAMH1ZV1N5K&amp;Expires=1709870194
+Resolving encode-public.s3.amazonaws.com (encode-public.s3.amazonaws.com)... 52.92.209.241, 52.218.183.137, 52.92.148.249, ...
+Connecting to encode-public.s3.amazonaws.com (encode-public.s3.amazonaws.com)|52.92.209.241|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 4215835 (4.0M) [binary/octet-stream]
+Saving to: ‘K562.hg38.ENCSR868FGK.ENCFF948AFM.ATAC.bed.gz’
+
+     0K .......... .......... .......... .......... ..........  1%  617K 7s
+    50K .......... .......... .......... .......... ..........  2%  615K 7s
+   100K .......... .......... .......... .......... ..........  3%  619K 6s
+   150K .......... .......... .......... .......... ..........  4% 87.5M 5s
+   200K .......... .......... .......... .......... ..........  6% 81.6M 4s
+   250K .......... .......... .......... .......... ..........  7% 93.9M 3s
+   300K .......... .......... .......... .......... ..........  8%  625K 3s
+   350K .......... .......... .......... .......... ..........  9%  133M 3s
+   400K .......... .......... .......... .......... .......... 10%  104M 3s
+   450K .......... .......... .......... .......... .......... 12%  115M 2s
+   500K .......... .......... .......... .......... .......... 13%  130M 2s
+   550K .......... .......... .......... .......... .......... 14% 99.5M 2s
+   600K .......... .......... .......... .......... .......... 15%  704K 2s
+   650K .......... .......... .......... .......... .......... 17% 6.01M 2s
+   700K .......... .......... .......... .......... .......... 18%  103M 2s
+   750K .......... .......... .......... .......... .......... 19%  107M 2s
+   800K .......... .......... .......... .......... .......... 20%  129M 2s
+   850K .......... .......... .......... .......... .......... 21%  104M 1s
+   900K .......... .......... .......... .......... .......... 23%  147M 1s
+   950K .......... .......... .......... .......... .......... 24%  114M 1s
+  1000K .......... .......... .......... .......... .......... 25% 99.7M 1s
+  1050K .......... .......... .......... .......... .......... 26%  129M 1s
+  1100K .......... .......... .......... .......... .......... 27% 98.7M 1s
+  1150K .......... .......... .......... .......... .......... 29%  110M 1s
+  1200K .......... .......... .......... .......... .......... 30%  129M 1s
+  1250K .......... .......... .......... .......... .......... 31%  104M 1s
+  1300K .......... .......... .......... .......... .......... 32%  661K 1s
+  1350K .......... .......... .......... .......... .......... 34%  115M 1s
+  1400K .......... .......... .......... .......... .......... 35% 98.1M 1s
+  1450K .......... .......... .......... .......... .......... 36%  129M 1s
+  1500K .......... .......... .......... .......... .......... 37%  119M 1s
+  1550K .......... .......... .......... .......... .......... 38% 92.6M 1s
+  1600K .......... .......... .......... .......... .......... 40%  130M 1s
+  1650K .......... .......... .......... .......... .......... 41%  105M 1s
+  1700K .......... .......... .......... .......... .......... 42%  104M 1s
+  1750K .......... .......... .......... .......... .......... 43%  127M 1s
+  1800K .......... .......... .......... .......... .......... 44%  132M 1s
+  1850K .......... .......... .......... .......... .......... 46%  109M 1s
+  1900K .......... .......... .......... .......... .......... 47% 93.5M 1s
+  1950K .......... .......... .......... .......... .......... 48%  130M 1s
+  2000K .......... .......... .......... .......... .......... 49%  128M 0s
+  2050K .......... .......... .......... .......... .......... 51%  130M 0s
+  2100K .......... .......... .......... .......... .......... 52% 91.4M 0s
+  2150K .......... .......... .......... .......... .......... 53%  111M 0s
+  2200K .......... .......... .......... .......... .......... 54%  132M 0s
+  2250K .......... .......... .......... .......... .......... 55% 93.4M 0s
+  2300K .......... .......... .......... .......... .......... 57%  129M 0s
+  2350K .......... .......... .......... .......... .......... 58%  125M 0s
+  2400K .......... .......... .......... .......... .......... 59%  114M 0s
+  2450K .......... .......... .......... .......... .......... 60% 91.7M 0s
+  2500K .......... .......... .......... .......... .......... 61%  118M 0s
+  2550K .......... .......... .......... .......... .......... 63%  104M 0s
+  2600K .......... .......... .......... .......... .......... 64%  800K 0s
+  2650K .......... .......... .......... .......... .......... 65% 6.36M 0s
+  2700K .......... .......... .......... .......... .......... 66%  120M 0s
+  2750K .......... .......... .......... .......... .......... 68%  109M 0s
+  2800K .......... .......... .......... .......... .......... 69%  101M 0s
+  2850K .......... .......... .......... .......... .......... 70%  129M 0s
+  2900K .......... .......... .......... .......... .......... 71% 91.8M 0s
+  2950K .......... .......... .......... .......... .......... 72%  130M 0s
+  3000K .......... .......... .......... .......... .......... 74%  130M 0s
+  3050K .......... .......... .......... .......... .......... 75%  111M 0s
+  3100K .......... .......... .......... .......... .......... 76% 91.5M 0s
+  3150K .......... .......... .......... .......... .......... 77%  128M 0s
+  3200K .......... .......... .......... .......... .......... 78%  136M 0s
+  3250K .......... .......... .......... .......... .......... 80%  108M 0s
+  3300K .......... .......... .......... .......... .......... 81%  105M 0s
+  3350K .......... .......... .......... .......... .......... 82%  110M 0s
+  3400K .......... .......... .......... .......... .......... 83%  100M 0s
+  3450K .......... .......... .......... .......... .......... 85%  128M 0s
+  3500K .......... .......... .......... .......... .......... 86%  121M 0s
+  3550K .......... .......... .......... .......... .......... 87%  111M 0s
+  3600K .......... .......... .......... .......... .......... 88%  129M 0s
+  3650K .......... .......... .......... .......... .......... 89% 98.0M 0s
+  3700K .......... .......... .......... .......... .......... 91% 91.3M 0s
+  3750K .......... .......... .......... .......... .......... 92%  130M 0s
+  3800K .......... .......... .......... .......... .......... 93%  129M 0s
+  3850K .......... .......... .......... .......... .......... 94%  128M 0s
+  3900K .......... .......... .......... .......... .......... 95%  106M 0s
+  3950K .......... .......... .......... .......... .......... 97% 99.0M 0s
+  4000K .......... .......... .......... .......... .......... 98%  129M 0s
+  4050K .......... .......... .......... .......... .......... 99%  128M 0s
+  4100K .......... .......                                    100% 3.29M=0.6s
+
+2024-03-06 10:56:35 (6.87 MB/s) - ‘K562.hg38.ENCSR868FGK.ENCFF948AFM.ATAC.bed.gz’ saved [4215835/4215835]
+
+--2024-03-06 10:56:35--  https://www.encodeproject.org/files/ENCFF558BLC/@@download/ENCFF558BLC.bed.gz
+Resolving www.encodeproject.org (www.encodeproject.org)... 34.211.244.144
+Connecting to www.encodeproject.org (www.encodeproject.org)|34.211.244.144|:443... connected.
+HTTP request sent, awaiting response... 307 Temporary Redirect
+Location: https://encode-public.s3.amazonaws.com/2021/02/24/951841cc-1614-4971-9fb8-a61c03d4b167/ENCFF558BLC.bed.gz?response-content-disposition=attachment%3B%20filename%3DENCFF558BLC.bed.gz&amp;AWSAccessKeyId=ASIATGZNGCNXYPKN2W2F&amp;Signature=jiVTMGbYl3HbRAcIJDkYTeeBYMQ%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjELD%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCQBsMTJ2RahmI96Jwnwflz6BlqndF%2Be%2BOfN4u0YmfK%2FwIhANUMo%2FO8SUh404%2FoFzfC600zz%2FLc5WXtQn9sA1My18bvKrwFCKn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMMjIwNzQ4NzE0ODYzIgxz4YZz5Umj4Ib0CKUqkAVvCppDBn3Q4UmUOOymgA2T%2F2OTR1iAvlhnyxHpxmZUtnRh2h7JyhMBRka141WBNbhTPusqX44Hhq9V94kLgsQZ7ipEDSIEPnXyZvHCtSzgybeVLZk07lXTT8lweIPaO6hMaF0LG9mpvZysKlps6OE89kqy52WNFhCz3R8cht9aWrqobcnM%2BdQ5iAE3O3dl0NycGgXD7SMsGoMfW6zFXdaaWAEH13mVPNsqJ46lVfVq8kTOiiS95QGkNXPre%2FENX18edF6Mlmv8OORevHQXtwrpyBtGZLdmUSYjWUcu%2FrW6Ct%2FUuZNBrU4aQ9c58yXpMuZsmvQIwlo8FBpETfCIL51CDIGhwlfBmy1Lv62cWjISHpWGDebXHlcgmQMEaowqhQ432Om1B6MDumPpGPwX%2BEfWTjVGFL14j9WsHCtbDxZghSY80GmlJG0nScqFcnK5xoQo0Gahf6rWQt2c5vwplN6C24v4jkEfmSc86MTFkXo4EB76H%2FUj6eq2o7EyMm%2BaPtPBSuKMdL8hboUuD8rtagAkKU%2BBgFVUxaJXO7U40loSghQt9EbGQTfPggljz44Hpe7IOg7sHUJIaDZW48LzO%2F13EWO%2FhopmEQ8q%2FzOKQbfnW%2BAn8%2B4Kwj490BJx7HRCUzzIzeRyArSkYRB3kIy8JU%2F7kTL4fvqUJ66N1%2FyaDpH8VU%2FAAkeI3bKFXJC5rdYbHuhZfO5jwBq0A2NAvS%2BKDVTDAxd8Feark23Mc7Qk%2B56NxSm7UfyGw6sXssK%2BNFzFVqy3YD%2F3hHgZQoBqRLxQPTUpf4%2FHL8k9Asl5XymTHDs0HibpnoMf5rMijYIUqy8wNjIeo5iHl3hBq7VCnj%2F95l50N0mNDZgpKVkgneKieSCj%2BTDRoaKvBjqwAZScetUG%2BfVJZk2JfERkfltwcZIzNzDSvUoK4f6D7MwBTVDao7EPhQFAqQ3Fvb6ZKsWyQxlAl3neM2X5U8Afdf6n59zqDIhhrQ7%2BqIklrtmYjnXBGVU2uYM1KlB%2FYp1TUlrgfY20FIRDepRzOHXFZVNHzanyzy8lR2UK8uZ2%2FS4vvcEN9JnaFeGVyOQzxh%2BzW%2BUt%2BvFX9CCfo%2BoXpHFWoMvedAJNBZvoysAMH1ZV1N5K&amp;Expires=1709870196 [following]
+--2024-03-06 10:56:36--  https://encode-public.s3.amazonaws.com/2021/02/24/951841cc-1614-4971-9fb8-a61c03d4b167/ENCFF558BLC.bed.gz?response-content-disposition=attachment%3B%20filename%3DENCFF558BLC.bed.gz&amp;AWSAccessKeyId=ASIATGZNGCNXYPKN2W2F&amp;Signature=jiVTMGbYl3HbRAcIJDkYTeeBYMQ%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjELD%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCQBsMTJ2RahmI96Jwnwflz6BlqndF%2Be%2BOfN4u0YmfK%2FwIhANUMo%2FO8SUh404%2FoFzfC600zz%2FLc5WXtQn9sA1My18bvKrwFCKn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMMjIwNzQ4NzE0ODYzIgxz4YZz5Umj4Ib0CKUqkAVvCppDBn3Q4UmUOOymgA2T%2F2OTR1iAvlhnyxHpxmZUtnRh2h7JyhMBRka141WBNbhTPusqX44Hhq9V94kLgsQZ7ipEDSIEPnXyZvHCtSzgybeVLZk07lXTT8lweIPaO6hMaF0LG9mpvZysKlps6OE89kqy52WNFhCz3R8cht9aWrqobcnM%2BdQ5iAE3O3dl0NycGgXD7SMsGoMfW6zFXdaaWAEH13mVPNsqJ46lVfVq8kTOiiS95QGkNXPre%2FENX18edF6Mlmv8OORevHQXtwrpyBtGZLdmUSYjWUcu%2FrW6Ct%2FUuZNBrU4aQ9c58yXpMuZsmvQIwlo8FBpETfCIL51CDIGhwlfBmy1Lv62cWjISHpWGDebXHlcgmQMEaowqhQ432Om1B6MDumPpGPwX%2BEfWTjVGFL14j9WsHCtbDxZghSY80GmlJG0nScqFcnK5xoQo0Gahf6rWQt2c5vwplN6C24v4jkEfmSc86MTFkXo4EB76H%2FUj6eq2o7EyMm%2BaPtPBSuKMdL8hboUuD8rtagAkKU%2BBgFVUxaJXO7U40loSghQt9EbGQTfPggljz44Hpe7IOg7sHUJIaDZW48LzO%2F13EWO%2FhopmEQ8q%2FzOKQbfnW%2BAn8%2B4Kwj490BJx7HRCUzzIzeRyArSkYRB3kIy8JU%2F7kTL4fvqUJ66N1%2FyaDpH8VU%2FAAkeI3bKFXJC5rdYbHuhZfO5jwBq0A2NAvS%2BKDVTDAxd8Feark23Mc7Qk%2B56NxSm7UfyGw6sXssK%2BNFzFVqy3YD%2F3hHgZQoBqRLxQPTUpf4%2FHL8k9Asl5XymTHDs0HibpnoMf5rMijYIUqy8wNjIeo5iHl3hBq7VCnj%2F95l50N0mNDZgpKVkgneKieSCj%2BTDRoaKvBjqwAZScetUG%2BfVJZk2JfERkfltwcZIzNzDSvUoK4f6D7MwBTVDao7EPhQFAqQ3Fvb6ZKsWyQxlAl3neM2X5U8Afdf6n59zqDIhhrQ7%2BqIklrtmYjnXBGVU2uYM1KlB%2FYp1TUlrgfY20FIRDepRzOHXFZVNHzanyzy8lR2UK8uZ2%2FS4vvcEN9JnaFeGVyOQzxh%2BzW%2BUt%2BvFX9CCfo%2BoXpHFWoMvedAJNBZvoysAMH1ZV1N5K&amp;Expires=1709870196
+Resolving encode-public.s3.amazonaws.com (encode-public.s3.amazonaws.com)... 52.218.183.137, 52.92.250.1, 52.92.181.57, ...
+Connecting to encode-public.s3.amazonaws.com (encode-public.s3.amazonaws.com)|52.218.183.137|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 4989495 (4.8M) [binary/octet-stream]
+Saving to: ‘K562.hg38.ENCSR483RKN.ENCFF558BLC.ATAC.bed.gz’
+
+     0K .......... .......... .......... .......... ..........  1%  620K 8s
+    50K .......... .......... .......... .......... ..........  2%  311K 12s
+   100K .......... .......... .......... .......... ..........  3%  311K 13s
+   150K .......... .......... .......... .......... ..........  4%  415K 12s
+   200K .......... .......... .......... .......... ..........  5%  415K 12s
+   250K .......... .......... .......... .......... ..........  6%  312K 12s
+   300K .......... .......... .......... .......... ..........  7%  616K 11s
+   350K .......... .......... .......... .......... ..........  8%  414K 11s
+   400K .......... .......... .......... .......... ..........  9%  414K 11s
+   450K .......... .......... .......... .......... .......... 10%  417K 11s
+   500K .......... .......... .......... .......... .......... 11%  415K 11s
+   550K .......... .......... .......... .......... .......... 12%  608K 10s
+   600K .......... .......... .......... .......... .......... 13%  419K 10s
+   650K .......... .......... .......... .......... .......... 14%  416K 10s
+   700K .......... .......... .......... .......... .......... 15%  607K 10s
+   750K .......... .......... .......... .......... .......... 16%  421K 10s
+   800K .......... .......... .......... .......... .......... 17%  418K 10s
+   850K .......... .......... .......... .......... .......... 18%  621K 9s
+   900K .......... .......... .......... .......... .......... 19%  622K 9s
+   950K .......... .......... .......... .......... .......... 20%  614K 9s
+  1000K .......... .......... .......... .......... .......... 21%  610K 8s
+  1050K .......... .......... .......... .......... .......... 22%  427K 8s
+  1100K .......... .......... .......... .......... .......... 23%  621K 8s
+  1150K .......... .......... .......... .......... .......... 24%  612K 8s
+  1200K .......... .......... .......... .......... .......... 25%  418K 8s
+  1250K .......... .......... .......... .......... .......... 26%  621K 8s
+  1300K .......... .......... .......... .......... .......... 27%  620K 8s
+  1350K .......... .......... .......... .......... .......... 28%  622K 7s
+  1400K .......... .......... .......... .......... .......... 29%  623K 7s
+  1450K .......... .......... .......... .......... .......... 30%  621K 7s
+  1500K .......... .......... .......... .......... .......... 31%  624K 7s
+  1550K .......... .......... .......... .......... .......... 32%  623K 7s
+  1600K .......... .......... .......... .......... .......... 33%  623K 7s
+  1650K .......... .......... .......... .......... .......... 34% 1.15M 6s
+  1700K .......... .......... .......... .......... .......... 35%  631K 6s
+  1750K .......... .......... .......... .......... .......... 36% 1.20M 6s
+  1800K .......... .......... .......... .......... .......... 37%  631K 6s
+  1850K .......... .......... .......... .......... .......... 38%  625K 6s
+  1900K .......... .......... .......... .......... .......... 40%  624K 6s
+  1950K .......... .......... .......... .......... .......... 41%  624K 6s
+  2000K .......... .......... .......... .......... .......... 42%  625K 5s
+  2050K .......... .......... .......... .......... .......... 43% 1.15M 5s
+  2100K .......... .......... .......... .......... .......... 44%  629K 5s
+  2150K .......... .......... .......... .......... .......... 45% 1.17M 5s
+  2200K .......... .......... .......... .......... .......... 46%  639K 5s
+  2250K .......... .......... .......... .......... .......... 47%  626K 5s
+  2300K .......... .......... .......... .......... .......... 48%  626K 5s
+  2350K .......... .......... .......... .......... .......... 49% 1.15M 5s
+  2400K .......... .......... .......... .......... .......... 50%  632K 4s
+  2450K .......... .......... .......... .......... .......... 51% 1.22M 4s
+  2500K .......... .......... .......... .......... .......... 52%  628K 4s
+  2550K .......... .......... .......... .......... .......... 53% 1.16M 4s
+  2600K .......... .......... .......... .......... .......... 54% 1.22M 4s
+  2650K .......... .......... .......... .......... .......... 55%  634K 4s
+  2700K .......... .......... .......... .......... .......... 56%  627K 4s
+  2750K .......... .......... .......... .......... .......... 57% 1.14M 4s
+  2800K .......... .......... .......... .......... .......... 58% 1.23M 3s
+  2850K .......... .......... .......... .......... .......... 59%  633K 3s
+  2900K .......... .......... .......... .......... .......... 60%  630K 3s
+  2950K .......... .......... .......... .......... .......... 61% 1.15M 3s
+  3000K .......... .......... .......... .......... .......... 62% 1.23M 3s
+  3050K .......... .......... .......... .......... .......... 63%  632K 3s
+  3100K .......... .......... .......... .......... .......... 64%  627K 3s
+  3150K .......... .......... .......... .......... .......... 65% 1.18M 3s
+  3200K .......... .......... .......... .......... .......... 66% 1.22M 3s
+  3250K .......... .......... .......... .......... .......... 67%  629K 3s
+  3300K .......... .......... .......... .......... .......... 68% 1.16M 3s
+  3350K .......... .......... .......... .......... .......... 69% 1.24M 2s
+  3400K .......... .......... .......... .......... .......... 70%  633K 2s
+  3450K .......... .......... .......... .......... .......... 71% 1.19M 2s
+  3500K .......... .......... .......... .......... .......... 72% 1.20M 2s
+  3550K .......... .......... .......... .......... .......... 73%  635K 2s
+  3600K .......... .......... .......... .......... .......... 74% 1.16M 2s
+  3650K .......... .......... .......... .......... .......... 75% 1.21M 2s
+  3700K .......... .......... .......... .......... .......... 76%  637K 2s
+  3750K .......... .......... .......... .......... .......... 77% 1.13M 2s
+  3800K .......... .......... .......... .......... .......... 79% 1.26M 2s
+  3850K .......... .......... .......... .......... .......... 80%  636K 2s
+  3900K .......... .......... .......... .......... .......... 81% 1.13M 1s
+  3950K .......... .......... .......... .......... .......... 82% 1.23M 1s
+  4000K .......... .......... .......... .......... .......... 83% 1.16M 1s
+  4050K .......... .......... .......... .......... .......... 84% 1.18M 1s
+  4100K .......... .......... .......... .......... .......... 85%  644K 1s
+  4150K .......... .......... .......... .......... .......... 86% 1.19M 1s
+  4200K .......... .......... .......... .......... .......... 87% 1.17M 1s
+  4250K .......... .......... .......... .......... .......... 88% 1.26M 1s
+  4300K .......... .......... .......... .......... .......... 89% 1.17M 1s
+  4350K .......... .......... .......... .......... .......... 90%  649K 1s
+  4400K .......... .......... .......... .......... .......... 91% 1.19M 1s
+  4450K .......... .......... .......... .......... .......... 92% 1.21M 1s
+  4500K .......... .......... .......... .......... .......... 93% 1.19M 0s
+  4550K .......... .......... .......... .......... .......... 94% 1.17M 0s
+  4600K .......... .......... .......... .......... .......... 95%  645K 0s
+  4650K .......... .......... .......... .......... .......... 96% 1.20M 0s
+  4700K .......... .......... .......... .......... .......... 97% 1.21M 0s
+  4750K .......... .......... .......... .......... .......... 98% 1.19M 0s
+  4800K .......... .......... .......... .......... .......... 99% 1.16M 0s
+  4850K .......... .......... ..                              100%  607K=7.0s
+
+2024-03-06 10:56:43 (693 KB/s) - ‘K562.hg38.ENCSR483RKN.ENCFF558BLC.ATAC.bed.gz’ saved [4989495/4989495]
+
+--2024-03-06 10:56:43--  https://www.encodeproject.org/files/ENCFF925CYR/@@download/ENCFF925CYR.bed.gz
+Resolving www.encodeproject.org (www.encodeproject.org)... 34.211.244.144
+Connecting to www.encodeproject.org (www.encodeproject.org)|34.211.244.144|:443... connected.
+HTTP request sent, awaiting response... 307 Temporary Redirect
+Location: https://encode-public.s3.amazonaws.com/2021/02/24/6f3f65f7-8e9b-4230-8f28-ac4df690467f/ENCFF925CYR.bed.gz?response-content-disposition=attachment%3B%20filename%3DENCFF925CYR.bed.gz&amp;AWSAccessKeyId=ASIATGZNGCNXYPKN2W2F&amp;Signature=6Rgj4bMMvf5HGTYiJRmUfOHyOUw%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjELD%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCQBsMTJ2RahmI96Jwnwflz6BlqndF%2Be%2BOfN4u0YmfK%2FwIhANUMo%2FO8SUh404%2FoFzfC600zz%2FLc5WXtQn9sA1My18bvKrwFCKn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMMjIwNzQ4NzE0ODYzIgxz4YZz5Umj4Ib0CKUqkAVvCppDBn3Q4UmUOOymgA2T%2F2OTR1iAvlhnyxHpxmZUtnRh2h7JyhMBRka141WBNbhTPusqX44Hhq9V94kLgsQZ7ipEDSIEPnXyZvHCtSzgybeVLZk07lXTT8lweIPaO6hMaF0LG9mpvZysKlps6OE89kqy52WNFhCz3R8cht9aWrqobcnM%2BdQ5iAE3O3dl0NycGgXD7SMsGoMfW6zFXdaaWAEH13mVPNsqJ46lVfVq8kTOiiS95QGkNXPre%2FENX18edF6Mlmv8OORevHQXtwrpyBtGZLdmUSYjWUcu%2FrW6Ct%2FUuZNBrU4aQ9c58yXpMuZsmvQIwlo8FBpETfCIL51CDIGhwlfBmy1Lv62cWjISHpWGDebXHlcgmQMEaowqhQ432Om1B6MDumPpGPwX%2BEfWTjVGFL14j9WsHCtbDxZghSY80GmlJG0nScqFcnK5xoQo0Gahf6rWQt2c5vwplN6C24v4jkEfmSc86MTFkXo4EB76H%2FUj6eq2o7EyMm%2BaPtPBSuKMdL8hboUuD8rtagAkKU%2BBgFVUxaJXO7U40loSghQt9EbGQTfPggljz44Hpe7IOg7sHUJIaDZW48LzO%2F13EWO%2FhopmEQ8q%2FzOKQbfnW%2BAn8%2B4Kwj490BJx7HRCUzzIzeRyArSkYRB3kIy8JU%2F7kTL4fvqUJ66N1%2FyaDpH8VU%2FAAkeI3bKFXJC5rdYbHuhZfO5jwBq0A2NAvS%2BKDVTDAxd8Feark23Mc7Qk%2B56NxSm7UfyGw6sXssK%2BNFzFVqy3YD%2F3hHgZQoBqRLxQPTUpf4%2FHL8k9Asl5XymTHDs0HibpnoMf5rMijYIUqy8wNjIeo5iHl3hBq7VCnj%2F95l50N0mNDZgpKVkgneKieSCj%2BTDRoaKvBjqwAZScetUG%2BfVJZk2JfERkfltwcZIzNzDSvUoK4f6D7MwBTVDao7EPhQFAqQ3Fvb6ZKsWyQxlAl3neM2X5U8Afdf6n59zqDIhhrQ7%2BqIklrtmYjnXBGVU2uYM1KlB%2FYp1TUlrgfY20FIRDepRzOHXFZVNHzanyzy8lR2UK8uZ2%2FS4vvcEN9JnaFeGVyOQzxh%2BzW%2BUt%2BvFX9CCfo%2BoXpHFWoMvedAJNBZvoysAMH1ZV1N5K&amp;Expires=1709870204 [following]
+--2024-03-06 10:56:44--  https://encode-public.s3.amazonaws.com/2021/02/24/6f3f65f7-8e9b-4230-8f28-ac4df690467f/ENCFF925CYR.bed.gz?response-content-disposition=attachment%3B%20filename%3DENCFF925CYR.bed.gz&amp;AWSAccessKeyId=ASIATGZNGCNXYPKN2W2F&amp;Signature=6Rgj4bMMvf5HGTYiJRmUfOHyOUw%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjELD%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCQBsMTJ2RahmI96Jwnwflz6BlqndF%2Be%2BOfN4u0YmfK%2FwIhANUMo%2FO8SUh404%2FoFzfC600zz%2FLc5WXtQn9sA1My18bvKrwFCKn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMMjIwNzQ4NzE0ODYzIgxz4YZz5Umj4Ib0CKUqkAVvCppDBn3Q4UmUOOymgA2T%2F2OTR1iAvlhnyxHpxmZUtnRh2h7JyhMBRka141WBNbhTPusqX44Hhq9V94kLgsQZ7ipEDSIEPnXyZvHCtSzgybeVLZk07lXTT8lweIPaO6hMaF0LG9mpvZysKlps6OE89kqy52WNFhCz3R8cht9aWrqobcnM%2BdQ5iAE3O3dl0NycGgXD7SMsGoMfW6zFXdaaWAEH13mVPNsqJ46lVfVq8kTOiiS95QGkNXPre%2FENX18edF6Mlmv8OORevHQXtwrpyBtGZLdmUSYjWUcu%2FrW6Ct%2FUuZNBrU4aQ9c58yXpMuZsmvQIwlo8FBpETfCIL51CDIGhwlfBmy1Lv62cWjISHpWGDebXHlcgmQMEaowqhQ432Om1B6MDumPpGPwX%2BEfWTjVGFL14j9WsHCtbDxZghSY80GmlJG0nScqFcnK5xoQo0Gahf6rWQt2c5vwplN6C24v4jkEfmSc86MTFkXo4EB76H%2FUj6eq2o7EyMm%2BaPtPBSuKMdL8hboUuD8rtagAkKU%2BBgFVUxaJXO7U40loSghQt9EbGQTfPggljz44Hpe7IOg7sHUJIaDZW48LzO%2F13EWO%2FhopmEQ8q%2FzOKQbfnW%2BAn8%2B4Kwj490BJx7HRCUzzIzeRyArSkYRB3kIy8JU%2F7kTL4fvqUJ66N1%2FyaDpH8VU%2FAAkeI3bKFXJC5rdYbHuhZfO5jwBq0A2NAvS%2BKDVTDAxd8Feark23Mc7Qk%2B56NxSm7UfyGw6sXssK%2BNFzFVqy3YD%2F3hHgZQoBqRLxQPTUpf4%2FHL8k9Asl5XymTHDs0HibpnoMf5rMijYIUqy8wNjIeo5iHl3hBq7VCnj%2F95l50N0mNDZgpKVkgneKieSCj%2BTDRoaKvBjqwAZScetUG%2BfVJZk2JfERkfltwcZIzNzDSvUoK4f6D7MwBTVDao7EPhQFAqQ3Fvb6ZKsWyQxlAl3neM2X5U8Afdf6n59zqDIhhrQ7%2BqIklrtmYjnXBGVU2uYM1KlB%2FYp1TUlrgfY20FIRDepRzOHXFZVNHzanyzy8lR2UK8uZ2%2FS4vvcEN9JnaFeGVyOQzxh%2BzW%2BUt%2BvFX9CCfo%2BoXpHFWoMvedAJNBZvoysAMH1ZV1N5K&amp;Expires=1709870204
+Resolving encode-public.s3.amazonaws.com (encode-public.s3.amazonaws.com)... 52.92.180.97, 52.92.132.209, 52.92.149.1, ...
+Connecting to encode-public.s3.amazonaws.com (encode-public.s3.amazonaws.com)|52.92.180.97|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2777441 (2.6M) [binary/octet-stream]
+Saving to: ‘K562.hg38.ENCSR483RKN.ENCFF925CYR.ATAC.bed.gz’
+
+     0K .......... .......... .......... .......... ..........  1%  631K 4s
+    50K .......... .......... .......... .......... ..........  3%  630K 4s
+   100K .......... .......... .......... .......... ..........  5%  634K 4s
+   150K .......... .......... .......... .......... ..........  7% 88.1M 3s
+   200K .......... .......... .......... .......... ..........  9%  131M 2s
+   250K .......... .......... .......... .......... .......... 11%  106M 2s
+   300K .......... .......... .......... .......... .......... 12%  639K 2s
+   350K .......... .......... .......... .......... .......... 14%  129M 2s
+   400K .......... .......... .......... .......... .......... 16%  105M 2s
+   450K .......... .......... .......... .......... .......... 18%  111M 1s
+   500K .......... .......... .......... .......... .......... 20%  129M 1s
+   550K .......... .......... .......... .......... .......... 22%  103M 1s
+   600K .......... .......... .......... .......... .......... 23%  648K 1s
+   650K .......... .......... .......... .......... .......... 25%  104M 1s
+   700K .......... .......... .......... .......... .......... 27%  109M 1s
+   750K .......... .......... .......... .......... .......... 29%  126M 1s
+   800K .......... .......... .......... .......... .......... 31% 87.8M 1s
+   850K .......... .......... .......... .......... .......... 33%  187M 1s
+   900K .......... .......... .......... .......... .......... 35% 95.5M 1s
+   950K .......... .......... .......... .......... .......... 36%  128M 1s
+  1000K .......... .......... .......... .......... .......... 38%  121M 1s
+  1050K .......... .......... .......... .......... .......... 40% 92.5M 1s
+  1100K .......... .......... .......... .......... .......... 42%  129M 1s
+  1150K .......... .......... .......... .......... .......... 44%  106M 1s
+  1200K .......... .......... .......... .......... .......... 46%  103M 0s
+  1250K .......... .......... .......... .......... .......... 47%  128M 0s
+  1300K .......... .......... .......... .......... .......... 49%  676K 0s
+  1350K .......... .......... .......... .......... .......... 51%  108M 0s
+  1400K .......... .......... .......... .......... .......... 53%  106M 0s
+  1450K .......... .......... .......... .......... .......... 55%  124M 0s
+  1500K .......... .......... .......... .......... .......... 57%  108M 0s
+  1550K .......... .......... .......... .......... .......... 58%  103M 0s
+  1600K .......... .......... .......... .......... .......... 60%  132M 0s
+  1650K .......... .......... .......... .......... .......... 62% 87.5M 0s
+  1700K .......... .......... .......... .......... .......... 64%  178M 0s
+  1750K .......... .......... .......... .......... .......... 66%  121M 0s
+  1800K .......... .......... .......... .......... .......... 68% 94.3M 0s
+  1850K .......... .......... .......... .......... .......... 70% 97.6M 0s
+  1900K .......... .......... .......... .......... .......... 71%  120M 0s
+  1950K .......... .......... .......... .......... .......... 73%  140M 0s
+  2000K .......... .......... .......... .......... .......... 75%  102M 0s
+  2050K .......... .......... .......... .......... .......... 77%  131M 0s
+  2100K .......... .......... .......... .......... .......... 79%  101M 0s
+  2150K .......... .......... .......... .......... .......... 81%  128M 0s
+  2200K .......... .......... .......... .......... .......... 82% 91.2M 0s
+  2250K .......... .......... .......... .......... .......... 84%  128M 0s
+  2300K .......... .......... .......... .......... .......... 86%  111M 0s
+  2350K .......... .......... .......... .......... .......... 88%  130M 0s
+  2400K .......... .......... .......... .......... .......... 90% 94.0M 0s
+  2450K .......... .......... .......... .......... .......... 92%  713K 0s
+  2500K .......... .......... .......... .......... .......... 94%  110M 0s
+  2550K .......... .......... .......... .......... .......... 95%  129M 0s
+  2600K .......... .......... .......... .......... .......... 97% 92.2M 0s
+  2650K .......... .......... .......... .......... .......... 99%  109M 0s
+  2700K .......... ..                                         100%  412M=0.6s
+
+2024-03-06 10:56:45 (4.75 MB/s) - ‘K562.hg38.ENCSR483RKN.ENCFF925CYR.ATAC.bed.gz’ saved [2777441/2777441]
+
+--2024-03-06 10:56:45--  https://www.encodeproject.org/files/ENCFF274YGF/@@download/ENCFF274YGF.bed.gz
+Resolving www.encodeproject.org (www.encodeproject.org)... 34.211.244.144
+Connecting to www.encodeproject.org (www.encodeproject.org)|34.211.244.144|:443... connected.
+HTTP request sent, awaiting response... 307 Temporary Redirect
+Location: https://encode-public.s3.amazonaws.com/2020/11/22/e2abbea1-48ca-4895-b2da-82c7e622fde9/ENCFF274YGF.bed.gz?response-content-disposition=attachment%3B%20filename%3DENCFF274YGF.bed.gz&amp;AWSAccessKeyId=ASIATGZNGCNXYPKN2W2F&amp;Signature=f8jRGgkhC1sQcspdhrHLFfBUUsI%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjELD%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCQBsMTJ2RahmI96Jwnwflz6BlqndF%2Be%2BOfN4u0YmfK%2FwIhANUMo%2FO8SUh404%2FoFzfC600zz%2FLc5WXtQn9sA1My18bvKrwFCKn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMMjIwNzQ4NzE0ODYzIgxz4YZz5Umj4Ib0CKUqkAVvCppDBn3Q4UmUOOymgA2T%2F2OTR1iAvlhnyxHpxmZUtnRh2h7JyhMBRka141WBNbhTPusqX44Hhq9V94kLgsQZ7ipEDSIEPnXyZvHCtSzgybeVLZk07lXTT8lweIPaO6hMaF0LG9mpvZysKlps6OE89kqy52WNFhCz3R8cht9aWrqobcnM%2BdQ5iAE3O3dl0NycGgXD7SMsGoMfW6zFXdaaWAEH13mVPNsqJ46lVfVq8kTOiiS95QGkNXPre%2FENX18edF6Mlmv8OORevHQXtwrpyBtGZLdmUSYjWUcu%2FrW6Ct%2FUuZNBrU4aQ9c58yXpMuZsmvQIwlo8FBpETfCIL51CDIGhwlfBmy1Lv62cWjISHpWGDebXHlcgmQMEaowqhQ432Om1B6MDumPpGPwX%2BEfWTjVGFL14j9WsHCtbDxZghSY80GmlJG0nScqFcnK5xoQo0Gahf6rWQt2c5vwplN6C24v4jkEfmSc86MTFkXo4EB76H%2FUj6eq2o7EyMm%2BaPtPBSuKMdL8hboUuD8rtagAkKU%2BBgFVUxaJXO7U40loSghQt9EbGQTfPggljz44Hpe7IOg7sHUJIaDZW48LzO%2F13EWO%2FhopmEQ8q%2FzOKQbfnW%2BAn8%2B4Kwj490BJx7HRCUzzIzeRyArSkYRB3kIy8JU%2F7kTL4fvqUJ66N1%2FyaDpH8VU%2FAAkeI3bKFXJC5rdYbHuhZfO5jwBq0A2NAvS%2BKDVTDAxd8Feark23Mc7Qk%2B56NxSm7UfyGw6sXssK%2BNFzFVqy3YD%2F3hHgZQoBqRLxQPTUpf4%2FHL8k9Asl5XymTHDs0HibpnoMf5rMijYIUqy8wNjIeo5iHl3hBq7VCnj%2F95l50N0mNDZgpKVkgneKieSCj%2BTDRoaKvBjqwAZScetUG%2BfVJZk2JfERkfltwcZIzNzDSvUoK4f6D7MwBTVDao7EPhQFAqQ3Fvb6ZKsWyQxlAl3neM2X5U8Afdf6n59zqDIhhrQ7%2BqIklrtmYjnXBGVU2uYM1KlB%2FYp1TUlrgfY20FIRDepRzOHXFZVNHzanyzy8lR2UK8uZ2%2FS4vvcEN9JnaFeGVyOQzxh%2BzW%2BUt%2BvFX9CCfo%2BoXpHFWoMvedAJNBZvoysAMH1ZV1N5K&amp;Expires=1709870205 [following]
+--2024-03-06 10:56:45--  https://encode-public.s3.amazonaws.com/2020/11/22/e2abbea1-48ca-4895-b2da-82c7e622fde9/ENCFF274YGF.bed.gz?response-content-disposition=attachment%3B%20filename%3DENCFF274YGF.bed.gz&amp;AWSAccessKeyId=ASIATGZNGCNXYPKN2W2F&amp;Signature=f8jRGgkhC1sQcspdhrHLFfBUUsI%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjELD%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCQBsMTJ2RahmI96Jwnwflz6BlqndF%2Be%2BOfN4u0YmfK%2FwIhANUMo%2FO8SUh404%2FoFzfC600zz%2FLc5WXtQn9sA1My18bvKrwFCKn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMMjIwNzQ4NzE0ODYzIgxz4YZz5Umj4Ib0CKUqkAVvCppDBn3Q4UmUOOymgA2T%2F2OTR1iAvlhnyxHpxmZUtnRh2h7JyhMBRka141WBNbhTPusqX44Hhq9V94kLgsQZ7ipEDSIEPnXyZvHCtSzgybeVLZk07lXTT8lweIPaO6hMaF0LG9mpvZysKlps6OE89kqy52WNFhCz3R8cht9aWrqobcnM%2BdQ5iAE3O3dl0NycGgXD7SMsGoMfW6zFXdaaWAEH13mVPNsqJ46lVfVq8kTOiiS95QGkNXPre%2FENX18edF6Mlmv8OORevHQXtwrpyBtGZLdmUSYjWUcu%2FrW6Ct%2FUuZNBrU4aQ9c58yXpMuZsmvQIwlo8FBpETfCIL51CDIGhwlfBmy1Lv62cWjISHpWGDebXHlcgmQMEaowqhQ432Om1B6MDumPpGPwX%2BEfWTjVGFL14j9WsHCtbDxZghSY80GmlJG0nScqFcnK5xoQo0Gahf6rWQt2c5vwplN6C24v4jkEfmSc86MTFkXo4EB76H%2FUj6eq2o7EyMm%2BaPtPBSuKMdL8hboUuD8rtagAkKU%2BBgFVUxaJXO7U40loSghQt9EbGQTfPggljz44Hpe7IOg7sHUJIaDZW48LzO%2F13EWO%2FhopmEQ8q%2FzOKQbfnW%2BAn8%2B4Kwj490BJx7HRCUzzIzeRyArSkYRB3kIy8JU%2F7kTL4fvqUJ66N1%2FyaDpH8VU%2FAAkeI3bKFXJC5rdYbHuhZfO5jwBq0A2NAvS%2BKDVTDAxd8Feark23Mc7Qk%2B56NxSm7UfyGw6sXssK%2BNFzFVqy3YD%2F3hHgZQoBqRLxQPTUpf4%2FHL8k9Asl5XymTHDs0HibpnoMf5rMijYIUqy8wNjIeo5iHl3hBq7VCnj%2F95l50N0mNDZgpKVkgneKieSCj%2BTDRoaKvBjqwAZScetUG%2BfVJZk2JfERkfltwcZIzNzDSvUoK4f6D7MwBTVDao7EPhQFAqQ3Fvb6ZKsWyQxlAl3neM2X5U8Afdf6n59zqDIhhrQ7%2BqIklrtmYjnXBGVU2uYM1KlB%2FYp1TUlrgfY20FIRDepRzOHXFZVNHzanyzy8lR2UK8uZ2%2FS4vvcEN9JnaFeGVyOQzxh%2BzW%2BUt%2BvFX9CCfo%2BoXpHFWoMvedAJNBZvoysAMH1ZV1N5K&amp;Expires=1709870205
+Resolving encode-public.s3.amazonaws.com (encode-public.s3.amazonaws.com)... 52.92.180.97, 52.218.229.51, 52.92.149.1, ...
+Connecting to encode-public.s3.amazonaws.com (encode-public.s3.amazonaws.com)|52.92.180.97|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1348006 (1.3M) [binary/octet-stream]
+Saving to: ‘K562.hg38.ENCSR000EKS.ENCFF274YGF.DNase.bed.gz’
+
+     0K .......... .......... .......... .......... ..........  3%  316K 4s
+    50K .......... .......... .......... .......... ..........  7%  628K 3s
+   100K .......... .......... .......... .......... .......... 11%  317K 3s
+   150K .......... .......... .......... .......... .......... 15%  630K 3s
+   200K .......... .......... .......... .......... .......... 18%  317K 3s
+   250K .......... .......... .......... .......... .......... 22%  630K 2s
+   300K .......... .......... .......... .......... .......... 26%  422K 2s
+   350K .......... .......... .......... .......... .......... 30%  422K 2s
+   400K .......... .......... .......... .......... .......... 34%  630K 2s
+   450K .......... .......... .......... .......... .......... 37%  628K 2s
+   500K .......... .......... .......... .......... .......... 41%  422K 2s
+   550K .......... .......... .......... .......... .......... 45%  425K 2s
+   600K .......... .......... .......... .......... .......... 49%  630K 1s
+   650K .......... .......... .......... .......... .......... 53%  628K 1s
+   700K .......... .......... .......... .......... .......... 56%  627K 1s
+   750K .......... .......... .......... .......... .......... 60%  420K 1s
+   800K .......... .......... .......... .......... .......... 64%  428K 1s
+   850K .......... .......... .......... .......... .......... 68%  632K 1s
+   900K .......... .......... .......... .......... .......... 72%  633K 1s
+   950K .......... .......... .......... .......... .......... 75%  632K 1s
+  1000K .......... .......... .......... .......... .......... 79%  626K 1s
+  1050K .......... .......... .......... .......... .......... 83%  631K 0s
+  1100K .......... .......... .......... .......... .......... 87%  628K 0s
+  1150K .......... .......... .......... .......... .......... 91%  629K 0s
+  1200K .......... .......... .......... .......... .......... 94%  631K 0s
+  1250K .......... .......... .......... .......... .......... 98%  629K 0s
+  1300K .......... ......                                     100%  100M=2.5s
+
+2024-03-06 10:56:48 (520 KB/s) - ‘K562.hg38.ENCSR000EKS.ENCFF274YGF.DNase.bed.gz’ saved [1348006/1348006]
+
+--2024-03-06 10:56:48--  https://www.encodeproject.org/files/ENCFF185XRG/@@download/ENCFF185XRG.bed.gz
+Resolving www.encodeproject.org (www.encodeproject.org)... 34.211.244.144
+Connecting to www.encodeproject.org (www.encodeproject.org)|34.211.244.144|:443... connected.
+HTTP request sent, awaiting response... 307 Temporary Redirect
+Location: https://encode-public.s3.amazonaws.com/2020/11/18/977b8c4d-588a-47dc-9371-b702ce9715c2/ENCFF185XRG.bed.gz?response-content-disposition=attachment%3B%20filename%3DENCFF185XRG.bed.gz&amp;AWSAccessKeyId=ASIATGZNGCNXYPKN2W2F&amp;Signature=YHtbCucA3zEsfnAIOYGXQqRVW8g%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjELD%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCQBsMTJ2RahmI96Jwnwflz6BlqndF%2Be%2BOfN4u0YmfK%2FwIhANUMo%2FO8SUh404%2FoFzfC600zz%2FLc5WXtQn9sA1My18bvKrwFCKn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMMjIwNzQ4NzE0ODYzIgxz4YZz5Umj4Ib0CKUqkAVvCppDBn3Q4UmUOOymgA2T%2F2OTR1iAvlhnyxHpxmZUtnRh2h7JyhMBRka141WBNbhTPusqX44Hhq9V94kLgsQZ7ipEDSIEPnXyZvHCtSzgybeVLZk07lXTT8lweIPaO6hMaF0LG9mpvZysKlps6OE89kqy52WNFhCz3R8cht9aWrqobcnM%2BdQ5iAE3O3dl0NycGgXD7SMsGoMfW6zFXdaaWAEH13mVPNsqJ46lVfVq8kTOiiS95QGkNXPre%2FENX18edF6Mlmv8OORevHQXtwrpyBtGZLdmUSYjWUcu%2FrW6Ct%2FUuZNBrU4aQ9c58yXpMuZsmvQIwlo8FBpETfCIL51CDIGhwlfBmy1Lv62cWjISHpWGDebXHlcgmQMEaowqhQ432Om1B6MDumPpGPwX%2BEfWTjVGFL14j9WsHCtbDxZghSY80GmlJG0nScqFcnK5xoQo0Gahf6rWQt2c5vwplN6C24v4jkEfmSc86MTFkXo4EB76H%2FUj6eq2o7EyMm%2BaPtPBSuKMdL8hboUuD8rtagAkKU%2BBgFVUxaJXO7U40loSghQt9EbGQTfPggljz44Hpe7IOg7sHUJIaDZW48LzO%2F13EWO%2FhopmEQ8q%2FzOKQbfnW%2BAn8%2B4Kwj490BJx7HRCUzzIzeRyArSkYRB3kIy8JU%2F7kTL4fvqUJ66N1%2FyaDpH8VU%2FAAkeI3bKFXJC5rdYbHuhZfO5jwBq0A2NAvS%2BKDVTDAxd8Feark23Mc7Qk%2B56NxSm7UfyGw6sXssK%2BNFzFVqy3YD%2F3hHgZQoBqRLxQPTUpf4%2FHL8k9Asl5XymTHDs0HibpnoMf5rMijYIUqy8wNjIeo5iHl3hBq7VCnj%2F95l50N0mNDZgpKVkgneKieSCj%2BTDRoaKvBjqwAZScetUG%2BfVJZk2JfERkfltwcZIzNzDSvUoK4f6D7MwBTVDao7EPhQFAqQ3Fvb6ZKsWyQxlAl3neM2X5U8Afdf6n59zqDIhhrQ7%2BqIklrtmYjnXBGVU2uYM1KlB%2FYp1TUlrgfY20FIRDepRzOHXFZVNHzanyzy8lR2UK8uZ2%2FS4vvcEN9JnaFeGVyOQzxh%2BzW%2BUt%2BvFX9CCfo%2BoXpHFWoMvedAJNBZvoysAMH1ZV1N5K&amp;Expires=1709870208 [following]
+--2024-03-06 10:56:48--  https://encode-public.s3.amazonaws.com/2020/11/18/977b8c4d-588a-47dc-9371-b702ce9715c2/ENCFF185XRG.bed.gz?response-content-disposition=attachment%3B%20filename%3DENCFF185XRG.bed.gz&amp;AWSAccessKeyId=ASIATGZNGCNXYPKN2W2F&amp;Signature=YHtbCucA3zEsfnAIOYGXQqRVW8g%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjELD%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCQBsMTJ2RahmI96Jwnwflz6BlqndF%2Be%2BOfN4u0YmfK%2FwIhANUMo%2FO8SUh404%2FoFzfC600zz%2FLc5WXtQn9sA1My18bvKrwFCKn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMMjIwNzQ4NzE0ODYzIgxz4YZz5Umj4Ib0CKUqkAVvCppDBn3Q4UmUOOymgA2T%2F2OTR1iAvlhnyxHpxmZUtnRh2h7JyhMBRka141WBNbhTPusqX44Hhq9V94kLgsQZ7ipEDSIEPnXyZvHCtSzgybeVLZk07lXTT8lweIPaO6hMaF0LG9mpvZysKlps6OE89kqy52WNFhCz3R8cht9aWrqobcnM%2BdQ5iAE3O3dl0NycGgXD7SMsGoMfW6zFXdaaWAEH13mVPNsqJ46lVfVq8kTOiiS95QGkNXPre%2FENX18edF6Mlmv8OORevHQXtwrpyBtGZLdmUSYjWUcu%2FrW6Ct%2FUuZNBrU4aQ9c58yXpMuZsmvQIwlo8FBpETfCIL51CDIGhwlfBmy1Lv62cWjISHpWGDebXHlcgmQMEaowqhQ432Om1B6MDumPpGPwX%2BEfWTjVGFL14j9WsHCtbDxZghSY80GmlJG0nScqFcnK5xoQo0Gahf6rWQt2c5vwplN6C24v4jkEfmSc86MTFkXo4EB76H%2FUj6eq2o7EyMm%2BaPtPBSuKMdL8hboUuD8rtagAkKU%2BBgFVUxaJXO7U40loSghQt9EbGQTfPggljz44Hpe7IOg7sHUJIaDZW48LzO%2F13EWO%2FhopmEQ8q%2FzOKQbfnW%2BAn8%2B4Kwj490BJx7HRCUzzIzeRyArSkYRB3kIy8JU%2F7kTL4fvqUJ66N1%2FyaDpH8VU%2FAAkeI3bKFXJC5rdYbHuhZfO5jwBq0A2NAvS%2BKDVTDAxd8Feark23Mc7Qk%2B56NxSm7UfyGw6sXssK%2BNFzFVqy3YD%2F3hHgZQoBqRLxQPTUpf4%2FHL8k9Asl5XymTHDs0HibpnoMf5rMijYIUqy8wNjIeo5iHl3hBq7VCnj%2F95l50N0mNDZgpKVkgneKieSCj%2BTDRoaKvBjqwAZScetUG%2BfVJZk2JfERkfltwcZIzNzDSvUoK4f6D7MwBTVDao7EPhQFAqQ3Fvb6ZKsWyQxlAl3neM2X5U8Afdf6n59zqDIhhrQ7%2BqIklrtmYjnXBGVU2uYM1KlB%2FYp1TUlrgfY20FIRDepRzOHXFZVNHzanyzy8lR2UK8uZ2%2FS4vvcEN9JnaFeGVyOQzxh%2BzW%2BUt%2BvFX9CCfo%2BoXpHFWoMvedAJNBZvoysAMH1ZV1N5K&amp;Expires=1709870208
+Resolving encode-public.s3.amazonaws.com (encode-public.s3.amazonaws.com)... 52.92.149.1, 52.218.183.121, 52.92.180.97, ...
+Connecting to encode-public.s3.amazonaws.com (encode-public.s3.amazonaws.com)|52.92.149.1|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1821516 (1.7M) [binary/octet-stream]
+Saving to: ‘K562.hg38.ENCSR000EOT.ENCFF185XRG.DNase.bed.gz’
+
+     0K .......... .......... .......... .......... ..........  2%  314K 6s
+    50K .......... .......... .......... .......... ..........  5%  128M 3s
+   100K .......... .......... .......... .......... ..........  8%  635K 3s
+   150K .......... .......... .......... .......... .......... 11% 64.6M 2s
+   200K .......... .......... .......... .......... .......... 14% 88.2M 1s
+   250K .......... .......... .......... .......... .......... 16% 86.4M 1s
+   300K .......... .......... .......... .......... .......... 19%  643K 1s
+   350K .......... .......... .......... .......... .......... 22% 95.0M 1s
+   400K .......... .......... .......... .......... .......... 25%  132M 1s
+   450K .......... .......... .......... .......... .......... 28%  103M 1s
+   500K .......... .......... .......... .......... .......... 30%  112M 1s
+   550K .......... .......... .......... .......... .......... 33%  119M 1s
+   600K .......... .......... .......... .......... .......... 36%  652K 1s
+   650K .......... .......... .......... .......... .......... 39% 73.6M 1s
+   700K .......... .......... .......... .......... .......... 42% 90.1M 1s
+   750K .......... .......... .......... .......... .......... 44%  109M 0s
+   800K .......... .......... .......... .......... .......... 47%  103M 0s
+   850K .......... .......... .......... .......... .......... 50%  129M 0s
+   900K .......... .......... .......... .......... .......... 53%  116M 0s
+   950K .......... .......... .......... .......... .......... 56%  131M 0s
+  1000K .......... .......... .......... .......... .......... 59%  110M 0s
+  1050K .......... .......... .......... .......... .......... 61%  102M 0s
+  1100K .......... .......... .......... .......... .......... 64%  133M 0s
+  1150K .......... .......... .......... .......... .......... 67% 86.0M 0s
+  1200K .......... .......... .......... .......... .......... 70%  132M 0s
+  1250K .......... .......... .......... .......... .......... 73%  128M 0s
+  1300K .......... .......... .......... .......... .......... 75%  678K 0s
+  1350K .......... .......... .......... .......... .......... 78%  139M 0s
+  1400K .......... .......... .......... .......... .......... 81%  103M 0s
+  1450K .......... .......... .......... .......... .......... 84%  106M 0s
+  1500K .......... .......... .......... .......... .......... 87%  125M 0s
+  1550K .......... .......... .......... .......... .......... 89%  107M 0s
+  1600K .......... .......... .......... .......... .......... 92%  104M 0s
+  1650K .......... .......... .......... .......... .......... 95%  130M 0s
+  1700K .......... .......... .......... .......... .......... 98% 95.3M 0s
+  1750K .......... .......... ........                        100%  238M=0.5s
+
+2024-03-06 10:56:49 (3.62 MB/s) - ‘K562.hg38.ENCSR000EOT.ENCFF185XRG.DNase.bed.gz’ saved [1821516/1821516]
+</code></pre>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

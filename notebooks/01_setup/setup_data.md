@@ -1,7 +1,7 @@
 # Planning for data and results
 
 
-## Working directory
+# Working directory
 
 ```
 PROJECT
@@ -210,7 +210,7 @@ PROJECT/results
     └── ASTARRseq_K562_KS91_Input_rep_all_max_overlap
 ```
 
-# Some naming convention in this documentation
+## Some naming convention in this documentation
 
 - Assay folder name
     - `<Assay Type>_<Cell Type>_<Lab>_<Label>`

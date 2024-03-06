@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ENCODE FCC Project - Get K562 MPRA data from Tewhey’s lab</title>
+<title>ENCODE FCC Project - Prepare ENCODE ATAC/DNase Peaks 03</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -100,7 +100,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <body class="nav-sidebar docked nav-fixed">
 
-
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
@@ -142,6 +141,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
 </ul>
             <div class="quarto-navbar-tools ms-auto">
+    <a href="https://github.com/ReddyLab/Proj_CombEffect_ENCODE_FCC" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
 </div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
@@ -151,7 +151,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notebooks/01_data_download/region_ocr_01_create_download_script_R.html">01 Download data</a></li><li class="breadcrumb-item"><a href="../../notebooks/01_data_download/fcc_starrmpra_11_acquire_TMPRA_data_hannah_SH.html">Get K562 MPRA data from Tewhey’s lab</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Prepare ENCODE ATAC/DNase Peaks 03</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -173,90 +173,40 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">01 Download data</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+ <span class="menu-text">01 Setup</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notebooks/01_data_download/region_ocr_01_create_download_script_R.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ENCODE ATAC/DNase Peaks</span></a>
+  <a href="../../01_setup/work_dir.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Working Directory</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notebooks/01_data_download/region_ocr_02_run_download_data_SH.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ENCODE ATAC/DNase Peaks: Download the peak data</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notebooks/01_data_download/fcc_starrmpra_01_acquire_STARR_data_alex_SH.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Get K562 STARR-seq data from Reddy lab</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notebooks/01_data_download/fcc_starrmpra_02_explore_STARR_data_alex_SH.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">fcc_starrmpra_02_explore_STARR_data_alex_SH.html</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notebooks/01_data_download/fcc_starrmpra_03_prepare_fragment_counts_SH.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Link fragment counts of ASTARR</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notebooks/01_data_download/fcc_starrmpra_03_prepare_STARR_data_alex_SH.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Prepare K562 STARR-seq data from Reddy lab</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notebooks/01_data_download/fcc_starrmpra_11_acquire_TMPRA_data_hannah_SH.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Get K562 MPRA data from Tewhey’s lab</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notebooks/01_data_download/fcc_starrmpra_12_explore_TMPRA_data_hannah_SH.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Explore files of Tiling MPRA data</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notebooks/01_data_download/fcc_starrmpra_13_extract_fragment_counts_R.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Extract fragment counts from Tiling MPRA data</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notebooks/01_data_download/fcc_starrmpra_14_convert_table_to_bed_R.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Covert count matrix to bed format</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notebooks/01_data_download/fcc_starrmpra_21_get_LMPRA_data_vikram_SH.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">fcc_starrmpra_21_get_LMPRA_data_vikram_SH.html</span></a>
+  <a href="../../01_setup/work_env.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Working Environment</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">02 Prepare</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
  <span class="menu-text">Test Notebook</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../notebooks/test/test_notebook.html" class="sidebar-item-text sidebar-link">
@@ -271,14 +221,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#explore-the-files" id="toc-explore-the-files" class="nav-link active" data-scroll-target="#explore-the-files">Explore the files</a></li>
+  <li><a href="#link-the-folder" id="toc-link-the-folder" class="nav-link" data-scroll-target="#link-the-folder">Link the folder</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Get K562 MPRA data from Tewhey’s lab</h1>
+<div class="quarto-title-block"><div><h1 class="title">Prepare ENCODE ATAC/DNase Peaks 03</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li></ul></div></div>
+<p class="subtitle lead">Prepare the peak files</p>
 </div>
 
 
@@ -293,29 +251,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p><a href="https://www.encodeproject.org/search/?type=FunctionalCharacterizationExperiment&amp;type=FunctionalCharacterizationSeries&amp;type=TransgenicEnhancerExperiment&amp;config=FunctionalCharacterization&amp;datapoint=false&amp;control_type!=*&amp;status=released&amp;biosamples.donor.organism.scientific_name=Homo+sapiens&amp;biosample_ontology.term_name=K562&amp;assay_title=MPRA&amp;perturbation_type!=*&amp;lab.title=Ryan+Tewhey%2C+JAX">ENCODE FCC K562 Tiling MPRA from Tewhey’s lab</a></p>
-<ul>
-<li><a href="https://www.encodeproject.org/functional-characterization-experiments/ENCSR917SFD/">ENCODE MPRA K562 OL43-GATA/MYC region</a>
-<ul>
-<li>Homo sapiens K562, 24 hours post-nucleic acid delivery time genetically modified (episome) using transient transfection for multiple loci</li>
-</ul></li>
-<li>[ENCODE MPRA]</li>
-</ul>
-<p>https://www.encodeproject.org/search/?type=File&amp;searchTerm=OL43&amp;file_format=bed</p>
-<p>In this analysis, we are using the unnormalized and normalized data processed and shared by Hannah from the Tewhey lab.</p>
-<p>MPRA of multiple loci in K562 Homo sapiens K562, 48 hours post-nucleic acid delivery time genetically modified (episome) using transient transfection for multiple loci Loci: FEN1, FADS1, FADS2, FADS3 Lab: Ryan Tewhey, JAX Project: ENCODE</p>
-<p>Functional Characterization Experiment ENCSR394HXI</p>
-<p>ryan-tewhey:mpra-OL13-fads-k562</p>
-<p>MPRA of multiple loci in K562 Homo sapiens K562, 24 hours post-nucleic acid delivery time genetically modified (episome) using transient transfection for multiple loci Loci: GATA1, MYC Lab: Ryan Tewhey, JAX Project: ENCODE</p>
-<p>Functional Characterization Experiment ENCSR917SFD</p>
-<p>ryan-tewhey:mpra-OL43-gata_myc_ctrl-k562</p>
-<p>MPRA of multiple loci in K562 Homo sapiens K562, 24 hours post-nucleic acid delivery time genetically modified (episome) using transient transfection for multiple loci Loci: LMO2, HBE1, RBM38, HBA2, BCL11A Lab: Ryan Tewhey, JAX Project: ENCODE</p>
-<p>Functional Characterization Experiment ENCSR363XER</p>
-<p>ryan-tewhey:mpra-OL45-common_ctrl-k562</p>
 <p><strong>Set environment</strong></p>
 <div class="cell" data-execution_count="1">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> ../run_config_project.sh</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">show_env</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>You are working on             Duke Server: HARDAC
 BASE DIRECTORY (FD_BASE):      /data/reddylab/Kuei
@@ -338,117 +280,117 @@ PROJECT IMAGE   (FP_PRJ_SIF):  /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_F
 </code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FD_WORK}</span>/proj_combeffect_encode_fcc/source</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="explore-the-files" class="level2">
+<h2 class="anchored" data-anchor-id="explore-the-files">Explore the files</h2>
+<p>The peak file is in narrowPeak format, which is a standard six field bed with four additional fields (BED6+4 format)</p>
+<div class="cell" data-execution_count="2">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_DAT}</span>/external/encode_open_chromatin</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FDIRY}</span>/<span class="pp">*</span>.bed.gz <span class="kw">|</span> <span class="fu">xargs</span> <span class="at">-n</span> 1 basename</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
-<pre><code>A001_K562_wstarrseq_fragments
-A001_K562_wstarrseq_fragments_wgs
-annotation_cCREs
-annotation_chipseq_histone
-annotation_chipseq_tf
-annotation_chromHMM
-annotation_enhancer_junke
-annotation_enhancer_junke_zscore
-annotation_enhancer_junke_zscore_prev
-annotation_gencode
-annotation_gene
-annotation_remap2022
-annotation_starrseq_negative_control_junke
-chrom.sizes.hg19
-chrom.sizes.hg38
-CRISPRi_FlowFISH
-CRISPRi_growth
-ENCODE_E2G
-hic_insitu_GM12878
-hic_intact_K562_deep
-hic_intact_K562_ENCSR479XDG
-KS91_K562_astarrseq_fragments_220510
-KS91_K562_astarrseq_fragments_wgs
-KS91_K562_astarrseq_peak_macs
-MPRA
-Readme.md
-RNAseq
-TF_modules
-tmp</code></pre>
+<pre><code>K562.hg38.ENCSR000EKS.ENCFF274YGF.DNase.bed.gz
+K562.hg38.ENCSR000EOT.ENCFF185XRG.DNase.bed.gz
+K562.hg38.ENCSR483RKN.ENCFF558BLC.ATAC.bed.gz
+K562.hg38.ENCSR483RKN.ENCFF925CYR.ATAC.bed.gz
+K562.hg38.ENCSR868FGK.ENCFF333TAT.ATAC.bed.gz
+K562.hg38.ENCSR868FGK.ENCFF948AFM.ATAC.bed.gz</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="3">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_DAT}</span>/external/encode_open_chromatin</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="va">FNAME</span><span class="op">=</span>K562.hg38.ENCSR000EKS.ENCFF274YGF.DNase.bed.gz</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="va">FPATH</span><span class="op">=</span><span class="va">${FDIRY}</span>/<span class="va">${FNAME}</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">zcat</span> <span class="va">${FPATH}</span> <span class="kw">|</span> <span class="fu">head</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>chr1    181400  181530  .   0   .   0.299874    -1  -1  75
+chr1    778660  778800  .   0   .   14.1383 -1  -1  75
+chr1    779137  779200  .   0   .   0.33144 -1  -1  75
+chr1    827460  827554  .   0   .   3.38384 -1  -1  75
+chr1    842880  843060  .   0   .   1.64457 -1  -1  75
+chr1    869800  869980  .   0   .   2.23485 -1  -1  75
+chr1    875760  875920  .   0   .   0.356692    -1  -1  75
+chr1    898828  899004  .   0   .   0.363005    -1  -1  75
+chr1    900030  900100  .   0   .   0.249369    -1  -1  75
+chr1    901580  901645  .   0   .   0.217803    -1  -1  75</code></pre>
+</div>
+</div>
+</section>
+<section id="link-the-folder" class="level2">
+<h2 class="anchored" data-anchor-id="link-the-folder">Link the folder</h2>
+<pre><code>ln -s file link</code></pre>
+<div class="cell" data-execution_count="4">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="va">FILE</span><span class="op">=</span><span class="va">${FD_DAT}</span>/external/encode_open_chromatin</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="va">LINK</span><span class="op">=</span><span class="va">${FD_RES}</span>/region/encode_open_chromatin</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">[[</span> <span class="ot">!</span> <span class="ot">-e</span> <span class="va">${LINK}</span> <span class="kw">]];</span> <span class="cf">then</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>   <span class="fu">ln</span> <span class="at">-s</span> <span class="va">${FILE}</span> <span class="va">${LINK}</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell" data-execution_count="5">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FD_RES}</span>/region</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>encode_ccres              encode_chromhmm        starr_macs
+encode_ccres_silencer     encode_open_chromatin
+encode_chipseq_tf_subset  starr_csaw</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="6">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-l</span> <span class="va">${FD_RES}</span>/region/encode_open_chromatin</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>lrwxrwxrwx 1 kk319 reddylab 87 Mar  6 14:06 /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/results/region/encode_open_chromatin -&gt; /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/data/external/encode_open_chromatin</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="7">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FD_DAT}</span>/external/encode_open_chromatin</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>description.tsv
+K562.hg38.ENCSR000EKS.ENCFF274YGF.DNase.bed.gz
+K562.hg38.ENCSR000EOT.ENCFF185XRG.DNase.bed.gz
+K562.hg38.ENCSR483RKN.ENCFF558BLC.ATAC.bed.gz
+K562.hg38.ENCSR483RKN.ENCFF925CYR.ATAC.bed.gz
+K562.hg38.ENCSR868FGK.ENCFF333TAT.ATAC.bed.gz
+K562.hg38.ENCSR868FGK.ENCFF948AFM.ATAC.bed.gz
+run_download.log.txt
+run_download.sh</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FD_WORK}</span>/proj_combeffect_encode_fcc/source/MPRA</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FD_RES}</span>/region/encode_open_chromatin</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
-<pre><code>ENCFF460YVY.bed.gz         MPRA_TilingMPRA_K562_Tewhey  syn26435687
-MPRA_LentiMPRA_K562_Nadav  syn22348180</code></pre>
-</div>
-</div>
-<div class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_WORK}</span>/proj_combeffect_encode_fcc/source</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FDIRY}</span>/MPRA</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FDIRY}</span>/MPRA_TilingMPRA_K562_Tewhey</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FDIRY}</span>/tiling_counts</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>FADS_tile_snp.20190214.attributes
-OL13_20220512_counts.out
-OL13_20220512_normalized_counts.out
-OL43_20211228_counts.out
-OL43_20211228_normalized_counts.out
-OL43_20221003_counts.out
-OL43_20221003_K562_normalized_counts.out
-OL43.attributes
-OL43_K562.bed
-OL45_20220927_counts.out
-OL45_20220927_K562_normalized_counts.out
-OL45.attributes
-OL45_K562.bed</code></pre>
-</div>
-</div>
-<div class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FD_DAT}</span>/processed</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>A001_K562_hg38_WSTARRseq           KS91_K562_hg38_ASTARRseq_Jamboree
-A001_K562_hg38_WSTARRseq_Jamboree  MPRA_Tiling_K562_Tewhey_hannah
-KS91_K562_hg38_ASTARRseq_210401</code></pre>
-</div>
-</div>
-<div class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FD_DAT}</span>/processed/MPRA_Tiling_K562_Tewhey_hannah</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>tiling_counts.tar.gz</code></pre>
-</div>
-</div>
-<div class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_DAT}</span>/processed/MPRA_Tiling_K562_Tewhey_hannah</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="va">FNAME</span><span class="op">=</span>tiling_counts.tar.gz</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="va">FPATH</span><span class="op">=</span><span class="va">${FDIRY}</span>/<span class="va">${FNAME}</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-xf</span> <span class="va">${FPATH}</span> <span class="at">-C</span> <span class="va">${FDIRY}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FD_DAT}</span>/processed/MPRA_Tiling_K562_Tewhey_hannah</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>tiling_counts  tiling_counts.tar.gz</code></pre>
-</div>
-</div>
-<div class="cell" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FD_DAT}</span>/processed/MPRA_Tiling_K562_Tewhey_hannah/tiling_counts</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>FADS_tile_snp.20190214.attributes
-OL13_20220512_counts.out
-OL13_20220512_normalized_counts.out
-OL43_20211228_counts.out
-OL43_20211228_normalized_counts.out
-OL43_20221003_counts.out
-OL43_20221003_K562_normalized_counts.out
-OL43.attributes
-OL43_K562.bed
-OL45_20220927_counts.out
-OL45_20220927_K562_normalized_counts.out
-OL45.attributes
-OL45_K562.bed
-UKBB_GTEx</code></pre>
+<pre><code>description.tsv
+K562.hg38.ENCSR000EKS.ENCFF274YGF.DNase.bed.gz
+K562.hg38.ENCSR000EOT.ENCFF185XRG.DNase.bed.gz
+K562.hg38.ENCSR483RKN.ENCFF558BLC.ATAC.bed.gz
+K562.hg38.ENCSR483RKN.ENCFF925CYR.ATAC.bed.gz
+K562.hg38.ENCSR868FGK.ENCFF333TAT.ATAC.bed.gz
+K562.hg38.ENCSR868FGK.ENCFF948AFM.ATAC.bed.gz
+run_download.log.txt
+run_download.sh</code></pre>
 </div>
 </div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -530,6 +472,57 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
   function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,

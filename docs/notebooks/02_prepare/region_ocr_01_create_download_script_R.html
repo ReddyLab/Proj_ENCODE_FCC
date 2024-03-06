@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ENCODE FCC Project - ENCODE ATAC/DNase Peaks</title>
+<title>ENCODE FCC Project - Prepare ENCODE ATAC/DNase Peaks 01</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -103,7 +103,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <body class="nav-sidebar docked nav-fixed">
 
-
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
@@ -145,6 +144,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
 </ul>
             <div class="quarto-navbar-tools ms-auto">
+    <a href="https://github.com/ReddyLab/Proj_CombEffect_ENCODE_FCC" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
 </div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
@@ -154,7 +154,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notebooks/01_data_download/region_ocr_01_create_download_script_R.html">01 Download data</a></li><li class="breadcrumb-item"><a href="../../notebooks/01_data_download/region_ocr_01_create_download_script_R.html">ENCODE ATAC/DNase Peaks</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Prepare ENCODE ATAC/DNase Peaks 01</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -176,90 +176,40 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">01 Download data</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+ <span class="menu-text">01 Setup</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notebooks/01_data_download/region_ocr_01_create_download_script_R.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">ENCODE ATAC/DNase Peaks</span></a>
+  <a href="../../01_setup/work_dir.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Working Directory</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notebooks/01_data_download/region_ocr_02_run_download_data_SH.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ENCODE ATAC/DNase Peaks: Download the peak data</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notebooks/01_data_download/fcc_starrmpra_01_acquire_STARR_data_alex_SH.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Get K562 STARR-seq data from Reddy lab</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notebooks/01_data_download/fcc_starrmpra_02_explore_STARR_data_alex_SH.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">fcc_starrmpra_02_explore_STARR_data_alex_SH.html</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notebooks/01_data_download/fcc_starrmpra_03_prepare_fragment_counts_SH.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Link fragment counts of ASTARR</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notebooks/01_data_download/fcc_starrmpra_03_prepare_STARR_data_alex_SH.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Prepare K562 STARR-seq data from Reddy lab</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notebooks/01_data_download/fcc_starrmpra_11_acquire_TMPRA_data_hannah_SH.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Get K562 MPRA data from Tewhey’s lab</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notebooks/01_data_download/fcc_starrmpra_12_explore_TMPRA_data_hannah_SH.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Explore files of Tiling MPRA data</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notebooks/01_data_download/fcc_starrmpra_13_extract_fragment_counts_R.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Extract fragment counts from Tiling MPRA data</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notebooks/01_data_download/fcc_starrmpra_14_convert_table_to_bed_R.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Covert count matrix to bed format</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../notebooks/01_data_download/fcc_starrmpra_21_get_LMPRA_data_vikram_SH.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">fcc_starrmpra_21_get_LMPRA_data_vikram_SH.html</span></a>
+  <a href="../../01_setup/work_env.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Working Environment</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">02 Prepare</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
  <span class="menu-text">Test Notebook</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../notebooks/test/test_notebook.html" class="sidebar-item-text sidebar-link">
@@ -278,12 +228,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#encode-atacdnase-peaks-generate-download-script-to-download-the-peak-data" id="toc-encode-atacdnase-peaks-generate-download-script-to-download-the-peak-data" class="nav-link active" data-scroll-target="#encode-atacdnase-peaks-generate-download-script-to-download-the-peak-data">ENCODE ATAC/DNase Peaks: Generate download script to download the peak data</a>
-  <ul class="collapse">
-  <li><a href="#import-metadata" id="toc-import-metadata" class="nav-link" data-scroll-target="#import-metadata">Import metadata</a></li>
-  <li><a href="#generate-download-script" id="toc-generate-download-script" class="nav-link" data-scroll-target="#generate-download-script">Generate download script</a></li>
+  <li><a href="#import-metadata-from-reference-file" id="toc-import-metadata-from-reference-file" class="nav-link active" data-scroll-target="#import-metadata-from-reference-file">Import metadata from reference file</a></li>
+  <li><a href="#generate-download-commands" id="toc-generate-download-commands" class="nav-link" data-scroll-target="#generate-download-commands">Generate download commands</a></li>
   <li><a href="#save-to-script" id="toc-save-to-script" class="nav-link" data-scroll-target="#save-to-script">Save to script</a></li>
-  </ul></li>
   </ul>
 </nav>
     </div>
@@ -292,7 +239,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">ENCODE ATAC/DNase Peaks</h1>
+<div class="quarto-title-block"><div><h1 class="title">Prepare ENCODE ATAC/DNase Peaks 01</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li></ul></div></div>
+<p class="subtitle lead">Generate download script to download the peak data</p>
 </div>
 
 
@@ -307,10 +255,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="encode-atacdnase-peaks-generate-download-script-to-download-the-peak-data" class="level1">
-<h1>ENCODE ATAC/DNase Peaks: Generate download script to download the peak data</h1>
 <p><strong>Set environment</strong></p>
-<div class="cell" data-scrolled="true" data-execution_count="1">
+<div class="cell" data-tags="[]" data-execution_count="1">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>(<span class="fu">suppressWarnings</span>(<span class="fu">source</span>(<span class="st">"../run_config_project_sing.R"</span>)))</span>
@@ -336,8 +282,9 @@ PROJECT REF     (FD_REF): /mount/repo/Proj_CombEffect_ENCODE_FCC/references
 </code></pre>
 </div>
 </div>
-<section id="import-metadata" class="level2">
-<h2 class="anchored" data-anchor-id="import-metadata">Import metadata</h2>
+<section id="import-metadata-from-reference-file" class="level2">
+<h2 class="anchored" data-anchor-id="import-metadata-from-reference-file">Import metadata from reference file</h2>
+<p>Read the table with the file accession numbers of ATAC peaks and DHS regions</p>
 <div class="cell" data-execution_count="2">
 <details>
 <summary>Code</summary>
@@ -351,135 +298,120 @@ PROJECT REF     (FD_REF): /mount/repo/Proj_CombEffect_ENCODE_FCC/references
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="do">### show and assign</span></span>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>dat_metadata <span class="ot">=</span> dat</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>IRdisplay<span class="sc">::</span><span class="fu">display</span>(dat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="fu">fun_display_table</span>(dat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>A spec_tbl_df: 6 × 12</caption>
+<table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th" scope="col">Assay</th>
-<th data-quarto-table-cell-role="th" scope="col">Biosample</th>
-<th data-quarto-table-cell-role="th" scope="col">Index_Experiment</th>
-<th data-quarto-table-cell-role="th" scope="col">Index_File</th>
-<th data-quarto-table-cell-role="th" scope="col">File_Type</th>
-<th data-quarto-table-cell-role="th" scope="col">Output_Type</th>
-<th data-quarto-table-cell-role="th" scope="col">isogenic_replicate</th>
-<th data-quarto-table-cell-role="th" scope="col">Genome</th>
-<th data-quarto-table-cell-role="th" scope="col">Number_Peaks</th>
-<th data-quarto-table-cell-role="th" scope="col">File_Name_Keyword</th>
-<th data-quarto-table-cell-role="th" scope="col">File_URL_Summary</th>
-<th data-quarto-table-cell-role="th" scope="col">File_URL_Download</th>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
-<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
-<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
-<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
-<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
-<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
-<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
-<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
-<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
-<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
-<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
-<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Assay</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Biosample</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Index_Experiment</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Index_File</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">File_Type</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Output_Type</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">isogenic_replicate</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Genome</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Number_Peaks</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">File_Name_Keyword</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">File_URL_Summary</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">File_URL_Download</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>ATAC</td>
-<td>K562</td>
-<td>ENCSR868FGK</td>
-<td>ENCFF333TAT</td>
-<td>bed narrowPeak</td>
-<td>pseudoreplicated peaks</td>
-<td>1, 2, 3</td>
-<td>hg38</td>
-<td>269800</td>
-<td>call-overlap_ppr/pooled-pr1_vs_pooled-pr2.overlap.bfilt.narrowPeak.gz</td>
-<td>https://www.encodeproject.org/files/ENCFF333TAT/</td>
-<td>https://www.encodeproject.org/files/ENCFF333TAT/@@download/ENCFF333TAT.bed.gz</td>
+<td style="text-align: left;">ATAC</td>
+<td style="text-align: left;">K562</td>
+<td style="text-align: left;">ENCSR868FGK</td>
+<td style="text-align: left;">ENCFF333TAT</td>
+<td style="text-align: left;">bed narrowPeak</td>
+<td style="text-align: left;">pseudoreplicated peaks</td>
+<td style="text-align: left;">1, 2, 3</td>
+<td style="text-align: left;">hg38</td>
+<td style="text-align: right;">269800</td>
+<td style="text-align: left;">call-overlap_ppr/pooled-pr1_vs_pooled-pr2.overlap.bfilt.narrowPeak.gz</td>
+<td style="text-align: left;">https://www.encodeproject.org/files/ENCFF333TAT/</td>
+<td style="text-align: left;">https://www.encodeproject.org/files/ENCFF333TAT/@@download/ENCFF333TAT.bed.gz</td>
 </tr>
 <tr class="even">
-<td>ATAC</td>
-<td>K562</td>
-<td>ENCSR868FGK</td>
-<td>ENCFF948AFM</td>
-<td>bed narrowPeak</td>
-<td>IDR thresholded peaks</td>
-<td>1, 2, 3</td>
-<td>hg38</td>
-<td>181340</td>
-<td>call-idr_ppr/pooled-pr1_vs_pooled-pr2.idr0.05.bfilt.narrowPeak.gz</td>
-<td>https://www.encodeproject.org/files/ENCFF948AFM/</td>
-<td>https://www.encodeproject.org/files/ENCFF948AFM/@@download/ENCFF948AFM.bed.gz</td>
+<td style="text-align: left;">ATAC</td>
+<td style="text-align: left;">K562</td>
+<td style="text-align: left;">ENCSR868FGK</td>
+<td style="text-align: left;">ENCFF948AFM</td>
+<td style="text-align: left;">bed narrowPeak</td>
+<td style="text-align: left;">IDR thresholded peaks</td>
+<td style="text-align: left;">1, 2, 3</td>
+<td style="text-align: left;">hg38</td>
+<td style="text-align: right;">181340</td>
+<td style="text-align: left;">call-idr_ppr/pooled-pr1_vs_pooled-pr2.idr0.05.bfilt.narrowPeak.gz</td>
+<td style="text-align: left;">https://www.encodeproject.org/files/ENCFF948AFM/</td>
+<td style="text-align: left;">https://www.encodeproject.org/files/ENCFF948AFM/@@download/ENCFF948AFM.bed.gz</td>
 </tr>
 <tr class="odd">
-<td>ATAC</td>
-<td>K562</td>
-<td>ENCSR483RKN</td>
-<td>ENCFF558BLC</td>
-<td>bed narrowPeak</td>
-<td>pseudoreplicated peaks</td>
-<td>1, 2</td>
-<td>hg38</td>
-<td>203874</td>
-<td>call-overlap_ppr/pooled-pr1_vs_pooled-pr2.overlap.bfilt.narrowPeak.gz</td>
-<td>https://www.encodeproject.org/files/ENCFF558BLC/</td>
-<td>https://www.encodeproject.org/files/ENCFF558BLC/@@download/ENCFF558BLC.bed.gz</td>
+<td style="text-align: left;">ATAC</td>
+<td style="text-align: left;">K562</td>
+<td style="text-align: left;">ENCSR483RKN</td>
+<td style="text-align: left;">ENCFF558BLC</td>
+<td style="text-align: left;">bed narrowPeak</td>
+<td style="text-align: left;">pseudoreplicated peaks</td>
+<td style="text-align: left;">1, 2</td>
+<td style="text-align: left;">hg38</td>
+<td style="text-align: right;">203874</td>
+<td style="text-align: left;">call-overlap_ppr/pooled-pr1_vs_pooled-pr2.overlap.bfilt.narrowPeak.gz</td>
+<td style="text-align: left;">https://www.encodeproject.org/files/ENCFF558BLC/</td>
+<td style="text-align: left;">https://www.encodeproject.org/files/ENCFF558BLC/@@download/ENCFF558BLC.bed.gz</td>
 </tr>
 <tr class="even">
-<td>ATAC</td>
-<td>K562</td>
-<td>ENCSR483RKN</td>
-<td>ENCFF925CYR</td>
-<td>bed narrowPeak</td>
-<td>IDR thresholded peaks</td>
-<td>1, 2</td>
-<td>hg38</td>
-<td>123009</td>
-<td>call-idr_ppr/pooled-pr1_vs_pooled-pr2.idr0.05.bfilt.narrowPeak.gz</td>
-<td>https://www.encodeproject.org/files/ENCFF925CYR/</td>
-<td>https://www.encodeproject.org/files/ENCFF925CYR/@@download/ENCFF925CYR.bed.gz</td>
+<td style="text-align: left;">ATAC</td>
+<td style="text-align: left;">K562</td>
+<td style="text-align: left;">ENCSR483RKN</td>
+<td style="text-align: left;">ENCFF925CYR</td>
+<td style="text-align: left;">bed narrowPeak</td>
+<td style="text-align: left;">IDR thresholded peaks</td>
+<td style="text-align: left;">1, 2</td>
+<td style="text-align: left;">hg38</td>
+<td style="text-align: right;">123009</td>
+<td style="text-align: left;">call-idr_ppr/pooled-pr1_vs_pooled-pr2.idr0.05.bfilt.narrowPeak.gz</td>
+<td style="text-align: left;">https://www.encodeproject.org/files/ENCFF925CYR/</td>
+<td style="text-align: left;">https://www.encodeproject.org/files/ENCFF925CYR/@@download/ENCFF925CYR.bed.gz</td>
 </tr>
 <tr class="odd">
-<td>DNase</td>
-<td>K562</td>
-<td>ENCSR000EKS</td>
-<td>ENCFF274YGF</td>
-<td>bed narrowPeak</td>
-<td>peaks</td>
-<td>1</td>
-<td>hg38</td>
-<td>118721</td>
-<td>call-compress/nuclear.0.001.peaks.narrowpeaks.bed.gz</td>
-<td>https://www.encodeproject.org/files/ENCFF274YGF/</td>
-<td>https://www.encodeproject.org/files/ENCFF274YGF/@@download/ENCFF274YGF.bed.gz</td>
+<td style="text-align: left;">DNase</td>
+<td style="text-align: left;">K562</td>
+<td style="text-align: left;">ENCSR000EKS</td>
+<td style="text-align: left;">ENCFF274YGF</td>
+<td style="text-align: left;">bed narrowPeak</td>
+<td style="text-align: left;">peaks</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">hg38</td>
+<td style="text-align: right;">118721</td>
+<td style="text-align: left;">call-compress/nuclear.0.001.peaks.narrowpeaks.bed.gz</td>
+<td style="text-align: left;">https://www.encodeproject.org/files/ENCFF274YGF/</td>
+<td style="text-align: left;">https://www.encodeproject.org/files/ENCFF274YGF/@@download/ENCFF274YGF.bed.gz</td>
 </tr>
 <tr class="even">
-<td>DNase</td>
-<td>K562</td>
-<td>ENCSR000EOT</td>
-<td>ENCFF185XRG</td>
-<td>bed narrowPeak</td>
-<td>peaks</td>
-<td>1</td>
-<td>hg38</td>
-<td>159277</td>
-<td>call-compress/nuclear.0.001.peaks.narrowpeaks.bed.gz</td>
-<td>https://www.encodeproject.org/files/ENCFF185XRG/</td>
-<td>https://www.encodeproject.org/files/ENCFF185XRG/@@download/ENCFF185XRG.bed.gz</td>
+<td style="text-align: left;">DNase</td>
+<td style="text-align: left;">K562</td>
+<td style="text-align: left;">ENCSR000EOT</td>
+<td style="text-align: left;">ENCFF185XRG</td>
+<td style="text-align: left;">bed narrowPeak</td>
+<td style="text-align: left;">peaks</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">hg38</td>
+<td style="text-align: right;">159277</td>
+<td style="text-align: left;">call-compress/nuclear.0.001.peaks.narrowpeaks.bed.gz</td>
+<td style="text-align: left;">https://www.encodeproject.org/files/ENCFF185XRG/</td>
+<td style="text-align: left;">https://www.encodeproject.org/files/ENCFF185XRG/@@download/ENCFF185XRG.bed.gz</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 </section>
-<section id="generate-download-script" class="level2">
-<h2 class="anchored" data-anchor-id="generate-download-script">Generate download script</h2>
+<section id="generate-download-commands" class="level2">
+<h2 class="anchored" data-anchor-id="generate-download-commands">Generate download commands</h2>
 <pre><code>wget -O FILE URL</code></pre>
-<div class="cell" data-execution_count="3">
+<div class="cell" data-execution_count="12">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="do">### init</span></span>
@@ -500,42 +432,45 @@ PROJECT REF     (FD_REF): /mount/repo/Proj_CombEffect_ENCODE_FCC/references
 <span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
 <span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">CMD =</span> <span class="fu">paste</span>(<span class="st">"wget"</span>, <span class="st">"--append-output=run_download.log.txt"</span>, <span class="st">"-O"</span>, File_Name, File_URL_Download)</span>
 <span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="co">#dat = dat %&gt;% dplyr::select(Assay, Biosample, Index_Experiment, Index_File, File_Name, CMD)</span></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(CMD)</span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="do">### assign and show</span></span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>dat_cmd <span class="ot">=</span> dat</span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>IRdisplay<span class="sc">::</span><span class="fu">display</span>(dat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="do">### add Shebang and initial commands</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="co">#dat = dat %&gt;% dplyr::select(Assay, Biosample, Index_Experiment, Index_File, File_Name, CMD)</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(CMD)</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> <span class="fu">rbind</span>(<span class="st">'echo -n "" &gt; run_download.log.txt'</span>, dat)</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(dat) <span class="ot">=</span> <span class="st">"#!/bin/bash"</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="do">### assign and show</span></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>dat_cmd <span class="ot">=</span> dat</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a><span class="fu">fun_display_table</span>(dat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>A tibble: 6 × 1</caption>
+<table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th" scope="col">CMD</th>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">#!/bin/bash</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>wget --append-output=run_download.log.txt -O K562.hg38.ENCSR868FGK.ENCFF333TAT.ATAC.bed.gz https://www.encodeproject.org/files/ENCFF333TAT/@@download/ENCFF333TAT.bed.gz</td>
+<td style="text-align: left;">echo -n "" &gt; run_download.log.txt</td>
 </tr>
 <tr class="even">
-<td>wget --append-output=run_download.log.txt -O K562.hg38.ENCSR868FGK.ENCFF948AFM.ATAC.bed.gz https://www.encodeproject.org/files/ENCFF948AFM/@@download/ENCFF948AFM.bed.gz</td>
+<td style="text-align: left;">wget --append-output=run_download.log.txt -O K562.hg38.ENCSR868FGK.ENCFF333TAT.ATAC.bed.gz https://www.encodeproject.org/files/ENCFF333TAT/@@download/ENCFF333TAT.bed.gz</td>
 </tr>
 <tr class="odd">
-<td>wget --append-output=run_download.log.txt -O K562.hg38.ENCSR483RKN.ENCFF558BLC.ATAC.bed.gz https://www.encodeproject.org/files/ENCFF558BLC/@@download/ENCFF558BLC.bed.gz</td>
+<td style="text-align: left;">wget --append-output=run_download.log.txt -O K562.hg38.ENCSR868FGK.ENCFF948AFM.ATAC.bed.gz https://www.encodeproject.org/files/ENCFF948AFM/@@download/ENCFF948AFM.bed.gz</td>
 </tr>
 <tr class="even">
-<td>wget --append-output=run_download.log.txt -O K562.hg38.ENCSR483RKN.ENCFF925CYR.ATAC.bed.gz https://www.encodeproject.org/files/ENCFF925CYR/@@download/ENCFF925CYR.bed.gz</td>
+<td style="text-align: left;">wget --append-output=run_download.log.txt -O K562.hg38.ENCSR483RKN.ENCFF558BLC.ATAC.bed.gz https://www.encodeproject.org/files/ENCFF558BLC/@@download/ENCFF558BLC.bed.gz</td>
 </tr>
 <tr class="odd">
-<td>wget --append-output=run_download.log.txt -O K562.hg38.ENCSR000EKS.ENCFF274YGF.DNase.bed.gz https://www.encodeproject.org/files/ENCFF274YGF/@@download/ENCFF274YGF.bed.gz</td>
+<td style="text-align: left;">wget --append-output=run_download.log.txt -O K562.hg38.ENCSR483RKN.ENCFF925CYR.ATAC.bed.gz https://www.encodeproject.org/files/ENCFF925CYR/@@download/ENCFF925CYR.bed.gz</td>
 </tr>
 <tr class="even">
-<td>wget --append-output=run_download.log.txt -O K562.hg38.ENCSR000EOT.ENCFF185XRG.DNase.bed.gz https://www.encodeproject.org/files/ENCFF185XRG/@@download/ENCFF185XRG.bed.gz</td>
+<td style="text-align: left;">wget --append-output=run_download.log.txt -O K562.hg38.ENCSR000EKS.ENCFF274YGF.DNase.bed.gz https://www.encodeproject.org/files/ENCFF274YGF/@@download/ENCFF274YGF.bed.gz</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">wget --append-output=run_download.log.txt -O K562.hg38.ENCSR000EOT.ENCFF185XRG.DNase.bed.gz https://www.encodeproject.org/files/ENCFF185XRG/@@download/ENCFF185XRG.bed.gz</td>
 </tr>
 </tbody>
 </table>
@@ -544,7 +479,8 @@ PROJECT REF     (FD_REF): /mount/repo/Proj_CombEffect_ENCODE_FCC/references
 </section>
 <section id="save-to-script" class="level2">
 <h2 class="anchored" data-anchor-id="save-to-script">Save to script</h2>
-<div class="cell" data-execution_count="4">
+<p>Save the command lines for each row into a bash script</p>
+<div class="cell" data-execution_count="13">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="do">### set output path</span></span>
@@ -558,14 +494,11 @@ PROJECT REF     (FD_REF): /mount/repo/Proj_CombEffect_ENCODE_FCC/references
 <span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="do">### save table</span></span>
 <span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(txt_fdiry, <span class="at">showWarnings =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="fu">write_tsv</span>(dat, txt_fpath)</span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    <span class="co">#header    = FALSE,</span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    <span class="co">#row.names = FALSE)    </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="fu">write_tsv</span>(dat, txt_fpath)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -648,6 +581,57 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
   function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,

@@ -1,0 +1,12 @@
+[
+  {
+    "listing": "/analyses.html",
+    "items": [
+      "/notebooks/02_prepare/region_ocr_01_create_download_script_R.html",
+      "/notebooks/02_prepare/region_ocr_02_execute_download_data_SH.html",
+      "/notebooks/02_prepare/region_ocr_03_prepare_ocr_regions_SH.html",
+      "/notebooks/02_prepare/region_ocr_04_create_ocr_metadata_R.html",
+      "/notebooks/test/test_notebook.html"
+    ]
+  }
+]

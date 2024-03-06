@@ -60,3 +60,10 @@ show_env = function(){
     cat("\n")
 }
 
+### helper function to show table
+fun_display_table = function(dat){
+    dat %>%
+        kableExtra::kable("html") %>%
+        as.character() %>%
+        IRdisplay::display_html()
+}
