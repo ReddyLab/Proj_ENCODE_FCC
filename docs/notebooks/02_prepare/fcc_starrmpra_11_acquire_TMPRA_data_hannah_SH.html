@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ENCODE FCC Project - Data and Working Environment</title>
+<title>ENCODE FCC Project - Prepare Tiling MPRA data 01</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,25 +20,59 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -61,7 +95,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
@@ -71,7 +105,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">ENCODE FCC Project</span>
     </a>
   </div>
@@ -82,27 +116,27 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html" rel="" target="">
+    <a class="nav-link" href="../../index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
+    <a class="nav-link" href="../../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./report.html" rel="" target="">
+    <a class="nav-link" href="../../report.html" rel="" target="">
  <span class="menu-text">Report</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./data.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="../../data.html" rel="" target="">
  <span class="menu-text">Data</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./analyses.html" rel="" target="">
+    <a class="nav-link" href="../../analyses.html" rel="" target="">
  <span class="menu-text">Analyses</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./results.html" rel="" target="">
+    <a class="nav-link" href="../../results.html" rel="" target="">
  <span class="menu-text">Results</span></a>
   </li>  
 </ul>
@@ -117,7 +151,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Data and Working Environment</li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Prepare Tiling MPRA data 01</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -148,13 +182,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01_setup/work_dir.html" class="sidebar-item-text sidebar-link">
+  <a href="../../01_setup/work_dir.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Working Directory</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01_setup/work_env.html" class="sidebar-item-text sidebar-link">
+  <a href="../../01_setup/work_env.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Working Environment</span></a>
   </div>
 </li>
@@ -171,37 +205,37 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02_prepare/data_01_fcc.html" class="sidebar-item-text sidebar-link">
+  <a href="../../02_prepare/data_01_fcc.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">FCC Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02_prepare/data_02_hic.html" class="sidebar-item-text sidebar-link">
+  <a href="../../02_prepare/data_02_hic.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Hi-C Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02_prepare/data_11_chipseq.html" class="sidebar-item-text sidebar-link">
+  <a href="../../02_prepare/data_11_chipseq.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">ChIP-seq TF/Histone</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02_prepare/data_12_chromatin_states.html" class="sidebar-item-text sidebar-link">
+  <a href="../../02_prepare/data_12_chromatin_states.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Chromatin States</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02_prepare/data_21_peak_calling.html" class="sidebar-item-text sidebar-link">
+  <a href="../../02_prepare/data_21_peak_calling.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Peak calling</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02_prepare/data_22_others.html" class="sidebar-item-text sidebar-link">
+  <a href="../../02_prepare/data_22_others.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Other Annotations</span></a>
   </div>
 </li>
@@ -218,7 +252,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notebooks/test/test_notebook.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notebooks/test/test_notebook.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Test ipynb for documentation</span></a>
   </div>
 </li>
@@ -230,29 +264,15 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#data-dictionary" id="toc-data-dictionary" class="nav-link active" data-scroll-target="#data-dictionary">Data Dictionary</a>
-  <ul class="collapse">
-  <li><a href="#fcc-assays-done-in-k562" id="toc-fcc-assays-done-in-k562" class="nav-link" data-scroll-target="#fcc-assays-done-in-k562">FCC assays done in K562</a></li>
-  <li><a href="#hi-c-assays-done-in-k562" id="toc-hi-c-assays-done-in-k562" class="nav-link" data-scroll-target="#hi-c-assays-done-in-k562">Hi-C assays done in K562</a></li>
-  <li><a href="#chromatin-states-of-k562" id="toc-chromatin-states-of-k562" class="nav-link" data-scroll-target="#chromatin-states-of-k562">Chromatin states of K562</a></li>
-  <li><a href="#tss-annotation-of-k562" id="toc-tss-annotation-of-k562" class="nav-link" data-scroll-target="#tss-annotation-of-k562">TSS annotation of K562</a></li>
-  </ul></li>
-  <li><a href="#reference-files" id="toc-reference-files" class="nav-link" data-scroll-target="#reference-files">Reference files</a></li>
-  <li><a href="#working-directory-and-environment" id="toc-working-directory-and-environment" class="nav-link" data-scroll-target="#working-directory-and-environment">Working directory and environment</a></li>
-  <li><a href="#more-information" id="toc-more-information" class="nav-link" data-scroll-target="#more-information">More information</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Data and Working Environment</h1>
+<div class="quarto-title-block"><div><h1 class="title">Prepare Tiling MPRA data 01</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li></ul></div></div>
+<p class="subtitle lead">Get K562 MPRA data files from Tewhey lab</p>
 </div>
 
 
@@ -267,82 +287,171 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="data-dictionary" class="level2">
-<h2 class="anchored" data-anchor-id="data-dictionary">Data Dictionary</h2>
-<p>Below are the main data used in the analyses. We express our sincere appreciation to the research teams and individuals involved in conducting, processing, and sharing the experiments and data that underpin our analyses.</p>
-<section id="fcc-assays-done-in-k562" class="level3">
-<h3 class="anchored" data-anchor-id="fcc-assays-done-in-k562">FCC assays done in K562</h3>
-<p><a href="./02_prepare/data_01_fcc.html">Read more about the FCC data</a></p>
-<ul>
-<li>ATAC-STARR (ASTARR): sequenced fragments (proccessed by Alex; experiment done by Keith)</li>
-<li>WHG-STARR (WSTARR): sequenced fragments (proccessed by Alex; experiment done by Kari)</li>
-<li>Tiling MPRA (TMPRA): raw barcode count table (proccessed by Hannah)</li>
-<li>Lenti-MPRA (LMPRA): log2 fold change of each element (shared by Vikram from the Lenti-MPRA study)</li>
-<li>CRISPRi-HCR FlowFISH (CRISPRi-HCRFF): z scores (proccessed by Jin Woo)</li>
-<li>CRISPRi-Growth screen (CRISPRi-Growth): z scores (proccessed by Jin Woo)</li>
-<li>ATAC peaks: MACS peaks called of the ASTARR input libraries (procccessed by Alex)</li>
-</ul>
-</section>
-<section id="hi-c-assays-done-in-k562" class="level3">
-<h3 class="anchored" data-anchor-id="hi-c-assays-done-in-k562">Hi-C assays done in K562</h3>
-<p><a href="./02_prepare/data_02_hic.html">Read more about the Hi-C data</a></p>
-</section>
-<section id="chromatin-states-of-k562" class="level3">
-<h3 class="anchored" data-anchor-id="chromatin-states-of-k562">Chromatin states of K562</h3>
-<p><a href="./02_prepare/data_12_chromatin_states.html">Read more about the chromatin states data</a></p>
-<ul>
-<li>ENCODE candidate cis-regulatory elements (cCREs)</li>
-<li>ENCODE ChromHMM chromatin states</li>
-</ul>
-</section>
-<section id="tss-annotation-of-k562" class="level3">
-<h3 class="anchored" data-anchor-id="tss-annotation-of-k562">TSS annotation of K562</h3>
-</section>
-</section>
-<section id="reference-files" class="level2">
-<h2 class="anchored" data-anchor-id="reference-files">Reference files</h2>
-<ul>
-<li>K562 ChIP-seq table from the ENCODE flagship</li>
-<li>K562 Accessible regions (ATAC/DHS regions) used for testing assay coverage</li>
-</ul>
-</section>
-<section id="working-directory-and-environment" class="level2">
-<h2 class="anchored" data-anchor-id="working-directory-and-environment">Working directory and environment</h2>
-<ul>
-<li><a href="./01_setup/work_dir.html">Read more about the working directory</a></li>
-<li><a href="./01_setup/work_env.html">Read more about the working environment</a></li>
-</ul>
-<pre><code>PROJECT
-├── app
-│   └── singularity_proj_encode_fcc.sif
-├── data
-│   ├── external
-│   └── processed
-├── results
-├── scripts
-├── references
-├── notebooks
-├── docs
-├── site
-├── log
-├── README.md
-└── .gitignore</code></pre>
-</section>
-<section id="more-information" class="level1">
-<h1>More information</h1>
-<ul>
-<li>Lenti-MPRA study
-<ul>
-<li><a href="https://www.biorxiv.org/content/10.1101/2023.03.05.531189v1.full">Massively parallel characterization of transcriptional regulatory elements in three diverse human cell types</a></li>
-</ul></li>
-<li>CRISPR study
-<ul>
-<li><a href="https://www.biorxiv.org/content/10.1101/2022.12.21.520137v1">Multi-center integrated analysis of non-coding CRISPR screens</a></li>
-</ul></li>
-</ul>
+<p>In this analysis, we are using the unnormalized and normalized MPRA data processed and shared by Hannah from the Tewhey lab.</p>
+<p><strong>Set environment</strong></p>
+<div class="cell" data-execution_count="1">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> ../run_config_project.sh</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">show_env</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>You are working on             Duke Server: HARDAC
+BASE DIRECTORY (FD_BASE):      /data/reddylab/Kuei
+REPO DIRECTORY (FD_REPO):      /data/reddylab/Kuei/repo
+WORK DIRECTORY (FD_WORK):      /data/reddylab/Kuei/work
+DATA DIRECTORY (FD_DATA):      /data/reddylab/Kuei/data
+CONTAINER DIR. (FD_SING):      /data/reddylab/Kuei/container
+
+You are working with           ENCODE FCC
+PATH OF PROJECT (FD_PRJ):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC
+PROJECT RESULTS (FD_RES):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/results
+PROJECT SCRIPTS (FD_EXE):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/scripts
+PROJECT DATA    (FD_DAT):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/data
+PROJECT NOTE    (FD_NBK):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/notebooks
+PROJECT DOCS    (FD_DOC):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/docs
+PROJECT LOG     (FD_LOG):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/log
+PROJECT APP     (FD_APP):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/app
+PROJECT REF     (FD_REF):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/references
+PROJECT IMAGE   (FP_PRJ_SIF):  /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/app/singularity_proj_encode_fcc.sif
+</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="7">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FD_WORK}</span>/proj_combeffect_encode_fcc/source</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>A001_K562_wstarrseq_fragments
+A001_K562_wstarrseq_fragments_wgs
+annotation_cCREs
+annotation_chipseq_histone
+annotation_chipseq_tf
+annotation_chromHMM
+annotation_enhancer_junke
+annotation_enhancer_junke_zscore
+annotation_enhancer_junke_zscore_prev
+annotation_gencode
+annotation_gene
+annotation_remap2022
+annotation_starrseq_negative_control_junke
+chrom.sizes.hg19
+chrom.sizes.hg38
+CRISPRi_FlowFISH
+CRISPRi_growth
+ENCODE_E2G
+hic_insitu_GM12878
+hic_intact_K562_deep
+hic_intact_K562_ENCSR479XDG
+KS91_K562_astarrseq_fragments_220510
+KS91_K562_astarrseq_fragments_wgs
+KS91_K562_astarrseq_peak_macs
+MPRA
+Readme.md
+RNAseq
+TF_modules
+tmp</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="8">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FD_WORK}</span>/proj_combeffect_encode_fcc/source/MPRA</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>ENCFF460YVY.bed.gz         MPRA_TilingMPRA_K562_Tewhey  syn26435687
+MPRA_LentiMPRA_K562_Nadav  syn22348180</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="11">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_WORK}</span>/proj_combeffect_encode_fcc/source</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FDIRY}</span>/MPRA</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FDIRY}</span>/MPRA_TilingMPRA_K562_Tewhey</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FDIRY}</span>/tiling_counts</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>FADS_tile_snp.20190214.attributes
+OL13_20220512_counts.out
+OL13_20220512_normalized_counts.out
+OL43_20211228_counts.out
+OL43_20211228_normalized_counts.out
+OL43_20221003_counts.out
+OL43_20221003_K562_normalized_counts.out
+OL43.attributes
+OL43_K562.bed
+OL45_20220927_counts.out
+OL45_20220927_K562_normalized_counts.out
+OL45.attributes
+OL45_K562.bed</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="15">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FD_DAT}</span>/processed</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>A001_K562_hg38_WSTARRseq           KS91_K562_hg38_ASTARRseq_Jamboree
+A001_K562_hg38_WSTARRseq_Jamboree  MPRA_Tiling_K562_Tewhey_hannah
+KS91_K562_hg38_ASTARRseq_210401</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="14">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FD_DAT}</span>/processed/MPRA_Tiling_K562_Tewhey_hannah</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>tiling_counts.tar.gz</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="16">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_DAT}</span>/processed/MPRA_Tiling_K562_Tewhey_hannah</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="va">FNAME</span><span class="op">=</span>tiling_counts.tar.gz</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="va">FPATH</span><span class="op">=</span><span class="va">${FDIRY}</span>/<span class="va">${FNAME}</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-xf</span> <span class="va">${FPATH}</span> <span class="at">-C</span> <span class="va">${FDIRY}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell" data-execution_count="17">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FD_DAT}</span>/processed/MPRA_Tiling_K562_Tewhey_hannah</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>tiling_counts  tiling_counts.tar.gz</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="19">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FD_DAT}</span>/processed/MPRA_Tiling_K562_Tewhey_hannah/tiling_counts</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>FADS_tile_snp.20190214.attributes
+OL13_20220512_counts.out
+OL13_20220512_normalized_counts.out
+OL43_20211228_counts.out
+OL43_20211228_normalized_counts.out
+OL43_20221003_counts.out
+OL43_20221003_K562_normalized_counts.out
+OL43.attributes
+OL43_K562.bed
+OL45_20220927_counts.out
+OL45_20220927_K562_normalized_counts.out
+OL45.attributes
+OL45_K562.bed
+UKBB_GTEx</code></pre>
+</div>
+</div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -424,6 +533,57 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
   function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
