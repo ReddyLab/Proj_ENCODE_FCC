@@ -6,6 +6,9 @@
       "/notebooks/02_prepare/region_ocr_02_execute_download_data_SH.html",
       "/notebooks/02_prepare/region_ocr_03_prepare_ocr_regions_SH.html",
       "/notebooks/02_prepare/region_ocr_04_create_ocr_metadata_R.html",
+      "/notebooks/02_prepare/fcc_starrmpra_01_acquire_STARR_data_alex_SH.html",
+      "/notebooks/02_prepare/fcc_starrmpra_02_explore_STARR_data_alex_SH.html",
+      "/notebooks/02_prepare/fcc_starrmpra_03_prepare_STARR_data_alex_SH.html",
       "/notebooks/test/test_notebook.html"
     ]
   }

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ENCODE FCC Project - Prepare ENCODE ATAC/DNase Peaks 04</title>
+<title>ENCODE FCC Project - Prepare STARR-seq data 02</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -93,9 +93,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 <link rel="stylesheet" href="../../styles.css">
@@ -154,7 +151,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Prepare ENCODE ATAC/DNase Peaks 04</li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Prepare STARR-seq data 02</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -271,8 +268,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#define-metadata" id="toc-define-metadata" class="nav-link active" data-scroll-target="#define-metadata">Define metadata</a></li>
-  <li><a href="#save-results" id="toc-save-results" class="nav-link" data-scroll-target="#save-results">Save results</a></li>
+  <li><a href="#explore-fragment-counts-of-astarr" id="toc-explore-fragment-counts-of-astarr" class="nav-link active" data-scroll-target="#explore-fragment-counts-of-astarr">Explore fragment counts of ASTARR</a></li>
+  <li><a href="#explore-macs-peak-calls-on-astarr-input" id="toc-explore-macs-peak-calls-on-astarr-input" class="nav-link" data-scroll-target="#explore-macs-peak-calls-on-astarr-input">Explore MACS peak calls on ASTARR input</a></li>
+  <li><a href="#explore-fragment-counts-of-wstarr" id="toc-explore-fragment-counts-of-wstarr" class="nav-link" data-scroll-target="#explore-fragment-counts-of-wstarr">Explore fragment counts of WSTARR</a></li>
   </ul>
 </nav>
     </div>
@@ -281,8 +279,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Prepare ENCODE ATAC/DNase Peaks 04</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li></ul></div></div>
-<p class="subtitle lead">Generate metadata for the peak file</p>
+<div class="quarto-title-block"><div><h1 class="title">Prepare STARR-seq data 02</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li></ul></div></div>
+<p class="subtitle lead">Explore STARR-seq files</p>
 </div>
 
 
@@ -301,120 +299,156 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell" data-execution_count="1">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>(<span class="fu">suppressWarnings</span>(<span class="fu">source</span>(<span class="st">"../run_config_project_sing.R"</span>)))</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">show_env</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> ../run_config_project.sh</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">show_env</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>You are working on        Singularity 
-BASE DIRECTORY (FD_BASE): /mount 
-REPO DIRECTORY (FD_REPO): /mount/repo 
-WORK DIRECTORY (FD_WORK): /mount/work 
-DATA DIRECTORY (FD_DATA): /mount/data 
+<pre><code>You are working on             Duke Server: HARDAC
+BASE DIRECTORY (FD_BASE):      /data/reddylab/Kuei
+REPO DIRECTORY (FD_REPO):      /data/reddylab/Kuei/repo
+WORK DIRECTORY (FD_WORK):      /data/reddylab/Kuei/work
+DATA DIRECTORY (FD_DATA):      /data/reddylab/Kuei/data
+CONTAINER DIR. (FD_SING):      /data/reddylab/Kuei/container
 
-You are working with      ENCODE FCC 
-PATH OF PROJECT (FD_PRJ): /mount/repo/Proj_CombEffect_ENCODE_FCC 
-PROJECT RESULTS (FD_RES): /mount/repo/Proj_CombEffect_ENCODE_FCC/results 
-PROJECT SCRIPTS (FD_EXE): /mount/repo/Proj_CombEffect_ENCODE_FCC/scripts 
-PROJECT DATA    (FD_DAT): /mount/repo/Proj_CombEffect_ENCODE_FCC/data 
-PROJECT NOTE    (FD_NBK): /mount/repo/Proj_CombEffect_ENCODE_FCC/notebooks 
-PROJECT DOCS    (FD_DOC): /mount/repo/Proj_CombEffect_ENCODE_FCC/docs 
-PROJECT LOG     (FD_LOG): /mount/repo/Proj_CombEffect_ENCODE_FCC/log 
-PROJECT APP     (FD_APP): /mount/repo/Proj_CombEffect_ENCODE_FCC/app 
-PROJECT REF     (FD_REF): /mount/repo/Proj_CombEffect_ENCODE_FCC/references 
+You are working with           ENCODE FCC
+PATH OF PROJECT (FD_PRJ):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC
+PROJECT RESULTS (FD_RES):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/results
+PROJECT SCRIPTS (FD_EXE):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/scripts
+PROJECT DATA    (FD_DAT):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/data
+PROJECT NOTE    (FD_NBK):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/notebooks
+PROJECT DOCS    (FD_DOC):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/docs
+PROJECT LOG     (FD_LOG):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/log
+PROJECT APP     (FD_APP):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/app
+PROJECT REF     (FD_REF):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/references
+PROJECT IMAGE   (FP_PRJ_SIF):  /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/app/singularity_proj_encode_fcc.sif
 </code></pre>
 </div>
 </div>
-<section id="define-metadata" class="level2">
-<h2 class="anchored" data-anchor-id="define-metadata">Define metadata</h2>
-<p>The peak file is in narrowPeak format, which is a standard six field bed with four additional fields (BED6+4 format)</p>
+<section id="explore-fragment-counts-of-astarr" class="level2">
+<h2 class="anchored" data-anchor-id="explore-fragment-counts-of-astarr">Explore fragment counts of ASTARR</h2>
 <div class="cell" data-execution_count="2">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">### ENCODE narrowPeak: Narrow (or Point-Source) Peaks format</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> <span class="fu">tribble</span>(</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="sc">~</span>Name,        <span class="sc">~</span>Note,</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Chrom"</span>,      <span class="st">"Name of the chromosome"</span>,</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"ChromStart"</span>, <span class="st">"The starting position of the feature in the chromosome"</span>,</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"ChromEnd"</span>,   <span class="st">"The ending position of the feature in the chromosome"</span>,</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Name"</span>,       <span class="st">"Name given to a region; Use '.' if no name is assigned."</span>,</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Score"</span>,      <span class="st">"Indicates how dark the peak will be displayed in the browser (0-1000)."</span>,</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Strand"</span>,     <span class="st">"+/- to denote strand or orientation. Use '.' if no orientation is assigned."</span>,</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"SignalValue"</span>,<span class="st">"Measurement of overall (usually, average) enrichment for the region."</span>,</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"PValue"</span>,     <span class="st">"Measurement of statistical significance (-log10). Use -1 if no pValue is assigned."</span>,</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"QValue"</span>,     <span class="st">"Measurement of statistical significance using false discovery rate (-log10). Use -1 if no qValue is assigned."</span>,</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Peak"</span>,       <span class="st">"Point-source called for this peak; 0-based offset from chromStart. Use -1 if no point-source called."</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="do">### assign and show</span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>dat_cnames <span class="ot">=</span> dat</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="fu">fun_display_table</span>(dat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_DAT}</span>/processed/KS91_K562_hg38_ASTARRseq_210401/fragments</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FDIRY}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display">
-<table data-quarto-postprocess="true" class="table table-sm table-striped small">
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Note</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Chrom</td>
-<td style="text-align: left;">Name of the chromosome</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">ChromStart</td>
-<td style="text-align: left;">The starting position of the feature in the chromosome</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">ChromEnd</td>
-<td style="text-align: left;">The ending position of the feature in the chromosome</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Name</td>
-<td style="text-align: left;">Name given to a region; Use '.' if no name is assigned.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Score</td>
-<td style="text-align: left;">Indicates how dark the peak will be displayed in the browser (0-1000).</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Strand</td>
-<td style="text-align: left;">+/- to denote strand or orientation. Use '.' if no orientation is assigned.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">SignalValue</td>
-<td style="text-align: left;">Measurement of overall (usually, average) enrichment for the region.</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PValue</td>
-<td style="text-align: left;">Measurement of statistical significance (-log10). Use -1 if no pValue is assigned.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">QValue</td>
-<td style="text-align: left;">Measurement of statistical significance using false discovery rate (-log10). Use -1 if no qValue is assigned.</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Peak</td>
-<td style="text-align: left;">Point-source called for this peak; 0-based offset from chromStart. Use -1 if no point-source called.</td>
-</tr>
-</tbody>
-</table>
+<div class="cell-output cell-output-stdout">
+<pre><code>KS91_K562_hg38_ASTARRseq_Input_rep1.masked.dedup.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Input_rep2.masked.dedup.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Input_rep3.masked.dedup.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Input_rep4.masked.dedup.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Input_rep5.masked.dedup.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Input_rep6.masked.dedup.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Output_rep1.f3q10.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Output_rep2.f3q10.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Output_rep3.f3q10.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Output_rep4.f3q10.fragments.counts.txt.gz</code></pre>
 </div>
 </div>
-</section>
-<section id="save-results" class="level2">
-<h2 class="anchored" data-anchor-id="save-results">Save results</h2>
 <div class="cell" data-execution_count="3">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>fdiry <span class="ot">=</span> <span class="fu">file.path</span>(FD_RES, <span class="st">"region"</span>, <span class="st">"encode_open_chromatin"</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>fname <span class="ot">=</span> <span class="st">"description.tsv"</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>fpath <span class="ot">=</span> <span class="fu">file.path</span>(fdiry, fname)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">write_tsv</span>(dat_cnames, fpath)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_DAT}</span>/processed/KS91_K562_hg38_ASTARRseq_210401/fragments</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="va">FNAME</span><span class="op">=</span>KS91_K562_hg38_ASTARRseq_Input_rep1.masked.dedup.fragments.counts.txt.gz</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="va">FPATH</span><span class="op">=</span><span class="va">${FDIRY}</span>/<span class="va">${FNAME}</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">zcat</span> <span class="va">${FPATH}</span> <span class="kw">|</span> <span class="fu">head</span> <span class="at">-n</span> 6</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+<div class="cell-output cell-output-stdout">
+<pre><code>chr1    10001   10143   chr1_10001_10143    1   .
+chr1    10002   10118   chr1_10002_10118    1   .
+chr1    10002   10131   chr1_10002_10131    1   .
+chr1    10002   10203   chr1_10002_10203    1   .
+chr1    10002   10209   chr1_10002_10209    1   .
+chr1    10002   10227   chr1_10002_10227    1   .</code></pre>
+</div>
+</div>
+</section>
+<section id="explore-macs-peak-calls-on-astarr-input" class="level2">
+<h2 class="anchored" data-anchor-id="explore-macs-peak-calls-on-astarr-input">Explore MACS peak calls on ASTARR input</h2>
+<div class="cell" data-execution_count="4">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_DAT}</span>/processed/KS91_K562_hg38_ASTARRseq_210401/peaks</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FDIRY}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>KS91_K562_hg38_ASTARRseq_Input.all_reps.masked.union_narrowPeak.q5.bed
+KS91_K562_hg38_ASTARRseq_Input.q5.in_all.max_overlaps.bed</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="5">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_DAT}</span>/processed/KS91_K562_hg38_ASTARRseq_210401/peaks</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="va">FNAME</span><span class="op">=</span>KS91_K562_hg38_ASTARRseq_Input.all_reps.masked.union_narrowPeak.q5.bed</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="va">FPATH</span><span class="op">=</span><span class="va">${FDIRY}</span>/<span class="va">${FNAME}</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> <span class="va">${FPATH}</span> <span class="kw">|</span> <span class="fu">head</span> <span class="at">-n</span> 6</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>chr1    10015   10442
+chr1    14253   14645
+chr1    16015   16477
+chr1    17237   17772
+chr1    28903   29613
+chr1    30803   31072</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="6">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_DAT}</span>/processed/KS91_K562_hg38_ASTARRseq_210401/peaks</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="va">FNAME</span><span class="op">=</span>KS91_K562_hg38_ASTARRseq_Input.q5.in_all.max_overlaps.bed</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="va">FPATH</span><span class="op">=</span><span class="va">${FDIRY}</span>/<span class="va">${FNAME}</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> <span class="va">${FPATH}</span> <span class="kw">|</span> <span class="fu">head</span> <span class="at">-n</span> 6</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>chr1    10038   10405   6
+chr1    14282   14614   6
+chr1    16025   16338   6
+chr1    17288   17689   6
+chr1    28934   29499   6
+chr1    115429  115969  6</code></pre>
+</div>
+</div>
+</section>
+<section id="explore-fragment-counts-of-wstarr" class="level2">
+<h2 class="anchored" data-anchor-id="explore-fragment-counts-of-wstarr">Explore fragment counts of WSTARR</h2>
+<div class="cell" data-execution_count="7">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_DAT}</span>/processed/A001_K562_hg38_WSTARRseq/fragments</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FDIRY}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>A001-input-K562-rep1.masked.dedup.fragments.counts.txt.gz
+A001-input-K562-rep2.masked.dedup.fragments.counts.txt.gz
+A001-input-K562-rep3.masked.dedup.fragments.counts.txt.gz
+A001-input-K562-rep4.masked.dedup.fragments.counts.txt.gz
+A001-K562-rep1.masked.dedup.fragments.counts.txt.gz
+A001-K562-rep2.masked.dedup.fragments.counts.txt.gz
+A001-K562-rep3.masked.dedup.fragments.counts.txt.gz</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="8">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_DAT}</span>/processed/A001_K562_hg38_WSTARRseq/fragments</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="va">FNAME</span><span class="op">=</span>A001-input-K562-rep1.masked.dedup.fragments.counts.txt.gz</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="va">FPATH</span><span class="op">=</span><span class="va">${FDIRY}</span>/<span class="va">${FNAME}</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">zcat</span> <span class="va">${FPATH}</span> <span class="kw">|</span> <span class="fu">head</span> <span class="at">-n</span> 6</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>chr1    10335   10549   chr1_10335_10549    1   .
+chr1    16983   17500   chr1_16983_17500    1   .
+chr1    16985   17499   chr1_16985_17499    1   .
+chr1    17004   17500   chr1_17004_17500    1   .
+chr1    17483   17898   chr1_17483_17898    1   .
+chr1    17487   17941   chr1_17487_17941    1   .</code></pre>
+</div>
 </div>
 
 
