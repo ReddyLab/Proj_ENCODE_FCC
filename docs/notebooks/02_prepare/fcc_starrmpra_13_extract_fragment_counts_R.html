@@ -647,13 +647,13 @@ Shape: 94381 9
 <span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>        tidyr<span class="sc">::</span><span class="fu">separate_rows</span>(Name, <span class="at">sep=</span><span class="st">";"</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">filter</span>(<span class="sc">!</span><span class="fu">grepl</span>(<span class="at">pattern =</span> <span class="st">"Nadav"</span>, Name)) <span class="sc">%&gt;%</span></span>
 <span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">filter</span>(<span class="fu">str_detect</span>(<span class="at">string=</span>Name, <span class="at">pattern=</span>pattern)) <span class="sc">%&gt;%</span></span>
-<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>        tidyr<span class="sc">::</span><span class="fu">separate</span>(Name, <span class="fu">c</span>(<span class="st">"Chrom"</span>, <span class="st">"Start"</span>, <span class="st">"End"</span>, <span class="st">"Strand"</span>), <span class="at">remove=</span><span class="cn">FALSE</span>, <span class="at">fill=</span><span class="st">"right"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>        tidyr<span class="sc">::</span><span class="fu">separate</span>(Name, <span class="fu">c</span>(<span class="st">"Chrom"</span>, <span class="st">"ChromStart"</span>, <span class="st">"ChromEnd"</span>, <span class="st">"Strand"</span>), <span class="at">remove=</span><span class="cn">FALSE</span>, <span class="at">fill=</span><span class="st">"right"</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
-<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>            <span class="at">Chrom  =</span> <span class="fu">add_chrom</span>(Chrom),</span>
-<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>            <span class="at">Start  =</span> <span class="fu">as.integer</span>(Start),</span>
-<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>            <span class="at">End    =</span> <span class="fu">as.integer</span>(End),</span>
-<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>            <span class="at">Name   =</span> <span class="fu">add_chrom</span>(Name),</span>
-<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>            <span class="at">Strand =</span> <span class="fu">get_strand</span>(Strand))</span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>            <span class="at">Chrom      =</span> <span class="fu">add_chrom</span>(Chrom),</span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>            <span class="at">ChromStart =</span> <span class="fu">as.integer</span>(ChromStart),</span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>            <span class="at">ChromEnd   =</span> <span class="fu">as.integer</span>(ChromEnd),</span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>            <span class="at">Name       =</span> <span class="fu">add_chrom</span>(Name),</span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>            <span class="at">Strand     =</span> <span class="fu">get_strand</span>(Strand))</span>
 <span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(res)</span>
 <span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -732,8 +732,8 @@ $TMPRA_K562_OL45_20220927.hg38.norm
 <tr class="header">
 <th data-quarto-table-cell-role="th" scope="col">Name</th>
 <th data-quarto-table-cell-role="th" scope="col">Chrom</th>
-<th data-quarto-table-cell-role="th" scope="col">Start</th>
-<th data-quarto-table-cell-role="th" scope="col">End</th>
+<th data-quarto-table-cell-role="th" scope="col">ChromStart</th>
+<th data-quarto-table-cell-role="th" scope="col">ChromEnd</th>
 <th data-quarto-table-cell-role="th" scope="col">Strand</th>
 <th data-quarto-table-cell-role="th" scope="col">Input.rep1</th>
 <th data-quarto-table-cell-role="th" scope="col">Input.rep2</th>
@@ -815,8 +815,8 @@ $TMPRA_K562_OL13_20220512.hg19.norm
 <tr class="header">
 <th data-quarto-table-cell-role="th" scope="col">Name</th>
 <th data-quarto-table-cell-role="th" scope="col">Chrom</th>
-<th data-quarto-table-cell-role="th" scope="col">Start</th>
-<th data-quarto-table-cell-role="th" scope="col">End</th>
+<th data-quarto-table-cell-role="th" scope="col">ChromStart</th>
+<th data-quarto-table-cell-role="th" scope="col">ChromEnd</th>
 <th data-quarto-table-cell-role="th" scope="col">Strand</th>
 <th data-quarto-table-cell-role="th" scope="col">Input.rep1</th>
 <th data-quarto-table-cell-role="th" scope="col">Input.rep2</th>
@@ -898,8 +898,8 @@ $TMPRA_K562_OL43_20221003.hg38.raw
 <tr class="header">
 <th data-quarto-table-cell-role="th" scope="col">Name</th>
 <th data-quarto-table-cell-role="th" scope="col">Chrom</th>
-<th data-quarto-table-cell-role="th" scope="col">Start</th>
-<th data-quarto-table-cell-role="th" scope="col">End</th>
+<th data-quarto-table-cell-role="th" scope="col">ChromStart</th>
+<th data-quarto-table-cell-role="th" scope="col">ChromEnd</th>
 <th data-quarto-table-cell-role="th" scope="col">Strand</th>
 <th data-quarto-table-cell-role="th" scope="col">Input.rep1</th>
 <th data-quarto-table-cell-role="th" scope="col">Input.rep2</th>
@@ -996,8 +996,8 @@ $TMPRA_K562_OL43_20221003.hg38.norm
 <tr class="header">
 <th data-quarto-table-cell-role="th" scope="col">Name</th>
 <th data-quarto-table-cell-role="th" scope="col">Chrom</th>
-<th data-quarto-table-cell-role="th" scope="col">Start</th>
-<th data-quarto-table-cell-role="th" scope="col">End</th>
+<th data-quarto-table-cell-role="th" scope="col">ChromStart</th>
+<th data-quarto-table-cell-role="th" scope="col">ChromEnd</th>
 <th data-quarto-table-cell-role="th" scope="col">Strand</th>
 <th data-quarto-table-cell-role="th" scope="col">Input.rep1</th>
 <th data-quarto-table-cell-role="th" scope="col">Input.rep2</th>
@@ -1094,8 +1094,8 @@ $TMPRA_K562_OL45_20220927.hg38.raw
 <tr class="header">
 <th data-quarto-table-cell-role="th" scope="col">Name</th>
 <th data-quarto-table-cell-role="th" scope="col">Chrom</th>
-<th data-quarto-table-cell-role="th" scope="col">Start</th>
-<th data-quarto-table-cell-role="th" scope="col">End</th>
+<th data-quarto-table-cell-role="th" scope="col">ChromStart</th>
+<th data-quarto-table-cell-role="th" scope="col">ChromEnd</th>
 <th data-quarto-table-cell-role="th" scope="col">Strand</th>
 <th data-quarto-table-cell-role="th" scope="col">Input.rep1</th>
 <th data-quarto-table-cell-role="th" scope="col">Input.rep2</th>
@@ -1177,8 +1177,8 @@ $TMPRA_K562_OL45_20220927.hg38.norm
 <tr class="header">
 <th data-quarto-table-cell-role="th" scope="col">Name</th>
 <th data-quarto-table-cell-role="th" scope="col">Chrom</th>
-<th data-quarto-table-cell-role="th" scope="col">Start</th>
-<th data-quarto-table-cell-role="th" scope="col">End</th>
+<th data-quarto-table-cell-role="th" scope="col">ChromStart</th>
+<th data-quarto-table-cell-role="th" scope="col">ChromEnd</th>
 <th data-quarto-table-cell-role="th" scope="col">Strand</th>
 <th data-quarto-table-cell-role="th" scope="col">Input.rep1</th>
 <th data-quarto-table-cell-role="th" scope="col">Input.rep2</th>
@@ -1277,10 +1277,10 @@ $TMPRA_K562_OL45_20220927.hg38.norm
 <span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>    <span class="do">### calculate the mean of input for each fragment and </span></span>
 <span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>    tmp <span class="ot">=</span> dat <span class="sc">%&gt;%</span> </span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>        tidyr<span class="sc">::</span><span class="fu">gather</span>(Sample, Value, <span class="sc">-</span>Chrom, <span class="sc">-</span>Start, <span class="sc">-</span>End, <span class="sc">-</span>Name, <span class="sc">-</span>Strand) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>        tidyr<span class="sc">::</span><span class="fu">gather</span>(Sample, Value, <span class="sc">-</span>Chrom, <span class="sc">-</span>ChromStart, <span class="sc">-</span>ChromEnd, <span class="sc">-</span>Name, <span class="sc">-</span>Strand) <span class="sc">%&gt;%</span> </span>
 <span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>        tidyr<span class="sc">::</span><span class="fu">separate</span>(Sample, <span class="fu">c</span>(<span class="st">"Group"</span>, <span class="st">"Rep"</span>), <span class="at">sep=</span><span class="st">"</span><span class="sc">\\</span><span class="st">."</span>, <span class="at">remove=</span><span class="cn">FALSE</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">filter</span>(Group <span class="sc">==</span> <span class="st">"Input"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">group_by</span>(Chrom, Start, End, Name, Strand, Group) <span class="sc">%&gt;%</span></span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">group_by</span>(Chrom, ChromStart, ChromEnd, Name, Strand, Group) <span class="sc">%&gt;%</span></span>
 <span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">summarise</span>(<span class="at">Value =</span> <span class="fu">mean</span>(Value), <span class="at">.groups=</span><span class="st">"drop"</span>)</span>
 <span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>    <span class="do">### filter out the fragment w/ plasmid mean is zero</span></span>
@@ -1364,8 +1364,8 @@ $TMPRA_K562_OL45_20220927.hg38.norm
 <tr class="header">
 <th data-quarto-table-cell-role="th" scope="col">Name</th>
 <th data-quarto-table-cell-role="th" scope="col">Chrom</th>
-<th data-quarto-table-cell-role="th" scope="col">Start</th>
-<th data-quarto-table-cell-role="th" scope="col">End</th>
+<th data-quarto-table-cell-role="th" scope="col">ChromStart</th>
+<th data-quarto-table-cell-role="th" scope="col">ChromEnd</th>
 <th data-quarto-table-cell-role="th" scope="col">Strand</th>
 <th data-quarto-table-cell-role="th" scope="col">Input.rep1</th>
 <th data-quarto-table-cell-role="th" scope="col">Input.rep2</th>
@@ -1526,8 +1526,8 @@ TMPRA_K562_OL45_20220927.hg38.norm </code></pre>
 <tr class="header">
 <th data-quarto-table-cell-role="th" scope="col">Name</th>
 <th data-quarto-table-cell-role="th" scope="col">Chrom</th>
-<th data-quarto-table-cell-role="th" scope="col">Start</th>
-<th data-quarto-table-cell-role="th" scope="col">End</th>
+<th data-quarto-table-cell-role="th" scope="col">ChromStart</th>
+<th data-quarto-table-cell-role="th" scope="col">ChromEnd</th>
 <th data-quarto-table-cell-role="th" scope="col">Strand</th>
 <th data-quarto-table-cell-role="th" scope="col">Input.rep1</th>
 <th data-quarto-table-cell-role="th" scope="col">Input.rep2</th>
@@ -1624,8 +1624,8 @@ TMPRA_K562_OL45_20220927.hg38.norm </code></pre>
 <tr class="header">
 <th data-quarto-table-cell-role="th" scope="col">Name</th>
 <th data-quarto-table-cell-role="th" scope="col">Chrom</th>
-<th data-quarto-table-cell-role="th" scope="col">Start</th>
-<th data-quarto-table-cell-role="th" scope="col">End</th>
+<th data-quarto-table-cell-role="th" scope="col">ChromStart</th>
+<th data-quarto-table-cell-role="th" scope="col">ChromEnd</th>
 <th data-quarto-table-cell-role="th" scope="col">Strand</th>
 <th data-quarto-table-cell-role="th" scope="col">Input.rep1</th>
 <th data-quarto-table-cell-role="th" scope="col">Input.rep2</th>
@@ -1737,8 +1737,8 @@ TMPRA_K562_OL45_20220927.hg38.norm </code></pre>
 <tr class="header">
 <th data-quarto-table-cell-role="th" scope="col">Name</th>
 <th data-quarto-table-cell-role="th" scope="col">Chrom</th>
-<th data-quarto-table-cell-role="th" scope="col">Start</th>
-<th data-quarto-table-cell-role="th" scope="col">End</th>
+<th data-quarto-table-cell-role="th" scope="col">ChromStart</th>
+<th data-quarto-table-cell-role="th" scope="col">ChromEnd</th>
 <th data-quarto-table-cell-role="th" scope="col">Strand</th>
 <th data-quarto-table-cell-role="th" scope="col">Input.rep1</th>
 <th data-quarto-table-cell-role="th" scope="col">Input.rep2</th>
@@ -1850,8 +1850,8 @@ TMPRA_K562_OL45_20220927.hg38.norm </code></pre>
 <tr class="header">
 <th data-quarto-table-cell-role="th" scope="col">Name</th>
 <th data-quarto-table-cell-role="th" scope="col">Chrom</th>
-<th data-quarto-table-cell-role="th" scope="col">Start</th>
-<th data-quarto-table-cell-role="th" scope="col">End</th>
+<th data-quarto-table-cell-role="th" scope="col">ChromStart</th>
+<th data-quarto-table-cell-role="th" scope="col">ChromEnd</th>
 <th data-quarto-table-cell-role="th" scope="col">Strand</th>
 <th data-quarto-table-cell-role="th" scope="col">Input.rep1</th>
 <th data-quarto-table-cell-role="th" scope="col">Input.rep2</th>
@@ -2064,12 +2064,12 @@ TMPRA_K562_OL45_20220927.hg38.raw </code></pre>
 <span id="cb37-21"><a href="#cb37-21" aria-hidden="true" tabindex="-1"></a>    <span class="do">### extract positive trands and order by positions</span></span>
 <span id="cb37-22"><a href="#cb37-22" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> </span>
 <span id="cb37-23"><a href="#cb37-23" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">filter</span>(Strand <span class="sc">==</span> <span class="st">"+"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb37-24"><a href="#cb37-24" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">arrange</span>(Chrom, Start, End)</span>
+<span id="cb37-24"><a href="#cb37-24" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">arrange</span>(Chrom, ChromStart, ChromEnd)</span>
 <span id="cb37-25"><a href="#cb37-25" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb37-26"><a href="#cb37-26" aria-hidden="true" tabindex="-1"></a>    <span class="do">### arrange the column into bed file format</span></span>
 <span id="cb37-27"><a href="#cb37-27" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span></span>
 <span id="cb37-28"><a href="#cb37-28" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">Score =</span> <span class="st">"."</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb37-29"><a href="#cb37-29" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">select</span>(Chrom, Start, End, Name, Score, Strand)</span>
+<span id="cb37-29"><a href="#cb37-29" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">select</span>(Chrom, ChromStart, ChromEnd, Name, Score, Strand)</span>
 <span id="cb37-30"><a href="#cb37-30" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb37-31"><a href="#cb37-31" aria-hidden="true" tabindex="-1"></a>    <span class="do">### save table</span></span>
 <span id="cb37-32"><a href="#cb37-32" aria-hidden="true" tabindex="-1"></a>    txt_fname <span class="ot">=</span> <span class="fu">paste</span>(idx, txt_strand, <span class="st">"bed.gz"</span>, <span class="at">sep=</span><span class="st">"."</span>)</span>
@@ -2089,42 +2089,42 @@ TMPRA_K562_OL45_20220927.hg38.raw </code></pre>
 =======================
 Sample: TMPRA_K562_OL13_20220512.hg19.raw 
 # A tibble: 6 × 6
-  Chrom    Start      End Name                    Score Strand
-  &lt;chr&gt;    &lt;int&gt;    &lt;int&gt; &lt;chr&gt;                   &lt;chr&gt; &lt;chr&gt; 
-1 chr11 61554801 61555000 chr11:61554801-61555000 .     +     
-2 chr11 61554806 61555005 chr11:61554806-61555005 .     +     
-3 chr11 61554811 61555010 chr11:61554811-61555010 .     +     
-4 chr11 61554816 61555015 chr11:61554816-61555015 .     +     
-5 chr11 61554821 61555020 chr11:61554821-61555020 .     +     
-6 chr11 61554826 61555025 chr11:61554826-61555025 .     +     
+  Chrom ChromStart ChromEnd Name                    Score Strand
+  &lt;chr&gt;      &lt;int&gt;    &lt;int&gt; &lt;chr&gt;                   &lt;chr&gt; &lt;chr&gt; 
+1 chr11   61554801 61555000 chr11:61554801-61555000 .     +     
+2 chr11   61554806 61555005 chr11:61554806-61555005 .     +     
+3 chr11   61554811 61555010 chr11:61554811-61555010 .     +     
+4 chr11   61554816 61555015 chr11:61554816-61555015 .     +     
+5 chr11   61554821 61555020 chr11:61554821-61555020 .     +     
+6 chr11   61554826 61555025 chr11:61554826-61555025 .     +     
 
 Saved Table: TMPRA_K562_OL13_20220512.hg19.raw.stranded_pos.bed.gz 
 
 =======================
 Sample: TMPRA_K562_OL43_20221003.hg38.raw 
 # A tibble: 6 × 6
-  Chrom     Start       End Name                     Score Strand
-  &lt;chr&gt;     &lt;int&gt;     &lt;int&gt; &lt;chr&gt;                    &lt;chr&gt; &lt;chr&gt; 
-1 chr8  126735901 126736100 chr8:126735901-126736100 .     +     
-2 chr8  126735951 126736150 chr8:126735951-126736150 .     +     
-3 chr8  126736001 126736200 chr8:126736001-126736200 .     +     
-4 chr8  126736051 126736250 chr8:126736051-126736250 .     +     
-5 chr8  126736101 126736300 chr8:126736101-126736300 .     +     
-6 chr8  126736151 126736350 chr8:126736151-126736350 .     +     
+  Chrom ChromStart  ChromEnd Name                     Score Strand
+  &lt;chr&gt;      &lt;int&gt;     &lt;int&gt; &lt;chr&gt;                    &lt;chr&gt; &lt;chr&gt; 
+1 chr8   126735901 126736100 chr8:126735901-126736100 .     +     
+2 chr8   126735951 126736150 chr8:126735951-126736150 .     +     
+3 chr8   126736001 126736200 chr8:126736001-126736200 .     +     
+4 chr8   126736051 126736250 chr8:126736051-126736250 .     +     
+5 chr8   126736101 126736300 chr8:126736101-126736300 .     +     
+6 chr8   126736151 126736350 chr8:126736151-126736350 .     +     
 
 Saved Table: TMPRA_K562_OL43_20221003.hg38.raw.stranded_pos.bed.gz 
 
 =======================
 Sample: TMPRA_K562_OL45_20220927.hg38.raw 
 # A tibble: 6 × 6
-  Chrom   Start     End Name                  Score Strand
-  &lt;chr&gt;   &lt;int&gt;   &lt;int&gt; &lt;chr&gt;                 &lt;chr&gt; &lt;chr&gt; 
-1 chr11 4505501 4505700 chr11:4505501-4505700 .     +     
-2 chr11 4505601 4505800 chr11:4505601-4505800 .     +     
-3 chr11 4505701 4505900 chr11:4505701-4505900 .     +     
-4 chr11 4505801 4506000 chr11:4505801-4506000 .     +     
-5 chr11 4505901 4506100 chr11:4505901-4506100 .     +     
-6 chr11 4506001 4506200 chr11:4506001-4506200 .     +     
+  Chrom ChromStart ChromEnd Name                  Score Strand
+  &lt;chr&gt;      &lt;int&gt;    &lt;int&gt; &lt;chr&gt;                 &lt;chr&gt; &lt;chr&gt; 
+1 chr11    4505501  4505700 chr11:4505501-4505700 .     +     
+2 chr11    4505601  4505800 chr11:4505601-4505800 .     +     
+3 chr11    4505701  4505900 chr11:4505701-4505900 .     +     
+4 chr11    4505801  4506000 chr11:4505801-4506000 .     +     
+5 chr11    4505901  4506100 chr11:4505901-4506100 .     +     
+6 chr11    4506001  4506200 chr11:4506001-4506200 .     +     
 
 Saved Table: TMPRA_K562_OL45_20220927.hg38.raw.stranded_pos.bed.gz </code></pre>
 </div>
@@ -2158,7 +2158,7 @@ Saved Table: TMPRA_K562_OL45_20220927.hg38.raw.stranded_pos.bed.gz </code></pre>
 <span id="cb39-21"><a href="#cb39-21" aria-hidden="true" tabindex="-1"></a>    <span class="do">### extract positive trands and order by positions</span></span>
 <span id="cb39-22"><a href="#cb39-22" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> </span>
 <span id="cb39-23"><a href="#cb39-23" aria-hidden="true" tabindex="-1"></a>       dplyr<span class="sc">::</span><span class="fu">filter</span>(Strand <span class="sc">==</span> <span class="st">"+"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb39-24"><a href="#cb39-24" aria-hidden="true" tabindex="-1"></a>       dplyr<span class="sc">::</span><span class="fu">arrange</span>(Chrom, Start, End)</span>
+<span id="cb39-24"><a href="#cb39-24" aria-hidden="true" tabindex="-1"></a>       dplyr<span class="sc">::</span><span class="fu">arrange</span>(Chrom, ChromStart, ChromEnd)</span>
 <span id="cb39-25"><a href="#cb39-25" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb39-26"><a href="#cb39-26" aria-hidden="true" tabindex="-1"></a>    <span class="do">### save table</span></span>
 <span id="cb39-27"><a href="#cb39-27" aria-hidden="true" tabindex="-1"></a>    txt_fname <span class="ot">=</span> <span class="fu">paste</span>(idx, txt_strand, <span class="st">"tsv"</span>, <span class="at">sep=</span><span class="st">"."</span>)</span>
@@ -2177,97 +2177,100 @@ Saved Table: TMPRA_K562_OL45_20220927.hg38.raw.stranded_pos.bed.gz </code></pre>
 =======================
 Sample: TMPRA_K562_OL13_20220512.hg19.raw 
 # A tibble: 6 × 13
-  Name    Chrom  Start    End Strand Input.rep1 Input.rep2 Input.rep3 Input.rep4
-  &lt;chr&gt;   &lt;chr&gt;  &lt;int&gt;  &lt;int&gt; &lt;chr&gt;       &lt;int&gt;      &lt;int&gt;      &lt;int&gt;      &lt;int&gt;
-1 chr11:… chr11 6.16e7 6.16e7 +             971        542        785        640
-2 chr11:… chr11 6.16e7 6.16e7 +            1267        562       1059        564
-3 chr11:… chr11 6.16e7 6.16e7 +            1183        641       1118        655
-4 chr11:… chr11 6.16e7 6.16e7 +            1020        476       1086        584
-5 chr11:… chr11 6.16e7 6.16e7 +            1138        580        894        565
-6 chr11:… chr11 6.16e7 6.16e7 +             702        406        745        318
-# ℹ 4 more variables: Output.rep1 &lt;int&gt;, Output.rep2 &lt;int&gt;, Output.rep3 &lt;int&gt;,
-#   Output.rep4 &lt;int&gt;
+  Name         Chrom ChromStart ChromEnd Strand Input.rep1 Input.rep2 Input.rep3
+  &lt;chr&gt;        &lt;chr&gt;      &lt;int&gt;    &lt;int&gt; &lt;chr&gt;       &lt;int&gt;      &lt;int&gt;      &lt;int&gt;
+1 chr11:61554… chr11   61554801 61555000 +             971        542        785
+2 chr11:61554… chr11   61554806 61555005 +            1267        562       1059
+3 chr11:61554… chr11   61554811 61555010 +            1183        641       1118
+4 chr11:61554… chr11   61554816 61555015 +            1020        476       1086
+5 chr11:61554… chr11   61554821 61555020 +            1138        580        894
+6 chr11:61554… chr11   61554826 61555025 +             702        406        745
+# ℹ 5 more variables: Input.rep4 &lt;int&gt;, Output.rep1 &lt;int&gt;, Output.rep2 &lt;int&gt;,
+#   Output.rep3 &lt;int&gt;, Output.rep4 &lt;int&gt;
 
 Saved Table: TMPRA_K562_OL13_20220512.hg19.raw.stranded_pos.tsv 
 
 =======================
 Sample: TMPRA_K562_OL13_20220512.hg19.norm 
 # A tibble: 6 × 16
-  Name    Chrom  Start    End Strand Input.rep1 Input.rep2 Input.rep3 Input.rep4
-  &lt;chr&gt;   &lt;chr&gt;  &lt;int&gt;  &lt;int&gt; &lt;chr&gt;       &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;
-1 chr11:… chr11 6.16e7 6.16e7 +            532.       531.       481.       621.
-2 chr11:… chr11 6.16e7 6.16e7 +            694.       551.       649.       548.
-3 chr11:… chr11 6.16e7 6.16e7 +            648.       628.       685.       636.
-4 chr11:… chr11 6.16e7 6.16e7 +            559.       466.       666.       567.
-5 chr11:… chr11 6.16e7 6.16e7 +            624.       568.       548.       549.
-6 chr11:… chr11 6.16e7 6.16e7 +            385.       398.       457.       309.
-# ℹ 7 more variables: Output.rep1 &lt;dbl&gt;, Output.rep2 &lt;dbl&gt;, Output.rep3 &lt;dbl&gt;,
-#   Output.rep4 &lt;dbl&gt;, Input.mean &lt;dbl&gt;, Output.mean &lt;dbl&gt;, Log2FC.mean &lt;dbl&gt;
+  Name         Chrom ChromStart ChromEnd Strand Input.rep1 Input.rep2 Input.rep3
+  &lt;chr&gt;        &lt;chr&gt;      &lt;int&gt;    &lt;int&gt; &lt;chr&gt;       &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;
+1 chr11:61554… chr11   61554801 61555000 +            532.       531.       481.
+2 chr11:61554… chr11   61554806 61555005 +            694.       551.       649.
+3 chr11:61554… chr11   61554811 61555010 +            648.       628.       685.
+4 chr11:61554… chr11   61554816 61555015 +            559.       466.       666.
+5 chr11:61554… chr11   61554821 61555020 +            624.       568.       548.
+6 chr11:61554… chr11   61554826 61555025 +            385.       398.       457.
+# ℹ 8 more variables: Input.rep4 &lt;dbl&gt;, Output.rep1 &lt;dbl&gt;, Output.rep2 &lt;dbl&gt;,
+#   Output.rep3 &lt;dbl&gt;, Output.rep4 &lt;dbl&gt;, Input.mean &lt;dbl&gt;, Output.mean &lt;dbl&gt;,
+#   Log2FC.mean &lt;dbl&gt;
 
 Saved Table: TMPRA_K562_OL13_20220512.hg19.norm.stranded_pos.tsv 
 
 =======================
 Sample: TMPRA_K562_OL43_20221003.hg38.raw 
 # A tibble: 6 × 16
-  Name    Chrom  Start    End Strand Input.rep1 Input.rep2 Input.rep3 Input.rep4
-  &lt;chr&gt;   &lt;chr&gt;  &lt;int&gt;  &lt;int&gt; &lt;chr&gt;       &lt;int&gt;      &lt;int&gt;      &lt;int&gt;      &lt;int&gt;
-1 chr8:1… chr8  1.27e8 1.27e8 +            1190       1409       1259       1179
-2 chr8:1… chr8  1.27e8 1.27e8 +             194        161        161        208
-3 chr8:1… chr8  1.27e8 1.27e8 +             746        757        708        704
-4 chr8:1… chr8  1.27e8 1.27e8 +             934       1056        988        985
-5 chr8:1… chr8  1.27e8 1.27e8 +             697        887        772        796
-6 chr8:1… chr8  1.27e8 1.27e8 +            1225       1454       1264       1256
-# ℹ 7 more variables: Input.rep5 &lt;int&gt;, Input.rep6 &lt;int&gt;, Output.rep1 &lt;int&gt;,
-#   Output.rep2 &lt;int&gt;, Output.rep3 &lt;int&gt;, Output.rep4 &lt;int&gt;, Output.rep5 &lt;int&gt;
+  Name         Chrom ChromStart ChromEnd Strand Input.rep1 Input.rep2 Input.rep3
+  &lt;chr&gt;        &lt;chr&gt;      &lt;int&gt;    &lt;int&gt; &lt;chr&gt;       &lt;int&gt;      &lt;int&gt;      &lt;int&gt;
+1 chr8:126735… chr8   126735901   1.27e8 +            1190       1409       1259
+2 chr8:126735… chr8   126735951   1.27e8 +             194        161        161
+3 chr8:126736… chr8   126736001   1.27e8 +             746        757        708
+4 chr8:126736… chr8   126736051   1.27e8 +             934       1056        988
+5 chr8:126736… chr8   126736101   1.27e8 +             697        887        772
+6 chr8:126736… chr8   126736151   1.27e8 +            1225       1454       1264
+# ℹ 8 more variables: Input.rep4 &lt;int&gt;, Input.rep5 &lt;int&gt;, Input.rep6 &lt;int&gt;,
+#   Output.rep1 &lt;int&gt;, Output.rep2 &lt;int&gt;, Output.rep3 &lt;int&gt;, Output.rep4 &lt;int&gt;,
+#   Output.rep5 &lt;int&gt;
 
 Saved Table: TMPRA_K562_OL43_20221003.hg38.raw.stranded_pos.tsv 
 
 =======================
 Sample: TMPRA_K562_OL43_20221003.hg38.norm 
 # A tibble: 6 × 19
-  Name    Chrom  Start    End Strand Input.rep1 Input.rep2 Input.rep3 Input.rep4
-  &lt;chr&gt;   &lt;chr&gt;  &lt;int&gt;  &lt;int&gt; &lt;chr&gt;       &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;
-1 chr8:1… chr8  1.27e8 1.27e8 +            801.      840.        807.       741.
-2 chr8:1… chr8  1.27e8 1.27e8 +            131.       96.0       103.       131.
-3 chr8:1… chr8  1.27e8 1.27e8 +            502.      451.        454.       442.
-4 chr8:1… chr8  1.27e8 1.27e8 +            629.      629.        633.       619.
-5 chr8:1… chr8  1.27e8 1.27e8 +            469.      529.        495.       500.
-6 chr8:1… chr8  1.27e8 1.27e8 +            825.      867.        810.       789.
-# ℹ 10 more variables: Input.rep5 &lt;dbl&gt;, Input.rep6 &lt;dbl&gt;, Output.rep1 &lt;dbl&gt;,
-#   Output.rep2 &lt;dbl&gt;, Output.rep3 &lt;dbl&gt;, Output.rep4 &lt;dbl&gt;, Output.rep5 &lt;dbl&gt;,
-#   Input.mean &lt;dbl&gt;, Output.mean &lt;dbl&gt;, Log2FC.mean &lt;dbl&gt;
+  Name         Chrom ChromStart ChromEnd Strand Input.rep1 Input.rep2 Input.rep3
+  &lt;chr&gt;        &lt;chr&gt;      &lt;int&gt;    &lt;int&gt; &lt;chr&gt;       &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;
+1 chr8:126735… chr8   126735901   1.27e8 +            801.      840.        807.
+2 chr8:126735… chr8   126735951   1.27e8 +            131.       96.0       103.
+3 chr8:126736… chr8   126736001   1.27e8 +            502.      451.        454.
+4 chr8:126736… chr8   126736051   1.27e8 +            629.      629.        633.
+5 chr8:126736… chr8   126736101   1.27e8 +            469.      529.        495.
+6 chr8:126736… chr8   126736151   1.27e8 +            825.      867.        810.
+# ℹ 11 more variables: Input.rep4 &lt;dbl&gt;, Input.rep5 &lt;dbl&gt;, Input.rep6 &lt;dbl&gt;,
+#   Output.rep1 &lt;dbl&gt;, Output.rep2 &lt;dbl&gt;, Output.rep3 &lt;dbl&gt;, Output.rep4 &lt;dbl&gt;,
+#   Output.rep5 &lt;dbl&gt;, Input.mean &lt;dbl&gt;, Output.mean &lt;dbl&gt;, Log2FC.mean &lt;dbl&gt;
 
 Saved Table: TMPRA_K562_OL43_20221003.hg38.norm.stranded_pos.tsv 
 
 =======================
 Sample: TMPRA_K562_OL45_20220927.hg38.raw 
 # A tibble: 6 × 13
-  Name    Chrom  Start    End Strand Input.rep1 Input.rep2 Input.rep3 Input.rep4
-  &lt;chr&gt;   &lt;chr&gt;  &lt;int&gt;  &lt;int&gt; &lt;chr&gt;       &lt;int&gt;      &lt;int&gt;      &lt;int&gt;      &lt;int&gt;
-1 chr11:… chr11 4.51e6 4.51e6 +             811        664        917        815
-2 chr11:… chr11 4.51e6 4.51e6 +             693        552        607        551
-3 chr11:… chr11 4.51e6 4.51e6 +             577        414        448        371
-4 chr11:… chr11 4.51e6 4.51e6 +             855        754        688        812
-5 chr11:… chr11 4.51e6 4.51e6 +             317        217        313        280
-6 chr11:… chr11 4.51e6 4.51e6 +             444        422        454        473
-# ℹ 4 more variables: Output.rep1 &lt;int&gt;, Output.rep2 &lt;int&gt;, Output.rep3 &lt;int&gt;,
-#   Output.rep4 &lt;int&gt;
+  Name         Chrom ChromStart ChromEnd Strand Input.rep1 Input.rep2 Input.rep3
+  &lt;chr&gt;        &lt;chr&gt;      &lt;int&gt;    &lt;int&gt; &lt;chr&gt;       &lt;int&gt;      &lt;int&gt;      &lt;int&gt;
+1 chr11:45055… chr11    4505501  4505700 +             811        664        917
+2 chr11:45056… chr11    4505601  4505800 +             693        552        607
+3 chr11:45057… chr11    4505701  4505900 +             577        414        448
+4 chr11:45058… chr11    4505801  4506000 +             855        754        688
+5 chr11:45059… chr11    4505901  4506100 +             317        217        313
+6 chr11:45060… chr11    4506001  4506200 +             444        422        454
+# ℹ 5 more variables: Input.rep4 &lt;int&gt;, Output.rep1 &lt;int&gt;, Output.rep2 &lt;int&gt;,
+#   Output.rep3 &lt;int&gt;, Output.rep4 &lt;int&gt;
 
 Saved Table: TMPRA_K562_OL45_20220927.hg38.raw.stranded_pos.tsv 
 
 =======================
 Sample: TMPRA_K562_OL45_20220927.hg38.norm 
 # A tibble: 6 × 16
-  Name    Chrom  Start    End Strand Input.rep1 Input.rep2 Input.rep3 Input.rep4
-  &lt;chr&gt;   &lt;chr&gt;  &lt;int&gt;  &lt;int&gt; &lt;chr&gt;       &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;
-1 chr11:… chr11 4.51e6 4.51e6 +            597.       577.       776.       702.
-2 chr11:… chr11 4.51e6 4.51e6 +            510.       480.       514.       474.
-3 chr11:… chr11 4.51e6 4.51e6 +            425.       360.       379.       319.
-4 chr11:… chr11 4.51e6 4.51e6 +            629.       655.       582.       699.
-5 chr11:… chr11 4.51e6 4.51e6 +            233.       189.       265.       241.
-6 chr11:… chr11 4.51e6 4.51e6 +            327.       367.       384.       407.
-# ℹ 7 more variables: Output.rep1 &lt;dbl&gt;, Output.rep2 &lt;dbl&gt;, Output.rep3 &lt;dbl&gt;,
-#   Output.rep4 &lt;dbl&gt;, Input.mean &lt;dbl&gt;, Output.mean &lt;dbl&gt;, Log2FC.mean &lt;dbl&gt;
+  Name         Chrom ChromStart ChromEnd Strand Input.rep1 Input.rep2 Input.rep3
+  &lt;chr&gt;        &lt;chr&gt;      &lt;int&gt;    &lt;int&gt; &lt;chr&gt;       &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;
+1 chr11:45055… chr11    4505501  4505700 +            597.       577.       776.
+2 chr11:45056… chr11    4505601  4505800 +            510.       480.       514.
+3 chr11:45057… chr11    4505701  4505900 +            425.       360.       379.
+4 chr11:45058… chr11    4505801  4506000 +            629.       655.       582.
+5 chr11:45059… chr11    4505901  4506100 +            233.       189.       265.
+6 chr11:45060… chr11    4506001  4506200 +            327.       367.       384.
+# ℹ 8 more variables: Input.rep4 &lt;dbl&gt;, Output.rep1 &lt;dbl&gt;, Output.rep2 &lt;dbl&gt;,
+#   Output.rep3 &lt;dbl&gt;, Output.rep4 &lt;dbl&gt;, Input.mean &lt;dbl&gt;, Output.mean &lt;dbl&gt;,
+#   Log2FC.mean &lt;dbl&gt;
 
 Saved Table: TMPRA_K562_OL45_20220927.hg38.norm.stranded_pos.tsv </code></pre>
 </div>

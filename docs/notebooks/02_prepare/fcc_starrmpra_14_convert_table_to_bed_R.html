@@ -418,8 +418,8 @@ Read table: TMPRA_K562_OL45_20220927.hg38.norm.stranded_pos.tsv </code></pre>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Input.rep1</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Input.rep2</th>
@@ -544,8 +544,8 @@ Read table: TMPRA_K562_OL45_20220927.hg38.norm.stranded_pos.tsv </code></pre>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Input.rep1</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Input.rep2</th>
@@ -766,7 +766,7 @@ PROJECT/results/assay_fcc
 <span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> lst_dat[[txt_prefix]]</span>
 <span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> </span>
 <span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">filter</span>(Strand <span class="sc">==</span> <span class="st">"+"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>        <span class="fu">gather</span>(Sample, Score, <span class="sc">-</span>Chrom, <span class="sc">-</span>Start, <span class="sc">-</span>End, <span class="sc">-</span>Name, <span class="sc">-</span>Strand)</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>        <span class="fu">gather</span>(Sample, Score, <span class="sc">-</span>Chrom, <span class="sc">-</span>ChromStart, <span class="sc">-</span>ChromEnd, <span class="sc">-</span>Name, <span class="sc">-</span>Strand)</span>
 <span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>    lst <span class="ot">=</span> <span class="fu">split</span>(dat, dat<span class="sc">$</span>Sample)</span>
 <span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>    <span class="do">### save each score column into a bed file</span></span>
@@ -774,10 +774,10 @@ PROJECT/results/assay_fcc
 <span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>        <span class="do">### setup data for each column</span></span>
 <span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>        dat <span class="ot">=</span> lst[[txt_cname]]</span>
 <span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>        dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span></span>
-<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>            dplyr<span class="sc">::</span><span class="fu">select</span>(Chrom, Start, End, Name, Score, Strand) <span class="sc">%&gt;%</span></span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>            dplyr<span class="sc">::</span><span class="fu">select</span>(Chrom, ChromStart, ChromEnd, Name, Score, Strand) <span class="sc">%&gt;%</span></span>
 <span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>            dplyr<span class="sc">::</span><span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.infinite</span>(Score)) <span class="sc">%&gt;%</span> </span>
 <span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a>            dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">Score =</span> <span class="fu">round</span>(Score, <span class="dv">3</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a>            dplyr<span class="sc">::</span><span class="fu">arrange</span>(Chrom, Start, End)</span>
+<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a>            dplyr<span class="sc">::</span><span class="fu">arrange</span>(Chrom, ChromStart, ChromEnd)</span>
 <span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a>        <span class="do">### store into a bed file</span></span>
 <span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a>        txt_fname <span class="ot">=</span> <span class="fu">paste</span>(txt_prefix, txt_cname, txt_strand, <span class="st">"bed.gz"</span>, <span class="at">sep=</span><span class="st">"."</span>)</span>
@@ -991,8 +991,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -1031,8 +1031,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -1071,8 +1071,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -1111,8 +1111,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -1151,8 +1151,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -1191,8 +1191,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -1231,8 +1231,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -1271,8 +1271,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -1311,8 +1311,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -1351,8 +1351,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -1391,8 +1391,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -1431,8 +1431,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -1471,8 +1471,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -1511,8 +1511,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -1551,8 +1551,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -1591,8 +1591,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -1631,8 +1631,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -1671,8 +1671,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -1711,8 +1711,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -1751,8 +1751,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -1791,8 +1791,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -1831,8 +1831,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -1871,8 +1871,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -1911,8 +1911,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -1951,8 +1951,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -1991,8 +1991,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -2031,8 +2031,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -2071,8 +2071,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -2111,8 +2111,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -2151,8 +2151,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -2191,8 +2191,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -2231,8 +2231,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -2271,8 +2271,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -2311,8 +2311,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -2351,8 +2351,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -2391,8 +2391,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -2431,8 +2431,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -2471,8 +2471,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -2511,8 +2511,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -2551,8 +2551,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -2591,8 +2591,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -2631,8 +2631,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -2671,8 +2671,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -2711,8 +2711,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -2751,8 +2751,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -2791,8 +2791,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -2831,8 +2831,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -2871,8 +2871,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -2911,8 +2911,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -2951,8 +2951,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -2991,8 +2991,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -3031,8 +3031,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -3071,8 +3071,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -3111,8 +3111,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -3151,8 +3151,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -3191,8 +3191,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -3231,8 +3231,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -3271,8 +3271,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -3311,8 +3311,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -3351,8 +3351,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -3391,8 +3391,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -3431,8 +3431,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
@@ -3471,8 +3471,8 @@ Save bed file: TMPRA_K562_OL45_20220927.hg38.norm.Output.rep4.stranded_pos.bed.g
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Start</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">End</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Strand</th>
