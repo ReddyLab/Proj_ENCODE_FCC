@@ -72,7 +72,8 @@ ul.task-list li input[type="checkbox"] {
 
     const options = {
       valueNames: ['listing-title','listing-subtitle',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      
+      page: 10,
+    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
       searchColumns: ["listing-title","listing-author"],
     };
 
@@ -299,9 +300,14 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#step-prepare-data" id="toc-step-prepare-data" class="nav-link active" data-scroll-target="#step-prepare-data">Step: Prepare Data</a></li>
-  <li><a href="#step-coverage" id="toc-step-coverage" class="nav-link" data-scroll-target="#step-coverage">Step: Coverage</a></li>
-  <li><a href="#testing-documentation" id="toc-testing-documentation" class="nav-link" data-scroll-target="#testing-documentation">Testing documentation</a></li>
+  <li><a href="#step-setup-and-preparation" id="toc-step-setup-and-preparation" class="nav-link active" data-scroll-target="#step-setup-and-preparation">Step: Setup and Preparation</a></li>
+  <li><a href="#step-starrmpra-analysis" id="toc-step-starrmpra-analysis" class="nav-link" data-scroll-target="#step-starrmpra-analysis">Step: STARR/MPRA Analysis</a></li>
+  <li><a href="#step-crispr-analysis" id="toc-step-crispr-analysis" class="nav-link" data-scroll-target="#step-crispr-analysis">Step: CRISPR Analysis</a></li>
+  <li><a href="#step-hi-c-analysis" id="toc-step-hi-c-analysis" class="nav-link" data-scroll-target="#step-hi-c-analysis">Step: Hi-C Analysis</a></li>
+  <li><a href="#step-region-coverage" id="toc-step-region-coverage" class="nav-link" data-scroll-target="#step-region-coverage">Step: Region Coverage</a></li>
+  <li><a href="#step-region-annotation" id="toc-step-region-annotation" class="nav-link" data-scroll-target="#step-region-annotation">Step: Region Annotation</a></li>
+  <li><a href="#step-integrative-analysis" id="toc-step-integrative-analysis" class="nav-link" data-scroll-target="#step-integrative-analysis">Step: Integrative Analysis</a></li>
+  <li><a href="#testing" id="toc-testing" class="nav-link" data-scroll-target="#testing">Testing</a></li>
   </ul>
 </nav>
     </div>
@@ -325,8 +331,14 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="step-prepare-data" class="level2">
-<h2 class="anchored" data-anchor-id="step-prepare-data">Step: Prepare Data</h2>
+<section id="step-setup-and-preparation" class="level2">
+<h2 class="anchored" data-anchor-id="step-setup-and-preparation">Step: Setup and Preparation</h2>
+<p>This part is mainly about</p>
+<ul>
+<li>Downloading data to <code>PROJECT/data</code> folder</li>
+<li>Preparing data from <code>PROJECT/data</code> to <code>PROJECT/results</code> folder</li>
+<li>Generating metadata for down stream analysis</li>
+</ul>
 <div id="listing-notebooks_02_prepare" class="quarto-listing quarto-listing-container-table">
 <div class="listing-actions-group">
    <div class="input-group input-group-sm quarto-listing-sort">
@@ -476,13 +488,37 @@ Subtitle
 <div class="listing-no-matching d-none">
 No matching items
 </div>
+<nav id="notebooks_02_prepare-pagination" class="listing-pagination" aria-label="Page Navigation">
+  <ul class="pagination"></ul>
+</nav>
 </div>
 </section>
-<section id="step-coverage" class="level2">
-<h2 class="anchored" data-anchor-id="step-coverage">Step: Coverage</h2>
+<section id="step-starrmpra-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="step-starrmpra-analysis">Step: STARR/MPRA Analysis</h2>
 </section>
-<section id="testing-documentation" class="level2">
-<h2 class="anchored" data-anchor-id="testing-documentation">Testing documentation</h2>
+<section id="step-crispr-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="step-crispr-analysis">Step: CRISPR Analysis</h2>
+</section>
+<section id="step-hi-c-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="step-hi-c-analysis">Step: Hi-C Analysis</h2>
+</section>
+<section id="step-region-coverage" class="level2">
+<h2 class="anchored" data-anchor-id="step-region-coverage">Step: Region Coverage</h2>
+</section>
+<section id="step-region-annotation" class="level2">
+<h2 class="anchored" data-anchor-id="step-region-annotation">Step: Region Annotation</h2>
+</section>
+<section id="step-integrative-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="step-integrative-analysis">Step: Integrative Analysis</h2>
+<p>This part is mainly about</p>
+<ul>
+<li>FCC union peak set of cis-regulatory elements</li>
+<li>Enrichment analysis of chromtain states and TFs</li>
+<li>Quantitative comparison across assays</li>
+</ul>
+</section>
+<section id="testing" class="level2">
+<h2 class="anchored" data-anchor-id="testing">Testing</h2>
 <p>Below is a test notebook</p>
 <div id="listing-notebooks_test" class="quarto-listing quarto-listing-container-table">
 <div class="listing-actions-group">
