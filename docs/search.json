@@ -11,14 +11,28 @@
     "href": "analyses.html",
     "title": "List of steps in the analyses",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\nPrepare ENCODE ATAC/DNase Peaks 01\n\n\nGenerate download script to download the peak data\n\n\n\n\nPrepare ENCODE ATAC/DNase Peaks 02\n\n\nDownload the peak data\n\n\n\n\nPrepare ENCODE ATAC/DNase Peaks 03\n\n\nPrepare the peak files\n\n\n\n\nPrepare ENCODE ATAC/DNase Peaks 04\n\n\nGenerate metadata for the peak file\n\n\n\n\nPrepare STARR-seq data 01\n\n\nGet K562 STARR-seq data files from Reddy lab\n\n\n\n\nPrepare STARR-seq data 02\n\n\nExplore STARR-seq data files\n\n\n\n\nPrepare STARR-seq data 03\n\n\nLink STARR-seq data files from PROJECT/data to PROJECT/results folder\n\n\n\n\nPrepare Tiling MPRA data 01\n\n\nGet K562 MPRA data files from Tewhey lab\n\n\n\n\nPrepare Tiling MPRA data 02\n\n\nExplore Tiling MPRA data files\n\n\n\n\nPrepare Tiling MPRA data 03\n\n\nExtract fragment counts from Tiling MPRA data\n\n\n\n\n\nPrepare Tiling MPRA data 04\n\n\nCovert count matrix to bed format\n\n\n\n\n\n\nNo matching items\n\n\nBelow is a test notebook\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\nTest ipynb for documentation\n\n\nNotebook with kernel R\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\nPrepare ENCODE ATAC/DNase Peaks 01\n\n\nGenerate download script to download the peak data\n\n\n\n\nPrepare ENCODE ATAC/DNase Peaks 02\n\n\nDownload the peak data\n\n\n\n\nPrepare ENCODE ATAC/DNase Peaks 03\n\n\nPrepare the peak files\n\n\n\n\nPrepare ENCODE ATAC/DNase Peaks 04\n\n\nGenerate metadata for the peak file\n\n\n\n\nPrepare STARR-seq data 01\n\n\nGet K562 STARR-seq data files from Reddy lab\n\n\n\n\nPrepare STARR-seq data 02\n\n\nExplore STARR-seq data files\n\n\n\n\nPrepare STARR-seq data 03\n\n\nLink STARR-seq data files from PROJECT/data to PROJECT/results folder\n\n\n\n\nPrepare Tiling MPRA data 01\n\n\nGet K562 MPRA data files from Tewhey lab\n\n\n\n\nPrepare Tiling MPRA data 02\n\n\nExplore Tiling MPRA data files\n\n\n\n\nPrepare Tiling MPRA data 03\n\n\nExtract fragment counts from Tiling MPRA data\n\n\n\n\n\nPrepare Tiling MPRA data 04\n\n\nCovert count matrix to bed format\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "analyses.html#step-prepare-data",
     "href": "analyses.html#step-prepare-data",
     "title": "List of steps in the analyses",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\nPrepare ENCODE ATAC/DNase Peaks 01\n\n\nGenerate download script to download the peak data\n\n\n\n\nPrepare ENCODE ATAC/DNase Peaks 02\n\n\nDownload the peak data\n\n\n\n\nPrepare ENCODE ATAC/DNase Peaks 03\n\n\nPrepare the peak files\n\n\n\n\nPrepare ENCODE ATAC/DNase Peaks 04\n\n\nGenerate metadata for the peak file\n\n\n\n\nPrepare STARR-seq data 01\n\n\nGet K562 STARR-seq data files from Reddy lab\n\n\n\n\nPrepare STARR-seq data 02\n\n\nExplore STARR-seq data files\n\n\n\n\nPrepare STARR-seq data 03\n\n\nLink STARR-seq data files from PROJECT/data to PROJECT/results folder\n\n\n\n\nPrepare Tiling MPRA data 01\n\n\nGet K562 MPRA data files from Tewhey lab\n\n\n\n\nPrepare Tiling MPRA data 02\n\n\nExplore Tiling MPRA data files\n\n\n\n\nPrepare Tiling MPRA data 03\n\n\nExtract fragment counts from Tiling MPRA data\n\n\n\n\n\nPrepare Tiling MPRA data 04\n\n\nCovert count matrix to bed format\n\n\n\n\n\n\nNo matching items\n\n\nBelow is a test notebook\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\nTest ipynb for documentation\n\n\nNotebook with kernel R\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\nPrepare ENCODE ATAC/DNase Peaks 01\n\n\nGenerate download script to download the peak data\n\n\n\n\nPrepare ENCODE ATAC/DNase Peaks 02\n\n\nDownload the peak data\n\n\n\n\nPrepare ENCODE ATAC/DNase Peaks 03\n\n\nPrepare the peak files\n\n\n\n\nPrepare ENCODE ATAC/DNase Peaks 04\n\n\nGenerate metadata for the peak file\n\n\n\n\nPrepare STARR-seq data 01\n\n\nGet K562 STARR-seq data files from Reddy lab\n\n\n\n\nPrepare STARR-seq data 02\n\n\nExplore STARR-seq data files\n\n\n\n\nPrepare STARR-seq data 03\n\n\nLink STARR-seq data files from PROJECT/data to PROJECT/results folder\n\n\n\n\nPrepare Tiling MPRA data 01\n\n\nGet K562 MPRA data files from Tewhey lab\n\n\n\n\nPrepare Tiling MPRA data 02\n\n\nExplore Tiling MPRA data files\n\n\n\n\nPrepare Tiling MPRA data 03\n\n\nExtract fragment counts from Tiling MPRA data\n\n\n\n\n\nPrepare Tiling MPRA data 04\n\n\nCovert count matrix to bed format\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "analyses.html#step-coverage",
+    "href": "analyses.html#step-coverage",
+    "title": "List of steps in the analyses",
+    "section": "Step: Coverage",
+    "text": "Step: Coverage"
+  },
+  {
+    "objectID": "analyses.html#testing-documentation",
+    "href": "analyses.html#testing-documentation",
+    "title": "List of steps in the analyses",
+    "section": "Testing documentation",
+    "text": "Testing documentation\nBelow is a test notebook\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\nTest ipynb for documentation\n\n\nNotebook with kernel R\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "notebooks/02_prepare/region_ocr_01_create_download_script_R.html",
