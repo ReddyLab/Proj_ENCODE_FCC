@@ -11,8 +11,11 @@
       "/notebooks/02_prepare/fcc_starrmpra_03_prepare_STARR_data_alex_SH.html",
       "/notebooks/02_prepare/fcc_starrmpra_11_acquire_TMPRA_data_hannah_SH.html",
       "/notebooks/02_prepare/fcc_starrmpra_12_explore_TMPRA_data_hannah_SH.html",
+      "/notebooks/02_prepare/fcc_starrmpra_13_extract_TMPRA_fragment_counts_R.html",
       "/notebooks/02_prepare/fcc_starrmpra_13_extract_fragment_counts_R.html",
       "/notebooks/02_prepare/fcc_starrmpra_14_convert_table_to_bed_R.html",
+      "/notebooks/02_prepare/fcc_starrmpra_15_liftover_OL13_SH.html",
+      "/notebooks/02_prepare/fcc_starrmpra_16_fragment_ranges_R.html",
       "/notebooks/test/test_notebook.html"
     ]
   }
