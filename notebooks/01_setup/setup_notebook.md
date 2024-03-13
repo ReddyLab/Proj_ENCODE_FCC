@@ -4,7 +4,8 @@
 
 ACTION terms
 - get
-- set
+- setup
+- check
 
 - link
 - linking

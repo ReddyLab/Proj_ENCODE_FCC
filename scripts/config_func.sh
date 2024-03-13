@@ -23,6 +23,13 @@ function displaytime {
 ### helper function
 function fun_cat {
     FPATH=$1
+    
+    ### check if file is a symlink, if yes, get the file path
+    if [[ -h ${FPATH} ]]; then
+        FPATH=$(readlink -f ${FPATH})
+    fi
+    
+    ### check if file is compress, if yes: `zcat`, else: `cat`
     if (file ${FPATH} | grep -q compressed); then
         zcat ${FPATH}
     else
