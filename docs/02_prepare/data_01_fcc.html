@@ -117,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../02_prepare/data_01_fcc.html">02 Prepare</a></li><li class="breadcrumb-item"><a href="../02_prepare/data_01_fcc.html">FCC Data</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../02_prepare/data_01_fcc.html">Prepare</a></li><li class="breadcrumb-item"><a href="../02_prepare/data_01_fcc.html">FCC Data</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -140,7 +140,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
- <span class="menu-text">01 Setup</span></a>
+ <span class="menu-text">Setup</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -163,7 +163,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text">02 Prepare</span></a>
+ <span class="menu-text">Prepare</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -209,17 +209,25 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">11 Coverage</span></span>
+ <span class="menu-text">FCC analysis</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">FCC comparison</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">FCC vs Hi-C</span></span>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
  <span class="menu-text">Test Notebook</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/test/test_notebook.html" class="sidebar-item-text sidebar-link">
@@ -272,28 +280,48 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="whg-starr-seq-wstarr">WHG-STARR-seq (WSTARR)</h2>
 <table class="table">
 <caption>Library sizes of WSTARR</caption>
-<colgroup>
-<col style="width: 75%">
-<col style="width: 25%">
-</colgroup>
 <thead>
 <tr class="header">
-<th>fruit</th>
-<th>price</th>
+<th>Sample</th>
+<th>Group</th>
+<th style="text-align: right;">Count</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>apple</td>
-<td>2.05</td>
+<td>Input.rep1</td>
+<td>Input</td>
+<td style="text-align: right;">26,908,970</td>
 </tr>
 <tr class="even">
-<td>pear</td>
-<td>1.37</td>
+<td>Input.rep2</td>
+<td>Input</td>
+<td style="text-align: right;">99,899,775</td>
 </tr>
 <tr class="odd">
-<td>orange</td>
-<td>3.09</td>
+<td>Input.rep3</td>
+<td>Input</td>
+<td style="text-align: right;">105,623,984</td>
+</tr>
+<tr class="even">
+<td>Input.rep4</td>
+<td>Input</td>
+<td style="text-align: right;">108,635,002</td>
+</tr>
+<tr class="odd">
+<td>Output.rep1</td>
+<td>Output</td>
+<td style="text-align: right;">160,349,140</td>
+</tr>
+<tr class="even">
+<td>Output.rep2</td>
+<td>Output</td>
+<td style="text-align: right;">157,326,312</td>
+</tr>
+<tr class="odd">
+<td>Output.rep3</td>
+<td>Output</td>
+<td style="text-align: right;">38,522,888</td>
 </tr>
 </tbody>
 </table>
@@ -302,28 +330,63 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="atac-starr-seq-astarr">ATAC-STARR-seq (ASTARR)</h2>
 <table class="table">
 <caption>Library sizes of ASTARR</caption>
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
 <thead>
 <tr class="header">
-<th>fruit</th>
-<th>price</th>
+<th>Sample</th>
+<th>Group</th>
+<th style="text-align: right;">Count</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>apple</td>
-<td>2.05</td>
+<td>Input.rep1</td>
+<td>Input</td>
+<td style="text-align: right;">348,695,063</td>
 </tr>
 <tr class="even">
-<td>pear</td>
-<td>1.37</td>
+<td>Input.rep2</td>
+<td>Input</td>
+<td style="text-align: right;">451,369,741</td>
 </tr>
 <tr class="odd">
-<td>orange</td>
-<td>3.09</td>
+<td>Input.rep3</td>
+<td>Input</td>
+<td style="text-align: right;">487,579,055</td>
+</tr>
+<tr class="even">
+<td>Input.rep4</td>
+<td>Input</td>
+<td style="text-align: right;">456,246,254</td>
+</tr>
+<tr class="odd">
+<td>Input.rep5</td>
+<td>Input</td>
+<td style="text-align: right;">444,268,950</td>
+</tr>
+<tr class="even">
+<td>Input.rep6</td>
+<td>Input</td>
+<td style="text-align: right;">397,333,562</td>
+</tr>
+<tr class="odd">
+<td>Output.rep1</td>
+<td>Output</td>
+<td style="text-align: right;">44,103,844</td>
+</tr>
+<tr class="even">
+<td>Output.rep2</td>
+<td>Output</td>
+<td style="text-align: right;">97,471,282</td>
+</tr>
+<tr class="odd">
+<td>Output.rep3</td>
+<td>Output</td>
+<td style="text-align: right;">84,103,298</td>
+</tr>
+<tr class="even">
+<td>Output.rep4</td>
+<td>Output</td>
+<td style="text-align: right;">183,115,379</td>
 </tr>
 </tbody>
 </table>

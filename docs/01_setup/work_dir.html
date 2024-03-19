@@ -117,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../01_setup/work_dir.html">01 Setup</a></li><li class="breadcrumb-item"><a href="../01_setup/work_dir.html">Working Directory</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../01_setup/work_dir.html">Setup</a></li><li class="breadcrumb-item"><a href="../01_setup/work_dir.html">Working Directory</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -140,7 +140,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">01 Setup</span></a>
+ <span class="menu-text">Setup</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -163,7 +163,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
- <span class="menu-text">02 Prepare</span></a>
+ <span class="menu-text">Prepare</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -209,17 +209,25 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">11 Coverage</span></span>
+ <span class="menu-text">FCC analysis</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">FCC comparison</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">FCC vs Hi-C</span></span>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
  <span class="menu-text">Test Notebook</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/test/test_notebook.html" class="sidebar-item-text sidebar-link">
@@ -269,30 +277,55 @@ ul.task-list li input[type="checkbox"] {
 <h1>Reference file</h1>
 <pre><code>PROJECT/reference
 ├── fcc_trackhub_jinwoo
-│   ├── 
-│   └── 
+│   ├── K562_TSS_selected_by_higest_Pol2_TSS_sig.out
+│   └── trackhub.txt
 ├── encode_chipseq_flagship
 └── encode_open_chromatin</code></pre>
 </section>
 <section id="get-processed-data-and-download-external-data" class="level1">
 <h1>Get processed data and download external data</h1>
-<p>Data: original files and names why do I want to split the folder into processed and external =&gt; to distinguish the downloadable data and</p>
+<p>Data: original files and names</p>
 <pre><code>PROJECT/data
 ├── external
 │   ├── encode_open_chromatin
-│   │   ├── 
-│   │   └── 
+│   │   ├── K562.hg38.ENCSR000EKS.ENCFF274YGF.DNase.bed.gz
+│   │   ├── K562.hg38.ENCSR000EOT.ENCFF185XRG.DNase.bed.gz
+│   │   ├── K562.hg38.ENCSR483RKN.ENCFF558BLC.ATAC.bed.gz
+│   │   ├── K562.hg38.ENCSR483RKN.ENCFF925CYR.ATAC.bed.gz
+│   │   ├── K562.hg38.ENCSR868FGK.ENCFF333TAT.ATAC.bed.gz
+│   │   └── K562.hg38.ENCSR868FGK.ENCFF948AFM.ATAC.bed.gz
+│   │   
 │   ├── encode_ccres
 │   ├── encode_chromhmm
-│   ├── encode_astarr_csaw (???)
-│   ├── 
+│   ├── encode_astarr_csaw
+│   │
 │   ├── encode_chipseq_flagship
 │   ├── encode_chipseq_tf_subset
 │   ├── encode_chipseq_histone
-│   ├── 
-│   ├── encode_crispri_hcrff_casa (???)
+│   │
+│   ├── encode_crispri_hcrff
+│   │   ├── K562.hg38.ENCSR793WTM.ENCFF863AVQ.CRISPRi_HCRFF.CASA.CAPRIN1.bed.gz
+│   │   ├── K562.hg38.ENCSR794SPV.ENCFF619FXH.CRISPRi_HCRFF.CASA.CAT.bed.gz
+│   │   ├── K562.hg38.ENCSR157WAN.ENCFF270LYK.CRISPRi_HCRFF.CASA.CD164.bed.gz
+│   │   ├── K562.hg38.ENCSR979QQN.ENCFF813GCK.CRISPRi_HCRFF.CASA.ERP29.bed.gz
+│   │   ├── K562.hg38.ENCSR382ZJS.ENCFF786ZPA.CRISPRi_HCRFF.CASA.FADS1.bed.gz
+│   │   ├── K562.hg38.ENCSR968CIN.ENCFF149IDL.CRISPRi_HCRFF.CASA.FADS2.bed.gz
+│   │   ├── K562.hg38.ENCSR630WLB.ENCFF227DUX.CRISPRi_HCRFF.CASA.FADS3.bed.gz
+│   │   ├── K562.hg38.ENCSR278YTB.ENCFF151MNC.CRISPRi_HCRFF.CASA.FEN1.bed.gz
+│   │   ├── K562.hg38.ENCSR917XEU.ENCFF413WYU.CRISPRi_HCRFF.CASA.GATA1.bed.gz
+│   │   ├── K562.hg38.ENCSR564EPW.ENCFF845YHV.CRISPRi_HCRFF.CASA.HBE1.bed.gz
+│   │   ├── K562.hg38.ENCSR449NJV.ENCFF811PPJ.CRISPRi_HCRFF.CASA.HBG1.bed.gz
+│   │   ├── K562.hg38.ENCSR459QNY.ENCFF910PDZ.CRISPRi_HCRFF.CASA.HBG2.bed.gz
+│   │   ├── K562.hg38.ENCSR759RSA.ENCFF337VVS.CRISPRi_HCRFF.CASA.HBS1L.bed.gz
+│   │   ├── K562.hg38.ENCSR009KPS.ENCFF632PQY.CRISPRi_HCRFF.CASA.HDAC6.bed.gz
+│   │   ├── K562.hg38.ENCSR321CEH.ENCFF469FXP.CRISPRi_HCRFF.CASA.LMO2.bed.gz
+│   │   ├── K562.hg38.ENCSR940PYU.ENCFF894DJT.CRISPRi_HCRFF.CASA.MEF2C.bed.gz
+│   │   ├── K562.hg38.ENCSR408VHJ.ENCFF091IOP.CRISPRi_HCRFF.CASA.MYB.bed.gz
+│   │   ├── K562.hg38.ENCSR825SFH.ENCFF240IPT.CRISPRi_HCRFF.CASA.MYC.bed.gz
+│   │   ├── K562.hg38.ENCSR393VDD.ENCFF270ZLE.CRISPRi_HCRFF.CASA.NMU.bed.gz
+│   │   └── K562.hg38.ENCSR496MZF.ENCFF005DTR.CRISPRi_HCRFF.CASA.PVT1.bed.gz
+│   │
 │   ├── encode_e2g
-│   ├── encode_tss_jinwoo (X)
 │   ├── encode_rnaseq
 │   ├── 
 │   ├── (genome_gencode)
@@ -511,7 +544,7 @@ CRISPRi_Growth_K562_Gersbach_alex</code></pre>
 </ul></li>
 <li>ENCODE region file name
 <ul>
-<li><code>&lt;Prefix&gt;.&lt;Genome&gt;.&lt;Experiment ID&gt;.&lt;File ID&gt;.&lt;Description&gt;.&lt;File Extension&gt;</code></li>
+<li><code>&lt;Prefix&gt;.&lt;Genome&gt;.&lt;Experiment ID&gt;.&lt;File ID&gt;.&lt;Assay&gt;.&lt;Description&gt;.&lt;File Extension&gt;</code></li>
 <li>Prefix: biosample
 <ul>
 <li>K562: a human erythroleukemic cell line</li>

@@ -1,0 +1,21 @@
+Assay	Biosample	Index_Experiment	Index_File	File_Type	Output_Type	Genome	Target
+Flow-FISH CRISPR screen	K562	ENCSR793WTM	ENCFF863AVQ	bed CRISPR element quantifications	element quantifications	hg38	CAPRIN1
+Flow-FISH CRISPR screen	K562	ENCSR794SPV	ENCFF619FXH	bed CRISPR element quantifications	element quantifications	hg38	CAT
+Flow-FISH CRISPR screen	K562	ENCSR157WAN	ENCFF270LYK	bed CRISPR element quantifications	element quantifications	hg38	CD164
+Flow-FISH CRISPR screen	K562	ENCSR979QQN	ENCFF813GCK	bed CRISPR element quantifications	element quantifications	hg38	ERP29
+Flow-FISH CRISPR screen	K562	ENCSR382ZJS	ENCFF786ZPA	bed CRISPR element quantifications	element quantifications	hg38	FADS1
+Flow-FISH CRISPR screen	K562	ENCSR968CIN	ENCFF149IDL	bed CRISPR element quantifications	element quantifications	hg38	FADS2
+Flow-FISH CRISPR screen	K562	ENCSR630WLB	ENCFF227DUX	bed CRISPR element quantifications	element quantifications	hg38	FADS3
+Flow-FISH CRISPR screen	K562	ENCSR278YTB	ENCFF151MNC	bed CRISPR element quantifications	element quantifications	hg38	FEN1
+Flow-FISH CRISPR screen	K562	ENCSR917XEU	ENCFF413WYU	bed CRISPR element quantifications	element quantifications	hg38	GATA1
+Flow-FISH CRISPR screen	K562	ENCSR564EPW	ENCFF845YHV	bed CRISPR element quantifications	element quantifications	hg38	HBE1
+Flow-FISH CRISPR screen	K562	ENCSR449NJV	ENCFF811PPJ	bed CRISPR element quantifications	element quantifications	hg38	HBG1
+Flow-FISH CRISPR screen	K562	ENCSR459QNY	ENCFF910PDZ	bed CRISPR element quantifications	element quantifications	hg38	HBG2
+Flow-FISH CRISPR screen	K562	ENCSR759RSA	ENCFF337VVS	bed CRISPR element quantifications	element quantifications	hg38	HBS1L
+Flow-FISH CRISPR screen	K562	ENCSR009KPS	ENCFF632PQY	bed CRISPR element quantifications	element quantifications	hg38	HDAC6
+Flow-FISH CRISPR screen	K562	ENCSR321CEH	ENCFF469FXP	bed CRISPR element quantifications	element quantifications	hg38	LMO2
+Flow-FISH CRISPR screen	K562	ENCSR940PYU	ENCFF894DJT	bed CRISPR element quantifications	element quantifications	hg38	MEF2C
+Flow-FISH CRISPR screen	K562	ENCSR408VHJ	ENCFF091IOP	bed CRISPR element quantifications	element quantifications	hg38	MYB
+Flow-FISH CRISPR screen	K562	ENCSR825SFH	ENCFF240IPT	bed CRISPR element quantifications	element quantifications	hg38	MYC
+Flow-FISH CRISPR screen	K562	ENCSR393VDD	ENCFF270ZLE	bed CRISPR element quantifications	element quantifications	hg38	NMU
+Flow-FISH CRISPR screen	K562	ENCSR496MZF	ENCFF005DTR	bed CRISPR element quantifications	element quantifications	hg38	PVT1
