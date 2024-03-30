@@ -144,7 +144,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
 </ul>
             <div class="quarto-navbar-tools ms-auto">
-    <a href="https://github.com/ReddyLab/Proj_CombEffect_ENCODE_FCC" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+    <a href="https://github.com/ReddyLab/Proj_ENCODE_FCC" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
 </div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
@@ -337,7 +337,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#helper-functions" id="toc-helper-functions" class="nav-link active" data-scroll-target="#helper-functions">Helper functions</a></li>
-  <li><a href="#metadata-for-astarr-fragment-counts" id="toc-metadata-for-astarr-fragment-counts" class="nav-link" data-scroll-target="#metadata-for-astarr-fragment-counts">Metadata for ASTARR fragment counts</a></li>
+  <li><a href="#metadata-for-astarr-fragment-counts-ks91" id="toc-metadata-for-astarr-fragment-counts-ks91" class="nav-link" data-scroll-target="#metadata-for-astarr-fragment-counts-ks91">Metadata for ASTARR fragment counts (KS91)</a></li>
+  <li><a href="#metadata-for-astarr-fragment-counts-ks274" id="toc-metadata-for-astarr-fragment-counts-ks274" class="nav-link" data-scroll-target="#metadata-for-astarr-fragment-counts-ks274">Metadata for ASTARR fragment counts (KS274)</a></li>
   <li><a href="#metadata-for-wstarr-fragment-counts" id="toc-metadata-for-wstarr-fragment-counts" class="nav-link" data-scroll-target="#metadata-for-wstarr-fragment-counts">Metadata for WSTARR fragment counts</a></li>
   </ul>
 </nav>
@@ -378,22 +379,22 @@ WORK DIRECTORY (FD_WORK): /mount/work
 DATA DIRECTORY (FD_DATA): /mount/data 
 
 You are working with      ENCODE FCC 
-PATH OF PROJECT (FD_PRJ): /mount/repo/Proj_CombEffect_ENCODE_FCC 
-PROJECT RESULTS (FD_RES): /mount/repo/Proj_CombEffect_ENCODE_FCC/results 
-PROJECT SCRIPTS (FD_EXE): /mount/repo/Proj_CombEffect_ENCODE_FCC/scripts 
-PROJECT DATA    (FD_DAT): /mount/repo/Proj_CombEffect_ENCODE_FCC/data 
-PROJECT NOTE    (FD_NBK): /mount/repo/Proj_CombEffect_ENCODE_FCC/notebooks 
-PROJECT DOCS    (FD_DOC): /mount/repo/Proj_CombEffect_ENCODE_FCC/docs 
-PROJECT LOG     (FD_LOG): /mount/repo/Proj_CombEffect_ENCODE_FCC/log 
-PROJECT APP     (FD_APP): /mount/repo/Proj_CombEffect_ENCODE_FCC/app 
-PROJECT REF     (FD_REF): /mount/repo/Proj_CombEffect_ENCODE_FCC/references 
+PATH OF PROJECT (FD_PRJ): /mount/repo/Proj_ENCODE_FCC 
+PROJECT RESULTS (FD_RES): /mount/repo/Proj_ENCODE_FCC/results 
+PROJECT SCRIPTS (FD_EXE): /mount/repo/Proj_ENCODE_FCC/scripts 
+PROJECT DATA    (FD_DAT): /mount/repo/Proj_ENCODE_FCC/data 
+PROJECT NOTE    (FD_NBK): /mount/repo/Proj_ENCODE_FCC/notebooks 
+PROJECT DOCS    (FD_DOC): /mount/repo/Proj_ENCODE_FCC/docs 
+PROJECT LOG     (FD_LOG): /mount/repo/Proj_ENCODE_FCC/log 
+PROJECT APP     (FD_APP): /mount/repo/Proj_ENCODE_FCC/app 
+PROJECT REF     (FD_REF): /mount/repo/Proj_ENCODE_FCC/references 
 </code></pre>
 </div>
 </div>
 <section id="helper-functions" class="level2">
 <h2 class="anchored" data-anchor-id="helper-functions">Helper functions</h2>
 <p><strong>Define functions</strong></p>
-<div class="cell" data-execution_count="27">
+<div class="cell" data-execution_count="2">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>GROUPS  <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Input"</span>, <span class="st">"Output"</span>)</span>
@@ -418,7 +419,7 @@ PROJECT REF     (FD_REF): /mount/repo/Proj_CombEffect_ENCODE_FCC/references
 </details>
 </div>
 <p><strong>Test functions</strong></p>
-<div class="cell" data-execution_count="24">
+<div class="cell" data-execution_count="3">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>txt <span class="ot">=</span> <span class="st">"ASTARRseq_K562_KS91.hg38.Input.rep1.WGS.unstranded.bed.gz"</span></span>
@@ -428,7 +429,7 @@ PROJECT REF     (FD_REF): /mount/repo/Proj_CombEffect_ENCODE_FCC/references
 'Input.rep1'
 </div>
 </div>
-<div class="cell" data-execution_count="26">
+<div class="cell" data-execution_count="4">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>txt <span class="ot">=</span> <span class="st">"ASTARRseq_K562_KS91.hg38.Input.rep1.WGS.unstranded.bed.gz"</span></span>
@@ -439,10 +440,10 @@ PROJECT REF     (FD_REF): /mount/repo/Proj_CombEffect_ENCODE_FCC/references
 </div>
 </div>
 </section>
-<section id="metadata-for-astarr-fragment-counts" class="level2">
-<h2 class="anchored" data-anchor-id="metadata-for-astarr-fragment-counts">Metadata for ASTARR fragment counts</h2>
+<section id="metadata-for-astarr-fragment-counts-ks91" class="level2">
+<h2 class="anchored" data-anchor-id="metadata-for-astarr-fragment-counts-ks91">Metadata for ASTARR fragment counts (KS91)</h2>
 <p>Get the file names for fragment counts</p>
-<div class="cell" data-execution_count="35">
+<div class="cell" data-execution_count="5">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>TXT_ASSAY  <span class="ot">=</span> <span class="st">"STARR_ATAC_K562_Reddy_KS91"</span></span>
@@ -472,7 +473,7 @@ ASTARRseq_K562_KS91.hg38.Output.rep4.WGS.unstranded.bed.gz </code></pre>
 </div>
 </div>
 <p>Create metadata for the files</p>
-<div class="cell" data-execution_count="36">
+<div class="cell" data-execution_count="6">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> <span class="fu">data.frame</span>(</span>
@@ -576,7 +577,7 @@ ASTARRseq_K562_KS91.hg38.Output.rep4.WGS.unstranded.bed.gz </code></pre>
 </div>
 </div>
 <p>Save results</p>
-<div class="cell" data-execution_count="40">
+<div class="cell" data-execution_count="7">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>txt_fdiry <span class="ot">=</span> <span class="fu">file.path</span>(FD_RES, <span class="st">"assay_fcc"</span>, TXT_ASSAY, TXT_FOLDER, <span class="st">"summary"</span>)</span>
@@ -591,14 +592,14 @@ ASTARRseq_K562_KS91.hg38.Output.rep4.WGS.unstranded.bed.gz </code></pre>
 </details>
 </div>
 </section>
-<section id="metadata-for-wstarr-fragment-counts" class="level2">
-<h2 class="anchored" data-anchor-id="metadata-for-wstarr-fragment-counts">Metadata for WSTARR fragment counts</h2>
+<section id="metadata-for-astarr-fragment-counts-ks274" class="level2">
+<h2 class="anchored" data-anchor-id="metadata-for-astarr-fragment-counts-ks274">Metadata for ASTARR fragment counts (KS274)</h2>
 <p>Get the file names for fragment counts</p>
-<div class="cell" data-execution_count="41">
+<div class="cell" data-execution_count="8">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>TXT_ASSAY  <span class="ot">=</span> <span class="st">"STARR_WHG_K562_Reddy_A001"</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>TXT_PREFIX <span class="ot">=</span> <span class="st">"WSTARRseq_K562_A001"</span></span>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>TXT_ASSAY  <span class="ot">=</span> <span class="st">"STARR_ATAC_K562_Reddy_KS274"</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>TXT_PREFIX <span class="ot">=</span> <span class="st">"ASTARRseq_K562_KS274"</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>TXT_FOLDER <span class="ot">=</span> <span class="st">"fragment_counts"</span></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>txt_fdiry  <span class="ot">=</span> <span class="fu">file.path</span>(FD_RES, <span class="st">"assay_fcc"</span>, TXT_ASSAY, TXT_FOLDER)</span>
@@ -611,17 +612,13 @@ ASTARRseq_K562_KS91.hg38.Output.rep4.WGS.unstranded.bed.gz </code></pre>
 <span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (txt <span class="cf">in</span> vec_txt_fname){<span class="fu">cat</span>(txt, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>WSTARRseq_K562_A001.hg38.Input.rep1.WGS.unstranded.bed.gz 
-WSTARRseq_K562_A001.hg38.Input.rep2.WGS.unstranded.bed.gz 
-WSTARRseq_K562_A001.hg38.Input.rep3.WGS.unstranded.bed.gz 
-WSTARRseq_K562_A001.hg38.Input.rep4.WGS.unstranded.bed.gz 
-WSTARRseq_K562_A001.hg38.Output.rep1.WGS.unstranded.bed.gz 
-WSTARRseq_K562_A001.hg38.Output.rep2.WGS.unstranded.bed.gz 
-WSTARRseq_K562_A001.hg38.Output.rep3.WGS.unstranded.bed.gz </code></pre>
+<pre><code>ASTARRseq_K562_KS274.hg38.Output.rep1.WGS.unstranded.bed.gz 
+ASTARRseq_K562_KS274.hg38.Output.rep2.WGS.unstranded.bed.gz 
+ASTARRseq_K562_KS274.hg38.Output.rep3.WGS.unstranded.bed.gz </code></pre>
 </div>
 </div>
 <p>Create metadata for the files</p>
-<div class="cell" data-execution_count="42">
+<div class="cell" data-execution_count="9">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> <span class="fu">data.frame</span>(</span>
@@ -637,6 +634,106 @@ WSTARRseq_K562_A001.hg38.Output.rep3.WGS.unstranded.bed.gz </code></pre>
 <span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>dat_metadata_astarr <span class="ot">=</span> dat</span>
 <span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="fu">fun_display_table</span>(dat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">FName</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Assay</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Prefix</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Group</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Sample</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">ASTARRseq_K562_KS274.hg38.Output.rep1.WGS.unstranded.bed.gz</td>
+<td style="text-align: left;">STARR_ATAC_K562_Reddy_KS274</td>
+<td style="text-align: left;">ASTARRseq_K562_KS274</td>
+<td style="text-align: left;">Output</td>
+<td style="text-align: left;">Output.rep1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ASTARRseq_K562_KS274.hg38.Output.rep2.WGS.unstranded.bed.gz</td>
+<td style="text-align: left;">STARR_ATAC_K562_Reddy_KS274</td>
+<td style="text-align: left;">ASTARRseq_K562_KS274</td>
+<td style="text-align: left;">Output</td>
+<td style="text-align: left;">Output.rep2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ASTARRseq_K562_KS274.hg38.Output.rep3.WGS.unstranded.bed.gz</td>
+<td style="text-align: left;">STARR_ATAC_K562_Reddy_KS274</td>
+<td style="text-align: left;">ASTARRseq_K562_KS274</td>
+<td style="text-align: left;">Output</td>
+<td style="text-align: left;">Output.rep3</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Save results</p>
+<div class="cell" data-execution_count="10">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>txt_fdiry <span class="ot">=</span> <span class="fu">file.path</span>(FD_RES, <span class="st">"assay_fcc"</span>, TXT_ASSAY, TXT_FOLDER, <span class="st">"summary"</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>txt_fname <span class="ot">=</span> <span class="st">"metadata.tsv"</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>txt_fpath <span class="ot">=</span> <span class="fu">file.path</span>(txt_fdiry, txt_fname)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>txt <span class="ot">=</span> <span class="fu">paste</span>(<span class="st">"mkdir -p"</span>, txt_fdiry)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="fu">system</span>(txt)</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat_metadata_astarr</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="fu">write_tsv</span>(dat, txt_fpath)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="metadata-for-wstarr-fragment-counts" class="level2">
+<h2 class="anchored" data-anchor-id="metadata-for-wstarr-fragment-counts">Metadata for WSTARR fragment counts</h2>
+<p>Get the file names for fragment counts</p>
+<div class="cell" data-execution_count="11">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>TXT_ASSAY  <span class="ot">=</span> <span class="st">"STARR_WHG_K562_Reddy_A001"</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>TXT_PREFIX <span class="ot">=</span> <span class="st">"WSTARRseq_K562_A001"</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>TXT_FOLDER <span class="ot">=</span> <span class="st">"fragment_counts"</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>txt_fdiry  <span class="ot">=</span> <span class="fu">file.path</span>(FD_RES, <span class="st">"assay_fcc"</span>, TXT_ASSAY, TXT_FOLDER)</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>txt_fname  <span class="ot">=</span> <span class="st">"*WGS*bed.gz"</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>txt_fglob  <span class="ot">=</span> <span class="fu">file.path</span>(txt_fdiry, txt_fname)</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>vec_txt_fpath <span class="ot">=</span> <span class="fu">Sys.glob</span>(txt_fglob)</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>vec_txt_fname <span class="ot">=</span> <span class="fu">basename</span>(vec_txt_fpath)</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (txt <span class="cf">in</span> vec_txt_fname){<span class="fu">cat</span>(txt, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>WSTARRseq_K562_A001.hg38.Input.rep1.WGS.unstranded.bed.gz 
+WSTARRseq_K562_A001.hg38.Input.rep2.WGS.unstranded.bed.gz 
+WSTARRseq_K562_A001.hg38.Input.rep3.WGS.unstranded.bed.gz 
+WSTARRseq_K562_A001.hg38.Input.rep4.WGS.unstranded.bed.gz 
+WSTARRseq_K562_A001.hg38.Output.rep1.WGS.unstranded.bed.gz 
+WSTARRseq_K562_A001.hg38.Output.rep2.WGS.unstranded.bed.gz 
+WSTARRseq_K562_A001.hg38.Output.rep3.WGS.unstranded.bed.gz </code></pre>
+</div>
+</div>
+<p>Create metadata for the files</p>
+<div class="cell" data-execution_count="12">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> <span class="fu">data.frame</span>(</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">FName  =</span> vec_txt_fname,</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">Assay  =</span> TXT_ASSAY,</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">Prefix =</span> TXT_PREFIX</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">Group  =</span> <span class="fu">get_group</span>(FName),</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">Sample =</span> <span class="fu">get_sample</span>(FName)</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>dat_metadata_astarr <span class="ot">=</span> dat</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="fu">fun_display_table</span>(dat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <table data-quarto-postprocess="true" class="table table-sm table-striped small">
@@ -704,18 +801,18 @@ WSTARRseq_K562_A001.hg38.Output.rep3.WGS.unstranded.bed.gz </code></pre>
 </div>
 </div>
 <p>Save results</p>
-<div class="cell" data-execution_count="43">
+<div class="cell" data-execution_count="13">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>txt_fdiry <span class="ot">=</span> <span class="fu">file.path</span>(FD_RES, <span class="st">"assay_fcc"</span>, TXT_ASSAY, TXT_FOLDER, <span class="st">"summary"</span>)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>txt_fname <span class="ot">=</span> <span class="st">"metadata.tsv"</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>txt_fpath <span class="ot">=</span> <span class="fu">file.path</span>(txt_fdiry, txt_fname)</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>txt <span class="ot">=</span> <span class="fu">paste</span>(<span class="st">"mkdir -p"</span>, txt_fdiry)</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="fu">system</span>(txt)</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat_metadata_astarr</span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="fu">write_tsv</span>(dat, txt_fpath)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>txt_fdiry <span class="ot">=</span> <span class="fu">file.path</span>(FD_RES, <span class="st">"assay_fcc"</span>, TXT_ASSAY, TXT_FOLDER, <span class="st">"summary"</span>)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>txt_fname <span class="ot">=</span> <span class="st">"metadata.tsv"</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>txt_fpath <span class="ot">=</span> <span class="fu">file.path</span>(txt_fdiry, txt_fname)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>txt <span class="ot">=</span> <span class="fu">paste</span>(<span class="st">"mkdir -p"</span>, txt_fdiry)</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="fu">system</span>(txt)</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat_metadata_astarr</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="fu">write_tsv</span>(dat, txt_fpath)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 

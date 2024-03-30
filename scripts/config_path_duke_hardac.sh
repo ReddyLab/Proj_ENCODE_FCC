@@ -21,7 +21,7 @@ FD_SING="${FD_BASE}/container"
 ### ++++++++++++++++++++++++++++++++++++++++++++++++++
 ### set project folders
 ### ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-FD_PRJ=${FD_REPO}/Proj_CombEffect_ENCODE_FCC
+FD_PRJ=${FD_REPO}/Proj_ENCODE_FCC
 
 FD_RES=${FD_PRJ}/results
 FD_EXE=${FD_PRJ}/scripts
@@ -62,29 +62,47 @@ show_env() {
 ### addition: processed data
 ### ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-### ReddyLab Alex directory
+### ReddyLab directory
 FD_ALEX=/data/reddylab/Alex
+FD_KEITH=/data/reddylab/Keith
+
+### whole genome fragment counts of ATAC-STARR
+FD_WGS_ASTARR_KS91_INP=${FD_ALEX}/encode4_duke/processing/atac_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-blacklist-removal
+FD_WGS_ASTARR_KS91_OUT=${FD_ALEX}/encode4_duke/processing/starr_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-umis
+FD_WGS_ASTARR_KS274_OUT=${FD_KEITH}/encode4_duke/processing/starr_seq/240311_KS274_ASTARR_Output_Nextseq-pe-umis
+
+### whole genome fragment counts of WHG-STARR
+FD_WGS_WSTARR=${FD_ALEX}/encode4_duke/data/starr_seq
 
 ### STARR-seq fragment counts for GATA/MYC regions
 FD_ENCODE4_JAMBOREE_STARR=${FD_ALEX}/encode4_duke/ipynbs/jamborees/20211025_MPRA_STARR_Jamboree/data/gata1_myc/starrseq/fragments
 
+### ++++++++++++++++++++++++++++++++++++++++++++++++++
+### addition: processed data
+### ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 ### whole genome fragment counts of WHG-STARR
-FD_WGS_WSTARR=${FD_ALEX}/encode4_duke/data/starr_seq
 FP_WGS_WSTARR=($(ls ${FD_WGS_WSTARR}/fragments/*.fragments.counts.txt.gz))
 
 ### whole genome fragment counts of ATAC-STARR
-FD_WGS_ASTARR_INP=${FD_ALEX}/encode4_duke/processing/atac_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-blacklist-removal
-FD_WGS_ASTARR_OUT=${FD_ALEX}/encode4_duke/processing/starr_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-umis
+FP_WGS_ASTARR_KS91_INP_FRAGS=($(ls ${FD_WGS_ASTARR_KS91_INP}/merged2/*fragments.counts.txt.gz))
+FP_WGS_ASTARR_KS91_INP_BWIGS=($(ls ${FD_WGS_ASTARR_KS91_INP}/merged2/*exclude_dups.cpm.bw))
+FP_WGS_ASTARR_KS91_OUT_FRAGS=($(ls ${FD_WGS_ASTARR_KS91_OUT}/*.f3q10.fragments.counts.txt.gz))
+FP_WGS_ASTARR_KS91_OUT_BWIGS=($(ls ${FD_WGS_ASTARR_KS91_OUT}/*.with_umis.dedup.cpm.bw))
 
-FP_WGS_ASTARR_INP=($(ls ${FD_WGS_ASTARR_INP}/merged2/*counts.txt.gz))
-FP_WGS_ASTARR_OUT=($(ls ${FD_WGS_ASTARR_OUT}/*f3q10.fragments.counts.txt.gz))
-FP_WGS_ASTARR=("${FP_WGS_ASTARR_INP[@]}" "${FP_WGS_ASTARR_OUT[@]}")
+FP_WGS_ASTARR_KS91=("${FP_WGS_ASTARR_KS91_INP_FRAGS[@]}" "${FP_WGS_ASTARR_KS91_INP_BWIGS[@]}" "${FP_WGS_ASTARR_KS91_OUT_FRAGS[@]}" "${FP_WGS_ASTARR_KS91_OUT_BWIGS[@]}")
+
+FP_WGS_ASTARR_KS274_OUT_FRAGS=($(ls ${FD_WGS_ASTARR_KS274_OUT}/K562*.fragments.bedpe))
+FP_WGS_ASTARR_KS274_OUT_BWIGS=($(ls ${FD_WGS_ASTARR_KS274_OUT}/K562*.with_umis.dedup.rpkm.bw))
+
+FP_WGS_ASTARR_KS274=("${FP_WGS_ASTARR_KS274_OUT_FRAGS[@]}" "${FP_WGS_ASTARR_KS274_OUT_BWIGS[@]}")
 
 ### ASTARR MACS peaks
 ### KS91_K562_hg38_ASTARRseq_Input_allReps.masked.dedup.sorted_peaks.narrowPeak
 ### KS91_K562_hg38_ASTARRseq_Input.all_reps.masked.union_narrowPeak.q5.bed
 ### KS91_K562_hg38_ASTARRseq_Input.q5.in_all.max_overlaps.bed
-FP_WGS_ASTARR_INP_PEAKS=(
-    ${FD_WGS_ASTARR_INP}/KS91_K562_hg38_ASTARRseq_Input.all_reps.masked.union_narrowPeak.q5.bed
-    ${FD_WGS_ASTARR_INP}/KS91_K562_hg38_ASTARRseq_Input.q5.in_all.max_overlaps.bed
+FP_WGS_ASTARR_KS91_INP_PEAKS=(
+    ${FD_WGS_ASTARR_KS91_INP}/KS91_K562_hg38_ASTARRseq_Input.all_reps.masked.union_narrowPeak.q5.bed
+    ${FD_WGS_ASTARR_KS91_INP}/KS91_K562_hg38_ASTARRseq_Input.q5.in_all.max_overlaps.bed
 )
+

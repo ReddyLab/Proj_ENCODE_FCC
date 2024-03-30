@@ -56,7 +56,8 @@ PROJECT/notebook
 |   ├── 21_region_cov_deseq_starr
 |   ├── 22_region_cov_deseq_tmpra
 
-|   ├── 4x_region_cov_summary_
+|   ├── 3x_region_cov_summary_{starr/mpra/crispri}
+|   ├── 4x_region_cov_explore_{starr/mpra/crispri}
 |
 ├── 33_region_annotation
 |
@@ -80,6 +81,36 @@ PROJECT/notebook
     - calculate coverage (z score)
     - explore
     - summary
+
+- 0x_region_coverage
+    - Cal coverage (counts/scores) for all assays
+    - counts: `bedtools map`
+    - scores: `bedtools intersect`
+
+- 1x_region_cov_combine
+    - Agg coverage into matrix form
+
+- 2x_region_cov_deseq
+    - Apply DESeq for counts
+
+- 3x_region_cov_summary
+    - Get normalized counts (CPM/TPM/DESeq)
+    - Cal statistics of scores
     
-    
-[THINK] calculate coverage for counts and z scores may be the same
+- 4x_region_cov_exlore
+    - visualizations 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
