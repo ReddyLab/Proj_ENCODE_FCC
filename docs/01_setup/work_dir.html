@@ -107,7 +107,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
 </ul>
             <div class="quarto-navbar-tools ms-auto">
-    <a href="https://github.com/ReddyLab/Proj_CombEffect_ENCODE_FCC" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+    <a href="https://github.com/ReddyLab/Proj_ENCODE_FCC" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
 </div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
@@ -338,20 +338,19 @@ ul.task-list li input[type="checkbox"] {
 <section id="get-processed-data-and-download-external-data" class="level1">
 <h1>Get processed data and download external data</h1>
 <p>Data: original files and names</p>
-<pre><code>PROJECT/data
-├── external
-│   ├── encode_open_chromatin
-│   │   ├── K562.hg38.ENCSR000EKS.ENCFF274YGF.DNase.bed.gz
-│   │   ├── K562.hg38.ENCSR000EOT.ENCFF185XRG.DNase.bed.gz
-│   │   ├── K562.hg38.ENCSR483RKN.ENCFF558BLC.ATAC.bed.gz
-│   │   ├── K562.hg38.ENCSR483RKN.ENCFF925CYR.ATAC.bed.gz
-│   │   ├── K562.hg38.ENCSR868FGK.ENCFF333TAT.ATAC.bed.gz
-│   │   └── K562.hg38.ENCSR868FGK.ENCFF948AFM.ATAC.bed.gz
-│   │   
-│   ├── encode_ccres
-│   ├── encode_chromhmm
-│   ├── encode_astarr_csaw
-│   │
+<pre><code>PROJECT/data/external
+├── encode_open_chromatin
+│   ├── K562.hg38.ENCSR000EKS.ENCFF274YGF.DNase.bed.gz
+│   ├── K562.hg38.ENCSR000EOT.ENCFF185XRG.DNase.bed.gz
+│   ├── K562.hg38.ENCSR483RKN.ENCFF558BLC.ATAC.bed.gz
+│   ├── K562.hg38.ENCSR483RKN.ENCFF925CYR.ATAC.bed.gz
+│   ├── K562.hg38.ENCSR868FGK.ENCFF333TAT.ATAC.bed.gz
+│   └── K562.hg38.ENCSR868FGK.ENCFF948AFM.ATAC.bed.gz
+│   
+├── encode_ccres
+├── encode_chromhmm
+├── encode_astarr_csaw
+│
 │   ├── encode_chipseq_flagship
 │   ├── encode_chipseq_tf_subset
 │   ├── encode_chipseq_histone
@@ -389,68 +388,81 @@ ul.task-list li input[type="checkbox"] {
 │   ├── hic_intact_K562_ENCSR479XDG
 │   ├── hic_intact_K562_deep
 │   ├── chrom.sizes.hg19
-│   └── chrom.sizes.hg38
+│   └── chrom.sizes.hg38</code></pre>
+<pre><code>PROJECT/data/processed
+├── ASTARRseq_K562_hg38_KS91_210401
+│   ├── fragments
+│   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep1.masked.dedup.fragments.counts.txt.gz
+│   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep1.masked.exclude_dups.cpm.bw
+│   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep2.masked.dedup.fragments.counts.txt.gz
+│   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep2.masked.exclude_dups.cpm.bw
+│   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep3.masked.dedup.fragments.counts.txt.gz
+│   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep3.masked.exclude_dups.cpm.bw
+│   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep4.masked.dedup.fragments.counts.txt.gz
+│   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep4.masked.exclude_dups.cpm.bw
+│   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep5.masked.dedup.fragments.counts.txt.gz
+│   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep5.masked.exclude_dups.cpm.bw
+│   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep6.masked.dedup.fragments.counts.txt.gz
+│   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep6.masked.exclude_dups.cpm.bw
+│   │   ├── KS91_K562_hg38_ASTARRseq_Output_rep1.f3q10.fragments.counts.txt.gz
+│   │   ├── KS91_K562_hg38_ASTARRseq_Output_rep1.f3q10.sorted.with_umis.dedup.cpm.bw
+│   │   ├── KS91_K562_hg38_ASTARRseq_Output_rep2.f3q10.fragments.counts.txt.gz
+│   │   ├── KS91_K562_hg38_ASTARRseq_Output_rep2.f3q10.sorted.with_umis.dedup.cpm.bw
+│   │   ├── KS91_K562_hg38_ASTARRseq_Output_rep3.f3q10.fragments.counts.txt.gz
+│   │   ├── KS91_K562_hg38_ASTARRseq_Output_rep3.f3q10.sorted.with_umis.dedup.cpm.bw
+│   │   ├── KS91_K562_hg38_ASTARRseq_Output_rep4.f3q10.fragments.counts.txt.gz
+│   │   ├── KS91_K562_hg38_ASTARRseq_Output_rep4.f3q10.sorted.with_umis.dedup.cpm.bw
+│   └── peaks
+│       ├── KS91_K562_hg38_ASTARRseq_Input.all_reps.masked.union_narrowPeak.q5.bed
+│       └── KS91_K562_hg38_ASTARRseq_Input.q5.in_all.max_overlaps.bed
 │
-└── processed
-    ├── KS91_K562_hg38_ASTARRseq_210401
-    │   ├── fragments
-    │   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep1.masked.dedup.fragments.counts.txt.gz
-    │   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep2.masked.dedup.fragments.counts.txt.gz
-    │   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep3.masked.dedup.fragments.counts.txt.gz
-    │   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep4.masked.dedup.fragments.counts.txt.gz
-    │   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep5.masked.dedup.fragments.counts.txt.gz
-    │   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep6.masked.dedup.fragments.counts.txt.gz
-    │   │   ├── KS91_K562_hg38_ASTARRseq_Output_rep1.f3q10.fragments.counts.txt.gz
-    │   │   ├── KS91_K562_hg38_ASTARRseq_Output_rep2.f3q10.fragments.counts.txt.gz
-    │   │   ├── KS91_K562_hg38_ASTARRseq_Output_rep3.f3q10.fragments.counts.txt.gz
-    │   │   └── KS91_K562_hg38_ASTARRseq_Output_rep4.f3q10.fragments.counts.txt.gz
-    │   └── peaks
-    │       ├── KS91_K562_hg38_ASTARRseq_Input.all_reps.masked.union_narrowPeak.q5.bed
-    │       └── KS91_K562_hg38_ASTARRseq_Input.q5.in_all.max_overlaps.bed
-    │   
-    ├── A001_K562_hg38_WSTARRseq
-    │   ├── fragments
-    │   │   ├── A001-input-K562-rep1.masked.dedup.fragments.counts.txt.gz
-    │   │   ├── A001-input-K562-rep2.masked.dedup.fragments.counts.txt.gz
-    │   │   ├── A001-input-K562-rep3.masked.dedup.fragments.counts.txt.gz
-    │   │   ├── A001-input-K562-rep4.masked.dedup.fragments.counts.txt.gz
-    │   │   ├── A001-K562-rep1.masked.dedup.fragments.counts.txt.gz
-    │   │   ├── A001-K562-rep2.masked.dedup.fragments.counts.txt.gz
-    │   │   └── A001-K562-rep3.masked.dedup.fragments.counts.txt.gz
-    │   └── peaks
-    │   
-    ├── MPRA_Tiling_K562_Tewhey_hannah
-    │   └── tiling_counts
-    │       ├── OL13_20220512_counts.out
-    │       ├── OL13_20220512_normalized_counts.out
-    │       ├── OL43_20211228_counts.out      
-    │       ├── OL43_20211228_normalized_counts.out
-    │       ├── OL43_20221003_counts.out 
-    │       ├── OL43_20221003_K562_normalized_counts.out
-    │       ├── OL45_20220927_counts.out 
-    │       └── OL45_20220927_K562_normalized_counts.out
-    │
-    ├── MPRA_Lenti_K562_Nadav_vikram
-    │
-    │
-    ├── CRISPRi_Growth_K562_Gersbach_alex
-    │   ├── guides
-    │   └── region
-    │
-    ├── fcc_trackhub_jinwoo
-    │   ├── track_bedgraph
-    │   │   ├── 
-    │   │   └── 
-    │   ├── track_bigwig
-    │   └── region
-    │       ├── tss_pol2
-    │       └── tss_tse_crispri_hcrff
-    │
-    ├── fcc_enhancer_junke_zscore
-    │
-    ├── TF_modules_K562_shannon
-    │
-    └── </code></pre>
+├── ASTARRseq_K562_hg38_KS274_240311
+│   └── fragments
+│       ├── 
+│
+├── WSTARRseq_K562_hg38_A001
+│   ├── fragments
+│   │   ├── A001-input-K562-rep1.masked.dedup.fragments.counts.txt.gz
+│   │   ├── A001-input-K562-rep2.masked.dedup.fragments.counts.txt.gz
+│   │   ├── A001-input-K562-rep3.masked.dedup.fragments.counts.txt.gz
+│   │   ├── A001-input-K562-rep4.masked.dedup.fragments.counts.txt.gz
+│   │   ├── A001-K562-rep1.masked.dedup.fragments.counts.txt.gz
+│   │   ├── A001-K562-rep2.masked.dedup.fragments.counts.txt.gz
+│   │   └── A001-K562-rep3.masked.dedup.fragments.counts.txt.gz
+│   └── peaks
+│   
+├── MPRA_Tiling_K562_Tewhey_hannah
+│   └── tiling_counts
+│       ├── OL13_20220512_counts.out
+│       ├── OL13_20220512_normalized_counts.out
+│       ├── OL43_20211228_counts.out      
+│       ├── OL43_20211228_normalized_counts.out
+│       ├── OL43_20221003_counts.out 
+│       ├── OL43_20221003_K562_normalized_counts.out
+│       ├── OL45_20220927_counts.out 
+│       └── OL45_20220927_K562_normalized_counts.out
+│
+├── MPRA_Lenti_K562_Nadav_vikram
+│
+│
+├── CRISPRi_Growth_K562_Gersbach_alex
+│   ├── guides
+│   └── region
+│
+├── fcc_trackhub_jinwoo
+│   ├── track_bedgraph
+│   │   ├── 
+│   │   └── 
+│   ├── track_bigwig
+│   └── region
+│       ├── tss_pol2
+│       └── tss_tse_crispri_hcrff
+│
+├── fcc_enhancer_junke_zscore
+│
+├── TF_modules_K562_shannon
+│
+└── </code></pre>
 </section>
 <section id="results-after-preparation" class="level1">
 <h1>Results (After preparation)</h1>

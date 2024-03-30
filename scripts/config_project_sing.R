@@ -27,7 +27,7 @@ FD_DATA="/mount/data"
 FD_RLAB="/mount/reddylab"
 
 ### set project related paths
-FD_PRJ = file.path(FD_REPO, "Proj_CombEffect_ENCODE_FCC")
+FD_PRJ = file.path(FD_REPO, "Proj_ENCODE_FCC")
 
 FD_RES = file.path(FD_PRJ,  "results")
 FD_EXE = file.path(FD_PRJ,  "scripts")
