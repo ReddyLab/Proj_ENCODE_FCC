@@ -319,11 +319,11 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">HiC Analysis</span></span>
+ <span class="menu-text">HiC Coverage</span></span>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">FCC vs Hi-C</span></span>
+ <span class="menu-text">FCC vs HiC</span></span>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
@@ -536,6 +536,14 @@ CRISPRi_Growth_K562_Gersbach_Alex</code></pre>
 </section>
 <section id="get-processed-data" class="level2">
 <h2 class="anchored" data-anchor-id="get-processed-data">Get processed data</h2>
+<pre><code>STARR_ATAC_K562_Reddy_KS274_240311
+STARR_ATAC_K562_Reddy_KS91_210401
+STARR_WHG_K562_Reddy_A001_Alex
+STARR_WHG_K562_Reddy_A001_Kari
+MPRA_Tiling_K562_Tewhey_Hannah
+MPRA_Lenti_K562_Nadav_Vikram_230621
+CRISPRi_FlowFISH_K562_Riley_JinWoo
+CRISPRi_Growth_K562_Gersbach_Alex</code></pre>
 <p><strong>Summary</strong></p>
 <pre><code>PROJECT/data/processed
 ├── STARR_ATAC_K562_Reddy_KS91_210401
@@ -568,8 +576,9 @@ CRISPRi_Growth_K562_Gersbach_Alex</code></pre>
 │
 ├── fcc_enhancer_Junke_zscore
 │
-├── TF_modules_K562_Shannon
-│
+├── TF_modules_Shannon
+|   ├── K562.full.region.assignments.txt
+│   └── K562.TFzscore.txt
 └── </code></pre>
 <p><strong>Detailed</strong></p>
 <pre><code>PROJECT/data/processed
