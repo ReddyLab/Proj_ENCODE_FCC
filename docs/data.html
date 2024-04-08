@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ENCODE FCC Project - Data and Working Environment</title>
+<title>ENCODE FCC Project - Data dictionary</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -117,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Data and Working Environment</li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Data dictionary</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -352,15 +352,24 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#data-dictionary" id="toc-data-dictionary" class="nav-link active" data-scroll-target="#data-dictionary">Data Dictionary</a>
+  <li><a href="#summary-fcc-assays-done-in-k562" id="toc-summary-fcc-assays-done-in-k562" class="nav-link active" data-scroll-target="#summary-fcc-assays-done-in-k562">Summary: FCC assays done in K562</a>
   <ul class="collapse">
-  <li><a href="#fcc-assays-done-in-k562" id="toc-fcc-assays-done-in-k562" class="nav-link" data-scroll-target="#fcc-assays-done-in-k562">FCC assays done in K562</a></li>
-  <li><a href="#hi-c-assays-done-in-k562" id="toc-hi-c-assays-done-in-k562" class="nav-link" data-scroll-target="#hi-c-assays-done-in-k562">Hi-C assays done in K562</a></li>
+  <li><a href="#atac-starr-seq-astarr" id="toc-atac-starr-seq-astarr" class="nav-link" data-scroll-target="#atac-starr-seq-astarr">ATAC-STARR-seq (ASTARR)</a></li>
+  <li><a href="#whg-starr-seq-wstarr" id="toc-whg-starr-seq-wstarr" class="nav-link" data-scroll-target="#whg-starr-seq-wstarr">WHG-STARR-seq (WSTARR)</a></li>
+  <li><a href="#tiling-mpra-tmpra" id="toc-tiling-mpra-tmpra" class="nav-link" data-scroll-target="#tiling-mpra-tmpra">Tiling MPRA (TMPRA)</a></li>
+  <li><a href="#lenti-mpra-lmpra" id="toc-lenti-mpra-lmpra" class="nav-link" data-scroll-target="#lenti-mpra-lmpra">Lenti-MPRA (LMPRA)</a></li>
+  <li><a href="#crispri-hcr-flowfish-crispri-hcrff" id="toc-crispri-hcr-flowfish-crispri-hcrff" class="nav-link" data-scroll-target="#crispri-hcr-flowfish-crispri-hcrff">CRISPRi-HCR FlowFISH (CRISPRi-HCRFF)</a></li>
+  <li><a href="#crispri-growth-screen-crispri-growth" id="toc-crispri-growth-screen-crispri-growth" class="nav-link" data-scroll-target="#crispri-growth-screen-crispri-growth">CRISPRi Growth screen (CRISPRi-Growth)</a></li>
+  <li><a href="#crispr-e2g-benchmark-data-crispr-e2g" id="toc-crispr-e2g-benchmark-data-crispr-e2g" class="nav-link" data-scroll-target="#crispr-e2g-benchmark-data-crispr-e2g">CRISPR E2G benchmark data (CRISPR-E2G)</a></li>
+  </ul></li>
+  <li><a href="#summary-cres-calls" id="toc-summary-cres-calls" class="nav-link" data-scroll-target="#summary-cres-calls">Summary: CREs calls</a></li>
+  <li><a href="#summary-hi-c-assays-done-in-k562" id="toc-summary-hi-c-assays-done-in-k562" class="nav-link" data-scroll-target="#summary-hi-c-assays-done-in-k562">Summary: Hi-C assays done in K562</a></li>
+  <li><a href="#summary-genomic-annotations" id="toc-summary-genomic-annotations" class="nav-link" data-scroll-target="#summary-genomic-annotations">Summary: Genomic annotations</a>
+  <ul class="collapse">
   <li><a href="#chromatin-states-of-k562" id="toc-chromatin-states-of-k562" class="nav-link" data-scroll-target="#chromatin-states-of-k562">Chromatin states of K562</a></li>
   <li><a href="#tss-annotation-of-k562" id="toc-tss-annotation-of-k562" class="nav-link" data-scroll-target="#tss-annotation-of-k562">TSS annotation of K562</a></li>
   </ul></li>
   <li><a href="#reference-files" id="toc-reference-files" class="nav-link" data-scroll-target="#reference-files">Reference files</a></li>
-  <li><a href="#working-directory-and-environment" id="toc-working-directory-and-environment" class="nav-link" data-scroll-target="#working-directory-and-environment">Working directory and environment</a></li>
   <li><a href="#more-information" id="toc-more-information" class="nav-link" data-scroll-target="#more-information">More information</a></li>
   </ul>
 </nav>
@@ -370,7 +379,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Data and Working Environment</h1>
+<h1 class="title">Data dictionary</h1>
 </div>
 
 
@@ -385,26 +394,91 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="data-dictionary" class="level2">
-<h2 class="anchored" data-anchor-id="data-dictionary">Data Dictionary</h2>
 <p>Below are the main data used in the analyses. We express our sincere appreciation to the research teams and individuals involved in conducting, processing, and sharing the experiments and data that underpin our analyses.</p>
-<section id="fcc-assays-done-in-k562" class="level3">
-<h3 class="anchored" data-anchor-id="fcc-assays-done-in-k562">FCC assays done in K562</h3>
+<section id="summary-fcc-assays-done-in-k562" class="level2">
+<h2 class="anchored" data-anchor-id="summary-fcc-assays-done-in-k562">Summary: FCC assays done in K562</h2>
 <p><a href="./02_prepare/data_01_fcc.html">Read more about the FCC data</a></p>
 <ul>
-<li>ATAC-STARR (ASTARR): sequenced fragments (proccessed by Alex; experiment done by Keith)</li>
+<li>ATAC-STARR (ASTARR): sequenced fragments (proccessed by Alex and Revathy; experiment done by Keith)</li>
 <li>WHG-STARR (WSTARR): sequenced fragments (proccessed by Alex; experiment done by Kari)</li>
 <li>Tiling MPRA (TMPRA): raw barcode count table (proccessed by Hannah)</li>
 <li>Lenti-MPRA (LMPRA): log2 fold change of each element (shared by Vikram from the Lenti-MPRA study)</li>
 <li>CRISPRi-HCR FlowFISH (CRISPRi-HCRFF): z scores (proccessed by Jin Woo)</li>
 <li>CRISPRi-Growth screen (CRISPRi-Growth): z scores (proccessed by Jin Woo)</li>
+</ul>
+<section id="atac-starr-seq-astarr" class="level3">
+<h3 class="anchored" data-anchor-id="atac-starr-seq-astarr">ATAC-STARR-seq (ASTARR)</h3>
+</section>
+<section id="whg-starr-seq-wstarr" class="level3">
+<h3 class="anchored" data-anchor-id="whg-starr-seq-wstarr">WHG-STARR-seq (WSTARR)</h3>
+<ul>
+<li>More information
+<ul>
+<li>https://www.encodeproject.org/functional-characterization-experiments/ENCSR661FOW/</li>
+</ul></li>
+</ul>
+</section>
+<section id="tiling-mpra-tmpra" class="level3">
+<h3 class="anchored" data-anchor-id="tiling-mpra-tmpra">Tiling MPRA (TMPRA)</h3>
+<p><a href="https://www.encodeproject.org/search/?type=FunctionalCharacterizationExperiment&amp;type=FunctionalCharacterizationSeries&amp;type=TransgenicEnhancerExperiment&amp;config=FunctionalCharacterization&amp;datapoint=false&amp;control_type!=*&amp;status=released&amp;biosamples.donor.organism.scientific_name=Homo+sapiens&amp;biosample_ontology.term_name=K562&amp;assay_title=MPRA&amp;perturbation_type!=*&amp;lab.title=Ryan+Tewhey%2C+JAX">ENCODE FCC K562 Tiling MPRA from Tewhey’s lab</a></p>
+<ul>
+<li><a href="https://www.encodeproject.org/functional-characterization-experiments/ENCSR917SFD/">ENCODE MPRA K562 OL43-GATA/MYC region</a>
+<ul>
+<li>Homo sapiens K562, 24 hours post-nucleic acid delivery time genetically modified (episome) using transient transfection for multiple loci</li>
+</ul></li>
+<li>[ENCODE MPRA]</li>
+</ul>
+<p>https://www.encodeproject.org/search/?type=File&amp;searchTerm=OL43&amp;file_format=bed</p>
+<p>MPRA of multiple loci in K562 Homo sapiens K562, 48 hours post-nucleic acid delivery time genetically modified (episome) using transient transfection for multiple loci Loci: FEN1, FADS1, FADS2, FADS3 Lab: Ryan Tewhey, JAX Project: ENCODE</p>
+<p>Functional Characterization Experiment ENCSR394HXI</p>
+<p>ryan-tewhey:mpra-OL13-fads-k562</p>
+<p>MPRA of multiple loci in K562 Homo sapiens K562, 24 hours post-nucleic acid delivery time genetically modified (episome) using transient transfection for multiple loci Loci: GATA1, MYC Lab: Ryan Tewhey, JAX Project: ENCODE</p>
+<p>Functional Characterization Experiment ENCSR917SFD</p>
+<p>ryan-tewhey:mpra-OL43-gata_myc_ctrl-k562</p>
+<p>MPRA of multiple loci in K562 Homo sapiens K562, 24 hours post-nucleic acid delivery time genetically modified (episome) using transient transfection for multiple loci Loci: LMO2, HBE1, RBM38, HBA2, BCL11A Lab: Ryan Tewhey, JAX Project: ENCODE</p>
+<p>Functional Characterization Experiment ENCSR363XER</p>
+<p>ryan-tewhey:mpra-OL45-common_ctrl-k562</p>
+<p>In this analysis, we are using the unnormalized and normalized data processed and shared by Hannah from the Tewhey lab.</p>
+</section>
+<section id="lenti-mpra-lmpra" class="level3">
+<h3 class="anchored" data-anchor-id="lenti-mpra-lmpra">Lenti-MPRA (LMPRA)</h3>
+<p>Lentivirus-based MPRA (lentiMPRA) produces “in-genome” readouts <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7550205/">(M Grace Gordon et al., 2020)</a></p>
+<ul>
+<li>Benefits
+<ul>
+<li>enables the use of MPRA in hard-to-transfect cells.</li>
+</ul></li>
+<li>Reference
+<ul>
+<li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7550205/">M Grace Gordon et al.&nbsp;(2020) lentiMPRA and MPRAflow for high-throughput functional characterization of gene regulatory elements. Nature protocols, 15, 2387–2412.</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="crispri-hcr-flowfish-crispri-hcrff" class="level3">
+<h3 class="anchored" data-anchor-id="crispri-hcr-flowfish-crispri-hcrff">CRISPRi-HCR FlowFISH (CRISPRi-HCRFF)</h3>
+</section>
+<section id="crispri-growth-screen-crispri-growth" class="level3">
+<h3 class="anchored" data-anchor-id="crispri-growth-screen-crispri-growth">CRISPRi Growth screen (CRISPRi-Growth)</h3>
+</section>
+<section id="crispr-e2g-benchmark-data-crispr-e2g" class="level3">
+<h3 class="anchored" data-anchor-id="crispr-e2g-benchmark-data-crispr-e2g">CRISPR E2G benchmark data (CRISPR-E2G)</h3>
+</section>
+</section>
+<section id="summary-cres-calls" class="level2">
+<h2 class="anchored" data-anchor-id="summary-cres-calls">Summary: CREs calls</h2>
+<ul>
+<li>CREs calls for reporter assays (STARR/MPRA)</li>
+<li>CREs calls for CRISPRi-HCR FlowFISH</li>
+<li>CREs calls for CRISPRi-Growth screen</li>
 <li>ATAC peaks: MACS peaks called of the ASTARR input libraries (procccessed by Alex)</li>
 </ul>
 </section>
-<section id="hi-c-assays-done-in-k562" class="level3">
-<h3 class="anchored" data-anchor-id="hi-c-assays-done-in-k562">Hi-C assays done in K562</h3>
+<section id="summary-hi-c-assays-done-in-k562" class="level2">
+<h2 class="anchored" data-anchor-id="summary-hi-c-assays-done-in-k562">Summary: Hi-C assays done in K562</h2>
 <p><a href="./02_prepare/data_02_hic.html">Read more about the Hi-C data</a></p>
 </section>
+<section id="summary-genomic-annotations" class="level2">
+<h2 class="anchored" data-anchor-id="summary-genomic-annotations">Summary: Genomic annotations</h2>
 <section id="chromatin-states-of-k562" class="level3">
 <h3 class="anchored" data-anchor-id="chromatin-states-of-k562">Chromatin states of K562</h3>
 <p><a href="./02_prepare/data_12_chromatin_states.html">Read more about the chromatin states data</a></p>
@@ -424,31 +498,8 @@ ul.task-list li input[type="checkbox"] {
 <li>K562 Accessible regions (ATAC/DHS regions) used for testing assay coverage</li>
 </ul>
 </section>
-<section id="working-directory-and-environment" class="level2">
-<h2 class="anchored" data-anchor-id="working-directory-and-environment">Working directory and environment</h2>
-<ul>
-<li><a href="./01_setup/work_01_env.html">Read more about the working environment</a></li>
-<li><a href="./01_setup/work_02_data.html">Read more about the working data</a></li>
-<li><a href="./01_setup/work_03_results.html">Read more about the working results</a></li>
-</ul>
-<pre><code>PROJECT
-├── app
-│   └── singularity_proj_encode_fcc.sif
-├── data
-│   ├── external
-│   └── processed
-├── results
-├── scripts
-├── references
-├── notebooks
-├── docs
-├── site
-├── log
-├── README.md
-└── .gitignore</code></pre>
-</section>
-<section id="more-information" class="level1">
-<h1>More information</h1>
+<section id="more-information" class="level2">
+<h2 class="anchored" data-anchor-id="more-information">More information</h2>
 <ul>
 <li>Lenti-MPRA study
 <ul>

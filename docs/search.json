@@ -7,32 +7,60 @@
     "text": "Introduction\nEstablishing non-coding mechanisms for disease remains a major goal in human genetics. Identifying the genomic mechanisms that contribute to gene regulation is critical to achieving that goal. Two promising technologies for identifying those mechanisms are high-throughput reporter assays and CRISPR screens.\n\n\n\nObjectives\nThis site documents a segment of the analyses conducted by the ENCODE Functional Characterization Center (FCC) working group. In this series of analyses, we have integrated data from STARR/MPRA/CRISPRi/Hi-C assays with genomic annotations of chromatin states (cCREs/ChromHMM) and transcription factor (TF) binding sites to:\nThis site documents a part of analyses in the ENCODE FCC working group. In this series of analyses, we integrated the STARR/MPRA/CRISPRi/Hi-C assays with genomic annotations of chromatin states (cCREs/ChromHMM) and TF binding sites in order to:\n\nQualitatively summarize the regulatory regions identified through STARR/MPRA/CRISPRi assays.\nQuantitative compare the regulatory effects measured in STARR/MPRA/CRISPRi assays\nInvestigate the physical interactions of the regulatory regions using the Hi-C assay\n\n Figure. The ENCODE resource of functional characterization assays and functional genomic data in K562. Phase 4 of the ENCODE project included a coordinated effort across eight labs to functionally characterize human gene regulatory elements using high-throughput reporter assay screens (ATAC-STARR-seq, WHG-STARR-seq, Tiling-MPRA, and Lenti-MPRA) and high-throughput CRISPR perturbational screens (CRISPRi HCR-FlowFISH and CRISPRi growth screen).\nRead more about the ENCODE FCC project and working group\n\n\nSummary\n\nCompared the effects of STARR-seq, MPRA, CRISPRi, and Hi-C assays across the FCC coordinated target regions (GATA1/MYC, LMO2, GATA1, Globin, MYB, and FADS). To do so, we compared Z-score and ranked normalized effects from all of the assays across the regions. Overall, we found common enrichment of strong effects, but also many examples where the assays give different results.\nMeasured enrichment in regulatory states for a combined set of FCC-defined elements. To do so, we took the union of the significant effects from STARR-seq and MPRA (Junke’s peak calls), CRISPRi-FF (CASA peaks), CRISPR-growth (Alex’s DESeq analysis). We then calculated enrichment for cCREs and ChromHMM states in those call sets. We found several chromatin states that were enriched in FCC-identified elements. We also found some cCRE states vary across the assays. We are currently investigating if that variation is biological or due to technical issues about how peaks are called for the different assays.\nDeveloped an analysis pipeline to summarize and compare regulatory effects across accessible regions. Specifically, for each site of chromatin accessibility defined by ATAC-seq, we compiled the estimated effects for ATAC-STARR-seq (Keith, Alex), WG-STARR-seq (Kari, Alex), Tiling MPRA (Hannah), Lenti-MPRA (Vikram), and CRISPRi (Jin-Woo). That resulted in a master table of effects for each assay across all ATAC-seq regions. We then estimated effect size distributions and correlated effects across open chromatin sites using that matrix. We also did across different chromatin states (e.g., cCREs, ChromHMM) assigned to the open chromatin sites. We again found that activity of the assays was positively enriched in many chromatin states associated with active gene regulation. We also found some states had repressed activity for ATAC-STARR-seq but activation in other assays. We are currently investigating if that is a biological finding or due to biases in the analysis.\nExamined the relationship between functional genomic and chromatin 3D organization. This idea is based on the TAD analysis by Jin-Woo and discussions with Gurkan. To do so, we examined loop coverage at regulatory regions across different assays and found that the frequency of loop calls in regulatory regions are higher than background for regulatory regions. We further performed aggregate region analysis to provide a general overview of the 3D genomic structure around the significant regions identified by CRISPRi-HCR FlowFISH assays. From the average contact map, we observed an enrichment of Hi-C signal at TSS-Peak location for regulatory elements identified by the assays. We are currently designing and performing aggregate region analysis for regulatory elements identified in STARR/MPRA and CRISPRi-Growth assays.\nWe are investigating if there is evidence of different classes of enhancers in the FCC datasets. Specifically, we are investigating if there are some enhancers that have activity on their own, and others whose activity depends on nearby physical interacting enhancers. This idea is based on a previous analysis from the ReddyLab using ChIP-STARR-seq (Vockley et al., 2016). Currently, we are classifying which elements are isolated in the genome, and which are potentially interacting. We will then compare regulatory effects across the FCC assays for those classes.\n\nRead the main report of the analyses\n\n\nAcknowledgement\nThe analytical work presented in this document was primarily conducted by Kuei-Yueh Ko under the guidance and supervision of Tim Reddy (Advisor) and Alex Barrera. The direction of the analyses was also guided by Keith Siklenka and Gürkan Yardimci. We express our sincere appreciation to the research teams and individuals involved in conducting, processing, and sharing the experiments and data that underpin our analyses. For further details, please refer to the data dictionary.\n\n\nMore information\n\nAbout the ENCODE FCC project and working group\nMain report of the analyses\nData used and computational environment setup in the anlayses\nMethods and steps of the analyses\nList of figures and tables generated in the anlayses"
   },
   {
-    "objectID": "data.html",
-    "href": "data.html",
-    "title": "Data and Working Environment",
+    "objectID": "01_setup/work_01_env.html",
+    "href": "01_setup/work_01_env.html",
+    "title": "01 Working Environment",
     "section": "",
-    "text": "Below are the main data used in the analyses. We express our sincere appreciation to the research teams and individuals involved in conducting, processing, and sharing the experiments and data that underpin our analyses.\n\n\nRead more about the FCC data\n\nATAC-STARR (ASTARR): sequenced fragments (proccessed by Alex; experiment done by Keith)\nWHG-STARR (WSTARR): sequenced fragments (proccessed by Alex; experiment done by Kari)\nTiling MPRA (TMPRA): raw barcode count table (proccessed by Hannah)\nLenti-MPRA (LMPRA): log2 fold change of each element (shared by Vikram from the Lenti-MPRA study)\nCRISPRi-HCR FlowFISH (CRISPRi-HCRFF): z scores (proccessed by Jin Woo)\nCRISPRi-Growth screen (CRISPRi-Growth): z scores (proccessed by Jin Woo)\nATAC peaks: MACS peaks called of the ASTARR input libraries (procccessed by Alex)\n\n\n\n\nRead more about the Hi-C data\n\n\n\nRead more about the chromatin states data\n\nENCODE candidate cis-regulatory elements (cCREs)\nENCODE ChromHMM chromatin states"
+    "text": "PROJECT\n├── app\n│   └── singularity_proj_encode_fcc.sif\n├── data\n│   ├── external\n│   └── processed\n├── results\n├── scripts\n├── references\n├── notebooks\n├── docs\n├── site\n├── log\n├── README.md\n└── .gitignore"
   },
   {
-    "objectID": "data.html#data-dictionary",
-    "href": "data.html#data-dictionary",
-    "title": "Data and Working Environment",
+    "objectID": "data.html",
+    "href": "data.html",
+    "title": "Data dictionary",
     "section": "",
-    "text": "Below are the main data used in the analyses. We express our sincere appreciation to the research teams and individuals involved in conducting, processing, and sharing the experiments and data that underpin our analyses.\n\n\nRead more about the FCC data\n\nATAC-STARR (ASTARR): sequenced fragments (proccessed by Alex; experiment done by Keith)\nWHG-STARR (WSTARR): sequenced fragments (proccessed by Alex; experiment done by Kari)\nTiling MPRA (TMPRA): raw barcode count table (proccessed by Hannah)\nLenti-MPRA (LMPRA): log2 fold change of each element (shared by Vikram from the Lenti-MPRA study)\nCRISPRi-HCR FlowFISH (CRISPRi-HCRFF): z scores (proccessed by Jin Woo)\nCRISPRi-Growth screen (CRISPRi-Growth): z scores (proccessed by Jin Woo)\nATAC peaks: MACS peaks called of the ASTARR input libraries (procccessed by Alex)\n\n\n\n\nRead more about the Hi-C data\n\n\n\nRead more about the chromatin states data\n\nENCODE candidate cis-regulatory elements (cCREs)\nENCODE ChromHMM chromatin states"
+    "text": "Below are the main data used in the analyses. We express our sincere appreciation to the research teams and individuals involved in conducting, processing, and sharing the experiments and data that underpin our analyses."
+  },
+  {
+    "objectID": "data.html#summary-fcc-assays-done-in-k562",
+    "href": "data.html#summary-fcc-assays-done-in-k562",
+    "title": "Data dictionary",
+    "section": "Summary: FCC assays done in K562",
+    "text": "Summary: FCC assays done in K562\nRead more about the FCC data\n\nATAC-STARR (ASTARR): sequenced fragments (proccessed by Alex and Revathy; experiment done by Keith)\nWHG-STARR (WSTARR): sequenced fragments (proccessed by Alex; experiment done by Kari)\nTiling MPRA (TMPRA): raw barcode count table (proccessed by Hannah)\nLenti-MPRA (LMPRA): log2 fold change of each element (shared by Vikram from the Lenti-MPRA study)\nCRISPRi-HCR FlowFISH (CRISPRi-HCRFF): z scores (proccessed by Jin Woo)\nCRISPRi-Growth screen (CRISPRi-Growth): z scores (proccessed by Jin Woo)\n\n\nATAC-STARR-seq (ASTARR)\n\n\nWHG-STARR-seq (WSTARR)\n\nMore information\n\nhttps://www.encodeproject.org/functional-characterization-experiments/ENCSR661FOW/\n\n\n\n\nTiling MPRA (TMPRA)\nENCODE FCC K562 Tiling MPRA from Tewhey’s lab\n\nENCODE MPRA K562 OL43-GATA/MYC region\n\nHomo sapiens K562, 24 hours post-nucleic acid delivery time genetically modified (episome) using transient transfection for multiple loci\n\n[ENCODE MPRA]\n\nhttps://www.encodeproject.org/search/?type=File&searchTerm=OL43&file_format=bed\nMPRA of multiple loci in K562 Homo sapiens K562, 48 hours post-nucleic acid delivery time genetically modified (episome) using transient transfection for multiple loci Loci: FEN1, FADS1, FADS2, FADS3 Lab: Ryan Tewhey, JAX Project: ENCODE\nFunctional Characterization Experiment ENCSR394HXI\nryan-tewhey:mpra-OL13-fads-k562\nMPRA of multiple loci in K562 Homo sapiens K562, 24 hours post-nucleic acid delivery time genetically modified (episome) using transient transfection for multiple loci Loci: GATA1, MYC Lab: Ryan Tewhey, JAX Project: ENCODE\nFunctional Characterization Experiment ENCSR917SFD\nryan-tewhey:mpra-OL43-gata_myc_ctrl-k562\nMPRA of multiple loci in K562 Homo sapiens K562, 24 hours post-nucleic acid delivery time genetically modified (episome) using transient transfection for multiple loci Loci: LMO2, HBE1, RBM38, HBA2, BCL11A Lab: Ryan Tewhey, JAX Project: ENCODE\nFunctional Characterization Experiment ENCSR363XER\nryan-tewhey:mpra-OL45-common_ctrl-k562\nIn this analysis, we are using the unnormalized and normalized data processed and shared by Hannah from the Tewhey lab.\n\n\nLenti-MPRA (LMPRA)\nLentivirus-based MPRA (lentiMPRA) produces “in-genome” readouts (M Grace Gordon et al., 2020)\n\nBenefits\n\nenables the use of MPRA in hard-to-transfect cells.\n\nReference\n\nM Grace Gordon et al. (2020) lentiMPRA and MPRAflow for high-throughput functional characterization of gene regulatory elements. Nature protocols, 15, 2387–2412.\n\n\n\n\nCRISPRi-HCR FlowFISH (CRISPRi-HCRFF)\n\n\nCRISPRi Growth screen (CRISPRi-Growth)\n\n\nCRISPR E2G benchmark data (CRISPR-E2G)"
+  },
+  {
+    "objectID": "data.html#summary-cres-calls",
+    "href": "data.html#summary-cres-calls",
+    "title": "Data dictionary",
+    "section": "Summary: CREs calls",
+    "text": "Summary: CREs calls\n\nCREs calls for reporter assays (STARR/MPRA)\nCREs calls for CRISPRi-HCR FlowFISH\nCREs calls for CRISPRi-Growth screen\nATAC peaks: MACS peaks called of the ASTARR input libraries (procccessed by Alex)"
+  },
+  {
+    "objectID": "data.html#summary-hi-c-assays-done-in-k562",
+    "href": "data.html#summary-hi-c-assays-done-in-k562",
+    "title": "Data dictionary",
+    "section": "Summary: Hi-C assays done in K562",
+    "text": "Summary: Hi-C assays done in K562\nRead more about the Hi-C data"
+  },
+  {
+    "objectID": "data.html#summary-genomic-annotations",
+    "href": "data.html#summary-genomic-annotations",
+    "title": "Data dictionary",
+    "section": "Summary: Genomic annotations",
+    "text": "Summary: Genomic annotations\n\nChromatin states of K562\nRead more about the chromatin states data\n\nENCODE candidate cis-regulatory elements (cCREs)\nENCODE ChromHMM chromatin states\n\n\n\nTSS annotation of K562"
   },
   {
     "objectID": "data.html#reference-files",
     "href": "data.html#reference-files",
-    "title": "Data and Working Environment",
+    "title": "Data dictionary",
     "section": "Reference files",
     "text": "Reference files\n\nK562 ChIP-seq table from the ENCODE flagship\nK562 Accessible regions (ATAC/DHS regions) used for testing assay coverage"
   },
   {
-    "objectID": "data.html#working-directory-and-environment",
-    "href": "data.html#working-directory-and-environment",
-    "title": "Data and Working Environment",
-    "section": "Working directory and environment",
-    "text": "Working directory and environment\n\nRead more about the working environment\nRead more about the working data\nRead more about the working results\n\nPROJECT\n├── app\n│   └── singularity_proj_encode_fcc.sif\n├── data\n│   ├── external\n│   └── processed\n├── results\n├── scripts\n├── references\n├── notebooks\n├── docs\n├── site\n├── log\n├── README.md\n└── .gitignore"
+    "objectID": "data.html#more-information",
+    "href": "data.html#more-information",
+    "title": "Data dictionary",
+    "section": "More information",
+    "text": "More information\n\nLenti-MPRA study\n\nMassively parallel characterization of transcriptional regulatory elements in three diverse human cell types\n\nCRISPR study\n\nMulti-center integrated analysis of non-coding CRISPR screens"
   },
   {
     "objectID": "notebooks/test/test_notebook.html",
@@ -315,6 +343,20 @@
     "text": "This page is still under construction."
   },
   {
+    "objectID": "02_prepare/data_01_fcc.html",
+    "href": "02_prepare/data_01_fcc.html",
+    "title": "FCC Data",
+    "section": "",
+    "text": "FCC Metadata (WSTARR) \n\n\n\n\n\n\n\nFile Name\nGroup\nSample\n\n\n\n\nWSTARRseq_K562_A001.hg38.Input.rep1.WGS.unstranded.bed.gz\nInput\nInput.rep1\n\n\nWSTARRseq_K562_A001.hg38.Input.rep2.WGS.unstranded.bed.gz\nInput\nInput.rep2\n\n\nWSTARRseq_K562_A001.hg38.Input.rep3.WGS.unstranded.bed.gz\nInput\nInput.rep3\n\n\nWSTARRseq_K562_A001.hg38.Input.rep4.WGS.unstranded.bed.gz\nInput\nInput.rep4\n\n\nWSTARRseq_K562_A001.hg38.Output.rep1.WGS.unstranded.bed.gz\nOutput\nOutput.rep1\n\n\nWSTARRseq_K562_A001.hg38.Output.rep2.WGS.unstranded.bed.gz\nOutput\nOutput.rep2\n\n\nWSTARRseq_K562_A001.hg38.Output.rep3.WGS.unstranded.bed.gz\nOutput\nOutput.rep3"
+  },
+  {
+    "objectID": "02_prepare/data_01_fcc.html#whg-starr-seq-wstarr",
+    "href": "02_prepare/data_01_fcc.html#whg-starr-seq-wstarr",
+    "title": "FCC Data",
+    "section": "",
+    "text": "FCC Metadata (WSTARR) \n\n\n\n\n\n\n\nFile Name\nGroup\nSample\n\n\n\n\nWSTARRseq_K562_A001.hg38.Input.rep1.WGS.unstranded.bed.gz\nInput\nInput.rep1\n\n\nWSTARRseq_K562_A001.hg38.Input.rep2.WGS.unstranded.bed.gz\nInput\nInput.rep2\n\n\nWSTARRseq_K562_A001.hg38.Input.rep3.WGS.unstranded.bed.gz\nInput\nInput.rep3\n\n\nWSTARRseq_K562_A001.hg38.Input.rep4.WGS.unstranded.bed.gz\nInput\nInput.rep4\n\n\nWSTARRseq_K562_A001.hg38.Output.rep1.WGS.unstranded.bed.gz\nOutput\nOutput.rep1\n\n\nWSTARRseq_K562_A001.hg38.Output.rep2.WGS.unstranded.bed.gz\nOutput\nOutput.rep2\n\n\nWSTARRseq_K562_A001.hg38.Output.rep3.WGS.unstranded.bed.gz\nOutput\nOutput.rep3"
+  },
+  {
     "objectID": "02_prepare/data_01_fcc.html#atac-starr-seq-astarr",
     "href": "02_prepare/data_01_fcc.html#atac-starr-seq-astarr",
     "title": "FCC Data",
@@ -326,14 +368,14 @@
     "href": "02_prepare/data_01_fcc.html#tiling-mpra-tmpra",
     "title": "FCC Data",
     "section": "Tiling MPRA (TMPRA)",
-    "text": "Tiling MPRA (TMPRA)\n\n\n\nFCC Region Screened (Tiling-MPRA) \n\n\nChrom\nChromStart\nChromEnd\nRegion\nDataset\n\n\n\n\nchr11\n4505501\n6505900\nHBE1\nOL45\n\n\nchr11\n32869701\n34870100\nLMO2\nOL45\n\n\nchr11\n61787329\n61898348\nFADS\nOL13\n\n\nchr16\n10001\n1173100\nHBA2\nOL45\n\n\nchr2\n59553301\n61553700\nBCL11A\nOL45\n\n\nchr20\n56391301\n58391700\nRBM38\nOL45\n\n\nchr8\n126735901\n128736550\nMYC\nOL43\n\n\nchrX\n47785501\n49880650\nGATA1\nOL43\n\n\n\n\n\nENCODE FCC K562 Tiling MPRA from Tewhey’s lab\n\nENCODE MPRA K562 OL43-GATA/MYC region\n\nHomo sapiens K562, 24 hours post-nucleic acid delivery time genetically modified (episome) using transient transfection for multiple loci\n\n[ENCODE MPRA]\n\nhttps://www.encodeproject.org/search/?type=File&searchTerm=OL43&file_format=bed\nMPRA of multiple loci in K562 Homo sapiens K562, 48 hours post-nucleic acid delivery time genetically modified (episome) using transient transfection for multiple loci Loci: FEN1, FADS1, FADS2, FADS3 Lab: Ryan Tewhey, JAX Project: ENCODE\nFunctional Characterization Experiment ENCSR394HXI\nryan-tewhey:mpra-OL13-fads-k562\nMPRA of multiple loci in K562 Homo sapiens K562, 24 hours post-nucleic acid delivery time genetically modified (episome) using transient transfection for multiple loci Loci: GATA1, MYC Lab: Ryan Tewhey, JAX Project: ENCODE\nFunctional Characterization Experiment ENCSR917SFD\nryan-tewhey:mpra-OL43-gata_myc_ctrl-k562\nMPRA of multiple loci in K562 Homo sapiens K562, 24 hours post-nucleic acid delivery time genetically modified (episome) using transient transfection for multiple loci Loci: LMO2, HBE1, RBM38, HBA2, BCL11A Lab: Ryan Tewhey, JAX Project: ENCODE\nFunctional Characterization Experiment ENCSR363XER\nryan-tewhey:mpra-OL45-common_ctrl-k562\nIn this analysis, we are using the unnormalized and normalized data processed and shared by Hannah from the Tewhey lab."
+    "text": "Tiling MPRA (TMPRA)\n\n\n\nFCC Region Screened (Tiling-MPRA) \n\n\nChrom\nChromStart\nChromEnd\nRegion\nDataset\n\n\n\n\nchr11\n4505501\n6505900\nHBE1\nOL45\n\n\nchr11\n32869701\n34870100\nLMO2\nOL45\n\n\nchr11\n61787329\n61898348\nFADS\nOL13\n\n\nchr16\n10001\n1173100\nHBA2\nOL45\n\n\nchr2\n59553301\n61553700\nBCL11A\nOL45\n\n\nchr20\n56391301\n58391700\nRBM38\nOL45\n\n\nchr8\n126735901\n128736550\nMYC\nOL43\n\n\nchrX\n47785501\n49880650\nGATA1\nOL43"
   },
   {
     "objectID": "02_prepare/data_01_fcc.html#lenti-mpra-lmpra",
     "href": "02_prepare/data_01_fcc.html#lenti-mpra-lmpra",
     "title": "FCC Data",
     "section": "Lenti-MPRA (LMPRA)",
-    "text": "Lenti-MPRA (LMPRA)\nLentivirus-based MPRA (lentiMPRA) produces “in-genome” readouts (M Grace Gordon et al., 2020)\n\nBenefits\n\nenables the use of MPRA in hard-to-transfect cells.\n\nReference\n\nM Grace Gordon et al. (2020) lentiMPRA and MPRAflow for high-throughput functional characterization of gene regulatory elements. Nature protocols, 15, 2387–2412."
+    "text": "Lenti-MPRA (LMPRA)"
   },
   {
     "objectID": "02_prepare/data_01_fcc.html#crispri-hcr-flowfish-crispri-hcrff",
