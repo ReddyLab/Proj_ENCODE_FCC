@@ -21,46 +21,81 @@
     "text": "Below are the main data used in the analyses. We express our sincere appreciation to the research teams and individuals involved in conducting, processing, and sharing the experiments and data that underpin our analyses."
   },
   {
-    "objectID": "data.html#summary-fcc-assays-done-in-k562",
-    "href": "data.html#summary-fcc-assays-done-in-k562",
+    "objectID": "data.html#atac-starr-seq-astarr",
+    "href": "data.html#atac-starr-seq-astarr",
     "title": "Data dictionary",
-    "section": "Summary: FCC assays done in K562",
-    "text": "Summary: FCC assays done in K562\nRead more about the FCC data\n\nATAC-STARR (ASTARR): sequenced fragments (proccessed by Alex and Revathy; experiment done by Keith)\nWHG-STARR (WSTARR): sequenced fragments (proccessed by Alex; experiment done by Kari)\nTiling MPRA (TMPRA): raw barcode count table (proccessed by Hannah)\nLenti-MPRA (LMPRA): log2 fold change of each element (shared by Vikram from the Lenti-MPRA study)\nCRISPRi-HCR FlowFISH (CRISPRi-HCRFF): z scores (proccessed by Jin Woo)\nCRISPRi-Growth screen (CRISPRi-Growth): z scores (proccessed by Jin Woo)\n\n\nATAC-STARR-seq (ASTARR)\n\n\nWHG-STARR-seq (WSTARR)\n\nMore information\n\nhttps://www.encodeproject.org/functional-characterization-experiments/ENCSR661FOW/\n\n\n\n\nTiling MPRA (TMPRA)\nENCODE FCC K562 Tiling MPRA from Tewhey’s lab\n\nENCODE MPRA K562 OL43-GATA/MYC region\n\nHomo sapiens K562, 24 hours post-nucleic acid delivery time genetically modified (episome) using transient transfection for multiple loci\n\n[ENCODE MPRA]\n\nhttps://www.encodeproject.org/search/?type=File&searchTerm=OL43&file_format=bed\nMPRA of multiple loci in K562 Homo sapiens K562, 48 hours post-nucleic acid delivery time genetically modified (episome) using transient transfection for multiple loci Loci: FEN1, FADS1, FADS2, FADS3 Lab: Ryan Tewhey, JAX Project: ENCODE\nFunctional Characterization Experiment ENCSR394HXI\nryan-tewhey:mpra-OL13-fads-k562\nMPRA of multiple loci in K562 Homo sapiens K562, 24 hours post-nucleic acid delivery time genetically modified (episome) using transient transfection for multiple loci Loci: GATA1, MYC Lab: Ryan Tewhey, JAX Project: ENCODE\nFunctional Characterization Experiment ENCSR917SFD\nryan-tewhey:mpra-OL43-gata_myc_ctrl-k562\nMPRA of multiple loci in K562 Homo sapiens K562, 24 hours post-nucleic acid delivery time genetically modified (episome) using transient transfection for multiple loci Loci: LMO2, HBE1, RBM38, HBA2, BCL11A Lab: Ryan Tewhey, JAX Project: ENCODE\nFunctional Characterization Experiment ENCSR363XER\nryan-tewhey:mpra-OL45-common_ctrl-k562\nIn this analysis, we are using the unnormalized and normalized data processed and shared by Hannah from the Tewhey lab.\n\n\nLenti-MPRA (LMPRA)\nLentivirus-based MPRA (lentiMPRA) produces “in-genome” readouts (M Grace Gordon et al., 2020)\n\nBenefits\n\nenables the use of MPRA in hard-to-transfect cells.\n\nReference\n\nM Grace Gordon et al. (2020) lentiMPRA and MPRAflow for high-throughput functional characterization of gene regulatory elements. Nature protocols, 15, 2387–2412.\n\n\n\n\nCRISPRi-HCR FlowFISH (CRISPRi-HCRFF)\n\n\nCRISPRi Growth screen (CRISPRi-Growth)\n\n\nCRISPR E2G benchmark data (CRISPR-E2G)"
+    "section": "ATAC-STARR-seq (ASTARR)",
+    "text": "ATAC-STARR-seq (ASTARR)"
   },
   {
-    "objectID": "data.html#summary-cres-calls",
-    "href": "data.html#summary-cres-calls",
+    "objectID": "data.html#whg-starr-seq-wstarr",
+    "href": "data.html#whg-starr-seq-wstarr",
     "title": "Data dictionary",
-    "section": "Summary: CREs calls",
-    "text": "Summary: CREs calls\n\nCREs calls for reporter assays (STARR/MPRA)\nCREs calls for CRISPRi-HCR FlowFISH\nCREs calls for CRISPRi-Growth screen\nATAC peaks: MACS peaks called of the ASTARR input libraries (procccessed by Alex)"
+    "section": "WHG-STARR-seq (WSTARR)",
+    "text": "WHG-STARR-seq (WSTARR)\n\nMore information\n\nhttps://www.encodeproject.org/functional-characterization-experiments/ENCSR661FOW/"
   },
   {
-    "objectID": "data.html#summary-hi-c-assays-done-in-k562",
-    "href": "data.html#summary-hi-c-assays-done-in-k562",
+    "objectID": "data.html#tiling-mpra-tmpra",
+    "href": "data.html#tiling-mpra-tmpra",
     "title": "Data dictionary",
-    "section": "Summary: Hi-C assays done in K562",
-    "text": "Summary: Hi-C assays done in K562\nRead more about the Hi-C data"
+    "section": "Tiling MPRA (TMPRA)",
+    "text": "Tiling MPRA (TMPRA)\nENCODE FCC K562 Tiling MPRA from Tewhey’s lab\n\nENCODE MPRA K562 OL43-GATA/MYC region\n\nHomo sapiens K562, 24 hours post-nucleic acid delivery time genetically modified (episome) using transient transfection for multiple loci\n\n[ENCODE MPRA]\n\nhttps://www.encodeproject.org/search/?type=File&searchTerm=OL43&file_format=bed\nMPRA of multiple loci in K562 Homo sapiens K562, 48 hours post-nucleic acid delivery time genetically modified (episome) using transient transfection for multiple loci Loci: FEN1, FADS1, FADS2, FADS3 Lab: Ryan Tewhey, JAX Project: ENCODE\nFunctional Characterization Experiment ENCSR394HXI\nryan-tewhey:mpra-OL13-fads-k562\nMPRA of multiple loci in K562 Homo sapiens K562, 24 hours post-nucleic acid delivery time genetically modified (episome) using transient transfection for multiple loci Loci: GATA1, MYC Lab: Ryan Tewhey, JAX Project: ENCODE\nFunctional Characterization Experiment ENCSR917SFD\nryan-tewhey:mpra-OL43-gata_myc_ctrl-k562\nMPRA of multiple loci in K562 Homo sapiens K562, 24 hours post-nucleic acid delivery time genetically modified (episome) using transient transfection for multiple loci Loci: LMO2, HBE1, RBM38, HBA2, BCL11A Lab: Ryan Tewhey, JAX Project: ENCODE\nFunctional Characterization Experiment ENCSR363XER\nryan-tewhey:mpra-OL45-common_ctrl-k562\nIn this analysis, we are using the unnormalized and normalized data processed and shared by Hannah from the Tewhey lab."
   },
   {
-    "objectID": "data.html#summary-genomic-annotations",
-    "href": "data.html#summary-genomic-annotations",
+    "objectID": "data.html#lenti-mpra-lmpra",
+    "href": "data.html#lenti-mpra-lmpra",
     "title": "Data dictionary",
-    "section": "Summary: Genomic annotations",
-    "text": "Summary: Genomic annotations\n\nChromatin states of K562\nRead more about the chromatin states data\n\nENCODE candidate cis-regulatory elements (cCREs)\nENCODE ChromHMM chromatin states\n\n\n\nTSS annotation of K562"
+    "section": "Lenti-MPRA (LMPRA)",
+    "text": "Lenti-MPRA (LMPRA)\nLentivirus-based MPRA (lentiMPRA) produces “in-genome” readouts (M Grace Gordon et al., 2020)\n\nBenefits\n\nenables the use of MPRA in hard-to-transfect cells.\n\nReference\n\nM Grace Gordon et al. (2020) lentiMPRA and MPRAflow for high-throughput functional characterization of gene regulatory elements. Nature protocols, 15, 2387–2412."
   },
   {
-    "objectID": "data.html#reference-files",
-    "href": "data.html#reference-files",
+    "objectID": "data.html#crispri-hcr-flowfish-crispri-hcrff",
+    "href": "data.html#crispri-hcr-flowfish-crispri-hcrff",
     "title": "Data dictionary",
-    "section": "Reference files",
-    "text": "Reference files\n\nK562 ChIP-seq table from the ENCODE flagship\nK562 Accessible regions (ATAC/DHS regions) used for testing assay coverage"
+    "section": "CRISPRi-HCR FlowFISH (CRISPRi-HCRFF)",
+    "text": "CRISPRi-HCR FlowFISH (CRISPRi-HCRFF)"
   },
   {
-    "objectID": "data.html#more-information",
-    "href": "data.html#more-information",
+    "objectID": "data.html#crispri-growth-screen-crispri-growth",
+    "href": "data.html#crispri-growth-screen-crispri-growth",
     "title": "Data dictionary",
-    "section": "More information",
-    "text": "More information\n\nLenti-MPRA study\n\nMassively parallel characterization of transcriptional regulatory elements in three diverse human cell types\n\nCRISPR study\n\nMulti-center integrated analysis of non-coding CRISPR screens"
+    "section": "CRISPRi Growth screen (CRISPRi-Growth)",
+    "text": "CRISPRi Growth screen (CRISPRi-Growth)"
+  },
+  {
+    "objectID": "data.html#crispr-e2g-benchmark-data-crispr-e2g",
+    "href": "data.html#crispr-e2g-benchmark-data-crispr-e2g",
+    "title": "Data dictionary",
+    "section": "CRISPR E2G benchmark data (CRISPR-E2G)",
+    "text": "CRISPR E2G benchmark data (CRISPR-E2G)"
+  },
+  {
+    "objectID": "data.html#chromatin-states",
+    "href": "data.html#chromatin-states",
+    "title": "Data dictionary",
+    "section": "Chromatin states",
+    "text": "Chromatin states\nRead more about the chromatin states data\n\nENCODE candidate cis-regulatory elements (cCREs)\nENCODE ChromHMM chromatin states"
+  },
+  {
+    "objectID": "data.html#tss-annotation",
+    "href": "data.html#tss-annotation",
+    "title": "Data dictionary",
+    "section": "TSS annotation",
+    "text": "TSS annotation"
+  },
+  {
+    "objectID": "data.html#chip-seq-tfhistone-data",
+    "href": "data.html#chip-seq-tfhistone-data",
+    "title": "Data dictionary",
+    "section": "ChIP-seq (TF/Histone) data",
+    "text": "ChIP-seq (TF/Histone) data\n\nK562 ChIP-seq table from the ENCODE flagship"
+  },
+  {
+    "objectID": "data.html#accessible-regions-atacdhs-regions",
+    "href": "data.html#accessible-regions-atacdhs-regions",
+    "title": "Data dictionary",
+    "section": "Accessible regions (ATAC/DHS regions)",
+    "text": "Accessible regions (ATAC/DHS regions)\n\nK562 Accessible regions (ATAC/DHS regions) used for testing assay coverage"
   },
   {
     "objectID": "notebooks/test/test_notebook.html",
@@ -823,21 +858,21 @@
     "href": "01_setup/work_02_data.html",
     "title": "02 Working Directory of Data",
     "section": "",
-    "text": "PROJECT/reference\n├── encode_chipseq_flagship\n│\n├── encode_chipseq_subset\n│\n├── encode_open_chromatin\n│\n├── fcc_trackhub_jinwoo\n│   ├── K562_TSS_selected_by_higest_Pol2_TSS_sig.out\n│   └── trackhub.txt\n│\n└── fcc_astarr_macs"
+    "text": "Below are some naming convention in this documentation.\n\nAssay folder name\n\n&lt;Assay Type&gt;_&lt;Cell Type&gt;_&lt;Lab&gt;_&lt;Label&gt;\nLabel\n\nbatch, source, people, id numbers\n\n\n\nSTARR_ATAC_K562_Reddy_KS91\nSTARR_ATAC_K562_Reddy_KS274\nSTARR_WHG_K562_Reddy_A001\nMPRA_Tiling_K562_Tewhey_Hannah\nMPRA_Lenti_K562_Nadav_Vikram\nCRISPRi_FlowFISH_K562_Riley_JinWoo\nCRISPRi_Growth_K562_Gersbach_Alex\n\nAssay file name\n\n&lt;Prefix&gt;.&lt;Genome&gt;.&lt;Input/Output/Log2FC&gt;.&lt;Replicate&gt;.&lt;Region&gt;.&lt;Unstranded/Stranded&gt;.&lt;File Extension&gt;\nPrefix\n\nASTARRseq_K562_KS91\nWSTARRseq_K562_A001\nTMPRA_K562_OL13\nTMPRA_K562_OL43\nTMPRA_K562_OL45\nTMPRA_K562_Merge\nLMPRA_K562\nCRISPRi_HCRFF_K562\nCRISPRi_Growth_K562\n\nReplicate\n\nrep1/2/3/4\nrep1_vs_rep2\nrep_all\n\nRegion\n\nWHG = whole genome\nMYC = MYC region\nGATA1 = GATA1 region\n\n\nENCODE region file name\n\n&lt;Prefix&gt;.&lt;Genome&gt;.&lt;Experiment ID&gt;.&lt;File ID&gt;.&lt;Assay&gt;.&lt;Description&gt;.&lt;File Extension&gt;\nPrefix: biosample\n\nK562: a human erythroleukemic cell line\nA549: a human lung epithelial Cell line\nHsa: Human\n\nGenome: reference for alignment\n\nhg38: GRCh38\nhg19: GRCh37"
   },
   {
     "objectID": "01_setup/work_02_data.html#download-external-data",
     "href": "01_setup/work_02_data.html#download-external-data",
     "title": "02 Working Directory of Data",
     "section": "Download external data",
-    "text": "Download external data\nPROJECT/data/external\n├── encode_open_chromatin\n│   ├── K562.hg38.ENCSR000EKS.ENCFF274YGF.DNase.bed.gz\n│   ├── K562.hg38.ENCSR000EOT.ENCFF185XRG.DNase.bed.gz\n│   ├── K562.hg38.ENCSR483RKN.ENCFF558BLC.ATAC.bed.gz\n│   ├── K562.hg38.ENCSR483RKN.ENCFF925CYR.ATAC.bed.gz\n│   ├── K562.hg38.ENCSR868FGK.ENCFF333TAT.ATAC.bed.gz\n│   └── K562.hg38.ENCSR868FGK.ENCFF948AFM.ATAC.bed.gz\n│   \n├── encode_ccres\n├── encode_chromhmm\n├── encode_astarr_csaw\n│\n├── encode_chipseq_flagship\n├── encode_chipseq_subset\n├── encode_crispri_hcrff\n│   ├── K562.hg38.ENCSR793WTM.ENCFF863AVQ.CRISPRi_HCRFF.CASA.CAPRIN1.bed.gz\n│   ├── K562.hg38.ENCSR794SPV.ENCFF619FXH.CRISPRi_HCRFF.CASA.CAT.bed.gz\n│   ├── K562.hg38.ENCSR157WAN.ENCFF270LYK.CRISPRi_HCRFF.CASA.CD164.bed.gz\n│   ├── K562.hg38.ENCSR979QQN.ENCFF813GCK.CRISPRi_HCRFF.CASA.ERP29.bed.gz\n│   ├── K562.hg38.ENCSR382ZJS.ENCFF786ZPA.CRISPRi_HCRFF.CASA.FADS1.bed.gz\n│   ├── K562.hg38.ENCSR968CIN.ENCFF149IDL.CRISPRi_HCRFF.CASA.FADS2.bed.gz\n│   ├── K562.hg38.ENCSR630WLB.ENCFF227DUX.CRISPRi_HCRFF.CASA.FADS3.bed.gz\n│   ├── K562.hg38.ENCSR278YTB.ENCFF151MNC.CRISPRi_HCRFF.CASA.FEN1.bed.gz\n│   ├── K562.hg38.ENCSR917XEU.ENCFF413WYU.CRISPRi_HCRFF.CASA.GATA1.bed.gz\n│   ├── K562.hg38.ENCSR564EPW.ENCFF845YHV.CRISPRi_HCRFF.CASA.HBE1.bed.gz\n│   ├── K562.hg38.ENCSR449NJV.ENCFF811PPJ.CRISPRi_HCRFF.CASA.HBG1.bed.gz\n│   ├── K562.hg38.ENCSR459QNY.ENCFF910PDZ.CRISPRi_HCRFF.CASA.HBG2.bed.gz\n│   ├── K562.hg38.ENCSR759RSA.ENCFF337VVS.CRISPRi_HCRFF.CASA.HBS1L.bed.gz\n│   ├── K562.hg38.ENCSR009KPS.ENCFF632PQY.CRISPRi_HCRFF.CASA.HDAC6.bed.gz\n│   ├── K562.hg38.ENCSR321CEH.ENCFF469FXP.CRISPRi_HCRFF.CASA.LMO2.bed.gz\n│   ├── K562.hg38.ENCSR940PYU.ENCFF894DJT.CRISPRi_HCRFF.CASA.MEF2C.bed.gz\n│   ├── K562.hg38.ENCSR408VHJ.ENCFF091IOP.CRISPRi_HCRFF.CASA.MYB.bed.gz\n│   ├── K562.hg38.ENCSR825SFH.ENCFF240IPT.CRISPRi_HCRFF.CASA.MYC.bed.gz\n│   ├── K562.hg38.ENCSR393VDD.ENCFF270ZLE.CRISPRi_HCRFF.CASA.NMU.bed.gz\n│   └── K562.hg38.ENCSR496MZF.ENCFF005DTR.CRISPRi_HCRFF.CASA.PVT1.bed.gz\n│\n├── encode_e2g\n├── encode_rnaseq\n├── \n├── (genome_gencode)\n├── (genome_ncbi_refseq)\n├── \n├── \n├── hic_insitu_K562_ENCSR545YBD\n├── hic_intact_K562_ENCSR479XDG\n├── hic_intact_K562_deep\n├── chrom.sizes.hg19\n└── chrom.sizes.hg38"
+    "text": "Download external data\nSummary\nPROJECT/data/external\n├── encode_open_chromatin\n├── encode_ccres\n├── encode_chromhmm\n├── encode_chipseq_flagship\n├── encode_chipseq_subset\n├── encode_astarr_csaw\n├── encode_e2g\n├── encode_rnaseq\n├── hic_insitu_K562_ENCSR545YBD\n├── hic_intact_K562_ENCSR479XDG\n├── hic_intact_K562_deep\n├── chrom.sizes.hg19\n└── chrom.sizes.hg38\nDetailed\nPROJECT/data/external\n├── encode_open_chromatin\n│   ├── K562.hg38.ENCSR000EKS.ENCFF274YGF.DNase.bed.gz\n│   ├── K562.hg38.ENCSR000EOT.ENCFF185XRG.DNase.bed.gz\n│   ├── K562.hg38.ENCSR483RKN.ENCFF558BLC.ATAC.bed.gz\n│   ├── K562.hg38.ENCSR483RKN.ENCFF925CYR.ATAC.bed.gz\n│   ├── K562.hg38.ENCSR868FGK.ENCFF333TAT.ATAC.bed.gz\n│   └── K562.hg38.ENCSR868FGK.ENCFF948AFM.ATAC.bed.gz\n│   \n├── encode_ccres\n├── encode_chromhmm\n├── encode_astarr_csaw\n│\n├── encode_chipseq_flagship\n├── encode_chipseq_subset\n├── encode_crispri_hcrff\n│   ├── K562.hg38.ENCSR793WTM.ENCFF863AVQ.CRISPRi_HCRFF.CASA.CAPRIN1.bed.gz\n│   ├── K562.hg38.ENCSR794SPV.ENCFF619FXH.CRISPRi_HCRFF.CASA.CAT.bed.gz\n│   ├── K562.hg38.ENCSR157WAN.ENCFF270LYK.CRISPRi_HCRFF.CASA.CD164.bed.gz\n│   ├── K562.hg38.ENCSR979QQN.ENCFF813GCK.CRISPRi_HCRFF.CASA.ERP29.bed.gz\n│   ├── K562.hg38.ENCSR382ZJS.ENCFF786ZPA.CRISPRi_HCRFF.CASA.FADS1.bed.gz\n│   ├── K562.hg38.ENCSR968CIN.ENCFF149IDL.CRISPRi_HCRFF.CASA.FADS2.bed.gz\n│   ├── K562.hg38.ENCSR630WLB.ENCFF227DUX.CRISPRi_HCRFF.CASA.FADS3.bed.gz\n│   ├── K562.hg38.ENCSR278YTB.ENCFF151MNC.CRISPRi_HCRFF.CASA.FEN1.bed.gz\n│   ├── K562.hg38.ENCSR917XEU.ENCFF413WYU.CRISPRi_HCRFF.CASA.GATA1.bed.gz\n│   ├── K562.hg38.ENCSR564EPW.ENCFF845YHV.CRISPRi_HCRFF.CASA.HBE1.bed.gz\n│   ├── K562.hg38.ENCSR449NJV.ENCFF811PPJ.CRISPRi_HCRFF.CASA.HBG1.bed.gz\n│   ├── K562.hg38.ENCSR459QNY.ENCFF910PDZ.CRISPRi_HCRFF.CASA.HBG2.bed.gz\n│   ├── K562.hg38.ENCSR759RSA.ENCFF337VVS.CRISPRi_HCRFF.CASA.HBS1L.bed.gz\n│   ├── K562.hg38.ENCSR009KPS.ENCFF632PQY.CRISPRi_HCRFF.CASA.HDAC6.bed.gz\n│   ├── K562.hg38.ENCSR321CEH.ENCFF469FXP.CRISPRi_HCRFF.CASA.LMO2.bed.gz\n│   ├── K562.hg38.ENCSR940PYU.ENCFF894DJT.CRISPRi_HCRFF.CASA.MEF2C.bed.gz\n│   ├── K562.hg38.ENCSR408VHJ.ENCFF091IOP.CRISPRi_HCRFF.CASA.MYB.bed.gz\n│   ├── K562.hg38.ENCSR825SFH.ENCFF240IPT.CRISPRi_HCRFF.CASA.MYC.bed.gz\n│   ├── K562.hg38.ENCSR393VDD.ENCFF270ZLE.CRISPRi_HCRFF.CASA.NMU.bed.gz\n│   └── K562.hg38.ENCSR496MZF.ENCFF005DTR.CRISPRi_HCRFF.CASA.PVT1.bed.gz\n│\n├── encode_e2g\n├── encode_rnaseq\n├── \n├── (genome_gencode)\n├── (genome_ncbi_refseq)\n├── \n├── \n├── hic_insitu_K562_ENCSR545YBD\n├── hic_intact_K562_ENCSR479XDG\n├── hic_intact_K562_deep\n├── chrom.sizes.hg19\n└── chrom.sizes.hg38"
   },
   {
     "objectID": "01_setup/work_02_data.html#get-processed-data",
     "href": "01_setup/work_02_data.html#get-processed-data",
     "title": "02 Working Directory of Data",
     "section": "Get processed data",
-    "text": "Get processed data\nPROJECT/data/processed\n├── ASTARRseq_K562_hg38_KS91_210401\n│   ├── fragments\n│   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep1.masked.dedup.fragments.counts.txt.gz\n│   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep1.masked.exclude_dups.cpm.bw\n│   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep2.masked.dedup.fragments.counts.txt.gz\n│   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep2.masked.exclude_dups.cpm.bw\n│   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep3.masked.dedup.fragments.counts.txt.gz\n│   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep3.masked.exclude_dups.cpm.bw\n│   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep4.masked.dedup.fragments.counts.txt.gz\n│   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep4.masked.exclude_dups.cpm.bw\n│   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep5.masked.dedup.fragments.counts.txt.gz\n│   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep5.masked.exclude_dups.cpm.bw\n│   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep6.masked.dedup.fragments.counts.txt.gz\n│   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep6.masked.exclude_dups.cpm.bw\n│   │   ├── KS91_K562_hg38_ASTARRseq_Output_rep1.f3q10.fragments.counts.txt.gz\n│   │   ├── KS91_K562_hg38_ASTARRseq_Output_rep1.f3q10.sorted.with_umis.dedup.cpm.bw\n│   │   ├── KS91_K562_hg38_ASTARRseq_Output_rep2.f3q10.fragments.counts.txt.gz\n│   │   ├── KS91_K562_hg38_ASTARRseq_Output_rep2.f3q10.sorted.with_umis.dedup.cpm.bw\n│   │   ├── KS91_K562_hg38_ASTARRseq_Output_rep3.f3q10.fragments.counts.txt.gz\n│   │   ├── KS91_K562_hg38_ASTARRseq_Output_rep3.f3q10.sorted.with_umis.dedup.cpm.bw\n│   │   ├── KS91_K562_hg38_ASTARRseq_Output_rep4.f3q10.fragments.counts.txt.gz\n│   │   └── KS91_K562_hg38_ASTARRseq_Output_rep4.f3q10.sorted.with_umis.dedup.cpm.bw\n│   └── peaks\n│       ├── KS91_K562_hg38_ASTARRseq_Input.all_reps.masked.union_narrowPeak.q5.bed\n│       └── KS91_K562_hg38_ASTARRseq_Input.q5.in_all.max_overlaps.bed\n│\n├── ASTARRseq_K562_hg38_KS274_240311\n│   └── fragments\n│       ├── \n│\n├── WSTARRseq_K562_hg38_A001\n│   ├── fragments\n│   │   ├── A001-input-K562-rep1.masked.dedup.fragments.counts.txt.gz\n│   │   ├── A001-input-K562-rep2.masked.dedup.fragments.counts.txt.gz\n│   │   ├── A001-input-K562-rep3.masked.dedup.fragments.counts.txt.gz\n│   │   ├── A001-input-K562-rep4.masked.dedup.fragments.counts.txt.gz\n│   │   ├── A001-K562-rep1.masked.dedup.fragments.counts.txt.gz\n│   │   ├── A001-K562-rep2.masked.dedup.fragments.counts.txt.gz\n│   │   └── A001-K562-rep3.masked.dedup.fragments.counts.txt.gz\n│   └── peaks\n│   \n├── MPRA_Tiling_K562_Tewhey_hannah\n│   └── tiling_counts\n│       ├── OL13_20220512_counts.out\n│       ├── OL13_20220512_normalized_counts.out\n│       ├── OL43_20211228_counts.out      \n│       ├── OL43_20211228_normalized_counts.out\n│       ├── OL43_20221003_counts.out \n│       ├── OL43_20221003_K562_normalized_counts.out\n│       ├── OL45_20220927_counts.out \n│       └── OL45_20220927_K562_normalized_counts.out\n│\n├── MPRA_Lenti_K562_Nadav_vikram\n│\n│\n├── CRISPRi_Growth_K562_Gersbach_alex\n│   ├── guides\n│   └── region\n│\n├── fcc_trackhub_jinwoo\n│   ├── track_bedgraph\n│   │   ├── \n│   │   └── \n│   ├── track_bigwig\n│   └── region\n│       ├── tss_pol2\n│       └── tss_tse_crispri_hcrff\n│\n├── fcc_enhancer_junke_zscore\n│\n├── TF_modules_K562_shannon\n│\n└──"
+    "text": "Get processed data\nSummary\nPROJECT/data/processed\n├── STARR_ATAC_K562_Reddy_KS91_210401\n│   ├── fragments\n│   └── peaks\n│\n├── STARR_ATAC_K562_Reddy_KS274_240311\n│   └── fragments\n│\n├── STARR_WHG_K562_Reddy_A001_Alex\n│   └── fragments\n│\n├── STARR_WHG_K562_Reddy_A001_Kari\n│   └── superstarr\n│       ├── input_libs\n│       │   └── A001_K562\n│       └── output_libs\n│           ├── A001_K562_20201124\n│           └── A001_K562_20210213\n│\n├── CRISPRi_Growth_K562_Gersbach_Alex\n│   ├── guides\n│   └── region\n│\n├── CRISPRi_Growth_K562_Gersbach_JinWoo\n│\n├── CRISPRi_FlowFISH_K562_Riley_JinWoo\n│\n├── fcc_trackhub_JinWoo\n│\n├── fcc_enhancer_Junke_zscore\n│\n├── TF_modules_K562_Shannon\n│\n└── \nDetailed\nPROJECT/data/processed\n├── STARR_ATAC_K562_Reddy_KS91_210401\n│   ├── fragments\n│   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep1.masked.dedup.fragments.counts.txt.gz\n│   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep1.masked.exclude_dups.cpm.bw\n│   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep2.masked.dedup.fragments.counts.txt.gz\n│   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep2.masked.exclude_dups.cpm.bw\n│   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep3.masked.dedup.fragments.counts.txt.gz\n│   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep3.masked.exclude_dups.cpm.bw\n│   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep4.masked.dedup.fragments.counts.txt.gz\n│   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep4.masked.exclude_dups.cpm.bw\n│   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep5.masked.dedup.fragments.counts.txt.gz\n│   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep5.masked.exclude_dups.cpm.bw\n│   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep6.masked.dedup.fragments.counts.txt.gz\n│   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep6.masked.exclude_dups.cpm.bw\n│   │   ├── KS91_K562_hg38_ASTARRseq_Output_rep1.f3q10.fragments.counts.txt.gz\n│   │   ├── KS91_K562_hg38_ASTARRseq_Output_rep1.f3q10.sorted.with_umis.dedup.cpm.bw\n│   │   ├── KS91_K562_hg38_ASTARRseq_Output_rep2.f3q10.fragments.counts.txt.gz\n│   │   ├── KS91_K562_hg38_ASTARRseq_Output_rep2.f3q10.sorted.with_umis.dedup.cpm.bw\n│   │   ├── KS91_K562_hg38_ASTARRseq_Output_rep3.f3q10.fragments.counts.txt.gz\n│   │   ├── KS91_K562_hg38_ASTARRseq_Output_rep3.f3q10.sorted.with_umis.dedup.cpm.bw\n│   │   ├── KS91_K562_hg38_ASTARRseq_Output_rep4.f3q10.fragments.counts.txt.gz\n│   │   └── KS91_K562_hg38_ASTARRseq_Output_rep4.f3q10.sorted.with_umis.dedup.cpm.bw\n│   └── peaks\n│       ├── KS91_K562_hg38_ASTARRseq_Input.all_reps.masked.union_narrowPeak.q5.bed\n│       └── KS91_K562_hg38_ASTARRseq_Input.q5.in_all.max_overlaps.bed\n│\n├── STARR_ATAC_K562_Reddy_KS274_240311\n│   └── fragments\n│       ├── \n│\n├── STARR_WHG_K562_Reddy_A001_Alex\n│   ├── fragments\n│   │   ├── A001-input-K562-rep1.masked.dedup.fragments.counts.txt.gz\n│   │   ├── A001-input-K562-rep2.masked.dedup.fragments.counts.txt.gz\n│   │   ├── A001-input-K562-rep3.masked.dedup.fragments.counts.txt.gz\n│   │   ├── A001-input-K562-rep4.masked.dedup.fragments.counts.txt.gz\n│   │   ├── A001-K562-rep1.masked.dedup.fragments.counts.txt.gz\n│   │   ├── A001-K562-rep2.masked.dedup.fragments.counts.txt.gz\n│   │   └── A001-K562-rep3.masked.dedup.fragments.counts.txt.gz\n│   └── peaks\n│   \n├── STARR_WHG_K562_Reddy_A001_Kari\n│\n├── MPRA_Tiling_K562_Tewhey_Hannah\n│   └── tiling_counts\n│       ├── OL13_20220512_counts.out\n│       ├── OL13_20220512_normalized_counts.out\n│       ├── OL43_20211228_counts.out      \n│       ├── OL43_20211228_normalized_counts.out\n│       ├── OL43_20221003_counts.out \n│       ├── OL43_20221003_K562_normalized_counts.out\n│       ├── OL45_20220927_counts.out \n│       └── OL45_20220927_K562_normalized_counts.out\n│\n├── MPRA_Lenti_K562_Nadav_vikram\n│\n│\n├── CRISPRi_Growth_K562_Gersbach_Alex\n│   ├── guides\n│   └── region\n│\n├── fcc_trackhub_jinwoo\n│   ├── track_bedgraph\n│   │   ├── \n│   │   └── \n│   ├── track_bigwig\n│   └── region\n│       ├── tss_pol2\n│       └── tss_tse_crispri_hcrff\n│\n├── fcc_enhancer_junke_zscore\n│\n├── TF_modules_K562_shannon\n│\n└──"
   },
   {
     "objectID": "11_fcc_summary/01_fcc_astarr.html",
