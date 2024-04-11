@@ -444,41 +444,32 @@ PROJECT IMAGE   (FP_PRJ_SIF):  /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/app/sing
 </div>
 <section id="explore-fragment-counts-of-astarr" class="level2">
 <h2 class="anchored" data-anchor-id="explore-fragment-counts-of-astarr">Explore fragment counts of ASTARR</h2>
-<div class="cell" data-execution_count="4">
+<div class="cell" data-execution_count="2">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_DAT}</span>/processed/ASTARRseq_K562_hg38_KS91_210401/fragments</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FDIRY}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_DAT}</span>/processed/STARR_ATAC_K562_Reddy_KS91_210401/fragments</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FDIRY}</span>/<span class="pp">*</span>.txt.gz <span class="kw">|</span> <span class="fu">xargs</span> <span class="at">-n</span> 1 basename</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>KS91_K562_hg38_ASTARRseq_Input_rep1.masked.dedup.fragments.counts.txt.gz
-KS91_K562_hg38_ASTARRseq_Input_rep1.masked.exclude_dups.cpm.bw
 KS91_K562_hg38_ASTARRseq_Input_rep2.masked.dedup.fragments.counts.txt.gz
-KS91_K562_hg38_ASTARRseq_Input_rep2.masked.exclude_dups.cpm.bw
 KS91_K562_hg38_ASTARRseq_Input_rep3.masked.dedup.fragments.counts.txt.gz
-KS91_K562_hg38_ASTARRseq_Input_rep3.masked.exclude_dups.cpm.bw
 KS91_K562_hg38_ASTARRseq_Input_rep4.masked.dedup.fragments.counts.txt.gz
-KS91_K562_hg38_ASTARRseq_Input_rep4.masked.exclude_dups.cpm.bw
 KS91_K562_hg38_ASTARRseq_Input_rep5.masked.dedup.fragments.counts.txt.gz
-KS91_K562_hg38_ASTARRseq_Input_rep5.masked.exclude_dups.cpm.bw
 KS91_K562_hg38_ASTARRseq_Input_rep6.masked.dedup.fragments.counts.txt.gz
-KS91_K562_hg38_ASTARRseq_Input_rep6.masked.exclude_dups.cpm.bw
 KS91_K562_hg38_ASTARRseq_Output_rep1.f3q10.fragments.counts.txt.gz
-KS91_K562_hg38_ASTARRseq_Output_rep1.f3q10.sorted.with_umis.dedup.cpm.bw
+KS91_K562_hg38_ASTARRseq_Output_rep2.f3q10.fragments.counts.corrected.txt.gz
 KS91_K562_hg38_ASTARRseq_Output_rep2.f3q10.fragments.counts.txt.gz
-KS91_K562_hg38_ASTARRseq_Output_rep2.f3q10.sorted.with_umis.dedup.cpm.bw
+KS91_K562_hg38_ASTARRseq_Output_rep3.f3q10.fragments.counts.corrected.txt.gz
 KS91_K562_hg38_ASTARRseq_Output_rep3.f3q10.fragments.counts.txt.gz
-KS91_K562_hg38_ASTARRseq_Output_rep3.f3q10.sorted.with_umis.dedup.cpm.bw
-KS91_K562_hg38_ASTARRseq_Output_rep4.f3q10.fragments.counts.txt.gz
-KS91_K562_hg38_ASTARRseq_Output_rep4.f3q10.sorted.with_umis.dedup.cpm.bw
-KS91_K562_hg38_ASTARRseq_Output_rep5.f3q10.sorted.with_umis.dedup.cpm.bw
-KS91_K562_hg38_ASTARRseq_Output_rep6.f3q10.sorted.with_umis.dedup.cpm.bw</code></pre>
+KS91_K562_hg38_ASTARRseq_Output_rep4.f3q10.fragments.counts.corrected.txt.gz
+KS91_K562_hg38_ASTARRseq_Output_rep4.f3q10.fragments.counts.txt.gz</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="5">
+<div class="cell" data-execution_count="3">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_DAT}</span>/processed/ASTARRseq_K562_hg38_KS91_210401/fragments</span>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_DAT}</span>/processed/STARR_ATAC_K562_Reddy_KS91_210401/fragments</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="va">FNAME</span><span class="op">=</span>KS91_K562_hg38_ASTARRseq_Input_rep1.masked.dedup.fragments.counts.txt.gz</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="va">FPATH</span><span class="op">=</span><span class="va">${FDIRY}</span>/<span class="va">${FNAME}</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -493,25 +484,22 @@ chr1    10002   10209   chr1_10002_10209    1   .
 chr1    10002   10227   chr1_10002_10227    1   .</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="8">
+<div class="cell" data-execution_count="4">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_DAT}</span>/processed/ASTARRseq_K562_hg38_KS274_240311/fragments</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FDIRY}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_DAT}</span>/processed/STARR_ATAC_K562_Reddy_KS274_240311/fragments</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FDIRY}</span>/<span class="pp">*</span>bedpe <span class="kw">|</span> <span class="fu">xargs</span> <span class="at">-n</span> 1 basename</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>K562_ASTARR_repeat_rep1.f3q10.fragments.bedpe
-K562_ASTARR_repeat_rep1.f3q10.sorted.with_umis.dedup.rpkm.bw
 K562_ASTARR_repeat_rep2.f3q10.fragments.bedpe
-K562_ASTARR_repeat_rep2.f3q10.sorted.with_umis.dedup.rpkm.bw
-K562_ASTARR_repeat_rep3.f3q10.fragments.bedpe
-K562_ASTARR_repeat_rep3.f3q10.sorted.with_umis.dedup.rpkm.bw</code></pre>
+K562_ASTARR_repeat_rep3.f3q10.fragments.bedpe</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="9">
+<div class="cell" data-execution_count="5">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_DAT}</span>/processed/ASTARRseq_K562_hg38_KS274_240311/fragments</span>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_DAT}</span>/processed/STARR_ATAC_K562_Reddy_KS274_240311/fragments</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="va">FNAME</span><span class="op">=</span>K562_ASTARR_repeat_rep1.f3q10.fragments.bedpe</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="va">FPATH</span><span class="op">=</span><span class="va">${FDIRY}</span>/<span class="va">${FNAME}</span></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -529,10 +517,10 @@ chr1    14599   14850</code></pre>
 </section>
 <section id="explore-macs-peak-calls-on-astarr-input" class="level2">
 <h2 class="anchored" data-anchor-id="explore-macs-peak-calls-on-astarr-input">Explore MACS peak calls on ASTARR input</h2>
-<div class="cell" data-execution_count="10">
+<div class="cell" data-execution_count="6">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_DAT}</span>/processed/ASTARRseq_K562_hg38_KS91_210401/peaks</span>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_DAT}</span>/processed/STARR_ATAC_K562_Reddy_KS91_210401/peaks</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FDIRY}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
@@ -540,10 +528,10 @@ chr1    14599   14850</code></pre>
 KS91_K562_hg38_ASTARRseq_Input.q5.in_all.max_overlaps.bed</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="11">
+<div class="cell" data-execution_count="7">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_DAT}</span>/processed/ASTARRseq_K562_hg38_KS91_210401/peaks</span>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_DAT}</span>/processed/STARR_ATAC_K562_Reddy_KS91_210401/peaks</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="va">FNAME</span><span class="op">=</span>KS91_K562_hg38_ASTARRseq_Input.all_reps.masked.union_narrowPeak.q5.bed</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="va">FPATH</span><span class="op">=</span><span class="va">${FDIRY}</span>/<span class="va">${FNAME}</span></span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -558,10 +546,10 @@ chr1    28903   29613
 chr1    30803   31072</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="12">
+<div class="cell" data-execution_count="8">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_DAT}</span>/processed/ASTARRseq_K562_hg38_KS91_210401/peaks</span>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_DAT}</span>/processed/STARR_ATAC_K562_Reddy_KS91_210401/peaks</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="va">FNAME</span><span class="op">=</span>KS91_K562_hg38_ASTARRseq_Input.q5.in_all.max_overlaps.bed</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="va">FPATH</span><span class="op">=</span><span class="va">${FDIRY}</span>/<span class="va">${FNAME}</span></span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -579,10 +567,10 @@ chr1    115429  115969  6</code></pre>
 </section>
 <section id="explore-fragment-counts-of-wstarr" class="level2">
 <h2 class="anchored" data-anchor-id="explore-fragment-counts-of-wstarr">Explore fragment counts of WSTARR</h2>
-<div class="cell" data-execution_count="13">
+<div class="cell" data-execution_count="9">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_DAT}</span>/processed/WSTARRseq_K562_hg38_A001/fragments</span>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_DAT}</span>/processed/STARR_WHG_K562_Reddy_A001_Alex/fragments</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FDIRY}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
@@ -595,10 +583,10 @@ A001-K562-rep2.masked.dedup.fragments.counts.txt.gz
 A001-K562-rep3.masked.dedup.fragments.counts.txt.gz</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="14">
+<div class="cell" data-execution_count="10">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_DAT}</span>/processed/WSTARRseq_K562_hg38_A001/fragments</span>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_DAT}</span>/processed/STARR_WHG_K562_Reddy_A001_Alex/fragments</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="va">FNAME</span><span class="op">=</span>A001-input-K562-rep1.masked.dedup.fragments.counts.txt.gz</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="va">FPATH</span><span class="op">=</span><span class="va">${FDIRY}</span>/<span class="va">${FNAME}</span></span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>

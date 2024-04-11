@@ -448,12 +448,25 @@ PROJECT IMAGE   (FP_PRJ_SIF):  /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/app/sing
 <div class="cell" data-execution_count="2">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_DAT}</span>/processed/ASTARRseq_K562_hg38_KS274_240311/fragments</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">${FDIRY}</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>   <span class="va">${FDIRY}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FD_DAT}</span>/processed/STARR_ATAC<span class="pp">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>/data/reddylab/Kuei/repo/Proj_ENCODE_FCC/data/processed/ASTARRseq_K562_hg38_KS274_240311/fragments
+<pre><code>/data/reddylab/Kuei/repo/Proj_ENCODE_FCC/data/processed/STARR_ATAC_K562_Reddy_KS274_240311:
+fragments
+
+/data/reddylab/Kuei/repo/Proj_ENCODE_FCC/data/processed/STARR_ATAC_K562_Reddy_KS91_210401:
+fragments  peaks</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="3">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_DAT}</span>/processed/STARR_ATAC_K562_Reddy_KS274_240311/fragments</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">${FDIRY}</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>   <span class="va">${FDIRY}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>/data/reddylab/Kuei/repo/Proj_ENCODE_FCC/data/processed/STARR_ATAC_K562_Reddy_KS274_240311/fragments
 K562_ASTARR_repeat_rep1.f3q10.fragments.bedpe
 K562_ASTARR_repeat_rep1.f3q10.sorted.with_umis.dedup.rpkm.bw
 K562_ASTARR_repeat_rep2.f3q10.fragments.bedpe
@@ -462,12 +475,12 @@ K562_ASTARR_repeat_rep3.f3q10.fragments.bedpe
 K562_ASTARR_repeat_rep3.f3q10.sorted.with_umis.dedup.rpkm.bw</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="3">
+<div class="cell" data-execution_count="4">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_RES}</span>/assay_fcc/STARR_ATAC_K562_Reddy_KS274/fragment_counts</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span>  <span class="va">${FDIRY}</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-d</span> <span class="va">${FDIRY}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_RES}</span>/assay_fcc/STARR_ATAC_K562_Reddy_KS274/fragment_counts</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span>  <span class="va">${FDIRY}</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-d</span> <span class="va">${FDIRY}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>/data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/assay_fcc/STARR_ATAC_K562_Reddy_KS274/fragment_counts
@@ -475,13 +488,13 @@ K562_ASTARR_repeat_rep3.f3q10.sorted.with_umis.dedup.rpkm.bw</code></pre>
 </div>
 </div>
 <p><strong>Test: Calcualte fragment -&gt; fragment counts</strong></p>
-<div class="cell" data-execution_count="4">
+<div class="cell" data-execution_count="5">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="va">FD_INP</span><span class="op">=</span><span class="va">${FD_DAT}</span>/processed/ASTARRseq_K562_hg38_KS274_240311/fragments</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="va">FN_INP</span><span class="op">=</span>K562_ASTARR_repeat_rep1.f3q10.fragments.bedpe</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="va">FP_INP</span><span class="op">=</span><span class="va">${FD_INP}</span>/<span class="va">${FN_INP}</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> <span class="va">${FP_INP}</span> <span class="kw">|</span> <span class="fu">head</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="va">FD_INP</span><span class="op">=</span><span class="va">${FD_DAT}</span>/processed/STARR_ATAC_K562_Reddy_KS274_240311/fragments</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="va">FN_INP</span><span class="op">=</span>K562_ASTARR_repeat_rep1.f3q10.fragments.bedpe</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="va">FP_INP</span><span class="op">=</span><span class="va">${FD_INP}</span>/<span class="va">${FN_INP}</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> <span class="va">${FP_INP}</span> <span class="kw">|</span> <span class="fu">head</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>chr1    14145   14485
@@ -496,16 +509,16 @@ chr1    14781   15268
 chr1    15172   15659</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="5">
+<div class="cell" data-execution_count="6">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> <span class="va">${FP_INP}</span> <span class="kw">|</span> <span class="fu">head</span> <span class="kw">|</span><span class="dt">\</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sort</span> <span class="at">-k</span> 1,1 <span class="at">-k2,2n</span> <span class="kw">|</span><span class="dt">\</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">uniq</span> <span class="at">-c</span> <span class="kw">|</span><span class="dt">\</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">awk</span> <span class="st">'{$(NF+1)=$1;$1=""}1'</span>   <span class="kw">|</span><span class="dt">\</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sed</span> <span class="at">-e</span> <span class="st">'s/^[[:space:]]*//'</span>  <span class="kw">|</span><span class="dt">\</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sed</span> <span class="at">-e</span> <span class="st">'s/[[:space:]]/\t/g'</span> <span class="kw">|</span><span class="dt">\</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">awk</span> <span class="st">'{print $1"\t"$2"\t"$3"\t"$1":"$2"-"$3"\t"$4"\t""."}'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> <span class="va">${FP_INP}</span> <span class="kw">|</span> <span class="fu">head</span> <span class="kw">|</span><span class="dt">\</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sort</span> <span class="at">-k</span> 1,1 <span class="at">-k2,2n</span> <span class="kw">|</span><span class="dt">\</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">uniq</span> <span class="at">-c</span> <span class="kw">|</span><span class="dt">\</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">awk</span> <span class="st">'{$(NF+1)=$1;$1=""}1'</span>   <span class="kw">|</span><span class="dt">\</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sed</span> <span class="at">-e</span> <span class="st">'s/^[[:space:]]*//'</span>  <span class="kw">|</span><span class="dt">\</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sed</span> <span class="at">-e</span> <span class="st">'s/[[:space:]]/\t/g'</span> <span class="kw">|</span><span class="dt">\</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">awk</span> <span class="st">'{print $1"\t"$2"\t"$3"\t"$1":"$2"-"$3"\t"$4"\t""."}'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>chr1    14145   14485   chr1:14145-14485    2   .
@@ -522,112 +535,112 @@ chr1    15172   15659   chr1:15172-15659    1   .</code></pre>
 <section id="execute" class="level2">
 <h2 class="anchored" data-anchor-id="execute">Execute</h2>
 <p><strong>Run: Loop each fragment file and output fragment counts</strong></p>
-<div class="cell" data-execution_count="6">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="va">FD_INP</span><span class="op">=</span><span class="va">${FD_DAT}</span>/processed/ASTARRseq_K562_hg38_KS274_240311/fragments</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="va">FD_OUT</span><span class="op">=</span><span class="va">${FD_RES}</span>/assay_fcc/STARR_ATAC_K562_Reddy_KS274/fragment_counts</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="va">FN_INPS</span><span class="op">=</span><span class="va">(</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    K562_ASTARR_repeat_rep1.f3q10.fragments.bedpe</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    K562_ASTARR_repeat_rep2.f3q10.fragments.bedpe</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    K562_ASTARR_repeat_rep3.f3q10.fragments.bedpe</span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="va">)</span></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="va">FN_OUTS</span><span class="op">=</span><span class="va">(</span></span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    ASTARRseq_K562_KS274.hg38.Output.rep1.WGS.unstranded.bed.gz</span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    ASTARRseq_K562_KS274.hg38.Output.rep2.WGS.unstranded.bed.gz</span>
-<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>    ASTARRseq_K562_KS274.hg38.Output.rep3.WGS.unstranded.bed.gz</span>
-<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="va">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
 <div class="cell" data-execution_count="7">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> idx <span class="kw">in</span> <span class="st">"</span><span class="va">${</span><span class="op">!</span><span class="va">FN_INPS</span><span class="op">[@]</span><span class="va">}</span><span class="st">"</span><span class="kw">;</span> <span class="cf">do</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="va">FN_INP</span><span class="op">=</span><span class="va">${FN_INPS</span><span class="op">[</span>idx<span class="op">]</span><span class="va">}</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="va">FN_OUT</span><span class="op">=</span><span class="va">${FN_OUTS</span><span class="op">[</span>idx<span class="op">]</span><span class="va">}</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="va">FN_LOG</span><span class="op">=</span>fragment_count.<span class="va">${FN_INP}</span>.txt</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="va">FP_INP</span><span class="op">=</span><span class="va">${FD_INP}</span>/<span class="va">${FN_INP}</span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="va">FP_OUT</span><span class="op">=</span><span class="va">${FD_OUT}</span>/<span class="va">${FN_OUT}</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    <span class="va">FP_LOG</span><span class="op">=</span><span class="va">${FD_LOG}</span>/<span class="va">${FN_LOG}</span></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">"Calculate fragment counts..."</span></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">${FN_INP}</span></span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">${FN_OUT}</span></span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">${FN_LOG}</span></span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>    <span class="ex">sbatch</span> <span class="at">-p</span> <span class="va">${NODE}</span> <span class="dt">\</span></span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">--exclude</span><span class="op">=</span>dl-01   <span class="dt">\</span></span>
-<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">--cpus-per-task</span> 4 <span class="dt">\</span></span>
-<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">--mem</span> 4G <span class="dt">\</span></span>
-<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">--output</span> <span class="va">${FP_LOG}</span> <span class="dt">\</span></span>
-<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">--export</span><span class="op">=</span>FD_PRJ=<span class="va">${FD_PRJ}</span>,FP_INP=<span class="va">${FP_INP}</span>,FP_OUT=<span class="va">${FP_OUT}</span> <span class="dt">\</span></span>
-<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>        <span class="op">&lt;&lt;'EOF'</span></span>
-<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a><span class="st">#!/bin/bash</span></span>
-<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a><span class="st">### set environment</span></span>
-<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a><span class="st">source ${FD_PRJ}/scripts/config_project.sh</span></span>
-<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a><span class="st">### print start message</span></span>
-<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a><span class="st">timer_start=`date +%s`</span></span>
-<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a><span class="st">echo "Hostname:          " $(hostname)</span></span>
-<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a><span class="st">echo "Slurm Array Index: " ${SLURM_ARRAY_TASK_ID}</span></span>
-<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a><span class="st">echo "Time Stamp:        " $(date +"%m-%d-%y+%T")</span></span>
-<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a><span class="st">echo</span></span>
-<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a><span class="st">### show input file</span></span>
-<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a><span class="st">echo "Input: " ${FP_INP}</span></span>
-<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a><span class="st">echo</span></span>
-<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a><span class="st">echo "show first few lines of input"</span></span>
-<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a><span class="st">fun_cat ${FP_INP} | head</span></span>
-<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a><span class="st">echo</span></span>
-<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a><span class="st">### execute</span></span>
-<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a><span class="st">cat ${FP_INP} |\</span></span>
-<span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a><span class="st">    sort -k 1,1 -k2,2n |\</span></span>
-<span id="cb12-43"><a href="#cb12-43" aria-hidden="true" tabindex="-1"></a><span class="st">    uniq -c |\</span></span>
-<span id="cb12-44"><a href="#cb12-44" aria-hidden="true" tabindex="-1"></a><span class="st">    awk '{$(NF+1)=$1;$1=""}1'   |\</span></span>
-<span id="cb12-45"><a href="#cb12-45" aria-hidden="true" tabindex="-1"></a><span class="st">    sed -e 's/^[[:space:]]*//'  |\</span></span>
-<span id="cb12-46"><a href="#cb12-46" aria-hidden="true" tabindex="-1"></a><span class="st">    sed -e 's/[[:space:]]/\t/g' |\</span></span>
-<span id="cb12-47"><a href="#cb12-47" aria-hidden="true" tabindex="-1"></a><span class="st">    awk '{print $1"\t"$2"\t"$3"\t"$1":"$2"-"$3"\t"$4"\t""."}' |\</span></span>
-<span id="cb12-48"><a href="#cb12-48" aria-hidden="true" tabindex="-1"></a><span class="st">    gzip -c &gt; ${FP_OUT}</span></span>
-<span id="cb12-49"><a href="#cb12-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-50"><a href="#cb12-50" aria-hidden="true" tabindex="-1"></a><span class="st">### show output file</span></span>
-<span id="cb12-51"><a href="#cb12-51" aria-hidden="true" tabindex="-1"></a><span class="st">echo "Output: " ${FP_OUT}</span></span>
-<span id="cb12-52"><a href="#cb12-52" aria-hidden="true" tabindex="-1"></a><span class="st">echo</span></span>
-<span id="cb12-53"><a href="#cb12-53" aria-hidden="true" tabindex="-1"></a><span class="st">echo "show first few lines of output"</span></span>
-<span id="cb12-54"><a href="#cb12-54" aria-hidden="true" tabindex="-1"></a><span class="st">fun_cat ${FP_OUT} | head</span></span>
-<span id="cb12-55"><a href="#cb12-55" aria-hidden="true" tabindex="-1"></a><span class="st">echo</span></span>
-<span id="cb12-56"><a href="#cb12-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-57"><a href="#cb12-57" aria-hidden="true" tabindex="-1"></a><span class="st">### print end message</span></span>
-<span id="cb12-58"><a href="#cb12-58" aria-hidden="true" tabindex="-1"></a><span class="st">timer=`date +%s`</span></span>
-<span id="cb12-59"><a href="#cb12-59" aria-hidden="true" tabindex="-1"></a><span class="st">runtime=$(echo "${timer} - ${timer_start}" | bc -l)</span></span>
-<span id="cb12-60"><a href="#cb12-60" aria-hidden="true" tabindex="-1"></a><span class="st">echo</span></span>
-<span id="cb12-61"><a href="#cb12-61" aria-hidden="true" tabindex="-1"></a><span class="st">echo 'Done!'</span></span>
-<span id="cb12-62"><a href="#cb12-62" aria-hidden="true" tabindex="-1"></a><span class="st">echo "Run Time: $(displaytime ${runtime})"</span></span>
-<span id="cb12-63"><a href="#cb12-63" aria-hidden="true" tabindex="-1"></a><span class="op">EOF</span></span>
-<span id="cb12-64"><a href="#cb12-64" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span></span>
-<span id="cb12-65"><a href="#cb12-65" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="va">FD_INP</span><span class="op">=</span><span class="va">${FD_DAT}</span>/processed/STARR_ATAC_K562_Reddy_KS274_240311/fragments</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="va">FD_OUT</span><span class="op">=</span><span class="va">${FD_RES}</span>/assay_fcc/STARR_ATAC_K562_Reddy_KS274/fragment_counts</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="va">FN_INPS</span><span class="op">=</span><span class="va">(</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    K562_ASTARR_repeat_rep1.f3q10.fragments.bedpe</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    K562_ASTARR_repeat_rep2.f3q10.fragments.bedpe</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    K562_ASTARR_repeat_rep3.f3q10.fragments.bedpe</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="va">)</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="va">FN_OUTS</span><span class="op">=</span><span class="va">(</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    ASTARRseq_K562_KS274.hg38.Output.rep1.WGS.unstranded.bed.gz</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    ASTARRseq_K562_KS274.hg38.Output.rep2.WGS.unstranded.bed.gz</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>    ASTARRseq_K562_KS274.hg38.Output.rep3.WGS.unstranded.bed.gz</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="va">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell" data-execution_count="8">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> idx <span class="kw">in</span> <span class="st">"</span><span class="va">${</span><span class="op">!</span><span class="va">FN_INPS</span><span class="op">[@]</span><span class="va">}</span><span class="st">"</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="va">FN_INP</span><span class="op">=</span><span class="va">${FN_INPS</span><span class="op">[</span>idx<span class="op">]</span><span class="va">}</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="va">FN_OUT</span><span class="op">=</span><span class="va">${FN_OUTS</span><span class="op">[</span>idx<span class="op">]</span><span class="va">}</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="va">FN_LOG</span><span class="op">=</span>fragment_count.<span class="va">${FN_INP}</span>.txt</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    <span class="va">FP_INP</span><span class="op">=</span><span class="va">${FD_INP}</span>/<span class="va">${FN_INP}</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    <span class="va">FP_OUT</span><span class="op">=</span><span class="va">${FD_OUT}</span>/<span class="va">${FN_OUT}</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    <span class="va">FP_LOG</span><span class="op">=</span><span class="va">${FD_LOG}</span>/<span class="va">${FN_LOG}</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">"Calculate fragment counts..."</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">${FN_INP}</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">${FN_OUT}</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">${FN_LOG}</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>    <span class="ex">sbatch</span> <span class="at">-p</span> <span class="va">${NODE}</span> <span class="dt">\</span></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">--exclude</span><span class="op">=</span>dl-01   <span class="dt">\</span></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">--cpus-per-task</span> 4 <span class="dt">\</span></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">--mem</span> 4G <span class="dt">\</span></span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">--output</span> <span class="va">${FP_LOG}</span> <span class="dt">\</span></span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">--export</span><span class="op">=</span>FD_PRJ=<span class="va">${FD_PRJ}</span>,FP_INP=<span class="va">${FP_INP}</span>,FP_OUT=<span class="va">${FP_OUT}</span> <span class="dt">\</span></span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>        <span class="op">&lt;&lt;'EOF'</span></span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a><span class="st">#!/bin/bash</span></span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a><span class="st">### set environment</span></span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a><span class="st">source ${FD_PRJ}/scripts/config_project.sh</span></span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a><span class="st">### print start message</span></span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a><span class="st">timer_start=`date +%s`</span></span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a><span class="st">echo "Hostname:          " $(hostname)</span></span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a><span class="st">echo "Slurm Array Index: " ${SLURM_ARRAY_TASK_ID}</span></span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a><span class="st">echo "Time Stamp:        " $(date +"%m-%d-%y+%T")</span></span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a><span class="st">echo</span></span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a><span class="st">### show input file</span></span>
+<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a><span class="st">echo "Input: " ${FP_INP}</span></span>
+<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a><span class="st">echo</span></span>
+<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a><span class="st">echo "show first few lines of input"</span></span>
+<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a><span class="st">fun_cat ${FP_INP} | head</span></span>
+<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a><span class="st">echo</span></span>
+<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a><span class="st">### execute</span></span>
+<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a><span class="st">cat ${FP_INP} |\</span></span>
+<span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a><span class="st">    sort -k 1,1 -k2,2n |\</span></span>
+<span id="cb14-43"><a href="#cb14-43" aria-hidden="true" tabindex="-1"></a><span class="st">    uniq -c |\</span></span>
+<span id="cb14-44"><a href="#cb14-44" aria-hidden="true" tabindex="-1"></a><span class="st">    awk '{$(NF+1)=$1;$1=""}1'   |\</span></span>
+<span id="cb14-45"><a href="#cb14-45" aria-hidden="true" tabindex="-1"></a><span class="st">    sed -e 's/^[[:space:]]*//'  |\</span></span>
+<span id="cb14-46"><a href="#cb14-46" aria-hidden="true" tabindex="-1"></a><span class="st">    sed -e 's/[[:space:]]/\t/g' |\</span></span>
+<span id="cb14-47"><a href="#cb14-47" aria-hidden="true" tabindex="-1"></a><span class="st">    awk '{print $1"\t"$2"\t"$3"\t"$1":"$2"-"$3"\t"$4"\t""."}' |\</span></span>
+<span id="cb14-48"><a href="#cb14-48" aria-hidden="true" tabindex="-1"></a><span class="st">    gzip -c &gt; ${FP_OUT}</span></span>
+<span id="cb14-49"><a href="#cb14-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-50"><a href="#cb14-50" aria-hidden="true" tabindex="-1"></a><span class="st">### show output file</span></span>
+<span id="cb14-51"><a href="#cb14-51" aria-hidden="true" tabindex="-1"></a><span class="st">echo "Output: " ${FP_OUT}</span></span>
+<span id="cb14-52"><a href="#cb14-52" aria-hidden="true" tabindex="-1"></a><span class="st">echo</span></span>
+<span id="cb14-53"><a href="#cb14-53" aria-hidden="true" tabindex="-1"></a><span class="st">echo "show first few lines of output"</span></span>
+<span id="cb14-54"><a href="#cb14-54" aria-hidden="true" tabindex="-1"></a><span class="st">fun_cat ${FP_OUT} | head</span></span>
+<span id="cb14-55"><a href="#cb14-55" aria-hidden="true" tabindex="-1"></a><span class="st">echo</span></span>
+<span id="cb14-56"><a href="#cb14-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-57"><a href="#cb14-57" aria-hidden="true" tabindex="-1"></a><span class="st">### print end message</span></span>
+<span id="cb14-58"><a href="#cb14-58" aria-hidden="true" tabindex="-1"></a><span class="st">timer=`date +%s`</span></span>
+<span id="cb14-59"><a href="#cb14-59" aria-hidden="true" tabindex="-1"></a><span class="st">runtime=$(echo "${timer} - ${timer_start}" | bc -l)</span></span>
+<span id="cb14-60"><a href="#cb14-60" aria-hidden="true" tabindex="-1"></a><span class="st">echo</span></span>
+<span id="cb14-61"><a href="#cb14-61" aria-hidden="true" tabindex="-1"></a><span class="st">echo 'Done!'</span></span>
+<span id="cb14-62"><a href="#cb14-62" aria-hidden="true" tabindex="-1"></a><span class="st">echo "Run Time: $(displaytime ${runtime})"</span></span>
+<span id="cb14-63"><a href="#cb14-63" aria-hidden="true" tabindex="-1"></a><span class="op">EOF</span></span>
+<span id="cb14-64"><a href="#cb14-64" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span></span>
+<span id="cb14-65"><a href="#cb14-65" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Calculate fragment counts...
 K562_ASTARR_repeat_rep1.f3q10.fragments.bedpe
 ASTARRseq_K562_KS274.hg38.Output.rep1.WGS.unstranded.bed.gz
 fragment_count.K562_ASTARR_repeat_rep1.f3q10.fragments.bedpe.txt
-Submitted batch job 30729251
+Submitted batch job 30757862
 
 Calculate fragment counts...
 K562_ASTARR_repeat_rep2.f3q10.fragments.bedpe
 ASTARRseq_K562_KS274.hg38.Output.rep2.WGS.unstranded.bed.gz
 fragment_count.K562_ASTARR_repeat_rep2.f3q10.fragments.bedpe.txt
-Submitted batch job 30729252
+Submitted batch job 30757863
 
 Calculate fragment counts...
 K562_ASTARR_repeat_rep3.f3q10.fragments.bedpe
 ASTARRseq_K562_KS274.hg38.Output.rep3.WGS.unstranded.bed.gz
 fragment_count.K562_ASTARR_repeat_rep3.f3q10.fragments.bedpe.txt
-Submitted batch job 30729253
+Submitted batch job 30757864
 </code></pre>
 </div>
 </div>
@@ -635,17 +648,17 @@ Submitted batch job 30729253
 <section id="review" class="level2">
 <h2 class="anchored" data-anchor-id="review">Review</h2>
 <p><strong>Check results</strong></p>
-<div class="cell" data-execution_count="8">
+<div class="cell" data-execution_count="11">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> <span class="va">${FP_LOG}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> <span class="va">${FD_LOG}</span>/fragment_count.K562_ASTARR_repeat_rep3.f3q10.fragments.bedpe.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>Hostname:           x1-01-2.genome.duke.edu
+<pre><code>Hostname:           x2-02-3.genome.duke.edu
 Slurm Array Index: 
-Time Stamp:         03-30-24+14:34:55
+Time Stamp:         04-09-24+17:31:02
 
-Input:  /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/data/processed/ASTARRseq_K562_hg38_KS274_240311/fragments/K562_ASTARR_repeat_rep3.f3q10.fragments.bedpe
+Input:  /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/data/processed/STARR_ATAC_K562_Reddy_KS274_240311/fragments/K562_ASTARR_repeat_rep3.f3q10.fragments.bedpe
 
 show first few lines of input
 chr1    10421   10570
@@ -675,7 +688,93 @@ chr1    14452   14620   chr1:14452-14620    1   .
 
 
 Done!
-Run Time: 25 minutes and 4 seconds</code></pre>
+Run Time: 23 minutes and 2 seconds</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="12">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> <span class="va">${FD_LOG}</span>/fragment_count.K562_ASTARR_repeat_rep1.f3q10.fragments.bedpe.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hostname:           x2-02-3.genome.duke.edu
+Slurm Array Index: 
+Time Stamp:         04-09-24+17:31:01
+
+Input:  /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/data/processed/STARR_ATAC_K562_Reddy_KS274_240311/fragments/K562_ASTARR_repeat_rep1.f3q10.fragments.bedpe
+
+show first few lines of input
+chr1    14145   14485
+chr1    14145   14485
+chr1    14243   14498
+chr1    14454   14729
+chr1    14522   14725
+chr1    14599   14850
+chr1    14659   14864
+chr1    14659   14864
+chr1    14781   15268
+chr1    15172   15659
+
+Output:  /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/assay_fcc/STARR_ATAC_K562_Reddy_KS274/fragment_counts/ASTARRseq_K562_KS274.hg38.Output.rep1.WGS.unstranded.bed.gz
+
+show first few lines of output
+chr1    14145   14485   chr1:14145-14485    2   .
+chr1    14243   14498   chr1:14243-14498    1   .
+chr1    14454   14729   chr1:14454-14729    1   .
+chr1    14522   14725   chr1:14522-14725    1   .
+chr1    14599   14850   chr1:14599-14850    1   .
+chr1    14659   14864   chr1:14659-14864    2   .
+chr1    14781   15268   chr1:14781-15268    1   .
+chr1    15172   15659   chr1:15172-15659    1   .
+chr1    15503   15729   chr1:15503-15729    3   .
+chr1    15508   15711   chr1:15508-15711    4   .
+
+
+Done!
+Run Time: 25 minutes and 30 seconds</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="13">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> <span class="va">${FD_LOG}</span>/fragment_count.K562_ASTARR_repeat_rep2.f3q10.fragments.bedpe.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hostname:           x2-02-3.genome.duke.edu
+Slurm Array Index: 
+Time Stamp:         04-09-24+17:31:02
+
+Input:  /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/data/processed/STARR_ATAC_K562_Reddy_KS274_240311/fragments/K562_ASTARR_repeat_rep2.f3q10.fragments.bedpe
+
+show first few lines of input
+chr1    13055   13163
+chr1    13236   13481
+chr1    13253   13495
+chr1    13261   13479
+chr1    13314   13500
+chr1    14449   14642
+chr1    14449   14645
+chr1    14449   14645
+chr1    14452   14620
+chr1    14452   14679
+
+Output:  /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/assay_fcc/STARR_ATAC_K562_Reddy_KS274/fragment_counts/ASTARRseq_K562_KS274.hg38.Output.rep2.WGS.unstranded.bed.gz
+
+show first few lines of output
+chr1    13055   13163   chr1:13055-13163    1   .
+chr1    13236   13481   chr1:13236-13481    1   .
+chr1    13253   13495   chr1:13253-13495    1   .
+chr1    13261   13479   chr1:13261-13479    1   .
+chr1    13314   13500   chr1:13314-13500    1   .
+chr1    14449   14642   chr1:14449-14642    1   .
+chr1    14449   14645   chr1:14449-14645    2   .
+chr1    14452   14620   chr1:14452-14620    1   .
+chr1    14452   14679   chr1:14452-14679    1   .
+chr1    14482   14709   chr1:14482-14709    1   .
+
+
+Done!
+Run Time: 20 minutes and 52 seconds</code></pre>
 </div>
 </div>
 

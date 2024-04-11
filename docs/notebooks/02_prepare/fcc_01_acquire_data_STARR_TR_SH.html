@@ -1,0 +1,1485 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>ENCODE FCC Project - Prepare STARR-seq data 01</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">ENCODE FCC Project</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html" rel="" target="">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../report.html" rel="" target="">
+ <span class="menu-text">Report</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../data.html" rel="" target="">
+ <span class="menu-text">Data</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../analyses.html" rel="" target="">
+ <span class="menu-text">Analyses</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../results.html" rel="" target="">
+ <span class="menu-text">Results</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+    <a href="https://github.com/ReddyLab/Proj_ENCODE_FCC" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Prepare STARR-seq data 01</li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+ <span class="menu-text">Setup</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../01_setup/work_01_env.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01 Working Environment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../01_setup/work_02_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02 Working Directory of Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../01_setup/work_03_results.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03 Working Directory of Results</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+ <span class="menu-text">Prepare</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../02_prepare/data_01_fcc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FCC Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../02_prepare/data_02_hic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Hi-C Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../02_prepare/data_11_chipseq.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ChIP-seq TF/Histone</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../02_prepare/data_12_chromatin_states.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Chromatin States</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../02_prepare/data_21_peak_calling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Peak calling</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../02_prepare/data_22_others.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Other Annotations</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+ <span class="menu-text">FCC Summary</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../11_fcc_summary/01_fcc_astarr.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ATAC-STARR-seq (ASTARR)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../11_fcc_summary/02_fcc_wstarr.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">WHG-STARR-seq (WSTARR)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../11_fcc_summary/03_fcc_tmpra.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tiling MPRA (TMPRA)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../11_fcc_summary/04_fcc_lmpra.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lenti-MPRA (LMPRA)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../11_fcc_summary/05_fcc_crispri_hcrff.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CRISPRi HCR-FlowFISH (CRISPRi-HCRFF)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../11_fcc_summary/06_fcc_crispri_growth.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CRISPRi Growth screen (CRISPRi-Growth)</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+ <span class="menu-text">FCC Coverage</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../12_fcc_coverage/011_region_ocr_astarr_KS91.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ATAC/DHS coverage (ASTARR KS91)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../12_fcc_coverage/012_region_ocr_astarr_KS274.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ATAC/DHS coverage (ASTARR KS274)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../12_fcc_coverage/02_region_ocr_wstarr.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ATAC/DHS coverage (WSTARR)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../12_fcc_coverage/03_region_ocr_tmpra.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ATAC/DHS coverage (TMPRA)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../12_fcc_coverage/04_region_ocr_lmpra.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ATAC/DHS coverage (LMPRA)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../12_fcc_coverage/05_region_ocr_crispri_hcrff.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ATAC/DHS coverage (CRISPRi-HCRFF)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../12_fcc_coverage/06_region_ocr_crispri_growth.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ATAC/DHS coverage (CRISPRi-Growth)</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">FCC Comparison</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">HiC Coverage</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">FCC vs HiC</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">
+ <span class="menu-text">Test Notebook</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../notebooks/test/test_notebook.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Test ipynb for documentation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#check-existence-of-starr-data" id="toc-check-existence-of-starr-data" class="nav-link active" data-scroll-target="#check-existence-of-starr-data">Check existence of STARR data</a></li>
+  <li><a href="#set-data-directories-and-copy-the-final-processed-data-of-starr-seq" id="toc-set-data-directories-and-copy-the-final-processed-data-of-starr-seq" class="nav-link" data-scroll-target="#set-data-directories-and-copy-the-final-processed-data-of-starr-seq">Set data directories and copy the final processed data of STARR-seq</a>
+  <ul class="collapse">
+  <li><a href="#create-data-directories" id="toc-create-data-directories" class="nav-link" data-scroll-target="#create-data-directories">Create data directories</a></li>
+  <li><a href="#copy-data-files" id="toc-copy-data-files" class="nav-link" data-scroll-target="#copy-data-files">Copy data files</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Prepare STARR-seq data 01</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li></ul></div></div>
+<p class="subtitle lead">Get K562 STARR-seq data files from Reddy lab</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>In this analysis, we are using the fragment counts data generated and processed from the Reddy lab. The ASTARR in K562 is designed and done by Keith and WSTARR in K562 is generated by Kari. For more information, check the data dictionary page.</p>
+<p><strong>Set environment</strong></p>
+<div class="cell" data-execution_count="1">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> ../run_config_project.sh</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">show_env</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>You are working on             Duke Server: HARDAC
+BASE DIRECTORY (FD_BASE):      /data/reddylab/Kuei
+REPO DIRECTORY (FD_REPO):      /data/reddylab/Kuei/repo
+WORK DIRECTORY (FD_WORK):      /data/reddylab/Kuei/work
+DATA DIRECTORY (FD_DATA):      /data/reddylab/Kuei/data
+CONTAINER DIR. (FD_SING):      /data/reddylab/Kuei/container
+
+You are working with           ENCODE FCC
+PATH OF PROJECT (FD_PRJ):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC
+PROJECT RESULTS (FD_RES):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results
+PROJECT SCRIPTS (FD_EXE):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/scripts
+PROJECT DATA    (FD_DAT):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/data
+PROJECT NOTE    (FD_NBK):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/notebooks
+PROJECT DOCS    (FD_DOC):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/docs
+PROJECT LOG     (FD_LOG):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/log
+PROJECT APP     (FD_APP):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/app
+PROJECT REF     (FD_REF):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/references
+PROJECT IMAGE   (FP_PRJ_SIF):  /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/app/singularity_proj_encode_fcc.sif
+</code></pre>
+</div>
+</div>
+<section id="check-existence-of-starr-data" class="level2">
+<h2 class="anchored" data-anchor-id="check-existence-of-starr-data">Check existence of STARR data</h2>
+<p><strong>WSTARR</strong></p>
+<div class="cell" data-execution_count="2">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FD_WGS_WSTARR}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>fragments  metadata  motifs  peaks  processed_raw_reads  qc  raw_reads</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="3">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">${FD_WGS_WSTARR_FRAGS}</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> FPATH <span class="kw">in</span> <span class="va">${FP_WGS_WSTARR_FRAGS</span><span class="op">[@]</span><span class="va">}</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ls</span> <span class="va">${FPATH}</span> <span class="kw">|</span> <span class="fu">xargs</span> <span class="at">-n</span> 1 basename</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>/data/reddylab/Alex/encode4_duke/data/starr_seq/fragments
+
+A001-input-K562-rep1.masked.dedup.fragments.counts.txt.gz
+A001-input-K562-rep2.masked.dedup.fragments.counts.txt.gz
+A001-input-K562-rep3.masked.dedup.fragments.counts.txt.gz
+A001-input-K562-rep4.masked.dedup.fragments.counts.txt.gz
+A001-K562-rep1.masked.dedup.fragments.counts.txt.gz
+A001-K562-rep2.masked.dedup.fragments.counts.txt.gz
+A001-K562-rep3.masked.dedup.fragments.counts.txt.gz</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="4">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">${FD_WGS_WSTARR_INP_BAM}</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> FPATH <span class="kw">in</span> <span class="va">${FP_WGS_WSTARR_INP_BWIGS</span><span class="op">[@]</span><span class="va">}</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ls</span> <span class="va">${FPATH}</span> <span class="kw">|</span> <span class="fu">xargs</span> <span class="at">-n</span> 1 basename</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>/data/reddylab/kstrouse/superstarr/input_libs/A001/nextseq/processing/starr_seq/A001_nextseq-pe
+
+rep1.f3q10.sorted.dedup.rpkm.bw
+rep2.f3q10.sorted.dedup.rpkm.bw
+rep3.f3q10.sorted.dedup.rpkm.bw
+rep4.f3q10.sorted.dedup.rpkm.bw</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="5">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">${FD_WGS_WSTARR_OUT_BAM_rep01}</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">${FD_WGS_WSTARR_OUT_BAM_rep23}</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> FPATH <span class="kw">in</span> <span class="va">${FP_WGS_WSTARR_OUT_BWIGS</span><span class="op">[@]</span><span class="va">}</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ls</span> <span class="va">${FPATH}</span> <span class="kw">|</span> <span class="fu">xargs</span> <span class="at">-n</span> 1 basename</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>/data/reddylab/kstrouse/superstarr/output_libs/A001_K562/A001_K562_20201124/combined_reads/processing/starr_seq/A001_K562_20201124_combined-pe
+/data/reddylab/kstrouse/superstarr/output_libs/A001_K562/A001_K562_20210213/processing/starr_seq/Strouse_6825_210223A5-pe
+
+A001-K562-rep1.f3q10.sorted.dedup.rpkm.bw
+A001-K562-rep2.f3q10.sorted.dedup.rpkm.bw
+A001-K562-rep3.f3q10.sorted.dedup.rpkm.bw</code></pre>
+</div>
+</div>
+<p><strong>ASTARR (KS91)</strong></p>
+<div class="cell" data-execution_count="6">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">${FD_WGS_ASTARR_KS91_INP}</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">${FD_WGS_ASTARR_KS91_OUT}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>/data/reddylab/Alex/encode4_duke/processing/atac_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-blacklist-removal
+/data/reddylab/Alex/encode4_duke/processing/starr_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-umis</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="7">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> FPATH <span class="kw">in</span> <span class="va">${FP_WGS_ASTARR_KS91_FRAGS</span><span class="op">[@]</span><span class="va">}</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ls</span> <span class="va">${FPATH}</span> <span class="kw">|</span> <span class="fu">xargs</span> <span class="at">-n</span> 1 basename</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>KS91_K562_hg38_ASTARRseq_Input_rep1.masked.dedup.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Input_rep2.masked.dedup.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Input_rep3.masked.dedup.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Input_rep4.masked.dedup.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Input_rep5.masked.dedup.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Input_rep6.masked.dedup.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Output_rep1.f3q10.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Output_rep2.f3q10.fragments.counts.corrected.txt.gz
+KS91_K562_hg38_ASTARRseq_Output_rep2.f3q10.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Output_rep3.f3q10.fragments.counts.corrected.txt.gz
+KS91_K562_hg38_ASTARRseq_Output_rep3.f3q10.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Output_rep4.f3q10.fragments.counts.corrected.txt.gz
+KS91_K562_hg38_ASTARRseq_Output_rep4.f3q10.fragments.counts.txt.gz</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="8">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> FPATH <span class="kw">in</span> <span class="va">${FP_WGS_ASTARR_KS91_FRAGS</span><span class="op">[@]</span><span class="va">}</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ls</span> <span class="at">-l</span> <span class="va">${FPATH}</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>-rw-r--r-- 1 aeb84 reddylab 3146501530 Jul  7  2022 /data/reddylab/Alex/encode4_duke/processing/atac_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-blacklist-removal/merged2/KS91_K562_hg38_ASTARRseq_Input_rep1.masked.dedup.fragments.counts.txt.gz
+-rw-r--r-- 1 aeb84 reddylab 3995769876 Jul  7  2022 /data/reddylab/Alex/encode4_duke/processing/atac_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-blacklist-removal/merged2/KS91_K562_hg38_ASTARRseq_Input_rep2.masked.dedup.fragments.counts.txt.gz
+-rw-r--r-- 1 aeb84 reddylab 4291888489 Jul  7  2022 /data/reddylab/Alex/encode4_duke/processing/atac_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-blacklist-removal/merged2/KS91_K562_hg38_ASTARRseq_Input_rep3.masked.dedup.fragments.counts.txt.gz
+-rw-r--r-- 1 aeb84 reddylab 4037119129 Jul  7  2022 /data/reddylab/Alex/encode4_duke/processing/atac_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-blacklist-removal/merged2/KS91_K562_hg38_ASTARRseq_Input_rep4.masked.dedup.fragments.counts.txt.gz
+-rw-r--r-- 1 aeb84 reddylab 3938483893 Jul  7  2022 /data/reddylab/Alex/encode4_duke/processing/atac_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-blacklist-removal/merged2/KS91_K562_hg38_ASTARRseq_Input_rep5.masked.dedup.fragments.counts.txt.gz
+-rw-r--r-- 1 aeb84 reddylab 3550102461 Jul  7  2022 /data/reddylab/Alex/encode4_duke/processing/atac_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-blacklist-removal/merged2/KS91_K562_hg38_ASTARRseq_Input_rep6.masked.dedup.fragments.counts.txt.gz
+-rw-r--r-- 1 aeb84 reddylab 320000484 Jul  7  2022 /data/reddylab/Alex/encode4_duke/processing/starr_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-umis/KS91_K562_hg38_ASTARRseq_Output_rep1.f3q10.fragments.counts.txt.gz
+-rw-r--r-- 1 aeb84 reddylab 588618835 Apr  4 13:26 /data/reddylab/Alex/encode4_duke/processing/starr_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-umis/KS91_K562_hg38_ASTARRseq_Output_rep2.f3q10.fragments.counts.corrected.txt.gz
+-rw-r--r-- 1 aeb84 reddylab 595652591 Jul  7  2022 /data/reddylab/Alex/encode4_duke/processing/starr_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-umis/KS91_K562_hg38_ASTARRseq_Output_rep2.f3q10.fragments.counts.txt.gz
+-rw-r--r-- 1 aeb84 reddylab 672333423 Apr  4 13:29 /data/reddylab/Alex/encode4_duke/processing/starr_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-umis/KS91_K562_hg38_ASTARRseq_Output_rep3.f3q10.fragments.counts.corrected.txt.gz
+-rw-r--r-- 1 aeb84 reddylab 672333423 Jul  7  2022 /data/reddylab/Alex/encode4_duke/processing/starr_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-umis/KS91_K562_hg38_ASTARRseq_Output_rep3.f3q10.fragments.counts.txt.gz
+-rw-r--r-- 1 aeb84 reddylab 1096240707 Apr  4 14:08 /data/reddylab/Alex/encode4_duke/processing/starr_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-umis/KS91_K562_hg38_ASTARRseq_Output_rep4.f3q10.fragments.counts.corrected.txt.gz
+-rw-r--r-- 1 aeb84 reddylab 1107286720 Jul  7  2022 /data/reddylab/Alex/encode4_duke/processing/starr_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-umis/KS91_K562_hg38_ASTARRseq_Output_rep4.f3q10.fragments.counts.txt.gz</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="9">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> FPATH <span class="kw">in</span> <span class="va">${FP_WGS_ASTARR_KS91_BWIGS</span><span class="op">[@]</span><span class="va">}</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ls</span> <span class="va">${FPATH}</span> <span class="kw">|</span> <span class="fu">xargs</span> <span class="at">-n</span> 1 basename</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>KS91_K562_hg38_ASTARRseq_Input_rep1.masked.exclude_dups.cpm.bw
+KS91_K562_hg38_ASTARRseq_Input_rep2.masked.exclude_dups.cpm.bw
+KS91_K562_hg38_ASTARRseq_Input_rep3.masked.exclude_dups.cpm.bw
+KS91_K562_hg38_ASTARRseq_Input_rep4.masked.exclude_dups.cpm.bw
+KS91_K562_hg38_ASTARRseq_Input_rep5.masked.exclude_dups.cpm.bw
+KS91_K562_hg38_ASTARRseq_Input_rep6.masked.exclude_dups.cpm.bw
+KS91_K562_hg38_ASTARRseq_Output_rep1.f3q10.sorted.with_umis.dedup.cpm.bw
+KS91_K562_hg38_ASTARRseq_Output_rep2.f3q10.sorted.with_umis.dedup.corrected.cpm.bw
+KS91_K562_hg38_ASTARRseq_Output_rep2.f3q10.sorted.with_umis.dedup.cpm.bw
+KS91_K562_hg38_ASTARRseq_Output_rep3.f3q10.sorted.with_umis.dedup.cpm.bw
+KS91_K562_hg38_ASTARRseq_Output_rep4.f3q10.sorted.with_umis.dedup.corrected.cpm.bw
+KS91_K562_hg38_ASTARRseq_Output_rep4.f3q10.sorted.with_umis.dedup.cpm.bw
+KS91_K562_hg38_ASTARRseq_Output_rep5.f3q10.sorted.with_umis.dedup.cpm.bw
+KS91_K562_hg38_ASTARRseq_Output_rep6.f3q10.sorted.with_umis.dedup.cpm.bw</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="10">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> FPATH <span class="kw">in</span> <span class="va">${FP_WGS_ASTARR_KS91</span><span class="op">[@]</span><span class="va">}</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ls</span> <span class="va">${FPATH}</span> <span class="kw">|</span> <span class="fu">xargs</span> <span class="at">-n</span> 1 basename</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>KS91_K562_hg38_ASTARRseq_Input_rep1.masked.dedup.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Input_rep2.masked.dedup.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Input_rep3.masked.dedup.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Input_rep4.masked.dedup.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Input_rep5.masked.dedup.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Input_rep6.masked.dedup.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Output_rep1.f3q10.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Output_rep2.f3q10.fragments.counts.corrected.txt.gz
+KS91_K562_hg38_ASTARRseq_Output_rep2.f3q10.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Output_rep3.f3q10.fragments.counts.corrected.txt.gz
+KS91_K562_hg38_ASTARRseq_Output_rep3.f3q10.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Output_rep4.f3q10.fragments.counts.corrected.txt.gz
+KS91_K562_hg38_ASTARRseq_Output_rep4.f3q10.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Input_rep1.masked.exclude_dups.cpm.bw
+KS91_K562_hg38_ASTARRseq_Input_rep2.masked.exclude_dups.cpm.bw
+KS91_K562_hg38_ASTARRseq_Input_rep3.masked.exclude_dups.cpm.bw
+KS91_K562_hg38_ASTARRseq_Input_rep4.masked.exclude_dups.cpm.bw
+KS91_K562_hg38_ASTARRseq_Input_rep5.masked.exclude_dups.cpm.bw
+KS91_K562_hg38_ASTARRseq_Input_rep6.masked.exclude_dups.cpm.bw
+KS91_K562_hg38_ASTARRseq_Output_rep1.f3q10.sorted.with_umis.dedup.cpm.bw
+KS91_K562_hg38_ASTARRseq_Output_rep2.f3q10.sorted.with_umis.dedup.corrected.cpm.bw
+KS91_K562_hg38_ASTARRseq_Output_rep2.f3q10.sorted.with_umis.dedup.cpm.bw
+KS91_K562_hg38_ASTARRseq_Output_rep3.f3q10.sorted.with_umis.dedup.cpm.bw
+KS91_K562_hg38_ASTARRseq_Output_rep4.f3q10.sorted.with_umis.dedup.corrected.cpm.bw
+KS91_K562_hg38_ASTARRseq_Output_rep4.f3q10.sorted.with_umis.dedup.cpm.bw
+KS91_K562_hg38_ASTARRseq_Output_rep5.f3q10.sorted.with_umis.dedup.cpm.bw
+KS91_K562_hg38_ASTARRseq_Output_rep6.f3q10.sorted.with_umis.dedup.cpm.bw</code></pre>
+</div>
+</div>
+<p><strong>ASTARR (KS274)</strong></p>
+<div class="cell" data-execution_count="11">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">${FD_WGS_ASTARR_KS274_OUT}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>/data/reddylab/Keith/encode4_duke/processing/starr_seq/240311_KS274_ASTARR_Output_Nextseq-pe-umis</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="12">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> FPATH <span class="kw">in</span> <span class="va">${FP_WGS_ASTARR_KS274_OUT_FRAGS</span><span class="op">[@]</span><span class="va">}</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ls</span> <span class="va">${FPATH}</span> <span class="kw">|</span> <span class="fu">xargs</span> <span class="at">-n</span> 1 basename</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>K562_ASTARR_repeat_rep1.f3q10.fragments.bedpe
+K562_ASTARR_repeat_rep2.f3q10.fragments.bedpe
+K562_ASTARR_repeat_rep3.f3q10.fragments.bedpe</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="13">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> FPATH <span class="kw">in</span> <span class="va">${FP_WGS_ASTARR_KS274_OUT_BWIGS</span><span class="op">[@]</span><span class="va">}</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ls</span> <span class="va">${FPATH}</span> <span class="kw">|</span> <span class="fu">xargs</span> <span class="at">-n</span> 1 basename</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>K562_ASTARR_repeat_rep1.f3q10.sorted.with_umis.dedup.rpkm.bw
+K562_ASTARR_repeat_rep2.f3q10.sorted.with_umis.dedup.rpkm.bw
+K562_ASTARR_repeat_rep3.f3q10.sorted.with_umis.dedup.rpkm.bw</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="14">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> FPATH <span class="kw">in</span> <span class="va">${FP_WGS_ASTARR_KS274</span><span class="op">[@]</span><span class="va">}</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ls</span> <span class="va">${FPATH}</span> <span class="kw">|</span> <span class="fu">xargs</span> <span class="at">-n</span> 1 basename</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>K562_ASTARR_repeat_rep1.f3q10.fragments.bedpe
+K562_ASTARR_repeat_rep2.f3q10.fragments.bedpe
+K562_ASTARR_repeat_rep3.f3q10.fragments.bedpe
+K562_ASTARR_repeat_rep1.f3q10.sorted.with_umis.dedup.rpkm.bw
+K562_ASTARR_repeat_rep2.f3q10.sorted.with_umis.dedup.rpkm.bw
+K562_ASTARR_repeat_rep3.f3q10.sorted.with_umis.dedup.rpkm.bw</code></pre>
+</div>
+</div>
+</section>
+<section id="set-data-directories-and-copy-the-final-processed-data-of-starr-seq" class="level2">
+<h2 class="anchored" data-anchor-id="set-data-directories-and-copy-the-final-processed-data-of-starr-seq">Set data directories and copy the final processed data of STARR-seq</h2>
+<section id="create-data-directories" class="level3">
+<h3 class="anchored" data-anchor-id="create-data-directories">Create data directories</h3>
+<pre><code>PROJECT/data/processed
+├── STARR_ATAC_K562_Reddy_KS91_210401
+│   ├── fragments
+│   └── peaks
+│
+├── STARR_ATAC_K562_Reddy_KS274_240311
+│   └── fragments
+│
+├── STARR_WHG_K562_Reddy_A001_Alex
+│   └── fragments
+│
+└── STARR_WHG_K562_Reddy_A001_Kari
+    └── superstarr
+        ├── input_libs
+        │   └── A001_K562
+        └── output_libs
+            ├── A001_K562_20201124
+            └── A001_K562_20210213</code></pre>
+<div class="cell" data-execution_count="15">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> <span class="va">${FD_DAT}</span>/processed/STARR_ATAC_K562_Reddy_KS91_210401/fragments</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> <span class="va">${FD_DAT}</span>/processed/STARR_ATAC_K562_Reddy_KS91_210401/peaks</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> <span class="va">${FD_DAT}</span>/processed/STARR_ATAC_K562_Reddy_KS274_240311/fragments</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> <span class="va">${FD_DAT}</span>/processed/STARR_WHG_K562_Reddy_A001_Alex/fragments</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_DAT}</span>/processed/STARR_WHG_K562_Reddy_A001_Kari/superstarr</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> <span class="va">${FDIRY}</span>/input_libs</span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> <span class="va">${FDIRY}</span>/output_libs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell" data-execution_count="16">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-1</span> <span class="va">${FD_DAT}</span>/processed/STARR<span class="pp">*</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-1</span> <span class="va">${FD_DAT}</span>/processed/STARR<span class="pp">*</span>/superstarr</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>/data/reddylab/Kuei/repo/Proj_ENCODE_FCC/data/processed/STARR_ATAC_K562_Reddy_KS274_240311:
+fragments
+
+/data/reddylab/Kuei/repo/Proj_ENCODE_FCC/data/processed/STARR_ATAC_K562_Reddy_KS91_210401:
+fragments
+peaks
+
+/data/reddylab/Kuei/repo/Proj_ENCODE_FCC/data/processed/STARR_WHG_K562_Reddy_A001_Alex:
+fragments
+
+/data/reddylab/Kuei/repo/Proj_ENCODE_FCC/data/processed/STARR_WHG_K562_Reddy_A001_Kari:
+superstarr
+input_libs
+output_libs</code></pre>
+</div>
+</div>
+</section>
+<section id="copy-data-files" class="level3">
+<h3 class="anchored" data-anchor-id="copy-data-files">Copy data files</h3>
+<p><strong>Copy WSTARR fragment counts</strong></p>
+<div class="cell" data-execution_count="17">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="va">FD_OUT</span><span class="op">=</span><span class="va">${FD_DAT}</span>/processed/STARR_WHG_K562_Reddy_A001_Alex/fragments</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> FPATH <span class="kw">in</span> <span class="va">${FP_WGS_WSTARR_FRAGS</span><span class="op">[@]</span><span class="va">}</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>    <span class="va">FDIRY</span><span class="op">=</span><span class="va">$(</span><span class="fu">dirname</span>  <span class="va">${FPATH})</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>    <span class="va">FNAME</span><span class="op">=</span><span class="va">$(</span><span class="fu">basename</span> <span class="va">${FPATH})</span></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cp</span> <span class="va">${FPATH}</span> <span class="va">${FD_OUT}</span>/<span class="va">${FNAME}</span></span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">${FDIRY}</span></span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">${FNAME}</span></span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span></span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>/data/reddylab/Alex/encode4_duke/data/starr_seq/fragments
+A001-input-K562-rep1.masked.dedup.fragments.counts.txt.gz
+
+/data/reddylab/Alex/encode4_duke/data/starr_seq/fragments
+A001-input-K562-rep2.masked.dedup.fragments.counts.txt.gz
+
+/data/reddylab/Alex/encode4_duke/data/starr_seq/fragments
+A001-input-K562-rep3.masked.dedup.fragments.counts.txt.gz
+
+/data/reddylab/Alex/encode4_duke/data/starr_seq/fragments
+A001-input-K562-rep4.masked.dedup.fragments.counts.txt.gz
+
+/data/reddylab/Alex/encode4_duke/data/starr_seq/fragments
+A001-K562-rep1.masked.dedup.fragments.counts.txt.gz
+
+/data/reddylab/Alex/encode4_duke/data/starr_seq/fragments
+A001-K562-rep2.masked.dedup.fragments.counts.txt.gz
+
+/data/reddylab/Alex/encode4_duke/data/starr_seq/fragments
+A001-K562-rep3.masked.dedup.fragments.counts.txt.gz
+</code></pre>
+</div>
+</div>
+<p><strong>Copy WSTARR bigwigs</strong></p>
+<div class="cell" data-execution_count="18">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="va">FD_OUT</span><span class="op">=</span><span class="va">${FD_DAT}</span>/processed/STARR_WHG_K562_Reddy_A001_Kari/superstarr/input_libs</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> FPATH <span class="kw">in</span> <span class="va">${FP_WGS_WSTARR_INP_BWIGS</span><span class="op">[@]</span><span class="va">}</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>    <span class="va">FDIRY</span><span class="op">=</span><span class="va">$(</span><span class="fu">dirname</span>  <span class="va">${FPATH})</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>    <span class="va">FNAME</span><span class="op">=</span><span class="va">$(</span><span class="fu">basename</span> <span class="va">${FPATH})</span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cp</span> <span class="va">${FPATH}</span> <span class="va">${FD_OUT}</span>/<span class="va">${FNAME}</span></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">${FDIRY}</span></span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">${FNAME}</span></span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span></span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>/data/reddylab/kstrouse/superstarr/input_libs/A001/nextseq/processing/starr_seq/A001_nextseq-pe
+rep1.f3q10.sorted.dedup.rpkm.bw
+
+/data/reddylab/kstrouse/superstarr/input_libs/A001/nextseq/processing/starr_seq/A001_nextseq-pe
+rep2.f3q10.sorted.dedup.rpkm.bw
+
+/data/reddylab/kstrouse/superstarr/input_libs/A001/nextseq/processing/starr_seq/A001_nextseq-pe
+rep3.f3q10.sorted.dedup.rpkm.bw
+
+/data/reddylab/kstrouse/superstarr/input_libs/A001/nextseq/processing/starr_seq/A001_nextseq-pe
+rep4.f3q10.sorted.dedup.rpkm.bw
+</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="19">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="va">FD_OUT</span><span class="op">=</span><span class="va">${FD_DAT}</span>/processed/STARR_WHG_K562_Reddy_A001_Kari/superstarr/output_libs</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> FPATH <span class="kw">in</span> <span class="va">${FP_WGS_WSTARR_OUT_BWIGS</span><span class="op">[@]</span><span class="va">}</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>    <span class="va">FDIRY</span><span class="op">=</span><span class="va">$(</span><span class="fu">dirname</span>  <span class="va">${FPATH})</span></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>    <span class="va">FNAME</span><span class="op">=</span><span class="va">$(</span><span class="fu">basename</span> <span class="va">${FPATH})</span></span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cp</span> <span class="va">${FPATH}</span> <span class="va">${FD_OUT}</span>/<span class="va">${FNAME}</span></span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">${FDIRY}</span></span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">${FNAME}</span></span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span></span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>/data/reddylab/kstrouse/superstarr/output_libs/A001_K562/A001_K562_20201124/combined_reads/processing/starr_seq/A001_K562_20201124_combined-pe
+A001-K562-rep1.f3q10.sorted.dedup.rpkm.bw
+
+/data/reddylab/kstrouse/superstarr/output_libs/A001_K562/A001_K562_20210213/processing/starr_seq/Strouse_6825_210223A5-pe
+A001-K562-rep2.f3q10.sorted.dedup.rpkm.bw
+
+/data/reddylab/kstrouse/superstarr/output_libs/A001_K562/A001_K562_20210213/processing/starr_seq/Strouse_6825_210223A5-pe
+A001-K562-rep3.f3q10.sorted.dedup.rpkm.bw
+</code></pre>
+</div>
+</div>
+<p><strong>Copy ASTARR fragment counts</strong></p>
+<div class="cell" data-tags="[]" data-execution_count="20">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="va">FD_OUT</span><span class="op">=</span><span class="va">${FD_DAT}</span>/processed/STARR_ATAC_K562_Reddy_KS91_210401/fragments</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> FPATH <span class="kw">in</span> <span class="va">${FP_WGS_ASTARR_KS91</span><span class="op">[@]</span><span class="va">}</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>    <span class="va">FDIRY</span><span class="op">=</span><span class="va">$(</span><span class="fu">dirname</span>  <span class="va">${FPATH})</span></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>    <span class="va">FNAME</span><span class="op">=</span><span class="va">$(</span><span class="fu">basename</span> <span class="va">${FPATH})</span></span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cp</span> <span class="va">${FPATH}</span> <span class="va">${FD_OUT}</span>/<span class="va">${FNAME}</span></span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">${FDIRY}</span></span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">${FNAME}</span></span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span></span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>/data/reddylab/Alex/encode4_duke/processing/atac_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-blacklist-removal/merged2
+KS91_K562_hg38_ASTARRseq_Input_rep1.masked.dedup.fragments.counts.txt.gz
+
+/data/reddylab/Alex/encode4_duke/processing/atac_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-blacklist-removal/merged2
+KS91_K562_hg38_ASTARRseq_Input_rep2.masked.dedup.fragments.counts.txt.gz
+
+/data/reddylab/Alex/encode4_duke/processing/atac_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-blacklist-removal/merged2
+KS91_K562_hg38_ASTARRseq_Input_rep3.masked.dedup.fragments.counts.txt.gz
+
+/data/reddylab/Alex/encode4_duke/processing/atac_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-blacklist-removal/merged2
+KS91_K562_hg38_ASTARRseq_Input_rep4.masked.dedup.fragments.counts.txt.gz
+
+/data/reddylab/Alex/encode4_duke/processing/atac_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-blacklist-removal/merged2
+KS91_K562_hg38_ASTARRseq_Input_rep5.masked.dedup.fragments.counts.txt.gz
+
+/data/reddylab/Alex/encode4_duke/processing/atac_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-blacklist-removal/merged2
+KS91_K562_hg38_ASTARRseq_Input_rep6.masked.dedup.fragments.counts.txt.gz
+
+/data/reddylab/Alex/encode4_duke/processing/starr_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-umis
+KS91_K562_hg38_ASTARRseq_Output_rep1.f3q10.fragments.counts.txt.gz
+
+/data/reddylab/Alex/encode4_duke/processing/starr_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-umis
+KS91_K562_hg38_ASTARRseq_Output_rep2.f3q10.fragments.counts.corrected.txt.gz
+
+/data/reddylab/Alex/encode4_duke/processing/starr_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-umis
+KS91_K562_hg38_ASTARRseq_Output_rep2.f3q10.fragments.counts.txt.gz
+
+/data/reddylab/Alex/encode4_duke/processing/starr_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-umis
+KS91_K562_hg38_ASTARRseq_Output_rep3.f3q10.fragments.counts.corrected.txt.gz
+
+/data/reddylab/Alex/encode4_duke/processing/starr_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-umis
+KS91_K562_hg38_ASTARRseq_Output_rep3.f3q10.fragments.counts.txt.gz
+
+/data/reddylab/Alex/encode4_duke/processing/starr_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-umis
+KS91_K562_hg38_ASTARRseq_Output_rep4.f3q10.fragments.counts.corrected.txt.gz
+
+/data/reddylab/Alex/encode4_duke/processing/starr_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-umis
+KS91_K562_hg38_ASTARRseq_Output_rep4.f3q10.fragments.counts.txt.gz
+
+/data/reddylab/Alex/encode4_duke/processing/atac_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-blacklist-removal/merged2
+KS91_K562_hg38_ASTARRseq_Input_rep1.masked.exclude_dups.cpm.bw
+
+/data/reddylab/Alex/encode4_duke/processing/atac_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-blacklist-removal/merged2
+KS91_K562_hg38_ASTARRseq_Input_rep2.masked.exclude_dups.cpm.bw
+
+/data/reddylab/Alex/encode4_duke/processing/atac_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-blacklist-removal/merged2
+KS91_K562_hg38_ASTARRseq_Input_rep3.masked.exclude_dups.cpm.bw
+
+/data/reddylab/Alex/encode4_duke/processing/atac_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-blacklist-removal/merged2
+KS91_K562_hg38_ASTARRseq_Input_rep4.masked.exclude_dups.cpm.bw
+
+/data/reddylab/Alex/encode4_duke/processing/atac_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-blacklist-removal/merged2
+KS91_K562_hg38_ASTARRseq_Input_rep5.masked.exclude_dups.cpm.bw
+
+/data/reddylab/Alex/encode4_duke/processing/atac_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-blacklist-removal/merged2
+KS91_K562_hg38_ASTARRseq_Input_rep6.masked.exclude_dups.cpm.bw
+
+/data/reddylab/Alex/encode4_duke/processing/starr_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-umis
+KS91_K562_hg38_ASTARRseq_Output_rep1.f3q10.sorted.with_umis.dedup.cpm.bw
+
+/data/reddylab/Alex/encode4_duke/processing/starr_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-umis
+KS91_K562_hg38_ASTARRseq_Output_rep2.f3q10.sorted.with_umis.dedup.corrected.cpm.bw
+
+/data/reddylab/Alex/encode4_duke/processing/starr_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-umis
+KS91_K562_hg38_ASTARRseq_Output_rep2.f3q10.sorted.with_umis.dedup.cpm.bw
+
+/data/reddylab/Alex/encode4_duke/processing/starr_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-umis
+KS91_K562_hg38_ASTARRseq_Output_rep3.f3q10.sorted.with_umis.dedup.cpm.bw
+
+/data/reddylab/Alex/encode4_duke/processing/starr_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-umis
+KS91_K562_hg38_ASTARRseq_Output_rep4.f3q10.sorted.with_umis.dedup.corrected.cpm.bw
+
+/data/reddylab/Alex/encode4_duke/processing/starr_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-umis
+KS91_K562_hg38_ASTARRseq_Output_rep4.f3q10.sorted.with_umis.dedup.cpm.bw
+
+/data/reddylab/Alex/encode4_duke/processing/starr_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-umis
+KS91_K562_hg38_ASTARRseq_Output_rep5.f3q10.sorted.with_umis.dedup.cpm.bw
+
+/data/reddylab/Alex/encode4_duke/processing/starr_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-umis
+KS91_K562_hg38_ASTARRseq_Output_rep6.f3q10.sorted.with_umis.dedup.cpm.bw
+</code></pre>
+</div>
+</div>
+<div class="cell" data-tags="[]" data-execution_count="21">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="va">FD_OUT</span><span class="op">=</span><span class="va">${FD_DAT}</span>/processed/STARR_ATAC_K562_Reddy_KS274_240311/fragments</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> FPATH <span class="kw">in</span> <span class="va">${FP_WGS_ASTARR_KS274</span><span class="op">[@]</span><span class="va">}</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>    <span class="va">FDIRY</span><span class="op">=</span><span class="va">$(</span><span class="fu">dirname</span>  <span class="va">${FPATH})</span></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>    <span class="va">FNAME</span><span class="op">=</span><span class="va">$(</span><span class="fu">basename</span> <span class="va">${FPATH})</span></span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cp</span> <span class="va">${FPATH}</span> <span class="va">${FD_OUT}</span>/<span class="va">${FNAME}</span></span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">${FDIRY}</span></span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">${FNAME}</span></span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span></span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>/data/reddylab/Keith/encode4_duke/processing/starr_seq/240311_KS274_ASTARR_Output_Nextseq-pe-umis
+K562_ASTARR_repeat_rep1.f3q10.fragments.bedpe
+
+/data/reddylab/Keith/encode4_duke/processing/starr_seq/240311_KS274_ASTARR_Output_Nextseq-pe-umis
+K562_ASTARR_repeat_rep2.f3q10.fragments.bedpe
+
+/data/reddylab/Keith/encode4_duke/processing/starr_seq/240311_KS274_ASTARR_Output_Nextseq-pe-umis
+K562_ASTARR_repeat_rep3.f3q10.fragments.bedpe
+
+/data/reddylab/Keith/encode4_duke/processing/starr_seq/240311_KS274_ASTARR_Output_Nextseq-pe-umis
+K562_ASTARR_repeat_rep1.f3q10.sorted.with_umis.dedup.rpkm.bw
+
+/data/reddylab/Keith/encode4_duke/processing/starr_seq/240311_KS274_ASTARR_Output_Nextseq-pe-umis
+K562_ASTARR_repeat_rep2.f3q10.sorted.with_umis.dedup.rpkm.bw
+
+/data/reddylab/Keith/encode4_duke/processing/starr_seq/240311_KS274_ASTARR_Output_Nextseq-pe-umis
+K562_ASTARR_repeat_rep3.f3q10.sorted.with_umis.dedup.rpkm.bw
+</code></pre>
+</div>
+</div>
+<p><strong>Copy ASTARR peak calls</strong></p>
+<div class="cell" data-execution_count="22">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="va">FD_OUT</span><span class="op">=</span><span class="va">${FD_DAT}</span>/processed/STARR_ATAC_K562_Reddy_KS91_210401/peaks</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> FPATH <span class="kw">in</span> <span class="va">${FP_WGS_ASTARR_KS91_INP_PEAKS</span><span class="op">[@]</span><span class="va">}</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>    <span class="va">FDIRY</span><span class="op">=</span><span class="va">$(</span><span class="fu">dirname</span>  <span class="va">${FPATH})</span></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>    <span class="va">FNAME</span><span class="op">=</span><span class="va">$(</span><span class="fu">basename</span> <span class="va">${FPATH})</span></span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cp</span> <span class="va">${FPATH}</span> <span class="va">${FD_OUT}</span>/<span class="va">${FNAME}</span></span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">${FDIRY}</span></span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">${FNAME}</span></span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span></span>
+<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>/data/reddylab/Alex/encode4_duke/processing/atac_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-blacklist-removal
+KS91_K562_hg38_ASTARRseq_Input.all_reps.masked.union_narrowPeak.q5.bed
+
+/data/reddylab/Alex/encode4_duke/processing/atac_seq/210401_KS91_K562ASTARR_NovaSeq.hg38-pe-blacklist-removal
+KS91_K562_hg38_ASTARRseq_Input.q5.in_all.max_overlaps.bed
+</code></pre>
+</div>
+</div>
+<p><strong>Check results</strong></p>
+<p>Check if the data is copied correctly.</p>
+<div class="cell" data-execution_count="23">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-d</span> <span class="va">${FD_DAT}</span>/processed/STARR<span class="pp">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>/data/reddylab/Kuei/repo/Proj_ENCODE_FCC/data/processed/STARR_ATAC_K562_Reddy_KS274_240311
+/data/reddylab/Kuei/repo/Proj_ENCODE_FCC/data/processed/STARR_ATAC_K562_Reddy_KS91_210401
+/data/reddylab/Kuei/repo/Proj_ENCODE_FCC/data/processed/STARR_WHG_K562_Reddy_A001_Alex
+/data/reddylab/Kuei/repo/Proj_ENCODE_FCC/data/processed/STARR_WHG_K562_Reddy_A001_Kari</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="24">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-1</span> <span class="va">${FD_DAT}</span>/processed/STARR<span class="pp">*</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-1</span> <span class="va">${FD_DAT}</span>/processed/STARR<span class="pp">*</span>/superstarr</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>/data/reddylab/Kuei/repo/Proj_ENCODE_FCC/data/processed/STARR_ATAC_K562_Reddy_KS274_240311:
+fragments
+
+/data/reddylab/Kuei/repo/Proj_ENCODE_FCC/data/processed/STARR_ATAC_K562_Reddy_KS91_210401:
+fragments
+peaks
+
+/data/reddylab/Kuei/repo/Proj_ENCODE_FCC/data/processed/STARR_WHG_K562_Reddy_A001_Alex:
+fragments
+
+/data/reddylab/Kuei/repo/Proj_ENCODE_FCC/data/processed/STARR_WHG_K562_Reddy_A001_Kari:
+superstarr
+input_libs
+output_libs</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="25">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-1</span> <span class="va">${FD_DAT}</span>/processed/STARR_WHG_K562_Reddy_A001_Alex/fragments</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>A001-input-K562-rep1.masked.dedup.fragments.counts.txt.gz
+A001-input-K562-rep2.masked.dedup.fragments.counts.txt.gz
+A001-input-K562-rep3.masked.dedup.fragments.counts.txt.gz
+A001-input-K562-rep4.masked.dedup.fragments.counts.txt.gz
+A001-K562-rep1.masked.dedup.fragments.counts.txt.gz
+A001-K562-rep2.masked.dedup.fragments.counts.txt.gz
+A001-K562-rep3.masked.dedup.fragments.counts.txt.gz</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="26">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-1</span> <span class="va">${FD_DAT}</span>/processed/STARR_WHG_K562_Reddy_A001_Kari/superstarr/input_libs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>rep1.f3q10.sorted.dedup.rpkm.bw
+rep2.f3q10.sorted.dedup.rpkm.bw
+rep3.f3q10.sorted.dedup.rpkm.bw
+rep4.f3q10.sorted.dedup.rpkm.bw</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="27">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-1</span> <span class="va">${FD_DAT}</span>/processed/STARR_WHG_K562_Reddy_A001_Kari/superstarr/output_libs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>A001-K562-rep1.f3q10.sorted.dedup.rpkm.bw
+A001-K562-rep2.f3q10.sorted.dedup.rpkm.bw
+A001-K562-rep3.f3q10.sorted.dedup.rpkm.bw</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="28">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-1</span> <span class="va">${FD_DAT}</span>/processed/STARR_ATAC_K562_Reddy_KS91_210401/fragments</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>KS91_K562_hg38_ASTARRseq_Input_rep1.masked.dedup.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Input_rep1.masked.exclude_dups.cpm.bw
+KS91_K562_hg38_ASTARRseq_Input_rep2.masked.dedup.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Input_rep2.masked.exclude_dups.cpm.bw
+KS91_K562_hg38_ASTARRseq_Input_rep3.masked.dedup.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Input_rep3.masked.exclude_dups.cpm.bw
+KS91_K562_hg38_ASTARRseq_Input_rep4.masked.dedup.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Input_rep4.masked.exclude_dups.cpm.bw
+KS91_K562_hg38_ASTARRseq_Input_rep5.masked.dedup.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Input_rep5.masked.exclude_dups.cpm.bw
+KS91_K562_hg38_ASTARRseq_Input_rep6.masked.dedup.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Input_rep6.masked.exclude_dups.cpm.bw
+KS91_K562_hg38_ASTARRseq_Output_rep1.f3q10.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Output_rep1.f3q10.sorted.with_umis.dedup.cpm.bw
+KS91_K562_hg38_ASTARRseq_Output_rep2.f3q10.fragments.counts.corrected.txt.gz
+KS91_K562_hg38_ASTARRseq_Output_rep2.f3q10.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Output_rep2.f3q10.sorted.with_umis.dedup.corrected.cpm.bw
+KS91_K562_hg38_ASTARRseq_Output_rep2.f3q10.sorted.with_umis.dedup.cpm.bw
+KS91_K562_hg38_ASTARRseq_Output_rep3.f3q10.fragments.counts.corrected.txt.gz
+KS91_K562_hg38_ASTARRseq_Output_rep3.f3q10.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Output_rep3.f3q10.sorted.with_umis.dedup.cpm.bw
+KS91_K562_hg38_ASTARRseq_Output_rep4.f3q10.fragments.counts.corrected.txt.gz
+KS91_K562_hg38_ASTARRseq_Output_rep4.f3q10.fragments.counts.txt.gz
+KS91_K562_hg38_ASTARRseq_Output_rep4.f3q10.sorted.with_umis.dedup.corrected.cpm.bw
+KS91_K562_hg38_ASTARRseq_Output_rep4.f3q10.sorted.with_umis.dedup.cpm.bw
+KS91_K562_hg38_ASTARRseq_Output_rep5.f3q10.sorted.with_umis.dedup.cpm.bw
+KS91_K562_hg38_ASTARRseq_Output_rep6.f3q10.sorted.with_umis.dedup.cpm.bw</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="29">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-1</span> <span class="va">${FD_DAT}</span>/processed/STARR_ATAC_K562_Reddy_KS91_210401/peaks</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>KS91_K562_hg38_ASTARRseq_Input.all_reps.masked.union_narrowPeak.q5.bed
+KS91_K562_hg38_ASTARRseq_Input.q5.in_all.max_overlaps.bed</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="30">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-1</span> <span class="va">${FD_DAT}</span>/processed/STARR_ATAC_K562_Reddy_KS274_240311/fragments</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>K562_ASTARR_repeat_rep1.f3q10.fragments.bedpe
+K562_ASTARR_repeat_rep1.f3q10.sorted.with_umis.dedup.rpkm.bw
+K562_ASTARR_repeat_rep2.f3q10.fragments.bedpe
+K562_ASTARR_repeat_rep2.f3q10.sorted.with_umis.dedup.rpkm.bw
+K562_ASTARR_repeat_rep3.f3q10.fragments.bedpe
+K562_ASTARR_repeat_rep3.f3q10.sorted.with_umis.dedup.rpkm.bw</code></pre>
+</div>
+</div>
+<p>Check folder size</p>
+<div class="cell" data-execution_count="31">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">du</span> <span class="at">-sh</span> <span class="va">${FD_DAT}</span>/processed/STARR_WHG_K562_Reddy_A001_Alex</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>9.8G    /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/data/processed/STARR_WHG_K562_Reddy_A001_Alex</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="32">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">du</span> <span class="at">-sh</span> <span class="va">${FD_DAT}</span>/processed/STARR_WHG_K562_Reddy_A001_Kari</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>8.4G    /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/data/processed/STARR_WHG_K562_Reddy_A001_Kari</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="33">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">du</span> <span class="at">-sh</span> <span class="va">${FD_DAT}</span>/processed/STARR_ATAC_K562_Reddy_KS91_210401/fragments</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>44G /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/data/processed/STARR_ATAC_K562_Reddy_KS91_210401/fragments</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="34">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="fu">du</span> <span class="at">-sh</span> <span class="va">${FD_DAT}</span>/processed/STARR_ATAC_K562_Reddy_KS91_210401/peaks</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>4.1M    /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/data/processed/STARR_ATAC_K562_Reddy_KS91_210401/peaks</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="35">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="fu">du</span> <span class="at">-sh</span> <span class="va">${FD_DAT}</span>/processed/STARR_ATAC_K562_Reddy_KS274_240311</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>5.5G    /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/data/processed/STARR_ATAC_K562_Reddy_KS274_240311</code></pre>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
