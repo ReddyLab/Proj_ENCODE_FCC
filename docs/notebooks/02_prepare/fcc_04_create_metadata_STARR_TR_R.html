@@ -393,6 +393,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#metadata-for-astarr-fragment-counts-ks91" id="toc-metadata-for-astarr-fragment-counts-ks91" class="nav-link" data-scroll-target="#metadata-for-astarr-fragment-counts-ks91">Metadata for ASTARR fragment counts (KS91)</a></li>
   <li><a href="#metadata-for-astarr-fragment-counts-ks274" id="toc-metadata-for-astarr-fragment-counts-ks274" class="nav-link" data-scroll-target="#metadata-for-astarr-fragment-counts-ks274">Metadata for ASTARR fragment counts (KS274)</a></li>
   <li><a href="#metadata-for-wstarr-fragment-counts" id="toc-metadata-for-wstarr-fragment-counts" class="nav-link" data-scroll-target="#metadata-for-wstarr-fragment-counts">Metadata for WSTARR fragment counts</a></li>
+  <li><a href="#review" id="toc-review" class="nav-link" data-scroll-target="#review">Review</a></li>
   </ul>
 </nav>
     </div>
@@ -867,6 +868,61 @@ WSTARRseq_K562_A001.hg38.Output.rep3.WGS.unstranded.bed.gz </code></pre>
 <span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat_metadata_astarr</span>
 <span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="fu">write_tsv</span>(dat, txt_fpath)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+</div>
+</section>
+<section id="review" class="level2">
+<h2 class="anchored" data-anchor-id="review">Review</h2>
+<p><strong>Check results</strong></p>
+<div class="cell" data-execution_count="20">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>txt_fdiry <span class="ot">=</span> <span class="fu">file.path</span>(FD_RES, <span class="st">"assay_fcc"</span>, <span class="st">"STARR*"</span>, <span class="st">"fragment_counts"</span>, <span class="st">"summary"</span>)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>txt_fname <span class="ot">=</span> <span class="st">"metadata.tsv"</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>txt_fglob <span class="ot">=</span> <span class="fu">file.path</span>(txt_fdiry, txt_fname)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>vec_txt_fpath <span class="ot">=</span> <span class="fu">Sys.glob</span>(txt_fglob)</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (txt_fpath <span class="cf">in</span> vec_txt_fpath){</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(txt_fpath, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>    txt_cmd <span class="ot">=</span> <span class="fu">paste</span>(<span class="st">"cat"</span>, txt_fpath)</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>    vec <span class="ot">=</span> <span class="fu">system</span>(txt_cmd, <span class="at">intern =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (txt <span class="cf">in</span> vec){</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>        <span class="fu">cat</span>(txt, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>/mount/repo/Proj_ENCODE_FCC/results/assay_fcc/STARR_ATAC_K562_Reddy_KS274/fragment_counts/summary/metadata.tsv 
+FName   Assay   Prefix  Group   Sample 
+ASTARRseq_K562_KS274.hg38.Output.rep1.WGS.unstranded.bed.gz STARR_ATAC_K562_Reddy_KS274 ASTARRseq_K562_KS274    Output  Output.rep1 
+ASTARRseq_K562_KS274.hg38.Output.rep2.WGS.unstranded.bed.gz STARR_ATAC_K562_Reddy_KS274 ASTARRseq_K562_KS274    Output  Output.rep2 
+ASTARRseq_K562_KS274.hg38.Output.rep3.WGS.unstranded.bed.gz STARR_ATAC_K562_Reddy_KS274 ASTARRseq_K562_KS274    Output  Output.rep3 
+
+/mount/repo/Proj_ENCODE_FCC/results/assay_fcc/STARR_ATAC_K562_Reddy_KS91/fragment_counts/summary/metadata.tsv 
+FName   Assay   Prefix  Group   Sample 
+ASTARRseq_K562_KS91.hg38.Input.rep1.WGS.unstranded.bed.gz   STARR_ATAC_K562_Reddy_KS91  ASTARRseq_K562_KS91 Input   Input.rep1 
+ASTARRseq_K562_KS91.hg38.Input.rep2.WGS.unstranded.bed.gz   STARR_ATAC_K562_Reddy_KS91  ASTARRseq_K562_KS91 Input   Input.rep2 
+ASTARRseq_K562_KS91.hg38.Input.rep3.WGS.unstranded.bed.gz   STARR_ATAC_K562_Reddy_KS91  ASTARRseq_K562_KS91 Input   Input.rep3 
+ASTARRseq_K562_KS91.hg38.Input.rep4.WGS.unstranded.bed.gz   STARR_ATAC_K562_Reddy_KS91  ASTARRseq_K562_KS91 Input   Input.rep4 
+ASTARRseq_K562_KS91.hg38.Input.rep5.WGS.unstranded.bed.gz   STARR_ATAC_K562_Reddy_KS91  ASTARRseq_K562_KS91 Input   Input.rep5 
+ASTARRseq_K562_KS91.hg38.Input.rep6.WGS.unstranded.bed.gz   STARR_ATAC_K562_Reddy_KS91  ASTARRseq_K562_KS91 Input   Input.rep6 
+ASTARRseq_K562_KS91.hg38.Output.rep1.WGS.unstranded.bed.gz  STARR_ATAC_K562_Reddy_KS91  ASTARRseq_K562_KS91 Output  Output.rep1 
+ASTARRseq_K562_KS91.hg38.Output.rep2.WGS.unstranded.bed.gz  STARR_ATAC_K562_Reddy_KS91  ASTARRseq_K562_KS91 Output  Output.rep2 
+ASTARRseq_K562_KS91.hg38.Output.rep3.WGS.unstranded.bed.gz  STARR_ATAC_K562_Reddy_KS91  ASTARRseq_K562_KS91 Output  Output.rep3 
+ASTARRseq_K562_KS91.hg38.Output.rep4.WGS.unstranded.bed.gz  STARR_ATAC_K562_Reddy_KS91  ASTARRseq_K562_KS91 Output  Output.rep4 
+
+/mount/repo/Proj_ENCODE_FCC/results/assay_fcc/STARR_WHG_K562_Reddy_A001/fragment_counts/summary/metadata.tsv 
+FName   Assay   Prefix  Group   Sample 
+WSTARRseq_K562_A001.hg38.Input.rep1.WGS.unstranded.bed.gz   STARR_WHG_K562_Reddy_A001   WSTARRseq_K562_A001 Input   Input.rep1 
+WSTARRseq_K562_A001.hg38.Input.rep2.WGS.unstranded.bed.gz   STARR_WHG_K562_Reddy_A001   WSTARRseq_K562_A001 Input   Input.rep2 
+WSTARRseq_K562_A001.hg38.Input.rep3.WGS.unstranded.bed.gz   STARR_WHG_K562_Reddy_A001   WSTARRseq_K562_A001 Input   Input.rep3 
+WSTARRseq_K562_A001.hg38.Input.rep4.WGS.unstranded.bed.gz   STARR_WHG_K562_Reddy_A001   WSTARRseq_K562_A001 Input   Input.rep4 
+WSTARRseq_K562_A001.hg38.Output.rep1.WGS.unstranded.bed.gz  STARR_WHG_K562_Reddy_A001   WSTARRseq_K562_A001 Output  Output.rep1 
+WSTARRseq_K562_A001.hg38.Output.rep2.WGS.unstranded.bed.gz  STARR_WHG_K562_Reddy_A001   WSTARRseq_K562_A001 Output  Output.rep2 
+WSTARRseq_K562_A001.hg38.Output.rep3.WGS.unstranded.bed.gz  STARR_WHG_K562_Reddy_A001   WSTARRseq_K562_A001 Output  Output.rep3 
+</code></pre>
+</div>
 </div>
 
 

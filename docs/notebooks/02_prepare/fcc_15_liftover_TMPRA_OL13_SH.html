@@ -421,37 +421,43 @@ DATA DIRECTORY (FD_DATA):      /data/reddylab/Kuei/data
 CONTAINER DIR. (FD_SING):      /data/reddylab/Kuei/container
 
 You are working with           ENCODE FCC
-PATH OF PROJECT (FD_PRJ):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC
-PROJECT RESULTS (FD_RES):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/results
-PROJECT SCRIPTS (FD_EXE):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/scripts
-PROJECT DATA    (FD_DAT):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/data
-PROJECT NOTE    (FD_NBK):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/notebooks
-PROJECT DOCS    (FD_DOC):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/docs
-PROJECT LOG     (FD_LOG):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/log
-PROJECT APP     (FD_APP):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/app
-PROJECT REF     (FD_REF):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/references
-PROJECT IMAGE   (FP_PRJ_SIF):  /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/app/singularity_proj_encode_fcc.sif
+PATH OF PROJECT (FD_PRJ):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC
+PROJECT RESULTS (FD_RES):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results
+PROJECT SCRIPTS (FD_EXE):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/scripts
+PROJECT DATA    (FD_DAT):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/data
+PROJECT NOTE    (FD_NBK):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/notebooks
+PROJECT DOCS    (FD_DOC):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/docs
+PROJECT LOG     (FD_LOG):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/log
+PROJECT APP     (FD_APP):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/app
+PROJECT REF     (FD_REF):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/references
+PROJECT IMAGE   (FP_PRJ_SIF):  /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/app/singularity_proj_encode_fcc.sif
 </code></pre>
 </div>
 </div>
-<p><strong>Check data</strong></p>
 <div class="cell" data-execution_count="2">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_RES}</span>/assay_fcc/MPRA_Tiling_K562_Tewhey_hannah/fragment</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="va">FPATH</span><span class="op">=</span><span class="va">${FDIRY}</span>/<span class="pp">*</span>hg19<span class="pp">*</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">basename</span> <span class="va">${FPATH}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="va">TXT_ASSAY</span><span class="op">=</span>MPRA_Tiling_K562_Tewhey_Hannah</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p><strong>Check data</strong></p>
+<div class="cell" data-execution_count="3">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_RES}</span>/assay_fcc/<span class="va">${TXT_ASSAY}</span>/fragment</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="va">FPATH</span><span class="op">=</span><span class="va">${FDIRY}</span>/<span class="pp">*</span>hg19<span class="pp">*</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">basename</span> <span class="va">${FPATH}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>TMPRA_K562_OL13_20220512.hg19.raw.stranded_pos.bed.gz</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="3">
+<div class="cell" data-execution_count="4">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_RES}</span>/assay_fcc/MPRA_Tiling_K562_Tewhey_hannah/fragment_counts</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="va">FPATHS</span><span class="op">=</span><span class="va">($(</span><span class="fu">ls</span> <span class="va">${FDIRY}</span>/<span class="pp">*</span>hg19<span class="pp">*</span><span class="va">))</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">basename</span> <span class="at">-a</span> <span class="va">${FPATHS</span><span class="op">[@]</span><span class="va">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_RES}</span>/assay_fcc/<span class="va">${TXT_ASSAY}</span>/fragment_counts</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="va">FPATHS</span><span class="op">=</span><span class="va">($(</span><span class="fu">ls</span> <span class="va">${FDIRY}</span>/<span class="pp">*</span>hg19<span class="pp">*</span><span class="va">))</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">basename</span> <span class="at">-a</span> <span class="va">${FPATHS</span><span class="op">[@]</span><span class="va">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>TMPRA_K562_OL13_20220512.hg19.norm.Input.mean.stranded_pos.bed.gz
@@ -476,10 +482,10 @@ TMPRA_K562_OL13_20220512.hg19.raw.Output.rep4.stranded_pos.bed.gz</code></pre>
 </div>
 </div>
 <p><strong>Check script</strong></p>
-<div class="cell" data-execution_count="4">
+<div class="cell" data-execution_count="5">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="va">${FD_EXE}</span><span class="ex">/run_liftOver.sh</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="va">${FD_EXE}</span><span class="ex">/run_liftOver.sh</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>liftOver - Move annotations from one assembly to another
@@ -535,24 +541,24 @@ options:
 </div>
 <p><strong>Execute: LiftOver fragment</strong></p>
 <p>Test file IO</p>
-<div class="cell" data-execution_count="5">
+<div class="cell" data-execution_count="6">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_RES}</span>/assay_fcc/MPRA_Tiling_K562_Tewhey_hannah/fragment</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="va">FP_INP</span><span class="op">=</span><span class="va">${FDIRY}</span>/<span class="pp">*</span>hg19<span class="pp">*</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="va">FN_INP</span><span class="op">=</span><span class="va">$(</span><span class="fu">basename</span> <span class="va">${FP_INP})</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="va">FN_OUT_LIFTED</span><span class="op">=</span><span class="va">${FN_INP</span><span class="op">/</span><span class="ss">hg19</span><span class="op">/</span>hg38<span class="va">}</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="va">FN_TMP_LIFTED</span><span class="op">=</span><span class="va">${FN_OUT_LIFTED</span><span class="op">%</span>.<span class="pp">*</span><span class="va">}</span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="va">FN_OUT_UNLIFT</span><span class="op">=</span><span class="va">${FN_INP</span><span class="op">/</span><span class="ss">hg19</span><span class="op">/</span>unlifted<span class="va">}</span></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="va">FN_TMP_UNLIFT</span><span class="op">=</span><span class="va">${FN_OUT_UNLIFT</span><span class="op">%</span>.<span class="pp">*</span><span class="va">}</span></span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">${FN_INP}</span></span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">${FN_OUT_LIFTED}</span></span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">${FN_TMP_LIFTED}</span></span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">${FN_OUT_UNLIFT}</span></span>
-<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">${FN_TMP_UNLIFT}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_RES}</span>/assay_fcc/<span class="va">${TXT_ASSAY}</span>/fragment</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="va">FP_INP</span><span class="op">=</span><span class="va">${FDIRY}</span>/<span class="pp">*</span>hg19<span class="pp">*</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="va">FN_INP</span><span class="op">=</span><span class="va">$(</span><span class="fu">basename</span> <span class="va">${FP_INP})</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="va">FN_OUT_LIFTED</span><span class="op">=</span><span class="va">${FN_INP</span><span class="op">/</span><span class="ss">hg19</span><span class="op">/</span>hg38<span class="va">}</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="va">FN_TMP_LIFTED</span><span class="op">=</span><span class="va">${FN_OUT_LIFTED</span><span class="op">%</span>.<span class="pp">*</span><span class="va">}</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="va">FN_OUT_UNLIFT</span><span class="op">=</span><span class="va">${FN_INP</span><span class="op">/</span><span class="ss">hg19</span><span class="op">/</span>unlifted<span class="va">}</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="va">FN_TMP_UNLIFT</span><span class="op">=</span><span class="va">${FN_OUT_UNLIFT</span><span class="op">%</span>.<span class="pp">*</span><span class="va">}</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">${FN_INP}</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">${FN_OUT_LIFTED}</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">${FN_TMP_LIFTED}</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">${FN_OUT_UNLIFT}</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">${FN_TMP_UNLIFT}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>TMPRA_K562_OL13_20220512.hg19.raw.stranded_pos.bed.gz
@@ -563,41 +569,41 @@ TMPRA_K562_OL13_20220512.unlifted.raw.stranded_pos.bed</code></pre>
 </div>
 </div>
 <p>run liftOver</p>
-<div class="cell" data-execution_count="6">
+<div class="cell" data-execution_count="7">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_RES}</span>/assay_fcc/MPRA_Tiling_K562_Tewhey_hannah/fragment</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="va">FP_INP</span><span class="op">=</span><span class="va">${FDIRY}</span>/<span class="pp">*</span>hg19<span class="pp">*</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="va">FN_INP</span><span class="op">=</span><span class="va">$(</span><span class="fu">basename</span> <span class="va">${FP_INP})</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="va">FN_OUT_LIFTED</span><span class="op">=</span><span class="va">${FN_INP</span><span class="op">/</span><span class="ss">hg19</span><span class="op">/</span>hg38<span class="va">}</span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="va">FN_OUT_UNLIFT</span><span class="op">=</span><span class="va">${FN_INP</span><span class="op">/</span><span class="ss">hg19</span><span class="op">/</span>unlifted<span class="va">}</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="va">${FD_EXE}</span><span class="ex">/run_liftOver.sh</span> <span class="dt">\</span></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">-bedPlus</span><span class="op">=</span>6 <span class="dt">\</span></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="va">${FDIRY}</span>/<span class="va">${FN_INP}</span> <span class="dt">\</span></span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    /data/reddylab/Reference_Data/Genomes/hg38/hg19ToHg38.over.chain <span class="dt">\</span></span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    <span class="va">${FDIRY}</span>/<span class="va">${FN_TMP_LIFTED}</span> <span class="dt">\</span></span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    <span class="va">${FDIRY}</span>/<span class="va">${FN_TMP_UNLIFT}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_RES}</span>/assay_fcc/<span class="va">${TXT_ASSAY}</span>/fragment</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="va">FP_INP</span><span class="op">=</span><span class="va">${FDIRY}</span>/<span class="pp">*</span>hg19<span class="pp">*</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="va">FN_INP</span><span class="op">=</span><span class="va">$(</span><span class="fu">basename</span> <span class="va">${FP_INP})</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="va">FN_OUT_LIFTED</span><span class="op">=</span><span class="va">${FN_INP</span><span class="op">/</span><span class="ss">hg19</span><span class="op">/</span>hg38<span class="va">}</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="va">FN_OUT_UNLIFT</span><span class="op">=</span><span class="va">${FN_INP</span><span class="op">/</span><span class="ss">hg19</span><span class="op">/</span>unlifted<span class="va">}</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="va">${FD_EXE}</span><span class="ex">/run_liftOver.sh</span> <span class="dt">\</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">-bedPlus</span><span class="op">=</span>6 <span class="dt">\</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    <span class="va">${FDIRY}</span>/<span class="va">${FN_INP}</span> <span class="dt">\</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    /data/reddylab/Reference_Data/Genomes/hg38/hg19ToHg38.over.chain <span class="dt">\</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>    <span class="va">${FDIRY}</span>/<span class="va">${FN_TMP_LIFTED}</span> <span class="dt">\</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>    <span class="va">${FDIRY}</span>/<span class="va">${FN_TMP_UNLIFT}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Reading liftover chains
 Mapping coordinates</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="7">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gzip</span> <span class="at">-f</span> <span class="va">${FDIRY}</span>/<span class="va">${FN_TMP_UNLIFT}</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gzip</span> <span class="at">-f</span> <span class="va">${FDIRY}</span>/<span class="va">${FN_TMP_LIFTED}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<p>Check results</p>
 <div class="cell" data-execution_count="8">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FDIRY}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gzip</span> <span class="at">-f</span> <span class="va">${FDIRY}</span>/<span class="va">${FN_TMP_UNLIFT}</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gzip</span> <span class="at">-f</span> <span class="va">${FDIRY}</span>/<span class="va">${FN_TMP_LIFTED}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Check results</p>
+<div class="cell" data-execution_count="9">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FDIRY}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>TMPRA_K562_OL13_20220512.hg19.raw.stranded_pos.bed.gz
@@ -607,12 +613,12 @@ TMPRA_K562_OL43_20221003.hg38.raw.stranded_pos.bed.gz
 TMPRA_K562_OL45_20220927.hg38.raw.stranded_pos.bed.gz</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="9">
+<div class="cell" data-execution_count="10">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">zcat</span> <span class="va">${FDIRY}</span>/<span class="va">${FN_INP}</span>        <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span> </span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">zcat</span> <span class="va">${FDIRY}</span>/<span class="va">${FN_OUT_LIFTED}</span> <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span> </span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">zcat</span> <span class="va">${FDIRY}</span>/<span class="va">${FN_OUT_UNLIFT}</span> <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">zcat</span> <span class="va">${FDIRY}</span>/<span class="va">${FN_INP}</span>        <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span> </span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">zcat</span> <span class="va">${FDIRY}</span>/<span class="va">${FN_OUT_LIFTED}</span> <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span> </span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fu">zcat</span> <span class="va">${FDIRY}</span>/<span class="va">${FN_OUT_UNLIFT}</span> <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>21914
@@ -622,28 +628,28 @@ TMPRA_K562_OL45_20220927.hg38.raw.stranded_pos.bed.gz</code></pre>
 </div>
 <p><strong>Execute: LiftOver fragment count</strong></p>
 <p>Test loop and file IO</p>
-<div class="cell" data-execution_count="10">
+<div class="cell" data-execution_count="11">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_RES}</span>/assay_fcc/MPRA_Tiling_K562_Tewhey_hannah/fragment_counts</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="va">FPATHS</span><span class="op">=</span><span class="va">($(</span><span class="fu">ls</span> <span class="va">${FDIRY}</span>/<span class="pp">*</span>hg19<span class="pp">*</span><span class="va">))</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> FP_INP <span class="kw">in</span> <span class="va">${FPATHS</span><span class="op">[@]</span><span class="va">}</span><span class="kw">;</span> <span class="cf">do</span></span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">###</span></span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    <span class="va">FN_INP</span><span class="op">=</span><span class="va">$(</span><span class="fu">basename</span> <span class="va">${FP_INP})</span></span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    <span class="va">FN_OUT_LIFTED</span><span class="op">=</span><span class="va">${FN_INP</span><span class="op">/</span><span class="ss">hg19</span><span class="op">/</span>hg38<span class="va">}</span></span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>    <span class="va">FN_OUT_UNLIFT</span><span class="op">=</span><span class="va">${FN_INP</span><span class="op">/</span><span class="ss">hg19</span><span class="op">/</span>unlifted<span class="va">}</span></span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>    <span class="va">FN_TMP_LIFTED</span><span class="op">=</span><span class="va">${FN_OUT_LIFTED</span><span class="op">%</span>.<span class="pp">*</span><span class="va">}</span></span>
-<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>    <span class="va">FN_TMP_UNLIFT</span><span class="op">=</span><span class="va">${FN_OUT_UNLIFT</span><span class="op">%</span>.<span class="pp">*</span><span class="va">}</span></span>
-<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">${FN_INP}</span></span>
-<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">${FN_OUT_LIFTED}</span></span>
-<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">${FN_TMP_LIFTED}</span></span>
-<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">${FN_OUT_UNLIFT}</span></span>
-<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">${FN_TMP_UNLIFT}</span></span>
-<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> ==================</span>
-<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_RES}</span>/assay_fcc/<span class="va">${TXT_ASSAY}</span>/fragment_counts</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="va">FPATHS</span><span class="op">=</span><span class="va">($(</span><span class="fu">ls</span> <span class="va">${FDIRY}</span>/<span class="pp">*</span>hg19<span class="pp">*</span><span class="va">))</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> FP_INP <span class="kw">in</span> <span class="va">${FPATHS</span><span class="op">[@]</span><span class="va">}</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">###</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>    <span class="va">FN_INP</span><span class="op">=</span><span class="va">$(</span><span class="fu">basename</span> <span class="va">${FP_INP})</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>    <span class="va">FN_OUT_LIFTED</span><span class="op">=</span><span class="va">${FN_INP</span><span class="op">/</span><span class="ss">hg19</span><span class="op">/</span>hg38<span class="va">}</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>    <span class="va">FN_OUT_UNLIFT</span><span class="op">=</span><span class="va">${FN_INP</span><span class="op">/</span><span class="ss">hg19</span><span class="op">/</span>unlifted<span class="va">}</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>    <span class="va">FN_TMP_LIFTED</span><span class="op">=</span><span class="va">${FN_OUT_LIFTED</span><span class="op">%</span>.<span class="pp">*</span><span class="va">}</span></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>    <span class="va">FN_TMP_UNLIFT</span><span class="op">=</span><span class="va">${FN_OUT_UNLIFT</span><span class="op">%</span>.<span class="pp">*</span><span class="va">}</span></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">${FN_INP}</span></span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">${FN_OUT_LIFTED}</span></span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">${FN_TMP_LIFTED}</span></span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">${FN_OUT_UNLIFT}</span></span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">${FN_TMP_UNLIFT}</span></span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> ==================</span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>TMPRA_K562_OL13_20220512.hg19.norm.Input.mean.stranded_pos.bed.gz
@@ -763,40 +769,40 @@ TMPRA_K562_OL13_20220512.unlifted.raw.Output.rep4.stranded_pos.bed
 </div>
 </div>
 <p>run liftOver and check results</p>
-<div class="cell" data-execution_count="11">
+<div class="cell" data-execution_count="12">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_RES}</span>/assay_fcc/MPRA_Tiling_K562_Tewhey_hannah/fragment_counts</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="va">FPATHS</span><span class="op">=</span><span class="va">($(</span><span class="fu">ls</span> <span class="va">${FDIRY}</span>/<span class="pp">*</span>hg19<span class="pp">*</span><span class="va">))</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> FP_INP <span class="kw">in</span> <span class="va">${FPATHS</span><span class="op">[@]</span><span class="va">}</span><span class="kw">;</span> <span class="cf">do</span></span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">### setup</span></span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    <span class="va">FN_INP</span><span class="op">=</span><span class="va">$(</span><span class="fu">basename</span> <span class="va">${FP_INP})</span></span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>    <span class="va">FN_OUT_LIFTED</span><span class="op">=</span><span class="va">${FN_INP</span><span class="op">/</span><span class="ss">hg19</span><span class="op">/</span>hg38<span class="va">}</span></span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>    <span class="va">FN_OUT_UNLIFT</span><span class="op">=</span><span class="va">${FN_INP</span><span class="op">/</span><span class="ss">hg19</span><span class="op">/</span>unlifted<span class="va">}</span></span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>    <span class="va">FN_TMP_LIFTED</span><span class="op">=</span><span class="va">${FN_OUT_LIFTED</span><span class="op">%</span>.<span class="pp">*</span><span class="va">}</span></span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>    <span class="va">FN_TMP_UNLIFT</span><span class="op">=</span><span class="va">${FN_OUT_UNLIFT</span><span class="op">%</span>.<span class="pp">*</span><span class="va">}</span></span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">### liftover</span></span>
-<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>    <span class="va">${FD_EXE}</span><span class="ex">/run_liftOver.sh</span> <span class="dt">\</span></span>
-<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">-bedPlus</span><span class="op">=</span>6 <span class="dt">\</span></span>
-<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>        <span class="va">${FDIRY}</span>/<span class="va">${FN_INP}</span> <span class="dt">\</span></span>
-<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>        /data/reddylab/Reference_Data/Genomes/hg38/hg19ToHg38.over.chain <span class="dt">\</span></span>
-<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>        <span class="va">${FDIRY}</span>/<span class="va">${FN_TMP_LIFTED}</span> <span class="dt">\</span></span>
-<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>        <span class="va">${FDIRY}</span>/<span class="va">${FN_TMP_UNLIFT}</span></span>
-<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>    <span class="co">### compress files</span></span>
-<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">gzip</span> <span class="at">-f</span> <span class="va">${FDIRY}</span>/<span class="va">${FN_TMP_UNLIFT}</span></span>
-<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">gzip</span> <span class="at">-f</span> <span class="va">${FDIRY}</span>/<span class="va">${FN_TMP_LIFTED}</span></span>
-<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a>    <span class="co">### show</span></span>
-<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">"Input: "</span> <span class="va">${FN_INP}</span></span>
-<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">"Output:"</span> <span class="va">${FN_OUT_LIFTED}</span></span>
-<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">zcat</span> <span class="va">${FDIRY}</span>/<span class="va">${FN_INP}</span>        <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span>
-<span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">zcat</span> <span class="va">${FDIRY}</span>/<span class="va">${FN_OUT_LIFTED}</span> <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span>
-<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">zcat</span> <span class="va">${FDIRY}</span>/<span class="va">${FN_OUT_UNLIFT}</span> <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span>
-<span id="cb21-30"><a href="#cb21-30" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> ==================</span>
-<span id="cb21-31"><a href="#cb21-31" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_RES}</span>/assay_fcc/<span class="va">${TXT_ASSAY}</span>/fragment_counts</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="va">FPATHS</span><span class="op">=</span><span class="va">($(</span><span class="fu">ls</span> <span class="va">${FDIRY}</span>/<span class="pp">*</span>hg19<span class="pp">*</span><span class="va">))</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> FP_INP <span class="kw">in</span> <span class="va">${FPATHS</span><span class="op">[@]</span><span class="va">}</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">### setup</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    <span class="va">FN_INP</span><span class="op">=</span><span class="va">$(</span><span class="fu">basename</span> <span class="va">${FP_INP})</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>    <span class="va">FN_OUT_LIFTED</span><span class="op">=</span><span class="va">${FN_INP</span><span class="op">/</span><span class="ss">hg19</span><span class="op">/</span>hg38<span class="va">}</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>    <span class="va">FN_OUT_UNLIFT</span><span class="op">=</span><span class="va">${FN_INP</span><span class="op">/</span><span class="ss">hg19</span><span class="op">/</span>unlifted<span class="va">}</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>    <span class="va">FN_TMP_LIFTED</span><span class="op">=</span><span class="va">${FN_OUT_LIFTED</span><span class="op">%</span>.<span class="pp">*</span><span class="va">}</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>    <span class="va">FN_TMP_UNLIFT</span><span class="op">=</span><span class="va">${FN_OUT_UNLIFT</span><span class="op">%</span>.<span class="pp">*</span><span class="va">}</span></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">### liftover</span></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>    <span class="va">${FD_EXE}</span><span class="ex">/run_liftOver.sh</span> <span class="dt">\</span></span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">-bedPlus</span><span class="op">=</span>6 <span class="dt">\</span></span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>        <span class="va">${FDIRY}</span>/<span class="va">${FN_INP}</span> <span class="dt">\</span></span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>        /data/reddylab/Reference_Data/Genomes/hg38/hg19ToHg38.over.chain <span class="dt">\</span></span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>        <span class="va">${FDIRY}</span>/<span class="va">${FN_TMP_LIFTED}</span> <span class="dt">\</span></span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>        <span class="va">${FDIRY}</span>/<span class="va">${FN_TMP_UNLIFT}</span></span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>    <span class="co">### compress files</span></span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">gzip</span> <span class="at">-f</span> <span class="va">${FDIRY}</span>/<span class="va">${FN_TMP_UNLIFT}</span></span>
+<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">gzip</span> <span class="at">-f</span> <span class="va">${FDIRY}</span>/<span class="va">${FN_TMP_LIFTED}</span></span>
+<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a>    <span class="co">### show</span></span>
+<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">"Input: "</span> <span class="va">${FN_INP}</span></span>
+<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">"Output:"</span> <span class="va">${FN_OUT_LIFTED}</span></span>
+<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">zcat</span> <span class="va">${FDIRY}</span>/<span class="va">${FN_INP}</span>        <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span>
+<span id="cb22-28"><a href="#cb22-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">zcat</span> <span class="va">${FDIRY}</span>/<span class="va">${FN_OUT_LIFTED}</span> <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span>
+<span id="cb22-29"><a href="#cb22-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">zcat</span> <span class="va">${FDIRY}</span>/<span class="va">${FN_OUT_UNLIFT}</span> <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span>
+<span id="cb22-30"><a href="#cb22-30" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> ==================</span>
+<span id="cb22-31"><a href="#cb22-31" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Reading liftover chains

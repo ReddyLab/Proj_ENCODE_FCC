@@ -96,12 +96,13 @@ FP_WGS_ASTARR_KS91_INP_BWIGS=($(ls ${FD_WGS_ASTARR_KS91_INP}/merged2/*exclude_du
 FP_WGS_ASTARR_KS91_OUT_FRAGS=($(ls ${FD_WGS_ASTARR_KS91_OUT}/*Output*.f3q10.fragments.counts.*.gz))
 FP_WGS_ASTARR_KS91_OUT_BWIGS=($(ls ${FD_WGS_ASTARR_KS91_OUT}/*Output*.with_umis.dedup.*.bw))
 
-FP_WGS_ASTARR_KS91=("${FP_WGS_ASTARR_KS91_INP_FRAGS[@]}" "${FP_WGS_ASTARR_KS91_INP_BWIGS[@]}" "${FP_WGS_ASTARR_KS91_OUT_FRAGS[@]}" "${FP_WGS_ASTARR_KS91_OUT_BWIGS[@]}")
+FP_WGS_ASTARR_KS91_FRAGS=("${FP_WGS_ASTARR_KS91_INP_FRAGS[@]}" "${FP_WGS_ASTARR_KS91_OUT_FRAGS[@]}")
+FP_WGS_ASTARR_KS91_BWIGS=("${FP_WGS_ASTARR_KS91_INP_BWIGS[@]}" "${FP_WGS_ASTARR_KS91_OUT_BWIGS[@]}")
+FP_WGS_ASTARR_KS91=("${FP_WGS_ASTARR_KS91_FRAGS[@]}" "${FP_WGS_ASTARR_KS91_BWIGS[@]}")
 
 ### whole genome fragment counts of ATAC-STARR (KS274)
 FP_WGS_ASTARR_KS274_OUT_FRAGS=($(ls ${FD_WGS_ASTARR_KS274_OUT}/K562*.fragments.bedpe))
 FP_WGS_ASTARR_KS274_OUT_BWIGS=($(ls ${FD_WGS_ASTARR_KS274_OUT}/K562*.with_umis.dedup.rpkm.bw))
-
 FP_WGS_ASTARR_KS274=("${FP_WGS_ASTARR_KS274_OUT_FRAGS[@]}" "${FP_WGS_ASTARR_KS274_OUT_BWIGS[@]}")
 
 ### ASTARR MACS peaks
@@ -121,7 +122,8 @@ FP_WGS_ASTARR_KS91_INP_PEAKS=(
 FD_WGS_WSTARR=${FD_ALEX}/encode4_duke/data/starr_seq
 
 ### whole genome fragment counts of WHG-STARR
-FP_WGS_WSTARR_FRAGS=($(ls ${FD_WGS_WSTARR}/fragments/*.fragments.counts.txt.gz))
+FD_WGS_WSTARR_FRAGS=${FD_WGS_WSTARR}/fragments
+FP_WGS_WSTARR_FRAGS=($(ls ${FD_WGS_WSTARR_FRAGS}/*.fragments.counts.txt.gz))
 
 ### whole genome tracks of WHG-STARR
 FP_WGS_WSTARR_INP_BWIGS=($(ls ${FD_WGS_WSTARR_INP_BAM}/*.dedup.rpkm.bw))
