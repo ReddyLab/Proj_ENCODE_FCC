@@ -550,7 +550,7 @@
     "href": "02_prepare/data_01_fcc.html#lenti-mpra-lmpra",
     "title": "FCC Data",
     "section": "Lenti-MPRA (LMPRA)",
-    "text": "Lenti-MPRA (LMPRA)"
+    "text": "Lenti-MPRA (LMPRA)\n\n\n\nLMPRA Log2FC (Features)\n\n\n\n\n\n\n\n\n\nLMPRA Log2FC (Total)\n\n\n\n\n\n\n\nLMPRA Log2FC (Neg. Ctrl)\n\n\n\n\n\n\n\nLMPRA Log2FC and z score\n\n\n\n\nFigure 1: Distribution of LMPRA Log2 fold change"
   },
   {
     "objectID": "02_prepare/data_01_fcc.html#crispri-hcr-flowfish-crispri-hcrff",
