@@ -160,8 +160,26 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01_setup/work_03_results.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">03 Working Directory of Results</span></a>
+  <a href="../01_setup/work_11_results_prep.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11 Results (Prepare)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01_setup/work_12_results_fcc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12 Results (FCC)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01_setup/work_13_results_hic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13 Results (HiC)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01_setup/work_14_results_region.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14 Results (Region)</span></a>
   </div>
 </li>
       </ul>
@@ -352,14 +370,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#naming-convention" id="toc-naming-convention" class="nav-link active" data-scroll-target="#naming-convention">Naming convention</a></li>
-  <li><a href="#reference-file" id="toc-reference-file" class="nav-link" data-scroll-target="#reference-file">Reference file</a></li>
+  <li><a href="#reference-file" id="toc-reference-file" class="nav-link active" data-scroll-target="#reference-file">Reference file</a></li>
   <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a>
   <ul class="collapse">
   <li><a href="#download-external-data" id="toc-download-external-data" class="nav-link" data-scroll-target="#download-external-data">Download external data</a></li>
   <li><a href="#get-processed-data" id="toc-get-processed-data" class="nav-link" data-scroll-target="#get-processed-data">Get processed data</a></li>
   </ul></li>
-  <li><a href="#results-after-preparation" id="toc-results-after-preparation" class="nav-link" data-scroll-target="#results-after-preparation">Results after preparation</a></li>
   </ul>
 </nav>
     </div>
@@ -383,74 +399,16 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="naming-convention" class="level1">
-<h1>Naming convention</h1>
-<p>Below are some naming convention in this documentation.</p>
-<ul>
-<li>Assay folder name
-<ul>
-<li><code>&lt;Assay Type&gt;_&lt;Cell Type&gt;_&lt;Lab&gt;_&lt;Label&gt;</code></li>
-<li>Label
-<ul>
-<li>batch, source, people, id numbers</li>
-</ul></li>
-</ul></li>
-</ul>
-<pre><code>STARR_ATAC_K562_Reddy_KS91
-STARR_ATAC_K562_Reddy_KS274
-STARR_WHG_K562_Reddy_A001
-MPRA_Tiling_K562_Tewhey_Hannah
-MPRA_Lenti_K562_Nadav_Vikram
-CRISPRi_FlowFISH_K562_Riley_JinWoo
-CRISPRi_Growth_K562_Gersbach_Alex</code></pre>
-<ul>
-<li>Assay file name
-<ul>
-<li><code>&lt;Prefix&gt;.&lt;Genome&gt;.&lt;Input/Output/Log2FC&gt;.&lt;Replicate&gt;.&lt;Region&gt;.&lt;Unstranded/Stranded&gt;.&lt;File Extension&gt;</code></li>
-<li>Prefix
-<ul>
-<li>ASTARRseq_K562_KS91</li>
-<li>WSTARRseq_K562_A001</li>
-<li>TMPRA_K562_OL13</li>
-<li>TMPRA_K562_OL43</li>
-<li>TMPRA_K562_OL45</li>
-<li>TMPRA_K562_Merge</li>
-<li>LMPRA_K562</li>
-<li>CRISPRi_HCRFF_K562</li>
-<li>CRISPRi_Growth_K562</li>
-</ul></li>
-<li>Replicate
-<ul>
-<li>rep1/2/3/4</li>
-<li>rep1_vs_rep2</li>
-<li>rep_all</li>
-</ul></li>
-<li>Region
-<ul>
-<li>WHG = whole genome</li>
-<li>MYC = MYC region</li>
-<li>GATA1 = GATA1 region</li>
-</ul></li>
-</ul></li>
-<li>ENCODE region file name
-<ul>
-<li><code>&lt;Prefix&gt;.&lt;Genome&gt;.&lt;Experiment ID&gt;.&lt;File ID&gt;.&lt;Assay&gt;.&lt;Description&gt;.&lt;File Extension&gt;</code></li>
-<li>Prefix: biosample
-<ul>
-<li>K562: a human erythroleukemic cell line</li>
-<li>A549: a human lung epithelial Cell line</li>
-<li>Hsa: Human</li>
-</ul></li>
-<li>Genome: reference for alignment
-<ul>
-<li>hg38: GRCh38</li>
-<li>hg19: GRCh37</li>
-</ul></li>
-</ul></li>
-</ul>
-</section>
 <section id="reference-file" class="level1">
 <h1>Reference file</h1>
+<p><strong>Summary</strong></p>
+<pre><code>PROJECT/reference
+├── encode_chipseq_flagship
+├── encode_chipseq_subset
+├── encode_open_chromatin
+├── fcc_trackhub_JinWoo
+└── fcc_astarr_macs</code></pre>
+<p><strong>Detailed</strong></p>
 <pre><code>PROJECT/reference
 ├── encode_chipseq_flagship
 │
@@ -536,34 +494,32 @@ CRISPRi_Growth_K562_Gersbach_Alex</code></pre>
 </section>
 <section id="get-processed-data" class="level2">
 <h2 class="anchored" data-anchor-id="get-processed-data">Get processed data</h2>
-<pre><code>STARR_ATAC_K562_Reddy_KS274_240311
-STARR_ATAC_K562_Reddy_KS91_210401
-STARR_WHG_K562_Reddy_A001_Alex
-STARR_WHG_K562_Reddy_A001_Kari
-MPRA_Tiling_K562_Tewhey_Hannah
-MPRA_Lenti_K562_Nadav_Vikram_230621
-CRISPRi_FlowFISH_K562_Riley_JinWoo
-CRISPRi_Growth_K562_Gersbach_Alex</code></pre>
 <p><strong>Summary</strong></p>
+<pre><code>PROJECT/data/processed
+├── STARR_ATAC_K562_Reddy_KS91_210401
+├── STARR_ATAC_K562_Reddy_KS274_240311
+├── STARR_WHG_K562_Reddy_A001_Alex
+├── STARR_WHG_K562_Reddy_A001_Kari
+├── MPRA_Tiling_K562_Tewhey_Hannah
+├── MPRA_Lenti_K562_Nadav_Vikram_230621
+├── CRISPRi_Growth_K562_Gersbach_Alex
+├── fcc_trackhub_JinWoo
+├── fcc_enhancer_Junke_zscore
+├── TF_modules_Shannon
+└── </code></pre>
+<p><strong>Detailed</strong></p>
 <pre><code>PROJECT/data/processed
 ├── STARR_ATAC_K562_Reddy_KS91_210401
 │   ├── fragments
 │   └── peaks
-│
 ├── STARR_ATAC_K562_Reddy_KS274_240311
 │   └── fragments
-│
 ├── STARR_WHG_K562_Reddy_A001_Alex
 │   └── fragments
-│
 ├── STARR_WHG_K562_Reddy_A001_Kari
 │   └── superstarr
 │       ├── input_libs
-│       │   └── A001_K562
 │       └── output_libs
-│           ├── A001_K562_20201124
-│           └── A001_K562_20210213
-│
 ├── CRISPRi_Growth_K562_Gersbach_Alex
 │   ├── guides
 │   └── region
@@ -657,104 +613,9 @@ CRISPRi_Growth_K562_Gersbach_Alex</code></pre>
 ├── TF_modules_K562_shannon
 │
 └── </code></pre>
-</section>
-</section>
-<section id="results-after-preparation" class="level1">
-<h1>Results after preparation</h1>
-<ul>
-<li>Process files in data (arrange/extract)</li>
-<li>SymLink files in data (file aliases)</li>
-</ul>
-<pre><code>PROJECT/results
-├── assay_fcc
-│   ├── STARR_ATAC_K562_Reddy_KS91
-│   │   ├── fragment_counts
-│   │   │   ├── ASTARRseq_K562_KS91.hg38.Input.rep1.WGS.unstranded.bed.gz
-│   │   │   ├── ASTARRseq_K562_KS91.hg38.Input.rep2.WGS.unstranded.bed.gz
-│   │   │   ├── ASTARRseq_K562_KS91.hg38.Input.rep3.WGS.unstranded.bed.gz
-│   │   │   ├── ASTARRseq_K562_KS91.hg38.Input.rep4.WGS.unstranded.bed.gz
-│   │   │   ├── ASTARRseq_K562_KS91.hg38.Input.rep5.WGS.unstranded.bed.gz
-│   │   │   ├── ASTARRseq_K562_KS91.hg38.Input.rep6.WGS.unstranded.bed.gz
-│   │   │   ├── ASTARRseq_K562_KS91.hg38.Output.rep1.WGS.unstranded.bed.gz
-│   │   │   ├── ASTARRseq_K562_KS91.hg38.Output.rep2.WGS.unstranded.bed.gz
-│   │   │   ├── ASTARRseq_K562_KS91.hg38.Output.rep3.WGS.unstranded.bed.gz
-│   │   │   └── ASTARRseq_K562_KS91.hg38.Output.rep4.WGS.unstranded.bed.gz
-│   │   └── fragment
-│   │
-│   ├── STARR_WHG_K562_Reddy_A001
-│   │   ├── fragment_counts
-│   │   │   ├── WSTARRseq_K562_A001.hg38.Input.rep1.WGS.unstranded.bed.gz
-│   │   │   ├── WSTARRseq_K562_A001.hg38.Input.rep2.WGS.unstranded.bed.gz
-│   │   │   ├── WSTARRseq_K562_A001.hg38.Input.rep3.WGS.unstranded.bed.gz
-│   │   │   ├── WSTARRseq_K562_A001.hg38.Input.rep4.WGS.unstranded.bed.gz
-│   │   │   ├── WSTARRseq_K562_A001.hg38.Output.rep1.WGS.unstranded.bed.gz
-│   │   │   ├── WSTARRseq_K562_A001.hg38.Output.rep2.WGS.unstranded.bed.gz
-│   │   │   └── WSTARRseq_K562_A001.hg38.Output.rep3.WGS.unstranded.bed.gz
-│   │   └── fragment
-│   │
-│   ├── MPRA_Tiling_K562_Tewhey_Hannah
-│   │   ├── fragment_counts
-│   │   │   ├── TMPRA_K562_OL13_20220512.hg19.raw. Input .rep[1-4].stranded_pos.bed
-│   │   │   ├── TMPRA_K562_OL13_20220512.hg19.raw. Output.rep[1-4].stranded_pos.bed
-│   │   │   ├── TMPRA_K562_OL13_20220512.hg19.norm.Input .rep[1-4].stranded_pos.bed
-│   │   │   ├── TMPRA_K562_OL13_20220512.hg19.norm.Output.rep[1-4].stranded_pos.bed
-│   │   │   │ 
-│   │   │   ├── TMPRA_K562_OL13_20220512.hg19.norm.Input .mean.stranded_pos.bed
-│   │   │   ├── TMPRA_K562_OL13_20220512.hg19.norm.Output.mean.stranded_pos.bed
-│   │   │   ├── TMPRA_K562_OL13_20220512.hg19.norm.Log2FC.mean.stranded_pos.bed
-│   │   │   │ 
-│   │   │   ├── TMPRA_K562_OL43_20221003.hg38.raw. Input .rep[1-6].stranded_pos.bed
-│   │   │   ├── TMPRA_K562_OL43_20221003.hg38.raw. Output.rep[1-5].stranded_pos.bed
-│   │   │   ├── TMPRA_K562_OL43_20221003.hg38.norm.Input .rep[1-6].stranded_pos.bed
-│   │   │   ├── TMPRA_K562_OL43_20221003.hg38.norm.Output.rep[1-5].stranded_pos.bed
-│   │   │   │ 
-│   │   │   ├── TMPRA_K562_OL43_20221003.hg38.norm.Input .mean.stranded_pos.bed
-│   │   │   ├── TMPRA_K562_OL43_20221003.hg38.norm.Output.mean.stranded_pos.bed
-│   │   │   ├── TMPRA_K562_OL43_20221003.hg38.norm.Log2FC.mean.stranded_pos.bed
-│   │   │   │ 
-│   │   │   ├── TMPRA_K562_OL45_20220927.hg38.raw. Input .rep[1-4].stranded_pos.bed
-│   │   │   ├── TMPRA_K562_OL45_20220927.hg38.raw. Output.rep[1-4].stranded_pos.bed
-│   │   │   ├── TMPRA_K562_OL45_20220927.hg38.norm.Input .rep[1-4].stranded_pos.bed
-│   │   │   ├── TMPRA_K562_OL45_20220927.hg38.norm.Output.rep[1-4].stranded_pos.bed
-│   │   │   │ 
-│   │   │   ├── TMPRA_K562_OL45_20220927.hg38.norm.Input .mean.stranded_pos.bed
-│   │   │   ├── TMPRA_K562_OL45_20220927.hg38.norm.Output.mean.stranded_pos.bed
-│   │   │   ├── TMPRA_K562_OL45_20220927.hg38.norm.Log2FC.mean.stranded_pos.bed
-│   │   │   │
-│   │   │   └── summary
-│   │   │       ├── TMPRA_K562_OL13_20220512.hg19.raw.stranded_pos.tsv 
-│   │   │       ├── TMPRA_K562_OL13_20220512.hg19.norm.stranded_pos.tsv 
-│   │   │       ├── TMPRA_K562_OL43_20221003.hg38.raw.stranded_pos.tsv 
-│   │   │       ├── TMPRA_K562_OL43_20221003.hg38.norm.stranded_pos.tsv 
-│   │   │       ├── TMPRA_K562_OL45_20220927.hg38.raw.stranded_pos.tsv 
-│   │   │       └── TMPRA_K562_OL45_20220927.hg38.norm.stranded_pos.tsv 
-│   │   │
-│   │   └── fragment
-│   │       ├── TMPRA_K562_OL13_20220512.hg19.raw.stranded_pos.bed.gz 
-│   │       ├── TMPRA_K562_OL43_20221003.hg38.raw.stranded_pos.bed.gz 
-│   │       └── TMPRA_K562_OL45_20220927.hg38.raw.stranded_pos.bed.gz 
-│   │
-│   ├── MPRA_Lenti_K562_Nadav_Vikram
-│   ├── CRISPRi_FlowFISH_K562_Riley_JinWoo
-│   └── CRISPRi_Growth_K562_Gersbach_Alex
-├── assay_hic
-│   ├── hic_insitu_K562_ENCSR545YBD
-│   ├── hic_intact_K562_ENCSR479XDG
-│   └── hic_intact_K562_deep
-├── region
-│   ├── fcc_astarr_macs
-│   │   ├── ASTARRseq_K562_KS91.hg38.Input.rep_all.union.q5.bed.gz
-│   │   └── ASTARRseq_K562_KS91.hg38.Input.rep_all.max_overlaps.q5.bed.gz
-│   ├── fcc_astarr_csaw
-│   │   └── 
-│   ├── fcc_enhancer_junke_zscore
-│   ├── 
-│   └── 
-└── annotation
-    ├── ASTARRseq_K562_KS91_Input_rep_all_union
-    └── ASTARRseq_K562_KS91_Input_rep_all_max_overlap</code></pre>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

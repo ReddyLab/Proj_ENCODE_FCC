@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ENCODE FCC Project - Test ipynb for documentation</title>
+<title>ENCODE FCC Project - Prepare track data processed by JinWoo 03</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -93,9 +93,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 <link rel="stylesheet" href="../../styles.css">
@@ -154,7 +151,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../notebooks/test/test_notebook.html">Test Notebook</a></li><li class="breadcrumb-item"><a href="../../notebooks/test/test_notebook.html">Test ipynb for documentation</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Prepare track data processed by JinWoo 03</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -382,16 +379,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">
  <span class="menu-text">Test Notebook</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notebooks/test/test_notebook.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../notebooks/test/test_notebook.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Test ipynb for documentation</span></a>
   </div>
 </li>
@@ -407,8 +404,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#ploting" id="toc-ploting" class="nav-link active" data-scroll-target="#ploting">Ploting</a></li>
-  <li><a href="#showing-table" id="toc-showing-table" class="nav-link" data-scroll-target="#showing-table">Showing table</a></li>
+  <li><a href="#prepare" id="toc-prepare" class="nav-link active" data-scroll-target="#prepare">Prepare</a></li>
+  <li><a href="#execute" id="toc-execute" class="nav-link" data-scroll-target="#execute">Execute</a>
+  <ul class="collapse">
+  <li><a href="#crispri-growth" id="toc-crispri-growth" class="nav-link" data-scroll-target="#crispri-growth">CRISPRi-Growth</a></li>
+  <li><a href="#crispri-hcr-flowfish" id="toc-crispri-hcr-flowfish" class="nav-link" data-scroll-target="#crispri-hcr-flowfish">CRISPRi HCR-FlowFISH</a></li>
+  </ul></li>
+  <li><a href="#review" id="toc-review" class="nav-link" data-scroll-target="#review">Review</a></li>
   </ul>
 </nav>
     </div>
@@ -417,8 +419,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Test ipynb for documentation</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li></ul></div></div>
-<p class="subtitle lead">Notebook with kernel R</p>
+<div class="quarto-title-block"><div><h1 class="title">Prepare track data processed by JinWoo 03</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li></ul></div></div>
+<p class="subtitle lead">Convert bigwig to bedgraph from <code>PROJECT/data</code> to <code>PROJECT/results</code> folder</p>
 </div>
 
 
@@ -433,383 +435,378 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<div class="cell" data-execution_count="1">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>(<span class="fu">suppressWarnings</span>(<span class="fu">library</span>(<span class="st">"tidyverse"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<section id="ploting" class="level2">
-<h2 class="anchored" data-anchor-id="ploting">Ploting</h2>
+<p><strong>Set environment</strong></p>
 <div class="cell" data-execution_count="2">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> <span class="fu">data.frame</span>(</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>),</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>),</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">z =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>), <span class="at">size =</span> <span class="dv">1000</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> ../run_config_project.sh</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> <span class="va">${FD_EXE}</span>/config_load_module_bedops.sh</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">show_env</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+<div class="cell-output cell-output-stdout">
+<pre><code>You are working on             Duke Server: HARDAC
+BASE DIRECTORY (FD_BASE):      /data/reddylab/Kuei
+REPO DIRECTORY (FD_REPO):      /data/reddylab/Kuei/repo
+WORK DIRECTORY (FD_WORK):      /data/reddylab/Kuei/work
+DATA DIRECTORY (FD_DATA):      /data/reddylab/Kuei/data
+CONTAINER DIR. (FD_SING):      /data/reddylab/Kuei/container
+
+You are working with           ENCODE FCC
+PATH OF PROJECT (FD_PRJ):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC
+PROJECT RESULTS (FD_RES):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results
+PROJECT SCRIPTS (FD_EXE):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/scripts
+PROJECT DATA    (FD_DAT):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/data
+PROJECT NOTE    (FD_NBK):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/notebooks
+PROJECT DOCS    (FD_DOC):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/docs
+PROJECT LOG     (FD_LOG):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/log
+PROJECT APP     (FD_APP):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/app
+PROJECT REF     (FD_REF):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/references
+PROJECT IMAGE   (FP_PRJ_SIF):  /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/app/singularity_proj_encode_fcc.sif
+</code></pre>
 </div>
-<div class="cell" data-execution_count="3">
+</div>
+<section id="prepare" class="level2">
+<h2 class="anchored" data-anchor-id="prepare">Prepare</h2>
+<p><strong>Check scripts</strong></p>
+<pre><code>${FD_EXE}/run_bigWigToWig.sh
+
+bigWigToWig - Convert bigWig to wig.  This will keep more of the same structure of the
+original wig than bigWigToBedGraph does, but still will break up large stepped sections
+into smaller ones.
+usage:
+   bigWigToWig in.bigWig out.wig
+options:
+   -chrom=chr1 - if set restrict output to given chromosome
+   -start=N - if set, restrict output to only that over start
+   -end=N - if set, restict output to only that under end
+   -udcDir=/dir/to/cache - place to put cache for remote bigBed/bigWigs</code></pre>
+<pre><code>$ wig2bed
+
+convert2bed
+  version:  2.4.35
+  author:   Alex Reynolds
+
+  Usage:
+
+  $ convert2bed --input=fmt [--output=fmt] [options] &lt; input &gt; output
+
+  Convert BAM, GFF, GTF, GVF, PSL, RepeatMasker (OUT), SAM, VCF
+  and WIG genomic formats to BED or BEDOPS Starch (compressed BED)
+
+  Input can be a regular file or standard input piped in using the
+  hyphen character ('-'):
+
+  $ some_upstream_process ... | convert2bed --input=fmt - &gt; output
+
+  Input (required):
+
+  --input=[bam|gff|gtf|gvf|psl|rmsk|sam|vcf|wig] (-i &lt;fmt&gt;)
+      Genomic format of input file (required)
+
+  Output:
+
+  --output=[bed|starch] (-o &lt;fmt&gt;)
+      Format of output file, either BED or BEDOPS Starch (optional, default is BED)
+
+  Other processing options:
+
+  --do-not-sort (-d)
+      Do not sort BED output with sort-bed (not compatible with --output=starch)
+  --max-mem=&lt;value&gt; (-m &lt;val&gt;)
+      Sets aside &lt;value&gt; memory for sorting BED output. For example, &lt;value&gt; can
+      be 8G, 8000M or 8000000000 to specify 8 GB of memory (default is 2G)
+  --sort-tmpdir=&lt;dir&gt; (-r &lt;dir&gt;)
+      Optionally sets [dir] as temporary directory for sort data, when used in
+      conjunction with --max-mem=[value], instead of the host's operating system
+      default temporary directory
+  --starch-bzip2 (-z)
+      Used with --output=starch, the compressed output explicitly applies the bzip2
+      algorithm to compress intermediate data (default is bzip2)
+  --starch-gzip (-g)
+      Used with --output=starch, the compressed output applies gzip compression on
+      intermediate data
+  --starch-note="xyz..." (-e "xyz...")
+      Used with --output=starch, this adds a note to the Starch archive metadata
+  --help | --help[-bam|-gff|-gtf|-gvf|-psl|-rmsk|-sam|-vcf|-wig] (-h | -h &lt;fmt&gt;)
+      Show general help message (or detailed help for a specified input format)
+  --version (-w)
+      Show application version</code></pre>
+<p><strong>Check data</strong></p>
+<div class="cell" data-execution_count="11">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>gpt <span class="ot">=</span> <span class="fu">ggplot</span>(dat, <span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>y, <span class="at">color=</span>z)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FD_DAT}</span>/processed/fcc_trackhub_JinWoo/track_bigwig</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-</div>
-<div class="cell" data-execution_count="4">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repr.plot.height=</span><span class="dv">2</span>, <span class="at">repr.plot.width=</span><span class="dv">3</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(gpt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display">
-<p><img src="test_notebook_files/figure-html/cell-5-output-1.png" class="img-fluid"></p>
-</div>
-</div>
-<div class="cell" data-execution_count="5">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repr.plot.height=</span><span class="dv">5</span>, <span class="at">repr.plot.width=</span><span class="dv">6</span>)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(gpt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display">
-<p><img src="test_notebook_files/figure-html/cell-6-output-1.png" class="img-fluid"></p>
+<div class="cell-output cell-output-stdout">
+<pre><code>CAPRIN1_HCRFF_rAVG.log2FC_2.bw                 HBG2_HCRFF_rAVG.log2FC_2.bw
+CAT_HCRFF_rAVG.log2FC_2.bw                     HBS1L_HCRFF_rAVG.log2FC_2.bw
+CD164_HCRFF_rAVG.log2FC_2.bw                   HDAC6_HCRFF_rAVG.log2FC_2.bw
+CRISPRi_rAVG_log2FC_2.bw                       KS91_K562_bs5_log2ratio.bw
+ERP29_HCRFF_rAVG.log2FC_2.bw                   LMO2_HCRFF_rAVG.log2FC_2.bw
+FADS1_HCRFF_rAVG.log2FC_2.bw                   MEF2C_HCRFF_rAVG.log2FC_2.bw
+FADS2_HCRFF_rAVG.log2FC_2.bw                   MYB_HCRFF_rAVG.log2FC_2.bw
+FADS3_HCRFF_rAVG.log2FC_2.bw                   MYC_HCRFF_rAVG.log2FC_2.bw
+FEN1_FADS123_MPRA_tiling.Z_bp.bw               nadav_K562_MPRA_log2FC_Z_bp.bw
+FEN1_HCRFF_rAVG.log2FC_2.bw                    NMU_HCRFF_rAVG.log2FC_2.bw
+GATA1_HCRFF_rAVG.log2FC_2.bw                   OL45_K562_20220628.Z_bp.bw
+GATA-MYC_Tile_K562_K562_20210130.hg38.Z_bp.bw  PVT1_HCRFF_rAVG.log2FC_2.bw
+HBE1_HCRFF_rAVG.log2FC_2.bw                    run_download.log.txt
+HBG1_HCRFF_rAVG.log2FC_2.bw                    run_download.sh</code></pre>
 </div>
 </div>
-</section>
-<section id="showing-table" class="level2">
-<h2 class="anchored" data-anchor-id="showing-table">Showing table</h2>
-<p><strong>Helper function</strong></p>
 <div class="cell" data-execution_count="12">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>fun_display_table <span class="ot">=</span> <span class="cf">function</span>(dat){</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    dat <span class="sc">%&gt;%</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>        kableExtra<span class="sc">::</span><span class="fu">kable</span>(<span class="st">"html"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        <span class="fu">as.character</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>        IRdisplay<span class="sc">::</span><span class="fu">display_html</span>()</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="va">FD_INP</span><span class="op">=</span><span class="va">${FD_DAT}</span>/processed/fcc_trackhub_JinWoo/track_bigwig</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="va">FP_INPS</span><span class="op">=</span><span class="va">$(</span><span class="fu">ls</span> <span class="va">${FD_INP}</span>/<span class="pp">*</span>HCRFF<span class="pp">*</span>bw<span class="va">)</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">basename</span> <span class="at">-a</span> <span class="va">${FP_INPS}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+<div class="cell-output cell-output-stdout">
+<pre><code>CAPRIN1_HCRFF_rAVG.log2FC_2.bw
+CAT_HCRFF_rAVG.log2FC_2.bw
+CD164_HCRFF_rAVG.log2FC_2.bw
+ERP29_HCRFF_rAVG.log2FC_2.bw
+FADS1_HCRFF_rAVG.log2FC_2.bw
+FADS2_HCRFF_rAVG.log2FC_2.bw
+FADS3_HCRFF_rAVG.log2FC_2.bw
+FEN1_HCRFF_rAVG.log2FC_2.bw
+GATA1_HCRFF_rAVG.log2FC_2.bw
+HBE1_HCRFF_rAVG.log2FC_2.bw
+HBG1_HCRFF_rAVG.log2FC_2.bw
+HBG2_HCRFF_rAVG.log2FC_2.bw
+HBS1L_HCRFF_rAVG.log2FC_2.bw
+HDAC6_HCRFF_rAVG.log2FC_2.bw
+LMO2_HCRFF_rAVG.log2FC_2.bw
+MEF2C_HCRFF_rAVG.log2FC_2.bw
+MYB_HCRFF_rAVG.log2FC_2.bw
+MYC_HCRFF_rAVG.log2FC_2.bw
+NMU_HCRFF_rAVG.log2FC_2.bw
+PVT1_HCRFF_rAVG.log2FC_2.bw</code></pre>
 </div>
-<p><strong>Create a table</strong></p>
-<div class="cell" data-execution_count="13">
+</div>
+<div class="cell" data-execution_count="18">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>dat   <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="at">x=</span>LETTERS, <span class="at">y=</span>letters)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>dat_t <span class="ot">=</span> dat <span class="sc">%&gt;%</span> t <span class="sc">%&gt;%</span> data.frame</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="va">FD_INP</span><span class="op">=</span><span class="va">${FD_DAT}</span>/processed/fcc_trackhub_JinWoo/track_bigwig</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="va">FN_INP</span><span class="op">=</span>CRISPRi_rAVG_log2FC_2.bw</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="va">FP_INP</span><span class="op">=</span><span class="va">${FD_INP}</span>/<span class="va">${FN_INP}</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FP_INP}</span> <span class="kw">|</span> <span class="fu">xargs</span> <span class="at">-n</span> 1 basename</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+<div class="cell-output cell-output-stdout">
+<pre><code>CRISPRi_rAVG_log2FC_2.bw</code></pre>
 </div>
-<p><strong>Without styling</strong></p>
-<div class="cell" data-execution_count="14">
+</div>
+</section>
+<section id="execute" class="level2">
+<h2 class="anchored" data-anchor-id="execute">Execute</h2>
+<section id="crispri-growth" class="level3">
+<h3 class="anchored" data-anchor-id="crispri-growth">CRISPRi-Growth</h3>
+<div class="cell" data-execution_count="47">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">### set directory</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="va">ASSAY_TYPE</span><span class="op">=</span>assay_fcc</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="va">ASSAY_NAME</span><span class="op">=</span>CRISPRi_Growth_K562_Gersbach_JinWoo</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="va">FD_INP</span><span class="op">=</span><span class="va">${FD_DAT}</span>/processed/fcc_trackhub_JinWoo/track_bigwig</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="va">FD_OUT</span><span class="op">=</span><span class="va">${FD_RES}</span>/<span class="va">${ASSAY_TYPE}</span>/<span class="va">${ASSAY_NAME}</span>/guide_scores</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co">### set output files</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="va">FN_INP</span><span class="op">=</span>CRISPRi_rAVG_log2FC_2.bw</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="va">PREFIX</span><span class="op">=</span><span class="va">$(</span><span class="fu">basename</span> <span class="at">-s</span> .bw <span class="va">${FN_INP})</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="va">FP_OUT_WIG</span><span class="op">=</span><span class="va">${FD_OUT}</span>/<span class="va">${PREFIX}</span>.wig</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="va">FP_OUT_BED</span><span class="op">=</span><span class="va">${FD_OUT}</span>/<span class="va">${PREFIX}</span>.bed</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="co">### show progress</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> ==============================</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"Convert </span><span class="va">${FN_INP}</span><span class="st"> to wig and then to bed file"</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"Prefix: </span><span class="va">${PREFIX}</span><span class="st">"</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"Input:  </span><span class="va">${FP_INP}</span><span class="st">"</span></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"Output: </span><span class="va">${FP_OUT_BED}</span><span class="st">"</span></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span></span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a><span class="co">### convert to intermediate wig format</span></span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a><span class="va">${FD_EXE}</span><span class="ex">/run_bigWigToWig.sh</span> <span class="va">${FP_INP}</span> <span class="va">${FP_OUT_WIG}</span></span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a><span class="co">### convert wig to bed</span></span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a><span class="ex">wig2bed</span> <span class="op">&lt;</span> <span class="va">${FP_OUT_WIG}</span> <span class="op">&gt;</span> <span class="va">${FP_OUT_BED}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display">
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>A data.frame: 6 × 2</caption>
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th" scope="col">x</th>
-<th data-quarto-table-cell-role="th" scope="col">y</th>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
-<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th" scope="row">1</td>
-<td>A</td>
-<td>a</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th" scope="row">2</td>
-<td>B</td>
-<td>b</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th" scope="row">3</td>
-<td>C</td>
-<td>c</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th" scope="row">4</td>
-<td>D</td>
-<td>d</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th" scope="row">5</td>
-<td>E</td>
-<td>e</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th" scope="row">6</td>
-<td>F</td>
-<td>f</td>
-</tr>
-</tbody>
-</table>
+<div class="cell-output cell-output-stdout">
+<pre><code>==============================
+Convert CRISPRi_rAVG_log2FC_2.bw to wig and then to bed file
+Prefix: CRISPRi_rAVG_log2FC_2
+Input:  /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/data/processed/fcc_trackhub_JinWoo/track_bigwig/PVT1_HCRFF_rAVG.log2FC_2.bw
+Output: /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/assay_fcc/CRISPRi_Growth_K562_Gersbach_JinWoo/guide_scores/CRISPRi_rAVG_log2FC_2.bed
+</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="15">
+</section>
+<section id="crispri-hcr-flowfish" class="level3">
+<h3 class="anchored" data-anchor-id="crispri-hcr-flowfish">CRISPRi HCR-FlowFISH</h3>
+<div class="cell" data-execution_count="48">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dat_t)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="va">ASSAY_TYPE</span><span class="op">=</span>assay_fcc</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="va">ASSAY_NAME</span><span class="op">=</span>CRISPRi_FlowFISH_K562_Riley_JinWoo</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="va">FD_INP</span><span class="op">=</span><span class="va">${FD_DAT}</span>/processed/fcc_trackhub_JinWoo/track_bigwig</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="va">FD_OUT</span><span class="op">=</span><span class="va">${FD_RES}</span>/<span class="va">${ASSAY_TYPE}</span>/<span class="va">${ASSAY_NAME}</span>/guide_scores</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="va">FP_INPS</span><span class="op">=</span><span class="va">$(</span><span class="fu">ls</span> <span class="va">${FD_INP}</span>/<span class="pp">*</span>HCRFF<span class="pp">*</span>bw<span class="va">)</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co">###</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> FP_INP <span class="kw">in</span> <span class="va">${FP_INPS</span><span class="op">[@]</span><span class="va">}</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    <span class="co">### set directory</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    <span class="va">FN_INP</span><span class="op">=</span><span class="va">$(</span><span class="fu">basename</span>        <span class="va">${FP_INP})</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    <span class="va">PREFIX</span><span class="op">=</span><span class="va">$(</span><span class="fu">basename</span> <span class="at">-s</span> .bw <span class="va">${FP_INP})</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>    <span class="va">FP_OUT_WIG</span><span class="op">=</span><span class="va">${FD_OUT}</span>/<span class="va">${PREFIX}</span>.wig</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>    <span class="va">FP_OUT_BED</span><span class="op">=</span><span class="va">${FD_OUT}</span>/<span class="va">${PREFIX}</span>.bed</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>    <span class="co">### show progress</span></span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> ==============================</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">"Convert </span><span class="va">${FN_INP}</span><span class="st"> to wig and then to bed file"</span></span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">"Prefix: </span><span class="va">${PREFIX}</span><span class="st">"</span></span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span></span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>    <span class="co">### convert to intermediate wig format</span></span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>    <span class="va">${FD_EXE}</span><span class="ex">/run_bigWigToWig.sh</span> <span class="va">${FP_INP}</span> <span class="va">${FP_OUT_WIG}</span></span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>    <span class="co">### convert wig to bed</span></span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>    <span class="ex">wig2bed</span> <span class="op">&lt;</span> <span class="va">${FP_OUT_WIG}</span> <span class="op">&gt;</span> <span class="va">${FP_OUT_BED}</span></span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display">
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>A data.frame: 2 × 26</caption>
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th" scope="col">X1</th>
-<th data-quarto-table-cell-role="th" scope="col">X2</th>
-<th data-quarto-table-cell-role="th" scope="col">X3</th>
-<th data-quarto-table-cell-role="th" scope="col">X4</th>
-<th data-quarto-table-cell-role="th" scope="col">X5</th>
-<th data-quarto-table-cell-role="th" scope="col">X6</th>
-<th data-quarto-table-cell-role="th" scope="col">X7</th>
-<th data-quarto-table-cell-role="th" scope="col">X8</th>
-<th data-quarto-table-cell-role="th" scope="col">X9</th>
-<th data-quarto-table-cell-role="th" scope="col">X10</th>
-<th data-quarto-table-cell-role="th" scope="col">⋯</th>
-<th data-quarto-table-cell-role="th" scope="col">X17</th>
-<th data-quarto-table-cell-role="th" scope="col">X18</th>
-<th data-quarto-table-cell-role="th" scope="col">X19</th>
-<th data-quarto-table-cell-role="th" scope="col">X20</th>
-<th data-quarto-table-cell-role="th" scope="col">X21</th>
-<th data-quarto-table-cell-role="th" scope="col">X22</th>
-<th data-quarto-table-cell-role="th" scope="col">X23</th>
-<th data-quarto-table-cell-role="th" scope="col">X24</th>
-<th data-quarto-table-cell-role="th" scope="col">X25</th>
-<th data-quarto-table-cell-role="th" scope="col">X26</th>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
-<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
-<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
-<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
-<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
-<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
-<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
-<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
-<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
-<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
-<th data-quarto-table-cell-role="th" scope="col">⋯</th>
-<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
-<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
-<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
-<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
-<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
-<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
-<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
-<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
-<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
-<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th" scope="row">x</td>
-<td>A</td>
-<td>B</td>
-<td>C</td>
-<td>D</td>
-<td>E</td>
-<td>F</td>
-<td>G</td>
-<td>H</td>
-<td>I</td>
-<td>J</td>
-<td>⋯</td>
-<td>Q</td>
-<td>R</td>
-<td>S</td>
-<td>T</td>
-<td>U</td>
-<td>V</td>
-<td>W</td>
-<td>X</td>
-<td>Y</td>
-<td>Z</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th" scope="row">y</td>
-<td>a</td>
-<td>b</td>
-<td>c</td>
-<td>d</td>
-<td>e</td>
-<td>f</td>
-<td>g</td>
-<td>h</td>
-<td>i</td>
-<td>j</td>
-<td>⋯</td>
-<td>q</td>
-<td>r</td>
-<td>s</td>
-<td>t</td>
-<td>u</td>
-<td>v</td>
-<td>w</td>
-<td>x</td>
-<td>y</td>
-<td>z</td>
-</tr>
-</tbody>
-</table>
+<div class="cell-output cell-output-stdout">
+<pre><code>==============================
+Convert CAPRIN1_HCRFF_rAVG.log2FC_2.bw to wig and then to bed file
+Prefix: CAPRIN1_HCRFF_rAVG.log2FC_2
+
+==============================
+Convert CAT_HCRFF_rAVG.log2FC_2.bw to wig and then to bed file
+Prefix: CAT_HCRFF_rAVG.log2FC_2
+
+==============================
+Convert CD164_HCRFF_rAVG.log2FC_2.bw to wig and then to bed file
+Prefix: CD164_HCRFF_rAVG.log2FC_2
+
+==============================
+Convert ERP29_HCRFF_rAVG.log2FC_2.bw to wig and then to bed file
+Prefix: ERP29_HCRFF_rAVG.log2FC_2
+
+==============================
+Convert FADS1_HCRFF_rAVG.log2FC_2.bw to wig and then to bed file
+Prefix: FADS1_HCRFF_rAVG.log2FC_2
+
+==============================
+Convert FADS2_HCRFF_rAVG.log2FC_2.bw to wig and then to bed file
+Prefix: FADS2_HCRFF_rAVG.log2FC_2
+
+==============================
+Convert FADS3_HCRFF_rAVG.log2FC_2.bw to wig and then to bed file
+Prefix: FADS3_HCRFF_rAVG.log2FC_2
+
+==============================
+Convert FEN1_HCRFF_rAVG.log2FC_2.bw to wig and then to bed file
+Prefix: FEN1_HCRFF_rAVG.log2FC_2
+
+==============================
+Convert GATA1_HCRFF_rAVG.log2FC_2.bw to wig and then to bed file
+Prefix: GATA1_HCRFF_rAVG.log2FC_2
+
+==============================
+Convert HBE1_HCRFF_rAVG.log2FC_2.bw to wig and then to bed file
+Prefix: HBE1_HCRFF_rAVG.log2FC_2
+
+==============================
+Convert HBG1_HCRFF_rAVG.log2FC_2.bw to wig and then to bed file
+Prefix: HBG1_HCRFF_rAVG.log2FC_2
+
+==============================
+Convert HBG2_HCRFF_rAVG.log2FC_2.bw to wig and then to bed file
+Prefix: HBG2_HCRFF_rAVG.log2FC_2
+
+==============================
+Convert HBS1L_HCRFF_rAVG.log2FC_2.bw to wig and then to bed file
+Prefix: HBS1L_HCRFF_rAVG.log2FC_2
+
+==============================
+Convert HDAC6_HCRFF_rAVG.log2FC_2.bw to wig and then to bed file
+Prefix: HDAC6_HCRFF_rAVG.log2FC_2
+
+==============================
+Convert LMO2_HCRFF_rAVG.log2FC_2.bw to wig and then to bed file
+Prefix: LMO2_HCRFF_rAVG.log2FC_2
+
+==============================
+Convert MEF2C_HCRFF_rAVG.log2FC_2.bw to wig and then to bed file
+Prefix: MEF2C_HCRFF_rAVG.log2FC_2
+
+==============================
+Convert MYB_HCRFF_rAVG.log2FC_2.bw to wig and then to bed file
+Prefix: MYB_HCRFF_rAVG.log2FC_2
+
+==============================
+Convert MYC_HCRFF_rAVG.log2FC_2.bw to wig and then to bed file
+Prefix: MYC_HCRFF_rAVG.log2FC_2
+
+==============================
+Convert NMU_HCRFF_rAVG.log2FC_2.bw to wig and then to bed file
+Prefix: NMU_HCRFF_rAVG.log2FC_2
+
+==============================
+Convert PVT1_HCRFF_rAVG.log2FC_2.bw to wig and then to bed file
+Prefix: PVT1_HCRFF_rAVG.log2FC_2
+</code></pre>
 </div>
 </div>
-<p><strong>With kable styling</strong></p>
-<div class="cell" data-execution_count="16">
+</section>
+</section>
+<section id="review" class="level2">
+<h2 class="anchored" data-anchor-id="review">Review</h2>
+<p><strong>Check results</strong></p>
+<div class="cell" data-execution_count="51">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fun_display_table</span>(<span class="fu">head</span>(dat))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="va">ASSAY_TYPE</span><span class="op">=</span>assay_fcc</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="va">ASSAY_NAME</span><span class="op">=</span>CRISPRi_Growth_K562_Gersbach_JinWoo</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="va">FD_OUT</span><span class="op">=</span><span class="va">${FD_RES}</span>/<span class="va">${ASSAY_TYPE}</span>/<span class="va">${ASSAY_NAME}</span>/guide_scores</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FD_OUT}</span>/<span class="pp">*</span>bed <span class="kw">|</span> <span class="fu">xargs</span> <span class="at">-n</span> 1 basename</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display">
-<table data-quarto-postprocess="true" class="table table-sm table-striped small">
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">x</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">y</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">A</td>
-<td style="text-align: left;">a</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">B</td>
-<td style="text-align: left;">b</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">C</td>
-<td style="text-align: left;">c</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">D</td>
-<td style="text-align: left;">d</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">E</td>
-<td style="text-align: left;">e</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">F</td>
-<td style="text-align: left;">f</td>
-</tr>
-</tbody>
-</table>
+<div class="cell-output cell-output-stdout">
+<pre><code>CRISPRi_rAVG_log2FC_2.bed</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="17">
+<div class="cell" data-execution_count="52">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fun_display_table</span>(<span class="fu">head</span>(dat_t))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="va">ASSAY_TYPE</span><span class="op">=</span>assay_fcc</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="va">ASSAY_NAME</span><span class="op">=</span>CRISPRi_FlowFISH_K562_Riley_JinWoo</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="va">FD_OUT</span><span class="op">=</span><span class="va">${FD_RES}</span>/<span class="va">${ASSAY_TYPE}</span>/<span class="va">${ASSAY_NAME}</span>/guide_scores</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FD_OUT}</span>/<span class="pp">*</span>bed <span class="kw">|</span> <span class="fu">xargs</span> <span class="at">-n</span> 1 basename</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display">
-<table data-quarto-postprocess="true" class="table table-sm table-striped small">
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">X1</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">X2</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">X3</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">X4</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">X5</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">X6</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">X7</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">X8</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">X9</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">X10</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">X11</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">X12</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">X13</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">X14</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">X15</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">X16</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">X17</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">X18</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">X19</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">X20</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">X21</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">X22</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">X23</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">X24</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">X25</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">X26</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">x</td>
-<td style="text-align: left;">A</td>
-<td style="text-align: left;">B</td>
-<td style="text-align: left;">C</td>
-<td style="text-align: left;">D</td>
-<td style="text-align: left;">E</td>
-<td style="text-align: left;">F</td>
-<td style="text-align: left;">G</td>
-<td style="text-align: left;">H</td>
-<td style="text-align: left;">I</td>
-<td style="text-align: left;">J</td>
-<td style="text-align: left;">K</td>
-<td style="text-align: left;">L</td>
-<td style="text-align: left;">M</td>
-<td style="text-align: left;">N</td>
-<td style="text-align: left;">O</td>
-<td style="text-align: left;">P</td>
-<td style="text-align: left;">Q</td>
-<td style="text-align: left;">R</td>
-<td style="text-align: left;">S</td>
-<td style="text-align: left;">T</td>
-<td style="text-align: left;">U</td>
-<td style="text-align: left;">V</td>
-<td style="text-align: left;">W</td>
-<td style="text-align: left;">X</td>
-<td style="text-align: left;">Y</td>
-<td style="text-align: left;">Z</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">y</td>
-<td style="text-align: left;">a</td>
-<td style="text-align: left;">b</td>
-<td style="text-align: left;">c</td>
-<td style="text-align: left;">d</td>
-<td style="text-align: left;">e</td>
-<td style="text-align: left;">f</td>
-<td style="text-align: left;">g</td>
-<td style="text-align: left;">h</td>
-<td style="text-align: left;">i</td>
-<td style="text-align: left;">j</td>
-<td style="text-align: left;">k</td>
-<td style="text-align: left;">l</td>
-<td style="text-align: left;">m</td>
-<td style="text-align: left;">n</td>
-<td style="text-align: left;">o</td>
-<td style="text-align: left;">p</td>
-<td style="text-align: left;">q</td>
-<td style="text-align: left;">r</td>
-<td style="text-align: left;">s</td>
-<td style="text-align: left;">t</td>
-<td style="text-align: left;">u</td>
-<td style="text-align: left;">v</td>
-<td style="text-align: left;">w</td>
-<td style="text-align: left;">x</td>
-<td style="text-align: left;">y</td>
-<td style="text-align: left;">z</td>
-</tr>
-</tbody>
-</table>
+<div class="cell-output cell-output-stdout">
+<pre><code>CAPRIN1_HCRFF_rAVG.log2FC_2.bed
+CAT_HCRFF_rAVG.log2FC_2.bed
+CD164_HCRFF_rAVG.log2FC_2.bed
+ERP29_HCRFF_rAVG.log2FC_2.bed
+FADS1_HCRFF_rAVG.log2FC_2.bed
+FADS2_HCRFF_rAVG.log2FC_2.bed
+FADS3_HCRFF_rAVG.log2FC_2.bed
+FEN1_HCRFF_rAVG.log2FC_2.bed
+GATA1_HCRFF_rAVG.log2FC_2.bed
+HBE1_HCRFF_rAVG.log2FC_2.bed
+HBG1_HCRFF_rAVG.log2FC_2.bed
+HBG2_HCRFF_rAVG.log2FC_2.bed
+HBS1L_HCRFF_rAVG.log2FC_2.bed
+HDAC6_HCRFF_rAVG.log2FC_2.bed
+LMO2_HCRFF_rAVG.log2FC_2.bed
+MEF2C_HCRFF_rAVG.log2FC_2.bed
+MYB_HCRFF_rAVG.log2FC_2.bed
+MYC_HCRFF_rAVG.log2FC_2.bed
+NMU_HCRFF_rAVG.log2FC_2.bed
+PVT1_HCRFF_rAVG.log2FC_2.bed</code></pre>
 </div>
 </div>
 
