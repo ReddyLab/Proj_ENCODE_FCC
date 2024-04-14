@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ENCODE FCC Project - 03 Working Directory of Results</title>
+<title>ENCODE FCC Project - Setup Envionment 04</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,25 +20,59 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -61,7 +95,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
@@ -71,7 +105,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">ENCODE FCC Project</span>
     </a>
   </div>
@@ -82,27 +116,27 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html" rel="" target="">
+    <a class="nav-link" href="../../index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../about.html" rel="" target="">
+    <a class="nav-link" href="../../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../report.html" rel="" target="">
+    <a class="nav-link" href="../../report.html" rel="" target="">
  <span class="menu-text">Report</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../data.html" rel="" target="">
+    <a class="nav-link" href="../../data.html" rel="" target="">
  <span class="menu-text">Data</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../analyses.html" rel="" target="">
+    <a class="nav-link" href="../../analyses.html" rel="" target="">
  <span class="menu-text">Analyses</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../results.html" rel="" target="">
+    <a class="nav-link" href="../../results.html" rel="" target="">
  <span class="menu-text">Results</span></a>
   </li>  
 </ul>
@@ -117,7 +151,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../01_setup/work_01_env.html">Setup</a></li><li class="breadcrumb-item"><a href="../01_setup/work_03_results.html">03 Working Directory of Results</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Setup Envionment 04</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -139,29 +173,47 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
  <span class="menu-text">Setup</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01_setup/work_01_env.html" class="sidebar-item-text sidebar-link">
+  <a href="../../01_setup/work_01_env.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">01 Working Environment</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01_setup/work_02_data.html" class="sidebar-item-text sidebar-link">
+  <a href="../../01_setup/work_02_data.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">02 Working Directory of Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01_setup/work_03_results.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">03 Working Directory of Results</span></a>
+  <a href="../../01_setup/work_11_results_prep.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11 Results (Prepare)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../01_setup/work_12_results_fcc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12 Results (FCC)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../01_setup/work_13_results_hic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13 Results (HiC)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../01_setup/work_14_results_region.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14 Results (Region)</span></a>
   </div>
 </li>
       </ul>
@@ -177,37 +229,37 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../02_prepare/data_01_fcc.html" class="sidebar-item-text sidebar-link">
+  <a href="../../02_prepare/data_01_fcc.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">FCC Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../02_prepare/data_02_hic.html" class="sidebar-item-text sidebar-link">
+  <a href="../../02_prepare/data_02_hic.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Hi-C Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../02_prepare/data_11_chipseq.html" class="sidebar-item-text sidebar-link">
+  <a href="../../02_prepare/data_11_chipseq.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">ChIP-seq TF/Histone</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../02_prepare/data_12_chromatin_states.html" class="sidebar-item-text sidebar-link">
+  <a href="../../02_prepare/data_12_chromatin_states.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Chromatin States</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../02_prepare/data_21_peak_calling.html" class="sidebar-item-text sidebar-link">
+  <a href="../../02_prepare/data_21_peak_calling.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Peak calling</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../02_prepare/data_22_others.html" class="sidebar-item-text sidebar-link">
+  <a href="../../02_prepare/data_22_others.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Other Annotations</span></a>
   </div>
 </li>
@@ -224,37 +276,37 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../11_fcc_summary/01_fcc_astarr.html" class="sidebar-item-text sidebar-link">
+  <a href="../../11_fcc_summary/01_fcc_astarr.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">ATAC-STARR-seq (ASTARR)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../11_fcc_summary/02_fcc_wstarr.html" class="sidebar-item-text sidebar-link">
+  <a href="../../11_fcc_summary/02_fcc_wstarr.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">WHG-STARR-seq (WSTARR)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../11_fcc_summary/03_fcc_tmpra.html" class="sidebar-item-text sidebar-link">
+  <a href="../../11_fcc_summary/03_fcc_tmpra.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tiling MPRA (TMPRA)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../11_fcc_summary/04_fcc_lmpra.html" class="sidebar-item-text sidebar-link">
+  <a href="../../11_fcc_summary/04_fcc_lmpra.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lenti-MPRA (LMPRA)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../11_fcc_summary/05_fcc_crispri_hcrff.html" class="sidebar-item-text sidebar-link">
+  <a href="../../11_fcc_summary/05_fcc_crispri_hcrff.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">CRISPRi HCR-FlowFISH (CRISPRi-HCRFF)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../11_fcc_summary/06_fcc_crispri_growth.html" class="sidebar-item-text sidebar-link">
+  <a href="../../11_fcc_summary/06_fcc_crispri_growth.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">CRISPRi Growth screen (CRISPRi-Growth)</span></a>
   </div>
 </li>
@@ -271,43 +323,43 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../12_fcc_coverage/011_region_ocr_astarr_KS91.html" class="sidebar-item-text sidebar-link">
+  <a href="../../12_fcc_coverage/011_region_ocr_astarr_KS91.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">ATAC/DHS coverage (ASTARR KS91)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../12_fcc_coverage/012_region_ocr_astarr_KS274.html" class="sidebar-item-text sidebar-link">
+  <a href="../../12_fcc_coverage/012_region_ocr_astarr_KS274.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">ATAC/DHS coverage (ASTARR KS274)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../12_fcc_coverage/02_region_ocr_wstarr.html" class="sidebar-item-text sidebar-link">
+  <a href="../../12_fcc_coverage/02_region_ocr_wstarr.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">ATAC/DHS coverage (WSTARR)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../12_fcc_coverage/03_region_ocr_tmpra.html" class="sidebar-item-text sidebar-link">
+  <a href="../../12_fcc_coverage/03_region_ocr_tmpra.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">ATAC/DHS coverage (TMPRA)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../12_fcc_coverage/04_region_ocr_lmpra.html" class="sidebar-item-text sidebar-link">
+  <a href="../../12_fcc_coverage/04_region_ocr_lmpra.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">ATAC/DHS coverage (LMPRA)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../12_fcc_coverage/05_region_ocr_crispri_hcrff.html" class="sidebar-item-text sidebar-link">
+  <a href="../../12_fcc_coverage/05_region_ocr_crispri_hcrff.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">ATAC/DHS coverage (CRISPRi-HCRFF)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../12_fcc_coverage/06_region_ocr_crispri_growth.html" class="sidebar-item-text sidebar-link">
+  <a href="../../12_fcc_coverage/06_region_ocr_crispri_growth.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">ATAC/DHS coverage (CRISPRi-Growth)</span></a>
   </div>
 </li>
@@ -336,7 +388,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notebooks/test/test_notebook.html" class="sidebar-item-text sidebar-link">
+  <a href="../../notebooks/test/test_notebook.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Test ipynb for documentation</span></a>
   </div>
 </li>
@@ -348,26 +400,15 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#results-fcc-assays" id="toc-results-fcc-assays" class="nav-link active" data-scroll-target="#results-fcc-assays">Results: FCC Assays</a>
-  <ul class="collapse">
-  <li><a href="#results-fcc-assays-fragment-properties" id="toc-results-fcc-assays-fragment-properties" class="nav-link" data-scroll-target="#results-fcc-assays-fragment-properties">Results: FCC Assays — Fragment Properties</a></li>
-  <li><a href="#results-fcc-assays-fragment-counts" id="toc-results-fcc-assays-fragment-counts" class="nav-link" data-scroll-target="#results-fcc-assays-fragment-counts">Results: FCC Assays — Fragment Counts</a></li>
-  <li><a href="#results-fcc-assays-region-coverage" id="toc-results-fcc-assays-region-coverage" class="nav-link" data-scroll-target="#results-fcc-assays-region-coverage">Results: FCC Assays — Region coverage</a></li>
-  </ul></li>
-  <li><a href="#results-region-coverage-of-each-assay-cumulative-counts" id="toc-results-region-coverage-of-each-assay-cumulative-counts" class="nav-link" data-scroll-target="#results-region-coverage-of-each-assay-cumulative-counts">Results: Region coverage of each assay (Cumulative counts)</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">03 Working Directory of Results</h1>
+<div class="quarto-title-block"><div><h1 class="title">Setup Envionment 04</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li></ul></div></div>
+<p class="subtitle lead">Project configuration when importing modules</p>
 </div>
 
 
@@ -382,117 +423,63 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="results-fcc-assays" class="level1">
-<h1>Results: FCC Assays</h1>
-<pre><code>PROJECT/results/assay_fcc
-├── &lt;STARR&gt;
-|   ├── fragment
-|   ├── fragment_nuc
-|   ├── fragment_counts
-|   └── coverage
-|       └── &lt;Region Folder&gt;
-|           └── &lt;Region Label&gt;
-|               ├── overlap_fragment
-|               ├── overlap_fragment_unique
-|               ├── overlap_fragment_one2one
-|               ├── overlap_count
-|               └── overlap_count_unique
-|
-├── &lt;TMPRA&gt;
-|   ├── fragment
-|   ├── fragment_nuc
-|   ├── fragment_counts
-|   └── coverage
-|       └── &lt;Region Folder&gt;
-|           └── &lt;Region Label&gt;
-|               ├── overlap_fragment
-|               └── overlap_count
-|
-├── &lt;LMPRA&gt;
-|   ├── fragment
-|   ├── fragment_nuc
-|   ├── fragment_counts
-|   └── coverage
-|       └── &lt;Region Folder&gt;
-|           └── &lt;Region Label&gt;
-|               ├── overlap_fragment / overlap
-|               └── overlap_score
-|
-└── &lt;CRISPRi&gt;
-    ├── fragment
-    ├── fragment_nuc
-    ├── fragment_counts
-    └── coverage
-        └── &lt;Region Folder&gt;
-            └── &lt;Region Label&gt;
-                ├── overlap_guide / overlap
-                └── overlap_score</code></pre>
-<section id="results-fcc-assays-fragment-properties" class="level2">
-<h2 class="anchored" data-anchor-id="results-fcc-assays-fragment-properties">Results: FCC Assays — Fragment Properties</h2>
-<pre><code>PROJECT/results/assay_fcc
-└── &lt;STARR&gt;
-    └── fragment_nuc</code></pre>
-</section>
-<section id="results-fcc-assays-fragment-counts" class="level2">
-<h2 class="anchored" data-anchor-id="results-fcc-assays-fragment-counts">Results: FCC Assays — Fragment Counts</h2>
-<pre><code>PROJECT/results/assay_fcc/&lt;STARR/MPRA&gt;
-└── fragment_counts
-    └── summary
-        ├── metadata.tsv
-        ├── metadata.library_size.tsv / metadata.size.tsv
-        └── result.size.tsv</code></pre>
-</section>
-<section id="results-fcc-assays-region-coverage" class="level2">
-<h2 class="anchored" data-anchor-id="results-fcc-assays-region-coverage">Results: FCC Assays — Region coverage</h2>
-<pre><code>PROJECT/results/assay_fcc/&lt;STARR/TMPRA&gt;
-└── coverage
-    └── &lt;Region Folder&gt;
-        └── &lt;Region Label&gt;
-            ├── overlap_fragment/score // intersections between
-            |   └── summary
-            |
-            ├── overlap_fragment_unique //
-            |   └── summary
-            |       ├── result.size.{1..N}.tsv
-            |       ├── result.size.merge.tsv
-            |       └── 
-            |
-            ├── overlap_fragment_one2one //
-            |   └── summary
-            |       ├── result.size.{1..N}.tsv
-            |       ├── result.size.merge.tsv
-            |       └── 
-            |
-            ├── overlap_count/score
-            |   └── summary
-            |       ├── data_list_count_column.rds
-            |       ├── data_list_score.rds         // matrices: raw, cpm, rpkm, tpm, deseq, edger (TMM)
-            |       ├── data_edger.rds
-            |       ├── data_deseq.rds
-            |       ├── result.Log2FC.deseq.tsv
-            |       ├── result.Log2FC.edger.tsv
-            |       ├── result.score.mean.tsv       // mean of rpkm, tpm
-            |       └── 
-            |
-            ├── overlap_count_unique
-            
-            </code></pre>
-</section>
-</section>
-<section id="results-region-coverage-of-each-assay-cumulative-counts" class="level1">
-<h1>Results: Region coverage of each assay (Cumulative counts)</h1>
-<pre><code>PROJECT/results/region_coverage
-├── astarr_macs_input_union
-|   ├── ASTARRseq_K562_KS91.hg38.Input.rep_all.union.q5.bed.gz
-|   └── by_chrom
-|
-├── astarr_macs_input_overlap
-│   ├── ASTARRseq_K562_KS91.hg38.Input.rep_all.max_overlaps.q5.bed.gz
-|   └── by_chrom</code></pre>
-<pre><code>PROJECT/results/region_annotation</code></pre>
+<p><strong>Set environment</strong></p>
+<div class="cell" data-execution_count="1">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> ../run_config_project.sh</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">show_env</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>You are working on             Duke Server: HARDAC
+BASE DIRECTORY (FD_BASE):      /data/reddylab/Kuei
+REPO DIRECTORY (FD_REPO):      /data/reddylab/Kuei/repo
+WORK DIRECTORY (FD_WORK):      /data/reddylab/Kuei/work
+DATA DIRECTORY (FD_DATA):      /data/reddylab/Kuei/data
+CONTAINER DIR. (FD_SING):      /data/reddylab/Kuei/container
+
+You are working with           ENCODE FCC
+PATH OF PROJECT (FD_PRJ):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC
+PROJECT RESULTS (FD_RES):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results
+PROJECT SCRIPTS (FD_EXE):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/scripts
+PROJECT DATA    (FD_DAT):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/data
+PROJECT NOTE    (FD_NBK):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/notebooks
+PROJECT DOCS    (FD_DOC):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/docs
+PROJECT LOG     (FD_LOG):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/log
+PROJECT APP     (FD_APP):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/app
+PROJECT REF     (FD_REF):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/references
+PROJECT IMAGE   (FP_PRJ_SIF):  /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/app/singularity_proj_encode_fcc.sif
+</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="2">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FD_EXE}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>config_func.sh                  run_bedtools_intersect.sh
+config_load_module_bedtools.sh  run_bedtools_intersect_unique.sh
+config_path_duke_hardac.sh      run_bedtools_test.sh
+config_path_sing.sh             run_bigWigToWig.sh
+config_project.sh               run_calulate_lib_size.sh
+config_project_sing.py          run_liftOver.sh
+config_project_sing.R           run_script_test.sh
+config_project_site.R           sing_jupyter.sh
+config_venv_wrapper.sh          sing_quarto.sh
+run_bedtools_coverage.sh        sing_script.sh</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="3">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> <span class="op">&gt;</span> <span class="va">${FD_EXE}</span>/config_load_module_bedops.sh <span class="op">&lt;&lt; EOF</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="st">module load bedops</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="op">EOF</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -574,6 +561,57 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
   function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
