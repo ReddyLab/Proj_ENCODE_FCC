@@ -1,0 +1,3 @@
+Assay	Biosample	Index_Experiment	Index_Process	Index_File	File_Type	Output_Type	Genome	Encyclopedia version	Lab	Description
+cCREs	K562	ENCSR913HQX	Lab custom GRCh38 (ENCAN130HDM) processed data	ENCFF286VQG	bed bed9+	candidate Cis-Regulatory Elements	hg38	ENCODE v4	"Zhiping Weng, Umass"	candidate regulatory elements for GRCh38 in K562
+ChromHMM	K562	ENCSR365YNI	Lab custom GRCh38 (ENCAN395TNA) processed data	ENCFF106BGJ	bed bed9	semi-automated genome annotation	hg38	ENCODE v4	"Zhiping Weng, Umass"	ChromHMM 15-state model of K562
