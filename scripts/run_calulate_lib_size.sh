@@ -21,9 +21,9 @@ FP_OUT=$3
 ### execute
 ###     count the total counts and append the results to the output file
 FN_INP=$(basename ${FP_INP})
-zcat ${FP_INP} |\
-    awk -v OFS=, -v FNAME=${FN_INP} '{sum += $5} END {print FNAME, sum}' \
-    >> ${FP_OUT}
+zcat ${FP_INP} \
+|   awk -v OFS=, -v FNAME=${FN_INP} '{sum += $5} END {print FNAME, NR, sum}' \
+>>  ${FP_OUT}
 
 ### show I/O file
 echo "Output file: ${FP_OUT}"
