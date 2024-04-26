@@ -14,29 +14,38 @@ FD_PRJ=$1
 FD_EXE=${FD_PRJ}/scripts
 source ${FD_EXE}/config_func.sh
 
-### set input and output files
+### setup input and output
 FP_INP=$2
-FP_OUT=$3
+FP_GEN=$3
+FP_OUT=$4
 
-### show I/O file
-echo "Input file: ${FP_INP}"
+### show input file
+echo "Input (FP_INP):" 
+echo ${FP_INP}
 echo
-echo "show lines of file"
+echo "show first few lines of input"
 fun_cat ${FP_INP} | head
+echo
+echo "Input: (FP_GEN):"
+echo ${FP_GEN}
+echo
+echo "show first few lines of input"
+fun_cat ${FP_GEN} | head
 echo
 
 ### execute
-###     count the total counts and append the results to the output file
-FN_INP=$(basename ${FP_INP})
-zcat ${FP_INP} \
-|   awk -v OFS=, -v FNAME=${FN_INP} '{sum += $5} END {print FNAME, NR, sum}' \
->  ${FP_OUT}
+bedtools summary \
+    -i ${FP_INP} \
+    -g ${FP_GEN} \
+    -wo \
+> ${FP_OUT}
 
-### show I/O file
-echo "Output file: ${FP_OUT}"
+### show output file
 echo
-echo "show lines of file"
-fun_cat ${FP_OUT}
+echo "Output: " ${FP_OUT}
+echo
+echo "show first few lines of output:"
+fun_cat ${FP_OUT} | head
 echo
 
 ### print end message
@@ -45,3 +54,4 @@ runtime=$(echo "${timer} - ${timer_start}" | bc -l)
 echo
 echo 'Done!'
 echo "Run Time: $(displaytime ${runtime})"
+
