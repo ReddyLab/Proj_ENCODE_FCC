@@ -1,0 +1,3 @@
+Assay	Biosample	Index_Experiment	Index_Process	Index_File	File_Type	Output_Type	Genome	Lab
+ENCODE-rE2G (extended) predictions	K562	ENCSR328LMT	Lab custom GRCh38 (ENCAN598TAN) processed data	ENCFF122UMY	bed bed3+	element gene links	hg38	"Jesse Engreitz, Stanford"
+ENCODE-rE2G (extended) predictions	K562	ENCSR328LMT	Lab custom GRCh38 (ENCAN598TAN) processed data	ENCFF202FID	bed bed3+	thresholded element gene links	hg38	"Jesse Engreitz, Stanford"

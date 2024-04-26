@@ -1,11 +1,11 @@
-Assay	Biosample	Index_Experiment	Index_Process	Index_File	File_Type	Output_Type	Genome	Target	Lab	
-ChIP-seq (Histone)	K562	ENCSR000AKP	ENCODE4 v1.8.0 GRCh38 (ENCAN866TOS)	ENCFF544LXB	bed narrowPeak	pseudoreplicated peaks	hg38	H3K27ac	"Bradley Bernstein, Broad"	
-ChIP-seq (Histone)	K562	ENCSR000AKP	ENCODE4 v1.8.0 GRCh38 (ENCAN866TOS)	ENCFF465GBD	bigWig	signal p-value	hg38	H3K27ac	"Bradley Bernstein, Broad"	
-ChIP-seq (Histone)	K562	ENCSR000AKQ	ENCODE4 v1.8.0 GRCh38 (ENCAN481RKU)	ENCFF323WOT	bed narrowPeak	pseudoreplicated peaks	hg38	H3K27me3	"Bradley Bernstein, Broad"	
-ChIP-seq (Histone)	K562	ENCSR000AKQ	ENCODE4 v1.8.0 GRCh38 (ENCAN481RKU)	ENCFF582IMB	bigWig	signal p-value	hg38	H3K27me3	"Bradley Bernstein, Broad"	
-ChIP-seq (Histone)	K562	ENCSR668LDD	ENCODE4 v1.5.1 GRCh38 (ENCAN646APS)	ENCFF885FQN	bed narrowPeak	pseudoreplicated peaks	hg38	H3K4me3	"Bradley Bernstein, Broad"	
-ChIP-seq (Histone)	K562	ENCSR668LDD	ENCODE4 v1.5.1 GRCh38 (ENCAN646APS)	ENCFF405ZDL	bigWig	signal p-value	hg38	H3K4me3	"Bradley Bernstein, Broad"	
-ChIP-seq (Histone)	K562	ENCSR000AKT	ENCODE4 v1.6.1 GRCh38 (ENCAN608CZX)	ENCFF749KLQ	bed narrowPeak	pseudoreplicated peaks	hg38	H3K4me2	"Bradley Bernstein, Broad"	
-ChIP-seq (Histone)	K562	ENCSR000AKT	ENCODE4 v1.6.1 GRCh38 (ENCAN608CZX)	ENCFF054RSU	bigWig	signal p-value	hg38	H3K4me2	"Bradley Bernstein, Broad"	
-ChIP-seq (Histone)	K562	ENCSR000AKS	ENCODE4 v1.8.0 GRCh38 (ENCAN211AVB)	ENCFF135ZLM	bed narrowPeak	replicated peaks	hg38	H3K4me1	"Bradley Bernstein, Broad"	
-ChIP-seq (Histone)	K562	ENCSR000AKS	ENCODE4 v1.8.0 GRCh38 (ENCAN211AVB)	ENCFF457URZ	bigWig	signal p-value	hg38	H3K4me1	"Bradley Bernstein, Broad"	
+Assay	Biosample	Index_Experiment	Index_Process	Index_File	File_Type	Output_Type	Genome	Target	Lab
+ChIP-seq (Histone)	K562	ENCSR000AKP	ENCODE4 v1.8.0 GRCh38 (ENCAN866TOS)	ENCFF544LXB	bed narrowPeak	pseudoreplicated peaks	hg38	H3K27ac	Bradley Bernstein, Broad
+ChIP-seq (Histone)	K562	ENCSR000AKP	ENCODE4 v1.8.0 GRCh38 (ENCAN866TOS)	ENCFF465GBD	bigWig	signal p-value	hg38	H3K27ac	Bradley Bernstein, Broad
+ChIP-seq (Histone)	K562	ENCSR000AKQ	ENCODE4 v1.8.0 GRCh38 (ENCAN481RKU)	ENCFF323WOT	bed narrowPeak	pseudoreplicated peaks	hg38	H3K27me3	Bradley Bernstein, Broad
+ChIP-seq (Histone)	K562	ENCSR000AKQ	ENCODE4 v1.8.0 GRCh38 (ENCAN481RKU)	ENCFF582IMB	bigWig	signal p-value	hg38	H3K27me3	Bradley Bernstein, Broad
+ChIP-seq (Histone)	K562	ENCSR668LDD	ENCODE4 v1.5.1 GRCh38 (ENCAN646APS)	ENCFF885FQN	bed narrowPeak	pseudoreplicated peaks	hg38	H3K4me3	Bradley Bernstein, Broad
+ChIP-seq (Histone)	K562	ENCSR668LDD	ENCODE4 v1.5.1 GRCh38 (ENCAN646APS)	ENCFF405ZDL	bigWig	signal p-value	hg38	H3K4me3	Bradley Bernstein, Broad
+ChIP-seq (Histone)	K562	ENCSR000AKT	ENCODE4 v1.6.1 GRCh38 (ENCAN608CZX)	ENCFF749KLQ	bed narrowPeak	pseudoreplicated peaks	hg38	H3K4me2	Bradley Bernstein, Broad
+ChIP-seq (Histone)	K562	ENCSR000AKT	ENCODE4 v1.6.1 GRCh38 (ENCAN608CZX)	ENCFF054RSU	bigWig	signal p-value	hg38	H3K4me2	Bradley Bernstein, Broad
+ChIP-seq (Histone)	K562	ENCSR000AKS	ENCODE4 v1.8.0 GRCh38 (ENCAN211AVB)	ENCFF135ZLM	bed narrowPeak	replicated peaks	hg38	H3K4me1	Bradley Bernstein, Broad
+ChIP-seq (Histone)	K562	ENCSR000AKS	ENCODE4 v1.8.0 GRCh38 (ENCAN211AVB)	ENCFF457URZ	bigWig	signal p-value	hg38	H3K4me1	Bradley Bernstein, Broad
