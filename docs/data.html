@@ -154,8 +154,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01_setup/work_02_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">02 Working Directory of Data</span></a>
+  <a href="./01_setup/work_02_dir.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02 Working Directory</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_setup/work_03_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03 Working Directory of Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -378,17 +384,24 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#lenti-mpra-lmpra" id="toc-lenti-mpra-lmpra" class="nav-link" data-scroll-target="#lenti-mpra-lmpra">Lenti-MPRA (LMPRA)</a></li>
   <li><a href="#crispri-hcr-flowfish-crispri-hcrff" id="toc-crispri-hcr-flowfish-crispri-hcrff" class="nav-link" data-scroll-target="#crispri-hcr-flowfish-crispri-hcrff">CRISPRi-HCR FlowFISH (CRISPRi-HCRFF)</a></li>
   <li><a href="#crispri-growth-screen-crispri-growth" id="toc-crispri-growth-screen-crispri-growth" class="nav-link" data-scroll-target="#crispri-growth-screen-crispri-growth">CRISPRi Growth screen (CRISPRi-Growth)</a></li>
-  <li><a href="#crispr-e2g-benchmark-data-crispr-e2g" id="toc-crispr-e2g-benchmark-data-crispr-e2g" class="nav-link" data-scroll-target="#crispr-e2g-benchmark-data-crispr-e2g">CRISPR E2G benchmark data (CRISPR-E2G)</a></li>
   </ul></li>
-  <li><a href="#summary-crespeaks-identified-in-k562" id="toc-summary-crespeaks-identified-in-k562" class="nav-link" data-scroll-target="#summary-crespeaks-identified-in-k562">Summary: CREs/Peaks identified in K562</a></li>
+  <li><a href="#summary-crespeaks-identified-in-k562" id="toc-summary-crespeaks-identified-in-k562" class="nav-link" data-scroll-target="#summary-crespeaks-identified-in-k562">Summary: CREs/Peaks identified in K562</a>
+  <ul class="collapse">
+  <li><a href="#cres-calls-for-reporter-assays-starrmpra" id="toc-cres-calls-for-reporter-assays-starrmpra" class="nav-link" data-scroll-target="#cres-calls-for-reporter-assays-starrmpra">CREs calls for reporter assays (STARR/MPRA)</a></li>
+  <li><a href="#cres-calls-for-crispri-hcr-flowfish" id="toc-cres-calls-for-crispri-hcr-flowfish" class="nav-link" data-scroll-target="#cres-calls-for-crispri-hcr-flowfish">CREs calls for CRISPRi-HCR FlowFISH</a></li>
+  <li><a href="#cres-calls-for-crispri-growth-screen" id="toc-cres-calls-for-crispri-growth-screen" class="nav-link" data-scroll-target="#cres-calls-for-crispri-growth-screen">CREs calls for CRISPRi-Growth screen</a></li>
+  <li><a href="#crispr-e2g-data-crispr-e2g" id="toc-crispr-e2g-data-crispr-e2g" class="nav-link" data-scroll-target="#crispr-e2g-data-crispr-e2g">CRISPR E2G data (CRISPR-E2G)</a></li>
+  <li><a href="#atac-peaks" id="toc-atac-peaks" class="nav-link" data-scroll-target="#atac-peaks">ATAC peaks</a></li>
+  </ul></li>
   <li><a href="#summary-hi-c-assays-done-in-k562" id="toc-summary-hi-c-assays-done-in-k562" class="nav-link" data-scroll-target="#summary-hi-c-assays-done-in-k562">Summary: Hi-C assays done in K562</a></li>
-  <li><a href="#summary-genomic-annotations-of-k562" id="toc-summary-genomic-annotations-of-k562" class="nav-link" data-scroll-target="#summary-genomic-annotations-of-k562">Summary: Genomic annotations of K562</a>
+  <li><a href="#summary-genomictranscriptomic-information-of-k562" id="toc-summary-genomictranscriptomic-information-of-k562" class="nav-link" data-scroll-target="#summary-genomictranscriptomic-information-of-k562">Summary: Genomic/Transcriptomic information of K562</a>
   <ul class="collapse">
   <li><a href="#chromatin-states" id="toc-chromatin-states" class="nav-link" data-scroll-target="#chromatin-states">Chromatin states</a></li>
   <li><a href="#chip-seq-tfhistone-data" id="toc-chip-seq-tfhistone-data" class="nav-link" data-scroll-target="#chip-seq-tfhistone-data">ChIP-seq (TF/Histone) data</a></li>
   <li><a href="#tf-binding-modules" id="toc-tf-binding-modules" class="nav-link" data-scroll-target="#tf-binding-modules">TF binding modules</a></li>
   <li><a href="#accessible-regions-atacdhs-regions" id="toc-accessible-regions-atacdhs-regions" class="nav-link" data-scroll-target="#accessible-regions-atacdhs-regions">Accessible regions (ATAC/DHS regions)</a></li>
   <li><a href="#tss-annotation" id="toc-tss-annotation" class="nav-link" data-scroll-target="#tss-annotation">TSS annotation</a></li>
+  <li><a href="#gene-expression-rna-seq" id="toc-gene-expression-rna-seq" class="nav-link" data-scroll-target="#gene-expression-rna-seq">Gene expression (RNA-seq)</a></li>
   </ul></li>
   <li><a href="#more-information" id="toc-more-information" class="nav-link" data-scroll-target="#more-information">More Information</a></li>
   </ul>
@@ -480,18 +493,88 @@ ul.task-list li input[type="checkbox"] {
 <section id="crispri-growth-screen-crispri-growth" class="level2">
 <h2 class="anchored" data-anchor-id="crispri-growth-screen-crispri-growth">CRISPRi Growth screen (CRISPRi-Growth)</h2>
 </section>
-<section id="crispr-e2g-benchmark-data-crispr-e2g" class="level2">
-<h2 class="anchored" data-anchor-id="crispr-e2g-benchmark-data-crispr-e2g">CRISPR E2G benchmark data (CRISPR-E2G)</h2>
-</section>
 </section>
 <section id="summary-crespeaks-identified-in-k562" class="level1">
 <h1>Summary: CREs/Peaks identified in K562</h1>
 <ul>
-<li>CREs calls for reporter assays (STARR/MPRA)</li>
-<li>CREs calls for CRISPRi-HCR FlowFISH</li>
-<li>CREs calls for CRISPRi-Growth screen</li>
-<li>ATAC peaks: MACS peaks called of the ASTARR input libraries (procccessed by Alex)</li>
+<li>CREs calls for reporter assays (STARR/MPRA)
+<ul>
+<li>Unified processing pipeline for peak calling in high-throughput reporter assays</li>
+</ul></li>
+<li>CREs calls for CRISPRi-HCR FlowFISH
+<ul>
+<li>CRISPR activity screen analysis (CASA) on CRISPRi-HCR Flow-FISH data</li>
+</ul></li>
+<li>CREs calls for CRISPRi-Growth screen
+<ul>
+<li>Calling DHS regions using DESeq analysis for CRISPRi-Growth</li>
+</ul></li>
+<li>CRISPR Enhancer-Gene (E2G) benchmark/prediction
+<ul>
+<li>the benchmark data and prediction results of enhancer-gene linking model</li>
+</ul></li>
+<li>ATAC peaks
+<ul>
+<li>MACS peaks called of the ASTARR input libraries</li>
+</ul></li>
 </ul>
+<section id="cres-calls-for-reporter-assays-starrmpra" class="level2">
+<h2 class="anchored" data-anchor-id="cres-calls-for-reporter-assays-starrmpra">CREs calls for reporter assays (STARR/MPRA)</h2>
+<p>An unified processing pipeline has been developed by Junke from the <a href="https://www.yulab.org/lab_member/">Yu Lab</a> to standardize the enhancer calling process for high-throughput reporter assays.</p>
+</section>
+<section id="cres-calls-for-crispri-hcr-flowfish" class="level2">
+<h2 class="anchored" data-anchor-id="cres-calls-for-crispri-hcr-flowfish">CREs calls for CRISPRi-HCR FlowFISH</h2>
+<p>CRISPR activity screen analysis (CASA) on CRISPRi-HCR Flow-FISH data</p>
+<p>The <a href="https://github.com/sjgosai/casa">CASA</a> analysis pipeline, developed by the Sabeti Lab, has been applied to CRISPRi-HCR Flow-FISH data to identify regulatory elements. The results of significant regions in K562 FlowFISH CRISPRi screens from Reilly lab can be downloaded from the ENCODE portal (<a href="https://www.encodeproject.org/search/?type=FunctionalCharacterizationExperiment&amp;type=FunctionalCharacterizationSeries&amp;type=TransgenicEnhancerExperiment&amp;config=FunctionalCharacterization&amp;datapoint=false&amp;control_type!=*&amp;status=released&amp;assay_title=Flow-FISH+CRISPR+screen&amp;lab.title=Pardis+Sabeti%2C+Broad&amp;biosample_ontology.term_name=K562">Link</a>)</p>
+</section>
+<section id="cres-calls-for-crispri-growth-screen" class="level2">
+<h2 class="anchored" data-anchor-id="cres-calls-for-crispri-growth-screen">CREs calls for CRISPRi-Growth screen</h2>
+<p>Calling DHS regions using DESeq analysis for CRISPRi-Growth</p>
+<p>For the analysis of CRISPRi-Growth data, DHS (DNase I hypersensitive sites) regions with significant effect on cell fittness have been identified using DESeq analysis, performed by Alex.</p>
+</section>
+<section id="crispr-e2g-data-crispr-e2g" class="level2">
+<h2 class="anchored" data-anchor-id="crispr-e2g-data-crispr-e2g">CRISPR E2G data (CRISPR-E2G)</h2>
+<ul>
+<li><a href="https://www.encodeproject.org/software/distal-regulation-encode_re2g/">Distal regulation ENCODE-rE2G</a>
+<ul>
+<li><a href="https://github.com/karbalayghareh/ENCODE-E2G/">ENCODE-E2G models</a></li>
+</ul></li>
+</ul>
+<p><strong>CRISPR E2G Benchmark</strong></p>
+<ul>
+<li><a href="https://github.com/EngreitzLab/CRISPR_comparison">Benchmark enhancer-gene prediction models against CRISPR data</a></li>
+</ul>
+<p><strong>CRISPR E2G Prediction</strong></p>
+<ul>
+<li><a href="https://www.encodeproject.org/annotations/ENCSR328LMT/">ENCODE: ENCSR328LMT</a>
+<ul>
+<li>Description:
+<ul>
+<li>ENCODE-rE2G (extended) predictions of enhancer-gene regulatory interactions for K562</li>
+</ul></li>
+<li>Annotation type:
+<ul>
+<li>element gene regulatory interaction predictions</li>
+</ul></li>
+<li>Experimental input (Assay: DNase-seq, ChIP-seq, HiC, ChIA-PET):
+<ul>
+<li>ENCSR000EOT (K562 DNase-seq)</li>
+<li>ENCSR668LDD (K562 ChIP-seq: H3K4me3)</li>
+<li>ENCSR000AKP (K562 ChIP-seq: H3K27ac)</li>
+<li>ENCSR000EGE (K562 ChIP-seq: EP300)</li>
+<li>ENCSR000DWE (K562 ChIP-seq: CTCF)</li>
+<li>ENCSR597AKG (K562 ChIA-PET: CTCF)</li>
+<li>ENCSR545YBD (K562 in situ Hi-C)</li>
+<li>ENCSR479XDG (K562 intact Hi-C)</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="atac-peaks" class="level2">
+<h2 class="anchored" data-anchor-id="atac-peaks">ATAC peaks</h2>
+<p>MACS peaks called of the ASTARR input libraries</p>
+<p>processed by Alex</p>
+</section>
 </section>
 <section id="summary-hi-c-assays-done-in-k562" class="level1">
 <h1>Summary: Hi-C assays done in K562</h1>
@@ -502,8 +585,8 @@ ul.task-list li input[type="checkbox"] {
 <li>Deep intact Hi-C</li>
 </ul>
 </section>
-<section id="summary-genomic-annotations-of-k562" class="level1">
-<h1>Summary: Genomic annotations of K562</h1>
+<section id="summary-genomictranscriptomic-information-of-k562" class="level1">
+<h1>Summary: Genomic/Transcriptomic information of K562</h1>
 <ul>
 <li>Chromatin states (cCREs / ChromHMM)</li>
 <li>TSS annotation</li>
@@ -511,6 +594,7 @@ ul.task-list li input[type="checkbox"] {
 <li>TF binding modules</li>
 <li>Accessible regions (ATAC/DHS regions)</li>
 <li>TSS annotation</li>
+<li>Gene expression (RNA-seq)</li>
 </ul>
 <section id="chromatin-states" class="level2">
 <h2 class="anchored" data-anchor-id="chromatin-states">Chromatin states</h2>
@@ -536,7 +620,9 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="tf-binding-modules" class="level2">
 <h2 class="anchored" data-anchor-id="tf-binding-modules">TF binding modules</h2>
-<p>Shannon et al.&nbsp;look at TF binding patterns across the genome enrichment by cluster the TFs into different modules/groups.</p>
+<ul>
+<li>Shannon et al.&nbsp;look at TF binding patterns across the genome enrichment by cluster the TFs into different modules/groups.</li>
+</ul>
 </section>
 <section id="accessible-regions-atacdhs-regions" class="level2">
 <h2 class="anchored" data-anchor-id="accessible-regions-atacdhs-regions">Accessible regions (ATAC/DHS regions)</h2>
@@ -548,14 +634,29 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="tss-annotation">TSS annotation</h2>
 <p><a href="./02_prepare/data_22_others.html">Read more about the TSS annotation used in this documentation</a></p>
 </section>
+<section id="gene-expression-rna-seq" class="level2">
+<h2 class="anchored" data-anchor-id="gene-expression-rna-seq">Gene expression (RNA-seq)</h2>
+<ul>
+<li><a href="https://www.encodeproject.org/experiments/ENCSR615EEK/">ENCODE: ENCSR615EEK</a>
+<ul>
+<li>Assay: RNA-seq (total RNA-seq)</li>
+<li>Biosample: K562</li>
+<li>External resources: <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE174954">GEO:GSE174954</a></li>
+</ul></li>
+</ul>
+</section>
 </section>
 <section id="more-information" class="level1">
 <h1>More Information</h1>
 <ul>
 <li>ENCODE4 Flagship</li>
+<li>ENCODE4 FCC study
+<ul>
+<li>Functional Characterization of the Human Genome</li>
+</ul></li>
 <li>ENCODE4 STARR/MPRA study
 <ul>
-<li>Uniform processing and analysis of MPRAs</li>
+<li>Unified processing of MPRAs</li>
 </ul></li>
 <li>ENCODE4 Lenti-MPRA study
 <ul>
@@ -569,12 +670,16 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><a href="https://www.biorxiv.org/content/10.1101/2022.12.21.520137v1">Multi-center integrated analysis of non-coding CRISPR screens</a></li>
 </ul></li>
+<li>ENCODE4 cCREs study
+<ul>
+<li>An Expanded Registry of candidate cis-Regulatory Elements for Studying Transcriptional Regulation</li>
+</ul></li>
 <li>ENCODE4 Distal Regulation (E2G) study
 <ul>
 <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10680627/">An encyclopedia of enhancer-gene regulatory interactions in the human genome</a></li>
 </ul></li>
 <li>ENCODE4 Nuclear Architecture study</li>
-<li>TF binding modules</li>
+<li>TF binding modules study</li>
 </ul>
 
 

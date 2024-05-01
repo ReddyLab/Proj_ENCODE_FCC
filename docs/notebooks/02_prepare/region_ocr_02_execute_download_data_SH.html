@@ -188,8 +188,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../01_setup/work_02_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">02 Working Directory of Data</span></a>
+  <a href="../../01_setup/work_02_dir.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02 Working Directory</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../01_setup/work_03_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03 Working Directory of Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -405,6 +411,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#run-the-download-script" id="toc-run-the-download-script" class="nav-link active" data-scroll-target="#run-the-download-script">Run the download script</a></li>
+  <li><a href="#review" id="toc-review" class="nav-link" data-scroll-target="#review">Review</a></li>
   </ul>
 </nav>
     </div>
@@ -414,7 +421,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <div class="quarto-title-block"><div><h1 class="title">Prepare ENCODE ATAC/DNase Peaks 02</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li></ul></div></div>
-<p class="subtitle lead">Download the peak data</p>
+<p class="subtitle lead">Download the data</p>
 </div>
 
 
@@ -445,16 +452,16 @@ DATA DIRECTORY (FD_DATA):      /data/reddylab/Kuei/data
 CONTAINER DIR. (FD_SING):      /data/reddylab/Kuei/container
 
 You are working with           ENCODE FCC
-PATH OF PROJECT (FD_PRJ):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC
-PROJECT RESULTS (FD_RES):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/results
-PROJECT SCRIPTS (FD_EXE):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/scripts
-PROJECT DATA    (FD_DAT):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/data
-PROJECT NOTE    (FD_NBK):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/notebooks
-PROJECT DOCS    (FD_DOC):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/docs
-PROJECT LOG     (FD_LOG):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/log
-PROJECT APP     (FD_APP):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/app
-PROJECT REF     (FD_REF):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/references
-PROJECT IMAGE   (FP_PRJ_SIF):  /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/app/singularity_proj_encode_fcc.sif
+PATH OF PROJECT (FD_PRJ):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC
+PROJECT RESULTS (FD_RES):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results
+PROJECT SCRIPTS (FD_EXE):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/scripts
+PROJECT DATA    (FD_DAT):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/data
+PROJECT NOTE    (FD_NBK):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/notebooks
+PROJECT DOCS    (FD_DOC):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/docs
+PROJECT LOG     (FD_LOG):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/log
+PROJECT APP     (FD_APP):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/app
+PROJECT REF     (FD_REF):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/references
+PROJECT IMAGE   (FP_PRJ_SIF):  /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/app/singularity_proj_encode_fcc.sif
 </code></pre>
 </div>
 </div>
@@ -473,14 +480,19 @@ PROJECT IMAGE   (FP_PRJ_SIF):  /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_F
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="ex">./run_download.sh</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<p><strong>Check results</strong></p>
+</section>
+<section id="review" class="level2">
+<h2 class="anchored" data-anchor-id="review">Review</h2>
+<p><strong>Check output files</strong></p>
 <div class="cell" data-execution_count="3">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FD_OUT}</span>/<span class="pp">*</span>.bed.gz <span class="kw">|</span> <span class="fu">xargs</span> <span class="at">-n</span> 1 basename</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FD_OUT}</span>/<span class="pp">*</span>.bed.gz <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FD_OUT}</span>/<span class="pp">*</span>.bed.gz <span class="kw">|</span> <span class="fu">xargs</span> <span class="at">-n</span> 1 basename</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>K562.hg38.ENCSR000EKS.ENCFF274YGF.DNase.bed.gz
+<pre><code>6
+K562.hg38.ENCSR000EKS.ENCFF274YGF.DNase.bed.gz
 K562.hg38.ENCSR000EOT.ENCFF185XRG.DNase.bed.gz
 K562.hg38.ENCSR483RKN.ENCFF558BLC.ATAC.bed.gz
 K562.hg38.ENCSR483RKN.ENCFF925CYR.ATAC.bed.gz
@@ -494,548 +506,31 @@ K562.hg38.ENCSR868FGK.ENCFF948AFM.ATAC.bed.gz</code></pre>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-lh</span> <span class="va">${FD_OUT}</span>/<span class="pp">*</span>.bed.gz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>-rw-rw-r-- 1 kk319 reddylab 1.3M Nov 24  2020 /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/data/external/encode_open_chromatin/K562.hg38.ENCSR000EKS.ENCFF274YGF.DNase.bed.gz
--rw-rw-r-- 1 kk319 reddylab 1.8M Nov 20  2020 /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/data/external/encode_open_chromatin/K562.hg38.ENCSR000EOT.ENCFF185XRG.DNase.bed.gz
--rw-rw-r-- 1 kk319 reddylab 4.8M Mar  2  2021 /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/data/external/encode_open_chromatin/K562.hg38.ENCSR483RKN.ENCFF558BLC.ATAC.bed.gz
--rw-rw-r-- 1 kk319 reddylab 2.7M Mar  2  2021 /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/data/external/encode_open_chromatin/K562.hg38.ENCSR483RKN.ENCFF925CYR.ATAC.bed.gz
--rw-rw-r-- 1 kk319 reddylab 6.8M Mar 19  2021 /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/data/external/encode_open_chromatin/K562.hg38.ENCSR868FGK.ENCFF333TAT.ATAC.bed.gz
--rw-rw-r-- 1 kk319 reddylab 4.1M Mar 19  2021 /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/data/external/encode_open_chromatin/K562.hg38.ENCSR868FGK.ENCFF948AFM.ATAC.bed.gz</code></pre>
+<pre><code>-rw-rw-r-- 1 kk319 reddylab 1.3M Nov 24  2020 /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/data/external/encode_open_chromatin/K562.hg38.ENCSR000EKS.ENCFF274YGF.DNase.bed.gz
+-rw-rw-r-- 1 kk319 reddylab 1.8M Nov 20  2020 /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/data/external/encode_open_chromatin/K562.hg38.ENCSR000EOT.ENCFF185XRG.DNase.bed.gz
+-rw-rw-r-- 1 kk319 reddylab 4.8M Mar  2  2021 /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/data/external/encode_open_chromatin/K562.hg38.ENCSR483RKN.ENCFF558BLC.ATAC.bed.gz
+-rw-rw-r-- 1 kk319 reddylab 2.7M Mar  2  2021 /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/data/external/encode_open_chromatin/K562.hg38.ENCSR483RKN.ENCFF925CYR.ATAC.bed.gz
+-rw-rw-r-- 1 kk319 reddylab 6.8M Mar 19  2021 /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/data/external/encode_open_chromatin/K562.hg38.ENCSR868FGK.ENCFF333TAT.ATAC.bed.gz
+-rw-rw-r-- 1 kk319 reddylab 4.1M Mar 19  2021 /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/data/external/encode_open_chromatin/K562.hg38.ENCSR868FGK.ENCFF948AFM.ATAC.bed.gz</code></pre>
 </div>
 </div>
+<p><strong>Check execution log</strong></p>
 <div class="cell" data-execution_count="5">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> <span class="va">${FD_OUT}</span>/run_download.log.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span> <span class="at">-n</span> 10 <span class="va">${FD_OUT}</span>/run_download.log.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>--2024-03-15 09:57:23--  https://www.encodeproject.org/files/ENCFF333TAT/@@download/ENCFF333TAT.bed.gz
+<pre><code>--2024-04-29 14:42:28--  https://www.encodeproject.org/files/ENCFF357GNC/@@download/ENCFF357GNC.bigWig
 Resolving www.encodeproject.org (www.encodeproject.org)... 34.211.244.144
 Connecting to www.encodeproject.org (www.encodeproject.org)|34.211.244.144|:443... connected.
 HTTP request sent, awaiting response... 307 Temporary Redirect
-Location: https://encode-public.s3.amazonaws.com/2021/03/16/f9c5229c-df01-48d5-b8df-10d060edd52f/ENCFF333TAT.bed.gz?response-content-disposition=attachment%3B%20filename%3DENCFF333TAT.bed.gz&amp;AWSAccessKeyId=ASIATGZNGCNXWR5BOVAU&amp;Signature=9aZGhfQtWkztVUsJmucxnyvP%2BeY%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjEIb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIFrC6AOSJuuTpfJ%2BXBHqt0Qyq4s3uAq5Z0zpFYfQPybaAiBwdE1EahNmXPTKmBugbAMssD%2By5GN3IpFHUYGbgoVY9yq8BQiP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDIyMDc0ODcxNDg2MyIMSEJifuYaxqxNZbeJKpAFjX0Q5q7ocfw2Oq1ZPZSEZV3V4mFVhMYGKr2Jr6P%2F7Itf5xnxgYcuy0YW3bHmvQ29A7KePy4Eria%2FoLpLnh2H9rKwOgMm1GzwuIJbPdu%2FuQuJ5sWICJqRg7z0%2BIl7s%2FB8dudMjZQ2jfgQFhGQqqIy%2FOjdddCVlKK9jMeefE2232kdWTd9PA4PT63WkIkUNcFbP0C86%2BOMmaH%2FotboyjIagQcUHp27m%2FniMMmCk9EH1NwT%2Fv80kCUd%2F4NLjQK6D%2Fn9St8fOYX%2B15LEd6vGB2gG1IOnGwMIvUfR%2F1c7ZGvkx03D93RvNH0kcMhg7cVZLVhibtLR5QN%2BXoCWVT83YC0jOU386h9EHRXa7eD1BM6NQ1mosaYmrIvvbEYXN2u%2B7DIKY5tpYbsv9ucg6sMQ3uZKfDRqwzd1vQLIjd3%2BdU3dIRFsy0PIVLDJ2e0GXP7N%2B5Yc3rQSPeT7HGUBeSF74PIK0D%2Ft3WgGfuizNTBX9NuTyqdKmJR03xcuH1iHrM%2BOWgGd%2B09FC4AAv52UvifIBTqDL5B5Ys%2FvtpEZ9y23I01%2FfM30u0ALKaMSzPa8N4V7FyXLUZdfn8d%2FAyfoWmeFbeWALkWEJvtxzS18jUDSMcUn5zCX7XVH5pfR6HWNDFfonLMWQidS0El9RIiLaUv32sRFJIL0HL%2BIsKsTGG1%2F6Bu9RyEMRenawsDUVCzi78fUDWujJOgZIvV8mu8x2d2XN5WWlqtdOtleTd2bB8%2BoK1DIEAPbsN12s%2FIof64y8T8jiTHZ4A0SZDrBt7Z2A31md6PpLnPhqP%2BpBQiinYeqgTG4pFAkzk9j%2FGK1DHqz%2F2h%2B3FRikLPGjZiQIu2kg78MgxogdLap5kwEYbjeLgtKNmJAgpswuqDRrwY6sgEqVKrr%2FN8k9neMTwUIVgPBO45xD43wiPk%2FCeMAud26xdrhvgBKvgSXC%2B1%2F7M1Al%2Fhz7cUYZa7ld5S9DinlBkcdHnay8YYuzFYjIwunvWPCdPPD2WaEW1oGhgW7TKidTWgLCveLgmIDyrek8gOXBeEODHoBulvsv%2FuFTu3FE%2B58bNJMP%2BjHTWpLLkzx8pFc2trYo2XBY999nTtJFG8Vz4j%2BA2eALWglDDTo8Bg6S8Zd%2BmW5&amp;Expires=1710640643 [following]
---2024-03-15 09:57:23--  https://encode-public.s3.amazonaws.com/2021/03/16/f9c5229c-df01-48d5-b8df-10d060edd52f/ENCFF333TAT.bed.gz?response-content-disposition=attachment%3B%20filename%3DENCFF333TAT.bed.gz&amp;AWSAccessKeyId=ASIATGZNGCNXWR5BOVAU&amp;Signature=9aZGhfQtWkztVUsJmucxnyvP%2BeY%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjEIb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIFrC6AOSJuuTpfJ%2BXBHqt0Qyq4s3uAq5Z0zpFYfQPybaAiBwdE1EahNmXPTKmBugbAMssD%2By5GN3IpFHUYGbgoVY9yq8BQiP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDIyMDc0ODcxNDg2MyIMSEJifuYaxqxNZbeJKpAFjX0Q5q7ocfw2Oq1ZPZSEZV3V4mFVhMYGKr2Jr6P%2F7Itf5xnxgYcuy0YW3bHmvQ29A7KePy4Eria%2FoLpLnh2H9rKwOgMm1GzwuIJbPdu%2FuQuJ5sWICJqRg7z0%2BIl7s%2FB8dudMjZQ2jfgQFhGQqqIy%2FOjdddCVlKK9jMeefE2232kdWTd9PA4PT63WkIkUNcFbP0C86%2BOMmaH%2FotboyjIagQcUHp27m%2FniMMmCk9EH1NwT%2Fv80kCUd%2F4NLjQK6D%2Fn9St8fOYX%2B15LEd6vGB2gG1IOnGwMIvUfR%2F1c7ZGvkx03D93RvNH0kcMhg7cVZLVhibtLR5QN%2BXoCWVT83YC0jOU386h9EHRXa7eD1BM6NQ1mosaYmrIvvbEYXN2u%2B7DIKY5tpYbsv9ucg6sMQ3uZKfDRqwzd1vQLIjd3%2BdU3dIRFsy0PIVLDJ2e0GXP7N%2B5Yc3rQSPeT7HGUBeSF74PIK0D%2Ft3WgGfuizNTBX9NuTyqdKmJR03xcuH1iHrM%2BOWgGd%2B09FC4AAv52UvifIBTqDL5B5Ys%2FvtpEZ9y23I01%2FfM30u0ALKaMSzPa8N4V7FyXLUZdfn8d%2FAyfoWmeFbeWALkWEJvtxzS18jUDSMcUn5zCX7XVH5pfR6HWNDFfonLMWQidS0El9RIiLaUv32sRFJIL0HL%2BIsKsTGG1%2F6Bu9RyEMRenawsDUVCzi78fUDWujJOgZIvV8mu8x2d2XN5WWlqtdOtleTd2bB8%2BoK1DIEAPbsN12s%2FIof64y8T8jiTHZ4A0SZDrBt7Z2A31md6PpLnPhqP%2BpBQiinYeqgTG4pFAkzk9j%2FGK1DHqz%2F2h%2B3FRikLPGjZiQIu2kg78MgxogdLap5kwEYbjeLgtKNmJAgpswuqDRrwY6sgEqVKrr%2FN8k9neMTwUIVgPBO45xD43wiPk%2FCeMAud26xdrhvgBKvgSXC%2B1%2F7M1Al%2Fhz7cUYZa7ld5S9DinlBkcdHnay8YYuzFYjIwunvWPCdPPD2WaEW1oGhgW7TKidTWgLCveLgmIDyrek8gOXBeEODHoBulvsv%2FuFTu3FE%2B58bNJMP%2BjHTWpLLkzx8pFc2trYo2XBY999nTtJFG8Vz4j%2BA2eALWglDDTo8Bg6S8Zd%2BmW5&amp;Expires=1710640643
-Resolving encode-public.s3.amazonaws.com (encode-public.s3.amazonaws.com)... 52.218.246.243, 52.218.236.11, 52.92.153.25, ...
-Connecting to encode-public.s3.amazonaws.com (encode-public.s3.amazonaws.com)|52.218.246.243|:443... connected.
+Location: https://encode-public.s3.amazonaws.com/2021/03/16/9ff8b5ae-10d6-4711-96ea-a3cbb44aaadb/ENCFF357GNC.bigWig?response-content-disposition=attachment%3B%20filename%3DENCFF357GNC.bigWig&amp;AWSAccessKeyId=ASIATGZNGCNXZJNTIWVL&amp;Signature=ZCH2OcwIvhMklR26IbdBHzNlrlc%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjEMP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIHfDoL%2FkyNuJSfE5e58XEMDFZL2ZrtcD43gS5SNwI%2FGSAiEAgSPEY8cYGjol9F6QCo0Rq21KNvLUEqipUEhKdg57hGIqswUIHBAAGgwyMjA3NDg3MTQ4NjMiDP%2FLRjV5%2BOB5Hl3DLSqQBRtgZo1MbccqvpJe0xY4AGcq34zs1w60Icvmy8xRACyuPIeBkBfr9f15LH3cRIJmftU0%2B29HnHnAUp%2B%2BhU7z4LmGmqN0AHSKpPythUmjxdaWQRuPVNS8dfofAZhu5ItTakjczM8IusAup1jjYRCBOOPK74X8uwAvXfndiz5ETO6fcxcG2TIaFDoRPWjX%2FW6jmjbS3NUK%2BlheUToUTLKqiC9tyVHSb0J5zFrU6Dcdgjua9h8dPyQfKOy4iTVltlrV3qPSCatSOmZcw4Km49vV0eOk%2FP7b6qNx027sJ3Rx7zZ9lOKLzG7Xq7TTflVlF1HmzYs3FZHtT8sgxR8Twaf8Tckafar9hTpaI6s3334FxSZwUPta2iQdEEMl1Pta10NElCuoHhUlA0QtEXBWZpZW%2BKjwqMvY5wOQq%2BaFlYM%2BXWVMMl%2FDY6Kky1VHfCgbM0aVIsdQIDKUsSczQX11bxr8%2BP4XSC38QXuRLAeMRFhvTOQLixCf00ywlYiZYqSppIEI5yzl1ZnkuMgo4Vy%2Bk6cXWNX0EungZleFRTSzaMhxtfJWSJOzhH0o44K6pV6xaFykbtgX3m6oJhf%2FyCkaLnWqdYwsrIbhky66OJED2%2F67I4959ToX3jem5Ji6u0Sebe2gvVU6XFSwwSa255EwBx6GegSDo74O10AKWGOToZXwqHRUlEaY3DS2fOgT4zT9QbF4d0vinpAhKUSCgpcs2t4coZRQdjmlbRLUXVQjmKqEOJPIT%2FiQFj2xvHHn2a4Cv%2BQBjLUfyebupDmeX3CsHDiB74RqMX8TYGYm4SztYNoHgZsEeQ3EAjgQFRNBH1%2FwcbrOGxIPSvI9z0ayj9F46a2r2XXyjAlTwj4aAo8K77IF8HDdMKHNv7EGOrEBbRlsSibEbVGS7a2bdYrlWpHv0pld%2B3AxRSf%2FYBl6fZ4dWfzQnlTH6wir5%2FkcVX4H6%2FKbxHjb7wAztGEOIgqC%2B2vl%2Fle4CjtsW4wuHODHYaIuaaHMjkVA1wCIW2qZ%2B8bt67q%2F41RwvXLWSzBcSkFt5l70x6Z7E1uZxSdr4xGLNVLLuvY%2FHsQj2bgCy8GSEQ57InO48TfSy3T6G7gDIZpoTO93m%2FSMvNTzUi2hgPC1zy4c&amp;Expires=1714545748 [following]
+--2024-04-29 14:42:28--  https://encode-public.s3.amazonaws.com/2021/03/16/9ff8b5ae-10d6-4711-96ea-a3cbb44aaadb/ENCFF357GNC.bigWig?response-content-disposition=attachment%3B%20filename%3DENCFF357GNC.bigWig&amp;AWSAccessKeyId=ASIATGZNGCNXZJNTIWVL&amp;Signature=ZCH2OcwIvhMklR26IbdBHzNlrlc%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjEMP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIHfDoL%2FkyNuJSfE5e58XEMDFZL2ZrtcD43gS5SNwI%2FGSAiEAgSPEY8cYGjol9F6QCo0Rq21KNvLUEqipUEhKdg57hGIqswUIHBAAGgwyMjA3NDg3MTQ4NjMiDP%2FLRjV5%2BOB5Hl3DLSqQBRtgZo1MbccqvpJe0xY4AGcq34zs1w60Icvmy8xRACyuPIeBkBfr9f15LH3cRIJmftU0%2B29HnHnAUp%2B%2BhU7z4LmGmqN0AHSKpPythUmjxdaWQRuPVNS8dfofAZhu5ItTakjczM8IusAup1jjYRCBOOPK74X8uwAvXfndiz5ETO6fcxcG2TIaFDoRPWjX%2FW6jmjbS3NUK%2BlheUToUTLKqiC9tyVHSb0J5zFrU6Dcdgjua9h8dPyQfKOy4iTVltlrV3qPSCatSOmZcw4Km49vV0eOk%2FP7b6qNx027sJ3Rx7zZ9lOKLzG7Xq7TTflVlF1HmzYs3FZHtT8sgxR8Twaf8Tckafar9hTpaI6s3334FxSZwUPta2iQdEEMl1Pta10NElCuoHhUlA0QtEXBWZpZW%2BKjwqMvY5wOQq%2BaFlYM%2BXWVMMl%2FDY6Kky1VHfCgbM0aVIsdQIDKUsSczQX11bxr8%2BP4XSC38QXuRLAeMRFhvTOQLixCf00ywlYiZYqSppIEI5yzl1ZnkuMgo4Vy%2Bk6cXWNX0EungZleFRTSzaMhxtfJWSJOzhH0o44K6pV6xaFykbtgX3m6oJhf%2FyCkaLnWqdYwsrIbhky66OJED2%2F67I4959ToX3jem5Ji6u0Sebe2gvVU6XFSwwSa255EwBx6GegSDo74O10AKWGOToZXwqHRUlEaY3DS2fOgT4zT9QbF4d0vinpAhKUSCgpcs2t4coZRQdjmlbRLUXVQjmKqEOJPIT%2FiQFj2xvHHn2a4Cv%2BQBjLUfyebupDmeX3CsHDiB74RqMX8TYGYm4SztYNoHgZsEeQ3EAjgQFRNBH1%2FwcbrOGxIPSvI9z0ayj9F46a2r2XXyjAlTwj4aAo8K77IF8HDdMKHNv7EGOrEBbRlsSibEbVGS7a2bdYrlWpHv0pld%2B3AxRSf%2FYBl6fZ4dWfzQnlTH6wir5%2FkcVX4H6%2FKbxHjb7wAztGEOIgqC%2B2vl%2Fle4CjtsW4wuHODHYaIuaaHMjkVA1wCIW2qZ%2B8bt67q%2F41RwvXLWSzBcSkFt5l70x6Z7E1uZxSdr4xGLNVLLuvY%2FHsQj2bgCy8GSEQ57InO48TfSy3T6G7gDIZpoTO93m%2FSMvNTzUi2hgPC1zy4c&amp;Expires=1714545748
+Resolving encode-public.s3.amazonaws.com (encode-public.s3.amazonaws.com)... 52.92.227.73, 52.218.237.131, 52.92.205.57, ...
+Connecting to encode-public.s3.amazonaws.com (encode-public.s3.amazonaws.com)|52.92.227.73|:443... connected.
 HTTP request sent, awaiting response... 200 OK
-Length: 7067871 (6.7M) [binary/octet-stream]
-Saving to: ‘K562.hg38.ENCSR868FGK.ENCFF333TAT.ATAC.bed.gz’
-
-     0K .......... .......... .......... .......... ..........  0%  613K 11s
-    50K .......... .......... .......... .......... ..........  1%  307K 17s
-   100K .......... .......... .......... .......... ..........  2%  307K 18s
-   150K .......... .......... .......... .......... ..........  2%  613K 16s
-   200K .......... .......... .......... .......... ..........  3%  307K 17s
-   250K .......... .......... .......... .......... ..........  4%  612K 16s
-   300K .......... .......... .......... .......... ..........  5%  307K 17s
-   350K .......... .......... .......... .......... ..........  5%  613K 16s
-   400K .......... .......... .......... .......... ..........  6%  307K 16s
-   450K .......... .......... .......... .......... ..........  7%  613K 16s
-   500K .......... .......... .......... .......... ..........  7%  415K 16s
-   550K .......... .......... .......... .......... ..........  8%  404K 15s
-   600K .......... .......... .......... .......... ..........  9%  612K 15s
-   650K .......... .......... .......... .......... .......... 10%  416K 15s
-   700K .......... .......... .......... .......... .......... 10%  403K 15s
-   750K .......... .......... .......... .......... .......... 11%  612K 14s
-   800K .......... .......... .......... .......... .......... 12%  614K 14s
-   850K .......... .......... .......... .......... .......... 13%  614K 14s
-   900K .......... .......... .......... .......... .......... 13%  612K 13s
-   950K .......... .......... .......... .......... .......... 14%  416K 13s
-  1000K .......... .......... .......... .......... .......... 15%  407K 13s
-  1050K .......... .......... .......... .......... .......... 15%  610K 13s
-  1100K .......... .......... .......... .......... .......... 16%  612K 13s
-  1150K .......... .......... .......... .......... .......... 17%  614K 12s
-  1200K .......... .......... .......... .......... .......... 18%  611K 12s
-  1250K .......... .......... .......... .......... .......... 18%  614K 12s
-  1300K .......... .......... .......... .......... .......... 19%  613K 12s
-  1350K .......... .......... .......... .......... .......... 20%  611K 12s
-  1400K .......... .......... .......... .......... .......... 21%  615K 11s
-  1450K .......... .......... .......... .......... .......... 21%  615K 11s
-  1500K .......... .......... .......... .......... .......... 22%  612K 11s
-  1550K .......... .......... .......... .......... .......... 23%  613K 11s
-  1600K .......... .......... .......... .......... .......... 23%  607K 11s
-  1650K .......... .......... .......... .......... .......... 24%  612K 10s
-  1700K .......... .......... .......... .......... .......... 25%  613K 10s
-  1750K .......... .......... .......... .......... .......... 26%  627K 10s
-  1800K .......... .......... .......... .......... .......... 26%  618K 10s
-  1850K .......... .......... .......... .......... .......... 27% 1.19M 10s
-  1900K .......... .......... .......... .......... .......... 28%  611K 10s
-  1950K .......... .......... .......... .......... .......... 28%  620K 9s
-  2000K .......... .......... .......... .......... .......... 29% 1.12M 9s
-  2050K .......... .......... .......... .......... .......... 30%  608K 9s
-  2100K .......... .......... .......... .......... .......... 31%  615K 9s
-  2150K .......... .......... .......... .......... .......... 31%  640K 9s
-  2200K .......... .......... .......... .......... .......... 32%  614K 9s
-  2250K .......... .......... .......... .......... .......... 33% 1.16M 9s
-  2300K .......... .......... .......... .......... .......... 34% 1.13M 8s
-  2350K .......... .......... .......... .......... .......... 34%  611K 8s
-  2400K .......... .......... .......... .......... .......... 35%  620K 8s
-  2450K .......... .......... .......... .......... .......... 36%  625K 8s
-  2500K .......... .......... .......... .......... .......... 36% 1.21M 8s
-  2550K .......... .......... .......... .......... .......... 37% 1.13M 8s
-  2600K .......... .......... .......... .......... .......... 38%  626K 8s
-  2650K .......... .......... .......... .......... .......... 39% 1.21M 7s
-  2700K .......... .......... .......... .......... .......... 39%  616K 7s
-  2750K .......... .......... .......... .......... .......... 40% 1.10M 7s
-  2800K .......... .......... .......... .......... .......... 41%  636K 7s
-  2850K .......... .......... .......... .......... .......... 42% 1.21M 7s
-  2900K .......... .......... .......... .......... .......... 42%  616K 7s
-  2950K .......... .......... .......... .......... .......... 43% 1.09M 7s
-  3000K .......... .......... .......... .......... .......... 44%  641K 7s
-  3050K .......... .......... .......... .......... .......... 44% 1.21M 6s
-  3100K .......... .......... .......... .......... .......... 45%  620K 6s
-  3150K .......... .......... .......... .......... .......... 46% 1.10M 6s
-  3200K .......... .......... .......... .......... .......... 47%  629K 6s
-  3250K .......... .......... .......... .......... .......... 47% 1.21M 6s
-  3300K .......... .......... .......... .......... .......... 48% 1.08M 6s
-  3350K .......... .......... .......... .......... .......... 49%  633K 6s
-  3400K .......... .......... .......... .......... .......... 49% 18.8M 6s
-  3450K .......... .......... .......... .......... .......... 50%  622K 6s
-  3500K .......... .......... .......... .......... .......... 51% 1.27M 5s
-  3550K .......... .......... .......... .......... .......... 52%  625K 5s
-  3600K .......... .......... .......... .......... .......... 52% 1.10M 5s
-  3650K .......... .......... .......... .......... .......... 53% 1.27M 5s
-  3700K .......... .......... .......... .......... .......... 54%  626K 5s
-  3750K .......... .......... .......... .......... .......... 55% 1.09M 5s
-  3800K .......... .......... .......... .......... .......... 55% 1.27M 5s
-  3850K .......... .......... .......... .......... .......... 56%  627K 5s
-  3900K .......... .......... .......... .......... .......... 57% 1.09M 5s
-  3950K .......... .......... .......... .......... .......... 57% 1.28M 5s
-  4000K .......... .......... .......... .......... .......... 58% 1.09M 4s
-  4050K .......... .......... .......... .......... .......... 59%  637K 4s
-  4100K .......... .......... .......... .......... .......... 60% 1.23M 4s
-  4150K .......... .......... .......... .......... .......... 60% 1.10M 4s
-  4200K .......... .......... .......... .......... .......... 61%  652K 4s
-  4250K .......... .......... .......... .......... .......... 62% 9.72M 4s
-  4300K .......... .......... .......... .......... .......... 63%  641K 4s
-  4350K .......... .......... .......... .......... .......... 63% 1.22M 4s
-  4400K .......... .......... .......... .......... .......... 64% 1.08M 4s
-  4450K .......... .......... .......... .......... .......... 65% 1.34M 4s
-  4500K .......... .......... .......... .......... .......... 65%  624K 4s
-  4550K .......... .......... .......... .......... .......... 66% 1.14M 3s
-  4600K .......... .......... .......... .......... .......... 67% 1.22M 3s
-  4650K .......... .......... .......... .......... .......... 68% 1.09M 3s
-  4700K .......... .......... .......... .......... .......... 68% 1.33M 3s
-  4750K .......... .......... .......... .......... .......... 69%  625K 3s
-  4800K .......... .......... .......... .......... .......... 70% 1.14M 3s
-  4850K .......... .......... .......... .......... .......... 70% 1.23M 3s
-  4900K .......... .......... .......... .......... .......... 71% 1.09M 3s
-  4950K .......... .......... .......... .......... .......... 72% 1.32M 3s
-  5000K .......... .......... .......... .......... .......... 73% 1.08M 3s
-  5050K .......... .......... .......... .......... .......... 73%  659K 3s
-  5100K .......... .......... .......... .......... .......... 74% 8.72M 2s
-  5150K .......... .......... .......... .......... .......... 75%  660K 2s
-  5200K .......... .......... .......... .......... .......... 76% 1.20M 2s
-  5250K .......... .......... .......... .......... .......... 76% 1.16M 2s
-  5300K .......... .......... .......... .......... .......... 77% 1.24M 2s
-  5350K .......... .......... .......... .......... .......... 78% 1.10M 2s
-  5400K .......... .......... .......... .......... .......... 78% 1.29M 2s
-  5450K .......... .......... .......... .......... .......... 79% 1.10M 2s
-  5500K .......... .......... .......... .......... .......... 80% 1.32M 2s
-  5550K .......... .......... .......... .......... .......... 81% 1.09M 2s
-  5600K .......... .......... .......... .......... .......... 81% 1.34M 2s
-  5650K .......... .......... .......... .......... .......... 82% 1.08M 2s
-  5700K .......... .......... .......... .......... .......... 83% 1.34M 2s
-  5750K .......... .......... .......... .......... .......... 84% 1.09M 2s
-  5800K .......... .......... .......... .......... .......... 84% 1.33M 1s
-  5850K .......... .......... .......... .......... .......... 85% 1.11M 1s
-  5900K .......... .......... .......... .......... .......... 86% 1.34M 1s
-  5950K .......... .......... .......... .......... .......... 86% 1.10M 1s
-  6000K .......... .......... .......... .......... .......... 87% 21.2M 1s
-  6050K .......... .......... .......... .......... .......... 88%  650K 1s
-  6100K .......... .......... .......... .......... .......... 89% 11.0M 1s
-  6150K .......... .......... .......... .......... .......... 89% 1.36M 1s
-  6200K .......... .......... .......... .......... .......... 90% 1.09M 1s
-  6250K .......... .......... .......... .......... .......... 91% 1.36M 1s
-  6300K .......... .......... .......... .......... .......... 91% 1.08M 1s
-  6350K .......... .......... .......... .......... .......... 92% 27.1M 1s
-  6400K .......... .......... .......... .......... .......... 93% 1.37M 1s
-  6450K .......... .......... .......... .......... .......... 94% 1.09M 1s
-  6500K .......... .......... .......... .......... .......... 94% 1.37M 0s
-  6550K .......... .......... .......... .......... .......... 95% 1.09M 0s
-  6600K .......... .......... .......... .......... .......... 96% 27.0M 0s
-  6650K .......... .......... .......... .......... .......... 97% 1.36M 0s
-  6700K .......... .......... .......... .......... .......... 97% 1.09M 0s
-  6750K .......... .......... .......... .......... .......... 98% 1.37M 0s
-  6800K .......... .......... .......... .......... .......... 99% 36.5M 0s
-  6850K .......... .......... .......... .......... .......... 99% 1.10M 0s
-  6900K ..                                                    100% 28.5M=8.6s
-
-2024-03-15 09:57:32 (799 KB/s) - ‘K562.hg38.ENCSR868FGK.ENCFF333TAT.ATAC.bed.gz’ saved [7067871/7067871]
-
---2024-03-15 09:57:32--  https://www.encodeproject.org/files/ENCFF948AFM/@@download/ENCFF948AFM.bed.gz
-Resolving www.encodeproject.org (www.encodeproject.org)... 34.211.244.144
-Connecting to www.encodeproject.org (www.encodeproject.org)|34.211.244.144|:443... connected.
-HTTP request sent, awaiting response... 307 Temporary Redirect
-Location: https://encode-public.s3.amazonaws.com/2021/03/16/48703b8d-05a4-451a-974b-0e3f489253a8/ENCFF948AFM.bed.gz?response-content-disposition=attachment%3B%20filename%3DENCFF948AFM.bed.gz&amp;AWSAccessKeyId=ASIATGZNGCNXWR5BOVAU&amp;Signature=SPpwoUaccsweXCybu2Hqew4hz8Y%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjEIb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIFrC6AOSJuuTpfJ%2BXBHqt0Qyq4s3uAq5Z0zpFYfQPybaAiBwdE1EahNmXPTKmBugbAMssD%2By5GN3IpFHUYGbgoVY9yq8BQiP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDIyMDc0ODcxNDg2MyIMSEJifuYaxqxNZbeJKpAFjX0Q5q7ocfw2Oq1ZPZSEZV3V4mFVhMYGKr2Jr6P%2F7Itf5xnxgYcuy0YW3bHmvQ29A7KePy4Eria%2FoLpLnh2H9rKwOgMm1GzwuIJbPdu%2FuQuJ5sWICJqRg7z0%2BIl7s%2FB8dudMjZQ2jfgQFhGQqqIy%2FOjdddCVlKK9jMeefE2232kdWTd9PA4PT63WkIkUNcFbP0C86%2BOMmaH%2FotboyjIagQcUHp27m%2FniMMmCk9EH1NwT%2Fv80kCUd%2F4NLjQK6D%2Fn9St8fOYX%2B15LEd6vGB2gG1IOnGwMIvUfR%2F1c7ZGvkx03D93RvNH0kcMhg7cVZLVhibtLR5QN%2BXoCWVT83YC0jOU386h9EHRXa7eD1BM6NQ1mosaYmrIvvbEYXN2u%2B7DIKY5tpYbsv9ucg6sMQ3uZKfDRqwzd1vQLIjd3%2BdU3dIRFsy0PIVLDJ2e0GXP7N%2B5Yc3rQSPeT7HGUBeSF74PIK0D%2Ft3WgGfuizNTBX9NuTyqdKmJR03xcuH1iHrM%2BOWgGd%2B09FC4AAv52UvifIBTqDL5B5Ys%2FvtpEZ9y23I01%2FfM30u0ALKaMSzPa8N4V7FyXLUZdfn8d%2FAyfoWmeFbeWALkWEJvtxzS18jUDSMcUn5zCX7XVH5pfR6HWNDFfonLMWQidS0El9RIiLaUv32sRFJIL0HL%2BIsKsTGG1%2F6Bu9RyEMRenawsDUVCzi78fUDWujJOgZIvV8mu8x2d2XN5WWlqtdOtleTd2bB8%2BoK1DIEAPbsN12s%2FIof64y8T8jiTHZ4A0SZDrBt7Z2A31md6PpLnPhqP%2BpBQiinYeqgTG4pFAkzk9j%2FGK1DHqz%2F2h%2B3FRikLPGjZiQIu2kg78MgxogdLap5kwEYbjeLgtKNmJAgpswuqDRrwY6sgEqVKrr%2FN8k9neMTwUIVgPBO45xD43wiPk%2FCeMAud26xdrhvgBKvgSXC%2B1%2F7M1Al%2Fhz7cUYZa7ld5S9DinlBkcdHnay8YYuzFYjIwunvWPCdPPD2WaEW1oGhgW7TKidTWgLCveLgmIDyrek8gOXBeEODHoBulvsv%2FuFTu3FE%2B58bNJMP%2BjHTWpLLkzx8pFc2trYo2XBY999nTtJFG8Vz4j%2BA2eALWglDDTo8Bg6S8Zd%2BmW5&amp;Expires=1710640653 [following]
---2024-03-15 09:57:33--  https://encode-public.s3.amazonaws.com/2021/03/16/48703b8d-05a4-451a-974b-0e3f489253a8/ENCFF948AFM.bed.gz?response-content-disposition=attachment%3B%20filename%3DENCFF948AFM.bed.gz&amp;AWSAccessKeyId=ASIATGZNGCNXWR5BOVAU&amp;Signature=SPpwoUaccsweXCybu2Hqew4hz8Y%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjEIb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIFrC6AOSJuuTpfJ%2BXBHqt0Qyq4s3uAq5Z0zpFYfQPybaAiBwdE1EahNmXPTKmBugbAMssD%2By5GN3IpFHUYGbgoVY9yq8BQiP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDIyMDc0ODcxNDg2MyIMSEJifuYaxqxNZbeJKpAFjX0Q5q7ocfw2Oq1ZPZSEZV3V4mFVhMYGKr2Jr6P%2F7Itf5xnxgYcuy0YW3bHmvQ29A7KePy4Eria%2FoLpLnh2H9rKwOgMm1GzwuIJbPdu%2FuQuJ5sWICJqRg7z0%2BIl7s%2FB8dudMjZQ2jfgQFhGQqqIy%2FOjdddCVlKK9jMeefE2232kdWTd9PA4PT63WkIkUNcFbP0C86%2BOMmaH%2FotboyjIagQcUHp27m%2FniMMmCk9EH1NwT%2Fv80kCUd%2F4NLjQK6D%2Fn9St8fOYX%2B15LEd6vGB2gG1IOnGwMIvUfR%2F1c7ZGvkx03D93RvNH0kcMhg7cVZLVhibtLR5QN%2BXoCWVT83YC0jOU386h9EHRXa7eD1BM6NQ1mosaYmrIvvbEYXN2u%2B7DIKY5tpYbsv9ucg6sMQ3uZKfDRqwzd1vQLIjd3%2BdU3dIRFsy0PIVLDJ2e0GXP7N%2B5Yc3rQSPeT7HGUBeSF74PIK0D%2Ft3WgGfuizNTBX9NuTyqdKmJR03xcuH1iHrM%2BOWgGd%2B09FC4AAv52UvifIBTqDL5B5Ys%2FvtpEZ9y23I01%2FfM30u0ALKaMSzPa8N4V7FyXLUZdfn8d%2FAyfoWmeFbeWALkWEJvtxzS18jUDSMcUn5zCX7XVH5pfR6HWNDFfonLMWQidS0El9RIiLaUv32sRFJIL0HL%2BIsKsTGG1%2F6Bu9RyEMRenawsDUVCzi78fUDWujJOgZIvV8mu8x2d2XN5WWlqtdOtleTd2bB8%2BoK1DIEAPbsN12s%2FIof64y8T8jiTHZ4A0SZDrBt7Z2A31md6PpLnPhqP%2BpBQiinYeqgTG4pFAkzk9j%2FGK1DHqz%2F2h%2B3FRikLPGjZiQIu2kg78MgxogdLap5kwEYbjeLgtKNmJAgpswuqDRrwY6sgEqVKrr%2FN8k9neMTwUIVgPBO45xD43wiPk%2FCeMAud26xdrhvgBKvgSXC%2B1%2F7M1Al%2Fhz7cUYZa7ld5S9DinlBkcdHnay8YYuzFYjIwunvWPCdPPD2WaEW1oGhgW7TKidTWgLCveLgmIDyrek8gOXBeEODHoBulvsv%2FuFTu3FE%2B58bNJMP%2BjHTWpLLkzx8pFc2trYo2XBY999nTtJFG8Vz4j%2BA2eALWglDDTo8Bg6S8Zd%2BmW5&amp;Expires=1710640653
-Resolving encode-public.s3.amazonaws.com (encode-public.s3.amazonaws.com)... 52.218.169.139, 52.92.128.1, 52.92.132.225, ...
-Connecting to encode-public.s3.amazonaws.com (encode-public.s3.amazonaws.com)|52.218.169.139|:443... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 4215835 (4.0M) [binary/octet-stream]
-Saving to: ‘K562.hg38.ENCSR868FGK.ENCFF948AFM.ATAC.bed.gz’
-
-     0K .......... .......... .......... .......... ..........  1%  314K 13s
-    50K .......... .......... .......... .......... ..........  2%  118M 6s
-   100K .......... .......... .......... .......... ..........  3%  634K 6s
-   150K .......... .......... .......... .......... ..........  4% 72.8M 5s
-   200K .......... .......... .......... .......... ..........  6%  167M 4s
-   250K .......... .......... .......... .......... ..........  7%  639K 4s
-   300K .......... .......... .......... .......... ..........  8%  110M 3s
-   350K .......... .......... .......... .......... ..........  9%  136M 3s
-   400K .......... .......... .......... .......... .......... 10% 87.2M 3s
-   450K .......... .......... .......... .......... .......... 12%  130M 2s
-   500K .......... .......... .......... .......... .......... 13%  107M 2s
-   550K .......... .......... .......... .......... .......... 14%  651K 2s
-   600K .......... .......... .......... .......... .......... 15%  104M 2s
-   650K .......... .......... .......... .......... .......... 17%  137M 2s
-   700K .......... .......... .......... .......... .......... 18%  105M 2s
-   750K .......... .......... .......... .......... .......... 19%  128M 2s
-   800K .......... .......... .......... .......... .......... 20% 87.9M 2s
-   850K .......... .......... .......... .......... .......... 21%  131M 1s
-   900K .......... .......... .......... .......... .......... 23%  143M 1s
-   950K .......... .......... .......... .......... .......... 24%  111M 1s
-  1000K .......... .......... .......... .......... .......... 25%  123M 1s
-  1050K .......... .......... .......... .......... .......... 26%  106M 1s
-  1100K .......... .......... .......... .......... .......... 27%  105M 1s
-  1150K .......... .......... .......... .......... .......... 29% 1.44M 1s
-  1200K .......... .......... .......... .......... .......... 30% 1.20M 1s
-  1250K .......... .......... .......... .......... .......... 31% 95.9M 1s
-  1300K .......... .......... .......... .......... .......... 32%  110M 1s
-  1350K .......... .......... .......... .......... .......... 34%  150M 1s
-  1400K .......... .......... .......... .......... .......... 35%  101M 1s
-  1450K .......... .......... .......... .......... .......... 36%  107M 1s
-  1500K .......... .......... .......... .......... .......... 37%  126M 1s
-  1550K .......... .......... .......... .......... .......... 38% 88.7M 1s
-  1600K .......... .......... .......... .......... .......... 40%  128M 1s
-  1650K .......... .......... .......... .......... .......... 41%  119M 1s
-  1700K .......... .......... .......... .......... .......... 42% 93.4M 1s
-  1750K .......... .......... .......... .......... .......... 43%  177M 1s
-  1800K .......... .......... .......... .......... .......... 44% 97.6M 1s
-  1850K .......... .......... .......... .......... .......... 46%  117M 1s
-  1900K .......... .......... .......... .......... .......... 47% 94.5M 1s
-  1950K .......... .......... .......... .......... .......... 48%  133M 1s
-  2000K .......... .......... .......... .......... .......... 49%  110M 0s
-  2050K .......... .......... .......... .......... .......... 51%  130M 0s
-  2100K .......... .......... .......... .......... .......... 52% 93.3M 0s
-  2150K .......... .......... .......... .......... .......... 53%  130M 0s
-  2200K .......... .......... .......... .......... .......... 54%  127M 0s
-  2250K .......... .......... .......... .......... .......... 55%  114M 0s
-  2300K .......... .......... .......... .......... .......... 57% 1.68M 0s
-  2350K .......... .......... .......... .......... .......... 58%  123M 0s
-  2400K .......... .......... .......... .......... .......... 59%  117M 0s
-  2450K .......... .......... .......... .......... .......... 60% 1.21M 0s
-  2500K .......... .......... .......... .......... .......... 61% 96.1M 0s
-  2550K .......... .......... .......... .......... .......... 63%  125M 0s
-  2600K .......... .......... .......... .......... .......... 64%  125M 0s
-  2650K .......... .......... .......... .......... .......... 65%  130M 0s
-  2700K .......... .......... .......... .......... .......... 66% 95.7M 0s
-  2750K .......... .......... .......... .......... .......... 68%  109M 0s
-  2800K .......... .......... .......... .......... .......... 69%  133M 0s
-  2850K .......... .......... .......... .......... .......... 70% 98.9M 0s
-  2900K .......... .......... .......... .......... .......... 71%  119M 0s
-  2950K .......... .......... .......... .......... .......... 72%  122M 0s
-  3000K .......... .......... .......... .......... .......... 74%  120M 0s
-  3050K .......... .......... .......... .......... .......... 75% 97.7M 0s
-  3100K .......... .......... .......... .......... .......... 76%  111M 0s
-  3150K .......... .......... .......... .......... .......... 77%  104M 0s
-  3200K .......... .......... .......... .......... .......... 78%  128M 0s
-  3250K .......... .......... .......... .......... .......... 80%  129M 0s
-  3300K .......... .......... .......... .......... .......... 81%  102M 0s
-  3350K .......... .......... .......... .......... .......... 82%  101M 0s
-  3400K .......... .......... .......... .......... .......... 83%  129M 0s
-  3450K .......... .......... .......... .......... .......... 85%  121M 0s
-  3500K .......... .......... .......... .......... .......... 86% 97.2M 0s
-  3550K .......... .......... .......... .......... .......... 87%  128M 0s
-  3600K .......... .......... .......... .......... .......... 88%  111M 0s
-  3650K .......... .......... .......... .......... .......... 89% 99.4M 0s
-  3700K .......... .......... .......... .......... .......... 91%  121M 0s
-  3750K .......... .......... .......... .......... .......... 92%  129M 0s
-  3800K .......... .......... .......... .......... .......... 93%  125M 0s
-  3850K .......... .......... .......... .......... .......... 94%  113M 0s
-  3900K .......... .......... .......... .......... .......... 95% 88.8M 0s
-  3950K .......... .......... .......... .......... .......... 97%  126M 0s
-  4000K .......... .......... .......... .......... .......... 98%  103M 0s
-  4050K .......... .......... .......... .......... .......... 99%  126M 0s
-  4100K .......... .......                                    100% 54.0M=0.6s
-
-2024-03-15 09:57:34 (7.06 MB/s) - ‘K562.hg38.ENCSR868FGK.ENCFF948AFM.ATAC.bed.gz’ saved [4215835/4215835]
-
---2024-03-15 09:57:34--  https://www.encodeproject.org/files/ENCFF558BLC/@@download/ENCFF558BLC.bed.gz
-Resolving www.encodeproject.org (www.encodeproject.org)... 34.211.244.144
-Connecting to www.encodeproject.org (www.encodeproject.org)|34.211.244.144|:443... connected.
-HTTP request sent, awaiting response... 307 Temporary Redirect
-Location: https://encode-public.s3.amazonaws.com/2021/02/24/951841cc-1614-4971-9fb8-a61c03d4b167/ENCFF558BLC.bed.gz?response-content-disposition=attachment%3B%20filename%3DENCFF558BLC.bed.gz&amp;AWSAccessKeyId=ASIATGZNGCNXWR5BOVAU&amp;Signature=%2BLe%2FazxCYx2YmibvQZenfyxPhOY%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjEIb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIFrC6AOSJuuTpfJ%2BXBHqt0Qyq4s3uAq5Z0zpFYfQPybaAiBwdE1EahNmXPTKmBugbAMssD%2By5GN3IpFHUYGbgoVY9yq8BQiP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDIyMDc0ODcxNDg2MyIMSEJifuYaxqxNZbeJKpAFjX0Q5q7ocfw2Oq1ZPZSEZV3V4mFVhMYGKr2Jr6P%2F7Itf5xnxgYcuy0YW3bHmvQ29A7KePy4Eria%2FoLpLnh2H9rKwOgMm1GzwuIJbPdu%2FuQuJ5sWICJqRg7z0%2BIl7s%2FB8dudMjZQ2jfgQFhGQqqIy%2FOjdddCVlKK9jMeefE2232kdWTd9PA4PT63WkIkUNcFbP0C86%2BOMmaH%2FotboyjIagQcUHp27m%2FniMMmCk9EH1NwT%2Fv80kCUd%2F4NLjQK6D%2Fn9St8fOYX%2B15LEd6vGB2gG1IOnGwMIvUfR%2F1c7ZGvkx03D93RvNH0kcMhg7cVZLVhibtLR5QN%2BXoCWVT83YC0jOU386h9EHRXa7eD1BM6NQ1mosaYmrIvvbEYXN2u%2B7DIKY5tpYbsv9ucg6sMQ3uZKfDRqwzd1vQLIjd3%2BdU3dIRFsy0PIVLDJ2e0GXP7N%2B5Yc3rQSPeT7HGUBeSF74PIK0D%2Ft3WgGfuizNTBX9NuTyqdKmJR03xcuH1iHrM%2BOWgGd%2B09FC4AAv52UvifIBTqDL5B5Ys%2FvtpEZ9y23I01%2FfM30u0ALKaMSzPa8N4V7FyXLUZdfn8d%2FAyfoWmeFbeWALkWEJvtxzS18jUDSMcUn5zCX7XVH5pfR6HWNDFfonLMWQidS0El9RIiLaUv32sRFJIL0HL%2BIsKsTGG1%2F6Bu9RyEMRenawsDUVCzi78fUDWujJOgZIvV8mu8x2d2XN5WWlqtdOtleTd2bB8%2BoK1DIEAPbsN12s%2FIof64y8T8jiTHZ4A0SZDrBt7Z2A31md6PpLnPhqP%2BpBQiinYeqgTG4pFAkzk9j%2FGK1DHqz%2F2h%2B3FRikLPGjZiQIu2kg78MgxogdLap5kwEYbjeLgtKNmJAgpswuqDRrwY6sgEqVKrr%2FN8k9neMTwUIVgPBO45xD43wiPk%2FCeMAud26xdrhvgBKvgSXC%2B1%2F7M1Al%2Fhz7cUYZa7ld5S9DinlBkcdHnay8YYuzFYjIwunvWPCdPPD2WaEW1oGhgW7TKidTWgLCveLgmIDyrek8gOXBeEODHoBulvsv%2FuFTu3FE%2B58bNJMP%2BjHTWpLLkzx8pFc2trYo2XBY999nTtJFG8Vz4j%2BA2eALWglDDTo8Bg6S8Zd%2BmW5&amp;Expires=1710640654 [following]
---2024-03-15 09:57:34--  https://encode-public.s3.amazonaws.com/2021/02/24/951841cc-1614-4971-9fb8-a61c03d4b167/ENCFF558BLC.bed.gz?response-content-disposition=attachment%3B%20filename%3DENCFF558BLC.bed.gz&amp;AWSAccessKeyId=ASIATGZNGCNXWR5BOVAU&amp;Signature=%2BLe%2FazxCYx2YmibvQZenfyxPhOY%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjEIb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIFrC6AOSJuuTpfJ%2BXBHqt0Qyq4s3uAq5Z0zpFYfQPybaAiBwdE1EahNmXPTKmBugbAMssD%2By5GN3IpFHUYGbgoVY9yq8BQiP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDIyMDc0ODcxNDg2MyIMSEJifuYaxqxNZbeJKpAFjX0Q5q7ocfw2Oq1ZPZSEZV3V4mFVhMYGKr2Jr6P%2F7Itf5xnxgYcuy0YW3bHmvQ29A7KePy4Eria%2FoLpLnh2H9rKwOgMm1GzwuIJbPdu%2FuQuJ5sWICJqRg7z0%2BIl7s%2FB8dudMjZQ2jfgQFhGQqqIy%2FOjdddCVlKK9jMeefE2232kdWTd9PA4PT63WkIkUNcFbP0C86%2BOMmaH%2FotboyjIagQcUHp27m%2FniMMmCk9EH1NwT%2Fv80kCUd%2F4NLjQK6D%2Fn9St8fOYX%2B15LEd6vGB2gG1IOnGwMIvUfR%2F1c7ZGvkx03D93RvNH0kcMhg7cVZLVhibtLR5QN%2BXoCWVT83YC0jOU386h9EHRXa7eD1BM6NQ1mosaYmrIvvbEYXN2u%2B7DIKY5tpYbsv9ucg6sMQ3uZKfDRqwzd1vQLIjd3%2BdU3dIRFsy0PIVLDJ2e0GXP7N%2B5Yc3rQSPeT7HGUBeSF74PIK0D%2Ft3WgGfuizNTBX9NuTyqdKmJR03xcuH1iHrM%2BOWgGd%2B09FC4AAv52UvifIBTqDL5B5Ys%2FvtpEZ9y23I01%2FfM30u0ALKaMSzPa8N4V7FyXLUZdfn8d%2FAyfoWmeFbeWALkWEJvtxzS18jUDSMcUn5zCX7XVH5pfR6HWNDFfonLMWQidS0El9RIiLaUv32sRFJIL0HL%2BIsKsTGG1%2F6Bu9RyEMRenawsDUVCzi78fUDWujJOgZIvV8mu8x2d2XN5WWlqtdOtleTd2bB8%2BoK1DIEAPbsN12s%2FIof64y8T8jiTHZ4A0SZDrBt7Z2A31md6PpLnPhqP%2BpBQiinYeqgTG4pFAkzk9j%2FGK1DHqz%2F2h%2B3FRikLPGjZiQIu2kg78MgxogdLap5kwEYbjeLgtKNmJAgpswuqDRrwY6sgEqVKrr%2FN8k9neMTwUIVgPBO45xD43wiPk%2FCeMAud26xdrhvgBKvgSXC%2B1%2F7M1Al%2Fhz7cUYZa7ld5S9DinlBkcdHnay8YYuzFYjIwunvWPCdPPD2WaEW1oGhgW7TKidTWgLCveLgmIDyrek8gOXBeEODHoBulvsv%2FuFTu3FE%2B58bNJMP%2BjHTWpLLkzx8pFc2trYo2XBY999nTtJFG8Vz4j%2BA2eALWglDDTo8Bg6S8Zd%2BmW5&amp;Expires=1710640654
-Resolving encode-public.s3.amazonaws.com (encode-public.s3.amazonaws.com)... 52.218.152.91, 52.92.241.105, 52.92.146.65, ...
-Connecting to encode-public.s3.amazonaws.com (encode-public.s3.amazonaws.com)|52.218.152.91|:443... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 4989495 (4.8M) [binary/octet-stream]
-Saving to: ‘K562.hg38.ENCSR483RKN.ENCFF558BLC.ATAC.bed.gz’
-
-     0K .......... .......... .......... .......... ..........  1%  608K 8s
-    50K .......... .......... .......... .......... ..........  2%  618K 8s
-   100K .......... .......... .......... .......... ..........  3%  620K 8s
-   150K .......... .......... .......... .......... ..........  4% 75.0M 6s
-   200K .......... .......... .......... .......... ..........  5% 87.4M 5s
-   250K .......... .......... .......... .......... ..........  6%  627K 5s
-   300K .......... .......... .......... .......... ..........  7%  134M 4s
-   350K .......... .......... .......... .......... ..........  8%  102M 4s
-   400K .......... .......... .......... .......... ..........  9%  104M 3s
-   450K .......... .......... .......... .......... .......... 10%  119M 3s
-   500K .......... .......... .......... .......... .......... 11%  116M 3s
-   550K .......... .......... .......... .......... .......... 12%  635K 3s
-   600K .......... .......... .......... .......... .......... 13%  107M 3s
-   650K .......... .......... .......... .......... .......... 14%  106M 2s
-   700K .......... .......... .......... .......... .......... 15%  125M 2s
-   750K .......... .......... .......... .......... .......... 16%  108M 2s
-   800K .......... .......... .......... .......... .......... 17%  104M 2s
-   850K .......... .......... .......... .......... .......... 18%  149M 2s
-   900K .......... .......... .......... .......... .......... 19%  108M 2s
-   950K .......... .......... .......... .......... .......... 20%  130M 2s
-  1000K .......... .......... .......... .......... .......... 21%  106M 1s
-  1050K .......... .......... .......... .......... .......... 22%  101M 1s
-  1100K .......... .......... .......... .......... .......... 23%  133M 1s
-  1150K .......... .......... .......... .......... .......... 24% 1.39M 1s
-  1200K .......... .......... .......... .......... .......... 25% 1.18M 1s
-  1250K .......... .......... .......... .......... .......... 26%  119M 1s
-  1300K .......... .......... .......... .......... .......... 27%  109M 1s
-  1350K .......... .......... .......... .......... .......... 28%  130M 1s
-  1400K .......... .......... .......... .......... .......... 29% 87.7M 1s
-  1450K .......... .......... .......... .......... .......... 30%  128M 1s
-  1500K .......... .......... .......... .......... .......... 31%  130M 1s
-  1550K .......... .......... .......... .......... .......... 32% 85.3M 1s
-  1600K .......... .......... .......... .......... .......... 33%  133M 1s
-  1650K .......... .......... .......... .......... .......... 34%  122M 1s
-  1700K .......... .......... .......... .......... .......... 35%  120M 1s
-  1750K .......... .......... .......... .......... .......... 36%  146M 1s
-  1800K .......... .......... .......... .......... .......... 37% 86.3M 1s
-  1850K .......... .......... .......... .......... .......... 38%  129M 1s
-  1900K .......... .......... .......... .......... .......... 40%  121M 1s
-  1950K .......... .......... .......... .......... .......... 41% 92.2M 1s
-  2000K .......... .......... .......... .......... .......... 42%  128M 1s
-  2050K .......... .......... .......... .......... .......... 43%  106M 1s
-  2100K .......... .......... .......... .......... .......... 44% 99.5M 1s
-  2150K .......... .......... .......... .......... .......... 45%  143M 1s
-  2200K .......... .......... .......... .......... .......... 46%  105M 1s
-  2250K .......... .......... .......... .......... .......... 47%  103M 1s
-  2300K .......... .......... .......... .......... .......... 48%  126M 1s
-  2350K .......... .......... .......... .......... .......... 49% 1.62M 1s
-  2400K .......... .......... .......... .......... .......... 50%  127M 1s
-  2450K .......... .......... .......... .......... .......... 51% 1.19M 1s
-  2500K .......... .......... .......... .......... .......... 52%  130M 1s
-  2550K .......... .......... .......... .......... .......... 53%  104M 0s
-  2600K .......... .......... .......... .......... .......... 54%  160M 0s
-  2650K .......... .......... .......... .......... .......... 55%  131M 0s
-  2700K .......... .......... .......... .......... .......... 56% 82.6M 0s
-  2750K .......... .......... .......... .......... .......... 57% 79.4M 0s
-  2800K .......... .......... .......... .......... .......... 58%  169M 0s
-  2850K .......... .......... .......... .......... .......... 59%  129M 0s
-  2900K .......... .......... .......... .......... .......... 60% 67.7M 0s
-  2950K .......... .......... .......... .......... .......... 61%  228M 0s
-  3000K .......... .......... .......... .......... .......... 62%  138M 0s
-  3050K .......... .......... .......... .......... .......... 63%  125M 0s
-  3100K .......... .......... .......... .......... .......... 64%  110M 0s
-  3150K .......... .......... .......... .......... .......... 65% 95.6M 0s
-  3200K .......... .......... .......... .......... .......... 66%  131M 0s
-  3250K .......... .......... .......... .......... .......... 67%  124M 0s
-  3300K .......... .......... .......... .......... .......... 68% 94.8M 0s
-  3350K .......... .......... .......... .......... .......... 69%  129M 0s
-  3400K .......... .......... .......... .......... .......... 70%  108M 0s
-  3450K .......... .......... .......... .......... .......... 71%  102M 0s
-  3500K .......... .......... .......... .......... .......... 72%  118M 0s
-  3550K .......... .......... .......... .......... .......... 73%  130M 0s
-  3600K .......... .......... .......... .......... .......... 74%  125M 0s
-  3650K .......... .......... .......... .......... .......... 75%  116M 0s
-  3700K .......... .......... .......... .......... .......... 76% 85.1M 0s
-  3750K .......... .......... .......... .......... .......... 77%  107M 0s
-  3800K .......... .......... .......... .......... .......... 79%  129M 0s
-  3850K .......... .......... .......... .......... .......... 80%  129M 0s
-  3900K .......... .......... .......... .......... .......... 81%  122M 0s
-  3950K .......... .......... .......... .......... .......... 82%  108M 0s
-  4000K .......... .......... .......... .......... .......... 83%  101M 0s
-  4050K .......... .......... .......... .......... .......... 84%  129M 0s
-  4100K .......... .......... .......... .......... .......... 85% 42.6M 0s
-  4150K .......... .......... .......... .......... .......... 86%  237M 0s
-  4200K .......... .......... .......... .......... .......... 87%  247M 0s
-  4250K .......... .......... .......... .......... .......... 88%  237M 0s
-  4300K .......... .......... .......... .......... .......... 89%  124M 0s
-  4350K .......... .......... .......... .......... .......... 90%  100M 0s
-  4400K .......... .......... .......... .......... .......... 91%  124M 0s
-  4450K .......... .......... .......... .......... .......... 92%  132M 0s
-  4500K .......... .......... .......... .......... .......... 93% 93.2M 0s
-  4550K .......... .......... .......... .......... .......... 94%  105M 0s
-  4600K .......... .......... .......... .......... .......... 95%  103M 0s
-  4650K .......... .......... .......... .......... .......... 96%  130M 0s
-  4700K .......... .......... .......... .......... .......... 97%  119M 0s
-  4750K .......... .......... .......... .......... .......... 98% 2.41M 0s
-  4800K .......... .......... .......... .......... .......... 99%  115M 0s
-  4850K .......... .......... ..                              100%  140M=0.6s
-
-2024-03-15 09:57:35 (7.83 MB/s) - ‘K562.hg38.ENCSR483RKN.ENCFF558BLC.ATAC.bed.gz’ saved [4989495/4989495]
-
---2024-03-15 09:57:35--  https://www.encodeproject.org/files/ENCFF925CYR/@@download/ENCFF925CYR.bed.gz
-Resolving www.encodeproject.org (www.encodeproject.org)... 34.211.244.144
-Connecting to www.encodeproject.org (www.encodeproject.org)|34.211.244.144|:443... connected.
-HTTP request sent, awaiting response... 307 Temporary Redirect
-Location: https://encode-public.s3.amazonaws.com/2021/02/24/6f3f65f7-8e9b-4230-8f28-ac4df690467f/ENCFF925CYR.bed.gz?response-content-disposition=attachment%3B%20filename%3DENCFF925CYR.bed.gz&amp;AWSAccessKeyId=ASIATGZNGCNXWR5BOVAU&amp;Signature=CXVSwKCWM653gSHcmCI7%2FWmkoZU%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjEIb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIFrC6AOSJuuTpfJ%2BXBHqt0Qyq4s3uAq5Z0zpFYfQPybaAiBwdE1EahNmXPTKmBugbAMssD%2By5GN3IpFHUYGbgoVY9yq8BQiP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDIyMDc0ODcxNDg2MyIMSEJifuYaxqxNZbeJKpAFjX0Q5q7ocfw2Oq1ZPZSEZV3V4mFVhMYGKr2Jr6P%2F7Itf5xnxgYcuy0YW3bHmvQ29A7KePy4Eria%2FoLpLnh2H9rKwOgMm1GzwuIJbPdu%2FuQuJ5sWICJqRg7z0%2BIl7s%2FB8dudMjZQ2jfgQFhGQqqIy%2FOjdddCVlKK9jMeefE2232kdWTd9PA4PT63WkIkUNcFbP0C86%2BOMmaH%2FotboyjIagQcUHp27m%2FniMMmCk9EH1NwT%2Fv80kCUd%2F4NLjQK6D%2Fn9St8fOYX%2B15LEd6vGB2gG1IOnGwMIvUfR%2F1c7ZGvkx03D93RvNH0kcMhg7cVZLVhibtLR5QN%2BXoCWVT83YC0jOU386h9EHRXa7eD1BM6NQ1mosaYmrIvvbEYXN2u%2B7DIKY5tpYbsv9ucg6sMQ3uZKfDRqwzd1vQLIjd3%2BdU3dIRFsy0PIVLDJ2e0GXP7N%2B5Yc3rQSPeT7HGUBeSF74PIK0D%2Ft3WgGfuizNTBX9NuTyqdKmJR03xcuH1iHrM%2BOWgGd%2B09FC4AAv52UvifIBTqDL5B5Ys%2FvtpEZ9y23I01%2FfM30u0ALKaMSzPa8N4V7FyXLUZdfn8d%2FAyfoWmeFbeWALkWEJvtxzS18jUDSMcUn5zCX7XVH5pfR6HWNDFfonLMWQidS0El9RIiLaUv32sRFJIL0HL%2BIsKsTGG1%2F6Bu9RyEMRenawsDUVCzi78fUDWujJOgZIvV8mu8x2d2XN5WWlqtdOtleTd2bB8%2BoK1DIEAPbsN12s%2FIof64y8T8jiTHZ4A0SZDrBt7Z2A31md6PpLnPhqP%2BpBQiinYeqgTG4pFAkzk9j%2FGK1DHqz%2F2h%2B3FRikLPGjZiQIu2kg78MgxogdLap5kwEYbjeLgtKNmJAgpswuqDRrwY6sgEqVKrr%2FN8k9neMTwUIVgPBO45xD43wiPk%2FCeMAud26xdrhvgBKvgSXC%2B1%2F7M1Al%2Fhz7cUYZa7ld5S9DinlBkcdHnay8YYuzFYjIwunvWPCdPPD2WaEW1oGhgW7TKidTWgLCveLgmIDyrek8gOXBeEODHoBulvsv%2FuFTu3FE%2B58bNJMP%2BjHTWpLLkzx8pFc2trYo2XBY999nTtJFG8Vz4j%2BA2eALWglDDTo8Bg6S8Zd%2BmW5&amp;Expires=1710640656 [following]
---2024-03-15 09:57:36--  https://encode-public.s3.amazonaws.com/2021/02/24/6f3f65f7-8e9b-4230-8f28-ac4df690467f/ENCFF925CYR.bed.gz?response-content-disposition=attachment%3B%20filename%3DENCFF925CYR.bed.gz&amp;AWSAccessKeyId=ASIATGZNGCNXWR5BOVAU&amp;Signature=CXVSwKCWM653gSHcmCI7%2FWmkoZU%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjEIb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIFrC6AOSJuuTpfJ%2BXBHqt0Qyq4s3uAq5Z0zpFYfQPybaAiBwdE1EahNmXPTKmBugbAMssD%2By5GN3IpFHUYGbgoVY9yq8BQiP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDIyMDc0ODcxNDg2MyIMSEJifuYaxqxNZbeJKpAFjX0Q5q7ocfw2Oq1ZPZSEZV3V4mFVhMYGKr2Jr6P%2F7Itf5xnxgYcuy0YW3bHmvQ29A7KePy4Eria%2FoLpLnh2H9rKwOgMm1GzwuIJbPdu%2FuQuJ5sWICJqRg7z0%2BIl7s%2FB8dudMjZQ2jfgQFhGQqqIy%2FOjdddCVlKK9jMeefE2232kdWTd9PA4PT63WkIkUNcFbP0C86%2BOMmaH%2FotboyjIagQcUHp27m%2FniMMmCk9EH1NwT%2Fv80kCUd%2F4NLjQK6D%2Fn9St8fOYX%2B15LEd6vGB2gG1IOnGwMIvUfR%2F1c7ZGvkx03D93RvNH0kcMhg7cVZLVhibtLR5QN%2BXoCWVT83YC0jOU386h9EHRXa7eD1BM6NQ1mosaYmrIvvbEYXN2u%2B7DIKY5tpYbsv9ucg6sMQ3uZKfDRqwzd1vQLIjd3%2BdU3dIRFsy0PIVLDJ2e0GXP7N%2B5Yc3rQSPeT7HGUBeSF74PIK0D%2Ft3WgGfuizNTBX9NuTyqdKmJR03xcuH1iHrM%2BOWgGd%2B09FC4AAv52UvifIBTqDL5B5Ys%2FvtpEZ9y23I01%2FfM30u0ALKaMSzPa8N4V7FyXLUZdfn8d%2FAyfoWmeFbeWALkWEJvtxzS18jUDSMcUn5zCX7XVH5pfR6HWNDFfonLMWQidS0El9RIiLaUv32sRFJIL0HL%2BIsKsTGG1%2F6Bu9RyEMRenawsDUVCzi78fUDWujJOgZIvV8mu8x2d2XN5WWlqtdOtleTd2bB8%2BoK1DIEAPbsN12s%2FIof64y8T8jiTHZ4A0SZDrBt7Z2A31md6PpLnPhqP%2BpBQiinYeqgTG4pFAkzk9j%2FGK1DHqz%2F2h%2B3FRikLPGjZiQIu2kg78MgxogdLap5kwEYbjeLgtKNmJAgpswuqDRrwY6sgEqVKrr%2FN8k9neMTwUIVgPBO45xD43wiPk%2FCeMAud26xdrhvgBKvgSXC%2B1%2F7M1Al%2Fhz7cUYZa7ld5S9DinlBkcdHnay8YYuzFYjIwunvWPCdPPD2WaEW1oGhgW7TKidTWgLCveLgmIDyrek8gOXBeEODHoBulvsv%2FuFTu3FE%2B58bNJMP%2BjHTWpLLkzx8pFc2trYo2XBY999nTtJFG8Vz4j%2BA2eALWglDDTo8Bg6S8Zd%2BmW5&amp;Expires=1710640656
-Resolving encode-public.s3.amazonaws.com (encode-public.s3.amazonaws.com)... 52.218.152.91, 52.92.241.105, 52.92.128.1, ...
-Connecting to encode-public.s3.amazonaws.com (encode-public.s3.amazonaws.com)|52.218.152.91|:443... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 2777441 (2.6M) [binary/octet-stream]
-Saving to: ‘K562.hg38.ENCSR483RKN.ENCFF925CYR.ATAC.bed.gz’
-
-     0K .......... .......... .......... .......... ..........  1%  629K 4s
-    50K .......... .......... .......... .......... ..........  3%  628K 4s
-   100K .......... .......... .......... .......... ..........  5%  616K 4s
-   150K .......... .......... .......... .......... ..........  7%  152M 3s
-   200K .......... .......... .......... .......... ..........  9%  200M 2s
-   250K .......... .......... .......... .......... .......... 11%  647K 3s
-   300K .......... .......... .......... .......... .......... 12%  111M 2s
-   350K .......... .......... .......... .......... .......... 14%  108M 2s
-   400K .......... .......... .......... .......... .......... 16%  126M 2s
-   450K .......... .......... .......... .......... .......... 18% 68.5M 1s
-   500K .......... .......... .......... .......... .......... 20%  126M 1s
-   550K .......... .......... .......... .......... .......... 22%  648K 1s
-   600K .......... .......... .......... .......... .......... 23%  121M 1s
-   650K .......... .......... .......... .......... .......... 25%  127M 1s
-   700K .......... .......... .......... .......... .......... 27% 87.7M 1s
-   750K .......... .......... .......... .......... .......... 29%  129M 1s
-   800K .......... .......... .......... .......... .......... 31%  120M 1s
-   850K .......... .......... .......... .......... .......... 33%  115M 1s
-   900K .......... .......... .......... .......... .......... 35%  146M 1s
-   950K .......... .......... .......... .......... .......... 36% 90.3M 1s
-  1000K .......... .......... .......... .......... .......... 38%  128M 1s
-  1050K .......... .......... .......... .......... .......... 40%  107M 1s
-  1100K .......... .......... .......... .......... .......... 42%  102M 1s
-  1150K .......... .......... .......... .......... .......... 44%  128M 1s
-  1200K .......... .......... .......... .......... .......... 46%  669K 1s
-  1250K .......... .......... .......... .......... .......... 47%  134M 1s
-  1300K .......... .......... .......... .......... .......... 49%  125M 0s
-  1350K .......... .......... .......... .......... .......... 51% 93.2M 0s
-  1400K .......... .......... .......... .......... .......... 53%  127M 0s
-  1450K .......... .......... .......... .......... .......... 55%  106M 0s
-  1500K .......... .......... .......... .......... .......... 57%  103M 0s
-  1550K .......... .......... .......... .......... .......... 58%  123M 0s
-  1600K .......... .......... .......... .......... .......... 60%  110M 0s
-  1650K .......... .......... .......... .......... .......... 62%  103M 0s
-  1700K .......... .......... .......... .......... .......... 64%  151M 0s
-  1750K .......... .......... .......... .......... .......... 66%  102M 0s
-  1800K .......... .......... .......... .......... .......... 68%  135M 0s
-  1850K .......... .......... .......... .......... .......... 70%  102M 0s
-  1900K .......... .......... .......... .......... .......... 71%  109M 0s
-  1950K .......... .......... .......... .......... .......... 73%  130M 0s
-  2000K .......... .......... .......... .......... .......... 75%  101M 0s
-  2050K .......... .......... .......... .......... .......... 77%  107M 0s
-  2100K .......... .......... .......... .......... .......... 79% 98.5M 0s
-  2150K .......... .......... .......... .......... .......... 81%  147M 0s
-  2200K .......... .......... .......... .......... .......... 82%  105M 0s
-  2250K .......... .......... .......... .......... .......... 84%  124M 0s
-  2300K .......... .......... .......... .......... .......... 86% 89.5M 0s
-  2350K .......... .......... .......... .......... .......... 88%  129M 0s
-  2400K .......... .......... .......... .......... .......... 90%  715K 0s
-  2450K .......... .......... .......... .......... .......... 92% 95.9M 0s
-  2500K .......... .......... .......... .......... .......... 94%  102M 0s
-  2550K .......... .......... .......... .......... .......... 95%  149M 0s
-  2600K .......... .......... .......... .......... .......... 97%  109M 0s
-  2650K .......... .......... .......... .......... .......... 99%  106M 0s
-  2700K .......... ..                                         100%  132M=0.6s
-
-2024-03-15 09:57:37 (4.73 MB/s) - ‘K562.hg38.ENCSR483RKN.ENCFF925CYR.ATAC.bed.gz’ saved [2777441/2777441]
-
---2024-03-15 09:57:37--  https://www.encodeproject.org/files/ENCFF274YGF/@@download/ENCFF274YGF.bed.gz
-Resolving www.encodeproject.org (www.encodeproject.org)... 34.211.244.144
-Connecting to www.encodeproject.org (www.encodeproject.org)|34.211.244.144|:443... connected.
-HTTP request sent, awaiting response... 307 Temporary Redirect
-Location: https://encode-public.s3.amazonaws.com/2020/11/22/e2abbea1-48ca-4895-b2da-82c7e622fde9/ENCFF274YGF.bed.gz?response-content-disposition=attachment%3B%20filename%3DENCFF274YGF.bed.gz&amp;AWSAccessKeyId=ASIATGZNGCNXWR5BOVAU&amp;Signature=KfFpL5R1LKPd0zO7BpZkB2Vo16Q%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjEIb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIFrC6AOSJuuTpfJ%2BXBHqt0Qyq4s3uAq5Z0zpFYfQPybaAiBwdE1EahNmXPTKmBugbAMssD%2By5GN3IpFHUYGbgoVY9yq8BQiP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDIyMDc0ODcxNDg2MyIMSEJifuYaxqxNZbeJKpAFjX0Q5q7ocfw2Oq1ZPZSEZV3V4mFVhMYGKr2Jr6P%2F7Itf5xnxgYcuy0YW3bHmvQ29A7KePy4Eria%2FoLpLnh2H9rKwOgMm1GzwuIJbPdu%2FuQuJ5sWICJqRg7z0%2BIl7s%2FB8dudMjZQ2jfgQFhGQqqIy%2FOjdddCVlKK9jMeefE2232kdWTd9PA4PT63WkIkUNcFbP0C86%2BOMmaH%2FotboyjIagQcUHp27m%2FniMMmCk9EH1NwT%2Fv80kCUd%2F4NLjQK6D%2Fn9St8fOYX%2B15LEd6vGB2gG1IOnGwMIvUfR%2F1c7ZGvkx03D93RvNH0kcMhg7cVZLVhibtLR5QN%2BXoCWVT83YC0jOU386h9EHRXa7eD1BM6NQ1mosaYmrIvvbEYXN2u%2B7DIKY5tpYbsv9ucg6sMQ3uZKfDRqwzd1vQLIjd3%2BdU3dIRFsy0PIVLDJ2e0GXP7N%2B5Yc3rQSPeT7HGUBeSF74PIK0D%2Ft3WgGfuizNTBX9NuTyqdKmJR03xcuH1iHrM%2BOWgGd%2B09FC4AAv52UvifIBTqDL5B5Ys%2FvtpEZ9y23I01%2FfM30u0ALKaMSzPa8N4V7FyXLUZdfn8d%2FAyfoWmeFbeWALkWEJvtxzS18jUDSMcUn5zCX7XVH5pfR6HWNDFfonLMWQidS0El9RIiLaUv32sRFJIL0HL%2BIsKsTGG1%2F6Bu9RyEMRenawsDUVCzi78fUDWujJOgZIvV8mu8x2d2XN5WWlqtdOtleTd2bB8%2BoK1DIEAPbsN12s%2FIof64y8T8jiTHZ4A0SZDrBt7Z2A31md6PpLnPhqP%2BpBQiinYeqgTG4pFAkzk9j%2FGK1DHqz%2F2h%2B3FRikLPGjZiQIu2kg78MgxogdLap5kwEYbjeLgtKNmJAgpswuqDRrwY6sgEqVKrr%2FN8k9neMTwUIVgPBO45xD43wiPk%2FCeMAud26xdrhvgBKvgSXC%2B1%2F7M1Al%2Fhz7cUYZa7ld5S9DinlBkcdHnay8YYuzFYjIwunvWPCdPPD2WaEW1oGhgW7TKidTWgLCveLgmIDyrek8gOXBeEODHoBulvsv%2FuFTu3FE%2B58bNJMP%2BjHTWpLLkzx8pFc2trYo2XBY999nTtJFG8Vz4j%2BA2eALWglDDTo8Bg6S8Zd%2BmW5&amp;Expires=1710640657 [following]
---2024-03-15 09:57:37--  https://encode-public.s3.amazonaws.com/2020/11/22/e2abbea1-48ca-4895-b2da-82c7e622fde9/ENCFF274YGF.bed.gz?response-content-disposition=attachment%3B%20filename%3DENCFF274YGF.bed.gz&amp;AWSAccessKeyId=ASIATGZNGCNXWR5BOVAU&amp;Signature=KfFpL5R1LKPd0zO7BpZkB2Vo16Q%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjEIb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIFrC6AOSJuuTpfJ%2BXBHqt0Qyq4s3uAq5Z0zpFYfQPybaAiBwdE1EahNmXPTKmBugbAMssD%2By5GN3IpFHUYGbgoVY9yq8BQiP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDIyMDc0ODcxNDg2MyIMSEJifuYaxqxNZbeJKpAFjX0Q5q7ocfw2Oq1ZPZSEZV3V4mFVhMYGKr2Jr6P%2F7Itf5xnxgYcuy0YW3bHmvQ29A7KePy4Eria%2FoLpLnh2H9rKwOgMm1GzwuIJbPdu%2FuQuJ5sWICJqRg7z0%2BIl7s%2FB8dudMjZQ2jfgQFhGQqqIy%2FOjdddCVlKK9jMeefE2232kdWTd9PA4PT63WkIkUNcFbP0C86%2BOMmaH%2FotboyjIagQcUHp27m%2FniMMmCk9EH1NwT%2Fv80kCUd%2F4NLjQK6D%2Fn9St8fOYX%2B15LEd6vGB2gG1IOnGwMIvUfR%2F1c7ZGvkx03D93RvNH0kcMhg7cVZLVhibtLR5QN%2BXoCWVT83YC0jOU386h9EHRXa7eD1BM6NQ1mosaYmrIvvbEYXN2u%2B7DIKY5tpYbsv9ucg6sMQ3uZKfDRqwzd1vQLIjd3%2BdU3dIRFsy0PIVLDJ2e0GXP7N%2B5Yc3rQSPeT7HGUBeSF74PIK0D%2Ft3WgGfuizNTBX9NuTyqdKmJR03xcuH1iHrM%2BOWgGd%2B09FC4AAv52UvifIBTqDL5B5Ys%2FvtpEZ9y23I01%2FfM30u0ALKaMSzPa8N4V7FyXLUZdfn8d%2FAyfoWmeFbeWALkWEJvtxzS18jUDSMcUn5zCX7XVH5pfR6HWNDFfonLMWQidS0El9RIiLaUv32sRFJIL0HL%2BIsKsTGG1%2F6Bu9RyEMRenawsDUVCzi78fUDWujJOgZIvV8mu8x2d2XN5WWlqtdOtleTd2bB8%2BoK1DIEAPbsN12s%2FIof64y8T8jiTHZ4A0SZDrBt7Z2A31md6PpLnPhqP%2BpBQiinYeqgTG4pFAkzk9j%2FGK1DHqz%2F2h%2B3FRikLPGjZiQIu2kg78MgxogdLap5kwEYbjeLgtKNmJAgpswuqDRrwY6sgEqVKrr%2FN8k9neMTwUIVgPBO45xD43wiPk%2FCeMAud26xdrhvgBKvgSXC%2B1%2F7M1Al%2Fhz7cUYZa7ld5S9DinlBkcdHnay8YYuzFYjIwunvWPCdPPD2WaEW1oGhgW7TKidTWgLCveLgmIDyrek8gOXBeEODHoBulvsv%2FuFTu3FE%2B58bNJMP%2BjHTWpLLkzx8pFc2trYo2XBY999nTtJFG8Vz4j%2BA2eALWglDDTo8Bg6S8Zd%2BmW5&amp;Expires=1710640657
-Resolving encode-public.s3.amazonaws.com (encode-public.s3.amazonaws.com)... 52.92.128.1, 52.92.146.65, 52.92.241.105, ...
-Connecting to encode-public.s3.amazonaws.com (encode-public.s3.amazonaws.com)|52.92.128.1|:443... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 1348006 (1.3M) [binary/octet-stream]
-Saving to: ‘K562.hg38.ENCSR000EKS.ENCFF274YGF.DNase.bed.gz’
-
-     0K .......... .......... .......... .......... ..........  3%  628K 2s
-    50K .......... .......... .......... .......... ..........  7%  253K 3s
-   100K .......... .......... .......... .......... .......... 11%  314K 3s
-   150K .......... .......... .......... .......... .......... 15%  422K 3s
-   200K .......... .......... .......... .......... .......... 18%  416K 3s
-   250K .......... .......... .......... .......... .......... 22%  422K 3s
-   300K .......... .......... .......... .......... .......... 26%  416K 3s
-   350K .......... .......... .......... .......... .......... 30%  421K 2s
-   400K .......... .......... .......... .......... .......... 34%  415K 2s
-   450K .......... .......... .......... .......... .......... 37%  628K 2s
-   500K .......... .......... .......... .......... .......... 41%  315K 2s
-   550K .......... .......... .......... .......... .......... 45%  627K 2s
-   600K .......... .......... .......... .......... .......... 49%  423K 2s
-   650K .......... .......... .......... .......... .......... 53%  414K 2s
-   700K .......... .......... .......... .......... .......... 56%  626K 1s
-   750K .......... .......... .......... .......... .......... 60%  426K 1s
-   800K .......... .......... .......... .......... .......... 64%  416K 1s
-   850K .......... .......... .......... .......... .......... 68% 1.26M 1s
-   900K .......... .......... .......... .......... .......... 72%  416K 1s
-   950K .......... .......... .......... .......... .......... 75%  622K 1s
-  1000K .......... .......... .......... .......... .......... 79%  627K 1s
-  1050K .......... .......... .......... .......... .......... 83%  626K 0s
-  1100K .......... .......... .......... .......... .......... 87%  628K 0s
-  1150K .......... .......... .......... .......... .......... 91%  429K 0s
-  1200K .......... .......... .......... .......... .......... 94%  624K 0s
-  1250K .......... .......... .......... .......... .......... 98%  628K 0s
-  1300K .......... ......                                     100%  413K=2.8s
-
-2024-03-15 09:57:40 (466 KB/s) - ‘K562.hg38.ENCSR000EKS.ENCFF274YGF.DNase.bed.gz’ saved [1348006/1348006]
-
---2024-03-15 09:57:40--  https://www.encodeproject.org/files/ENCFF185XRG/@@download/ENCFF185XRG.bed.gz
-Resolving www.encodeproject.org (www.encodeproject.org)... 34.211.244.144
-Connecting to www.encodeproject.org (www.encodeproject.org)|34.211.244.144|:443... connected.
-HTTP request sent, awaiting response... 307 Temporary Redirect
-Location: https://encode-public.s3.amazonaws.com/2020/11/18/977b8c4d-588a-47dc-9371-b702ce9715c2/ENCFF185XRG.bed.gz?response-content-disposition=attachment%3B%20filename%3DENCFF185XRG.bed.gz&amp;AWSAccessKeyId=ASIATGZNGCNXWR5BOVAU&amp;Signature=SNwjHCHk9zmPVIHtQGXz4as1avg%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjEIb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIFrC6AOSJuuTpfJ%2BXBHqt0Qyq4s3uAq5Z0zpFYfQPybaAiBwdE1EahNmXPTKmBugbAMssD%2By5GN3IpFHUYGbgoVY9yq8BQiP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDIyMDc0ODcxNDg2MyIMSEJifuYaxqxNZbeJKpAFjX0Q5q7ocfw2Oq1ZPZSEZV3V4mFVhMYGKr2Jr6P%2F7Itf5xnxgYcuy0YW3bHmvQ29A7KePy4Eria%2FoLpLnh2H9rKwOgMm1GzwuIJbPdu%2FuQuJ5sWICJqRg7z0%2BIl7s%2FB8dudMjZQ2jfgQFhGQqqIy%2FOjdddCVlKK9jMeefE2232kdWTd9PA4PT63WkIkUNcFbP0C86%2BOMmaH%2FotboyjIagQcUHp27m%2FniMMmCk9EH1NwT%2Fv80kCUd%2F4NLjQK6D%2Fn9St8fOYX%2B15LEd6vGB2gG1IOnGwMIvUfR%2F1c7ZGvkx03D93RvNH0kcMhg7cVZLVhibtLR5QN%2BXoCWVT83YC0jOU386h9EHRXa7eD1BM6NQ1mosaYmrIvvbEYXN2u%2B7DIKY5tpYbsv9ucg6sMQ3uZKfDRqwzd1vQLIjd3%2BdU3dIRFsy0PIVLDJ2e0GXP7N%2B5Yc3rQSPeT7HGUBeSF74PIK0D%2Ft3WgGfuizNTBX9NuTyqdKmJR03xcuH1iHrM%2BOWgGd%2B09FC4AAv52UvifIBTqDL5B5Ys%2FvtpEZ9y23I01%2FfM30u0ALKaMSzPa8N4V7FyXLUZdfn8d%2FAyfoWmeFbeWALkWEJvtxzS18jUDSMcUn5zCX7XVH5pfR6HWNDFfonLMWQidS0El9RIiLaUv32sRFJIL0HL%2BIsKsTGG1%2F6Bu9RyEMRenawsDUVCzi78fUDWujJOgZIvV8mu8x2d2XN5WWlqtdOtleTd2bB8%2BoK1DIEAPbsN12s%2FIof64y8T8jiTHZ4A0SZDrBt7Z2A31md6PpLnPhqP%2BpBQiinYeqgTG4pFAkzk9j%2FGK1DHqz%2F2h%2B3FRikLPGjZiQIu2kg78MgxogdLap5kwEYbjeLgtKNmJAgpswuqDRrwY6sgEqVKrr%2FN8k9neMTwUIVgPBO45xD43wiPk%2FCeMAud26xdrhvgBKvgSXC%2B1%2F7M1Al%2Fhz7cUYZa7ld5S9DinlBkcdHnay8YYuzFYjIwunvWPCdPPD2WaEW1oGhgW7TKidTWgLCveLgmIDyrek8gOXBeEODHoBulvsv%2FuFTu3FE%2B58bNJMP%2BjHTWpLLkzx8pFc2trYo2XBY999nTtJFG8Vz4j%2BA2eALWglDDTo8Bg6S8Zd%2BmW5&amp;Expires=1710640661 [following]
---2024-03-15 09:57:41--  https://encode-public.s3.amazonaws.com/2020/11/18/977b8c4d-588a-47dc-9371-b702ce9715c2/ENCFF185XRG.bed.gz?response-content-disposition=attachment%3B%20filename%3DENCFF185XRG.bed.gz&amp;AWSAccessKeyId=ASIATGZNGCNXWR5BOVAU&amp;Signature=SNwjHCHk9zmPVIHtQGXz4as1avg%3D&amp;x-amz-security-token=IQoJb3JpZ2luX2VjEIb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIFrC6AOSJuuTpfJ%2BXBHqt0Qyq4s3uAq5Z0zpFYfQPybaAiBwdE1EahNmXPTKmBugbAMssD%2By5GN3IpFHUYGbgoVY9yq8BQiP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDIyMDc0ODcxNDg2MyIMSEJifuYaxqxNZbeJKpAFjX0Q5q7ocfw2Oq1ZPZSEZV3V4mFVhMYGKr2Jr6P%2F7Itf5xnxgYcuy0YW3bHmvQ29A7KePy4Eria%2FoLpLnh2H9rKwOgMm1GzwuIJbPdu%2FuQuJ5sWICJqRg7z0%2BIl7s%2FB8dudMjZQ2jfgQFhGQqqIy%2FOjdddCVlKK9jMeefE2232kdWTd9PA4PT63WkIkUNcFbP0C86%2BOMmaH%2FotboyjIagQcUHp27m%2FniMMmCk9EH1NwT%2Fv80kCUd%2F4NLjQK6D%2Fn9St8fOYX%2B15LEd6vGB2gG1IOnGwMIvUfR%2F1c7ZGvkx03D93RvNH0kcMhg7cVZLVhibtLR5QN%2BXoCWVT83YC0jOU386h9EHRXa7eD1BM6NQ1mosaYmrIvvbEYXN2u%2B7DIKY5tpYbsv9ucg6sMQ3uZKfDRqwzd1vQLIjd3%2BdU3dIRFsy0PIVLDJ2e0GXP7N%2B5Yc3rQSPeT7HGUBeSF74PIK0D%2Ft3WgGfuizNTBX9NuTyqdKmJR03xcuH1iHrM%2BOWgGd%2B09FC4AAv52UvifIBTqDL5B5Ys%2FvtpEZ9y23I01%2FfM30u0ALKaMSzPa8N4V7FyXLUZdfn8d%2FAyfoWmeFbeWALkWEJvtxzS18jUDSMcUn5zCX7XVH5pfR6HWNDFfonLMWQidS0El9RIiLaUv32sRFJIL0HL%2BIsKsTGG1%2F6Bu9RyEMRenawsDUVCzi78fUDWujJOgZIvV8mu8x2d2XN5WWlqtdOtleTd2bB8%2BoK1DIEAPbsN12s%2FIof64y8T8jiTHZ4A0SZDrBt7Z2A31md6PpLnPhqP%2BpBQiinYeqgTG4pFAkzk9j%2FGK1DHqz%2F2h%2B3FRikLPGjZiQIu2kg78MgxogdLap5kwEYbjeLgtKNmJAgpswuqDRrwY6sgEqVKrr%2FN8k9neMTwUIVgPBO45xD43wiPk%2FCeMAud26xdrhvgBKvgSXC%2B1%2F7M1Al%2Fhz7cUYZa7ld5S9DinlBkcdHnay8YYuzFYjIwunvWPCdPPD2WaEW1oGhgW7TKidTWgLCveLgmIDyrek8gOXBeEODHoBulvsv%2FuFTu3FE%2B58bNJMP%2BjHTWpLLkzx8pFc2trYo2XBY999nTtJFG8Vz4j%2BA2eALWglDDTo8Bg6S8Zd%2BmW5&amp;Expires=1710640661
-Resolving encode-public.s3.amazonaws.com (encode-public.s3.amazonaws.com)... 52.218.181.219, 52.92.184.81, 52.92.188.177, ...
-Connecting to encode-public.s3.amazonaws.com (encode-public.s3.amazonaws.com)|52.218.181.219|:443... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 1821516 (1.7M) [binary/octet-stream]
-Saving to: ‘K562.hg38.ENCSR000EOT.ENCFF185XRG.DNase.bed.gz’
-
-     0K .......... .......... .......... .......... ..........  2%  311K 6s
-    50K .......... .......... .......... .......... ..........  5%  143M 3s
-   100K .......... .......... .......... .......... ..........  8%  626K 3s
-   150K .......... .......... .......... .......... .......... 11%  169M 2s
-   200K .......... .......... .......... .......... .......... 14%  126M 1s
-   250K .......... .......... .......... .......... .......... 16%  632K 2s
-   300K .......... .......... .......... .......... .......... 19%  102M 1s
-   350K .......... .......... .......... .......... .......... 22%  118M 1s
-   400K .......... .......... .......... .......... .......... 25% 95.3M 1s
-   450K .......... .......... .......... .......... .......... 28%  128M 1s
-   500K .......... .......... .......... .......... .......... 30%  109M 1s
-   550K .......... .......... .......... .......... .......... 33%  646K 1s
-   600K .......... .......... .......... .......... .......... 36% 66.9M 1s
-   650K .......... .......... .......... .......... .......... 39%  129M 1s
-   700K .......... .......... .......... .......... .......... 42%  102M 1s
-   750K .......... .......... .......... .......... .......... 44%  107M 0s
-   800K .......... .......... .......... .......... .......... 47%  128M 0s
-   850K .......... .......... .......... .......... .......... 50%  106M 0s
-   900K .......... .......... .......... .......... .......... 53%  133M 0s
-   950K .......... .......... .......... .......... .......... 56%  122M 0s
-  1000K .......... .......... .......... .......... .......... 59%  101M 0s
-  1050K .......... .......... .......... .......... .......... 61%  130M 0s
-  1100K .......... .......... .......... .......... .......... 64%  106M 0s
-  1150K .......... .......... .......... .......... .......... 67%  101M 0s
-  1200K .......... .......... .......... .......... .......... 70%  668K 0s
-  1250K .......... .......... .......... .......... .......... 73% 79.9M 0s
-  1300K .......... .......... .......... .......... .......... 75%  117M 0s
-  1350K .......... .......... .......... .......... .......... 78%  124M 0s
-  1400K .......... .......... .......... .......... .......... 81%  109M 0s
-  1450K .......... .......... .......... .......... .......... 84%  105M 0s
-  1500K .......... .......... .......... .......... .......... 87%  130M 0s
-  1550K .......... .......... .......... .......... .......... 89% 74.4M 0s
-  1600K .......... .......... .......... .......... .......... 92%  169M 0s
-  1650K .......... .......... .......... .......... .......... 95%  122M 0s
-  1700K .......... .......... .......... .......... .......... 98%  130M 0s
-  1750K .......... .......... ........                        100%  117M=0.5s
-
-2024-03-15 09:57:42 (3.58 MB/s) - ‘K562.hg38.ENCSR000EOT.ENCFF185XRG.DNase.bed.gz’ saved [1821516/1821516]
-</code></pre>
+Length: 2118644361 (2.0G) [binary/octet-stream]</code></pre>
 </div>
 </div>
 

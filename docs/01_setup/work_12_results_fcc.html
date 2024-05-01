@@ -154,8 +154,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01_setup/work_02_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">02 Working Directory of Data</span></a>
+  <a href="../01_setup/work_02_dir.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02 Working Directory</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01_setup/work_03_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03 Working Directory of Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -371,12 +377,11 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#results-fcc-assays-fragment-properties" id="toc-results-fcc-assays-fragment-properties" class="nav-link active" data-scroll-target="#results-fcc-assays-fragment-properties">Results: FCC Assays — Fragment Properties</a></li>
-  <li><a href="#results-fcc-assays-fragment-coverage" id="toc-results-fcc-assays-fragment-coverage" class="nav-link" data-scroll-target="#results-fcc-assays-fragment-coverage">Results: FCC Assays — Fragment Coverage</a></li>
+  <li><a href="#results-fcc-assays-fragment-coverage-and-library-size" id="toc-results-fcc-assays-fragment-coverage-and-library-size" class="nav-link" data-scroll-target="#results-fcc-assays-fragment-coverage-and-library-size">Results: FCC Assays — Fragment Coverage and library size</a></li>
   <li><a href="#results-fcc-assays-fragment-coverage-and-bigwig-tracks" id="toc-results-fcc-assays-fragment-coverage-and-bigwig-tracks" class="nav-link" data-scroll-target="#results-fcc-assays-fragment-coverage-and-bigwig-tracks">Results: FCC Assays — Fragment Coverage and bigwig tracks</a></li>
   <li><a href="#results-fcc-assays-region-coverage-and-starr-seq-library-complexity" id="toc-results-fcc-assays-region-coverage-and-starr-seq-library-complexity" class="nav-link" data-scroll-target="#results-fcc-assays-region-coverage-and-starr-seq-library-complexity">Results: FCC Assays — Region Coverage and STARR-seq library complexity</a></li>
   <li><a href="#results-fcc-assays-region-coverage-and-deseq2edger" id="toc-results-fcc-assays-region-coverage-and-deseq2edger" class="nav-link" data-scroll-target="#results-fcc-assays-region-coverage-and-deseq2edger">Results: FCC Assays — Region Coverage and DESeq2/EdgeR</a></li>
   <li><a href="#results-fcc-assays-detailed" id="toc-results-fcc-assays-detailed" class="nav-link" data-scroll-target="#results-fcc-assays-detailed">Results: FCC Assays (Detailed)</a></li>
-  <li><a href="#results-region-coverage-of-each-assay-cumulative-counts" id="toc-results-region-coverage-of-each-assay-cumulative-counts" class="nav-link" data-scroll-target="#results-region-coverage-of-each-assay-cumulative-counts">Results: Region coverage of each assay (Cumulative counts)</a></li>
   </ul>
 </nav>
     </div>
@@ -406,17 +411,15 @@ ul.task-list li input[type="checkbox"] {
 └── &lt;STARR&gt;
     └── fragment_nuc</code></pre>
 </section>
-<section id="results-fcc-assays-fragment-coverage" class="level1">
-<h1>Results: FCC Assays — Fragment Coverage</h1>
+<section id="results-fcc-assays-fragment-coverage-and-library-size" class="level1">
+<h1>Results: FCC Assays — Fragment Coverage and library size</h1>
 <pre><code>PROJECT/results/assay_fcc/&lt;STARR/MPRA&gt;
 └── fragment_counts
     └── summary
         ├── metadata.tsv
-        ├── metadata.library_size.tsv / metadata.size.tsv
-        ├── result.size.{1..N}.csv
-        ├── result.size.csv
-        ├── result.size.unique.{1..N}.csv
-        ├── result.size.unique.csv
+        ├── metadata.size.tsv
+        ├── result.size.{0..N}.csv
+        ├── result.size.concat.csv
         └── </code></pre>
 </section>
 <section id="results-fcc-assays-fragment-coverage-and-bigwig-tracks" class="level1">
@@ -437,13 +440,17 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>for all regions intersected with each fragment, pick the region-fragment pair with the longest overlap</li>
 </ul></li>
-<li><code>overlap_count</code>
+<li><code>overlap_count_one2one</code>
 <ul>
 <li>count total fragments for each region</li>
 </ul></li>
-<li><code>overlap_count_unique</code>
+<li><code>overlap_count_one2one_unique</code>
 <ul>
 <li>count unique fragments for each region</li>
+</ul></li>
+<li><code>overlap_count</code>
+<ul>
+<li>count total fragments for each region</li>
 </ul></li>
 </ul>
 <pre><code>PROJECT/results/assay_fcc/&lt;STARR&gt;/coverage/&lt;Region Folder&gt;/&lt;Region Label&gt;
@@ -452,11 +459,13 @@ ul.task-list li input[type="checkbox"] {
 ├── overlap_fragment_unique
 |   └── summary
 |       ├── result.size.{1..N}.csv
-|       ├── result.size.csv
-|       ├── result.size.unique.{1..N}.csv
-|       ├── result.size.unique.csv
+|       ├── result.size.concat.csv
+|       └── result.size.summary.tsv
 ├── overlap_fragment_one2one
 |   └── summary
+|       ├── result.size.{1..N}.csv
+|       ├── result.size.csv
+|
 ├── overlap_count
 |   └── summary
 └── overlap_count_unique
@@ -470,14 +479,14 @@ ul.task-list li input[type="checkbox"] {
             |
             ├── overlap_fragment_unique //
             |   └── summary
-            |       ├── result.size.{1..N}.tsv
-            |       ├── result.size.merge.tsv
+            |       ├── result.size.{0..N}.tsv
+            |       ├── result.size.concat.tsv
             |       └── 
             |
             ├── overlap_fragment_one2one //
             |   └── summary
-            |       ├── result.size.{1..N}.tsv
-            |       ├── result.size.merge.tsv
+            |       ├── result.size.{0..N}.tsv
+            |       ├── result.size.concat.tsv
             |       └── 
             |
             ├── overlap_count/score
@@ -510,6 +519,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="results-fcc-assays-detailed" class="level1">
 <h1>Results: FCC Assays (Detailed)</h1>
+<p><strong>Folder</strong></p>
 <pre><code>PROJECT/results/assay_fcc
 ├── &lt;STARR&gt;
 |   ├── fragment
@@ -561,17 +571,12 @@ ul.task-list li input[type="checkbox"] {
             └── &lt;Region Label&gt;
                 ├── overlap_guide
                 └── overlap_score</code></pre>
-</section>
-<section id="results-region-coverage-of-each-assay-cumulative-counts" class="level1">
-<h1>Results: Region coverage of each assay (Cumulative counts)</h1>
-<pre><code>PROJECT/results/region_coverage
-├── astarr_macs_input_union
-|   ├── ASTARRseq_K562_KS91.hg38.Input.rep_all.union.q5.bed.gz
-|   └── by_chrom
-|
-├── astarr_macs_input_overlap
-│   ├── ASTARRseq_K562_KS91.hg38.Input.rep_all.max_overlaps.q5.bed.gz
-|   └── by_chrom</code></pre>
+<p><strong>Files</strong></p>
+<pre><code>PROJECT/results/assay_fcc
+├── CRISPRi_FlowFISH_K562_Riley_JinWoo
+│   └── guide_scores
+│       ├── CRISPRi_HCRFF_K562.hg38.ZScore.unstranded.bed.gz
+│       ├── CRISPRi_HCRFF_K562.hg38.ZScore.filtered.unstranded.bed.gz</code></pre>
 <pre><code>PROJECT/results/region_annotation</code></pre>
 
 

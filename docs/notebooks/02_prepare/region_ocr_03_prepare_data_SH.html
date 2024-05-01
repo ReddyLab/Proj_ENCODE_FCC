@@ -188,8 +188,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../01_setup/work_02_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">02 Working Directory of Data</span></a>
+  <a href="../../01_setup/work_02_dir.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02 Working Directory</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../01_setup/work_03_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03 Working Directory of Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -404,8 +410,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#explore-the-files" id="toc-explore-the-files" class="nav-link active" data-scroll-target="#explore-the-files">Explore the files</a></li>
-  <li><a href="#link-the-folder" id="toc-link-the-folder" class="nav-link" data-scroll-target="#link-the-folder">Link the folder</a></li>
+  <li><a href="#prepare" id="toc-prepare" class="nav-link active" data-scroll-target="#prepare">Prepare</a></li>
+  <li><a href="#copy-and-sort-the-files" id="toc-copy-and-sort-the-files" class="nav-link" data-scroll-target="#copy-and-sort-the-files">Copy and sort the files</a></li>
+  <li><a href="#review" id="toc-review" class="nav-link" data-scroll-target="#review">Review</a></li>
   </ul>
 </nav>
     </div>
@@ -415,7 +422,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <div class="quarto-title-block"><div><h1 class="title">Prepare ENCODE ATAC/DNase Peaks 03</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li></ul></div></div>
-<p class="subtitle lead">Prepare the peak files</p>
+<p class="subtitle lead">Prepare the data</p>
 </div>
 
 
@@ -446,45 +453,34 @@ DATA DIRECTORY (FD_DATA):      /data/reddylab/Kuei/data
 CONTAINER DIR. (FD_SING):      /data/reddylab/Kuei/container
 
 You are working with           ENCODE FCC
-PATH OF PROJECT (FD_PRJ):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC
-PROJECT RESULTS (FD_RES):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/results
-PROJECT SCRIPTS (FD_EXE):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/scripts
-PROJECT DATA    (FD_DAT):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/data
-PROJECT NOTE    (FD_NBK):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/notebooks
-PROJECT DOCS    (FD_DOC):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/docs
-PROJECT LOG     (FD_LOG):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/log
-PROJECT APP     (FD_APP):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/app
-PROJECT REF     (FD_REF):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/references
-PROJECT IMAGE   (FP_PRJ_SIF):  /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/app/singularity_proj_encode_fcc.sif
+PATH OF PROJECT (FD_PRJ):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC
+PROJECT RESULTS (FD_RES):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results
+PROJECT SCRIPTS (FD_EXE):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/scripts
+PROJECT DATA    (FD_DAT):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/data
+PROJECT NOTE    (FD_NBK):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/notebooks
+PROJECT DOCS    (FD_DOC):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/docs
+PROJECT LOG     (FD_LOG):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/log
+PROJECT APP     (FD_APP):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/app
+PROJECT REF     (FD_REF):      /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/references
+PROJECT IMAGE   (FP_PRJ_SIF):  /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/app/singularity_proj_encode_fcc.sif
 </code></pre>
 </div>
 </div>
-<section id="explore-the-files" class="level2">
-<h2 class="anchored" data-anchor-id="explore-the-files">Explore the files</h2>
-<p>The peak file is in narrowPeak format, which is a standard six field bed with four additional fields (BED6+4 format)</p>
-<div class="cell" data-execution_count="22">
+<section id="prepare" class="level2">
+<h2 class="anchored" data-anchor-id="prepare">Prepare</h2>
+<div class="cell" data-execution_count="2">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_DAT}</span>/external/encode_open_chromatin</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-lh</span> <span class="va">${FDIRY}</span>/<span class="pp">*</span>.bed.gz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">${FDIRY}</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>   <span class="va">${FDIRY}</span>/<span class="pp">*</span>.bed.gz <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>   <span class="va">${FDIRY}</span>/<span class="pp">*</span>.bed.gz <span class="kw">|</span> <span class="fu">xargs</span> <span class="at">-n</span> 1 basename</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>-rw-rw-r-- 1 kk319 reddylab 1.3M Nov 24  2020 /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/data/external/encode_open_chromatin/K562.hg38.ENCSR000EKS.ENCFF274YGF.DNase.bed.gz
--rw-rw-r-- 1 kk319 reddylab 1.8M Nov 20  2020 /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/data/external/encode_open_chromatin/K562.hg38.ENCSR000EOT.ENCFF185XRG.DNase.bed.gz
--rw-rw-r-- 1 kk319 reddylab 4.8M Mar  2  2021 /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/data/external/encode_open_chromatin/K562.hg38.ENCSR483RKN.ENCFF558BLC.ATAC.bed.gz
--rw-rw-r-- 1 kk319 reddylab 2.7M Mar  2  2021 /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/data/external/encode_open_chromatin/K562.hg38.ENCSR483RKN.ENCFF925CYR.ATAC.bed.gz
--rw-rw-r-- 1 kk319 reddylab 6.8M Mar 19  2021 /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/data/external/encode_open_chromatin/K562.hg38.ENCSR868FGK.ENCFF333TAT.ATAC.bed.gz
--rw-rw-r-- 1 kk319 reddylab 4.1M Mar 19  2021 /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/data/external/encode_open_chromatin/K562.hg38.ENCSR868FGK.ENCFF948AFM.ATAC.bed.gz</code></pre>
-</div>
-</div>
-<div class="cell" data-execution_count="19">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_DAT}</span>/external/encode_open_chromatin</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FDIRY}</span>/<span class="pp">*</span>.bed.gz <span class="kw">|</span> <span class="fu">xargs</span> <span class="at">-n</span> 1 basename</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>K562.hg38.ENCSR000EKS.ENCFF274YGF.DNase.bed.gz
+<pre><code>/data/reddylab/Kuei/repo/Proj_ENCODE_FCC/data/external/encode_open_chromatin
+6
+K562.hg38.ENCSR000EKS.ENCFF274YGF.DNase.bed.gz
 K562.hg38.ENCSR000EOT.ENCFF185XRG.DNase.bed.gz
 K562.hg38.ENCSR483RKN.ENCFF558BLC.ATAC.bed.gz
 K562.hg38.ENCSR483RKN.ENCFF925CYR.ATAC.bed.gz
@@ -495,10 +491,10 @@ K562.hg38.ENCSR868FGK.ENCFF948AFM.ATAC.bed.gz</code></pre>
 <div class="cell" data-execution_count="3">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_DAT}</span>/external/encode_open_chromatin</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="va">FNAME</span><span class="op">=</span>K562.hg38.ENCSR000EKS.ENCFF274YGF.DNase.bed.gz</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="va">FPATH</span><span class="op">=</span><span class="va">${FDIRY}</span>/<span class="va">${FNAME}</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">zcat</span> <span class="va">${FPATH}</span> <span class="kw">|</span> <span class="fu">head</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_DAT}</span>/external/encode_open_chromatin</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="va">FNAME</span><span class="op">=</span>K562.hg38.ENCSR000EKS.ENCFF274YGF.DNase.bed.gz</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="va">FPATH</span><span class="op">=</span><span class="va">${FDIRY}</span>/<span class="va">${FNAME}</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">zcat</span> <span class="va">${FPATH}</span> <span class="kw">|</span> <span class="fu">head</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>chr1    181400  181530  .   0   .   0.299874    -1  -1  75
@@ -513,11 +509,55 @@ chr1    900030  900100  .   0   .   0.249369    -1  -1  75
 chr1    901580  901645  .   0   .   0.217803    -1  -1  75</code></pre>
 </div>
 </div>
+</section>
+<section id="copy-and-sort-the-files" class="level2">
+<h2 class="anchored" data-anchor-id="copy-and-sort-the-files">Copy and sort the files</h2>
+<pre><code>ln -s file link
+zcat ${FP_INP} | sort -k 1,1 -k2,2n | gzip -c &gt; ${FP_OUT}</code></pre>
 <div class="cell" data-execution_count="4">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_DAT}</span>/external/encode_open_chromatin</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FDIRY}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">### set directory</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="va">FD_INP</span><span class="op">=</span><span class="va">${FD_DAT}</span>/external/encode_open_chromatin</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="va">FD_OUT</span><span class="op">=</span><span class="va">${FD_RES}</span>/region/encode_open_chromatin</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> <span class="va">${FD_OUT}</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co">### loop and link files</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="va">FP_INPS</span><span class="op">=</span><span class="va">($(</span><span class="fu">ls</span> <span class="va">${FD_INP}</span>/<span class="pp">*</span>bed.gz<span class="va">))</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> FP_INP <span class="kw">in</span> <span class="va">${FP_INPS</span><span class="op">[@]</span><span class="va">}</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="co">### get input file name</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    <span class="va">FN_INP</span><span class="op">=</span><span class="va">$(</span><span class="fu">basename</span> <span class="va">${FP_INP})</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">${FN_INP}</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    <span class="co">### set output file name</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    <span class="va">FN_OUT</span><span class="op">=</span><span class="va">${FN_INP}</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    <span class="va">FP_OUT</span><span class="op">=</span><span class="va">${FD_OUT}</span>/<span class="va">${FN_OUT}</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>    <span class="co">### sort and output to a new file</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">zcat</span> <span class="va">${FP_INP}</span> <span class="kw">|</span> <span class="fu">sort</span> <span class="at">-k</span> 1,1 <span class="at">-k2,2n</span> <span class="kw">|</span> <span class="fu">gzip</span> <span class="at">-c</span> <span class="op">&gt;</span> <span class="va">${FP_OUT}</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>K562.hg38.ENCSR000EKS.ENCFF274YGF.DNase.bed.gz
+K562.hg38.ENCSR000EOT.ENCFF185XRG.DNase.bed.gz
+K562.hg38.ENCSR483RKN.ENCFF558BLC.ATAC.bed.gz
+K562.hg38.ENCSR483RKN.ENCFF925CYR.ATAC.bed.gz
+K562.hg38.ENCSR868FGK.ENCFF333TAT.ATAC.bed.gz
+K562.hg38.ENCSR868FGK.ENCFF948AFM.ATAC.bed.gz</code></pre>
+</div>
+</div>
+</section>
+<section id="review" class="level2">
+<h2 class="anchored" data-anchor-id="review">Review</h2>
+<p><strong>Check output files</strong></p>
+<div class="cell" data-execution_count="6">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">### set directory</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="va">FD_INP</span><span class="op">=</span><span class="va">${FD_DAT}</span>/external/encode_open_chromatin</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="va">FD_OUT</span><span class="op">=</span><span class="va">${FD_RES}</span>/region/encode_open_chromatin</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FD_OUT}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>description.tsv
@@ -526,18 +566,15 @@ K562.hg38.ENCSR000EOT.ENCFF185XRG.DNase.bed.gz
 K562.hg38.ENCSR483RKN.ENCFF558BLC.ATAC.bed.gz
 K562.hg38.ENCSR483RKN.ENCFF925CYR.ATAC.bed.gz
 K562.hg38.ENCSR868FGK.ENCFF333TAT.ATAC.bed.gz
-K562.hg38.ENCSR868FGK.ENCFF948AFM.ATAC.bed.gz
-run_download.log.txt
-run_download.sh</code></pre>
+K562.hg38.ENCSR868FGK.ENCFF948AFM.ATAC.bed.gz</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="23">
+<div class="cell" data-execution_count="7">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_DAT}</span>/external/encode_open_chromatin</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="va">FNAME</span><span class="op">=</span>K562.hg38.ENCSR483RKN.ENCFF558BLC.ATAC.bed.gz</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="va">FPATH</span><span class="op">=</span><span class="va">${FDIRY}</span>/<span class="va">${FNAME}</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">zcat</span> <span class="va">${FPATH}</span> <span class="kw">|</span> <span class="fu">head</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="va">FNAME</span><span class="op">=</span>K562.hg38.ENCSR483RKN.ENCFF558BLC.ATAC.bed.gz</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="va">FPATH</span><span class="op">=</span><span class="va">${FD_INP}</span>/<span class="va">${FNAME}</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">zcat</span> <span class="va">${FPATH}</span> <span class="kw">|</span> <span class="fu">head</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>chr1    100028923   100029241   Peak_202759 52  .   2.91347 5.24652 3.38358 74
@@ -552,167 +589,15 @@ chr1    100050176   100050470   Peak_153800 81  .   3.11401 8.14941 6.16809 117
 chr1    100090679   100091339   Peak_149202 84  .   3.47044 8.41934 6.42649 269</code></pre>
 </div>
 </div>
-</section>
-<section id="link-the-folder" class="level2">
-<h2 class="anchored" data-anchor-id="link-the-folder">Link the folder</h2>
-<pre><code>ln -s file link</code></pre>
-<div class="cell">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span> <span class="at">-k</span> 1,1 <span class="at">-k2,2n</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<div class="cell" data-execution_count="7">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-l</span> <span class="va">${FD_RES}</span>/region/encode_open_chromatin</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>lrwxrwxrwx 1 kk319 reddylab 87 Mar  6 14:06 /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/results/region/encode_open_chromatin -&gt; /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/data/external/encode_open_chromatin</code></pre>
-</div>
-</div>
 <div class="cell" data-execution_count="8">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="va">${FD_RES}</span>/region/encode_open_chromatin</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<div class="cell" data-execution_count="9">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="va">FDIRY</span><span class="op">=</span><span class="va">${FD_DAT}</span>/external/encode_open_chromatin</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FDIRY}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="va">FNAME</span><span class="op">=</span>K562.hg38.ENCSR483RKN.ENCFF558BLC.ATAC.bed.gz</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="va">FPATH</span><span class="op">=</span><span class="va">${FD_OUT}</span>/<span class="va">${FNAME}</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">zcat</span> <span class="va">${FPATH}</span> <span class="kw">|</span> <span class="fu">head</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>description.tsv
-K562.hg38.ENCSR000EKS.ENCFF274YGF.DNase.bed.gz
-K562.hg38.ENCSR000EOT.ENCFF185XRG.DNase.bed.gz
-K562.hg38.ENCSR483RKN.ENCFF558BLC.ATAC.bed.gz
-K562.hg38.ENCSR483RKN.ENCFF925CYR.ATAC.bed.gz
-K562.hg38.ENCSR868FGK.ENCFF333TAT.ATAC.bed.gz
-K562.hg38.ENCSR868FGK.ENCFF948AFM.ATAC.bed.gz
-run_download.log.txt
-run_download.sh</code></pre>
-</div>
-</div>
-<div class="cell" data-execution_count="10">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> <span class="va">${FD_RES}</span>/region/encode_open_chromatin</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<div class="cell" data-execution_count="34">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="va">FD_INP</span><span class="op">=</span><span class="va">${FD_DAT}</span>/external/encode_open_chromatin</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="va">FD_OUT</span><span class="op">=</span><span class="va">${FD_RES}</span>/region/encode_open_chromatin</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="va">FP_INPS</span><span class="op">=</span><span class="va">($(</span><span class="fu">ls</span> <span class="va">${FD_INP}</span>/<span class="pp">*</span>bed.gz<span class="va">))</span></span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> FP_INP <span class="kw">in</span> <span class="va">${FP_INPS</span><span class="op">[@]</span><span class="va">}</span><span class="kw">;</span> <span class="cf">do</span></span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">###</span></span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>    <span class="va">FN_INP</span><span class="op">=</span><span class="va">$(</span><span class="fu">basename</span> <span class="va">${FP_INP})</span></span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">${FN_INP}</span></span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>    <span class="co">###</span></span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>    <span class="va">FN_OUT</span><span class="op">=</span><span class="va">${FN_INP}</span></span>
-<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>    <span class="va">FP_OUT</span><span class="op">=</span><span class="va">${FD_OUT}</span>/<span class="va">${FN_OUT}</span></span>
-<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>    <span class="co">###</span></span>
-<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">zcat</span> <span class="va">${FP_INP}</span> <span class="kw">|</span> <span class="fu">sort</span> <span class="at">-k</span> 1,1 <span class="at">-k2,2n</span> <span class="kw">|</span> <span class="fu">gzip</span> <span class="at">-c</span> <span class="op">&gt;</span> <span class="va">${FP_OUT}</span></span>
-<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>K562.hg38.ENCSR000EKS.ENCFF274YGF.DNase.bed.gz
-K562.hg38.ENCSR000EOT.ENCFF185XRG.DNase.bed.gz
-K562.hg38.ENCSR483RKN.ENCFF558BLC.ATAC.bed.gz
-K562.hg38.ENCSR483RKN.ENCFF925CYR.ATAC.bed.gz
-K562.hg38.ENCSR868FGK.ENCFF333TAT.ATAC.bed.gz
-K562.hg38.ENCSR868FGK.ENCFF948AFM.ATAC.bed.gz</code></pre>
-</div>
-</div>
-<div class="cell" data-execution_count="35">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="va">FD_INP</span><span class="op">=</span><span class="va">${FD_DAT}</span>/external/encode_open_chromatin</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="va">FD_OUT</span><span class="op">=</span><span class="va">${FD_RES}</span>/region/encode_open_chromatin</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="va">FP_INPS</span><span class="op">=</span><span class="va">($(</span><span class="fu">ls</span> <span class="va">${FD_INP}</span>/<span class="pp">*</span>bed.gz<span class="va">))</span></span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> FP_INP <span class="kw">in</span> <span class="va">${FP_INPS</span><span class="op">[@]</span><span class="va">}</span><span class="kw">;</span> <span class="cf">do</span></span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">###</span></span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>    <span class="va">FN_INP</span><span class="op">=</span><span class="va">$(</span><span class="fu">basename</span> <span class="va">${FP_INP})</span></span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">${FN_INP}</span></span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>    <span class="co">###</span></span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>    <span class="va">FN_OUT</span><span class="op">=</span><span class="va">${FN_INP}</span></span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>    <span class="va">FP_OUT</span><span class="op">=</span><span class="va">${FD_OUT}</span>/<span class="va">${FN_OUT}</span></span>
-<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>    <span class="co">###</span></span>
-<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">zcat</span> <span class="va">${FP_INP}</span> <span class="kw">|</span> <span class="fu">head</span></span>
-<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span></span>
-<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">zcat</span> <span class="va">${FP_OUT}</span> <span class="kw">|</span> <span class="fu">head</span></span>
-<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span></span>
-<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>K562.hg38.ENCSR000EKS.ENCFF274YGF.DNase.bed.gz
-chr1    181400  181530  .   0   .   0.299874    -1  -1  75
-chr1    778660  778800  .   0   .   14.1383 -1  -1  75
-chr1    779137  779200  .   0   .   0.33144 -1  -1  75
-chr1    827460  827554  .   0   .   3.38384 -1  -1  75
-chr1    842880  843060  .   0   .   1.64457 -1  -1  75
-chr1    869800  869980  .   0   .   2.23485 -1  -1  75
-chr1    875760  875920  .   0   .   0.356692    -1  -1  75
-chr1    898828  899004  .   0   .   0.363005    -1  -1  75
-chr1    900030  900100  .   0   .   0.249369    -1  -1  75
-chr1    901580  901645  .   0   .   0.217803    -1  -1  75
-
-chr1    181400  181530  .   0   .   0.299874    -1  -1  75
-chr1    778660  778800  .   0   .   14.1383 -1  -1  75
-chr1    779137  779200  .   0   .   0.33144 -1  -1  75
-chr1    827460  827554  .   0   .   3.38384 -1  -1  75
-chr1    842880  843060  .   0   .   1.64457 -1  -1  75
-chr1    869800  869980  .   0   .   2.23485 -1  -1  75
-chr1    875760  875920  .   0   .   0.356692    -1  -1  75
-chr1    898828  899004  .   0   .   0.363005    -1  -1  75
-chr1    900030  900100  .   0   .   0.249369    -1  -1  75
-chr1    901580  901645  .   0   .   0.217803    -1  -1  75
-
-K562.hg38.ENCSR000EOT.ENCFF185XRG.DNase.bed.gz
-chr1    139369  139421  .   0   .   0.0872467   -1  -1  75
-chr1    180800  180871  .   0   .   0.137102    -1  -1  75
-chr1    181108  181200  .   0   .   0.124638    -1  -1  75
-chr1    181400  181560  .   0   .   1.57044 -1  -1  75
-chr1    186785  186839  .   0   .   0.0581644   -1  -1  75
-chr1    186980  187129  .   0   .   0.0914013   -1  -1  75
-chr1    268011  268080  .   0   .   1.46657 -1  -1  75
-chr1    777860  778036  .   0   .   0.282513    -1  -1  75
-chr1    778740  778860  .   0   .   23.9679 -1  -1  75
-chr1    779086  779320  .   0   .   0.506862    -1  -1  75
-
-chr1    139369  139421  .   0   .   0.0872467   -1  -1  75
-chr1    180800  180871  .   0   .   0.137102    -1  -1  75
-chr1    181108  181200  .   0   .   0.124638    -1  -1  75
-chr1    181400  181560  .   0   .   1.57044 -1  -1  75
-chr1    186785  186839  .   0   .   0.0581644   -1  -1  75
-chr1    186980  187129  .   0   .   0.0914013   -1  -1  75
-chr1    268011  268080  .   0   .   1.46657 -1  -1  75
-chr1    777860  778036  .   0   .   0.282513    -1  -1  75
-chr1    778740  778860  .   0   .   23.9679 -1  -1  75
-chr1    779086  779320  .   0   .   0.506862    -1  -1  75
-
-K562.hg38.ENCSR483RKN.ENCFF558BLC.ATAC.bed.gz
-chr1    100028923   100029241   Peak_202759 52  .   2.91347 5.24652 3.38358 74
-chr1    100037575   100038998   Peak_172664 68  .   1.83651 6.83702 4.90355 60
-chr1    100037575   100038998   Peak_30781  934 .   5.32597 93.45621    90.75060    988
-chr1    100037575   100038998   Peak_37596  722 .   4.66917 72.27560    69.66279    791
-chr1    100037575   100038998   Peak_38860  692 .   4.55797 69.21054    66.61273    1182
-chr1    100037575   100038998   Peak_7320   1000    .   12.39880    394.75714   391.35434   513
-chr1    100046904   100047187   Peak_125191 111 .   3.44067 11.11133    9.04548 94
-chr1    100048739   100048974   Peak_163268 74  .   2.90807 7.42227 5.46578 145
-chr1    100050176   100050470   Peak_153800 81  .   3.11401 8.14941 6.16809 117
-chr1    100090679   100091339   Peak_149202 84  .   3.47044 8.41934 6.42649 269
-
-chr1    10509   10674   Peak_125662 110 .   4.29354 11.01368    8.94965 94
+<pre><code>chr1    10509   10674   Peak_125662 110 .   4.29354 11.01368    8.94965 94
 chr1    41987   42385   Peak_116641 124 .   4.60022 12.47548    10.37921    281
 chr1    41987   42385   Peak_178161 63  .   3.22015 6.39968 4.47989 99
 chr1    46755   47025   Peak_217457 47  .   2.76013 4.70157 2.87144 182
@@ -721,151 +606,7 @@ chr1    68969   69964   Peak_203155 52  .   2.91347 5.24652 3.38358 77
 chr1    68969   69964   Peak_80922  232 .   6.59365 23.21283    20.95212    310
 chr1    78951   79407   Peak_150566 82  .   3.68018 8.27430 6.28501 335
 chr1    778328  779235  Peak_145438 89  .   2.37705 8.90270 6.89830 74
-chr1    778328  779235  Peak_2263   1000    .   28.93443    749.94922   745.95093   458
-
-K562.hg38.ENCSR483RKN.ENCFF925CYR.ATAC.bed.gz
-chr9    131124809   131126067   .   1000    .   22.41632    4381.93066  4375.25977  657
-chr22   21641476    21642667    .   1000    .   13.33761    3766.81372  3760.28418  685
-chr9    120868424   120869438   .   1000    .   22.14111    3623.65991  3617.17017  376
-chr22   21735419    21736448    .   1000    .   16.63537    3321.32446  3314.97949  592
-chr22   20916753    20918326    .   1000    .   18.65871    3288.51172  3282.19385  550
-chr22   21735419    21736448    .   1000    .   16.51002    3287.63672  3281.31934  462
-chr22   23069690    23070661    .   1000    .   22.76646    3208.09912  3201.82275  477
-chr22   21467862    21469131    .   1000    .   16.84795    3113.48438  3107.26025  406
-chr7    102490463   102491224   .   1000    .   20.57310    2996.34766  2990.17358  377
-chr22   19121518    19123136    .   1000    .   18.41356    2910.51074  2904.37939  1047
-
-chr1    778328  779235  .   1000    .   2.37705 8.90270 6.89830 74
-chr1    778328  779235  .   1000    .   28.93443    749.94922   745.95093   458
-chr1    778328  779235  .   1000    .   3.36066 20.42077    18.19629    788
-chr1    817237  818202  .   1000    .   2.88577 8.24392 6.26027 608
-chr1    817237  818202  .   1000    .   3.53618 12.45234    10.35933    844
-chr1    817237  818202  .   1000    .   8.38235 66.38497    63.80160    275
-chr1    826647  828124  .   1000    .   14.32609    674.83594   670.95953   977
-chr1    826647  828124  .   1000    .   3.52970 53.61738    51.10590    399
-chr1    826647  828124  .   1000    .   6.27918 172.71725   169.76482   1326
-chr1    842282  843322  .   1000    .   1.82761 3.68048 1.92771 72
-
-K562.hg38.ENCSR868FGK.ENCFF333TAT.ATAC.bed.gz
-chr1    100027916   100029541   Peak_168774 375 .   3.46597 37.52287    35.56670    1291
-chr1    100027916   100029541   Peak_212397 247 .   2.93255 24.75966    22.90134    89
-chr1    100027916   100029541   Peak_231027 212 .   2.75187 21.27480    19.45153    688
-chr1    100027916   100029541   Peak_240800 198 .   2.67162 19.80458    17.99839    479
-chr1    100027916   100029541   Peak_64424  1000    .   8.38628 201.28123   198.87112   1078
-chr1    100034572   100034728   Peak_121850 686 .   2.19949 68.61837    66.51602    92
-chr1    100036789   100037403   Peak_128434 621 .   2.08027 62.17962    60.10153    116
-chr1    100036789   100037403   Peak_179531 333 .   1.75609 33.39536    31.46605    337
-chr1    100036789   100037403   Peak_78567  1000    .   2.78313 147.78654   145.47409   516
-chr1    100037561   100039274   Peak_169261 372 .   1.78225 37.25777    35.30295    1638
-
-chr1    40649   41403   Peak_199463 276 .   3.47398 27.61589    25.73108    186
-chr1    40649   41403   Peak_268752 163 .   2.77281 16.35313    14.59235    442
-chr1    41475   41713   Peak_264432 168 .   2.80468 16.81758    15.05008    127
-chr1    42030   42399   Peak_134516 569 .   4.94006 56.98604    54.92928    250
-chr1    46255   47025   Peak_216618 238 .   3.25088 23.80577    21.95580    663
-chr1    46255   47025   Peak_293185 141 .   2.61345 14.10533    12.38016    241
-chr1    67629   67864   Peak_251297 183 .   2.77583 18.39192    16.60355    99
-chr1    68056   68341   Peak_206117 260 .   3.20290 26.03832    24.16744    141
-chr1    68963   70035   Peak_156344 432 .   3.99240 43.21727    41.22760    115
-chr1    68963   70035   Peak_66961  1000    .   8.92833 189.89728   187.50624   325
-
-K562.hg38.ENCSR868FGK.ENCFF948AFM.ATAC.bed.gz
-chr9    131124596   131126388   .   1000    .   16.78342    12577.13184 12570.39062 863
-chr22   21641339    21643421    .   1000    .   12.44583    10226.13867 10219.62695 803
-chr22   22507961    22509223    .   1000    .   20.80738    9457.05957  9450.61914  833
-chr9    120868418   120869461   .   1000    .   17.14854    9116.13672  9109.73340  360
-chr1    16612609    16614051    .   1000    .   18.68222    8495.99219  8489.64062  1002
-chr22   21735414    21736465    .   1000    .   14.32429    8127.81738  8121.50049  598
-chr22   19121493    19123142    .   1000    .   14.06705    7725.48242  7719.21631  1097
-chr22   20916785    20918382    .   1000    .   11.85198    7595.41846  7589.17334  506
-chr22   21937718    21939021    .   1000    .   15.62368    7587.92188  7581.67725  475
-chr22   20981444    20983128    .   1000    .   14.72065    7581.68164  7575.43848  804
-
-chr1    42030   42399   .   839 .   4.94006 56.98604    54.92928    250
-chr1    68963   70035   .   1000    .   3.99240 43.21727    41.22760    115
-chr1    68963   70035   .   1000    .   6.60048 110.44444   108.21621   760
-chr1    68963   70035   .   1000    .   8.92833 189.89728   187.50624   325
-chr1    79151   79653   .   733 .   4.17515 40.79512    38.81857    176
-chr1    778339  779268  .   1000    .   30.05122    2807.95850  2803.66772  469
-chr1    778339  779268  .   1000    .   3.81137 90.10805    87.93501    775
-chr1    804424  805054  .   1000    .   11.33568    440.22955   437.52475   474
-chr1    804424  805054  .   1000    .   3.24670 40.96080    38.98348    202
-chr1    811420  811854  .   724 .   3.02160 40.20258    38.22955    289
-</code></pre>
-</div>
-</div>
-<div class="cell" data-execution_count="17">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/data/external/encode_open_chromatin/K562.hg38.ENCSR000EKS.ENCFF274YGF.DNase.bed.gz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>/data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/data/external/encode_open_chromatin/K562.hg38.ENCSR000EKS.ENCFF274YGF.DNase.bed.gz</code></pre>
-</div>
-</div>
-<div class="cell" data-execution_count="4">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="va">FILE</span><span class="op">=</span><span class="va">${FD_DAT}</span>/external/encode_open_chromatin</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="va">LINK</span><span class="op">=</span><span class="va">${FD_RES}</span>/region/encode_open_chromatin</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">[[</span> <span class="ot">!</span> <span class="ot">-e</span> <span class="va">${LINK}</span> <span class="kw">]];</span> <span class="cf">then</span></span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>   <span class="fu">ln</span> <span class="at">-s</span> <span class="va">${FILE}</span> <span class="va">${LINK}</span></span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<div class="cell" data-execution_count="5">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FD_RES}</span>/region</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>encode_ccres              encode_chromhmm        starr_macs
-encode_ccres_silencer     encode_open_chromatin
-encode_chipseq_tf_subset  starr_csaw</code></pre>
-</div>
-</div>
-<div class="cell" data-execution_count="6">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-l</span> <span class="va">${FD_RES}</span>/region/encode_open_chromatin</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>lrwxrwxrwx 1 kk319 reddylab 87 Mar  6 14:06 /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/results/region/encode_open_chromatin -&gt; /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/data/external/encode_open_chromatin</code></pre>
-</div>
-</div>
-<div class="cell" data-execution_count="7">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FD_DAT}</span>/external/encode_open_chromatin</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>description.tsv
-K562.hg38.ENCSR000EKS.ENCFF274YGF.DNase.bed.gz
-K562.hg38.ENCSR000EOT.ENCFF185XRG.DNase.bed.gz
-K562.hg38.ENCSR483RKN.ENCFF558BLC.ATAC.bed.gz
-K562.hg38.ENCSR483RKN.ENCFF925CYR.ATAC.bed.gz
-K562.hg38.ENCSR868FGK.ENCFF333TAT.ATAC.bed.gz
-K562.hg38.ENCSR868FGK.ENCFF948AFM.ATAC.bed.gz
-run_download.log.txt
-run_download.sh</code></pre>
-</div>
-</div>
-<div class="cell" data-execution_count="8">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FD_RES}</span>/region/encode_open_chromatin</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>description.tsv
-K562.hg38.ENCSR000EKS.ENCFF274YGF.DNase.bed.gz
-K562.hg38.ENCSR000EOT.ENCFF185XRG.DNase.bed.gz
-K562.hg38.ENCSR483RKN.ENCFF558BLC.ATAC.bed.gz
-K562.hg38.ENCSR483RKN.ENCFF925CYR.ATAC.bed.gz
-K562.hg38.ENCSR868FGK.ENCFF333TAT.ATAC.bed.gz
-K562.hg38.ENCSR868FGK.ENCFF948AFM.ATAC.bed.gz
-run_download.log.txt
-run_download.sh</code></pre>
+chr1    778328  779235  Peak_2263   1000    .   28.93443    749.94922   745.95093   458</code></pre>
 </div>
 </div>
 
