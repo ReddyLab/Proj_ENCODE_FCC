@@ -188,8 +188,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../01_setup/work_02_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">02 Working Directory of Data</span></a>
+  <a href="../../01_setup/work_02_dir.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02 Working Directory</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../01_setup/work_03_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03 Working Directory of Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -463,15 +469,13 @@ PROJECT IMAGE   (FP_PRJ_SIF):  /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/app/sing
 <div class="cell" data-execution_count="3">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-1</span> <span class="va">${FD_DAT}</span>/processed/MPRA_Lenti_K562_Nadav_Vikram_230621</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-1</span> <span class="va">${FD_DAT}</span>/processed/MPRA_Lenti_K562_Nadav_Vikram_230621/<span class="pp">*</span>.csv <span class="kw">|</span> <span class="fu">xargs</span> <span class="at">-n</span> 1 basename</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>LentiMPRA.K562.Library_Design.csv
 LentiMPRA.K562.Log2FC.forward_reverse.csv
 LentiMPRA.K562.Log2FC.matrix.csv
-LentiMPRA.K562.Log2FC.replicates.csv
-Table S3-large-scale lib design.xlsx
-Table S4-largescaledata.xlsx</code></pre>
+LentiMPRA.K562.Log2FC.replicates.csv</code></pre>
 </div>
 </div>
 

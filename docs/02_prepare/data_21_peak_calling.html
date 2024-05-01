@@ -154,8 +154,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01_setup/work_02_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">02 Working Directory of Data</span></a>
+  <a href="../01_setup/work_02_dir.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02 Working Directory</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01_setup/work_03_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03 Working Directory of Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -370,7 +376,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#unified-processing-pipeline-for-enhancer-calling-in-high-throughput-reporter-assays" id="toc-unified-processing-pipeline-for-enhancer-calling-in-high-throughput-reporter-assays" class="nav-link active" data-scroll-target="#unified-processing-pipeline-for-enhancer-calling-in-high-throughput-reporter-assays">Unified processing pipeline for enhancer calling in high-throughput reporter assays</a></li>
+  <li><a href="#unified-processing-pipeline-for-peak-calling-in-high-throughput-reporter-assays" id="toc-unified-processing-pipeline-for-peak-calling-in-high-throughput-reporter-assays" class="nav-link active" data-scroll-target="#unified-processing-pipeline-for-peak-calling-in-high-throughput-reporter-assays">Unified processing pipeline for peak calling in high-throughput reporter assays</a></li>
   <li><a href="#applying-chip-seq-differential-peak-calling-csaw-on-atac-starr-seq-assay" id="toc-applying-chip-seq-differential-peak-calling-csaw-on-atac-starr-seq-assay" class="nav-link" data-scroll-target="#applying-chip-seq-differential-peak-calling-csaw-on-atac-starr-seq-assay">Applying ChIP-seq differential peak calling (csaw) on ATAC-STARR-seq assay</a></li>
   <li><a href="#applying-macs-on-atac-starr-seq-input-libraries" id="toc-applying-macs-on-atac-starr-seq-input-libraries" class="nav-link" data-scroll-target="#applying-macs-on-atac-starr-seq-input-libraries">Applying MACS on ATAC-STARR-seq input libraries</a></li>
   <li><a href="#crispr-activity-screen-analysis-casa-on-crispri-hcr-flow-fish-data" id="toc-crispr-activity-screen-analysis-casa-on-crispri-hcr-flow-fish-data" class="nav-link" data-scroll-target="#crispr-activity-screen-analysis-casa-on-crispri-hcr-flow-fish-data">CRISPR activity screen analysis (CASA) on CRISPRi-HCR Flow-FISH data</a></li>
@@ -399,9 +405,15 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <p>This page provides an overview of the peak calling methodologies applied to our functional characterization data. Our approach incorporates the results from various screen analysis tools to ensure comprehensive analysis for assay comparisons.</p>
-<section id="unified-processing-pipeline-for-enhancer-calling-in-high-throughput-reporter-assays" class="level1">
-<h1>Unified processing pipeline for enhancer calling in high-throughput reporter assays</h1>
+<section id="unified-processing-pipeline-for-peak-calling-in-high-throughput-reporter-assays" class="level1">
+<h1>Unified processing pipeline for peak calling in high-throughput reporter assays</h1>
 <p>An unified processing pipeline has been developed by Junke from the <a href="https://www.yulab.org/lab_member/">Yu Lab</a> to standardize the enhancer calling process for high-throughput reporter assays.</p>
+<pre><code>deep_ATAC_STARR_seq.genomic_bin_100_sliding_10.tar.gz
+lentiMPRA.tar.gz
+tilingMPRA_MYC_GATA.tar.gz
+tilingMPRA_OL13.tar.gz
+tilingMPRA_OL45.tar.gz
+WHG_STARR_TR.tar.gz</code></pre>
 </section>
 <section id="applying-chip-seq-differential-peak-calling-csaw-on-atac-starr-seq-assay" class="level1">
 <h1>Applying ChIP-seq differential peak calling (csaw) on ATAC-STARR-seq assay</h1>

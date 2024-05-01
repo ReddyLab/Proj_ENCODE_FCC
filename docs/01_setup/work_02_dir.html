@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ENCODE FCC Project - Check Scripts 03</title>
+<title>ENCODE FCC Project - 02 Working Directory</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,59 +20,25 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -95,7 +61,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
@@ -105,7 +71,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">ENCODE FCC Project</span>
     </a>
   </div>
@@ -116,27 +82,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html" rel="" target="">
+    <a class="nav-link" href="../index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html" rel="" target="">
+    <a class="nav-link" href="../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../report.html" rel="" target="">
+    <a class="nav-link" href="../report.html" rel="" target="">
  <span class="menu-text">Report</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../data.html" rel="" target="">
+    <a class="nav-link" href="../data.html" rel="" target="">
  <span class="menu-text">Data</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../analyses.html" rel="" target="">
+    <a class="nav-link" href="../analyses.html" rel="" target="">
  <span class="menu-text">Analyses</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../results.html" rel="" target="">
+    <a class="nav-link" href="../results.html" rel="" target="">
  <span class="menu-text">Results</span></a>
   </li>  
 </ul>
@@ -151,7 +117,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Check Scripts 03</li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../01_setup/work_01_env.html">Setup</a></li><li class="breadcrumb-item"><a href="../01_setup/work_02_dir.html">02 Working Directory</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -173,46 +139,52 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
  <span class="menu-text">Setup</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../01_setup/work_01_env.html" class="sidebar-item-text sidebar-link">
+  <a href="../01_setup/work_01_env.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">01 Working Environment</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../01_setup/work_02_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">02 Working Directory of Data</span></a>
+  <a href="../01_setup/work_02_dir.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">02 Working Directory</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../01_setup/work_11_results_prep.html" class="sidebar-item-text sidebar-link">
+  <a href="../01_setup/work_03_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03 Working Directory of Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01_setup/work_11_results_prep.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">11 Results (Prepare)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../01_setup/work_12_results_fcc.html" class="sidebar-item-text sidebar-link">
+  <a href="../01_setup/work_12_results_fcc.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">12 Results (FCC)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../01_setup/work_13_results_hic.html" class="sidebar-item-text sidebar-link">
+  <a href="../01_setup/work_13_results_hic.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">13 Results (HiC)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../01_setup/work_14_results_region.html" class="sidebar-item-text sidebar-link">
+  <a href="../01_setup/work_14_results_region.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">14 Results (Region)</span></a>
   </div>
 </li>
@@ -229,37 +201,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../02_prepare/data_01_fcc.html" class="sidebar-item-text sidebar-link">
+  <a href="../02_prepare/data_01_fcc.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">FCC Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../02_prepare/data_02_hic.html" class="sidebar-item-text sidebar-link">
+  <a href="../02_prepare/data_02_hic.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Hi-C Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../02_prepare/data_11_chipseq.html" class="sidebar-item-text sidebar-link">
+  <a href="../02_prepare/data_11_chipseq.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">ChIP-seq TF/Histone</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../02_prepare/data_12_chromatin_states.html" class="sidebar-item-text sidebar-link">
+  <a href="../02_prepare/data_12_chromatin_states.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Chromatin States</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../02_prepare/data_21_peak_calling.html" class="sidebar-item-text sidebar-link">
+  <a href="../02_prepare/data_21_peak_calling.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Peak calling</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../02_prepare/data_22_others.html" class="sidebar-item-text sidebar-link">
+  <a href="../02_prepare/data_22_others.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Other Annotations</span></a>
   </div>
 </li>
@@ -276,37 +248,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../11_fcc_summary/01_fcc_astarr.html" class="sidebar-item-text sidebar-link">
+  <a href="../11_fcc_summary/01_fcc_astarr.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">ATAC-STARR-seq (ASTARR)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../11_fcc_summary/02_fcc_wstarr.html" class="sidebar-item-text sidebar-link">
+  <a href="../11_fcc_summary/02_fcc_wstarr.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">WHG-STARR-seq (WSTARR)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../11_fcc_summary/03_fcc_tmpra.html" class="sidebar-item-text sidebar-link">
+  <a href="../11_fcc_summary/03_fcc_tmpra.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tiling MPRA (TMPRA)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../11_fcc_summary/04_fcc_lmpra.html" class="sidebar-item-text sidebar-link">
+  <a href="../11_fcc_summary/04_fcc_lmpra.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lenti-MPRA (LMPRA)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../11_fcc_summary/05_fcc_crispri_hcrff.html" class="sidebar-item-text sidebar-link">
+  <a href="../11_fcc_summary/05_fcc_crispri_hcrff.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">CRISPRi HCR-FlowFISH (CRISPRi-HCRFF)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../11_fcc_summary/06_fcc_crispri_growth.html" class="sidebar-item-text sidebar-link">
+  <a href="../11_fcc_summary/06_fcc_crispri_growth.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">CRISPRi Growth screen (CRISPRi-Growth)</span></a>
   </div>
 </li>
@@ -323,43 +295,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../12_fcc_coverage/011_region_ocr_astarr_KS91.html" class="sidebar-item-text sidebar-link">
+  <a href="../12_fcc_coverage/011_region_ocr_astarr_KS91.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">ATAC/DHS coverage (ASTARR KS91)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../12_fcc_coverage/012_region_ocr_astarr_KS274.html" class="sidebar-item-text sidebar-link">
+  <a href="../12_fcc_coverage/012_region_ocr_astarr_KS274.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">ATAC/DHS coverage (ASTARR KS274)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../12_fcc_coverage/02_region_ocr_wstarr.html" class="sidebar-item-text sidebar-link">
+  <a href="../12_fcc_coverage/02_region_ocr_wstarr.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">ATAC/DHS coverage (WSTARR)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../12_fcc_coverage/03_region_ocr_tmpra.html" class="sidebar-item-text sidebar-link">
+  <a href="../12_fcc_coverage/03_region_ocr_tmpra.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">ATAC/DHS coverage (TMPRA)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../12_fcc_coverage/04_region_ocr_lmpra.html" class="sidebar-item-text sidebar-link">
+  <a href="../12_fcc_coverage/04_region_ocr_lmpra.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">ATAC/DHS coverage (LMPRA)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../12_fcc_coverage/05_region_ocr_crispri_hcrff.html" class="sidebar-item-text sidebar-link">
+  <a href="../12_fcc_coverage/05_region_ocr_crispri_hcrff.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">ATAC/DHS coverage (CRISPRi-HCRFF)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../12_fcc_coverage/06_region_ocr_crispri_growth.html" class="sidebar-item-text sidebar-link">
+  <a href="../12_fcc_coverage/06_region_ocr_crispri_growth.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">ATAC/DHS coverage (CRISPRi-Growth)</span></a>
   </div>
 </li>
@@ -388,7 +360,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../notebooks/test/test_notebook.html" class="sidebar-item-text sidebar-link">
+  <a href="../notebooks/test/test_notebook.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Test ipynb for documentation</span></a>
   </div>
 </li>
@@ -404,7 +376,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#run-test-scripts" id="toc-run-test-scripts" class="nav-link active" data-scroll-target="#run-test-scripts">Run test scripts</a></li>
+  <li><a href="#working-directory" id="toc-working-directory" class="nav-link active" data-scroll-target="#working-directory">Working Directory</a></li>
+  <li><a href="#wrapping-app" id="toc-wrapping-app" class="nav-link" data-scroll-target="#wrapping-app">Wrapping App</a></li>
+  <li><a href="#naming-convention-of-folders-and-files" id="toc-naming-convention-of-folders-and-files" class="nav-link" data-scroll-target="#naming-convention-of-folders-and-files">Naming Convention of folders and files</a></li>
   </ul>
 </nav>
     </div>
@@ -413,8 +387,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Check Scripts 03</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li></ul></div></div>
-<p class="subtitle lead">Check bedtools scripts</p>
+<h1 class="title">02 Working Directory</h1>
 </div>
 
 
@@ -429,181 +402,136 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p><strong>Set environment</strong></p>
-<div class="cell" data-execution_count="1">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> ../run_config_project.sh</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> <span class="va">${FD_EXE}</span>/config_load_module_bedtools.sh</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">show_env</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>You are working on             Duke Server: HARDAC
-BASE DIRECTORY (FD_BASE):      /data/reddylab/Kuei
-REPO DIRECTORY (FD_REPO):      /data/reddylab/Kuei/repo
-WORK DIRECTORY (FD_WORK):      /data/reddylab/Kuei/work
-DATA DIRECTORY (FD_DATA):      /data/reddylab/Kuei/data
-CONTAINER DIR. (FD_SING):      /data/reddylab/Kuei/container
+<section id="working-directory" class="level1">
+<h1>Working Directory</h1>
+<pre><code>PROJECT
+├── app
+├── data
+├── results
+├── scripts
+├── references
+├── notebooks
+├── docs
+├── site
+├── log
+├── README.md
+└── .gitignore</code></pre>
+<pre><code>PROJECT
+├── app
+│   ├── 
+│   └── singularity_proj_encode_fcc.sif
+├── data
+│   ├── external
+│   └── processed
+├── results
+│   ├── assay_fcc
+│   ├── assay_hic
+│   └── region
+├── scripts
+├── references
+├── notebooks
+├── docs
+├── site
+├── log
+├── README.md
+└── .gitignore</code></pre>
+</section>
+<section id="wrapping-app" class="level1">
+<h1>Wrapping App</h1>
+<pre><code>#!/bin/bash
 
-You are working with           ENCODE FCC
-PATH OF PROJECT (FD_PRJ):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC
-PROJECT RESULTS (FD_RES):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/results
-PROJECT SCRIPTS (FD_EXE):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/scripts
-PROJECT DATA    (FD_DAT):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/data
-PROJECT NOTE    (FD_NBK):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/notebooks
-PROJECT DOCS    (FD_DOC):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/docs
-PROJECT LOG     (FD_LOG):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/log
-PROJECT APP     (FD_APP):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/app
-PROJECT REF     (FD_REF):      /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/references
-PROJECT IMAGE   (FP_PRJ_SIF):  /data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/app/singularity_proj_encode_fcc.sif
-</code></pre>
-</div>
-</div>
-<section id="run-test-scripts" class="level2">
-<h2 class="anchored" data-anchor-id="run-test-scripts">Run test scripts</h2>
-<div class="cell" data-execution_count="2">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">${FD_LOG}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>/data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/log</code></pre>
-</div>
-</div>
-<div class="cell" data-execution_count="3">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">${NODE}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>all</code></pre>
-</div>
-</div>
-<div class="cell" data-execution_count="4">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="va">TAB</span><span class="op">=</span><span class="st">"</span><span class="va">$(</span><span class="bu">printf</span> <span class="st">'\t'</span><span class="va">)</span><span class="st">"</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> <span class="op">&gt;</span> A.bed <span class="op">&lt;&lt; EOF</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="st">chr1</span><span class="va">${TAB}</span><span class="st">10</span><span class="va">${TAB}</span><span class="st">20</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="st">chr1</span><span class="va">${TAB}</span><span class="st">20</span><span class="va">${TAB}</span><span class="st">40</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="op">EOF</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> <span class="op">&gt;</span> B.bed <span class="op">&lt;&lt; EOF</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="st">chr1</span><span class="va">${TAB}</span><span class="st">15</span><span class="va">${TAB}</span><span class="st">20</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="op">EOF</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<p><strong>Execute</strong></p>
-<div class="cell" data-execution_count="7">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="va">FN_LOG</span><span class="op">=</span><span class="st">"test_bedtools.txt"</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="va">FP_LOG</span><span class="op">=</span><span class="va">${FD_LOG}</span>/<span class="va">${FN_LOG}</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="va">FP_INP</span><span class="op">=</span><span class="st">"A.bed"</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="ex">sbatch</span> <span class="at">-p</span> <span class="va">${NODE}</span> <span class="dt">\</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">--exclude</span><span class="op">=</span>dl-01 <span class="dt">\</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">--cpus-per-task</span> 4 <span class="dt">\</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">--mem</span> 2G <span class="dt">\</span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">--output</span> <span class="va">${FP_LOG}</span> <span class="dt">\</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    <span class="va">${FD_EXE}</span>/run_bedtools_test.sh <span class="va">${FD_PRJ}</span> <span class="va">${FP_INP}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>Submitted batch job 30712595</code></pre>
-</div>
-</div>
-<p><strong>Check results</strong></p>
-<div class="cell" data-execution_count="8">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> <span class="va">${FD_LOG}</span>/test_bedtools.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>Hostname:           x3-05-4.genome.duke.edu
-Slurm Array Index: 
-Time Stamp:         03-12-24+11:38:23
+#########################################
+### Wrapper of PLACEHOLDER_CMD container
+###======================================
 
-Input:  A.bed
+IMAGE=PLACEHOLDER_DIR/PLACEHOLDER_IMG
 
-show first few lines of input
-chr1    10  20
-chr1    20  40
+CMD="PLACEHOLDER_CMD"
+ARGS="$@"
 
-bedtools: flexible tools for genome arithmetic and DNA sequence analysis.
-usage:    bedtools &lt;subcommand&gt; [options]
-
-The bedtools sub-commands include:
-
-[ Genome arithmetic ]
-    intersect     Find overlapping intervals in various ways.
-    window        Find overlapping intervals within a window around an interval.
-    closest       Find the closest, potentially non-overlapping interval.
-    coverage      Compute the coverage over defined intervals.
-    map           Apply a function to a column for each overlapping interval.
-    genomecov     Compute the coverage over an entire genome.
-    merge         Combine overlapping/nearby intervals into a single interval.
-    cluster       Cluster (but don't merge) overlapping/nearby intervals.
-    complement    Extract intervals _not_ represented by an interval file.
-    subtract      Remove intervals based on overlaps b/w two files.
-    slop          Adjust the size of intervals.
-    flank         Create new intervals from the flanks of existing intervals.
-    sort          Order the intervals in a file.
-    random        Generate random intervals in a genome.
-    shuffle       Randomly redistrubute intervals in a genome.
-    sample        Sample random records from file using reservoir sampling.
-    spacing       Report the gap lengths between intervals in a file.
-    annotate      Annotate coverage of features from multiple files.
-
-[ Multi-way file comparisons ]
-    multiinter    Identifies common intervals among multiple interval files.
-    unionbedg     Combines coverage intervals from multiple BEDGRAPH files.
-
-[ Paired-end manipulation ]
-    pairtobed     Find pairs that overlap intervals in various ways.
-    pairtopair    Find pairs that overlap other pairs in various ways.
-
-[ Format conversion ]
-    bamtobed      Convert BAM alignments to BED (&amp; other) formats.
-    bedtobam      Convert intervals to BAM records.
-    bamtofastq    Convert BAM records to FASTQ records.
-    bedpetobam    Convert BEDPE intervals to BAM records.
-    bed12tobed6   Breaks BED12 intervals into discrete BED6 intervals.
-
-[ Fasta manipulation ]
-    getfasta      Use intervals to extract sequences from a FASTA file.
-    maskfasta     Use intervals to mask sequences from a FASTA file.
-    nuc           Profile the nucleotide content of intervals in a FASTA file.
-
-[ BAM focused tools ]
-    multicov      Counts coverage from multiple BAMs at specific intervals.
-    tag           Tag BAM alignments based on overlaps with interval files.
-
-[ Statistical relationships ]
-    jaccard       Calculate the Jaccard statistic b/w two sets of intervals.
-    reldist       Calculate the distribution of relative distances b/w two files.
-    fisher        Calculate Fisher statistic b/w two feature files.
-
-[ Miscellaneous tools ]
-    overlap       Computes the amount of overlap from two intervals.
-    igv           Create an IGV snapshot batch script.
-    links         Create a HTML page of links to UCSC locations.
-    makewindows   Make interval "windows" across a genome.
-    groupby       Group by common cols. &amp; summarize oth. cols. (~ SQL "groupBy")
-    expand        Replicate lines based on lists of values in columns.
-    split         Split a file into multiple files with equal records or base pairs.
-
-[ General help ]
-    --help        Print this help menu.
-    --version     What version of bedtools are you using?.
-    --contact     Feature requests, bugs, mailing lists, etc.
-
-
-
-Done!
-Run Time: 0 seconds</code></pre>
-</div>
-</div>
+singularity exec   \
+    -B ${PWD}      \
+    -B /data:/data \
+    -B /gpfs:/gpfs \
+    ${IMAGE} ${CMD} ${ARGS}</code></pre>
+</section>
+<section id="naming-convention-of-folders-and-files" class="level1">
+<h1>Naming Convention of folders and files</h1>
+<p>Below are some naming convention in this documentation.</p>
+<ul>
+<li>Assay folder name
+<ul>
+<li><code>&lt;Assay Type&gt;_&lt;Cell Type&gt;_&lt;Lab&gt;_&lt;Label&gt;</code></li>
+<li>Label
+<ul>
+<li>batch, source, people, id numbers</li>
+</ul></li>
+</ul></li>
+</ul>
+<pre><code>STARR_ATAC_K562_Reddy_KS91
+STARR_ATAC_K562_Reddy_KS274
+STARR_ATAC_K562_Reddy_KSMerge
+STARR_WHG_K562_Reddy_A001
+MPRA_Tiling_K562_Tewhey_Hannah
+MPRA_Lenti_K562_Nadav_Vikram
+CRISPRi_FlowFISH_K562_Riley_JinWoo
+CRISPRi_Growth_K562_Gersbach_JinWoo
+CRISPRi_Growth_K562_Gersbach_Alex</code></pre>
+<ul>
+<li>Assay file name
+<ul>
+<li><code>&lt;Prefix&gt;.&lt;Genome&gt;.&lt;Input/Output/Log2FC/ZScore&gt;.&lt;Replicate&gt;.&lt;Region&gt;.&lt;Unstranded/Stranded&gt;.&lt;File Extension&gt;</code></li>
+<li>Prefix
+<ul>
+<li>ASTARRseq_K562_KS91</li>
+<li>WSTARRseq_K562_A001</li>
+<li>TMPRA_K562_OL13</li>
+<li>TMPRA_K562_OL43</li>
+<li>TMPRA_K562_OL45</li>
+<li>TMPRA_K562_Merge</li>
+<li>LMPRA_K562</li>
+<li>CRISPRi_HCRFF_K562</li>
+<li>CRISPRi_Growth_K562</li>
+</ul></li>
+<li>Replicate
+<ul>
+<li>rep1/2/3/4</li>
+<li>rep1_vs_rep2</li>
+<li>rep_all</li>
+</ul></li>
+<li>Region
+<ul>
+<li>WHG = whole genome</li>
+<li>MYC = MYC region</li>
+<li>GATA1 = GATA1 region</li>
+<li>Chrom_Main = chr1-22,X,Y</li>
+<li>Chrom_Auto = chr1-22 (Autosome)</li>
+<li>Chrom_Sex = chrX,Y (Sex chromsome)</li>
+</ul></li>
+</ul></li>
+<li>ENCODE region file name
+<ul>
+<li><code>&lt;Prefix&gt;.&lt;Genome&gt;.&lt;Experiment ID&gt;.&lt;File ID&gt;.&lt;Assay&gt;.&lt;Description&gt;.&lt;File Extension&gt;</code></li>
+<li>Prefix: biosample
+<ul>
+<li>K562: a human erythroleukemic cell line</li>
+<li>A549: a human lung epithelial Cell line</li>
+<li>Hsa: Human</li>
+</ul></li>
+<li>Genome: reference for alignment
+<ul>
+<li>hg38: GRCh38</li>
+<li>hg19: GRCh37</li>
+</ul></li>
+<li>Assay and Description
+<ul>
+<li>ATAC/DNase</li>
+<li>ChIPseq.H3K27ac</li>
+<li>cCREs/ChromHMM</li>
+</ul></li>
+</ul></li>
+<li>Enhancer calls</li>
+</ul>
 
 
 </section>
@@ -688,57 +616,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  const viewSource = window.document.getElementById('quarto-view-source') ||
-                     window.document.getElementById('quarto-code-tools-source');
-  if (viewSource) {
-    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
-    viewSource.addEventListener("click", function(e) {
-      if (sourceUrl) {
-        // rstudio viewer pane
-        if (/\bcapabilities=\b/.test(window.location)) {
-          window.open(sourceUrl);
-        } else {
-          window.location.href = sourceUrl;
-        }
-      } else {
-        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
-        modal.show();
-      }
-      return false;
-    });
-  }
-  function toggleCodeHandler(show) {
-    return function(e) {
-      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-      for (let i=0; i<detailsSrc.length; i++) {
-        const details = detailsSrc[i].parentElement;
-        if (show) {
-          details.open = true;
-        } else {
-          details.removeAttribute("open");
-        }
-      }
-      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
-      const fromCls = show ? "hidden" : "unhidden";
-      const toCls = show ? "unhidden" : "hidden";
-      for (let i=0; i<cellCodeDivs.length; i++) {
-        const codeDiv = cellCodeDivs[i];
-        if (codeDiv.classList.contains(fromCls)) {
-          codeDiv.classList.remove(fromCls);
-          codeDiv.classList.add(toCls);
-        } 
-      }
-      return false;
-    }
-  }
-  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
-  if (hideAllCode) {
-    hideAllCode.addEventListener("click", toggleCodeHandler(false));
-  }
-  const showAllCode = window.document.getElementById("quarto-show-all-code");
-  if (showAllCode) {
-    showAllCode.addEventListener("click", toggleCodeHandler(true));
-  }
   function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,

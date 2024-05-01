@@ -191,8 +191,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../01_setup/work_02_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">02 Working Directory of Data</span></a>
+  <a href="../../01_setup/work_02_dir.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02 Working Directory</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../01_setup/work_03_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03 Working Directory of Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -419,7 +425,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <div class="quarto-title-block"><div><h1 class="title">Prepare ENCODE ATAC/DNase Peaks 01</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li></ul></div></div>
-<p class="subtitle lead">Generate download script to download the peak data</p>
+<p class="subtitle lead">Generate download script to download the data</p>
 </div>
 
 
@@ -449,21 +455,20 @@ WORK DIRECTORY (FD_WORK): /mount/work
 DATA DIRECTORY (FD_DATA): /mount/data 
 
 You are working with      ENCODE FCC 
-PATH OF PROJECT (FD_PRJ): /mount/repo/Proj_CombEffect_ENCODE_FCC 
-PROJECT RESULTS (FD_RES): /mount/repo/Proj_CombEffect_ENCODE_FCC/results 
-PROJECT SCRIPTS (FD_EXE): /mount/repo/Proj_CombEffect_ENCODE_FCC/scripts 
-PROJECT DATA    (FD_DAT): /mount/repo/Proj_CombEffect_ENCODE_FCC/data 
-PROJECT NOTE    (FD_NBK): /mount/repo/Proj_CombEffect_ENCODE_FCC/notebooks 
-PROJECT DOCS    (FD_DOC): /mount/repo/Proj_CombEffect_ENCODE_FCC/docs 
-PROJECT LOG     (FD_LOG): /mount/repo/Proj_CombEffect_ENCODE_FCC/log 
-PROJECT APP     (FD_APP): /mount/repo/Proj_CombEffect_ENCODE_FCC/app 
-PROJECT REF     (FD_REF): /mount/repo/Proj_CombEffect_ENCODE_FCC/references 
+PATH OF PROJECT (FD_PRJ): /mount/repo/Proj_ENCODE_FCC 
+PROJECT RESULTS (FD_RES): /mount/repo/Proj_ENCODE_FCC/results 
+PROJECT SCRIPTS (FD_EXE): /mount/repo/Proj_ENCODE_FCC/scripts 
+PROJECT DATA    (FD_DAT): /mount/repo/Proj_ENCODE_FCC/data 
+PROJECT NOTE    (FD_NBK): /mount/repo/Proj_ENCODE_FCC/notebooks 
+PROJECT DOCS    (FD_DOC): /mount/repo/Proj_ENCODE_FCC/docs 
+PROJECT LOG     (FD_LOG): /mount/repo/Proj_ENCODE_FCC/log 
+PROJECT APP     (FD_APP): /mount/repo/Proj_ENCODE_FCC/app 
+PROJECT REF     (FD_REF): /mount/repo/Proj_ENCODE_FCC/references 
 </code></pre>
 </div>
 </div>
 <section id="import-metadata-from-reference-file" class="level2">
 <h2 class="anchored" data-anchor-id="import-metadata-from-reference-file">Import metadata from reference file</h2>
-<p>Read the table with the file accession numbers of ATAC peaks and DHS regions</p>
 <div class="cell" data-execution_count="2">
 <details>
 <summary>Code</summary>
@@ -486,15 +491,14 @@ PROJECT REF     (FD_REF): /mount/repo/Proj_CombEffect_ENCODE_FCC/references
 <th style="text-align: left;" data-quarto-table-cell-role="th">Assay</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Biosample</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Index_Experiment</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Index_Process</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Index_File</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">File_Type</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Output_Type</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">isogenic_replicate</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Genome</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Number_Peaks</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">File_Name_Keyword</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">File_URL_Summary</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">File_URL_Download</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">File_Summary</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Lab</th>
 </tr>
 </thead>
 <tbody>
@@ -502,85 +506,131 @@ PROJECT REF     (FD_REF): /mount/repo/Proj_CombEffect_ENCODE_FCC/references
 <td style="text-align: left;">ATAC</td>
 <td style="text-align: left;">K562</td>
 <td style="text-align: left;">ENCSR868FGK</td>
-<td style="text-align: left;">ENCFF333TAT</td>
-<td style="text-align: left;">bed narrowPeak</td>
-<td style="text-align: left;">pseudoreplicated peaks</td>
+<td style="text-align: left;">ENCODE4 v1.9.1 GRCh38 (ENCAN824UKX)</td>
+<td style="text-align: left;">ENCFF357GNC</td>
+<td style="text-align: left;">bigWig</td>
+<td style="text-align: left;">signal p-value</td>
 <td style="text-align: left;">1, 2, 3</td>
 <td style="text-align: left;">hg38</td>
-<td style="text-align: right;">269800</td>
-<td style="text-align: left;">call-overlap_ppr/pooled-pr1_vs_pooled-pr2.overlap.bfilt.narrowPeak.gz</td>
-<td style="text-align: left;">https://www.encodeproject.org/files/ENCFF333TAT/</td>
-<td style="text-align: left;">https://www.encodeproject.org/files/ENCFF333TAT/@@download/ENCFF333TAT.bed.gz</td>
+<td style="text-align: left;">call-macs2_signal_track_pooled/rep.pooled.pval.signal.bigwig</td>
+<td style="text-align: left;">Michael Snyder, Stanford</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">ATAC</td>
 <td style="text-align: left;">K562</td>
 <td style="text-align: left;">ENCSR868FGK</td>
+<td style="text-align: left;">ENCODE4 v1.9.1 GRCh38 (ENCAN824UKX)</td>
+<td style="text-align: left;">ENCFF333TAT</td>
+<td style="text-align: left;">bed narrowPeak</td>
+<td style="text-align: left;">pseudoreplicated peaks</td>
+<td style="text-align: left;">1, 2, 3</td>
+<td style="text-align: left;">hg38</td>
+<td style="text-align: left;">call-overlap_ppr/pooled-pr1_vs_pooled-pr2.overlap.bfilt.narrowPeak.gz</td>
+<td style="text-align: left;">Michael Snyder, Stanford</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ATAC</td>
+<td style="text-align: left;">K562</td>
+<td style="text-align: left;">ENCSR868FGK</td>
+<td style="text-align: left;">ENCODE4 v1.9.1 GRCh38 (ENCAN824UKX)</td>
 <td style="text-align: left;">ENCFF948AFM</td>
 <td style="text-align: left;">bed narrowPeak</td>
 <td style="text-align: left;">IDR thresholded peaks</td>
 <td style="text-align: left;">1, 2, 3</td>
 <td style="text-align: left;">hg38</td>
-<td style="text-align: right;">181340</td>
 <td style="text-align: left;">call-idr_ppr/pooled-pr1_vs_pooled-pr2.idr0.05.bfilt.narrowPeak.gz</td>
-<td style="text-align: left;">https://www.encodeproject.org/files/ENCFF948AFM/</td>
-<td style="text-align: left;">https://www.encodeproject.org/files/ENCFF948AFM/@@download/ENCFF948AFM.bed.gz</td>
+<td style="text-align: left;">Michael Snyder, Stanford</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ATAC</td>
+<td style="text-align: left;">K562</td>
+<td style="text-align: left;">ENCSR483RKN</td>
+<td style="text-align: left;">ENCODE4 v1.9.1 GRCh38 (ENCAN217QUL)</td>
+<td style="text-align: left;">ENCFF600FDO</td>
+<td style="text-align: left;">bigWig</td>
+<td style="text-align: left;">signal p-value</td>
+<td style="text-align: left;">1, 2</td>
+<td style="text-align: left;">hg38</td>
+<td style="text-align: left;">call-macs2_signal_track_pooled/rep.pooled.pval.signal.bigwig</td>
+<td style="text-align: left;">Michael Snyder, Stanford</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">ATAC</td>
 <td style="text-align: left;">K562</td>
 <td style="text-align: left;">ENCSR483RKN</td>
+<td style="text-align: left;">ENCODE4 v1.9.1 GRCh38 (ENCAN217QUL)</td>
 <td style="text-align: left;">ENCFF558BLC</td>
 <td style="text-align: left;">bed narrowPeak</td>
 <td style="text-align: left;">pseudoreplicated peaks</td>
 <td style="text-align: left;">1, 2</td>
 <td style="text-align: left;">hg38</td>
-<td style="text-align: right;">203874</td>
 <td style="text-align: left;">call-overlap_ppr/pooled-pr1_vs_pooled-pr2.overlap.bfilt.narrowPeak.gz</td>
-<td style="text-align: left;">https://www.encodeproject.org/files/ENCFF558BLC/</td>
-<td style="text-align: left;">https://www.encodeproject.org/files/ENCFF558BLC/@@download/ENCFF558BLC.bed.gz</td>
+<td style="text-align: left;">Michael Snyder, Stanford</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">ATAC</td>
 <td style="text-align: left;">K562</td>
 <td style="text-align: left;">ENCSR483RKN</td>
+<td style="text-align: left;">ENCODE4 v1.9.1 GRCh38 (ENCAN217QUL)</td>
 <td style="text-align: left;">ENCFF925CYR</td>
 <td style="text-align: left;">bed narrowPeak</td>
 <td style="text-align: left;">IDR thresholded peaks</td>
 <td style="text-align: left;">1, 2</td>
 <td style="text-align: left;">hg38</td>
-<td style="text-align: right;">123009</td>
 <td style="text-align: left;">call-idr_ppr/pooled-pr1_vs_pooled-pr2.idr0.05.bfilt.narrowPeak.gz</td>
-<td style="text-align: left;">https://www.encodeproject.org/files/ENCFF925CYR/</td>
-<td style="text-align: left;">https://www.encodeproject.org/files/ENCFF925CYR/@@download/ENCFF925CYR.bed.gz</td>
+<td style="text-align: left;">Michael Snyder, Stanford</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">DNase</td>
 <td style="text-align: left;">K562</td>
 <td style="text-align: left;">ENCSR000EKS</td>
+<td style="text-align: left;">ENCODE4 v3.0.0 GRCh38 (ENCAN694OCK)</td>
+<td style="text-align: left;">ENCFF972GVB</td>
+<td style="text-align: left;">bigWig</td>
+<td style="text-align: left;">read-depth normalized signal</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">hg38</td>
+<td style="text-align: left;">call-starch_to_bigwig/normalized.nuclear.0.05.density.bw</td>
+<td style="text-align: left;">Gregory Crawford, Duke</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DNase</td>
+<td style="text-align: left;">K562</td>
+<td style="text-align: left;">ENCSR000EKS</td>
+<td style="text-align: left;">ENCODE4 v3.0.0 GRCh38 (ENCAN694OCK)</td>
 <td style="text-align: left;">ENCFF274YGF</td>
 <td style="text-align: left;">bed narrowPeak</td>
 <td style="text-align: left;">peaks</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">hg38</td>
-<td style="text-align: right;">118721</td>
 <td style="text-align: left;">call-compress/nuclear.0.001.peaks.narrowpeaks.bed.gz</td>
-<td style="text-align: left;">https://www.encodeproject.org/files/ENCFF274YGF/</td>
-<td style="text-align: left;">https://www.encodeproject.org/files/ENCFF274YGF/@@download/ENCFF274YGF.bed.gz</td>
+<td style="text-align: left;">Gregory Crawford, Duke</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DNase</td>
+<td style="text-align: left;">K562</td>
+<td style="text-align: left;">ENCSR000EOT</td>
+<td style="text-align: left;">ENCODE4 v3.0.0-alpha.2 GRCh38 (ENCAN780RWD)</td>
+<td style="text-align: left;">ENCFF414OGC</td>
+<td style="text-align: left;">bigWig</td>
+<td style="text-align: left;">read-depth normalized signal</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">hg38</td>
+<td style="text-align: left;">call-starch_to_bigwig/normalized.nuclear.0.05.density.bw</td>
+<td style="text-align: left;">John Stamatoyannopoulos, UW</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">DNase</td>
 <td style="text-align: left;">K562</td>
 <td style="text-align: left;">ENCSR000EOT</td>
+<td style="text-align: left;">ENCODE4 v3.0.0-alpha.2 GRCh38 (ENCAN780RWD)</td>
 <td style="text-align: left;">ENCFF185XRG</td>
 <td style="text-align: left;">bed narrowPeak</td>
 <td style="text-align: left;">peaks</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">hg38</td>
-<td style="text-align: right;">159277</td>
 <td style="text-align: left;">call-compress/nuclear.0.001.peaks.narrowpeaks.bed.gz</td>
-<td style="text-align: left;">https://www.encodeproject.org/files/ENCFF185XRG/</td>
-<td style="text-align: left;">https://www.encodeproject.org/files/ENCFF185XRG/@@download/ENCFF185XRG.bed.gz</td>
+<td style="text-align: left;">John Stamatoyannopoulos, UW</td>
 </tr>
 </tbody>
 </table>
@@ -590,7 +640,7 @@ PROJECT REF     (FD_REF): /mount/repo/Proj_CombEffect_ENCODE_FCC/references
 <section id="generate-download-commands" class="level2">
 <h2 class="anchored" data-anchor-id="generate-download-commands">Generate download commands</h2>
 <pre><code>wget -O FILE URL</code></pre>
-<div class="cell" data-execution_count="12">
+<div class="cell" data-execution_count="3">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="do">### init</span></span>
@@ -599,28 +649,40 @@ PROJECT REF     (FD_REF): /mount/repo/Proj_CombEffect_ENCODE_FCC/references
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="do">### setup download file name and wget command</span></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span></span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">File_Name =</span> <span class="fu">paste</span>(</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>            Biosample, </span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>            Genome, </span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>            Index_Experiment, </span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>            Index_File,</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>            Assay,</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>            <span class="st">"bed.gz"</span>, </span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>            <span class="at">sep=</span><span class="st">"."</span>)</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">CMD =</span> <span class="fu">paste</span>(<span class="st">"wget"</span>, <span class="st">"--append-output=run_download.log.txt"</span>, <span class="st">"-O"</span>, File_Name, File_URL_Download)</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="do">### add Shebang and initial commands</span></span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="co">#dat = dat %&gt;% dplyr::select(Assay, Biosample, Index_Experiment, Index_File, File_Name, CMD)</span></span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(CMD)</span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> <span class="fu">rbind</span>(<span class="st">'echo -n "" &gt; run_download.log.txt'</span>, dat)</span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(dat) <span class="ot">=</span> <span class="st">"#!/bin/bash"</span></span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="do">### assign and show</span></span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>dat_cmd <span class="ot">=</span> dat</span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a><span class="fu">fun_display_table</span>(dat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">File_Ext1 =</span> <span class="fu">ifelse</span>(<span class="fu">str_detect</span>(File_Type, <span class="st">"bed"</span>), <span class="st">"bed.gz"</span>, <span class="st">"bw"</span>),</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">File_Ext2 =</span> <span class="fu">ifelse</span>(<span class="fu">str_detect</span>(File_Type, <span class="st">"bed"</span>), <span class="st">"bed.gz"</span>, <span class="st">"bigWig"</span>)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">File_Name =</span> <span class="fu">paste</span>(</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>            Biosample, </span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>            <span class="st">"hg38"</span>, </span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>            Index_Experiment, </span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>            Index_File,</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>            Assay,</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>            File_Ext1, </span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>            <span class="at">sep=</span><span class="st">"."</span>)</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">File_URL_Download =</span> <span class="fu">file.path</span>(</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>            <span class="st">"https://www.encodeproject.org/files"</span>,</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>            Index_File,</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>            <span class="st">"@@download"</span>,</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>            <span class="fu">paste</span>(Index_File, File_Ext2, <span class="at">sep =</span> <span class="st">"."</span>)</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>        <span class="at">CMD =</span> <span class="fu">paste</span>(<span class="st">"wget"</span>, <span class="st">"--append-output=run_download.log.txt"</span>, <span class="st">"-O"</span>, File_Name, File_URL_Download)</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a><span class="do">### add Shebang and initial commands</span></span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a><span class="co">#dat = dat %&gt;% dplyr::select(Assay, Biosample, Index_Experiment, Index_File, File_Name, CMD)</span></span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(CMD)</span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> <span class="fu">rbind</span>(<span class="st">'echo -n "" &gt; run_download.log.txt'</span>, dat)</span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(dat) <span class="ot">=</span> <span class="st">"#!/bin/bash"</span></span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a><span class="do">### assign and show</span></span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>dat_cmd <span class="ot">=</span> dat</span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a><span class="fu">fun_display_table</span>(dat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <table data-quarto-postprocess="true" class="table table-sm table-striped small">
@@ -634,10 +696,16 @@ PROJECT REF     (FD_REF): /mount/repo/Proj_CombEffect_ENCODE_FCC/references
 <td style="text-align: left;">echo -n "" &gt; run_download.log.txt</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">wget --append-output=run_download.log.txt -O K562.hg38.ENCSR868FGK.ENCFF333TAT.ATAC.bed.gz https://www.encodeproject.org/files/ENCFF333TAT/@@download/ENCFF333TAT.bed.gz</td>
+<td style="text-align: left;">wget --append-output=run_download.log.txt -O K562.hg38.ENCSR868FGK.ENCFF357GNC.ATAC.bw https://www.encodeproject.org/files/ENCFF357GNC/@@download/ENCFF357GNC.bigWig</td>
 </tr>
 <tr class="odd">
+<td style="text-align: left;">wget --append-output=run_download.log.txt -O K562.hg38.ENCSR868FGK.ENCFF333TAT.ATAC.bed.gz https://www.encodeproject.org/files/ENCFF333TAT/@@download/ENCFF333TAT.bed.gz</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">wget --append-output=run_download.log.txt -O K562.hg38.ENCSR868FGK.ENCFF948AFM.ATAC.bed.gz https://www.encodeproject.org/files/ENCFF948AFM/@@download/ENCFF948AFM.bed.gz</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">wget --append-output=run_download.log.txt -O K562.hg38.ENCSR483RKN.ENCFF600FDO.ATAC.bw https://www.encodeproject.org/files/ENCFF600FDO/@@download/ENCFF600FDO.bigWig</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">wget --append-output=run_download.log.txt -O K562.hg38.ENCSR483RKN.ENCFF558BLC.ATAC.bed.gz https://www.encodeproject.org/files/ENCFF558BLC/@@download/ENCFF558BLC.bed.gz</td>
@@ -646,7 +714,13 @@ PROJECT REF     (FD_REF): /mount/repo/Proj_CombEffect_ENCODE_FCC/references
 <td style="text-align: left;">wget --append-output=run_download.log.txt -O K562.hg38.ENCSR483RKN.ENCFF925CYR.ATAC.bed.gz https://www.encodeproject.org/files/ENCFF925CYR/@@download/ENCFF925CYR.bed.gz</td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">wget --append-output=run_download.log.txt -O K562.hg38.ENCSR000EKS.ENCFF972GVB.DNase.bw https://www.encodeproject.org/files/ENCFF972GVB/@@download/ENCFF972GVB.bigWig</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">wget --append-output=run_download.log.txt -O K562.hg38.ENCSR000EKS.ENCFF274YGF.DNase.bed.gz https://www.encodeproject.org/files/ENCFF274YGF/@@download/ENCFF274YGF.bed.gz</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">wget --append-output=run_download.log.txt -O K562.hg38.ENCSR000EOT.ENCFF414OGC.DNase.bw https://www.encodeproject.org/files/ENCFF414OGC/@@download/ENCFF414OGC.bigWig</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">wget --append-output=run_download.log.txt -O K562.hg38.ENCSR000EOT.ENCFF185XRG.DNase.bed.gz https://www.encodeproject.org/files/ENCFF185XRG/@@download/ENCFF185XRG.bed.gz</td>
@@ -659,7 +733,7 @@ PROJECT REF     (FD_REF): /mount/repo/Proj_CombEffect_ENCODE_FCC/references
 <section id="save-to-script" class="level2">
 <h2 class="anchored" data-anchor-id="save-to-script">Save to script</h2>
 <p>Save the command lines for each row into a bash script</p>
-<div class="cell" data-execution_count="13">
+<div class="cell" data-execution_count="4">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="do">### set output path</span></span>
@@ -667,13 +741,10 @@ PROJECT REF     (FD_REF): /mount/repo/Proj_CombEffect_ENCODE_FCC/references
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>txt_fname <span class="ot">=</span> <span class="st">"run_download.sh"</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>txt_fpath <span class="ot">=</span> <span class="fu">file.path</span>(txt_fdiry, txt_fname)</span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="do">### arrange table</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat_cmd</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(dat) <span class="ot">=</span> <span class="st">"#!/bin/bash"</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="do">### save table</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(txt_fdiry, <span class="at">showWarnings =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="fu">write_tsv</span>(dat, txt_fpath)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="do">### save table</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(txt_fdiry, <span class="at">showWarnings =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat_cmd</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="fu">write_tsv</span>(dat, txt_fpath)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 

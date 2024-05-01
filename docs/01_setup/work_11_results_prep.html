@@ -154,8 +154,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01_setup/work_02_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">02 Working Directory of Data</span></a>
+  <a href="../01_setup/work_02_dir.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02 Working Directory</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01_setup/work_03_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03 Working Directory of Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -370,8 +376,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#naming-convention" id="toc-naming-convention" class="nav-link active" data-scroll-target="#naming-convention">Naming convention</a></li>
-  <li><a href="#results-after-preparation" id="toc-results-after-preparation" class="nav-link" data-scroll-target="#results-after-preparation">Results after preparation</a></li>
+  <li><a href="#results-after-preparation" id="toc-results-after-preparation" class="nav-link active" data-scroll-target="#results-after-preparation">Results after preparation</a></li>
+  <li><a href="#fcc-assay" id="toc-fcc-assay" class="nav-link" data-scroll-target="#fcc-assay">FCC assay</a></li>
+  <li><a href="#hic-assay" id="toc-hic-assay" class="nav-link" data-scroll-target="#hic-assay">HiC assay</a></li>
+  <li><a href="#region" id="toc-region" class="nav-link" data-scroll-target="#region">Region</a>
+  <ul class="collapse">
+  <li><a href="#region-labeling" id="toc-region-labeling" class="nav-link" data-scroll-target="#region-labeling">Region labeling</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -395,78 +406,15 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="naming-convention" class="level1">
-<h1>Naming convention</h1>
-<p>Below are some naming convention in this documentation.</p>
-<ul>
-<li>Assay folder name
-<ul>
-<li><code>&lt;Assay Type&gt;_&lt;Cell Type&gt;_&lt;Lab&gt;_&lt;Label&gt;</code></li>
-<li>Label
-<ul>
-<li>batch, source, people, id numbers</li>
-</ul></li>
-</ul></li>
-</ul>
-<pre><code>STARR_ATAC_K562_Reddy_KS91
-STARR_ATAC_K562_Reddy_KS274
-STARR_WHG_K562_Reddy_A001
-MPRA_Tiling_K562_Tewhey_Hannah
-MPRA_Lenti_K562_Nadav_Vikram
-CRISPRi_FlowFISH_K562_Riley_JinWoo
-CRISPRi_Growth_K562_Gersbach_Alex</code></pre>
-<ul>
-<li>Assay file name
-<ul>
-<li><code>&lt;Prefix&gt;.&lt;Genome&gt;.&lt;Input/Output/Log2FC/ZScore&gt;.&lt;Replicate&gt;.&lt;Region&gt;.&lt;Unstranded/Stranded&gt;.&lt;File Extension&gt;</code></li>
-<li>Prefix
-<ul>
-<li>ASTARRseq_K562_KS91</li>
-<li>WSTARRseq_K562_A001</li>
-<li>TMPRA_K562_OL13</li>
-<li>TMPRA_K562_OL43</li>
-<li>TMPRA_K562_OL45</li>
-<li>TMPRA_K562_Merge</li>
-<li>LMPRA_K562</li>
-<li>CRISPRi_HCRFF_K562</li>
-<li>CRISPRi_Growth_K562</li>
-</ul></li>
-<li>Replicate
-<ul>
-<li>rep1/2/3/4</li>
-<li>rep1_vs_rep2</li>
-<li>rep_all</li>
-</ul></li>
-<li>Region
-<ul>
-<li>WHG = whole genome</li>
-<li>MYC = MYC region</li>
-<li>GATA1 = GATA1 region</li>
-</ul></li>
-</ul></li>
-<li>ENCODE region file name
-<ul>
-<li><code>&lt;Prefix&gt;.&lt;Genome&gt;.&lt;Experiment ID&gt;.&lt;File ID&gt;.&lt;Assay&gt;.&lt;Description&gt;.&lt;File Extension&gt;</code></li>
-<li>Prefix: biosample
-<ul>
-<li>K562: a human erythroleukemic cell line</li>
-<li>A549: a human lung epithelial Cell line</li>
-<li>Hsa: Human</li>
-</ul></li>
-<li>Genome: reference for alignment
-<ul>
-<li>hg38: GRCh38</li>
-<li>hg19: GRCh37</li>
-</ul></li>
-</ul></li>
-</ul>
-</section>
 <section id="results-after-preparation" class="level1">
 <h1>Results after preparation</h1>
 <ul>
 <li>Process files in data (arrange/extract)</li>
 <li>SymLink files in data (file aliases)</li>
 </ul>
+</section>
+<section id="fcc-assay" class="level1">
+<h1>FCC assay</h1>
 <pre><code>PROJECT/results/assay_fcc
 ├── STARR_ATAC_K562_Reddy_KS91
 │   ├── fragment_counts
@@ -480,6 +428,14 @@ CRISPRi_Growth_K562_Gersbach_Alex</code></pre>
 │   │   ├── ASTARRseq_K562_KS91.hg38.Output.rep2.WGS.unstranded.bed.gz
 │   │   ├── ASTARRseq_K562_KS91.hg38.Output.rep3.WGS.unstranded.bed.gz
 │   │   └── ASTARRseq_K562_KS91.hg38.Output.rep4.WGS.unstranded.bed.gz
+│   └── fragment
+│
+├── STARR_ATAC_K562_Reddy_KS274
+│   ├── fragment_counts
+│   └── fragment
+│
+├── STARR_ATAC_K562_Reddy_KSMerge
+│   ├── fragment_counts
 │   └── fragment
 │
 ├── STARR_WHG_K562_Reddy_A001
@@ -568,7 +524,8 @@ CRISPRi_Growth_K562_Gersbach_Alex</code></pre>
 │       ├── PVT1_HCRFF_rAVG.log2FC_2.bed
 │       └── summary
 │           ├── track_info.tsv
-│           └── metadata.tsv
+│           ├── metadata.tsv
+│           └── metadata.library_design.tsv
 │
 └── CRISPRi_Growth_K562_Gersbach_JinWoo
     └── guide_scores
@@ -578,24 +535,152 @@ CRISPRi_Growth_K562_Gersbach_Alex</code></pre>
         └── summary
             ├── track_info.tsv
             └── metadata.tsv</code></pre>
-<pre><code>├── assay_hic
-│   ├── hic_insitu_K562_ENCSR545YBD
-│   ├── hic_intact_K562_ENCSR479XDG
-│   └── hic_intact_K562_deep
-├── region
-│   ├── fcc_astarr_macs
-│   │   ├── ASTARRseq_K562_KS91.hg38.Input.rep_all.union.q5.bed.gz
-│   │   └── ASTARRseq_K562_KS91.hg38.Input.rep_all.max_overlaps.q5.bed.gz
-│   ├── fcc_astarr_csaw
-│   │   └── 
-│   ├── fcc_enhancer_junke_zscore
-│   ├── 
-│   └── 
-└── annotation
-    ├── ASTARRseq_K562_KS91_Input_rep_all_union
-    └── ASTARRseq_K562_KS91_Input_rep_all_max_overlap</code></pre>
+</section>
+<section id="hic-assay" class="level1">
+<h1>HiC assay</h1>
+<p><strong>Summary</strong></p>
+<pre><code>PROJECT/results/assay_hic
+├── hic_insitu_K562_ENCSR545YBD
+├── hic_intact_K562_ENCSR479XDG
+└── hic_intact_K562_deep</code></pre>
+</section>
+<section id="region" class="level1">
+<h1>Region</h1>
+<p><strong>Description</strong></p>
+<p><strong>Summary</strong></p>
+<pre><code>encode_chipseq_flagship
+encode_chipseq_histone
+encode_chipseq_subset
+encode_chromatin_states
+encode_open_chromatin
+encode_e2g_benchmark
+encode_e2g_prediction
+fcc_enhancer_junke_zscore
+fcc_astarr_csaw
+fcc_astarr_macs
+fcc_wstarr_cradle
+fcc_crispri_growth
+fcc_crispri_hcrff
+fcc_screened
+hic_insitu_K562_ENCSR545YBD
+hic_intact_K562_ENCSR479XDG
+hic_intact_K562_deep
+
+genome_tss
+genome_cres
+genome_...
+ref_tss (what if it is from RAMPAGE?)
+
+(TF_modules)</code></pre>
+<pre><code>PROJECT/results/region
+├── encode_open_chromatin
+│   ├── K562.hg38.ENCSR000EKS.ENCFF274YGF.DNase.bed.gz
+│   ├── K562.hg38.ENCSR000EOT.ENCFF185XRG.DNase.bed.gz
+│   ├── K562.hg38.ENCSR483RKN.ENCFF558BLC.ATAC.bed.gz
+│   ├── K562.hg38.ENCSR483RKN.ENCFF925CYR.ATAC.bed.gz
+│   ├── K562.hg38.ENCSR868FGK.ENCFF333TAT.ATAC.bed.gz
+│   ├── K562.hg38.ENCSR868FGK.ENCFF948AFM.ATAC.bed.gz
+│   └── summary
+|       ├── metadata.label.tsv
+|       ├── metadata.size.tsv
+|       ├── result.size.concat.csv
+|       ├── result.size.&lt;...&gt;.csv
+│       └── description.tsv
+│
+├── encode_chipseq_flagship
+│   └── summary
+│
+├── encode_chipseq_histone
+│   └── summary
+│
+├── encode_chipseq_subset
+│   └── summary
+│
+├── encode_chromatin_states
+│   └── summary
+│
+├── encode_e2g_benchmark
+│   ├── K562.hg38.EPCrisprBenchmark.active.bed.gz
+│   ├── K562.hg38.EPCrisprBenchmark.active.merge.bed.gz
+│   ├── K562.hg38.EPCrisprBenchmark.total.bed.gz
+│   ├── K562.hg38.EPCrisprBenchmark.total.merge.gz
+│   └── summary
+│
+├── encode_e2g_prediction
+│   ├── K562.hg38.ENCSR328LMT.ENCFF202FID.element_gene_links.active.bed.gz
+│   ├── K562.hg38.ENCSR328LMT.ENCFF202FID.element_gene_links.active.merge.bed.gz
+│   ├── K562.hg38.ENCSR328LMT.ENCFF122UMY.element_gene_links.total.bed.gz
+│   ├── K562.hg38.ENCSR328LMT.ENCFF122UMY.element_gene_links.total.merge.bed.gz
+│   └── summary
+│
+├── fcc_astarr_macs
+│   ├── ASTARRseq_K562_KS91.hg38.Input.rep_all.union.q5.bed.gz
+│   ├── ASTARRseq_K562_KS91.hg38.Input.rep_all.max_overlaps.q5.bed.gz
+│   └── summary
+│
+├── fcc_crispri_hcrff
+│   ├── K562.hg38.CRISPRi_HCRFF.CASA.bed.gz
+│   ├── K562.hg38.CRISPRi_HCRFF.CASA.merge.bed.gz
+│   └── summary
+│
+├── fcc_crispri_growth
+│   ├── K562.hg38.CRISPRi_Growth.DHS.active.bed.gz
+│   ├── K562.hg38.CRISPRi_Growth.DHS.active.merge.bed.gz
+│   ├── K562.hg38.CRISPRi_Growth.DHS.total.bed.gz
+│   ├── K562.hg38.CRISPRi_Growth.DHS.total.merge.bed.gz
+│   └── summary
+│
+├── fcc_screened
+│   ├── region_screened.crispri_hcrff.bed.gz
+│   ├── region_screened.crispri_hcrff.tsv
+│   ├── region_screened.tmpra.bed.gz
+│   ├── region_screened.tmpra.tsv
+│   └── summary
+│
+└── summary
+    ├── metadata.size.tsv
+    ├── metadata.label.tsv
+    ├── metadata.label.ocr.total.tsv
+    ├── metadata.label.ocr.astarr_macs.tsv
+    ├── metadata.label.cres.tsv
+    ├── metadata.label.chromstates.tsv
+    ├── metadata.label.chipseq_subset.tsv
+    ├── metadata.label.chipseq.tsv</code></pre>
+<section id="region-labeling" class="level2">
+<h2 class="anchored" data-anchor-id="region-labeling">Region labeling</h2>
+<p><code>&lt;Assay&gt;_&lt;File Index&gt;/&lt;Label&gt;</code></p>
+<pre><code>encode_open_chromatin
+├── atac_&lt;File Index&gt;
+└── dnase_&lt;File Index&gt;
+
+encode_chipseq_subset/histone/flagship
+└── chipseq_&lt;File Index&gt;
+
+encode_chromatin_states
+├── ccres_&lt;File Index&gt;
+└── chromhmm_&lt;File Index&gt;
+
+encode_e2g_benchmark
+├── encode_e2g_benchmark_active_merge
+└── encode_e2g_benchmark_total_merge
+
+encode_e2g_prediction
+├── encode_e2g_prediction_active_merge
+└── encode_e2g_prediction_total_merge
+
+fcc_crispri_hcrff
+├── crispri_hcrff_active_merge
+└── crispri_hcrff_total_merge
+
+fcc_crispri_growth
+├── crispri_growth_active_merge
+└── crispri_growth_total_merge
+
+fcc_screened
+├── ...</code></pre>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

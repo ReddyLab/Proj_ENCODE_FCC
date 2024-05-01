@@ -188,8 +188,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../01_setup/work_02_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">02 Working Directory of Data</span></a>
+  <a href="../../01_setup/work_02_dir.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02 Working Directory</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../01_setup/work_03_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03 Working Directory of Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -404,7 +410,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#set-executable" id="toc-set-executable" class="nav-link active" data-scroll-target="#set-executable">Set executable</a></li>
+  <li><a href="#link-to-folders" id="toc-link-to-folders" class="nav-link active" data-scroll-target="#link-to-folders">Link to folders</a></li>
+  <li><a href="#link-to-container" id="toc-link-to-container" class="nav-link" data-scroll-target="#link-to-container">Link to container</a></li>
+  <li><a href="#set-executable" id="toc-set-executable" class="nav-link" data-scroll-target="#set-executable">Set executable</a></li>
   <li><a href="#create-symlinks" id="toc-create-symlinks" class="nav-link" data-scroll-target="#create-symlinks">Create symlinks</a></li>
   <li><a href="#check-folder-structure" id="toc-check-folder-structure" class="nav-link" data-scroll-target="#check-folder-structure">Check folder structure</a></li>
   </ul>
@@ -447,7 +455,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 ├── README.md
 └── .gitignore</code></pre>
 <p><strong>Set environment</strong></p>
-<div class="cell" data-execution_count="6">
+<div class="cell" data-execution_count="1">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> ../run_config_project.sh</span>
@@ -475,13 +483,125 @@ PROJECT IMAGE   (FP_PRJ_SIF):  /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/app/sing
 </code></pre>
 </div>
 </div>
+<section id="link-to-folders" class="level2">
+<h2 class="anchored" data-anchor-id="link-to-folders">Link to folders</h2>
+<pre><code>ln -s file link</code></pre>
+<div class="cell" data-execution_count="6">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">${FD_WORK}</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">${FD_PRJ}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>/data/reddylab/Kuei/work
+/data/reddylab/Kuei/repo/Proj_ENCODE_FCC</code></pre>
+</div>
+</div>
+<p><strong>Create softlinks</strong></p>
+<div class="cell" data-execution_count="2">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="va">FILE</span><span class="op">=</span><span class="va">${FD_WORK}</span>/proj_encode_fcc/data</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="va">LINK</span><span class="op">=</span><span class="va">${FD_PRJ}</span>/data</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ln</span> <span class="at">-sf</span> <span class="va">${FILE}</span> <span class="va">${LINK}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell" data-execution_count="3">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="va">FILE</span><span class="op">=</span><span class="va">${FD_WORK}</span>/proj_encode_fcc/results</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="va">LINK</span><span class="op">=</span><span class="va">${FD_PRJ}</span>/results</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ln</span> <span class="at">-sf</span> <span class="va">${FILE}</span> <span class="va">${LINK}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell" data-execution_count="4">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="va">FILE</span><span class="op">=</span><span class="va">${FD_WORK}</span>/proj_encode_fcc/log</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="va">LINK</span><span class="op">=</span><span class="va">${FD_PRJ}</span>/log</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ln</span> <span class="at">-sf</span> <span class="va">${FILE}</span> <span class="va">${LINK}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p><strong>Check folder structure</strong></p>
+<div class="cell" data-execution_count="5">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span>  <span class="va">${FD_PRJ}</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-1</span> <span class="va">${FD_PRJ}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>/data/reddylab/Kuei/repo/Proj_ENCODE_FCC
+app
+data
+docs
+log
+notebooks
+README.md
+references
+results
+scripts
+site
+tests
+tmp</code></pre>
+</div>
+</div>
+</section>
+<section id="link-to-container" class="level2">
+<h2 class="anchored" data-anchor-id="link-to-container">Link to container</h2>
+<div class="cell" data-execution_count="17">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">${FD_SING}</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">${FD_APP}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>/data/reddylab/Kuei/container
+/data/reddylab/Kuei/repo/Proj_ENCODE_FCC/app</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="16">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FD_SING}</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FD_SING}</span>/biocontainer</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FD_SING}</span>/project</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>biocontainer  home  project  project_backup  project_tmp  rstudio_tmp  toolbox
+
+bedtools:2.30.0--h468198e_3  bedtools:2.31.1--hf5e1c6e_1  deeptools:3.5.1--py_0
+
+singularity_motif.sif            singularity_scratch.sif
+singularity_proj_encode_fcc.sif  singularity_test.sif</code></pre>
+</div>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="va">FILE</span><span class="op">=</span><span class="va">${FD_SING}</span>/biocontainer/bedtools:2.31.1--hf5e1c6e_1</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="va">LINK</span><span class="op">=</span><span class="va">${FD_APP}</span>/app/bedtools</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="va">FILE</span><span class="op">=</span><span class="va">${FD_SING}</span>/project/singularity_proj_encode_fcc.sif</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="va">LINK</span><span class="op">=</span><span class="va">${FD_APP}</span>/app/bedtools</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
 <section id="set-executable" class="level2">
 <h2 class="anchored" data-anchor-id="set-executable">Set executable</h2>
 <pre><code>chmod +x file</code></pre>
 <div class="cell" data-execution_count="5">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">${FD_EXE}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">${FD_EXE}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>/data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/scripts</code></pre>
@@ -490,9 +610,8 @@ PROJECT IMAGE   (FP_PRJ_SIF):  /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/app/sing
 <div class="cell" data-execution_count="6">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#chmod +x ${FD_EXE}/sing_*.sh</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> +x <span class="va">${FD_EXE}</span>/<span class="pp">*</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-1</span> <span class="va">${FD_EXE}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> +x <span class="va">${FD_EXE}</span>/<span class="pp">*</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-1</span> <span class="va">${FD_EXE}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>config_func.sh
@@ -525,18 +644,18 @@ sing_script.sh</code></pre>
 <div class="cell" data-execution_count="28">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="va">FILE</span><span class="op">=</span><span class="va">${FD_WORK}</span>/proj_encode_fcc/data</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="va">LINK</span><span class="op">=</span><span class="va">${FD_PRJ}</span>/data</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">[[</span> <span class="ot">-h</span> <span class="va">${LINK}</span> <span class="kw">]];</span> <span class="cf">then</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">"Remove existing link."</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rm</span> <span class="va">${LINK}</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">[[</span> <span class="ot">-e</span> <span class="va">${FILE}</span> <span class="kw">]];</span> <span class="cf">then</span></span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">"Create symbolic links: LINK -&gt; FILE"</span></span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ln</span> <span class="at">-s</span> <span class="va">${FILE}</span> <span class="va">${LINK}</span></span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="va">FILE</span><span class="op">=</span><span class="va">${FD_WORK}</span>/proj_encode_fcc/data</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="va">LINK</span><span class="op">=</span><span class="va">${FD_PRJ}</span>/data</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">[[</span> <span class="ot">-h</span> <span class="va">${LINK}</span> <span class="kw">]];</span> <span class="cf">then</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">"Remove existing link."</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rm</span> <span class="va">${LINK}</span></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">[[</span> <span class="ot">-e</span> <span class="va">${FILE}</span> <span class="kw">]];</span> <span class="cf">then</span></span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">"Create symbolic links: LINK -&gt; FILE"</span></span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ln</span> <span class="at">-s</span> <span class="va">${FILE}</span> <span class="va">${LINK}</span></span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Remove existing link.
@@ -546,18 +665,18 @@ Create symbolic links: LINK -&gt; FILE</code></pre>
 <div class="cell" data-execution_count="29">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="va">FILE</span><span class="op">=</span><span class="va">${FD_WORK}</span>/proj_encode_fcc/log</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="va">LINK</span><span class="op">=</span><span class="va">${FD_PRJ}</span>/log</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">[[</span> <span class="ot">-h</span> <span class="va">${LINK}</span> <span class="kw">]];</span> <span class="cf">then</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">"Remove existing link."</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rm</span> <span class="va">${LINK}</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">[[</span> <span class="ot">-e</span> <span class="va">${FILE}</span> <span class="kw">]];</span> <span class="cf">then</span></span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">"Create symbolic links: LINK -&gt; FILE"</span></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ln</span> <span class="at">-s</span> <span class="va">${FILE}</span> <span class="va">${LINK}</span></span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="va">FILE</span><span class="op">=</span><span class="va">${FD_WORK}</span>/proj_encode_fcc/log</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="va">LINK</span><span class="op">=</span><span class="va">${FD_PRJ}</span>/log</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">[[</span> <span class="ot">-h</span> <span class="va">${LINK}</span> <span class="kw">]];</span> <span class="cf">then</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">"Remove existing link."</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rm</span> <span class="va">${LINK}</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">[[</span> <span class="ot">-e</span> <span class="va">${FILE}</span> <span class="kw">]];</span> <span class="cf">then</span></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">"Create symbolic links: LINK -&gt; FILE"</span></span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ln</span> <span class="at">-s</span> <span class="va">${FILE}</span> <span class="va">${LINK}</span></span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Remove existing link.
@@ -567,18 +686,18 @@ Create symbolic links: LINK -&gt; FILE</code></pre>
 <div class="cell" data-execution_count="33">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="va">FILE</span><span class="op">=</span><span class="va">${FD_WORK}</span>/proj_encode_fcc/results</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="va">LINK</span><span class="op">=</span><span class="va">${FD_PRJ}</span>/results</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">[[</span> <span class="ot">-h</span> <span class="va">${LINK}</span> <span class="kw">]];</span> <span class="cf">then</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">"Remove existing link."</span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rm</span> <span class="va">${LINK}</span></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">[[</span> <span class="ot">-e</span> <span class="va">${FILE}</span> <span class="kw">]];</span> <span class="cf">then</span></span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">"Create symbolic links: LINK -&gt; FILE"</span></span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ln</span> <span class="at">-s</span> <span class="va">${FILE}</span> <span class="va">${LINK}</span></span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="va">FILE</span><span class="op">=</span><span class="va">${FD_WORK}</span>/proj_encode_fcc/results</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="va">LINK</span><span class="op">=</span><span class="va">${FD_PRJ}</span>/results</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">[[</span> <span class="ot">-h</span> <span class="va">${LINK}</span> <span class="kw">]];</span> <span class="cf">then</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">"Remove existing link."</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rm</span> <span class="va">${LINK}</span></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">[[</span> <span class="ot">-e</span> <span class="va">${FILE}</span> <span class="kw">]];</span> <span class="cf">then</span></span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">"Create symbolic links: LINK -&gt; FILE"</span></span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ln</span> <span class="at">-s</span> <span class="va">${FILE}</span> <span class="va">${LINK}</span></span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Remove existing link.
@@ -591,8 +710,8 @@ Create symbolic links: LINK -&gt; FILE</code></pre>
 <div class="cell" data-execution_count="34">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span>  <span class="va">${FD_PRJ}</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-1</span> <span class="va">${FD_PRJ}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span>  <span class="va">${FD_PRJ}</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-1</span> <span class="va">${FD_PRJ}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>/data/reddylab/Kuei/repo/Proj_ENCODE_FCC
@@ -613,8 +732,8 @@ tmp</code></pre>
 <div class="cell" data-execution_count="3">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span>  <span class="va">${FD_PRJ}</span>/tmp</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-1</span> <span class="va">${FD_PRJ}</span>/tmp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span>  <span class="va">${FD_PRJ}</span>/tmp</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-1</span> <span class="va">${FD_PRJ}</span>/tmp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>/data/reddylab/Kuei/repo/Proj_CombEffect_ENCODE_FCC/tmp
@@ -629,8 +748,8 @@ test.txt</code></pre>
 <div class="cell" data-execution_count="35">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FD_SING}</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FD_SING}</span>/project</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FD_SING}</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="va">${FD_SING}</span>/project</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>biocontainer  home  project  project_backup  project_tmp  rstudio_tmp  toolbox
@@ -641,7 +760,7 @@ singularity_proj_encode_fcc.sif  singularity_test.sif</code></pre>
 <div class="cell" data-execution_count="36">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">find</span> <span class="at">-L</span> <span class="va">${FD_PRJ}</span> <span class="at">-maxdepth</span> 2 <span class="at">-type</span> d <span class="at">-not</span> <span class="at">-path</span> <span class="st">'*/.*'</span> <span class="kw">|</span> <span class="fu">cut</span> <span class="at">-d</span>/ <span class="at">-f</span> 6- <span class="kw">|</span> <span class="fu">sort</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">find</span> <span class="at">-L</span> <span class="va">${FD_PRJ}</span> <span class="at">-maxdepth</span> 2 <span class="at">-type</span> d <span class="at">-not</span> <span class="at">-path</span> <span class="st">'*/.*'</span> <span class="kw">|</span> <span class="fu">cut</span> <span class="at">-d</span>/ <span class="at">-f</span> 6- <span class="kw">|</span> <span class="fu">sort</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Proj_ENCODE_FCC

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ENCODE FCC Project - 02 Working Directory of Data</title>
+<title>ENCODE FCC Project - 03 Working Directory of Data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -117,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../01_setup/work_01_env.html">Setup</a></li><li class="breadcrumb-item"><a href="../01_setup/work_02_data.html">02 Working Directory of Data</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../01_setup/work_01_env.html">Setup</a></li><li class="breadcrumb-item"><a href="../01_setup/work_03_data.html">03 Working Directory of Data</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -154,8 +154,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01_setup/work_02_data.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">02 Working Directory of Data</span></a>
+  <a href="../01_setup/work_02_dir.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02 Working Directory</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01_setup/work_03_data.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">03 Working Directory of Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -370,7 +376,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#reference-file" id="toc-reference-file" class="nav-link active" data-scroll-target="#reference-file">Reference file</a></li>
+  <li><a href="#reference-files" id="toc-reference-files" class="nav-link active" data-scroll-target="#reference-files">Reference files</a></li>
   <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a>
   <ul class="collapse">
   <li><a href="#download-external-data" id="toc-download-external-data" class="nav-link" data-scroll-target="#download-external-data">Download external data</a></li>
@@ -384,7 +390,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">02 Working Directory of Data</h1>
+<h1 class="title">03 Working Directory of Data</h1>
 </div>
 
 
@@ -399,15 +405,27 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="reference-file" class="level1">
-<h1>Reference file</h1>
+<section id="reference-files" class="level1">
+<h1>Reference files</h1>
+<p><strong>Description</strong> - encode_chipseq_flagship - encode_chipseq_histone - encode_chipseq_subset - encode_chromatin_states - encode_crispri_hcrff - encode_e2g_benchmark - encode_e2g_prediction - encode_open_chromatin - encode_rnaseq - genome_tss - genome_cres - collecting studied enhancers and regulatory regions, including: - GATA1 - HDAC6 - MYC/PVT1 - Locus control region - <a href="https://www.sciencedirect.com/topics/agricultural-and-biological-sciences/locus-control-region">ref 1</a> - LMO2 enhancers - fcc_peak_call_atac - fcc_peak_call_cres - fcc_trackhub_JinWoo - TF_modules_Shannon</p>
 <p><strong>Summary</strong></p>
 <pre><code>PROJECT/reference
 ├── encode_chipseq_flagship
+├── encode_chipseq_histone
 ├── encode_chipseq_subset
+├── encode_chromatin_states
+├── encode_crispri_hcrff
+├── encode_e2g_benchmark
+├── encode_e2g_prediction
 ├── encode_open_chromatin
+├── encode_rnaseq
+├── genome_tss
+├── genome_cres
+├── fcc_peak_call_atac
+├── fcc_peak_call_cres
 ├── fcc_trackhub_JinWoo
-└── fcc_astarr_macs</code></pre>
+├── hic...
+└── TF_modules_Shannon</code></pre>
 <p><strong>Detailed</strong></p>
 <pre><code>PROJECT/reference
 ├── encode_chipseq_flagship
@@ -428,19 +446,28 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="download-external-data">Download external data</h2>
 <p><strong>Summary</strong></p>
 <pre><code>PROJECT/data/external
-├── encode_open_chromatin
-├── encode_ccres
-├── encode_chromhmm
+├── (encode_astarr_csaw)
 ├── encode_chipseq_flagship
+├── encode_chipseq_histone
 ├── encode_chipseq_subset
-├── encode_astarr_csaw
-├── encode_e2g
+├── encode_chromatin_states
+├── encode_crispri_hcrff
+├── encode_open_chromatin
+├── encode_e2g_benchmark
+├── encode_e2g_prediction
 ├── encode_rnaseq
+├── (genome_gencode)
+├── (genome_ncbi_refseq)
+├── genome_tss
+├── genome_cres
 ├── hic_insitu_K562_ENCSR545YBD
 ├── hic_intact_K562_ENCSR479XDG
 ├── hic_intact_K562_deep
 ├── chrom.sizes.hg19
-└── chrom.sizes.hg38</code></pre>
+├── chrom.sizes.hg38
+├── chrom.list.main
+├── chrom.list.auto
+└── chrom.list.sex</code></pre>
 <p><strong>Detailed</strong></p>
 <pre><code>PROJECT/data/external
 ├── encode_open_chromatin
@@ -451,9 +478,7 @@ ul.task-list li input[type="checkbox"] {
 │   ├── K562.hg38.ENCSR868FGK.ENCFF333TAT.ATAC.bed.gz
 │   └── K562.hg38.ENCSR868FGK.ENCFF948AFM.ATAC.bed.gz
 │   
-├── encode_ccres
-├── encode_chromhmm
-├── encode_astarr_csaw
+├── encode_chromatin_states
 │
 ├── encode_chipseq_flagship
 ├── encode_chipseq_subset
@@ -481,16 +506,16 @@ ul.task-list li input[type="checkbox"] {
 │
 ├── encode_e2g
 ├── encode_rnaseq
-├── 
-├── (genome_gencode)
-├── (genome_ncbi_refseq)
-├── 
+├── (genome_tss)
 ├── 
 ├── hic_insitu_K562_ENCSR545YBD
 ├── hic_intact_K562_ENCSR479XDG
 ├── hic_intact_K562_deep
 ├── chrom.sizes.hg19
-└── chrom.sizes.hg38</code></pre>
+├── chrom.sizes.hg38
+├── chrom.list.main
+├── chrom.list.auto
+└── chrom.list.sex</code></pre>
 </section>
 <section id="get-processed-data" class="level2">
 <h2 class="anchored" data-anchor-id="get-processed-data">Get processed data</h2>
@@ -502,12 +527,13 @@ ul.task-list li input[type="checkbox"] {
 ├── STARR_WHG_K562_Reddy_A001_Kari
 ├── MPRA_Tiling_K562_Tewhey_Hannah
 ├── MPRA_Lenti_K562_Nadav_Vikram_230621
+├── CRISPRi_FlowFISH_K562_Riley_JinWoo
 ├── CRISPRi_Growth_K562_Gersbach_Alex
 ├── fcc_trackhub_JinWoo
 ├── fcc_enhancer_Junke_zscore
 ├── TF_modules_Shannon
 └── </code></pre>
-<p><strong>Detailed</strong></p>
+<p><strong>Detailed (Folder)</strong></p>
 <pre><code>PROJECT/data/processed
 ├── STARR_ATAC_K562_Reddy_KS91_210401
 │   ├── fragments
@@ -523,7 +549,6 @@ ul.task-list li input[type="checkbox"] {
 ├── CRISPRi_Growth_K562_Gersbach_Alex
 │   ├── guides
 │   └── region
-│
 ├── CRISPRi_Growth_K562_Gersbach_JinWoo
 │
 ├── CRISPRi_FlowFISH_K562_Riley_JinWoo
@@ -533,10 +558,8 @@ ul.task-list li input[type="checkbox"] {
 ├── fcc_enhancer_Junke_zscore
 │
 ├── TF_modules_Shannon
-|   ├── K562.full.region.assignments.txt
-│   └── K562.TFzscore.txt
 └── </code></pre>
-<p><strong>Detailed</strong></p>
+<p><strong>Detailed (Files)</strong></p>
 <pre><code>PROJECT/data/processed
 ├── STARR_ATAC_K562_Reddy_KS91_210401
 │   ├── fragments
@@ -594,15 +617,17 @@ ul.task-list li input[type="checkbox"] {
 │
 ├── MPRA_Lenti_K562_Nadav_vikram
 │
+├── CRISPRi_FlowFISH_K562_Riley_JinWoo
+│   └── track_bedgraph
+│       ├── 
+│       └── 
 │
 ├── CRISPRi_Growth_K562_Gersbach_Alex
-│   ├── guides
-│   └── region
+│   ├── k562-gw-v3-all.sorted.counts.results.hg38.txt.gz
+│   └── k562-gw-v3-all.sorted.counts.results.top_guide_fdr_0_05.hg38.bed.gz
+Readmd.md
 │
 ├── fcc_trackhub_jinwoo
-│   ├── track_bedgraph
-│   │   ├── 
-│   │   └── 
 │   ├── track_bigwig
 │   └── region
 │       ├── tss_pol2
