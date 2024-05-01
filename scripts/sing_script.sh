@@ -8,11 +8,14 @@ FP_SIF=${FP_PRJ_SIF}
 
 ### execute
 singularity exec \
-    -H ${PWD}:/home \
     -B ${FD_REPO}:/mount/repo \
     -B ${FD_WORK}:/mount/work \
     -B ${FD_DATA}:/mount/data \
     -B ${FD_RLAB}:/mount/reddylab \
+    -B ${PWD}      \
     -B /data:/data \
+    -B /gpfs:/gpfs \
     ${FP_SIF} \
     "$@"
+
+# -H ${PWD}:/home \

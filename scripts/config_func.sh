@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ### https://unix.stackexchange.com/questions/72661/show-sum-of-file-sizes-in-directory-listing
 #dir () { ls -FaGlh "${@}" | awk '{ total += $4; print }; END { print total }'; }
 dir() { 

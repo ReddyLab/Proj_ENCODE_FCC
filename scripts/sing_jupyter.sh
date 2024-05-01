@@ -37,11 +37,12 @@ echo
 
 ### execute
 singularity exec \
-    -H ${FD_HOME}:/home \
     -B ${FD_REPO}:/mount/repo \
     -B ${FD_WORK}:/mount/work \
     -B ${FD_DATA}:/mount/data \
     -B ${FD_RLAB}:/mount/reddylab \
+    -B ${PWD}      \
     -B /data:/data \
+    -B /gpfs:/gpfs \
     ${FP_SIF} \
     jupyter lab --NotebookApp.token="543@Psk" --NotebookApp.notebook_dir=/home --no-browser --ip=0.0.0.0 --port=${N_PORT}
