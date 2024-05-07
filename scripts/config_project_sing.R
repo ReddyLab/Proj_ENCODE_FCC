@@ -67,3 +67,54 @@ fun_display_table = function(dat){
         as.character() %>%
         IRdisplay::display_html()
 }
+
+### helper function to detect and map string
+### Reference:
+###     [A general vectorised if-else](https://dplyr.tidyverse.org/reference/case_when.html)
+###     [Display text with Quotes](https://stackoverflow.com/questions/15204442/how-to-display-text-with-quotes-in-r)
+###     [Recoding using str_detect](https://forum.posit.co/t/recoding-using-str-detect/5141)
+###     [Build two sided formulas](https://stackoverflow.com/questions/78042986/how-to-build-a-sequence-of-two-sided-formulas-from-vectors)
+fun_str_map_detect = function(
+    vec_txt_input,
+    vec_txt_pattern,
+    vec_txt_replace,
+    ...
+){
+    ### define inner function to generate formula with str_detect
+    fun_match = function(x, y){
+        txt = paste0(
+            "stringr::str_detect(vec_txt_input,", 
+            "'", x, "'", 
+            ")~", 
+            "'", y, "'"
+        )
+        return(as.formula(txt))
+    }
+
+    ### create a seqeunce of str_detect formulae
+    lst_match = purrr::map2(vec_txt_pattern, vec_txt_replace, fun_match)
+
+    ### map strings with str_detect
+    vec_txt_output = dplyr::case_when(!!!lst_match, ...)
+    return(vec_txt_output)
+}
+
+### helper function to match and map string
+### Reference:
+###     [A general vectorised switch](https://dplyr.tidyverse.org/reference/case_match.html)
+###     [Display text with Quotes](https://stackoverflow.com/questions/15204442/how-to-display-text-with-quotes-in-r)
+###     [Recoding using str_detect](https://forum.posit.co/t/recoding-using-str-detect/5141)
+###     [Build two sided formulas](https://stackoverflow.com/questions/78042986/how-to-build-a-sequence-of-two-sided-formulas-from-vectors)
+fun_str_map_match = function(
+    vec_txt_input,
+    vec_txt_pattern,
+    vec_txt_replace,
+    ...
+){
+    ### create a seqeunce of str_detect formulae
+    lst_match = purrr::map2(vec_txt_pattern, vec_txt_replace, rlang::new_formula)
+    
+    ### map strings with str_detect
+    vec_txt_output = dplyr::case_match(vec_txt_input, !!!lst_match, ...)
+    return(vec_txt_output)
+}
