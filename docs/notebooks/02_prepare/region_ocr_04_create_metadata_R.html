@@ -197,8 +197,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../01_setup/work_03_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">03 Working Directory of Data</span></a>
+  <a href="../../01_setup/work_03_ref.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03 Reference Files</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../01_setup/work_04_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04 Data Files</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -581,7 +587,7 @@ PROJECT REF     (FD_REF): /mount/repo/Proj_ENCODE_FCC/references
 <span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">sep =</span> <span class="st">"</span><span class="sc">\\</span><span class="st">."</span>,</span>
 <span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">remove =</span> <span class="cn">FALSE</span></span>
 <span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">Label =</span> <span class="fu">paste</span>(Assay, Index_File, <span class="at">sep=</span><span class="st">"_"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">Label =</span> <span class="fu">paste</span>(<span class="fu">tolower</span>(Assay), Index_File, <span class="at">sep=</span><span class="st">"_"</span>)) <span class="sc">%&gt;%</span></span>
 <span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(Folder, FName, Label) </span>
 <span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="do">### assign and show</span></span>

@@ -160,8 +160,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01_setup/work_03_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">03 Working Directory of Data</span></a>
+  <a href="../01_setup/work_03_ref.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03 Reference Files</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01_setup/work_04_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04 Data Files</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -377,7 +383,6 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#working-directory" id="toc-working-directory" class="nav-link active" data-scroll-target="#working-directory">Working Directory</a></li>
-  <li><a href="#wrapping-app" id="toc-wrapping-app" class="nav-link" data-scroll-target="#wrapping-app">Wrapping App</a></li>
   <li><a href="#naming-convention-of-folders-and-files" id="toc-naming-convention-of-folders-and-files" class="nav-link" data-scroll-target="#naming-convention-of-folders-and-files">Naming Convention of folders and files</a></li>
   </ul>
 </nav>
@@ -404,8 +409,8 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="working-directory" class="level1">
 <h1>Working Directory</h1>
+<p><strong>Summary</strong></p>
 <pre><code>PROJECT
-├── app
 ├── data
 ├── results
 ├── scripts
@@ -416,10 +421,8 @@ ul.task-list li input[type="checkbox"] {
 ├── log
 ├── README.md
 └── .gitignore</code></pre>
+<p><strong>Folders</strong></p>
 <pre><code>PROJECT
-├── app
-│   ├── 
-│   └── singularity_proj_encode_fcc.sif
 ├── data
 │   ├── external
 │   └── processed
@@ -435,25 +438,6 @@ ul.task-list li input[type="checkbox"] {
 ├── log
 ├── README.md
 └── .gitignore</code></pre>
-</section>
-<section id="wrapping-app" class="level1">
-<h1>Wrapping App</h1>
-<pre><code>#!/bin/bash
-
-#########################################
-### Wrapper of PLACEHOLDER_CMD container
-###======================================
-
-IMAGE=PLACEHOLDER_DIR/PLACEHOLDER_IMG
-
-CMD="PLACEHOLDER_CMD"
-ARGS="$@"
-
-singularity exec   \
-    -B ${PWD}      \
-    -B /data:/data \
-    -B /gpfs:/gpfs \
-    ${IMAGE} ${CMD} ${ARGS}</code></pre>
 </section>
 <section id="naming-convention-of-folders-and-files" class="level1">
 <h1>Naming Convention of folders and files</h1>
