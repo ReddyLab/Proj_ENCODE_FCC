@@ -1,10 +1,10 @@
 Assay	Biosample	Index_Experiment	Index_Process	Index_File	File_Type	Output_Type	Genome	Lab
 HiC (in situ Hi-C)	K562	ENCSR545YBD	ENCODE4 v1.15.0 GRCh38 (ENCAN133QZO) processed data	ENCFF616PUW	hic	mapping quality thresholded contact matrix	hg38	"Erez Aiden, Baylor"
-HiC (in situ Hi-C)	K562	ENCSR545YBD	ENCODE4 v1.15.0 GRCh38 (ENCAN133QZO) processed data	ENCFF693XIL	bedpe	loops	hg38	"Erez Aiden, Baylor"
-HiC (in situ Hi-C)	K562	ENCSR545YBD	ENCODE4 v1.15.0 GRCh38 (ENCAN133QZO) processed data	ENCFF271SAF	bedpe	contact domains	hg38	"Erez Aiden, Baylor"
+HiC (in situ Hi-C)	K562	ENCSR545YBD	ENCODE4 v1.15.0 GRCh38 (ENCAN133QZO) processed data	ENCFF693XIL	bedpe	loop	hg38	"Erez Aiden, Baylor"
+HiC (in situ Hi-C)	K562	ENCSR545YBD	ENCODE4 v1.15.0 GRCh38 (ENCAN133QZO) processed data	ENCFF271SAF	bedpe	contact domain	hg38	"Erez Aiden, Baylor"
 HiC (intact Hi-C)	K562	ENCSR479XDG	ENCODE4 v1.14.2 GRCh38 (ENCAN923OBU) processed data	ENCFF621AIY	hic	mapping quality thresholded contact matrix	hg38	"Erez Aiden, Baylor"
-HiC (intact Hi-C)	K562	ENCSR479XDG	ENCODE4 v1.14.2 GRCh38 (ENCAN923OBU) processed data	ENCFF256ZMD	bedpe	loops	hg38	"Erez Aiden, Baylor"
-HiC (intact Hi-C)	K562	ENCSR479XDG	ENCODE4 v1.14.2 GRCh38 (ENCAN923OBU) processed data	ENCFF126GED	bedpe	contact domains	hg38	"Erez Aiden, Baylor"
+HiC (intact Hi-C)	K562	ENCSR479XDG	ENCODE4 v1.14.2 GRCh38 (ENCAN923OBU) processed data	ENCFF256ZMD	bedpe	loop	hg38	"Erez Aiden, Baylor"
+HiC (intact Hi-C)	K562	ENCSR479XDG	ENCODE4 v1.14.2 GRCh38 (ENCAN923OBU) processed data	ENCFF126GED	bedpe	contact domain	hg38	"Erez Aiden, Baylor"
 								
 								
 								
