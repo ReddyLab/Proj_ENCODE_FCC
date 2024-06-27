@@ -19,8 +19,6 @@
       "/notebooks/01_setup/24_setup_script_bedtools_SH.html",
       "/notebooks/01_setup/25_setup_script_ucsc_SH.html",
       "/notebooks/01_setup/26_setup_other_SH.html",
-      "/notebooks/02_prepare/fcc_362_explore_data_crispri_growth_JinWoo_R.html",
-      "/notebooks/02_prepare/fcc_361_explore_data_crispri_hcrff_JinWoo_R.html",
       "/notebooks/02_prepare/region_ocr_01_create_download_script_R.html",
       "/notebooks/02_prepare/region_ocr_02_execute_download_data_SH.html",
       "/notebooks/02_prepare/region_ocr_03_prepare_data_SH.html",
@@ -40,12 +38,6 @@
       "/notebooks/02_prepare/fcc_15_liftover_TMPRA_OL13_SH.html",
       "/notebooks/02_prepare/fcc_16_export_ranges_TMPRA_Hannah_R.html",
       "/notebooks/02_prepare/fcc_17_export_metadata_TMPRA_Hannah_R.html",
-      "/notebooks/02_prepare/fcc_31_acquire_data_trackhub_JinWoo_SH.html",
-      "/notebooks/02_prepare/fcc_32_extract_info_trackhub_JinWoo_SH.html",
-      "/notebooks/02_prepare/fcc_33_bw2bed_data_trackhub_JinWoo_SH.html",
-      "/notebooks/02_prepare/fcc_34_export_metadata_trackhub_JinWoo_R.html",
-      "/notebooks/02_prepare/fcc_351_prepare_data_crispri_hcrff_JinWoo_R.html",
-      "/notebooks/02_prepare/fcc_352_prepare_data_crispri_growth_JinWoo_R.html",
       "/notebooks/test/test_notebook.html"
     ]
   }

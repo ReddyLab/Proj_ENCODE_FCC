@@ -184,6 +184,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../01_setup/work_12_results_fcc2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12 Results (FCC)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../01_setup/work_13_results_hic.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">13 Results (HiC)</span></a>
   </div>
@@ -612,16 +618,34 @@ ref_tss (what if it is from RAMPAGE?)
 │   ├── K562.hg38.EPCrisprBenchmark.total.merge.gz
 │   └── summary
 │
-├── encode_e2g_prediction
+├── encode_e2g_prediction_ENCSR328LMT
 │   ├── K562.hg38.ENCSR328LMT.ENCFF202FID.element_gene_links.active.bed.gz
 │   ├── K562.hg38.ENCSR328LMT.ENCFF202FID.element_gene_links.active.merge.bed.gz
 │   ├── K562.hg38.ENCSR328LMT.ENCFF122UMY.element_gene_links.total.bed.gz
 │   ├── K562.hg38.ENCSR328LMT.ENCFF122UMY.element_gene_links.total.merge.bed.gz
 │   └── summary
 │
+├── fcc_astarr_csaw
+│   ├── ASTARRseq_K562_KSMerge.hg38.bed.gz
+
+│   ├── K562.hg38.ASTARR.KSMerge.csaw.bed.gz
+│   ├── K562.hg38.ASTARR.KS91.csaw.bed.gz
+
+│   ├── K562.hg38.ASTARR.csaw.KSMerge.bed.gz
+│   ├── K562.hg38.ASTARR.csaw.KS91.bed.gz
+
+│   └── summary
+|
 ├── fcc_astarr_macs
 │   ├── ASTARRseq_K562_KS91.hg38.Input.rep_all.union.q5.bed.gz
 │   ├── ASTARRseq_K562_KS91.hg38.Input.rep_all.max_overlaps.q5.bed.gz
+
+│   ├── K562.hg38.ASTARR.KS91.macs.input.rep_all.union.q5.bed.gz
+│   ├── K562.hg38.ASTARR.KS91.macs.input.rep_all.max_overlaps.q5.bed.gz
+
+│   ├── K562.hg38.ASTARR.macs.KS91.input.rep_all.union.q5.bed.gz
+│   ├── K562.hg38.ASTARR.macs.KS91.input.rep_all.max_overlaps.q5.bed.gz
+
 │   └── summary
 │
 ├── fcc_crispri_hcrff
@@ -641,6 +665,33 @@ ref_tss (what if it is from RAMPAGE?)
 │   ├── region_screened.crispri_hcrff.tsv
 │   ├── region_screened.tmpra.bed.gz
 │   ├── region_screened.tmpra.tsv
+│   └── summary
+│
+├── hic_insitu_K562_ENCSR545YBD
+│   ├── K562.hg38.ENCSR545YBD.ENCFF271SAF.hic_insitu.contact_domain.bed.gz
+│   ├── K562.hg38.ENCSR545YBD.ENCFF693XIL.hic_insitu.loop.A.bed.gz
+│   ├── K562.hg38.ENCSR545YBD.ENCFF693XIL.hic_insitu.loop.B.bed.gz
+
+│   ├── K562.hg38.hic_insitu.contact_domain.bed.gz
+│   ├── K562.hg38.hic_insitu.loop.A.bed.gz
+│   ├── K562.hg38.hic_insitu.loop.B.bed.gz
+
+│   └── summary
+│
+├── hic_intact_K562_ENCSR479XDG
+│   ├── K562.hg38.ENCSR479XDG.ENCFF126GED.hic_intact.contact_domain.bed.gz
+│   ├── K562.hg38.ENCSR479XDG.ENCFF256ZMD.hic_intact.loop.A.bed.gz
+│   ├── K562.hg38.ENCSR479XDG.ENCFF256ZMD.hic_intact.loop.B.bed.gz
+
+│   ├── K562.hg38.hic_intact.contact_domain.bed.gz
+│   ├── K562.hg38.hic_intact.loop.A.bed.gz
+│   ├── K562.hg38.hic_intact.loop.B.bed.gz
+
+│   └── summary
+│
+├── hic_intact_K562_deep
+│   ├── K562.hg38.deep.hic_intact.loop.A.bed.gz
+│   ├── K562.hg38.deep.hic_intact.loop.B.bed.gz
 │   └── summary
 │
 └── summary
