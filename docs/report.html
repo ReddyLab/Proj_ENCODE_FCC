@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ENCODE FCC Project - Main Report: Summarize ideas and findings of the analyses</title>
+<title>ENCODE FCC Project - Report: Summarize ideas and findings of the analyses</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -117,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Main Report: Summarize ideas and findings of the analyses</li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Report: Summarize ideas and findings of the analyses</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -384,14 +384,46 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#atacdhs-coverage-of-fcc-libraries" id="toc-atacdhs-coverage-of-fcc-libraries" class="nav-link active" data-scroll-target="#atacdhs-coverage-of-fcc-libraries">ATAC/DHS coverage of FCC libraries</a>
+  <ul class="collapse">
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions:</a></li>
+  </ul></li>
+  <li><a href="#correlations-of-input-and-output-library-for-starr-assays" id="toc-correlations-of-input-and-output-library-for-starr-assays" class="nav-link" data-scroll-target="#correlations-of-input-and-output-library-for-starr-assays">Correlations of input and output library for STARR assays</a>
+  <ul class="collapse">
+  <li><a href="#questions-1" id="toc-questions-1" class="nav-link" data-scroll-target="#questions-1">Questions:</a></li>
+  </ul></li>
+  <li><a href="#correlations-of-effect-sizes-among-fcc-assays" id="toc-correlations-of-effect-sizes-among-fcc-assays" class="nav-link" data-scroll-target="#correlations-of-effect-sizes-among-fcc-assays">Correlations of effect sizes among FCC assays</a>
+  <ul class="collapse">
+  <li><a href="#questions-2" id="toc-questions-2" class="nav-link" data-scroll-target="#questions-2">Questions:</a></li>
+  </ul></li>
+  <li><a href="#distributions-of-effect-sizes-across-chromatin-states" id="toc-distributions-of-effect-sizes-across-chromatin-states" class="nav-link" data-scroll-target="#distributions-of-effect-sizes-across-chromatin-states">Distributions of effect sizes across chromatin states</a>
+  <ul class="collapse">
+  <li><a href="#questions-3" id="toc-questions-3" class="nav-link" data-scroll-target="#questions-3">Questions:</a></li>
+  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods:</a></li>
+  </ul></li>
+  <li><a href="#distributions-of-effect-sizes-across-regions-with-different-physical-connectivity" id="toc-distributions-of-effect-sizes-across-regions-with-different-physical-connectivity" class="nav-link" data-scroll-target="#distributions-of-effect-sizes-across-regions-with-different-physical-connectivity">Distributions of effect sizes across regions with different physical connectivity</a>
+  <ul class="collapse">
+  <li><a href="#questions-4" id="toc-questions-4" class="nav-link" data-scroll-target="#questions-4">Questions:</a></li>
+  <li><a href="#methods-1" id="toc-methods-1" class="nav-link" data-scroll-target="#methods-1">Methods:</a></li>
+  </ul></li>
+  <li><a href="#explain-the-variations-of-each-fcc-effect-size-by-chip-seq-annotations" id="toc-explain-the-variations-of-each-fcc-effect-size-by-chip-seq-annotations" class="nav-link" data-scroll-target="#explain-the-variations-of-each-fcc-effect-size-by-chip-seq-annotations">Explain the variations of each FCC effect size by ChIP-seq annotations</a>
+  <ul class="collapse">
+  <li><a href="#questions-5" id="toc-questions-5" class="nav-link" data-scroll-target="#questions-5">Questions:</a></li>
+  <li><a href="#method" id="toc-method" class="nav-link" data-scroll-target="#method">Method:</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Main Report: Summarize ideas and findings of the analyses</h1>
+<h1 class="title">Report: Summarize ideas and findings of the analyses</h1>
 </div>
 
 
@@ -406,9 +438,87 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>This page is still under construction.</p>
+<section id="atacdhs-coverage-of-fcc-libraries" class="level1">
+<h1>ATAC/DHS coverage of FCC libraries</h1>
+<section id="questions" class="level2">
+<h2 class="anchored" data-anchor-id="questions">Questions:</h2>
+<ul>
+<li>What percentage of data falls within open chromatin regions?</li>
+<li>How many open chromatin regions are covered in each FCC assay?</li>
+</ul>
+</section>
+</section>
+<section id="correlations-of-input-and-output-library-for-starr-assays" class="level1">
+<h1>Correlations of input and output library for STARR assays</h1>
+<section id="questions-1" class="level2">
+<h2 class="anchored" data-anchor-id="questions-1">Questions:</h2>
+<ul>
+<li>How much variation in the output library can be explained by the input library?</li>
+</ul>
+</section>
+</section>
+<section id="correlations-of-effect-sizes-among-fcc-assays" class="level1">
+<h1>Correlations of effect sizes among FCC assays</h1>
+<section id="questions-2" class="level2">
+<h2 class="anchored" data-anchor-id="questions-2">Questions:</h2>
+<ul>
+<li>What are the correlations of effect sizes across different FCC assays?</li>
+</ul>
+</section>
+</section>
+<section id="distributions-of-effect-sizes-across-chromatin-states" class="level1">
+<h1>Distributions of effect sizes across chromatin states</h1>
+<section id="questions-3" class="level2">
+<h2 class="anchored" data-anchor-id="questions-3">Questions:</h2>
+<ul>
+<li>How do effect sizes differ across various chromatin states (e.g., promoters and enhancers)?</li>
+<li>Are certain chromatin states associated with higher or lower effect sizes in each assay?</li>
+</ul>
+</section>
+<section id="methods" class="level2">
+<h2 class="anchored" data-anchor-id="methods">Methods:</h2>
+<ul>
+<li>Group regions by chromatin states (e.g., cCREs, ChromHMM).</li>
+<li>Compare effect sizes among different groups (e.g., promoters vs.&nbsp;enhancers).</li>
+</ul>
+</section>
+</section>
+<section id="distributions-of-effect-sizes-across-regions-with-different-physical-connectivity" class="level1">
+<h1>Distributions of effect sizes across regions with different physical connectivity</h1>
+<section id="questions-4" class="level2">
+<h2 class="anchored" data-anchor-id="questions-4">Questions:</h2>
+<ul>
+<li>How do effect sizes vary across regions with different physical connectivity?</li>
+<li>Is there a significant difference in effect sizes between regions with high loop counts and those with low loop counts?</li>
+<li>Are certain types of chromatin interactions (e.g., long-range vs.&nbsp;short-range loops) associated with distinct effect size distributions?</li>
+</ul>
+</section>
+<section id="methods-1" class="level2">
+<h2 class="anchored" data-anchor-id="methods-1">Methods:</h2>
+<ul>
+<li>Group regions by loop counts or loop distance</li>
+<li>Compare effect sizes among different groups</li>
+</ul>
+</section>
+</section>
+<section id="explain-the-variations-of-each-fcc-effect-size-by-chip-seq-annotations" class="level1">
+<h1>Explain the variations of each FCC effect size by ChIP-seq annotations</h1>
+<section id="questions-5" class="level2">
+<h2 class="anchored" data-anchor-id="questions-5">Questions:</h2>
+<ul>
+<li>How much variation in regulatory effects can be explained by ChIP-seq annotations?</li>
+<li>What is the predictivity of regulatory effects using ChIP-seq information?</li>
+</ul>
+</section>
+<section id="method" class="level2">
+<h2 class="anchored" data-anchor-id="method">Method:</h2>
+<ul>
+<li>Regression: FCC ~ ChIP-seq</li>
+</ul>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

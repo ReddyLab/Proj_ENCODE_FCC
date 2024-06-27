@@ -527,9 +527,72 @@
   {
     "objectID": "report.html",
     "href": "report.html",
-    "title": "Main Report: Summarize ideas and findings of the analyses",
+    "title": "Report: Summarize ideas and findings of the analyses",
     "section": "",
-    "text": "This page is still under construction."
+    "text": "What percentage of data falls within open chromatin regions?\nHow many open chromatin regions are covered in each FCC assay?"
+  },
+  {
+    "objectID": "report.html#questions",
+    "href": "report.html#questions",
+    "title": "Report: Summarize ideas and findings of the analyses",
+    "section": "",
+    "text": "What percentage of data falls within open chromatin regions?\nHow many open chromatin regions are covered in each FCC assay?"
+  },
+  {
+    "objectID": "report.html#questions-1",
+    "href": "report.html#questions-1",
+    "title": "Report: Summarize ideas and findings of the analyses",
+    "section": "Questions:",
+    "text": "Questions:\n\nHow much variation in the output library can be explained by the input library?"
+  },
+  {
+    "objectID": "report.html#questions-2",
+    "href": "report.html#questions-2",
+    "title": "Report: Summarize ideas and findings of the analyses",
+    "section": "Questions:",
+    "text": "Questions:\n\nWhat are the correlations of effect sizes across different FCC assays?"
+  },
+  {
+    "objectID": "report.html#questions-3",
+    "href": "report.html#questions-3",
+    "title": "Report: Summarize ideas and findings of the analyses",
+    "section": "Questions:",
+    "text": "Questions:\n\nHow do effect sizes differ across various chromatin states (e.g., promoters and enhancers)?\nAre certain chromatin states associated with higher or lower effect sizes in each assay?"
+  },
+  {
+    "objectID": "report.html#methods",
+    "href": "report.html#methods",
+    "title": "Report: Summarize ideas and findings of the analyses",
+    "section": "Methods:",
+    "text": "Methods:\n\nGroup regions by chromatin states (e.g., cCREs, ChromHMM).\nCompare effect sizes among different groups (e.g., promoters vs. enhancers)."
+  },
+  {
+    "objectID": "report.html#questions-4",
+    "href": "report.html#questions-4",
+    "title": "Report: Summarize ideas and findings of the analyses",
+    "section": "Questions:",
+    "text": "Questions:\n\nHow do effect sizes vary across regions with different physical connectivity?\nIs there a significant difference in effect sizes between regions with high loop counts and those with low loop counts?\nAre certain types of chromatin interactions (e.g., long-range vs. short-range loops) associated with distinct effect size distributions?"
+  },
+  {
+    "objectID": "report.html#methods-1",
+    "href": "report.html#methods-1",
+    "title": "Report: Summarize ideas and findings of the analyses",
+    "section": "Methods:",
+    "text": "Methods:\n\nGroup regions by loop counts or loop distance\nCompare effect sizes among different groups"
+  },
+  {
+    "objectID": "report.html#questions-5",
+    "href": "report.html#questions-5",
+    "title": "Report: Summarize ideas and findings of the analyses",
+    "section": "Questions:",
+    "text": "Questions:\n\nHow much variation in regulatory effects can be explained by ChIP-seq annotations?\nWhat is the predictivity of regulatory effects using ChIP-seq information?"
+  },
+  {
+    "objectID": "report.html#method",
+    "href": "report.html#method",
+    "title": "Report: Summarize ideas and findings of the analyses",
+    "section": "Method:",
+    "text": "Method:\n\nRegression: FCC ~ ChIP-seq"
   },
   {
     "objectID": "results.html",
