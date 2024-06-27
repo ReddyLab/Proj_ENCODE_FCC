@@ -595,6 +595,20 @@
     "text": "Method:\n\nRegression: FCC ~ ChIP-seq"
   },
   {
+    "objectID": "report.html#questions-6",
+    "href": "report.html#questions-6",
+    "title": "Report: Summarize ideas and findings of the analyses",
+    "section": "Questions:",
+    "text": "Questions:\n\n(Keith) are there features associated with active enhancers that differentiate them into different categories or subclasses"
+  },
+  {
+    "objectID": "report.html#method-1",
+    "href": "report.html#method-1",
+    "title": "Report: Summarize ideas and findings of the analyses",
+    "section": "Method:",
+    "text": "Method:\n\nIntegrate the FCC data and ChIP-seq into a matrix (Option 1: z score; Option 2: peak calls)\nClustering the matrix\nVisualize the matrix and cluster by UMAP dimentional reduction"
+  },
+  {
     "objectID": "results.html",
     "href": "results.html",
     "title": "List of Figures and Tables",
