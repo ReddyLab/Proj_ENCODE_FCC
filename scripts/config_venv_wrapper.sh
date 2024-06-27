@@ -1,5 +1,6 @@
 #!/bin/bash
 
+###
 function fun_identify_server {
 
     ### identify Singularity environment
@@ -15,14 +16,14 @@ function fun_identify_server {
 
 }
 
-### Hardcoding
+### Hardcoding for testing
 function fun_set_server {
     echo "HARDAC"
     #echo "Singularity"
     #echo "DCC"
 }
 
-
+###
 function fun_get_server {
     fun_identify_server
     #fun_set_server

@@ -68,6 +68,15 @@ fun_display_table = function(dat){
         IRdisplay::display_html()
 }
 
+### helper function to get genome location
+fun_gen_region = function(txt_chrom, num_chrom_start, num_chrom_end){
+    txt_chrom_start = format(num_chrom_start, scientific = FALSE)
+    txt_chrom_end   = format(num_chrom_end,   scientific = FALSE)
+    txt_region      = paste0(txt_chrom, ":", txt_chrom_start, "-", txt_chrom_end)
+    txt_region      = stringr::str_remove_all(txt_region, " ")
+    return(txt_region)
+}
+
 ### helper function to detect and map string
 ### Reference:
 ###     [A general vectorised if-else](https://dplyr.tidyverse.org/reference/case_when.html)
