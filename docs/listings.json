@@ -1,10 +1,7 @@
 [
   {
-    "listing": "/analyses.html",
+    "listing": "/code.html",
     "items": [
-      "/notebooks/01_setup/31_check_script_test_SH.html",
-      "/notebooks/01_setup/32_check_script_ucsc_SH.html",
-      "/notebooks/01_setup/33_check_script_bedtools_SH.html",
       "/notebooks/01_setup/11_check_config_and_kernel_PY.html",
       "/notebooks/01_setup/12_check_config_and_kernel_R.html",
       "/notebooks/01_setup/13_check_config_sing_SH.html",
@@ -13,12 +10,6 @@
       "/notebooks/01_setup/02_setup_config_on_duke_hardac_SH.html",
       "/notebooks/01_setup/03_setup_config_on_sing_SH.html",
       "/notebooks/01_setup/04_setup_config_module_SH.html",
-      "/notebooks/01_setup/21_setup_script_test_SH.html",
-      "/notebooks/01_setup/22_setup_script_SH.html",
-      "/notebooks/01_setup/23_setup_script_app_SH.html",
-      "/notebooks/01_setup/24_setup_script_bedtools_SH.html",
-      "/notebooks/01_setup/25_setup_script_ucsc_SH.html",
-      "/notebooks/01_setup/26_setup_other_SH.html",
       "/notebooks/02_prepare/region_ocr_01_create_download_script_R.html",
       "/notebooks/02_prepare/region_ocr_02_execute_download_data_SH.html",
       "/notebooks/02_prepare/region_ocr_03_prepare_data_SH.html",
