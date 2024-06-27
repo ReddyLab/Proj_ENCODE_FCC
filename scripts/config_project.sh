@@ -38,7 +38,12 @@ if [[ ${ARG_SERVER} == "HARDAC" ]]; then
     ### set workspace env
     NODE=all
     source ${SCRIPT_DIR}/config_path_duke_hardac.sh
+    
+    ### APP: Container
     export PATH="${FD_EXE}/app_duke_hardac:$PATH"
+    
+    ### APP: UCSC
+    export PATH="/data/common/shared_conda_envs/ucsc/bin:$PATH"
 fi
 
 ### if identify Duke DCC environment

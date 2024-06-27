@@ -12,7 +12,7 @@ echo
 ###     load helper functions
 FD_PRJ=$1
 FD_EXE=${FD_PRJ}/scripts
-source ${FD_EXE}/config_func.sh
+source ${FD_EXE}/config_project.sh
 
 ### setup input and output
 FP_INP=$2
@@ -37,7 +37,6 @@ echo
 bedtools summary \
     -i ${FP_INP} \
     -g ${FP_GEN} \
-    -wo \
 > ${FP_OUT}
 
 ### show output file

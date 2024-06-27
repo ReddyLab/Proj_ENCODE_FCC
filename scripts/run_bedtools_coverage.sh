@@ -12,7 +12,7 @@ echo
 ###     load helper functions
 FD_PRJ=$1
 FD_EXE=${FD_PRJ}/scripts
-source ${FD_EXE}/config_func.sh
+source ${FD_EXE}/config_project.sh
 
 ### setup input and output
 FP_INP1=$2
