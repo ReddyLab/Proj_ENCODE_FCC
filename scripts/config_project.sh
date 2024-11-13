@@ -9,8 +9,8 @@
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
 ### get helper functions
-source ${SCRIPT_DIR}/config_venv_wrapper.sh
-source ${SCRIPT_DIR}/config_func.sh
+source ${SCRIPT_DIR}/config_func_venv.sh
+source ${SCRIPT_DIR}/config_func_util.sh
 
 ### Hack to handle broken pipes - IGNORE.
 ### ex: suppress errors in `zcat ... | head`
@@ -40,7 +40,7 @@ if [[ ${ARG_SERVER} == "HARDAC" ]]; then
     source ${SCRIPT_DIR}/config_path_duke_hardac.sh
     
     ### APP: Container
-    export PATH="${FD_EXE}/app_duke_hardac:$PATH"
+    export PATH="${FD_APP}/app_duke_hardac:$PATH"
     
     ### APP: UCSC
     export PATH="/data/common/shared_conda_envs/ucsc/bin:$PATH"
