@@ -25,11 +25,14 @@ FD_PRJ=${FD_REPO}/Proj_ENCODE_FCC
 
 FD_RES=${FD_PRJ}/results
 FD_EXE=${FD_PRJ}/scripts
+FD_APP=${FD_PRJ}/app
 FD_DAT=${FD_PRJ}/data
 FD_NBK=${FD_PRJ}/notebooks
 FD_DOC=${FD_PRJ}/docs
 FD_LOG=${FD_PRJ}/log
 FD_REF=${FD_PRJ}/references
+
+FD_GEN=${FD_DATA}/annotation/genome/hg38
 
 ### set singularity
 FP_PRJ_SIF=${FD_SING}/project/singularity_proj_encode_fcc.sif
@@ -51,7 +54,6 @@ show_env() {
     echo "PROJECT NOTE    (FD_NBK):      ${FD_NBK}"
     echo "PROJECT DOCS    (FD_DOC):      ${FD_DOC}"
     echo "PROJECT LOG     (FD_LOG):      ${FD_LOG}"
-    echo "PROJECT APP     (FD_APP):      ${FD_APP}"
     echo "PROJECT REF     (FD_REF):      ${FD_REF}"
     echo "PROJECT IMAGE   (FP_PRJ_SIF):  ${FP_PRJ_SIF}"
     echo

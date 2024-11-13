@@ -20,11 +20,7 @@ FD_DAT=${FD_PRJ}/data
 FD_NBK=${FD_PRJ}/notebooks
 FD_DOC=${FD_PRJ}/docs
 FD_LOG=${FD_PRJ}/log
-FD_APP=${FD_PRJ}/app
 FD_REF=${FD_PRJ}/references
-
-
-
 
 ### fun show environment
 show_env() {
@@ -42,7 +38,6 @@ show_env() {
     echo "PROJECT NOTE    (FD_NBK):      ${FD_NBK}"
     echo "PROJECT DOCS    (FD_DOC):      ${FD_DOC}"
     echo "PROJECT LOG     (FD_LOG):      ${FD_LOG}"
-    echo "PROJECT APP     (FD_APP):      ${FD_APP}"
     echo "PROJECT REF     (FD_REF):      ${FD_REF}"
     echo
 }

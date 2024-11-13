@@ -127,3 +127,15 @@ fun_str_map_match = function(
     vec_txt_output = dplyr::case_match(vec_txt_input, !!!lst_match, ...)
     return(vec_txt_output)
 }
+
+### helper function to match assay group to label
+fun_str_map_assay = function(vec_txt_assay){
+    vec_txt_pattern = c(
+        "ASTARR", "WSTARR", "LMPRA", "TMPRA", "CRISPRi-HCRFF", "CRISPRi-Growth")
+    vec_txt_replace = c(
+        "ATAC-STARR", "WHG-STARR", "Lenti-MPRA", "Tiling-MPRA", 
+        "CRISPRi-HCR FlowFISH", "CRISPRi-Growth"
+    )
+    vec_txt_output = fun_str_map_match(vec_txt_assay, vec_txt_pattern, vec_txt_replace)
+    return(vec_txt_output)
+}
