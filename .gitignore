@@ -138,3 +138,5 @@ app/
 app
 log/
 log
+config/
+config
