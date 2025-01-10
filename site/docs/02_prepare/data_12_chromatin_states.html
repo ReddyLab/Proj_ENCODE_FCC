@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ENCODE FCC Project - 11 Results (Prepare)</title>
+<title>ENCODE FCC Project - Chromatin States</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -94,6 +94,10 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Report</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="../analysis.html" rel="" target="">
+ <span class="menu-text">Analysis</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="../data.html" rel="" target="">
  <span class="menu-text">Data</span></a>
   </li>  
@@ -117,7 +121,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../01_setup/work_01_env.html">Setup</a></li><li class="breadcrumb-item"><a href="../01_setup/work_11_results_prep.html">11 Results (Prepare)</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../02_prepare/data_01_fcc.html">Prepare</a></li><li class="breadcrumb-item"><a href="../02_prepare/data_12_chromatin_states.html">Chromatin States</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -139,13 +143,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
  <span class="menu-text">Setup</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../01_setup/work_01_env.html" class="sidebar-item-text sidebar-link">
@@ -172,31 +176,43 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01_setup/work_11_results_prep.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">11 Results (Prepare)</span></a>
+  <a href="../01_setup/work_11_prep_fcc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11 Prepare: FCC</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01_setup/work_12_results_fcc.html" class="sidebar-item-text sidebar-link">
+  <a href="../01_setup/work_12_prep_hic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12 Prepare: Hi-C</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01_setup/work_13_prep_region.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13 Prepare: Region</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01_setup/work_21_results_fcc.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">12 Results (FCC)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01_setup/work_12_results_fcc2.html" class="sidebar-item-text sidebar-link">
+  <a href="../01_setup/work_21_results_fcc2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">12 Results (FCC)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01_setup/work_13_results_hic.html" class="sidebar-item-text sidebar-link">
+  <a href="../01_setup/work_22_results_hic.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">13 Results (HiC)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../01_setup/work_14_results_region.html" class="sidebar-item-text sidebar-link">
+  <a href="../01_setup/work_23_results_region.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">14 Results (Region)</span></a>
   </div>
 </li>
@@ -204,13 +220,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
  <span class="menu-text">Prepare</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../02_prepare/data_01_fcc.html" class="sidebar-item-text sidebar-link">
@@ -231,7 +247,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../02_prepare/data_12_chromatin_states.html" class="sidebar-item-text sidebar-link">
+  <a href="../02_prepare/data_12_chromatin_states.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Chromatin States</span></a>
   </div>
 </li>
@@ -388,13 +404,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#results-after-preparation" id="toc-results-after-preparation" class="nav-link active" data-scroll-target="#results-after-preparation">Results after preparation</a></li>
-  <li><a href="#fcc-assay" id="toc-fcc-assay" class="nav-link" data-scroll-target="#fcc-assay">FCC assay</a></li>
-  <li><a href="#hic-assay" id="toc-hic-assay" class="nav-link" data-scroll-target="#hic-assay">HiC assay</a></li>
-  <li><a href="#region" id="toc-region" class="nav-link" data-scroll-target="#region">Region</a>
-  <ul class="collapse">
-  <li><a href="#region-labeling" id="toc-region-labeling" class="nav-link" data-scroll-target="#region-labeling">Region labeling</a></li>
-  </ul></li>
+  <li><a href="#encode-candidate-cis-regulatory-elements-ccres" id="toc-encode-candidate-cis-regulatory-elements-ccres" class="nav-link active" data-scroll-target="#encode-candidate-cis-regulatory-elements-ccres">ENCODE candidate cis-regulatory elements (cCREs)</a></li>
+  <li><a href="#encode-chromhmm-chromatin-states" id="toc-encode-chromhmm-chromatin-states" class="nav-link" data-scroll-target="#encode-chromhmm-chromatin-states">ENCODE ChromHMM chromatin states</a></li>
   </ul>
 </nav>
     </div>
@@ -403,7 +414,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">11 Results (Prepare)</h1>
+<h1 class="title">Chromatin States</h1>
 </div>
 
 
@@ -418,326 +429,13 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="results-after-preparation" class="level1">
-<h1>Results after preparation</h1>
-<ul>
-<li>Process files in data (arrange/extract)</li>
-<li>SymLink files in data (file aliases)</li>
-</ul>
+<section id="encode-candidate-cis-regulatory-elements-ccres" class="level1">
+<h1>ENCODE candidate cis-regulatory elements (cCREs)</h1>
 </section>
-<section id="fcc-assay" class="level1">
-<h1>FCC assay</h1>
-<pre><code>PROJECT/results/assay_fcc
-├── STARR_ATAC_K562_Reddy_KS91
-│   ├── fragment_counts
-│   │   ├── ASTARRseq_K562_KS91.hg38.Input.rep1.WGS.unstranded.bed.gz
-│   │   ├── ASTARRseq_K562_KS91.hg38.Input.rep2.WGS.unstranded.bed.gz
-│   │   ├── ASTARRseq_K562_KS91.hg38.Input.rep3.WGS.unstranded.bed.gz
-│   │   ├── ASTARRseq_K562_KS91.hg38.Input.rep4.WGS.unstranded.bed.gz
-│   │   ├── ASTARRseq_K562_KS91.hg38.Input.rep5.WGS.unstranded.bed.gz
-│   │   ├── ASTARRseq_K562_KS91.hg38.Input.rep6.WGS.unstranded.bed.gz
-│   │   ├── ASTARRseq_K562_KS91.hg38.Output.rep1.WGS.unstranded.bed.gz
-│   │   ├── ASTARRseq_K562_KS91.hg38.Output.rep2.WGS.unstranded.bed.gz
-│   │   ├── ASTARRseq_K562_KS91.hg38.Output.rep3.WGS.unstranded.bed.gz
-│   │   └── ASTARRseq_K562_KS91.hg38.Output.rep4.WGS.unstranded.bed.gz
-│   └── fragment
-│
-├── STARR_ATAC_K562_Reddy_KS274
-│   ├── fragment_counts
-│   └── fragment
-│
-├── STARR_ATAC_K562_Reddy_KSMerge
-│   ├── fragment_counts
-│   └── fragment
-│
-├── STARR_WHG_K562_Reddy_A001
-│   ├── fragment_counts
-│   │   ├── WSTARRseq_K562_A001.hg38.Input.rep1.WGS.unstranded.bed.gz
-│   │   ├── WSTARRseq_K562_A001.hg38.Input.rep2.WGS.unstranded.bed.gz
-│   │   ├── WSTARRseq_K562_A001.hg38.Input.rep3.WGS.unstranded.bed.gz
-│   │   ├── WSTARRseq_K562_A001.hg38.Input.rep4.WGS.unstranded.bed.gz
-│   │   ├── WSTARRseq_K562_A001.hg38.Output.rep1.WGS.unstranded.bed.gz
-│   │   ├── WSTARRseq_K562_A001.hg38.Output.rep2.WGS.unstranded.bed.gz
-│   │   └── WSTARRseq_K562_A001.hg38.Output.rep3.WGS.unstranded.bed.gz
-│   └── fragment
-│
-├── MPRA_Tiling_K562_Tewhey_Hannah
-│   ├── fragment_counts
-│   │   ├── TMPRA_K562_OL13_20220512.hg19.raw. Input .rep[1-4].stranded_pos.bed
-│   │   ├── TMPRA_K562_OL13_20220512.hg19.raw. Output.rep[1-4].stranded_pos.bed
-│   │   ├── TMPRA_K562_OL13_20220512.hg19.norm.Input .rep[1-4].stranded_pos.bed
-│   │   ├── TMPRA_K562_OL13_20220512.hg19.norm.Output.rep[1-4].stranded_pos.bed
-│   │   │ 
-│   │   ├── TMPRA_K562_OL13_20220512.hg19.norm.Input .mean.stranded_pos.bed
-│   │   ├── TMPRA_K562_OL13_20220512.hg19.norm.Output.mean.stranded_pos.bed
-│   │   ├── TMPRA_K562_OL13_20220512.hg19.norm.Log2FC.mean.stranded_pos.bed
-│   │   │ 
-│   │   ├── TMPRA_K562_OL43_20221003.hg38.raw. Input .rep[1-6].stranded_pos.bed
-│   │   ├── TMPRA_K562_OL43_20221003.hg38.raw. Output.rep[1-5].stranded_pos.bed
-│   │   ├── TMPRA_K562_OL43_20221003.hg38.norm.Input .rep[1-6].stranded_pos.bed
-│   │   ├── TMPRA_K562_OL43_20221003.hg38.norm.Output.rep[1-5].stranded_pos.bed
-│   │   │ 
-│   │   ├── TMPRA_K562_OL43_20221003.hg38.norm.Input .mean.stranded_pos.bed
-│   │   ├── TMPRA_K562_OL43_20221003.hg38.norm.Output.mean.stranded_pos.bed
-│   │   ├── TMPRA_K562_OL43_20221003.hg38.norm.Log2FC.mean.stranded_pos.bed
-│   │   │ 
-│   │   ├── TMPRA_K562_OL45_20220927.hg38.raw. Input .rep[1-4].stranded_pos.bed
-│   │   ├── TMPRA_K562_OL45_20220927.hg38.raw. Output.rep[1-4].stranded_pos.bed
-│   │   ├── TMPRA_K562_OL45_20220927.hg38.norm.Input .rep[1-4].stranded_pos.bed
-│   │   ├── TMPRA_K562_OL45_20220927.hg38.norm.Output.rep[1-4].stranded_pos.bed
-│   │   │ 
-│   │   ├── TMPRA_K562_OL45_20220927.hg38.norm.Input .mean.stranded_pos.bed
-│   │   ├── TMPRA_K562_OL45_20220927.hg38.norm.Output.mean.stranded_pos.bed
-│   │   ├── TMPRA_K562_OL45_20220927.hg38.norm.Log2FC.mean.stranded_pos.bed
-│   │   │
-│   │   └── summary
-│   │       ├── TMPRA_K562_OL13_20220512.hg19.raw.stranded_pos.tsv 
-│   │       ├── TMPRA_K562_OL13_20220512.hg19.norm.stranded_pos.tsv 
-│   │       ├── TMPRA_K562_OL43_20221003.hg38.raw.stranded_pos.tsv 
-│   │       ├── TMPRA_K562_OL43_20221003.hg38.norm.stranded_pos.tsv 
-│   │       ├── TMPRA_K562_OL45_20220927.hg38.raw.stranded_pos.tsv 
-│   │       └── TMPRA_K562_OL45_20220927.hg38.norm.stranded_pos.tsv 
-│   └── fragment
-│       ├── TMPRA_K562_OL13_20220512.hg19.raw.stranded_pos.bed.gz 
-│       ├── TMPRA_K562_OL43_20221003.hg38.raw.stranded_pos.bed.gz 
-│       └── TMPRA_K562_OL45_20220927.hg38.raw.stranded_pos.bed.gz 
-│
-├── MPRA_Lenti_K562_Nadav_Vikram
-│   ├── fragment_counts
-│   |   ├── LMPRA_K562.hg38.Log2FC.unstranded.bed.gz
-│   |   ├── LMPRA_K562.hg38.ZScore.unstranded.bed.gz
-│   |   └── summary
-│   │       ├── 
-│   │       └── 
-│   └── fragment
-│
-├── CRISPRi_FlowFISH_K562_Riley_JinWoo
-│   └── guide_scores
-│       ├── CRISPRi_HCRFF_K562.hg38.ZScore.unstranded.bed.gz
-│       ├── CAPRIN1_HCRFF_rAVG.log2FC_2.bed
-│       ├── CAT_HCRFF_rAVG.log2FC_2.bed
-│       ├── CD164_HCRFF_rAVG.log2FC_2.bed
-│       ├── ERP29_HCRFF_rAVG.log2FC_2.bed
-│       ├── FADS1_HCRFF_rAVG.log2FC_2.bed
-│       ├── FADS2_HCRFF_rAVG.log2FC_2.bed
-│       ├── FADS3_HCRFF_rAVG.log2FC_2.bed
-│       ├── FEN1_HCRFF_rAVG.log2FC_2.bed
-│       ├── GATA1_HCRFF_rAVG.log2FC_2.bed
-│       ├── HBE1_HCRFF_rAVG.log2FC_2.bed
-│       ├── HBG1_HCRFF_rAVG.log2FC_2.bed
-│       ├── HBG2_HCRFF_rAVG.log2FC_2.bed
-│       ├── HBS1L_HCRFF_rAVG.log2FC_2.bed
-│       ├── HDAC6_HCRFF_rAVG.log2FC_2.bed
-│       ├── LMO2_HCRFF_rAVG.log2FC_2.bed
-│       ├── MEF2C_HCRFF_rAVG.log2FC_2.bed
-│       ├── MYB_HCRFF_rAVG.log2FC_2.bed
-│       ├── MYC_HCRFF_rAVG.log2FC_2.bed
-│       ├── NMU_HCRFF_rAVG.log2FC_2.bed
-│       ├── PVT1_HCRFF_rAVG.log2FC_2.bed
-│       └── summary
-│           ├── track_info.tsv
-│           ├── metadata.tsv
-│           └── metadata.library_design.tsv
-│
-└── CRISPRi_Growth_K562_Gersbach_JinWoo
-    └── guide_scores
-        ├── CRISPRi_rAVG_log2FC_2.wig
-        ├── CRISPRi_rAVG_log2FC_2.bed
-        ├── CRISPRi_Growth_K562.hg38.ZScore.unstranded.bed.gz
-        └── summary
-            ├── track_info.tsv
-            └── metadata.tsv</code></pre>
-</section>
-<section id="hic-assay" class="level1">
-<h1>HiC assay</h1>
-<p><strong>Summary</strong></p>
-<pre><code>PROJECT/results/assay_hic
-├── hic_insitu_K562_ENCSR545YBD
-├── hic_intact_K562_ENCSR479XDG
-└── hic_intact_K562_deep</code></pre>
-</section>
-<section id="region" class="level1">
-<h1>Region</h1>
-<p><strong>Description</strong></p>
-<p><strong>Summary</strong></p>
-<pre><code>encode_chipseq_flagship
-encode_chipseq_histone
-encode_chipseq_subset
-encode_chromatin_states
-encode_open_chromatin
-encode_e2g_benchmark
-encode_e2g_prediction
-fcc_enhancer_junke_zscore
-fcc_astarr_csaw
-fcc_astarr_macs
-fcc_wstarr_cradle
-fcc_crispri_growth
-fcc_crispri_hcrff
-fcc_screened
-hic_insitu_K562_ENCSR545YBD
-hic_intact_K562_ENCSR479XDG
-hic_intact_K562_deep
-
-genome_tss
-genome_cres
-genome_...
-ref_tss (what if it is from RAMPAGE?)
-
-(TF_modules)</code></pre>
-<pre><code>PROJECT/results/region
-├── encode_open_chromatin
-│   ├── K562.hg38.ENCSR000EKS.ENCFF274YGF.DNase.bed.gz
-│   ├── K562.hg38.ENCSR000EOT.ENCFF185XRG.DNase.bed.gz
-│   ├── K562.hg38.ENCSR483RKN.ENCFF558BLC.ATAC.bed.gz
-│   ├── K562.hg38.ENCSR483RKN.ENCFF925CYR.ATAC.bed.gz
-│   ├── K562.hg38.ENCSR868FGK.ENCFF333TAT.ATAC.bed.gz
-│   ├── K562.hg38.ENCSR868FGK.ENCFF948AFM.ATAC.bed.gz
-│   └── summary
-|       ├── metadata.label.tsv
-|       ├── metadata.size.tsv
-|       ├── result.size.concat.csv
-|       ├── result.size.&lt;...&gt;.csv
-│       └── description.tsv
-│
-├── encode_chipseq_flagship
-│   └── summary
-│
-├── encode_chipseq_histone
-│   └── summary
-│
-├── encode_chipseq_subset
-│   └── summary
-│
-├── encode_chromatin_states
-│   └── summary
-│
-├── encode_e2g_benchmark
-│   ├── K562.hg38.EPCrisprBenchmark.active.bed.gz
-│   ├── K562.hg38.EPCrisprBenchmark.active.merge.bed.gz
-│   ├── K562.hg38.EPCrisprBenchmark.total.bed.gz
-│   ├── K562.hg38.EPCrisprBenchmark.total.merge.gz
-│   └── summary
-│
-├── encode_e2g_prediction_ENCSR328LMT
-│   ├── K562.hg38.ENCSR328LMT.ENCFF202FID.element_gene_links.active.bed.gz
-│   ├── K562.hg38.ENCSR328LMT.ENCFF202FID.element_gene_links.active.merge.bed.gz
-│   ├── K562.hg38.ENCSR328LMT.ENCFF122UMY.element_gene_links.total.bed.gz
-│   ├── K562.hg38.ENCSR328LMT.ENCFF122UMY.element_gene_links.total.merge.bed.gz
-│   └── summary
-│
-├── fcc_astarr_csaw
-│   ├── ASTARRseq_K562_KSMerge.hg38.bed.gz
-
-│   ├── K562.hg38.ASTARR.KSMerge.csaw.bed.gz
-│   ├── K562.hg38.ASTARR.KS91.csaw.bed.gz
-
-│   ├── K562.hg38.ASTARR.csaw.KSMerge.bed.gz
-│   ├── K562.hg38.ASTARR.csaw.KS91.bed.gz
-
-│   └── summary
-|
-├── fcc_astarr_macs
-│   ├── ASTARRseq_K562_KS91.hg38.Input.rep_all.union.q5.bed.gz
-│   ├── ASTARRseq_K562_KS91.hg38.Input.rep_all.max_overlaps.q5.bed.gz
-
-│   ├── K562.hg38.ASTARR.KS91.macs.input.rep_all.union.q5.bed.gz
-│   ├── K562.hg38.ASTARR.KS91.macs.input.rep_all.max_overlaps.q5.bed.gz
-
-│   ├── K562.hg38.ASTARR.macs.KS91.input.rep_all.union.q5.bed.gz
-│   ├── K562.hg38.ASTARR.macs.KS91.input.rep_all.max_overlaps.q5.bed.gz
-
-│   └── summary
-│
-├── fcc_crispri_hcrff
-│   ├── K562.hg38.CRISPRi_HCRFF.CASA.bed.gz
-│   ├── K562.hg38.CRISPRi_HCRFF.CASA.merge.bed.gz
-│   └── summary
-│
-├── fcc_crispri_growth
-│   ├── K562.hg38.CRISPRi_Growth.DHS.active.bed.gz
-│   ├── K562.hg38.CRISPRi_Growth.DHS.active.merge.bed.gz
-│   ├── K562.hg38.CRISPRi_Growth.DHS.total.bed.gz
-│   ├── K562.hg38.CRISPRi_Growth.DHS.total.merge.bed.gz
-│   └── summary
-│
-├── fcc_screened
-│   ├── region_screened.crispri_hcrff.bed.gz
-│   ├── region_screened.crispri_hcrff.tsv
-│   ├── region_screened.tmpra.bed.gz
-│   ├── region_screened.tmpra.tsv
-│   └── summary
-│
-├── hic_insitu_K562_ENCSR545YBD
-│   ├── K562.hg38.ENCSR545YBD.ENCFF271SAF.hic_insitu.contact_domain.bed.gz
-│   ├── K562.hg38.ENCSR545YBD.ENCFF693XIL.hic_insitu.loop.A.bed.gz
-│   ├── K562.hg38.ENCSR545YBD.ENCFF693XIL.hic_insitu.loop.B.bed.gz
-
-│   ├── K562.hg38.hic_insitu.contact_domain.bed.gz
-│   ├── K562.hg38.hic_insitu.loop.A.bed.gz
-│   ├── K562.hg38.hic_insitu.loop.B.bed.gz
-
-│   └── summary
-│
-├── hic_intact_K562_ENCSR479XDG
-│   ├── K562.hg38.ENCSR479XDG.ENCFF126GED.hic_intact.contact_domain.bed.gz
-│   ├── K562.hg38.ENCSR479XDG.ENCFF256ZMD.hic_intact.loop.A.bed.gz
-│   ├── K562.hg38.ENCSR479XDG.ENCFF256ZMD.hic_intact.loop.B.bed.gz
-
-│   ├── K562.hg38.hic_intact.contact_domain.bed.gz
-│   ├── K562.hg38.hic_intact.loop.A.bed.gz
-│   ├── K562.hg38.hic_intact.loop.B.bed.gz
-
-│   └── summary
-│
-├── hic_intact_K562_deep
-│   ├── K562.hg38.deep.hic_intact.loop.A.bed.gz
-│   ├── K562.hg38.deep.hic_intact.loop.B.bed.gz
-│   └── summary
-│
-└── summary
-    ├── metadata.size.tsv
-    ├── metadata.label.tsv
-    ├── metadata.label.ocr.total.tsv
-    ├── metadata.label.ocr.astarr_macs.tsv
-    ├── metadata.label.cres.tsv
-    ├── metadata.label.chromstates.tsv
-    ├── metadata.label.chipseq_subset.tsv
-    ├── metadata.label.chipseq.tsv</code></pre>
-<section id="region-labeling" class="level2">
-<h2 class="anchored" data-anchor-id="region-labeling">Region labeling</h2>
-<p><code>&lt;Assay&gt;_&lt;File Index&gt;/&lt;Label&gt;</code></p>
-<pre><code>encode_open_chromatin
-├── atac_&lt;File Index&gt;
-└── dnase_&lt;File Index&gt;
-
-encode_chipseq_subset/histone/flagship
-└── chipseq_&lt;File Index&gt;
-
-encode_chromatin_states
-├── ccres_&lt;File Index&gt;
-└── chromhmm_&lt;File Index&gt;
-
-encode_e2g_benchmark
-├── encode_e2g_benchmark_active_merge
-└── encode_e2g_benchmark_total_merge
-
-encode_e2g_prediction
-├── encode_e2g_prediction_active_merge
-└── encode_e2g_prediction_total_merge
-
-fcc_crispri_hcrff
-├── crispri_hcrff_active_merge
-└── crispri_hcrff_total_merge
-
-fcc_crispri_growth
-├── crispri_growth_active_merge
-└── crispri_growth_total_merge
-
-fcc_screened
-├── ...</code></pre>
+<section id="encode-chromhmm-chromatin-states" class="level1">
+<h1>ENCODE ChromHMM chromatin states</h1>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
