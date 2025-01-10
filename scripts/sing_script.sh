@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ### Source the configuration file
-FP_CNF=/data/reddylab/Kuei/repo/Proj_ENCODE_FCC/config/config_project.sh
+FP_CNF=/data/reddylab/Kuei/repo/Proj_ENCODE_FCC/scripts/config_project.sh
 source ${FP_CNF}
 
 ### From the configuration file, Get the following:
