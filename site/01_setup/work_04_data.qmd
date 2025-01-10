@@ -1,0 +1,230 @@
+---
+title: "04 Data Files"
+---
+
+# Scatches
+
+thinking:
+why external and processed?
+original thought
+external is the folder for downloading data from ENCODE portal
+processed is the data I got from others
+
+
+# Download external data
+
+**Summary**
+```
+PROJECT/data/external
+├── (encode_astarr_csaw)
+├── encode_chipseq_flagship
+├── encode_chipseq_histone
+├── encode_chipseq_subset
+├── encode_chromatin_states
+├── encode_crispri_hcrff
+├── encode_open_chromatin
+├── encode_e2g_benchmark
+├── encode_e2g_prediction
+├── encode_rnaseq
+├── (genome_gencode)
+├── (genome_ncbi_refseq)
+├── genome_gene
+├── genome_cres
+├── genome_tss
+├── hic_insitu_K562_ENCSR545YBD
+├── hic_intact_K562_ENCSR479XDG
+├── hic_intact_K562_deep
+├── chrom.sizes.hg19
+├── chrom.sizes.hg38
+├── chrom.list.main
+├── chrom.list.auto
+└── chrom.list.sex
+```
+
+**Detailed**
+```
+PROJECT/data/external
+├── encode_open_chromatin
+│   ├── K562.hg38.ENCSR000EKS.ENCFF274YGF.DNase.bed.gz
+│   ├── K562.hg38.ENCSR000EOT.ENCFF185XRG.DNase.bed.gz
+│   ├── K562.hg38.ENCSR483RKN.ENCFF558BLC.ATAC.bed.gz
+│   ├── K562.hg38.ENCSR483RKN.ENCFF925CYR.ATAC.bed.gz
+│   ├── K562.hg38.ENCSR868FGK.ENCFF333TAT.ATAC.bed.gz
+│   └── K562.hg38.ENCSR868FGK.ENCFF948AFM.ATAC.bed.gz
+│   
+├── encode_chromatin_states
+│
+├── encode_chipseq_flagship
+├── encode_chipseq_subset
+├── encode_crispri_hcrff
+│   ├── K562.hg38.ENCSR793WTM.ENCFF863AVQ.CRISPRi_HCRFF.CASA.CAPRIN1.bed.gz
+│   ├── K562.hg38.ENCSR794SPV.ENCFF619FXH.CRISPRi_HCRFF.CASA.CAT.bed.gz
+│   ├── K562.hg38.ENCSR157WAN.ENCFF270LYK.CRISPRi_HCRFF.CASA.CD164.bed.gz
+│   ├── K562.hg38.ENCSR979QQN.ENCFF813GCK.CRISPRi_HCRFF.CASA.ERP29.bed.gz
+│   ├── K562.hg38.ENCSR382ZJS.ENCFF786ZPA.CRISPRi_HCRFF.CASA.FADS1.bed.gz
+│   ├── K562.hg38.ENCSR968CIN.ENCFF149IDL.CRISPRi_HCRFF.CASA.FADS2.bed.gz
+│   ├── K562.hg38.ENCSR630WLB.ENCFF227DUX.CRISPRi_HCRFF.CASA.FADS3.bed.gz
+│   ├── K562.hg38.ENCSR278YTB.ENCFF151MNC.CRISPRi_HCRFF.CASA.FEN1.bed.gz
+│   ├── K562.hg38.ENCSR917XEU.ENCFF413WYU.CRISPRi_HCRFF.CASA.GATA1.bed.gz
+│   ├── K562.hg38.ENCSR564EPW.ENCFF845YHV.CRISPRi_HCRFF.CASA.HBE1.bed.gz
+│   ├── K562.hg38.ENCSR449NJV.ENCFF811PPJ.CRISPRi_HCRFF.CASA.HBG1.bed.gz
+│   ├── K562.hg38.ENCSR459QNY.ENCFF910PDZ.CRISPRi_HCRFF.CASA.HBG2.bed.gz
+│   ├── K562.hg38.ENCSR759RSA.ENCFF337VVS.CRISPRi_HCRFF.CASA.HBS1L.bed.gz
+│   ├── K562.hg38.ENCSR009KPS.ENCFF632PQY.CRISPRi_HCRFF.CASA.HDAC6.bed.gz
+│   ├── K562.hg38.ENCSR321CEH.ENCFF469FXP.CRISPRi_HCRFF.CASA.LMO2.bed.gz
+│   ├── K562.hg38.ENCSR940PYU.ENCFF894DJT.CRISPRi_HCRFF.CASA.MEF2C.bed.gz
+│   ├── K562.hg38.ENCSR408VHJ.ENCFF091IOP.CRISPRi_HCRFF.CASA.MYB.bed.gz
+│   ├── K562.hg38.ENCSR825SFH.ENCFF240IPT.CRISPRi_HCRFF.CASA.MYC.bed.gz
+│   ├── K562.hg38.ENCSR393VDD.ENCFF270ZLE.CRISPRi_HCRFF.CASA.NMU.bed.gz
+│   └── K562.hg38.ENCSR496MZF.ENCFF005DTR.CRISPRi_HCRFF.CASA.PVT1.bed.gz
+│
+├── encode_e2g
+├── encode_rnaseq
+├── (genome_tss)
+├── 
+├── hic_insitu_K562_ENCSR545YBD
+│   ├── ENCFF621AIY.hic
+│   ├── K562.ENCSR479XDG.ENCFF126GED.contact_domains.bedpe.gz
+│   └──K562.ENCSR479XDG.ENCFF256ZMD.loops.bedpe.gz
+│
+├── hic_intact_K562_ENCSR479XDG
+├── hic_intact_K562_deep
+├── chrom.sizes.hg19
+├── chrom.sizes.hg38
+├── chrom.list.main
+├── chrom.list.auto
+└── chrom.list.sex
+```
+
+
+
+# Acquire processed data
+
+**Summary**
+```
+PROJECT/data/processed
+├── STARR_ATAC_K562_Reddy_KS91_210401
+├── STARR_ATAC_K562_Reddy_KS274_240311
+├── STARR_WHG_K562_Reddy_A001_Alex
+├── STARR_WHG_K562_Reddy_A001_Kari
+├── MPRA_Tiling_K562_Tewhey_Hannah
+├── MPRA_Lenti_K562_Nadav_Vikram_230621
+├── CRISPRi_FlowFISH_K562_Riley_JinWoo
+├── CRISPRi_Growth_K562_Gersbach_Alex
+├── fcc_trackhub_JinWoo
+├── fcc_enhancer_Junke_zscore
+├── TF_modules_Shannon
+└── 
+```
+
+**Detailed (Folder)**
+```
+PROJECT/data/processed
+├── STARR_ATAC_K562_Reddy_KS91_210401
+│   ├── fragments
+│   └── peaks
+├── STARR_ATAC_K562_Reddy_KS274_240311
+│   └── fragments
+├── STARR_WHG_K562_Reddy_A001_Alex
+│   └── fragments
+├── STARR_WHG_K562_Reddy_A001_Kari
+│   └── superstarr
+│       ├── input_libs
+│       └── output_libs
+├── CRISPRi_Growth_K562_Gersbach_Alex
+│   ├── guides
+│   └── region
+├── CRISPRi_Growth_K562_Gersbach_JinWoo
+│
+├── CRISPRi_FlowFISH_K562_Riley_JinWoo
+│
+├── fcc_trackhub_JinWoo
+│
+├── fcc_enhancer_Junke_zscore
+│
+├── TF_modules_Shannon
+└── 
+```
+
+**Detailed (Files)**
+```
+PROJECT/data/processed
+├── STARR_ATAC_K562_Reddy_KS91_210401
+│   ├── fragments
+│   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep1.masked.dedup.fragments.counts.txt.gz
+│   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep1.masked.exclude_dups.cpm.bw
+│   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep2.masked.dedup.fragments.counts.txt.gz
+│   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep2.masked.exclude_dups.cpm.bw
+│   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep3.masked.dedup.fragments.counts.txt.gz
+│   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep3.masked.exclude_dups.cpm.bw
+│   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep4.masked.dedup.fragments.counts.txt.gz
+│   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep4.masked.exclude_dups.cpm.bw
+│   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep5.masked.dedup.fragments.counts.txt.gz
+│   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep5.masked.exclude_dups.cpm.bw
+│   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep6.masked.dedup.fragments.counts.txt.gz
+│   │   ├── KS91_K562_hg38_ASTARRseq_Input_rep6.masked.exclude_dups.cpm.bw
+│   │   ├── KS91_K562_hg38_ASTARRseq_Output_rep1.f3q10.fragments.counts.txt.gz
+│   │   ├── KS91_K562_hg38_ASTARRseq_Output_rep1.f3q10.sorted.with_umis.dedup.cpm.bw
+│   │   ├── KS91_K562_hg38_ASTARRseq_Output_rep2.f3q10.fragments.counts.txt.gz
+│   │   ├── KS91_K562_hg38_ASTARRseq_Output_rep2.f3q10.sorted.with_umis.dedup.cpm.bw
+│   │   ├── KS91_K562_hg38_ASTARRseq_Output_rep3.f3q10.fragments.counts.txt.gz
+│   │   ├── KS91_K562_hg38_ASTARRseq_Output_rep3.f3q10.sorted.with_umis.dedup.cpm.bw
+│   │   ├── KS91_K562_hg38_ASTARRseq_Output_rep4.f3q10.fragments.counts.txt.gz
+│   │   └── KS91_K562_hg38_ASTARRseq_Output_rep4.f3q10.sorted.with_umis.dedup.cpm.bw
+│   └── peaks
+│       ├── KS91_K562_hg38_ASTARRseq_Input.all_reps.masked.union_narrowPeak.q5.bed
+│       └── KS91_K562_hg38_ASTARRseq_Input.q5.in_all.max_overlaps.bed
+│
+├── STARR_ATAC_K562_Reddy_KS274_240311
+│   └── fragments
+│       ├── 
+│
+├── STARR_WHG_K562_Reddy_A001_Alex
+│   ├── fragments
+│   │   ├── A001-input-K562-rep1.masked.dedup.fragments.counts.txt.gz
+│   │   ├── A001-input-K562-rep2.masked.dedup.fragments.counts.txt.gz
+│   │   ├── A001-input-K562-rep3.masked.dedup.fragments.counts.txt.gz
+│   │   ├── A001-input-K562-rep4.masked.dedup.fragments.counts.txt.gz
+│   │   ├── A001-K562-rep1.masked.dedup.fragments.counts.txt.gz
+│   │   ├── A001-K562-rep2.masked.dedup.fragments.counts.txt.gz
+│   │   └── A001-K562-rep3.masked.dedup.fragments.counts.txt.gz
+│   └── peaks
+│   
+├── STARR_WHG_K562_Reddy_A001_Kari
+│
+├── MPRA_Tiling_K562_Tewhey_Hannah
+│   └── tiling_counts
+│       ├── OL13_20220512_counts.out
+│       ├── OL13_20220512_normalized_counts.out
+│       ├── OL43_20211228_counts.out      
+│       ├── OL43_20211228_normalized_counts.out
+│       ├── OL43_20221003_counts.out 
+│       ├── OL43_20221003_K562_normalized_counts.out
+│       ├── OL45_20220927_counts.out 
+│       └── OL45_20220927_K562_normalized_counts.out
+│
+├── MPRA_Lenti_K562_Nadav_vikram
+│
+├── CRISPRi_FlowFISH_K562_Riley_JinWoo
+│   └── track_bedgraph
+│       ├── 
+│       └── 
+│
+├── CRISPRi_Growth_K562_Gersbach_Alex
+│   ├── k562-gw-v3-all.sorted.counts.results.hg38.txt.gz
+│   └── k562-gw-v3-all.sorted.counts.results.top_guide_fdr_0_05.hg38.bed.gz
+Readmd.md
+│
+├── fcc_trackhub_jinwoo
+│   ├── track_bigwig
+│   └── region
+│       ├── tss_pol2
+│       └── tss_tse_crispri_hcrff
+│
+├── fcc_enhancer_junke_zscore
+│
+├── TF_modules_K562_shannon
+│
+└── 
+```
+

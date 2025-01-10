@@ -1,0 +1,20 @@
+---
+title: "14 Results (Region)"
+---
+
+```
+└── annotation
+    ├── ASTARRseq_K562_KS91_Input_rep_all_union
+    └── ASTARRseq_K562_KS91_Input_rep_all_max_overlap
+```
+
+
+
+| Assay_Name                                                             | Assay_Type     | Assay_Label                           |
+|------------------------------------------------------------------------|----------------|---------------------------------------|
+| STARR_ATAC_K562_Reddy_KS91, STARR_ATAC_K562_Reddy_KS274                | ASTARR         | ASTARR_AB/ASTARR_A/ASTARR_R           |
+| STARR_WHG_K562_Reddy_A001                                              | WSTARR         | WSTARR_AB/WSTARR_A/WSTARR_R           |
+| MPRA_Tiling_K562_Tewhey_Hannah                                         | TMPRA          | TMPRA_A/TMPRA_R                       |
+| MPRA_Lenti_K562_Nadav_Vikram                                           | LMPRA          | LMPRA_A/LMPRA_R                       |
+| CRISPRi_FlowFISH_K562_Riley_JinWoo                                     | CRISPRi-HCRFF  | CRISPRi-HCRFF:GATA1/CRISPRi-HCRFF:MYC |
+| CRISPRi_Growth_K562_Gersbach_JinWoo, CRISPRi_Growth_K562_Gersbach_Alex | CRISPRi-Growth | CRISPRi-Growth                        |

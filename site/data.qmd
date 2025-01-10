@@ -1,0 +1,233 @@
+---
+title: "Data dictionary"
+---
+
+Below are the main data used in the analyses. We express our sincere appreciation to the research teams and individuals involved in conducting, processing, and sharing the experiments and data that underpin our analyses.
+
+# Summary: FCC assays done in K562
+[Read more about the FCC data](./02_prepare/data_01_fcc.qmd)
+
+- ATAC-STARR (ASTARR): sequenced fragments (proccessed by Alex and Revathy; experiment done by Keith)
+- WHG-STARR (WSTARR): sequenced fragments (proccessed by Alex; experiment done by Kari)
+- Tiling MPRA (TMPRA): raw barcode count table (proccessed by Hannah)
+- Lenti-MPRA (LMPRA): log2 fold change of each element (shared by Vikram from the Lenti-MPRA study)
+- CRISPRi-HCR FlowFISH (CRISPRi-HCRFF): z scores (proccessed by Jin Woo)
+- CRISPRi-Growth screen (CRISPRi-Growth): z scores (proccessed by Jin Woo)
+
+## ATAC-STARR-seq (ASTARR)
+
+## WHG-STARR-seq (WSTARR)
+
+- More information
+    - https://www.encodeproject.org/functional-characterization-experiments/ENCSR661FOW/
+
+## Tiling MPRA (TMPRA)
+
+[ENCODE FCC K562 Tiling MPRA from Tewhey's lab](https://www.encodeproject.org/search/?type=FunctionalCharacterizationExperiment&type=FunctionalCharacterizationSeries&type=TransgenicEnhancerExperiment&config=FunctionalCharacterization&datapoint=false&control_type!=*&status=released&biosamples.donor.organism.scientific_name=Homo+sapiens&biosample_ontology.term_name=K562&assay_title=MPRA&perturbation_type!=*&lab.title=Ryan+Tewhey%2C+JAX)
+
+- [ENCODE MPRA K562 OL43-GATA/MYC region](https://www.encodeproject.org/functional-characterization-experiments/ENCSR917SFD/)
+    - Homo sapiens K562, 24 hours post-nucleic acid delivery time genetically modified (episome) using transient transfection for multiple loci
+- [ENCODE MPRA]
+    
+https://www.encodeproject.org/search/?type=File&searchTerm=OL43&file_format=bed
+
+MPRA of multiple loci in K562
+Homo sapiens K562, 48 hours post-nucleic acid delivery time genetically modified (episome) using transient transfection for multiple loci
+Loci: FEN1, FADS1, FADS2, FADS3
+Lab: Ryan Tewhey, JAX
+Project: ENCODE
+
+Functional Characterization Experiment
+ENCSR394HXI
+
+ryan-tewhey:mpra-OL13-fads-k562
+
+
+MPRA of multiple loci in K562
+Homo sapiens K562, 24 hours post-nucleic acid delivery time genetically modified (episome) using transient transfection for multiple loci
+Loci: GATA1, MYC
+Lab: Ryan Tewhey, JAX
+Project: ENCODE
+
+Functional Characterization Experiment
+ENCSR917SFD
+
+ryan-tewhey:mpra-OL43-gata_myc_ctrl-k562
+
+MPRA of multiple loci in K562
+Homo sapiens K562, 24 hours post-nucleic acid delivery time genetically modified (episome) using transient transfection for multiple loci
+Loci: LMO2, HBE1, RBM38, HBA2, BCL11A
+Lab: Ryan Tewhey, JAX
+Project: ENCODE
+
+Functional Characterization Experiment
+ENCSR363XER
+
+ryan-tewhey:mpra-OL45-common_ctrl-k562
+
+In this analysis, we are using the unnormalized and normalized data processed and shared by Hannah from the Tewhey lab.
+
+## Lenti-MPRA (LMPRA)
+
+Lentivirus-based MPRA (lentiMPRA) produces "in-genome" readouts [(M Grace Gordon et al., 2020)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7550205/)
+
+- Benefits
+    - enables the use of MPRA in hard-to-transfect cells.
+
+- Reference
+    - [M Grace Gordon et al. (2020) lentiMPRA and MPRAflow for high-throughput functional characterization of gene regulatory elements. Nature protocols, 15, 2387–2412.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7550205/)
+
+## CRISPRi-HCR FlowFISH (CRISPRi-HCRFF)
+
+## CRISPRi Growth screen (CRISPRi-Growth)
+
+# Summary: CREs/Peaks identified in K562
+
+- CREs calls for reporter assays (STARR/MPRA)
+    - Unified processing pipeline for peak calling in high-throughput reporter assays
+- CREs calls for CRISPRi-HCR FlowFISH
+    - CRISPR activity screen analysis (CASA) on CRISPRi-HCR Flow-FISH data
+- CREs calls for CRISPRi-Growth screen
+    - Calling DHS regions using DESeq analysis for CRISPRi-Growth
+- CRISPR Enhancer-Gene (E2G) benchmark/prediction
+    - the benchmark data and prediction results of enhancer-gene linking model
+- ATAC peaks
+    - MACS peaks called of the ASTARR input libraries
+
+https://github.com/ENCODE-DCC/encValData/blob/master/as/mpra_starr.as
+
+## CREs calls for reporter assays (STARR/MPRA)
+
+An unified processing pipeline has been developed by Junke from the [Yu Lab](https://www.yulab.org/lab_member/) to standardize the enhancer calling process for high-throughput reporter assays. 
+
+## CREs calls for CRISPRi-HCR FlowFISH
+
+CRISPR activity screen analysis (CASA) on CRISPRi-HCR Flow-FISH data
+
+The [CASA](https://github.com/sjgosai/casa) analysis pipeline, developed by the Sabeti Lab, has been applied to CRISPRi-HCR Flow-FISH data to identify regulatory elements. The results of significant regions in K562 FlowFISH CRISPRi screens from Reilly lab can be downloaded from the ENCODE portal ([Link](https://www.encodeproject.org/search/?type=FunctionalCharacterizationExperiment&type=FunctionalCharacterizationSeries&type=TransgenicEnhancerExperiment&config=FunctionalCharacterization&datapoint=false&control_type!=*&status=released&assay_title=Flow-FISH+CRISPR+screen&lab.title=Pardis+Sabeti%2C+Broad&biosample_ontology.term_name=K562))
+
+## CREs calls for CRISPRi-Growth screen
+
+Calling DHS regions using DESeq analysis for CRISPRi-Growth
+
+For the analysis of CRISPRi-Growth data, DHS (DNase I hypersensitive sites) regions with significant effect on cell fittness have been identified using DESeq analysis, performed by Alex.
+
+## ENCODE-rE2G predictions of enhancer-gene regulatory interactions (CRISPR-E2G)
+
+- [Distal regulation ENCODE-rE2G](https://www.encodeproject.org/software/distal-regulation-encode_re2g/)
+    - [ENCODE-E2G models](https://github.com/karbalayghareh/ENCODE-E2G/)
+
+**CRISPR E2G Benchmark**
+
+- [Benchmark enhancer-gene prediction models against CRISPR data](https://github.com/EngreitzLab/CRISPR_comparison)
+
+**CRISPR E2G Prediction**
+
+- [ENCODE: ENCSR328LMT](https://www.encodeproject.org/annotations/ENCSR328LMT/)
+    - Description:
+        - ENCODE-rE2G (extended) predictions of enhancer-gene regulatory interactions for K562
+    - Annotation type:
+        - element gene regulatory interaction predictions
+    - Experimental input (Assay: DNase-seq, ChIP-seq, HiC, ChIA-PET):
+        - ENCSR000EOT (K562 DNase-seq)
+        - ENCSR668LDD (K562 ChIP-seq: H3K4me3)
+        - ENCSR000AKP (K562 ChIP-seq: H3K27ac)
+        - ENCSR000EGE (K562 ChIP-seq: EP300)
+        - ENCSR000DWE (K562 ChIP-seq: CTCF)
+        - ENCSR597AKG (K562 ChIA-PET: CTCF)
+        - ENCSR545YBD (K562 in situ Hi-C)
+        - ENCSR479XDG (K562 intact Hi-C)
+
+## ATAC peaks
+
+MACS peaks called of the ASTARR input libraries
+
+processed by Alex
+
+# Summary: Hi-C assays done in K562
+[Read more about the Hi-C data](./02_prepare/data_02_hic.qmd)
+
+- in-situ Hi-C
+- intact Hi-C
+- Deep intact Hi-C
+
+## in-situ Hi-C
+
+[Experiment summary for ENCSR545YBD](https://www.encodeproject.org/experiments/ENCSR545YBD/)
+- HiC (in situ Hi-C)
+- Homo sapiens K562
+- K562 in situ Hi-C experiment
+
+# Summary: Genomic/Transcriptomic information of K562
+
+- Chromatin states (cCREs / ChromHMM)
+- TSS annotation
+- ChIP-seq (TF/Histone) data
+- TF binding modules
+- Accessible regions (ATAC/DHS regions)
+- TSS annotation
+- Gene expression (RNA-seq)
+
+## Chromatin states
+[Read more about the chromatin states data](./02_prepare/data_12_chromatin_states.qmd)
+
+- ENCODE candidate cis-regulatory elements (cCREs)
+    - ENCODE Link: [ENCODE v4 cCREs (ENCSR913HQX)](https://www.encodeproject.org/annotations/ENCSR913HQX/)
+    - Description: candidate regulatory elements for GRCh38 in K562
+- ENCODE ChromHMM chromatin states (ChromHMM)
+    - ENCODE Link: [ENCODE v4 ChromHMM (ENCSR365YNI)](https://www.encodeproject.org/annotations/ENCSR365YNI/)
+    - Description: ChromHMM 15-state model of K562
+
+## ChIP-seq (TF/Histone) data
+
+- K562 ChIP-seq table from the ENCODE flagship
+
+## TF binding modules
+
+- Shannon et al. look at TF binding patterns across the genome enrichment by cluster the TFs into different modules/groups.
+ 
+## Accessible regions (ATAC/DHS regions)
+
+- K562 Accessible regions (ATAC/DHS regions) used for testing assay coverage
+
+## TSS annotation
+[Read more about the TSS annotation used in this documentation](./02_prepare/data_22_others.qmd)
+
+## Gene expression (RNA-seq)
+
+- [ENCODE: ENCSR615EEK](https://www.encodeproject.org/experiments/ENCSR615EEK/)
+    - Assay: RNA-seq (total RNA-seq)
+    - Biosample: K562
+    - External resources: [GEO:GSE174954](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE174954)
+
+## Gene annotation
+- Essential gene
+[DeMap: AchillesCommonEssentialControls.csv](https://depmap.org/portal/data_page/?tab=allData&releasename=DepMap+Public+24Q2&filename=AchillesCommonEssentialControls.csv)
+
+Description
+- List of genes used as positive controls, intersection of Biomen (2014) and Hart (2015) essentials. Each entry is separated by a newline.
+- The scores of these genes are used as the dependent distribution for inferring dependency probability
+
+Release Citation
+- Current DepMap Release data, including CRISPR Screens, PRISM Drug Screens, Copy Number, Mutation, Expression, and Fusions
+- DepMap, Broad (2024). DepMap 24Q2 Public. Figshare+. Dataset. https://doi.org/10.25452/figshare.plus.25880521.v1
+
+
+# More Information
+- ENCODE4 Flagship
+- ENCODE4 FCC study
+    - Functional Characterization of the Human Genome
+- ENCODE4 STARR/MPRA study
+    - Unified processing of MPRAs
+- ENCODE4 Lenti-MPRA study
+    - [Massively parallel characterization of transcriptional regulatory elements in three diverse human cell types](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10028905/)
+        - [Supplementary Table 3.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10028905/bin/media-3.xlsx) Genomic coordinates, element categorization, and sequences for designed elements for the three large-scale lentiMPRA assays.
+        - [Supplementary Table 4.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10028905/bin/media-4.xlsx) Activity scores computed for each element for the three large-scale lentiMPRA assays.
+- ENCODE4 CRISPR study
+    - [Multi-center integrated analysis of non-coding CRISPR screens](https://www.biorxiv.org/content/10.1101/2022.12.21.520137v1)
+- ENCODE4 cCREs study
+    - An Expanded Registry of candidate cis-Regulatory Elements for Studying Transcriptional Regulation
+- ENCODE4 Distal Regulation (E2G) study
+    - [An encyclopedia of enhancer-gene regulatory interactions in the human genome](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10680627/)
+- ENCODE4 Nuclear Architecture study
+- TF binding modules study

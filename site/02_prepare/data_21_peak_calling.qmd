@@ -1,0 +1,34 @@
+---
+title: "Peak calling"
+---
+
+This page provides an overview of the peak calling methodologies applied to our functional characterization data. Our approach incorporates the results from various screen analysis tools to ensure comprehensive analysis for assay comparisons.
+
+# Unified processing pipeline for peak calling in high-throughput reporter assays
+
+An unified processing pipeline has been developed by Junke from the [Yu Lab](https://www.yulab.org/lab_member/) to standardize the enhancer calling process for high-throughput reporter assays. 
+
+```
+deep_ATAC_STARR_seq.genomic_bin_100_sliding_10.tar.gz
+lentiMPRA.tar.gz
+tilingMPRA_MYC_GATA.tar.gz
+tilingMPRA_OL13.tar.gz
+tilingMPRA_OL45.tar.gz
+WHG_STARR_TR.tar.gz
+```
+
+# Applying ChIP-seq differential peak calling (csaw) on ATAC-STARR-seq assay
+
+The csaw tool was utilized for differential peak calling in ATAC-STARR assay data to identify cis-regulatory element from the chromatin accessible regions. This process was conducted by Alex.
+
+# Applying MACS on ATAC-STARR-seq input libraries
+
+The MACS tool was applied to ASTARR input libraries to acquire the chromatin accessible regions. This process was conducted by Alex.
+
+# CRISPR activity screen analysis (CASA) on CRISPRi-HCR Flow-FISH data
+
+The [CASA](https://github.com/sjgosai/casa) analysis pipeline, developed by the Sabeti Lab, has been applied to CRISPRi-HCR Flow-FISH data to identify regulatory elements. The results of significant regions can be downloaded from the ENCODE portal as follows:
+
+# Calling DHS regions using DESeq analysis for CRISPRi-Growth
+
+For the analysis of CRISPRi-Growth data, DHS (DNase I hypersensitive sites) regions with significant effect on cell fittness have been identified using DESeq analysis, performed by Alex.

@@ -1,0 +1,17 @@
+---
+title: "WHG-STARR-seq (WSTARR)"
+---
+
+## WHG-STARR-seq (WSTARR)
+
+| Sample      | Group  | Count       |
+|-------------|--------|------------:|
+| Input.rep1  | Input  |  26,908,970 |
+| Input.rep2  | Input  |  99,899,775 |
+| Input.rep3  | Input  | 105,623,984 |
+| Input.rep4  | Input  | 108,635,002 |
+| Output.rep1 | Output | 160,349,140 |
+| Output.rep2 | Output | 157,326,312 |
+| Output.rep3 | Output |  38,522,888 |
+
+: Library sizes of WSTARR
