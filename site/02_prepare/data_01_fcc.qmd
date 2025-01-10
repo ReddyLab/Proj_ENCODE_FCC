@@ -1,0 +1,82 @@
+---
+title: "FCC Data"
+---
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+#| label:   "Set environment"
+
+### set folder
+FD_REPO = "/mount/repo"
+FD_PRJ = file.path(FD_REPO, "Proj_ENCODE_FCC")
+FD_EXE = file.path(FD_PRJ,  "scripts")
+
+### set environment
+txt_fdiry = FD_EXE
+txt_fname = "config_project_site.R"
+txt_fpath = file.path(txt_fdiry, txt_fname)
+source(txt_fpath)
+```
+
+## WHG-STARR-seq (WSTARR)
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+#| label:   "FCC Metadata (WSTARR)"
+#| tbl-cap: "FCC Metadata (WSTARR)"
+
+### set directory
+txt_fdiry = file.path(FD_RES, "assay_fcc", "STARR_WHG_K562_Reddy_A001", "fragment_counts", "summary")
+txt_fname = "metadata.tsv"
+txt_fpath = file.path(txt_fdiry, txt_fname)
+
+### read table
+dat = read_tsv(txt_fpath)
+
+### arrange table
+dat = dat %>% dplyr::select("FName", "Group", "Sample")
+colnames(dat) = c("File Name", "Group", "Sample")
+
+### show table
+kable(dat)
+```
+
+## ATAC-STARR-seq (ASTARR)
+
+## Tiling MPRA (TMPRA)
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+#| label:   "FCC Region Screened (TMPRA)"
+#| tbl-cap: "FCC Region Screened (Tiling-MPRA)"
+
+### set directory
+txt_fdiry = file.path(FD_RES, "region", "fcc_screened")
+txt_fname = "region_screened.tmpra.tsv"
+txt_fpath = file.path(txt_fdiry, txt_fname)
+
+### read table
+dat = read_tsv(txt_fpath)
+
+### show table
+kable(dat)
+```
+
+## Lenti-MPRA (LMPRA)
+
+![LMPRA Log2FC (Features)](../figure/02_prepare/fig.fcc_assay.LMPRA.hist.Log2fc.split.svg)
+
+::: {#fig-LMPRA-prepare-hist layout-ncol=3}
+
+![LMPRA Log2FC (Total)](../figure/02_prepare/fig.fcc_assay.LMPRA.hist.Log2fc.total.svg)
+
+![LMPRA Log2FC (Neg. Ctrl)](../figure/02_prepare/fig.fcc_assay.LMPRA.hist.Log2fc.neg_ctrl_shuffled.svg)
+
+![LMPRA Log2FC and z score](../figure/02_prepare/fig.fcc_assay.LMPRA.hist.Log2fc.zscore.svg){width=120%}
+
+Distribution of LMPRA Log2 fold change
+:::
+
+## CRISPRi-HCR FlowFISH (CRISPRi-HCRFF)
+
+## CRISPRi Growth screen (CRISPRi-Growth)
+
+## CRISPR E2G benchmark data (CRISPR-E2G)
+

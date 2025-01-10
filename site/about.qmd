@@ -1,0 +1,10 @@
+---
+title: "About the ENCODE FCC project and working group"
+---
+
+The ENCODE consortium has identified millions of elements with regulatory potential throughout the human genome. These technologies have been utilized to evaluate the functionality of these elements by systematically measuring their regulatory effects. Together, tens of billions of DNA fragments were assayed in high-throughput reporter assays and millions of locations were perturbed in CRISPR screens. 
+
+The compilation and analysis of data and results involve joint effort spanning multiple laboratories and collaboration across various ENCODE working groups. Among them, the ENCODE Functional Characterization Center (FCC) working group has systematically studied the regulatory regions and their effects as identified and quantified by these functional assays. The group developed analysis methods and sequence models to identify similarities and differences among those identified regulatory elements, based on their regulatory activities and sequence features. Furthermore, the group has integrated multiple genomic annotations, ChIP-seq data, and physical interactions from ENCODE, providing a comprehensive characterization of these regulatory regions.
+
+![](./figure/01_introduction/fig_fcc_intro_data.png)
+

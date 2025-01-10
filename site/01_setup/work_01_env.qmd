@@ -1,0 +1,188 @@
+---
+title: "01 Working Environment"
+---
+
+```
+BootStrap: docker
+From: jupyter/scipy-notebook:ubuntu-22.04
+
+%environment
+    PATH="$PATH:/usr/games"
+    export PATH
+
+%post    
+    ### ===========================================
+    ### install Linux packages
+    ### ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+    ### Package for checking containers environment
+    apt-get update && apt-get install -yq fortune cowsay lolcat
+
+    ### Common tools
+    apt-get install -yq --no-install-recommends apt-utils
+    apt-get install -yq --no-install-recommends libcurl4-openssl-dev libxml2-dev libssl-dev
+
+    ### ===========================================
+    ### install python packages
+    ### ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    
+    ### Base packages version
+    ###   Numpy:      1.24.4
+    ###   Scipy:      1.11.3
+    ###   Pandas:     2.1.1
+    ###   Sklearn:    1.3.1
+    ###   Numba:      0.57.1
+    ###   Matplotlib: 3.8.0
+    ###   Seaborn:    0.12.2
+    ### Note: 
+    ###   I did not update base packages since the dependencies is already fixed in the container
+    ###   When trying to update, I got the following error:
+    ###     ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. 
+    ###     This behaviour is the source of the following dependency conflicts.
+    ###     numba 0.57.1 requires numpy<1.25,>=1.21, but you have numpy 1.26.0 which is incompatible.
+    
+    ### ML tools
+    pip install --no-cache-dir umap-learn
+
+    ### Bio
+    pip install --no-cache-dir biopython
+    pip install --no-cache-dir pyBigWig
+    pip install --no-cache-dir hic-straw
+    pip install --no-cache-dir juicebox-notebook
+    pip install --no-cache-dir igv-notebook
+
+    ### Others
+    pip install --no-cache-dir plotly
+    pip install --no-cache-dir daft
+    pip install --no-cache-dir distogram
+    
+    ### ===========================================
+    ### install R 4.x
+    ### ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+    ### install two helper packages we need
+    apt-get update && apt-get install -yq --no-install-recommends software-properties-common dirmngr
+
+    ### add the signing key (by Michael Rutter) for these repos
+    ### To verify key, run gpg --show-keys /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc 
+    ### Fingerprint: E298A3A825C0D65DFD57CBB651716619E084DAB9
+    wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc
+    
+    ### add the R 4.0 repo from CRAN -- adjust 'focal' to 'groovy' or 'bionic' as needed
+    add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/"
+    
+    ### install R and its dependencies.
+    apt-get install -yq --no-install-recommends r-base r-base-dev
+
+    ### ===========================================
+    ### install R packages
+    ### ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+    ### Solve errors
+    ### + add-apt-repository ppa:c2d4u.team/c2d4u4.0+
+    ###     gpg: error running '/usr/bin/gpg-agent': probably not installed
+    ###     gpg: failed to start agent '/usr/bin/gpg-agent': Configuration error
+    ###     gpg: can't connect to the agent: Configuration error
+    apt-get install -yq gpg-agent
+
+    ### Solve errors
+    ### + Rscript -e "install.packages('ggpubr')"
+    ###     ERROR: configuration failed for package ‘nloptr’
+    ###     ERROR: dependency ‘nloptr’ is not available for package ‘lme4’
+    ###     ERROR: dependency ‘lme4’ is not available for package ‘pbkrtest’
+    ###     ERROR: dependencies ‘pbkrtest’, ‘lme4’ are not available for package ‘car’
+    ###     ERROR: dependency ‘car’ is not available for package ‘rstatix’
+    ###     ERROR: dependency ‘rstatix’ is not available for package ‘ggpubr’
+    apt-get install -yq libnlopt-dev
+
+    ### add the current R 4.0 or later ‘c2d4u’ repository
+    add-apt-repository ppa:c2d4u.team/c2d4u4.0+
+    apt-get update
+
+    ### basic tools
+    apt install -yq --no-install-recommends r-cran-tidyverse
+    apt install -yq --no-install-recommends r-cran-pryr
+    apt install -yq --no-install-recommends r-cran-plyr
+    
+    ### tools for plotting extensions
+    Rscript -e "install.packages('gridExtra')"
+    Rscript -e "install.packages('cowplot')"
+    Rscript -e "install.packages('hexbin')"
+    Rscript -e "install.packages('ggtext')"
+    Rscript -e "install.packages('ggpubr')"
+    Rscript -e "install.packages('GGally')"
+
+    ### tools for plotting different types of figures
+    Rscript -e "install.packages('ggseqlogo')"
+    Rscript -e "install.packages('pheatmap')"
+    Rscript -e "install.packages('UpSetR')"
+    Rscript -e "install.packages('plotly')"
+    
+    ### Other tools
+    Rscript -e "install.packages('zoo')"
+    Rscript -e "install.packages('psych')"
+    Rscript -e "install.packages('corrr')"
+    Rscript -e "install.packages('kableExtra')"
+    Rscript -e "install.packages('simpleCache')"
+    Rscript -e "install.packages('devtools')"
+    Rscript -e "install.packages('R.utils')"
+    Rscript -e "install.packages('FactoMineR')"
+    Rscript -e "install.packages('factoextra')"
+
+    ### ===========================================
+    ### install R Bioconductor
+    ### ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+    ### install bioconductor packages
+    ### https://github.com/Bioconductor/bioconductor_docker/tree/devel/bioc_scripts
+    Rscript -e 'install.packages("BiocManager", repos="https://cran.rstudio.com")'
+    Rscript -e "BiocManager::install(update=TRUE, ask=FALSE)"
+
+    ### ===========================================
+    ### install R Bioconductor packages
+    ### ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+    ### Genomic track/range analysis
+    Rscript -e "BiocManager::install('IRanges')"
+    Rscript -e "BiocManager::install('GenomicRanges')"
+    Rscript -e "BiocManager::install('rtracklayer')"
+    Rscript -e "BiocManager::install('GenomicDistributions')"
+    Rscript -e "BiocManager::install('GenomicDistributionsData')"
+    
+    ### install RNAseq related packages
+    Rscript -e "BiocManager::install('DESeq2')"
+    Rscript -e "BiocManager::install('edgeR')"
+    Rscript -e "BiocManager::install('genefilter')"
+    Rscript -e "BiocManager::install('airway')"
+    
+    ### install motif related packages
+    Rscript -e "BiocManager::install('universalmotif')"
+
+    ### install tools for enrichment analysis
+    Rscript -e "BiocManager::install('fgsea')"
+    Rscript -e "BiocManager::install('LOLA')"
+    
+    ### =========================================== 
+    ### Install Jupyter and Set Jupyter kernels
+    ### ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    
+    ### set bash kernel in jupyter
+    pip install bash_kernel
+    python -m bash_kernel.install
+    
+    ### set R kernel in jupyter
+    apt-get update && apt-get install -yq libzmq3-dev
+    Rscript -e "install.packages('IRkernel')"
+    Rscript -e "IRkernel::installspec(name = 'ir', displayname = 'R')"
+
+    ### rebuild jupyter lab
+    jupyter lab clean
+    jupyter lab build
+
+    ### ===========================================
+    ### Other
+    ### ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    
+    ### clean files and packages
+    apt-get update && apt-get clean
+```

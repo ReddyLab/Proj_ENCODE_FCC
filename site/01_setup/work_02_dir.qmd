@@ -1,0 +1,101 @@
+---
+title: "02 Working Directory"
+---
+
+# Working Directory
+
+**Summary**
+```
+PROJECT
+├── data
+├── results
+├── scripts
+├── references
+├── notebooks
+├── docs
+├── site
+├── log
+├── README.md
+└── .gitignore
+```
+
+**Folders**
+```
+PROJECT
+├── data
+│   ├── external
+│   └── processed
+├── results
+│   ├── assay_fcc
+│   ├── assay_hic
+│   └── region
+├── scripts
+├── references
+├── notebooks
+├── docs
+├── site
+├── log
+├── README.md
+└── .gitignore
+```
+
+# Naming Convention of folders and files
+
+Below are some naming convention in this documentation.
+
+- Assay folder name
+    - `<Assay Type>_<Cell Type>_<Lab>_<Label>`
+    - Label
+        - batch, source, people, id numbers
+
+```
+STARR_ATAC_K562_Reddy_KS91
+STARR_ATAC_K562_Reddy_KS274
+STARR_ATAC_K562_Reddy_KSMerge
+STARR_WHG_K562_Reddy_A001
+MPRA_Tiling_K562_Tewhey_Hannah
+MPRA_Lenti_K562_Nadav_Vikram
+CRISPRi_FlowFISH_K562_Riley_JinWoo
+CRISPRi_Growth_K562_Gersbach_JinWoo
+CRISPRi_Growth_K562_Gersbach_Alex
+```
+
+- Assay file name
+    - `<Prefix>.<Genome>.<Input/Output/Log2FC/ZScore>.<Replicate>.<Region>.<Unstranded/Stranded>.<File Extension>`
+    - Prefix
+        - ASTARRseq_K562_KS91
+        - WSTARRseq_K562_A001
+        - TMPRA_K562_OL13
+        - TMPRA_K562_OL43
+        - TMPRA_K562_OL45
+        - TMPRA_K562_Merge
+        - LMPRA_K562
+        - CRISPRi_HCRFF_K562
+        - CRISPRi_Growth_K562
+    - Replicate
+        - rep1/2/3/4
+        - rep1_vs_rep2
+        - rep_all
+    - Region
+        - WHG = whole genome
+        - MYC = MYC region
+        - GATA1 = GATA1 region
+        - Chrom_Main = chr1-22,X,Y
+        - Chrom_Auto = chr1-22 (Autosome)
+        - Chrom_Sex  = chrX,Y (Sex chromsome)
+       
+- ENCODE region file name
+    - `<Prefix>.<Genome>.<Experiment ID>.<File ID>.<Assay>.<Description>.<File Extension>`
+    - Prefix: biosample
+        - K562: a human erythroleukemic cell line
+        - A549: a human lung epithelial Cell line
+        - Hsa: Human
+    - Genome: reference for alignment
+        - hg38: GRCh38
+        - hg19: GRCh37
+    - Assay and Description
+        - ATAC/DNase
+        - ChIPseq.H3K27ac
+        - cCREs/ChromHMM
+
+- Enhancer calls

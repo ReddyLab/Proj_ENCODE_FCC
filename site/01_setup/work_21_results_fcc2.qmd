@@ -1,0 +1,53 @@
+---
+title: "12 Results (FCC)"
+---
+
+```
+PROJECT/results/region_coverage_fcc
+└── <Region>
+    └── <STARR>
+        ├── overlap_count
+        |   └── summary
+        |       ├── data.count_column.raw.WGS.rds
+        |       ├── data.deseq2.rds
+        |       ├── data.edger.rds
+        |       ├── matrix.count.raw.WGS.tsv
+        |       ├── result.coverage.screened.tsv
+        |       ├── result.coverage.Log2FC.deseq.tsv
+        |       ├── result.coverage.TPM.tsv
+        |       ├── result.coverage.CPM.tsv
+        |       ├── result.coverage.FPKM.tsv
+
+        └── summary
+            ├── result.summary.tsv 
+                (Input Output coverage)
+                (Output/Input Z Score, Input & Output TPM/FPKM)
+```
+
+```
+PROJECT/results/region_coverage_fcc
+└── <Region>
+    └── <TMPRA>
+        ├── overlap_score
+        |   └── summary
+        |       ├── data.count_column.raw.OL43.rds
+        |       ├── data.count_column.norm.OL43.rds
+        |       ├── data.deseq2.rds
+        |       ├── data.edger.rds
+        |       ├── matrix.count.raw.WGS.tsv
+        |       ├── result.coverage.screened.tsv
+        |       ├── result.coverage.Log2FC.deseq.tsv
+        └── summary
+            ├── result.summary.tsv 
+                (Input Output coverage)
+                (Output/Input Z Score, Input & Output TPM/FPKM)
+```
+
+```
+PROJECT/results/region_coverage_fcc
+└── <Region>
+    └── <STARR>
+        ├── overlap_score
+        ├── overlap_fragment_unique
+        ├── overlap_fragment_one2one
+```

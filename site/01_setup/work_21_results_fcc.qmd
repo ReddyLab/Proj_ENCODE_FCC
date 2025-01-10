@@ -1,0 +1,196 @@
+---
+title: "12 Results (FCC)"
+---
+
+# Results: FCC Assays --- Fragment Properties
+
+```
+PROJECT/results/assay_fcc
+└── <STARR>
+    └── fragment_nuc
+```
+
+# Results: FCC Assays --- Fragment Coverage and library size
+
+```
+PROJECT/results/assay_fcc/<STARR/MPRA>
+└── fragment_counts
+    └── summary
+        ├── metadata.tsv
+        ├── metadata.size.tsv
+        ├── result.size.{0..N}.csv
+        ├── result.size.concat.csv
+        └── 
+```
+
+# Results: FCC Assays --- Fragment Coverage and bigwig tracks
+
+# Results: FCC Assays --- Region Coverage and STARR-seq library complexity
+
+- `overlap_fragment`
+    - intersection between region and fragment
+
+- `overlap_fragment_unique`
+    - unique fragments from the region-fragment intersection
+
+- `overlap_fragment_one2one`
+    - for all regions intersected with each fragment, pick the region-fragment pair with the longest overlap
+
+- `overlap_count_one2one`
+    - count total fragments for each region
+
+- `overlap_count_one2one_unique`
+    - count unique fragments for each region
+
+- `overlap_count`
+    - count total fragments for each region
+
+```
+PROJECT/results/assay_fcc/<STARR>/coverage/<Region Folder>/<Region Label>
+├── overlap_fragment
+|   └── summary
+├── overlap_fragment_unique
+|   └── summary
+|       ├── result.size.{1..N}.csv
+|       ├── result.size.concat.csv
+|       └── result.size.summary.tsv
+├── overlap_fragment_one2one
+|   └── summary
+|       ├── result.size.{1..N}.csv
+|       ├── result.size.csv
+|
+├── overlap_count
+|   └── summary
+└── overlap_count_unique
+    └── summary
+```
+
+```
+PROJECT/results/assay_fcc/<STARR/TMPRA>
+└── coverage
+    └── <Region Folder>
+        └── <Region Label>
+            ├── overlap_fragment
+            |   └── summary
+            |
+            ├── overlap_fragment_unique //
+            |   └── summary
+            |       ├── result.size.{0..N}.tsv
+            |       ├── result.size.concat.tsv
+            |       └── 
+            |
+            ├── overlap_fragment_one2one //
+            |   └── summary
+            |       ├── result.size.{0..N}.tsv
+            |       ├── result.size.concat.tsv
+            |       └── 
+            |
+            ├── overlap_count/score
+            |   └── summary
+            |       ├── data_list_count_column.rds
+            |       ├── data_list_score.rds         // matrices: raw, cpm, rpkm, tpm, deseq, edger (TMM)
+            |       ├── data_edger.rds
+            |       ├── data_deseq.rds
+            |       ├── result.Log2FC.deseq.tsv
+            |       ├── result.Log2FC.edger.tsv
+            |       ├── result.score.mean.tsv       // mean of rpkm, tpm
+            |       └── 
+            |
+            ├── overlap_count_unique
+            
+            
+```
+
+# Results: FCC Assays --- Region Coverage and DESeq2/EdgeR
+
+```
+overlap_count
+└── summary
+    ├── data_list_count_column.rds
+    ├── data_list_score.rds         // matrices: raw, cpm, rpkm, tpm, deseq, edger (TMM)
+    ├── data_edger.rds
+    ├── data_deseq.rds
+    ├── result.Log2FC.deseq.tsv
+    ├── result.Log2FC.edger.tsv
+    ├── result.score.mean.tsv       // mean of rpkm, tpm
+    └── 
+```
+
+
+# Results: FCC Assays (Detailed)
+
+**Folder**
+```
+PROJECT/results/assay_fcc
+├── <STARR>
+|   ├── fragment
+|   ├── fragment_nuc
+|   ├── fragment_counts
+|   |   └── summary
+|   └── coverage
+|       ├── track
+|       └── <Region Folder>
+|           └── <Region Label>
+|               ├── overlap_fragment
+|               ├── overlap_fragment_unique
+|               ├── overlap_fragment_one2one
+|               ├── overlap_count
+|               └── overlap_count_unique
+|
+├── <TMPRA>
+|   ├── fragment
+|   ├── fragment_nuc
+|   ├── fragment_counts
+|   └── coverage
+|       ├── track
+|       └── <Region Folder>
+|           └── <Region Label>
+|               ├── overlap_fragment
+|               └── overlap_count
+|
+├── <LMPRA>
+|   ├── fragment
+|   ├── fragment_nuc
+|   ├── fragment_counts
+|   └── coverage
+|       ├── track
+|       └── <Region Folder>
+|           └── <Region Label>
+|               ├── overlap_fragment
+|               └── overlap_score
+|
+└── <CRISPRi>
+    ├── guide_scores
+    CRISPRi_HCRFF_K562.hg38.ZScore.unstranded.bed.gz
+    CRISPRi_HCRFF_K562.hg38.ZScore.filtered.unstranded.bed.gz
+    |   └── summary
+    |       ├── track_info.tsv
+    |       └── metadata.tsv
+    ├── guide_scores_filter
+    |   └── summary
+    |       └── metadata.tsv
+    └── coverage
+        └── <Region Folder>
+            └── <Region Label>
+                ├── overlap_guide
+                └── overlap_score
+```
+
+**Files**
+```
+PROJECT/results/assay_fcc
+├── CRISPRi_FlowFISH_K562_Riley_JinWoo
+│   └── guide_scores
+│       ├── CRISPRi_HCRFF_K562.hg38.ZScore.unstranded.bed.gz
+│       ├── CRISPRi_HCRFF_K562.hg38.ZScore.filtered.unstranded.bed.gz
+```
+
+
+
+
+
+
+
+```
+PROJECT/results/region_annotation
+```

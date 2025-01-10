@@ -1,0 +1,68 @@
+---
+title: "03 Reference Files"
+---
+
+# Reference files
+
+**Description**
+
+- encode_chipseq_flagship
+- encode_chipseq_histone
+- encode_chipseq_subset
+- encode_chromatin_states
+- encode_crispri_hcrff
+- encode_e2g_benchmark
+- encode_e2g_prediction
+- encode_open_chromatin
+- encode_rnaseq
+- genome_gene
+- genome_tss
+- genome_cres
+    - collecting studied enhancers and regulatory regions, including:
+        - GATA1
+        - HDAC6
+        - MYC/PVT1
+        - FADS
+        - Locus control region
+        - LMO2 enhancers
+- fcc_peak_call_atac
+- fcc_peak_call_cres
+- fcc_trackhub_JinWoo
+- TF_modules_Shannon
+
+**Summary**
+```
+PROJECT/reference
+├── encode_chipseq_flagship
+├── encode_chipseq_histone
+├── encode_chipseq_subset
+├── encode_chromatin_states
+├── encode_crispri_hcrff
+├── encode_e2g_benchmark
+├── encode_e2g_prediction
+├── encode_open_chromatin
+├── encode_rnaseq
+├── genome_tss
+├── genome_cres
+├── fcc_peak_call_atac
+├── fcc_peak_call_cres
+├── fcc_trackhub_JinWoo
+├── hic...
+└── TF_modules_Shannon
+```
+
+**Detailed**
+```
+PROJECT/reference
+├── encode_chipseq_flagship
+│
+├── encode_chipseq_subset
+│
+├── encode_open_chromatin
+│
+├── fcc_trackhub_JinWoo
+│   ├── K562_TSS_selected_by_higest_Pol2_TSS_sig.out
+│   └── trackhub.txt
+│
+└── fcc_astarr_macs
+```

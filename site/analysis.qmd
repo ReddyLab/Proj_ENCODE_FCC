@@ -1,0 +1,59 @@
+---
+title: "Analysis: Summarize ideas and findings of the analyses"
+---
+
+# ATAC/DHS coverage of FCC libraries
+
+## Questions:
+- What percentage of data falls within open chromatin regions?
+- How many open chromatin regions are covered in each FCC assay?
+
+# Correlations of input and output library for STARR assays
+
+## Questions:
+- How much variation in the output library can be explained by the input library?
+
+# Correlations of effect sizes among FCC assays
+
+## Questions:
+- What are the correlations of effect sizes across different FCC assays?
+
+# Distributions of effect sizes across chromatin states
+
+## Questions:
+- How do effect sizes differ across various chromatin states (e.g., promoters and enhancers)?
+- Are certain chromatin states associated with higher or lower effect sizes in each assay?
+
+## Methods:
+- Group regions by chromatin states (e.g., cCREs, ChromHMM).
+- Compare effect sizes among different groups (e.g., promoters vs. enhancers).
+
+# Distributions of effect sizes across regions with different physical connectivity
+
+## Questions:
+- How do effect sizes vary across regions with different physical connectivity?
+- Is there a significant difference in effect sizes between regions with high loop counts and those with low loop counts?
+- Are certain types of chromatin interactions (e.g., long-range vs. short-range loops) associated with distinct effect size distributions?
+
+## Methods:
+- Group regions by loop counts or loop distance
+- Compare effect sizes among different groups
+
+# Explain the variations of each FCC effect size by ChIP-seq annotations
+
+## Questions:
+- How much variation in regulatory effects can be explained by ChIP-seq annotations?
+- What is the predictivity of regulatory effects using ChIP-seq information?
+
+## Method:
+- Regression: FCC ~ ChIP-seq
+
+# [????] Clustering the regions based on FCC data and ChIP-seq annotations
+
+## Questions:
+- (Keith) are there features associated with active enhancers that differentiate them into different categories or subclasses
+
+## Method:
+- Integrate the FCC data and ChIP-seq into a matrix (Option 1: z score; Option 2: peak calls)
+- Clustering the matrix
+- Visualize the matrix and cluster by UMAP dimentional reduction

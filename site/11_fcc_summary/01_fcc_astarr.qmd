@@ -1,0 +1,28 @@
+---
+title: "ATAC-STARR-seq (ASTARR)"
+---
+
+## ATAC-STARR-seq (ASTARR)
+
+| Sample      | Group  | Count       |
+|-------------|--------|------------:|
+| Input.rep1  | Input  | 348,695,063 |
+| Input.rep2  | Input  | 451,369,741 |
+| Input.rep3  | Input  | 487,579,055 |
+| Input.rep4  | Input  | 456,246,254 |
+| Input.rep5  | Input  | 444,268,950 |
+| Input.rep6  | Input  | 397,333,562 |
+| Output.rep1 | Output |  44,103,844 |
+| Output.rep2 | Output |  97,471,282 |
+| Output.rep3 | Output |  84,103,298 |
+| Output.rep4 | Output | 183,115,379 |
+
+: Library sizes of ASTARR (KS279)
+
+| Sample      | Group  | Count       |
+|-------------|--------|------------:|
+| Output.rep1 | Output |  ... |
+| Output.rep2 | Output |  ... |
+| Output.rep3 | Output |  ... |
+
+: Library sizes of ASTARR (KS279)

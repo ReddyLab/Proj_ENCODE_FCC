@@ -1,0 +1,352 @@
+---
+title: "13 Prepare: Region"
+---
+
+# Region
+
+**Description**
+
+**Summary**
+```
+encode_chipseq_flagship
+encode_chipseq_histone
+encode_chipseq_subset
+encode_chromatin_states
+encode_open_chromatin
+encode_e2g_benchmark
+encode_e2g_prediction
+fcc_enhancer_junke_zscore
+fcc_astarr_csaw
+fcc_astarr_macs
+fcc_wstarr_cradle
+fcc_crispri_growth
+fcc_crispri_hcrff
+fcc_screened
+hic_insitu_K562_ENCSR545YBD
+hic_intact_K562_ENCSR479XDG
+hic_intact_K562_deep
+
+genome_tss
+genome_cres
+genome_...
+ref_tss (what if it is from RAMPAGE?)
+
+(TF_modules)
+```
+
+```
+PROJECT/results/region
+├── encode_open_chromatin
+│   ├── K562.hg38.ENCSR000EKS.ENCFF274YGF.DNase.bed.gz
+│   ├── K562.hg38.ENCSR000EOT.ENCFF185XRG.DNase.bed.gz
+│   ├── K562.hg38.ENCSR483RKN.ENCFF558BLC.ATAC.bed.gz
+│   ├── K562.hg38.ENCSR483RKN.ENCFF925CYR.ATAC.bed.gz
+│   ├── K562.hg38.ENCSR868FGK.ENCFF333TAT.ATAC.bed.gz
+│   ├── K562.hg38.ENCSR868FGK.ENCFF948AFM.ATAC.bed.gz
+│   └── summary
+│       ├── description.tsv
+│       ├── metadata.label.tsv
+│
+├── encode_chromatin_states
+│   ├── K562.hg38.cCREs.silencer_rest.bed.gz
+│   ├── K562.hg38.cCREs.silencer_starr.bed.gz
+│   ├── K562.hg38.ENCSR365YNI.ENCFF106BGJ.ChromHMM.simplified.bed.gz
+│   ├── K562.hg38.ENCSR913HQX.ENCFF286VQG.cCREs.simplified.bed.gz
+│   └── summary
+│       ├── description.tsv
+│       ├── K562.hg38.ENCSR913HQX.ENCFF286VQG.cCREs.label2name.bed.gz
+│       ├── K562.hg38.ENCSR913HQX.ENCFF286VQG.cCREs.label2name.PLS_ELS.bed.gz
+│       └── metadata.label.tsv
+│
+├── encode_chipseq_flagship
+│   └── summary
+│
+├── encode_chipseq_histone
+│   └── summary
+│
+├── encode_chipseq_subset
+│   └── summary
+│
+├── encode_e2g_benchmark
+│   ├── K562.hg38.EPCrisprBenchmark.active.bed.gz
+│   ├── K562.hg38.EPCrisprBenchmark.active.merge.bed.gz
+│   ├── K562.hg38.EPCrisprBenchmark.total.bed.gz
+│   ├── K562.hg38.EPCrisprBenchmark.total.merge.gz
+│   └── summary
+│
+├── encode_e2g_prediction_ENCSR328LMT
+│   ├── K562.hg38.ENCSR328LMT.ENCFF202FID.element_gene_links.active.bed.gz
+│   ├── K562.hg38.ENCSR328LMT.ENCFF202FID.element_gene_links.active.merge.bed.gz
+│   ├── K562.hg38.ENCSR328LMT.ENCFF122UMY.element_gene_links.total.bed.gz
+│   ├── K562.hg38.ENCSR328LMT.ENCFF122UMY.element_gene_links.total.merge.bed.gz
+│   └── summary
+│
+├── fcc_astarr_csaw
+│   ├── K562.hg38.ASTARR.csaw.KS91.bed.gz
+│   ├── K562.hg38.ASTARR.csaw.KSMerge.bed.gz
+│   └── summary
+│       ├── description.tsv
+│       └── metadata.label.tsv
+│
+├── fcc_astarr_macs
+│   ├── ASTARRseq_K562_KS91.hg38.Input.rep_all.max_overlaps.q5.bed.gz
+│   ├── ASTARRseq_K562_KS91.hg38.Input.rep_all.union.q5.bed.gz
+│   ├── K562.hg38.ASTARR.macs.KS91.input.rep_all.max_overlaps.q5.bed.gz
+│   ├── K562.hg38.ASTARR.macs.KS91.input.rep_all.union.q5.bed.gz
+│   └── summary
+│       ├── description.tsv
+│       └── metadata.label.tsv
+│
+├── fcc_crispri_hcrff
+│   ├── K562.hg38.CRISPRi_HCRFF.CASA.bed.gz
+│   └── summary
+│       ├── description.tsv
+│       └── metadata.label.tsv
+│
+├── fcc_crispri_growth
+│   ├── K562.hg38.CRISPRi_Growth.DHS.active.bed.gz
+│   ├── K562.hg38.CRISPRi_Growth.DHS.active.merge.bed.gz
+│   ├── K562.hg38.CRISPRi_Growth.DHS.total.bed.gz
+│   ├── K562.hg38.CRISPRi_Growth.DHS.total.merge.bed.gz
+│   └── summary
+│
+├── fcc_mpra_agarwal2023
+│   ├── K562.hg38.LMPRA.lib_design.bed.gz
+│   └── summary
+│       ├── description.tsv
+│       └── metadata.label.tsv
+│
+├── fcc_screened
+│   ├── region_screened.crispri_hcrff.bed.gz
+│   ├── region_screened.crispri_hcrff.tsv
+│   ├── region_screened.tmpra.bed.gz
+│   ├── region_screened.tmpra.tsv
+│   └── summary
+│
+├── genome_tss
+│   ├── K562.hg38.TSS.selected_by_highest_Pol2_signal.bed.gz
+│   ├── K562.hg38.TSS.selected_by_highest_Pol2_signal.filtered_by_RNAseq_TPM.bed.gz
+│   └── summary
+│       ├── description.tsv
+│       └── metadata.label.tsv
+│
+├── module_tf_shannon
+│   ├── K562.hg38.TF_Module.bed.gz
+│   └── summary
+│       ├── matrix.Module.tsv
+│       ├── matrix.TF.tsv
+│       ├── data.TF_Module.tsv
+│       ├── description.tsv
+│       └── metadata.label.tsv
+│
+├── hic_insitu_K562_ENCSR545YBD
+│   ├── K562.hg38.hic_insitu.Loop_A.bed.gz
+│   ├── K562.hg38.hic_insitu.Loop_B.bed.gz
+│   ├── K562.hg38.hic_insitu.TAD.bedpe.gz
+│   └── summary
+│       ├── description.tsv
+│       ├── K562.hg38.hic_insitu.Loop.tsv
+│       ├── K562.hg38.hic_insitu.TAD.tsv
+│       └── metadata.label.tsv
+│
+├── hic_intact_K562_ENCSR479XDG
+│   ├── K562.hg38.hic_intact.Loop_A.bed.gz
+│   ├── K562.hg38.hic_intact.Loop_B.bed.gz
+│   ├── K562.hg38.hic_intact.TAD.bedpe.gz
+│   └── summary
+│       ├── description.tsv
+│       ├── K562.hg38.hic_intact.Loop.tsv
+│       ├── K562.hg38.hic_intact.TAD.tsv
+│       └── metadata.label.tsv
+│
+├── hic_intact_K562_deep
+│   ├── K562.hg38.hic_intact.Loop_A.bed.gz
+│   ├── K562.hg38.hic_intact.Loop_B.bed.gz
+│   └── summary
+│       ├── description.tsv
+│       ├── K562.hg38.hic_intact.Loop.tsv
+│       └── metadata.label.tsv
+│
+└── summary
+    ├── annotation.macs.label.region_A.tsv
+    ├── annotation.macs.label.region_B.chipseq_full.tsv
+    ├── annotation.macs.label.region_B.chipseq_subset.tsv
+    ├── annotation.macs.label.region_B.main.tsv
+    ├── metadata.label.astarr_macs.tsv
+    ├── metadata.label.chipseq_full.tsv
+    ├── metadata.label.main.tsv
+    ├── metadata.label.ocr.tsv
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```
+PROJECT/results/region
+├── encode_open_chromatin
+│   ├── K562.hg38.ENCSR000EKS.ENCFF274YGF.DNase.bed.gz
+│   ├── K562.hg38.ENCSR000EOT.ENCFF185XRG.DNase.bed.gz
+│   ├── K562.hg38.ENCSR483RKN.ENCFF558BLC.ATAC.bed.gz
+│   ├── K562.hg38.ENCSR483RKN.ENCFF925CYR.ATAC.bed.gz
+│   ├── K562.hg38.ENCSR868FGK.ENCFF333TAT.ATAC.bed.gz
+│   ├── K562.hg38.ENCSR868FGK.ENCFF948AFM.ATAC.bed.gz
+│   └── summary
+|       ├── metadata.label.tsv
+|       ├── metadata.size.tsv
+|       ├── result.size.concat.csv
+|       ├── result.size.<...>.csv
+│       └── description.tsv
+│
+├── encode_chipseq_flagship
+│   └── summary
+│
+├── encode_chipseq_histone
+│   └── summary
+│
+├── encode_chipseq_subset
+│   └── summary
+│
+├── encode_chromatin_states
+│   └── summary
+│
+├── encode_e2g_benchmark
+│   ├── K562.hg38.EPCrisprBenchmark.active.bed.gz
+│   ├── K562.hg38.EPCrisprBenchmark.active.merge.bed.gz
+│   ├── K562.hg38.EPCrisprBenchmark.total.bed.gz
+│   ├── K562.hg38.EPCrisprBenchmark.total.merge.gz
+│   └── summary
+│
+├── encode_e2g_prediction_ENCSR328LMT
+│   ├── K562.hg38.ENCSR328LMT.ENCFF202FID.element_gene_links.active.bed.gz
+│   ├── K562.hg38.ENCSR328LMT.ENCFF202FID.element_gene_links.active.merge.bed.gz
+│   ├── K562.hg38.ENCSR328LMT.ENCFF122UMY.element_gene_links.total.bed.gz
+│   ├── K562.hg38.ENCSR328LMT.ENCFF122UMY.element_gene_links.total.merge.bed.gz
+│   └── summary
+│
+├── fcc_astarr_csaw
+│   ├── ASTARRseq_K562_KSMerge.hg38.bed.gz
+
+│   ├── K562.hg38.ASTARR.KSMerge.csaw.bed.gz
+│   ├── K562.hg38.ASTARR.KS91.csaw.bed.gz
+
+│   ├── K562.hg38.ASTARR.csaw.KSMerge.bed.gz
+│   ├── K562.hg38.ASTARR.csaw.KS91.bed.gz
+
+│   └── summary
+|
+├── fcc_astarr_macs
+│   ├── ASTARRseq_K562_KS91.hg38.Input.rep_all.union.q5.bed.gz
+│   ├── ASTARRseq_K562_KS91.hg38.Input.rep_all.max_overlaps.q5.bed.gz
+
+│   ├── K562.hg38.ASTARR.KS91.macs.input.rep_all.union.q5.bed.gz
+│   ├── K562.hg38.ASTARR.KS91.macs.input.rep_all.max_overlaps.q5.bed.gz
+
+│   ├── K562.hg38.ASTARR.macs.KS91.input.rep_all.union.q5.bed.gz
+│   ├── K562.hg38.ASTARR.macs.KS91.input.rep_all.max_overlaps.q5.bed.gz
+
+│   └── summary
+│
+├── fcc_crispri_hcrff
+│   ├── K562.hg38.CRISPRi_HCRFF.CASA.bed.gz
+│   ├── K562.hg38.CRISPRi_HCRFF.CASA.merge.bed.gz
+│   └── summary
+│
+├── fcc_crispri_growth
+│   ├── K562.hg38.CRISPRi_Growth.DHS.active.bed.gz
+│   ├── K562.hg38.CRISPRi_Growth.DHS.active.merge.bed.gz
+│   ├── K562.hg38.CRISPRi_Growth.DHS.total.bed.gz
+│   ├── K562.hg38.CRISPRi_Growth.DHS.total.merge.bed.gz
+│   └── summary
+│
+├── fcc_screened
+│   ├── region_screened.crispri_hcrff.bed.gz
+│   ├── region_screened.crispri_hcrff.tsv
+│   ├── region_screened.tmpra.bed.gz
+│   ├── region_screened.tmpra.tsv
+│   └── summary
+│
+├── hic_insitu_K562_ENCSR545YBD
+│   ├── K562.hg38.ENCSR545YBD.ENCFF271SAF.hic_insitu.contact_domain.bed.gz
+│   ├── K562.hg38.ENCSR545YBD.ENCFF693XIL.hic_insitu.loop.A.bed.gz
+│   ├── K562.hg38.ENCSR545YBD.ENCFF693XIL.hic_insitu.loop.B.bed.gz
+
+│   ├── K562.hg38.hic_insitu.contact_domain.bed.gz
+│   ├── K562.hg38.hic_insitu.loop.A.bed.gz
+│   ├── K562.hg38.hic_insitu.loop.B.bed.gz
+
+│   └── summary
+│
+├── hic_intact_K562_ENCSR479XDG
+│   ├── K562.hg38.ENCSR479XDG.ENCFF126GED.hic_intact.contact_domain.bed.gz
+│   ├── K562.hg38.ENCSR479XDG.ENCFF256ZMD.hic_intact.loop.A.bed.gz
+│   ├── K562.hg38.ENCSR479XDG.ENCFF256ZMD.hic_intact.loop.B.bed.gz
+
+│   ├── K562.hg38.hic_intact.contact_domain.bed.gz
+│   ├── K562.hg38.hic_intact.loop.A.bed.gz
+│   ├── K562.hg38.hic_intact.loop.B.bed.gz
+
+│   └── summary
+│
+├── hic_intact_K562_deep
+│   ├── K562.hg38.deep.hic_intact.loop.A.bed.gz
+│   ├── K562.hg38.deep.hic_intact.loop.B.bed.gz
+│   └── summary
+│
+└── summary
+    ├── metadata.size.tsv
+    ├── metadata.label.tsv
+    ├── metadata.label.ocr.total.tsv
+    ├── metadata.label.ocr.astarr_macs.tsv
+    ├── metadata.label.cres.tsv
+    ├── metadata.label.chromstates.tsv
+    ├── metadata.label.chipseq_subset.tsv
+    ├── metadata.label.chipseq.tsv
+```
+
+## Region labeling
+
+`<Assay>_<File Index>/<Label>`
+
+```
+encode_open_chromatin
+├── atac_<File Index>
+└── dnase_<File Index>
+
+encode_chipseq_subset/histone/flagship
+└── chipseq_<File Index>
+
+encode_chromatin_states
+├── ccres_<File Index>
+└── chromhmm_<File Index>
+
+encode_e2g_benchmark
+├── encode_e2g_benchmark_active_merge
+└── encode_e2g_benchmark_total_merge
+
+encode_e2g_prediction
+├── encode_e2g_prediction_active_merge
+└── encode_e2g_prediction_total_merge
+
+fcc_crispri_hcrff
+├── crispri_hcrff_active_merge
+└── crispri_hcrff_total_merge
+
+fcc_crispri_growth
+├── crispri_growth_active_merge
+└── crispri_growth_total_merge
+
+fcc_screened
+├── ...
+```

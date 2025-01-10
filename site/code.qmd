@@ -1,0 +1,67 @@
+---
+title: "List of steps in the analyses"
+listing:
+  - id: notebooks_01_setup
+    contents: notebooks/01_setup
+    fields: [title, subtitle]
+    sort: title
+    type: table
+    page-size: 5
+  - id: notebooks_02_prepare
+    contents: notebooks/02_prepare
+    fields: [title, subtitle]
+    sort: title
+    type: table
+    page-size: 10
+  - id: notebooks_test
+    contents: notebooks/test
+    fields: [title, subtitle]
+    sort: title
+    type: table
+---
+
+## Step: Setup
+
+This part is mainly about
+- Setup folder structure for the project
+- Setup project configurations and helper functions
+- Setup scripts for the analyses
+
+::: {#notebooks_01_setup}
+:::
+
+## Step: Preparation
+
+This part is mainly about
+
+- Downloading data to `PROJECT/data` folder
+- Preparing data from `PROJECT/data` to `PROJECT/results` folder
+- Generating metadata for down stream analysis
+
+::: {#notebooks_02_prepare}
+:::
+
+## Step: STARR/MPRA Analysis
+
+## Step: CRISPR Analysis
+
+## Step: Hi-C Analysis
+
+## Step: Region Coverage
+
+## Step: Region Annotation
+
+## Step: Integrative Analysis
+
+This part is mainly about
+
+- FCC union peak set of cis-regulatory elements
+- Enrichment analysis of chromtain states and TFs
+- Quantitative comparison across assays
+
+## Testing
+
+Below is a test notebook
+
+::: {#notebooks_test}
+:::

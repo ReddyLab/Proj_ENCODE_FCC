@@ -1,0 +1,13 @@
+---
+title: "Report: Summarize ideas and findings of the analyses"
+---
+
+<div>
+    <iframe width="768" height="432" 
+            src="https://miro.com/app/live-embed/uXjVL_mTmw4=/?moveToViewport=-730,-8707,9019,14690&embedId=970937612436" 
+            frameborder="0" 
+            scrolling="no" 
+            allow="fullscreen; clipboard-read; clipboard-write" 
+            allowfullscreen>
+    </iframe>
+</div>

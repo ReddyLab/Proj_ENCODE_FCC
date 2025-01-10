@@ -1,0 +1,143 @@
+---
+title: "11 Prepare: FCC"
+---
+
+# Results after preparation
+- Process files in data (arrange/extract)
+- SymLink files in data (file aliases)
+
+# FCC assay
+```
+PROJECT/results/assay_fcc
+├── STARR_ATAC_K562_Reddy_KS91
+│   ├── fragment_counts
+│   │   ├── ASTARRseq_K562_KS91.hg38.Input.rep1.WGS.unstranded.bed.gz
+│   │   ├── ASTARRseq_K562_KS91.hg38.Input.rep2.WGS.unstranded.bed.gz
+│   │   ├── ASTARRseq_K562_KS91.hg38.Input.rep3.WGS.unstranded.bed.gz
+│   │   ├── ASTARRseq_K562_KS91.hg38.Input.rep4.WGS.unstranded.bed.gz
+│   │   ├── ASTARRseq_K562_KS91.hg38.Input.rep5.WGS.unstranded.bed.gz
+│   │   ├── ASTARRseq_K562_KS91.hg38.Input.rep6.WGS.unstranded.bed.gz
+│   │   ├── ASTARRseq_K562_KS91.hg38.Output.rep1.WGS.unstranded.bed.gz
+│   │   ├── ASTARRseq_K562_KS91.hg38.Output.rep2.WGS.unstranded.bed.gz
+│   │   ├── ASTARRseq_K562_KS91.hg38.Output.rep3.WGS.unstranded.bed.gz
+│   │   └── ASTARRseq_K562_KS91.hg38.Output.rep4.WGS.unstranded.bed.gz
+│   └── fragment
+│
+├── STARR_ATAC_K562_Reddy_KS274
+│   ├── fragment_counts
+│   └── fragment
+│
+├── STARR_ATAC_K562_Reddy_KSMerge
+│   ├── fragment_counts
+│   └── fragment
+│
+├── STARR_WHG_K562_Reddy_A001
+│   ├── fragment_counts
+│   │   ├── WSTARRseq_K562_A001.hg38.Input.rep1.WGS.unstranded.bed.gz
+│   │   ├── WSTARRseq_K562_A001.hg38.Input.rep2.WGS.unstranded.bed.gz
+│   │   ├── WSTARRseq_K562_A001.hg38.Input.rep3.WGS.unstranded.bed.gz
+│   │   ├── WSTARRseq_K562_A001.hg38.Input.rep4.WGS.unstranded.bed.gz
+│   │   ├── WSTARRseq_K562_A001.hg38.Output.rep1.WGS.unstranded.bed.gz
+│   │   ├── WSTARRseq_K562_A001.hg38.Output.rep2.WGS.unstranded.bed.gz
+│   │   └── WSTARRseq_K562_A001.hg38.Output.rep3.WGS.unstranded.bed.gz
+│   └── fragment
+│
+├── MPRA_Tiling_K562_Tewhey_Hannah
+│   ├── fragment_counts
+│   │   ├── TMPRA_K562_OL13_20220512.hg19.raw. Input .rep[1-4].stranded_pos.bed
+│   │   ├── TMPRA_K562_OL13_20220512.hg19.raw. Output.rep[1-4].stranded_pos.bed
+│   │   ├── TMPRA_K562_OL13_20220512.hg19.norm.Input .rep[1-4].stranded_pos.bed
+│   │   ├── TMPRA_K562_OL13_20220512.hg19.norm.Output.rep[1-4].stranded_pos.bed
+│   │   │ 
+│   │   ├── TMPRA_K562_OL13_20220512.hg19.norm.Input .mean.stranded_pos.bed
+│   │   ├── TMPRA_K562_OL13_20220512.hg19.norm.Output.mean.stranded_pos.bed
+│   │   ├── TMPRA_K562_OL13_20220512.hg19.norm.Log2FC.mean.stranded_pos.bed
+│   │   │ 
+│   │   ├── TMPRA_K562_OL43_20221003.hg38.raw. Input .rep[1-6].stranded_pos.bed
+│   │   ├── TMPRA_K562_OL43_20221003.hg38.raw. Output.rep[1-5].stranded_pos.bed
+│   │   ├── TMPRA_K562_OL43_20221003.hg38.norm.Input .rep[1-6].stranded_pos.bed
+│   │   ├── TMPRA_K562_OL43_20221003.hg38.norm.Output.rep[1-5].stranded_pos.bed
+│   │   │ 
+│   │   ├── TMPRA_K562_OL43_20221003.hg38.norm.Input .mean.stranded_pos.bed
+│   │   ├── TMPRA_K562_OL43_20221003.hg38.norm.Output.mean.stranded_pos.bed
+│   │   ├── TMPRA_K562_OL43_20221003.hg38.norm.Log2FC.mean.stranded_pos.bed
+│   │   │ 
+│   │   ├── TMPRA_K562_OL45_20220927.hg38.raw. Input .rep[1-4].stranded_pos.bed
+│   │   ├── TMPRA_K562_OL45_20220927.hg38.raw. Output.rep[1-4].stranded_pos.bed
+│   │   ├── TMPRA_K562_OL45_20220927.hg38.norm.Input .rep[1-4].stranded_pos.bed
+│   │   ├── TMPRA_K562_OL45_20220927.hg38.norm.Output.rep[1-4].stranded_pos.bed
+│   │   │ 
+│   │   ├── TMPRA_K562_OL45_20220927.hg38.norm.Input .mean.stranded_pos.bed
+│   │   ├── TMPRA_K562_OL45_20220927.hg38.norm.Output.mean.stranded_pos.bed
+│   │   ├── TMPRA_K562_OL45_20220927.hg38.norm.Log2FC.mean.stranded_pos.bed
+│   │   │
+│   │   └── summary
+│   │       ├── TMPRA_K562_OL13_20220512.hg19.raw.stranded_pos.tsv 
+│   │       ├── TMPRA_K562_OL13_20220512.hg19.norm.stranded_pos.tsv 
+│   │       ├── TMPRA_K562_OL43_20221003.hg38.raw.stranded_pos.tsv 
+│   │       ├── TMPRA_K562_OL43_20221003.hg38.norm.stranded_pos.tsv 
+│   │       ├── TMPRA_K562_OL45_20220927.hg38.raw.stranded_pos.tsv 
+│   │       └── TMPRA_K562_OL45_20220927.hg38.norm.stranded_pos.tsv 
+│   └── fragment
+│       ├── TMPRA_K562_OL13_20220512.hg19.raw.stranded_pos.bed.gz 
+│       ├── TMPRA_K562_OL43_20221003.hg38.raw.stranded_pos.bed.gz 
+│       └── TMPRA_K562_OL45_20220927.hg38.raw.stranded_pos.bed.gz 
+│
+├── MPRA_Lenti_K562_Nadav_Vikram
+│   ├── fragment_counts
+│   |   ├── LMPRA_K562.hg38.Log2FC.unstranded.bed.gz
+│   |   ├── LMPRA_K562.hg38.ZScore.unstranded.bed.gz
+│   |   └── summary
+│   │       ├── 
+│   │       └── 
+│   └── fragment
+│
+├── CRISPRi_FlowFISH_K562_Riley_JinWoo
+│   └── guide_scores
+│       ├── CRISPRi_HCRFF_K562.hg38.ZScore.unstranded.bed.gz
+│       ├── CAPRIN1_HCRFF_rAVG.log2FC_2.bed
+│       ├── CAT_HCRFF_rAVG.log2FC_2.bed
+│       ├── CD164_HCRFF_rAVG.log2FC_2.bed
+│       ├── ERP29_HCRFF_rAVG.log2FC_2.bed
+│       ├── FADS1_HCRFF_rAVG.log2FC_2.bed
+│       ├── FADS2_HCRFF_rAVG.log2FC_2.bed
+│       ├── FADS3_HCRFF_rAVG.log2FC_2.bed
+│       ├── FEN1_HCRFF_rAVG.log2FC_2.bed
+│       ├── GATA1_HCRFF_rAVG.log2FC_2.bed
+│       ├── HBE1_HCRFF_rAVG.log2FC_2.bed
+│       ├── HBG1_HCRFF_rAVG.log2FC_2.bed
+│       ├── HBG2_HCRFF_rAVG.log2FC_2.bed
+│       ├── HBS1L_HCRFF_rAVG.log2FC_2.bed
+│       ├── HDAC6_HCRFF_rAVG.log2FC_2.bed
+│       ├── LMO2_HCRFF_rAVG.log2FC_2.bed
+│       ├── MEF2C_HCRFF_rAVG.log2FC_2.bed
+│       ├── MYB_HCRFF_rAVG.log2FC_2.bed
+│       ├── MYC_HCRFF_rAVG.log2FC_2.bed
+│       ├── NMU_HCRFF_rAVG.log2FC_2.bed
+│       ├── PVT1_HCRFF_rAVG.log2FC_2.bed
+│       └── summary
+│           ├── track_info.tsv
+│           ├── metadata.tsv
+│           └── metadata.library_design.tsv
+│
+└── CRISPRi_Growth_K562_Gersbach_JinWoo
+    └── guide_scores
+        ├── CRISPRi_rAVG_log2FC_2.wig
+        ├── CRISPRi_rAVG_log2FC_2.bed
+        ├── CRISPRi_Growth_K562.hg38.ZScore.unstranded.bed.gz
+        └── summary
+            ├── track_info.tsv
+            └── metadata.tsv
+```
+
+# HiC assay
+
+**Summary**
+```
+PROJECT/results/assay_hic
+├── hic_insitu_K562_ENCSR545YBD
+├── hic_intact_K562_ENCSR479XDG
+└── hic_intact_K562_deep
+```
+
+
