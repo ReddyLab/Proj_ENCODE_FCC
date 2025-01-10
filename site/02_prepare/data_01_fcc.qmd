@@ -5,16 +5,9 @@ title: "FCC Data"
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 #| label:   "Set environment"
 
-### set folder
-FD_REPO = "/mount/repo"
-FD_PRJ = file.path(FD_REPO, "Proj_ENCODE_FCC")
-FD_EXE = file.path(FD_PRJ,  "scripts")
-
 ### set environment
-txt_fdiry = FD_EXE
-txt_fname = "config_project_site.R"
-txt_fpath = file.path(txt_fdiry, txt_fname)
-source(txt_fpath)
+#print(getwd())
+suppressMessages(suppressWarnings(source("../config.R")))
 ```
 
 ## WHG-STARR-seq (WSTARR)
@@ -24,8 +17,8 @@ source(txt_fpath)
 #| tbl-cap: "FCC Metadata (WSTARR)"
 
 ### set directory
-txt_fdiry = file.path(FD_RES, "assay_fcc", "STARR_WHG_K562_Reddy_A001", "fragment_counts", "summary")
-txt_fname = "metadata.tsv"
+txt_fdiry = file.path(FD_DOC, "table")
+txt_fname = "metadata.wstarr.tsv"
 txt_fpath = file.path(txt_fdiry, txt_fname)
 
 ### read table
@@ -48,7 +41,7 @@ kable(dat)
 #| tbl-cap: "FCC Region Screened (Tiling-MPRA)"
 
 ### set directory
-txt_fdiry = file.path(FD_RES, "region", "fcc_screened")
+txt_fdiry = file.path(FD_DOC, "table")
 txt_fname = "region_screened.tmpra.tsv"
 txt_fpath = file.path(txt_fdiry, txt_fname)
 
