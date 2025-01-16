@@ -2,6 +2,14 @@
 title: "Analysis: Summarize ideas and findings of the analyses"
 ---
 
+# Analysis flow chart
+
+[Open the board link](https://miro.com/app/board/uXjVL_mTmw4=/?share_link_id=634610584121)
+
+```{=html}
+<iframe width="768" height="432" src="https://miro.com/app/live-embed/uXjVL_mTmw4=/?moveToViewport=-3027,-9778,22898,11055&embedId=832789885352" frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
+```
+
 # ATAC/DHS coverage of FCC libraries
 
 ## Questions:
