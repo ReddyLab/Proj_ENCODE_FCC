@@ -6,8 +6,12 @@ title: "FCC Data"
 #| label:   "Set environment"
 
 ### set environment
-#print(getwd())
-suppressMessages(suppressWarnings(source("../config.R")))
+library("tidyverse")
+library("knitr")
+
+FD_DOC = "../"
+FD_TAB = file.path(FD_DOC, "table")
+FD_FIG = file.path(FD_DOC, "figure")
 ```
 
 ## WHG-STARR-seq (WSTARR)
