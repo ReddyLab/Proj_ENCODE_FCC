@@ -16,6 +16,8 @@ Below are the main data used in the analyses. We express our sincere appreciatio
 
 ## ATAC-STARR-seq (ASTARR)
 
+https://www.encodeproject.org/functional-characterization-experiments/ENCSR312UQM/
+
 ## WHG-STARR-seq (WSTARR)
 
 - More information

@@ -9,8 +9,8 @@ echo
 
 ### get arguments
 FP_CNF=${1}
-FD_DOWNLOAD_DIRECTORY=${2}
-FP_DOWNLOAD_FILE_LIST=${3}
+FP_DOWNLOAD_FILE_LIST=${2}
+FD_DOWNLOAD_DIRECTORY=${3}
 
 ### set environment
 source ${FP_CNF}
