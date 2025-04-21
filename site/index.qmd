@@ -34,6 +34,25 @@ Phase 4 of the ENCODE project included a coordinated effort across eight labs to
 
 [Read the main report of the analyses](./report.qmd)
 
+# Exploration
+
+One of the main goal in this project is to better characterize cis-regulatory elements (CREs) by leveraging a wide range of FCC functional screens performed under a consistent biological condition (K562 steady state)
+
+To identify what factors could possibly make a region become functional, we compared significant regions to inactive regions by integrating multiple assays together. We first grouped CREs using the traditional proximal and distal categories. We then compared each group to inactive regions by designing an enrichment analysis based on propensity score-based covariate matching and permutation testing. These results allowed us to describe what factors were enriched in the regulatory regions.
+
+Recognizing that traditional CRE categories may not fully capture the complexity of regulatory mechanisms, we further applied unsupervised dimensionality reduction and clustering to ChIP-seq profiles, revealing distinct CRE subtypes with characteristic transcription factor and histone mark signatures. These results highlighted the biological heterogeneity of CREs and the need for more sophisticate classification/annotation of regulatory elements.
+
+```{=html}
+<iframe
+  src="https://kueiko.shinyapps.io/fcc_umap_cluster/"
+  width="100%"
+  height="700"
+  style="border:1px solid #ccc"
+></iframe>
+```
+
+[Read the details of the analyses](./analysis.qmd)
+
 # Acknowledgement
 
 The analytical work presented in this document was primarily conducted by [Kuei-Yueh Ko](https://www.linkedin.com/in/kuei-yueh-ko/) under the guidance and supervision of [Tim Reddy](https://reddylab.org/people) (Advisor) and [Alex Barrera](https://www.linkedin.com/in/alejandro-barrera-204a1a35/). The direction of the analyses was also guided by [Keith Siklenka](https://biostat.duke.edu/profile/keith-siklenka) and [Gürkan Yardimci](https://www.linkedin.com/in/galip-g%C3%BCrkan-yard%C4%B1mc%C4%B1-b145a28a/). We express our sincere appreciation to the research teams and individuals involved in conducting, processing, and sharing the experiments and data that underpin our analyses. For further details, please refer to the [data dictionary](./data.qmd#`Data Dictionary`).
