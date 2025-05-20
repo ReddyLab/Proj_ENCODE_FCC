@@ -1,0 +1,4 @@
+Assay	Biosample	Index_Experiment	Index_Process	Index_File	File_Type	Output_Type	Genome	Lab
+RNA-seq (total RNA-seq)	K562	ENCSR615EEK	ENCODE4 v1.2.1 GRCh38 V29 (ENCAN412LMP) processed data	ENCFF421TJX	tsv	gene quantifications	hg38	"Barbara Wold, Caltech"
+RNA-seq (total RNA-seq)	K562	ENCSR615EEK	ENCODE4 v1.2.1 GRCh38 V29 (ENCAN412LMP) processed data	ENCFF585HTZ	bigWig	plus strand signal of unique reads	hg38	"Barbara Wold, Caltech"
+RNA-seq (total RNA-seq)	K562	ENCSR615EEK	ENCODE4 v1.2.1 GRCh38 V29 (ENCAN412LMP) processed data	ENCFF876JOV	bigWig	minus strand signal of unique reads	hg38	"Barbara Wold, Caltech"

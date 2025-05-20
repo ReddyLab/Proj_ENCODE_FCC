@@ -266,8 +266,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../02_prepare/data_12_chromatin_states.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Chromatin States</span></a>
+  <a href="../02_prepare/data_12_encode_annotation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Chromatin States and TF Modules</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -278,7 +278,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../02_prepare/data_22_others.html" class="sidebar-item-text sidebar-link">
+  <a href="../02_prepare/data_22_ocr.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Open chromatin regions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../02_prepare/data_23_others.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Other Annotations</span></a>
   </div>
 </li>
@@ -425,7 +431,6 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#unified-processing-pipeline-for-peak-calling-in-high-throughput-reporter-assays" id="toc-unified-processing-pipeline-for-peak-calling-in-high-throughput-reporter-assays" class="nav-link active" data-scroll-target="#unified-processing-pipeline-for-peak-calling-in-high-throughput-reporter-assays">Unified processing pipeline for peak calling in high-throughput reporter assays</a></li>
   <li><a href="#applying-chip-seq-differential-peak-calling-csaw-on-atac-starr-seq-assay" id="toc-applying-chip-seq-differential-peak-calling-csaw-on-atac-starr-seq-assay" class="nav-link" data-scroll-target="#applying-chip-seq-differential-peak-calling-csaw-on-atac-starr-seq-assay">Applying ChIP-seq differential peak calling (csaw) on ATAC-STARR-seq assay</a></li>
-  <li><a href="#applying-macs-on-atac-starr-seq-input-libraries" id="toc-applying-macs-on-atac-starr-seq-input-libraries" class="nav-link" data-scroll-target="#applying-macs-on-atac-starr-seq-input-libraries">Applying MACS on ATAC-STARR-seq input libraries</a></li>
   <li><a href="#crispr-activity-screen-analysis-casa-on-crispri-hcr-flow-fish-data" id="toc-crispr-activity-screen-analysis-casa-on-crispri-hcr-flow-fish-data" class="nav-link" data-scroll-target="#crispr-activity-screen-analysis-casa-on-crispri-hcr-flow-fish-data">CRISPR activity screen analysis (CASA) on CRISPRi-HCR Flow-FISH data</a></li>
   <li><a href="#calling-dhs-regions-using-deseq-analysis-for-crispri-growth" id="toc-calling-dhs-regions-using-deseq-analysis-for-crispri-growth" class="nav-link" data-scroll-target="#calling-dhs-regions-using-deseq-analysis-for-crispri-growth">Calling DHS regions using DESeq analysis for CRISPRi-Growth</a></li>
   </ul>
@@ -463,22 +468,179 @@ tilingMPRA_MYC_GATA.tar.gz
 tilingMPRA_OL13.tar.gz
 tilingMPRA_OL45.tar.gz
 WHG_STARR_TR.tar.gz</code></pre>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>FCC Metadata (STARR/MPRA)</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Label</th>
+<th style="text-align: left;">Assay</th>
+<th style="text-align: left;">Direction</th>
+<th style="text-align: right;">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">ASTARR_A</td>
+<td style="text-align: left;">ATAC-STARR-seq</td>
+<td style="text-align: left;">Active (either direction)</td>
+<td style="text-align: right;">35505</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ASTARR_AB</td>
+<td style="text-align: left;">ATAC-STARR-seq</td>
+<td style="text-align: left;">Active (both direction)</td>
+<td style="text-align: right;">11680</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ASTARR_R</td>
+<td style="text-align: left;">ATAC-STARR-seq</td>
+<td style="text-align: left;">Repressive (either direction)</td>
+<td style="text-align: right;">154337</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ASTARR_RB</td>
+<td style="text-align: left;">ATAC-STARR-seq</td>
+<td style="text-align: left;">Repressive (both direction)</td>
+<td style="text-align: right;">28775</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">eSTARR_A</td>
+<td style="text-align: left;">eSTARR-seq</td>
+<td style="text-align: left;">Active (either direction)</td>
+<td style="text-align: right;">150</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">eSTARR_AB</td>
+<td style="text-align: left;">eSTARR-seq</td>
+<td style="text-align: left;">Active (both direction)</td>
+<td style="text-align: right;">31</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">eSTARR_R</td>
+<td style="text-align: left;">eSTARR-seq</td>
+<td style="text-align: left;">Repressive (either direction)</td>
+<td style="text-align: right;">341</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">eSTARR_RB</td>
+<td style="text-align: left;">eSTARR-seq</td>
+<td style="text-align: left;">Repressive (both direction)</td>
+<td style="text-align: right;">65</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">LMPRA_A</td>
+<td style="text-align: left;">Lenti-MPRA</td>
+<td style="text-align: left;">Active (either direction)</td>
+<td style="text-align: right;">25648</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LMPRA_AB</td>
+<td style="text-align: left;">Lenti-MPRA</td>
+<td style="text-align: left;">Active (both direction)</td>
+<td style="text-align: right;">16603</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">LMPRA_R</td>
+<td style="text-align: left;">Lenti-MPRA</td>
+<td style="text-align: left;">Repressive (either direction)</td>
+<td style="text-align: right;">485</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">LMPRA_RB</td>
+<td style="text-align: left;">Lenti-MPRA</td>
+<td style="text-align: left;">Repressive (both direction)</td>
+<td style="text-align: right;">128</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">TMPRA_A</td>
+<td style="text-align: left;">Tiling-MPRA</td>
+<td style="text-align: left;">Active (either direction)</td>
+<td style="text-align: right;">6017</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">TMPRA_AB</td>
+<td style="text-align: left;">Tiling-MPRA</td>
+<td style="text-align: left;">Active (both direction)</td>
+<td style="text-align: right;">57</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">TMPRA_R</td>
+<td style="text-align: left;">Tiling-MPRA</td>
+<td style="text-align: left;">Repressive (either direction)</td>
+<td style="text-align: right;">254</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">TMPRA_RB</td>
+<td style="text-align: left;">Tiling-MPRA</td>
+<td style="text-align: left;">Repressive (both direction)</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WSTARR_A</td>
+<td style="text-align: left;">WHG-STARR-seq</td>
+<td style="text-align: left;">Active (either direction)</td>
+<td style="text-align: right;">79738</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WSTARR_AB</td>
+<td style="text-align: left;">WHG-STARR-seq</td>
+<td style="text-align: left;">Active (both direction)</td>
+<td style="text-align: right;">25505</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WSTARR_R</td>
+<td style="text-align: left;">WHG-STARR-seq</td>
+<td style="text-align: left;">Repressive (either direction)</td>
+<td style="text-align: right;">62201</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><img src="../figure/05_prepare_region/fig.region.fcc_starrmpra_junke.distribution.region_length.png" class="img-fluid" style="width:60.0%"></p>
+<p>In this study we are going to use only “either direction” calls.</p>
 </section>
 <section id="applying-chip-seq-differential-peak-calling-csaw-on-atac-starr-seq-assay" class="level1">
 <h1>Applying ChIP-seq differential peak calling (csaw) on ATAC-STARR-seq assay</h1>
 <p>The csaw tool was utilized for differential peak calling in ATAC-STARR assay data to identify cis-regulatory element from the chromatin accessible regions. This process was conducted by Alex.</p>
-</section>
-<section id="applying-macs-on-atac-starr-seq-input-libraries" class="level1">
-<h1>Applying MACS on ATAC-STARR-seq input libraries</h1>
-<p>The MACS tool was applied to ASTARR input libraries to acquire the chromatin accessible regions. This process was conducted by Alex.</p>
+<pre><code>KS91 (6Dna4Rna) -&gt; KSMerge (6Dna7Rna)   
+Number of significant regions increased. Negative regions increased more than positive regions.
+
+Total number of regions: 
+352,944 -&gt; 359,104
+
+Significant regions (-log10Q &gt;= 3):
+87,695 -&gt; 93,208
+
+Percentage of negative and positive:
+- Postive: 0.61 (53110) -&gt; 0.53 (49041)
+- Negative: 0.39 (34585) -&gt; 0.47 (44167)</code></pre>
+<p><img src="../figure/05_prepare_region/fig.region.fcc_astarr_csaw.distribution.log2fc.png" class="img-fluid" style="width:40.0%"></p>
 </section>
 <section id="crispr-activity-screen-analysis-casa-on-crispri-hcr-flow-fish-data" class="level1">
 <h1>CRISPR activity screen analysis (CASA) on CRISPRi-HCR Flow-FISH data</h1>
 <p>The <a href="https://github.com/sjgosai/casa">CASA</a> analysis pipeline, developed by the Sabeti Lab, has been applied to CRISPRi-HCR Flow-FISH data to identify regulatory elements. The results of significant regions can be downloaded from the ENCODE portal as follows:</p>
+<p>The table is downloaded by <a href="https://www.encodeproject.org/search/?type=FunctionalCharacterizationExperiment&amp;type=FunctionalCharacterizationSeries&amp;type=TransgenicEnhancerExperiment&amp;config=FunctionalCharacterization&amp;datapoint=false&amp;control_type!=*&amp;status=released&amp;assay_title=Flow-FISH+CRISPR+screen&amp;lab.title=Pardis+Sabeti%2C+Broad">ENCODE FCC CRSIRPi HCR FlowFISH</a></p>
+<p><img src="../figure/05_prepare_region/fig.region.fcc_crispri_hcrff.distribution.score.png" class="img-fluid" style="width:40.0%"></p>
+<p><img src="../figure/05_prepare_region/fig.region.fcc_crispri_hcrff.distribution.region_length.png" class="img-fluid" style="width:40.0%"></p>
 </section>
 <section id="calling-dhs-regions-using-deseq-analysis-for-crispri-growth" class="level1">
 <h1>Calling DHS regions using DESeq analysis for CRISPRi-Growth</h1>
 <p>For the analysis of CRISPRi-Growth data, DHS (DNase I hypersensitive sites) regions with significant effect on cell fittness have been identified using DESeq analysis, performed by Alex.</p>
+<p>There are ~ 1M (1,092,166) guides designed to screen across ~111K (111,702) DHS regions in K562.</p>
+<p>Method: DESeq2 analysis on all guides -&gt; log2 foldchange and p-values</p>
+<p>Significant: Guide with fdr_0_05</p>
+<p>We got 6424 DHS regions containing at least one significant guides.</p>
+<pre><code>#Guide  (Total):      1092166 
+#Region (Total):      111702 
+#Guide  (padj&lt;=0.05): 8200 
+#Region (padj&lt;=0.05): 6242 
+
+#Guide  (Signif): 6242 
+#Region (Signif): 6242 </code></pre>
+<p><img src="../figure/05_prepare_region/fig.region.fcc_crispri_growth.distribution.log2fc.png" class="img-fluid" style="width:40.0%"></p>
 
 
 </section>

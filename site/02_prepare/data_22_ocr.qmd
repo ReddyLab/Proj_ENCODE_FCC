@@ -1,0 +1,67 @@
+---
+title: "Open chromatin regions"
+---
+
+# Applying MACS on ATAC-STARR-seq input libraries
+
+To define the accessible regions used for this studies, we applied the MACS peak calling at the ATAC-STARR input libraries.
+
+The input libraries of ATAC-STARR libraries were built on the genomic fragments after Tn5 digestion. The input library was transfected in K562 cell for testing regulatory activities. 
+
+The sequencing of input libraries results in X billions of unique fragments across six technical replicates.
+
+The MACS tool was applied to ASTARR input libraries to acquire the chromatin accessible regions. This process was conducted by Alex.
+
+There are two sets of accessible regions in this 
+- less stringent region set: union of base pairs across replicates
+- more stringent region set: overlap/interaction of base pairs across all replicates, only the base pairs that exist in all replicates are retained
+
+Note: write the description of length using Mode and IQR, 90 percentile
+- Union: Mode = 422 bp, Median = 800 bp, 1031-435 = 596 bp, 90 percentile = 1475 bp
+- Overlap: Mode = 342 bp, Median = 597 bp, 909-401 = 508 bp, 90 percentile) = 1293 bp
+
+Detail numbers
+```
+ATAC (Union)
+#{Region} = 246,852
+Length (Min) = 218 bp
+Length (1st Q) = 435 bp
+Length (Median) = 665 bp
+Length (Mean) = 800 bp
+Length (Mode) = 422 bp
+Length (3rd Q) = 1031 bp
+Length (Max) = 6251 bp
+Length (90 percentile) = 1475 bp
+
+ATAC (Overlap or intersection)
+#{Region} = 150,042
+Length (Min) = 1 bp
+Length (1st Q) = 401 bp
+Length (Median) = 597 bp
+Length (Mean) = 712 bp
+Length (Mode) = 342 bp
+Length (3rd Q) = 909 bp
+Length (Max) = 6172 bp
+Length (90 percentile) = 1293 bp
+```
+
+Distribution of length
+
+[TODO] Use figure panel to include the distribution of GC content and accessibility (TPM)
+https://quarto.org/docs/authoring/figures.html
+
+![](/figure/05_prepare_region/fig.region.fcc_astarr_macs_input.distribution.region_length.below3k.png){ width=40% }
+
+
+# ENCODE K562 ATAC/DNase peaks
+
+Distribution of length
+
+![](/figure/05_prepare_region/fig.region.encode_ocr.distribution.region_length.png){ width=40% }
+
+# Comparison: Chromosome distribution plots of accessible regions
+
+![](/figure/05_prepare_region/fig.region.compare_ocr.distribution.chromosome.png){ width=40% }
+
+
+

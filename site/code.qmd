@@ -1,18 +1,24 @@
 ---
 title: "List of steps in the analyses"
 listing:
-  - id: notebooks_01_setup
-    contents: notebooks/01_setup
+  - id: notebooks_01_prepare_fcc
+    contents: notebooks/01_prepare_fcc
     fields: [title, subtitle]
     sort: title
     type: table
     page-size: 5
-  - id: notebooks_02_prepare
-    contents: notebooks/02_prepare
+  - id: notebooks_04_prepare_annotation
+    contents: notebooks/04_prepare_annotation
     fields: [title, subtitle]
     sort: title
     type: table
-    page-size: 10
+    page-size: 5  
+  - id: notebooks_05_prepare_region
+    contents: notebooks/05_prepare_region
+    fields: [title, subtitle]
+    sort: title
+    type: table
+    page-size: 5  
   - id: notebooks_test
     contents: notebooks/test
     fields: [title, subtitle]
@@ -20,17 +26,7 @@ listing:
     type: table
 ---
 
-## Step: Setup
-
-This part is mainly about
-- Setup folder structure for the project
-- Setup project configurations and helper functions
-- Setup scripts for the analyses
-
-::: {#notebooks_01_setup}
-:::
-
-## Step: Preparation
+# Data preparation
 
 This part is mainly about
 
@@ -38,8 +34,26 @@ This part is mainly about
 - Preparing data from `PROJECT/data` to `PROJECT/results` folder
 - Generating metadata for down stream analysis
 
-::: {#notebooks_02_prepare}
+## Step: Preparing FCC data
+
+::: {#notebooks_01_prepare_fcc}
 :::
+
+## Step: Preparing Hi-C data
+
+## Step: Preparing ChIP-seq data
+
+## Step: Preparing Annotations
+
+::: {#notebooks_04_prepare_annotation}
+:::
+
+## Step: Preparing Regions
+
+::: {#notebooks_05_prepare_region}
+:::
+
+# Analysis
 
 ## Step: STARR/MPRA Analysis
 
@@ -59,7 +73,7 @@ This part is mainly about
 - Enrichment analysis of chromtain states and TFs
 - Quantitative comparison across assays
 
-## Testing
+# Testing
 
 Below is a test notebook
 

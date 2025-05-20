@@ -1,0 +1,8 @@
+FName	Assay	Prefix	Group	Sample
+WSTARRseq_K562_A001.hg38.Input.rep1.WGS.unstranded.bed.gz	STARR_WHG_K562_Reddy_A001	WSTARRseq_K562_A001	Input	Input.rep1
+WSTARRseq_K562_A001.hg38.Input.rep2.WGS.unstranded.bed.gz	STARR_WHG_K562_Reddy_A001	WSTARRseq_K562_A001	Input	Input.rep2
+WSTARRseq_K562_A001.hg38.Input.rep3.WGS.unstranded.bed.gz	STARR_WHG_K562_Reddy_A001	WSTARRseq_K562_A001	Input	Input.rep3
+WSTARRseq_K562_A001.hg38.Input.rep4.WGS.unstranded.bed.gz	STARR_WHG_K562_Reddy_A001	WSTARRseq_K562_A001	Input	Input.rep4
+WSTARRseq_K562_A001.hg38.Output.rep1.WGS.unstranded.bed.gz	STARR_WHG_K562_Reddy_A001	WSTARRseq_K562_A001	Output	Output.rep1
+WSTARRseq_K562_A001.hg38.Output.rep2.WGS.unstranded.bed.gz	STARR_WHG_K562_Reddy_A001	WSTARRseq_K562_A001	Output	Output.rep2
+WSTARRseq_K562_A001.hg38.Output.rep3.WGS.unstranded.bed.gz	STARR_WHG_K562_Reddy_A001	WSTARRseq_K562_A001	Output	Output.rep3
