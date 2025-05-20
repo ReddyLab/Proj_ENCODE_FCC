@@ -1,0 +1,20 @@
+Label	Assay	Direction	Count
+ASTARR_A	ATAC-STARR-seq	Active (either direction)	35,505
+ASTARR_AB	ATAC-STARR-seq	Active (both direction)	11,680
+ASTARR_R	ATAC-STARR-seq	Repressive (either direction)	154,337
+ASTARR_RB	ATAC-STARR-seq	Repressive (both direction)	28,775
+eSTARR_A	eSTARR-seq	Active (either direction)	150
+eSTARR_AB	eSTARR-seq	Active (both direction)	31
+eSTARR_R	eSTARR-seq	Repressive (either direction)	341
+eSTARR_RB	eSTARR-seq	Repressive (both direction)	65
+LMPRA_A	Lenti-MPRA	Active (either direction)	25,648
+LMPRA_AB	Lenti-MPRA	Active (both direction)	16,603
+LMPRA_R	Lenti-MPRA	Repressive (either direction)	485
+LMPRA_RB	Lenti-MPRA	Repressive (both direction)	128
+TMPRA_A	Tiling-MPRA	Active (either direction)	6,017
+TMPRA_AB	Tiling-MPRA	Active (both direction)	57
+TMPRA_R	Tiling-MPRA	Repressive (either direction)	254
+TMPRA_RB	Tiling-MPRA	Repressive (both direction)	1
+WSTARR_A	WHG-STARR-seq	Active (either direction)	79,738
+WSTARR_AB	WHG-STARR-seq	Active (both direction)	25,505
+WSTARR_R	WHG-STARR-seq	Repressive (either direction)	62,201

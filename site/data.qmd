@@ -171,7 +171,7 @@ processed by Alex
 - Gene expression (RNA-seq)
 
 ## Chromatin states
-[Read more about the chromatin states data](./02_prepare/data_12_chromatin_states.qmd)
+[Read more about the chromatin states data](./02_prepare/data_12_encode_annotation.qmd)
 
 - ENCODE candidate cis-regulatory elements (cCREs)
     - ENCODE Link: [ENCODE v4 cCREs (ENCSR913HQX)](https://www.encodeproject.org/annotations/ENCSR913HQX/)
@@ -184,6 +184,14 @@ processed by Alex
 
 - K562 ChIP-seq table from the ENCODE flagship
 
+- ENCODE ChIP-seq (Histone)
+    - Link:
+        - https://www.encodeproject.org/search/?type=Experiment&searchTerm=chipseq&assay_title=Histone+ChIP-seq&biosample_ontology.term_name=K562&perturbed=false&assembly=GRCh38&files.file_type=bed+narrowPeak&files.file_type=bigWig
+
+- ENCODE ChIP-seq (Transcription Factors)
+    - Link:
+
+
 ## TF binding modules
 
 - Shannon et al. look at TF binding patterns across the genome enrichment by cluster the TFs into different modules/groups.
@@ -193,7 +201,7 @@ processed by Alex
 - K562 Accessible regions (ATAC/DHS regions) used for testing assay coverage
 
 ## TSS annotation
-[Read more about the TSS annotation used in this documentation](./02_prepare/data_22_others.qmd)
+[Read more about the TSS annotation used in this documentation](./02_prepare/data_23_others.qmd)
 
 ## Gene expression (RNA-seq)
 

@@ -71,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-notebooks_01_setup .list');
+    const listingTargetEl = window.document.querySelector('#listing-notebooks_01_prepare_fcc .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
@@ -85,7 +85,7 @@ ul.task-list li input[type="checkbox"] {
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-notebooks_01_setup'] = new List('listing-notebooks_01_setup', options);
+    window['quarto-listings']['listing-notebooks_01_prepare_fcc'] = new List('listing-notebooks_01_prepare_fcc', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -100,7 +100,7 @@ ul.task-list li input[type="checkbox"] {
   
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-notebooks_02_prepare .list');
+    const listingTargetEl = window.document.querySelector('#listing-notebooks_04_prepare_annotation .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
@@ -108,13 +108,41 @@ ul.task-list li input[type="checkbox"] {
 
     const options = {
       valueNames: ['listing-title','listing-subtitle',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      page: 10,
+      
+      searchColumns: ["listing-title","listing-author"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-notebooks_04_prepare_annotation'] = new List('listing-notebooks_04_prepare_annotation', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-notebooks_05_prepare_region .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-subtitle',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      page: 5,
     pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
       searchColumns: ["listing-title","listing-author"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-notebooks_02_prepare'] = new List('listing-notebooks_02_prepare', options);
+    window['quarto-listings']['listing-notebooks_05_prepare_region'] = new List('listing-notebooks_05_prepare_region', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -384,8 +412,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02_prepare/data_12_chromatin_states.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Chromatin States</span></a>
+  <a href="./02_prepare/data_12_encode_annotation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Chromatin States and TF Modules</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -396,7 +424,13 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02_prepare/data_22_others.html" class="sidebar-item-text sidebar-link">
+  <a href="./02_prepare/data_22_ocr.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Open chromatin regions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02_prepare/data_23_others.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Other Annotations</span></a>
   </div>
 </li>
@@ -541,14 +575,23 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#step-setup" id="toc-step-setup" class="nav-link active" data-scroll-target="#step-setup">Step: Setup</a></li>
-  <li><a href="#step-preparation" id="toc-step-preparation" class="nav-link" data-scroll-target="#step-preparation">Step: Preparation</a></li>
+  <li><a href="#data-preparation" id="toc-data-preparation" class="nav-link active" data-scroll-target="#data-preparation">Data preparation</a>
+  <ul class="collapse">
+  <li><a href="#step-preparing-fcc-data" id="toc-step-preparing-fcc-data" class="nav-link" data-scroll-target="#step-preparing-fcc-data">Step: Preparing FCC data</a></li>
+  <li><a href="#step-preparing-hi-c-data" id="toc-step-preparing-hi-c-data" class="nav-link" data-scroll-target="#step-preparing-hi-c-data">Step: Preparing Hi-C data</a></li>
+  <li><a href="#step-preparing-chip-seq-data" id="toc-step-preparing-chip-seq-data" class="nav-link" data-scroll-target="#step-preparing-chip-seq-data">Step: Preparing ChIP-seq data</a></li>
+  <li><a href="#step-preparing-annotations" id="toc-step-preparing-annotations" class="nav-link" data-scroll-target="#step-preparing-annotations">Step: Preparing Annotations</a></li>
+  <li><a href="#step-preparing-regions" id="toc-step-preparing-regions" class="nav-link" data-scroll-target="#step-preparing-regions">Step: Preparing Regions</a></li>
+  </ul></li>
+  <li><a href="#analysis" id="toc-analysis" class="nav-link" data-scroll-target="#analysis">Analysis</a>
+  <ul class="collapse">
   <li><a href="#step-starrmpra-analysis" id="toc-step-starrmpra-analysis" class="nav-link" data-scroll-target="#step-starrmpra-analysis">Step: STARR/MPRA Analysis</a></li>
   <li><a href="#step-crispr-analysis" id="toc-step-crispr-analysis" class="nav-link" data-scroll-target="#step-crispr-analysis">Step: CRISPR Analysis</a></li>
   <li><a href="#step-hi-c-analysis" id="toc-step-hi-c-analysis" class="nav-link" data-scroll-target="#step-hi-c-analysis">Step: Hi-C Analysis</a></li>
   <li><a href="#step-region-coverage" id="toc-step-region-coverage" class="nav-link" data-scroll-target="#step-region-coverage">Step: Region Coverage</a></li>
   <li><a href="#step-region-annotation" id="toc-step-region-annotation" class="nav-link" data-scroll-target="#step-region-annotation">Step: Region Annotation</a></li>
   <li><a href="#step-integrative-analysis" id="toc-step-integrative-analysis" class="nav-link" data-scroll-target="#step-integrative-analysis">Step: Integrative Analysis</a></li>
+  </ul></li>
   <li><a href="#testing" id="toc-testing" class="nav-link" data-scroll-target="#testing">Testing</a></li>
   </ul>
 </nav>
@@ -575,125 +618,21 @@ window.Quarto = {
 </header>
 
 
-<section id="step-setup" class="level2">
-<h2 class="anchored" data-anchor-id="step-setup">Step: Setup</h2>
-<p>This part is mainly about - Setup folder structure for the project - Setup project configurations and helper functions - Setup scripts for the analyses</p>
-<div id="listing-notebooks_01_setup" class="quarto-listing quarto-listing-container-table">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-     <select id="listing-notebooks_01_setup-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-notebooks_01_setup'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-       <option value="" disabled="" selected="" hidden="">Order By</option>
-       <option value="index" data-direction="asc">Default</option>
-         <option value="listing-title-sort" data-direction="asc">
-          Title
-        </option>
-     </select>
-  </div>
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
-</div>
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-<th>
-<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Title</a>
-</th>
-<th>
-Subtitle
-</th>
-</tr>
-</thead>
-<tbody class="list">
-<tr data-index="0" data-listing-file-modified-sort="1744856909224" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Check environment 01" data-listing-filename-sort="11_check_config_and_kernel_PY.ipynb">
-<td>
-<a href="./notebooks/01_setup/11_check_config_and_kernel_PY.html" class="title listing-title">Check environment 01</a>
-</td>
-<td>
-<span class="listing-subtitle">Check configuration and packages for Python</span>
-</td>
-</tr>
-<tr data-index="1" data-listing-file-modified-sort="1744856909226" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Check environment 02" data-listing-filename-sort="12_check_config_and_kernel_R.ipynb">
-<td>
-<a href="./notebooks/01_setup/12_check_config_and_kernel_R.html" class="title listing-title">Check environment 02</a>
-</td>
-<td>
-<span class="listing-subtitle">Check configuration and packages for R</span>
-</td>
-</tr>
-<tr data-index="2" data-listing-file-modified-sort="1744856909228" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Check environment 03" data-listing-filename-sort="13_check_config_sing_SH.ipynb">
-<td>
-<a href="./notebooks/01_setup/13_check_config_sing_SH.html" class="title listing-title">Check environment 03</a>
-</td>
-<td>
-<span class="listing-subtitle">Check configuration for bash in singularity</span>
-</td>
-</tr>
-<tr data-index="3" data-listing-file-modified-sort="1744856909229" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Check environment 04" data-listing-filename-sort="14_check_config_SH.ipynb">
-<td>
-<a href="./notebooks/01_setup/14_check_config_SH.html" class="title listing-title">Check environment 04</a>
-</td>
-<td>
-<span class="listing-subtitle">Check configuration for bash in HARDAC</span>
-</td>
-</tr>
-<tr data-index="4" data-listing-file-modified-sort="1744856909220" data-listing-reading-time-sort="1" data-listing-word-count-sort="76" data-listing-title-sort="Setup Envionment 01" data-listing-filename-sort="01_setup_folder_on_hardac_SH.ipynb">
-<td>
-<a href="./notebooks/01_setup/01_setup_folder_on_hardac_SH.html" class="title listing-title">Setup Envionment 01</a>
-</td>
-<td>
-<span class="listing-subtitle">Project folder structure and file arrangement on Duke HARDAC Server</span>
-</td>
-</tr>
-<tr data-index="5" data-listing-file-modified-sort="1744856909221" data-listing-reading-time-sort="2" data-listing-word-count-sort="250" data-listing-title-sort="Setup Envionment 02" data-listing-filename-sort="02_setup_config_on_duke_hardac_SH.ipynb">
-<td>
-<a href="./notebooks/01_setup/02_setup_config_on_duke_hardac_SH.html" class="title listing-title">Setup Envionment 02</a>
-</td>
-<td>
-<span class="listing-subtitle">Project configuration on HARDAC</span>
-</td>
-</tr>
-<tr data-index="6" data-listing-file-modified-sort="1744856909222" data-listing-reading-time-sort="1" data-listing-word-count-sort="6" data-listing-title-sort="Setup Envionment 03" data-listing-filename-sort="03_setup_config_on_sing_SH.ipynb">
-<td>
-<a href="./notebooks/01_setup/03_setup_config_on_sing_SH.html" class="title listing-title">Setup Envionment 03</a>
-</td>
-<td>
-<span class="listing-subtitle">Project configuration when running container</span>
-</td>
-</tr>
-<tr data-index="7" data-listing-file-modified-sort="1744856909223" data-listing-reading-time-sort="1" data-listing-word-count-sort="8" data-listing-title-sort="Setup Envionment 04" data-listing-filename-sort="04_setup_config_module_SH.ipynb">
-<td>
-<a href="./notebooks/01_setup/04_setup_config_module_SH.html" class="title listing-title">Setup Envionment 04</a>
-</td>
-<td>
-<span class="listing-subtitle">Project configuration when importing modules</span>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-<nav id="notebooks_01_setup-pagination" class="listing-pagination" aria-label="Page Navigation">
-  <ul class="pagination"></ul>
-</nav>
-</div>
-</section>
-<section id="step-preparation" class="level2">
-<h2 class="anchored" data-anchor-id="step-preparation">Step: Preparation</h2>
+<section id="data-preparation" class="level1">
+<h1>Data preparation</h1>
 <p>This part is mainly about</p>
 <ul>
 <li>Downloading data to <code>PROJECT/data</code> folder</li>
 <li>Preparing data from <code>PROJECT/data</code> to <code>PROJECT/results</code> folder</li>
 <li>Generating metadata for down stream analysis</li>
 </ul>
-<div id="listing-notebooks_02_prepare" class="quarto-listing quarto-listing-container-table">
+<section id="step-preparing-fcc-data" class="level2">
+<h2 class="anchored" data-anchor-id="step-preparing-fcc-data">Step: Preparing FCC data</h2>
+<div id="listing-notebooks_01_prepare_fcc" class="quarto-listing quarto-listing-container-table">
 <div class="listing-actions-group">
    <div class="input-group input-group-sm quarto-listing-sort">
      <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-     <select id="listing-notebooks_02_prepare-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-notebooks_02_prepare'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+     <select id="listing-notebooks_01_prepare_fcc-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-notebooks_01_prepare_fcc'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
        <option value="" disabled="" selected="" hidden="">Order By</option>
        <option value="index" data-direction="asc">Default</option>
          <option value="listing-title-sort" data-direction="asc">
@@ -720,7 +659,7 @@ Subtitle
 <tbody class="list">
 <tr data-index="0" data-listing-file-modified-sort="1744856909246" data-listing-reading-time-sort="1" data-listing-word-count-sort="21" data-listing-title-sort="Prepare ENCODE ATAC/DNase Peaks 01" data-listing-filename-sort="region_ocr_01_create_download_script_R.ipynb">
 <td>
-<a href="./notebooks/02_prepare/region_ocr_01_create_download_script_R.html" class="title listing-title">Prepare ENCODE ATAC/DNase Peaks 01</a>
+<a href="./notebooks/01_prepare_fcc/region_ocr_01_create_download_script_R.html" class="title listing-title">Prepare ENCODE ATAC/DNase Peaks 01</a>
 </td>
 <td>
 <span class="listing-subtitle">Generate download script to download the data</span>
@@ -728,7 +667,7 @@ Subtitle
 </tr>
 <tr data-index="1" data-listing-file-modified-sort="1744856909246" data-listing-reading-time-sort="1" data-listing-word-count-sort="16" data-listing-title-sort="Prepare ENCODE ATAC/DNase Peaks 02" data-listing-filename-sort="region_ocr_02_execute_download_data_SH.ipynb">
 <td>
-<a href="./notebooks/02_prepare/region_ocr_02_execute_download_data_SH.html" class="title listing-title">Prepare ENCODE ATAC/DNase Peaks 02</a>
+<a href="./notebooks/01_prepare_fcc/region_ocr_02_execute_download_data_SH.html" class="title listing-title">Prepare ENCODE ATAC/DNase Peaks 02</a>
 </td>
 <td>
 <span class="listing-subtitle">Download the data</span>
@@ -736,7 +675,7 @@ Subtitle
 </tr>
 <tr data-index="2" data-listing-file-modified-sort="1744856909247" data-listing-reading-time-sort="1" data-listing-word-count-sort="24" data-listing-title-sort="Prepare ENCODE ATAC/DNase Peaks 03" data-listing-filename-sort="region_ocr_03_prepare_data_SH.ipynb">
 <td>
-<a href="./notebooks/02_prepare/region_ocr_03_prepare_data_SH.html" class="title listing-title">Prepare ENCODE ATAC/DNase Peaks 03</a>
+<a href="./notebooks/01_prepare_fcc/region_ocr_03_prepare_data_SH.html" class="title listing-title">Prepare ENCODE ATAC/DNase Peaks 03</a>
 </td>
 <td>
 <span class="listing-subtitle">Prepare the data</span>
@@ -744,7 +683,7 @@ Subtitle
 </tr>
 <tr data-index="3" data-listing-file-modified-sort="1744856909248" data-listing-reading-time-sort="1" data-listing-word-count-sort="28" data-listing-title-sort="Prepare ENCODE ATAC/DNase Peaks 04" data-listing-filename-sort="region_ocr_04_create_metadata_R.ipynb">
 <td>
-<a href="./notebooks/02_prepare/region_ocr_04_create_metadata_R.html" class="title listing-title">Prepare ENCODE ATAC/DNase Peaks 04</a>
+<a href="./notebooks/01_prepare_fcc/region_ocr_04_create_metadata_R.html" class="title listing-title">Prepare ENCODE ATAC/DNase Peaks 04</a>
 </td>
 <td>
 <span class="listing-subtitle">Generate metadata for the peak file</span>
@@ -752,7 +691,7 @@ Subtitle
 </tr>
 <tr data-index="4" data-listing-file-modified-sort="1744856909242" data-listing-reading-time-sort="1" data-listing-word-count-sort="2" data-listing-title-sort="Prepare Lenti-MPRA data 01" data-listing-filename-sort="fcc_21_acquire_data_LMPRA_Vikram_SH.ipynb">
 <td>
-<a href="./notebooks/02_prepare/fcc_21_acquire_data_LMPRA_Vikram_SH.html" class="title listing-title">Prepare Lenti-MPRA data 01</a>
+<a href="./notebooks/01_prepare_fcc/fcc_21_acquire_data_LMPRA_Vikram_SH.html" class="title listing-title">Prepare Lenti-MPRA data 01</a>
 </td>
 <td>
 <span class="listing-subtitle">Get K562 MPRA data files from Nadav lab</span>
@@ -760,7 +699,7 @@ Subtitle
 </tr>
 <tr data-index="5" data-listing-file-modified-sort="1744856909243" data-listing-reading-time-sort="1" data-listing-word-count-sort="51" data-listing-title-sort="Prepare Lenti-MPRA data 02" data-listing-filename-sort="fcc_22_explore_data_LMPRA_Vikram_R.ipynb">
 <td>
-<a href="./notebooks/02_prepare/fcc_22_explore_data_LMPRA_Vikram_R.html" class="title listing-title">Prepare Lenti-MPRA data 02</a>
+<a href="./notebooks/01_prepare_fcc/fcc_22_explore_data_LMPRA_Vikram_R.html" class="title listing-title">Prepare Lenti-MPRA data 02</a>
 </td>
 <td>
 <span class="listing-subtitle">Explore Lenti-MPRA data files</span>
@@ -768,7 +707,7 @@ Subtitle
 </tr>
 <tr data-index="6" data-listing-file-modified-sort="1744856909245" data-listing-reading-time-sort="1" data-listing-word-count-sort="29" data-listing-title-sort="Prepare Lenti-MPRA data 03" data-listing-filename-sort="fcc_23_export_data_LMPRA_Vikram_R.ipynb">
 <td>
-<a href="./notebooks/02_prepare/fcc_23_export_data_LMPRA_Vikram_R.html" class="title listing-title">Prepare Lenti-MPRA data 03</a>
+<a href="./notebooks/01_prepare_fcc/fcc_23_export_data_LMPRA_Vikram_R.html" class="title listing-title">Prepare Lenti-MPRA data 03</a>
 </td>
 <td>
 <span class="listing-subtitle">Export Lenti-MPRA data file from <code>PROJECT/data</code> to <code>PROJECT/results</code> folder</span>
@@ -776,7 +715,7 @@ Subtitle
 </tr>
 <tr data-index="7" data-listing-file-modified-sort="1744856909230" data-listing-reading-time-sort="1" data-listing-word-count-sort="164" data-listing-title-sort="Prepare STARR-seq data 01" data-listing-filename-sort="fcc_01_acquire_data_STARR_TR_SH.ipynb">
 <td>
-<a href="./notebooks/02_prepare/fcc_01_acquire_data_STARR_TR_SH.html" class="title listing-title">Prepare STARR-seq data 01</a>
+<a href="./notebooks/01_prepare_fcc/fcc_01_acquire_data_STARR_TR_SH.html" class="title listing-title">Prepare STARR-seq data 01</a>
 </td>
 <td>
 <span class="listing-subtitle">Get K562 STARR-seq data files from Reddy lab</span>
@@ -784,7 +723,7 @@ Subtitle
 </tr>
 <tr data-index="8" data-listing-file-modified-sort="1744856909231" data-listing-reading-time-sort="1" data-listing-word-count-sort="14" data-listing-title-sort="Prepare STARR-seq data 02" data-listing-filename-sort="fcc_02_explore_data_STARR_TR_SH.ipynb">
 <td>
-<a href="./notebooks/02_prepare/fcc_02_explore_data_STARR_TR_SH.html" class="title listing-title">Prepare STARR-seq data 02</a>
+<a href="./notebooks/01_prepare_fcc/fcc_02_explore_data_STARR_TR_SH.html" class="title listing-title">Prepare STARR-seq data 02</a>
 </td>
 <td>
 <span class="listing-subtitle">Explore STARR-seq data files</span>
@@ -792,7 +731,7 @@ Subtitle
 </tr>
 <tr data-index="9" data-listing-file-modified-sort="1744856909232" data-listing-reading-time-sort="1" data-listing-word-count-sort="67" data-listing-title-sort="Prepare STARR-seq data 031" data-listing-filename-sort="fcc_031_prepare_data_STARR_TR_KS91_SH.ipynb">
 <td>
-<a href="./notebooks/02_prepare/fcc_031_prepare_data_STARR_TR_KS91_SH.html" class="title listing-title">Prepare STARR-seq data 031</a>
+<a href="./notebooks/01_prepare_fcc/fcc_031_prepare_data_STARR_TR_KS91_SH.html" class="title listing-title">Prepare STARR-seq data 031</a>
 </td>
 <td>
 <span class="listing-subtitle">Prepare STARR-seq data files from <code>PROJECT/data</code> to <code>PROJECT/results</code> folder</span>
@@ -800,7 +739,7 @@ Subtitle
 </tr>
 <tr data-index="10" data-listing-file-modified-sort="1744856909233" data-listing-reading-time-sort="1" data-listing-word-count-sort="19" data-listing-title-sort="Prepare STARR-seq data 032" data-listing-filename-sort="fcc_032_prepare_data_STARR_TR_KS274_SH.ipynb">
 <td>
-<a href="./notebooks/02_prepare/fcc_032_prepare_data_STARR_TR_KS274_SH.html" class="title listing-title">Prepare STARR-seq data 032</a>
+<a href="./notebooks/01_prepare_fcc/fcc_032_prepare_data_STARR_TR_KS274_SH.html" class="title listing-title">Prepare STARR-seq data 032</a>
 </td>
 <td>
 <span class="listing-subtitle">Prepare ATAC-STARR KS274 files from <code>PROJECT/data</code> to <code>PROJECT/results</code> folder</span>
@@ -808,7 +747,7 @@ Subtitle
 </tr>
 <tr data-index="11" data-listing-file-modified-sort="1744856909234" data-listing-reading-time-sort="1" data-listing-word-count-sort="56" data-listing-title-sort="Prepare STARR-seq data 04" data-listing-filename-sort="fcc_04_export_metadata_STARR_TR_R.ipynb">
 <td>
-<a href="./notebooks/02_prepare/fcc_04_export_metadata_STARR_TR_R.html" class="title listing-title">Prepare STARR-seq data 04</a>
+<a href="./notebooks/01_prepare_fcc/fcc_04_export_metadata_STARR_TR_R.html" class="title listing-title">Prepare STARR-seq data 04</a>
 </td>
 <td>
 <span class="listing-subtitle">Create metadata for STARR-seq data files</span>
@@ -816,7 +755,7 @@ Subtitle
 </tr>
 <tr data-index="12" data-listing-file-modified-sort="1744856909235" data-listing-reading-time-sort="1" data-listing-word-count-sort="26" data-listing-title-sort="Prepare Tiling MPRA data 01" data-listing-filename-sort="fcc_11_acquire_data_TMPRA_Hannah_SH.ipynb">
 <td>
-<a href="./notebooks/02_prepare/fcc_11_acquire_data_TMPRA_Hannah_SH.html" class="title listing-title">Prepare Tiling MPRA data 01</a>
+<a href="./notebooks/01_prepare_fcc/fcc_11_acquire_data_TMPRA_Hannah_SH.html" class="title listing-title">Prepare Tiling MPRA data 01</a>
 </td>
 <td>
 <span class="listing-subtitle">Get K562 MPRA data files from Tewhey lab</span>
@@ -824,7 +763,7 @@ Subtitle
 </tr>
 <tr data-index="13" data-listing-file-modified-sort="1744856909236" data-listing-reading-time-sort="1" data-listing-word-count-sort="52" data-listing-title-sort="Prepare Tiling MPRA data 02" data-listing-filename-sort="fcc_12_explore_data_TMPRA_Hannah_SH.ipynb">
 <td>
-<a href="./notebooks/02_prepare/fcc_12_explore_data_TMPRA_Hannah_SH.html" class="title listing-title">Prepare Tiling MPRA data 02</a>
+<a href="./notebooks/01_prepare_fcc/fcc_12_explore_data_TMPRA_Hannah_SH.html" class="title listing-title">Prepare Tiling MPRA data 02</a>
 </td>
 <td>
 <span class="listing-subtitle">Explore Tiling MPRA data files</span>
@@ -832,7 +771,7 @@ Subtitle
 </tr>
 <tr data-index="14" data-listing-file-modified-sort="1744856909237" data-listing-reading-time-sort="2" data-listing-word-count-sort="243" data-listing-title-sort="Prepare Tiling MPRA data 03" data-listing-filename-sort="fcc_13_extract_fragment_counts_R.ipynb">
 <td>
-<a href="./notebooks/02_prepare/fcc_13_extract_fragment_counts_R.html" class="title listing-title">Prepare Tiling MPRA data 03</a>
+<a href="./notebooks/01_prepare_fcc/fcc_13_extract_fragment_counts_R.html" class="title listing-title">Prepare Tiling MPRA data 03</a>
 </td>
 <td>
 <span class="listing-subtitle">Extract fragment counts from Tiling MPRA data</span>
@@ -840,7 +779,7 @@ Subtitle
 </tr>
 <tr data-index="15" data-listing-file-modified-sort="1744856909238" data-listing-reading-time-sort="2" data-listing-word-count-sort="304" data-listing-title-sort="Prepare Tiling MPRA data 04" data-listing-filename-sort="fcc_14_convert_table_to_bed_R.ipynb">
 <td>
-<a href="./notebooks/02_prepare/fcc_14_convert_table_to_bed_R.html" class="title listing-title">Prepare Tiling MPRA data 04</a>
+<a href="./notebooks/01_prepare_fcc/fcc_14_convert_table_to_bed_R.html" class="title listing-title">Prepare Tiling MPRA data 04</a>
 </td>
 <td>
 <span class="listing-subtitle">Covert count matrix to bed format</span>
@@ -848,7 +787,7 @@ Subtitle
 </tr>
 <tr data-index="16" data-listing-file-modified-sort="1744856909239" data-listing-reading-time-sort="1" data-listing-word-count-sort="21" data-listing-title-sort="Prepare Tiling MPRA data 05" data-listing-filename-sort="fcc_15_liftover_TMPRA_OL13_SH.ipynb">
 <td>
-<a href="./notebooks/02_prepare/fcc_15_liftover_TMPRA_OL13_SH.html" class="title listing-title">Prepare Tiling MPRA data 05</a>
+<a href="./notebooks/01_prepare_fcc/fcc_15_liftover_TMPRA_OL13_SH.html" class="title listing-title">Prepare Tiling MPRA data 05</a>
 </td>
 <td>
 <span class="listing-subtitle">Liftover OL13 fragments from hg19 to hg38</span>
@@ -856,7 +795,7 @@ Subtitle
 </tr>
 <tr data-index="17" data-listing-file-modified-sort="1744856909240" data-listing-reading-time-sort="1" data-listing-word-count-sort="40" data-listing-title-sort="Prepare Tiling MPRA data 06" data-listing-filename-sort="fcc_16_export_ranges_TMPRA_Hannah_R.ipynb">
 <td>
-<a href="./notebooks/02_prepare/fcc_16_export_ranges_TMPRA_Hannah_R.html" class="title listing-title">Prepare Tiling MPRA data 06</a>
+<a href="./notebooks/01_prepare_fcc/fcc_16_export_ranges_TMPRA_Hannah_R.html" class="title listing-title">Prepare Tiling MPRA data 06</a>
 </td>
 <td>
 <span class="listing-subtitle">Get the genomic range of fragments designed in TMPRA</span>
@@ -864,7 +803,7 @@ Subtitle
 </tr>
 <tr data-index="18" data-listing-file-modified-sort="1744856909241" data-listing-reading-time-sort="1" data-listing-word-count-sort="20" data-listing-title-sort="Prepare Tiling MPRA data 07" data-listing-filename-sort="fcc_17_export_metadata_TMPRA_Hannah_R.ipynb">
 <td>
-<a href="./notebooks/02_prepare/fcc_17_export_metadata_TMPRA_Hannah_R.html" class="title listing-title">Prepare Tiling MPRA data 07</a>
+<a href="./notebooks/01_prepare_fcc/fcc_17_export_metadata_TMPRA_Hannah_R.html" class="title listing-title">Prepare Tiling MPRA data 07</a>
 </td>
 <td>
 <span class="listing-subtitle">Create metadata for Tiling MPRA data files</span>
@@ -875,11 +814,419 @@ Subtitle
 <div class="listing-no-matching d-none">
 No matching items
 </div>
-<nav id="notebooks_02_prepare-pagination" class="listing-pagination" aria-label="Page Navigation">
+<nav id="notebooks_01_prepare_fcc-pagination" class="listing-pagination" aria-label="Page Navigation">
   <ul class="pagination"></ul>
 </nav>
 </div>
 </section>
+<section id="step-preparing-hi-c-data" class="level2">
+<h2 class="anchored" data-anchor-id="step-preparing-hi-c-data">Step: Preparing Hi-C data</h2>
+</section>
+<section id="step-preparing-chip-seq-data" class="level2">
+<h2 class="anchored" data-anchor-id="step-preparing-chip-seq-data">Step: Preparing ChIP-seq data</h2>
+</section>
+<section id="step-preparing-annotations" class="level2">
+<h2 class="anchored" data-anchor-id="step-preparing-annotations">Step: Preparing Annotations</h2>
+<div id="listing-notebooks_04_prepare_annotation" class="quarto-listing quarto-listing-container-table">
+<div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+     <select id="listing-notebooks_04_prepare_annotation-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-notebooks_04_prepare_annotation'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Order By</option>
+       <option value="index" data-direction="asc">Default</option>
+         <option value="listing-title-sort" data-direction="asc">
+          Title
+        </option>
+     </select>
+  </div>
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
+<table class="quarto-listing-table table">
+<thead>
+<tr>
+<th>
+<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Title</a>
+</th>
+<th>
+Subtitle
+</th>
+</tr>
+</thead>
+<tbody class="list">
+<tr data-index="0" data-listing-file-modified-sort="1747713276061" data-listing-reading-time-sort="1" data-listing-word-count-sort="30" data-listing-title-sort="Prepare ENCODE RNA-seq 01" data-listing-filename-sort="rnaseq_01_total_create_download_script_R.ipynb">
+<td>
+<a href="./notebooks/04_prepare_annotation/rnaseq_01_total_create_download_script_R.html" class="title listing-title">Prepare ENCODE RNA-seq 01</a>
+</td>
+<td>
+<span class="listing-subtitle">Generate download script to download the data</span>
+</td>
+</tr>
+<tr data-index="1" data-listing-file-modified-sort="1747713276062" data-listing-reading-time-sort="1" data-listing-word-count-sort="14" data-listing-title-sort="Prepare ENCODE RNA-seq 02" data-listing-filename-sort="rnaseq_02_total_execute_download_script_SH.ipynb">
+<td>
+<a href="./notebooks/04_prepare_annotation/rnaseq_02_total_execute_download_script_SH.html" class="title listing-title">Prepare ENCODE RNA-seq 02</a>
+</td>
+<td>
+<span class="listing-subtitle">Download the data</span>
+</td>
+</tr>
+<tr data-index="2" data-listing-file-modified-sort="1747713276063" data-listing-reading-time-sort="1" data-listing-word-count-sort="19" data-listing-title-sort="Prepare ENCODE RNA-seq 03" data-listing-filename-sort="rnaseq_03_total_explore_data_R.ipynb">
+<td>
+<a href="./notebooks/04_prepare_annotation/rnaseq_03_total_explore_data_R.html" class="title listing-title">Prepare ENCODE RNA-seq 03</a>
+</td>
+<td>
+<span class="listing-subtitle">Explore and visualize the data</span>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+</section>
+<section id="step-preparing-regions" class="level2">
+<h2 class="anchored" data-anchor-id="step-preparing-regions">Step: Preparing Regions</h2>
+<div id="listing-notebooks_05_prepare_region" class="quarto-listing quarto-listing-container-table">
+<div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+     <select id="listing-notebooks_05_prepare_region-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-notebooks_05_prepare_region'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Order By</option>
+       <option value="index" data-direction="asc">Default</option>
+         <option value="listing-title-sort" data-direction="asc">
+          Title
+        </option>
+     </select>
+  </div>
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
+<table class="quarto-listing-table table">
+<thead>
+<tr>
+<th>
+<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Title</a>
+</th>
+<th>
+Subtitle
+</th>
+</tr>
+</thead>
+<tbody class="list">
+<tr data-index="0" data-listing-file-modified-sort="1747713292604" data-listing-reading-time-sort="1" data-listing-word-count-sort="10" data-listing-title-sort="Prepare ASTARR CSAW Peaks 01" data-listing-filename-sort="region_astarr_csaw_01_acquire_data_SH.ipynb">
+<td>
+<a href="./notebooks/05_prepare_region/region_astarr_csaw_01_acquire_data_SH.html" class="title listing-title">Prepare ASTARR CSAW Peaks 01</a>
+</td>
+<td>
+<span class="listing-subtitle">Acquire data</span>
+</td>
+</tr>
+<tr data-index="1" data-listing-file-modified-sort="1747713292605" data-listing-reading-time-sort="1" data-listing-word-count-sort="16" data-listing-title-sort="Prepare ASTARR CSAW Peaks 02" data-listing-filename-sort="region_astarr_csaw_02_export_data_R.ipynb">
+<td>
+<a href="./notebooks/05_prepare_region/region_astarr_csaw_02_export_data_R.html" class="title listing-title">Prepare ASTARR CSAW Peaks 02</a>
+</td>
+<td>
+<span class="listing-subtitle">Prepare data</span>
+</td>
+</tr>
+<tr data-index="2" data-listing-file-modified-sort="1747713292606" data-listing-reading-time-sort="1" data-listing-word-count-sort="6" data-listing-title-sort="Prepare ASTARR CSAW Peaks 03" data-listing-filename-sort="region_astarr_csaw_03_export_metadata_R.ipynb">
+<td>
+<a href="./notebooks/05_prepare_region/region_astarr_csaw_03_export_metadata_R.html" class="title listing-title">Prepare ASTARR CSAW Peaks 03</a>
+</td>
+<td>
+<span class="listing-subtitle">Create metadata</span>
+</td>
+</tr>
+<tr data-index="3" data-listing-file-modified-sort="1747713292607" data-listing-reading-time-sort="1" data-listing-word-count-sort="42" data-listing-title-sort="Prepare ASTARR CSAW Peaks 03" data-listing-filename-sort="region_astarr_csaw_04_explore_data_R.ipynb">
+<td>
+<a href="./notebooks/05_prepare_region/region_astarr_csaw_04_explore_data_R.html" class="title listing-title">Prepare ASTARR CSAW Peaks 03</a>
+</td>
+<td>
+<span class="listing-subtitle">Explore the data</span>
+</td>
+</tr>
+<tr data-index="4" data-listing-file-modified-sort="1747713292549" data-listing-reading-time-sort="2" data-listing-word-count-sort="204" data-listing-title-sort="Prepare ASTARR Input MACS Peaks 01" data-listing-filename-sort="region_astarr_macs_01_export_data_R.ipynb">
+<td>
+<a href="./notebooks/05_prepare_region/region_astarr_macs_01_export_data_R.html" class="title listing-title">Prepare ASTARR Input MACS Peaks 01</a>
+</td>
+<td>
+<span class="listing-subtitle">Prepare K562 accessible regions</span>
+</td>
+</tr>
+<tr data-index="5" data-listing-file-modified-sort="1747713292550" data-listing-reading-time-sort="1" data-listing-word-count-sort="6" data-listing-title-sort="Prepare ASTARR Input MACS Peaks 02" data-listing-filename-sort="region_astarr_macs_02_export_metadata_R.ipynb">
+<td>
+<a href="./notebooks/05_prepare_region/region_astarr_macs_02_export_metadata_R.html" class="title listing-title">Prepare ASTARR Input MACS Peaks 02</a>
+</td>
+<td>
+<span class="listing-subtitle">Create metadata table for downstream analysis</span>
+</td>
+</tr>
+<tr data-index="6" data-listing-file-modified-sort="1747713292551" data-listing-reading-time-sort="1" data-listing-word-count-sort="23" data-listing-title-sort="Prepare ASTARR Input MACS Peaks 03" data-listing-filename-sort="region_astarr_macs_03_explore_data_R.ipynb">
+<td>
+<a href="./notebooks/05_prepare_region/region_astarr_macs_03_explore_data_R.html" class="title listing-title">Prepare ASTARR Input MACS Peaks 03</a>
+</td>
+<td>
+<span class="listing-subtitle">Explore and visualize the data</span>
+</td>
+</tr>
+<tr data-index="7" data-listing-file-modified-sort="1747713292977" data-listing-reading-time-sort="1" data-listing-word-count-sort="38" data-listing-title-sort="Prepare CRISPRi Growth data 01" data-listing-filename-sort="region_crispri_growth_01_export_data_R.ipynb">
+<td>
+<a href="./notebooks/05_prepare_region/region_crispri_growth_01_export_data_R.html" class="title listing-title">Prepare CRISPRi Growth data 01</a>
+</td>
+<td>
+<span class="listing-subtitle">Prepare data</span>
+</td>
+</tr>
+<tr data-index="8" data-listing-file-modified-sort="1747713292978" data-listing-reading-time-sort="1" data-listing-word-count-sort="6" data-listing-title-sort="Prepare CRISPRi Growth data 02" data-listing-filename-sort="region_crispri_growth_02_export_metadata_R.ipynb">
+<td>
+<a href="./notebooks/05_prepare_region/region_crispri_growth_02_export_metadata_R.html" class="title listing-title">Prepare CRISPRi Growth data 02</a>
+</td>
+<td>
+<span class="listing-subtitle">Generate metadata of the peak file</span>
+</td>
+</tr>
+<tr data-index="9" data-listing-file-modified-sort="1747713292979" data-listing-reading-time-sort="1" data-listing-word-count-sort="28" data-listing-title-sort="Prepare CRISPRi Growth data 03" data-listing-filename-sort="region_crispri_growth_03_explore_data_R.ipynb">
+<td>
+<a href="./notebooks/05_prepare_region/region_crispri_growth_03_explore_data_R.html" class="title listing-title">Prepare CRISPRi Growth data 03</a>
+</td>
+<td>
+<span class="listing-subtitle">Explore and visualize the data</span>
+</td>
+</tr>
+<tr data-index="10" data-listing-file-modified-sort="1747713293032" data-listing-reading-time-sort="1" data-listing-word-count-sort="52" data-listing-title-sort="Prepare CRISPRi HCRFF data 01" data-listing-filename-sort="region_crispri_hcrff_01_create_download_script_R.ipynb">
+<td>
+<a href="./notebooks/05_prepare_region/region_crispri_hcrff_01_create_download_script_R.html" class="title listing-title">Prepare CRISPRi HCRFF data 01</a>
+</td>
+<td>
+<span class="listing-subtitle">Generate download script to download the data</span>
+</td>
+</tr>
+<tr data-index="11" data-listing-file-modified-sort="1747713293033" data-listing-reading-time-sort="1" data-listing-word-count-sort="14" data-listing-title-sort="Prepare CRISPRi HCRFF data 02" data-listing-filename-sort="region_crispri_hcrff_02_execute_download_script_SH.ipynb">
+<td>
+<a href="./notebooks/05_prepare_region/region_crispri_hcrff_02_execute_download_script_SH.html" class="title listing-title">Prepare CRISPRi HCRFF data 02</a>
+</td>
+<td>
+<span class="listing-subtitle">Download the data</span>
+</td>
+</tr>
+<tr data-index="12" data-listing-file-modified-sort="1747713293034" data-listing-reading-time-sort="1" data-listing-word-count-sort="29" data-listing-title-sort="Prepare CRISPRi HCRFF data 03" data-listing-filename-sort="region_crispri_hcrff_03_export_data_R.ipynb">
+<td>
+<a href="./notebooks/05_prepare_region/region_crispri_hcrff_03_export_data_R.html" class="title listing-title">Prepare CRISPRi HCRFF data 03</a>
+</td>
+<td>
+<span class="listing-subtitle">Prepare the data</span>
+</td>
+</tr>
+<tr data-index="13" data-listing-file-modified-sort="1747713293035" data-listing-reading-time-sort="1" data-listing-word-count-sort="6" data-listing-title-sort="Prepare CRISPRi HCRFF data 04" data-listing-filename-sort="region_crispri_hcrff_04_export_metadata_R.ipynb">
+<td>
+<a href="./notebooks/05_prepare_region/region_crispri_hcrff_04_export_metadata_R.html" class="title listing-title">Prepare CRISPRi HCRFF data 04</a>
+</td>
+<td>
+<span class="listing-subtitle">Generate metadata for the peak file</span>
+</td>
+</tr>
+<tr data-index="14" data-listing-file-modified-sort="1747713293038" data-listing-reading-time-sort="1" data-listing-word-count-sort="33" data-listing-title-sort="Prepare CRISPRi HCRFF data 05" data-listing-filename-sort="region_crispri_hcrff_05_explore_data_R.ipynb">
+<td>
+<a href="./notebooks/05_prepare_region/region_crispri_hcrff_05_explore_data_R.html" class="title listing-title">Prepare CRISPRi HCRFF data 05</a>
+</td>
+<td>
+<span class="listing-subtitle">Explore and visualize the data</span>
+</td>
+</tr>
+<tr data-index="15" data-listing-file-modified-sort="1747713292718" data-listing-reading-time-sort="1" data-listing-word-count-sort="31" data-listing-title-sort="Prepare ENCODE ATAC/DNase Peaks 01" data-listing-filename-sort="region_ocr_01_create_download_script_R.ipynb">
+<td>
+<a href="./notebooks/05_prepare_region/region_ocr_01_create_download_script_R.html" class="title listing-title">Prepare ENCODE ATAC/DNase Peaks 01</a>
+</td>
+<td>
+<span class="listing-subtitle">Generate download script to download the data</span>
+</td>
+</tr>
+<tr data-index="16" data-listing-file-modified-sort="1747713292719" data-listing-reading-time-sort="1" data-listing-word-count-sort="14" data-listing-title-sort="Prepare ENCODE ATAC/DNase Peaks 02" data-listing-filename-sort="region_ocr_02_execute_download_script_SH.ipynb">
+<td>
+<a href="./notebooks/05_prepare_region/region_ocr_02_execute_download_script_SH.html" class="title listing-title">Prepare ENCODE ATAC/DNase Peaks 02</a>
+</td>
+<td>
+<span class="listing-subtitle">Download the data</span>
+</td>
+</tr>
+<tr data-index="17" data-listing-file-modified-sort="1747713292719" data-listing-reading-time-sort="1" data-listing-word-count-sort="24" data-listing-title-sort="Prepare ENCODE ATAC/DNase Peaks 03" data-listing-filename-sort="region_ocr_03_export_data_SH.ipynb">
+<td>
+<a href="./notebooks/05_prepare_region/region_ocr_03_export_data_SH.html" class="title listing-title">Prepare ENCODE ATAC/DNase Peaks 03</a>
+</td>
+<td>
+<span class="listing-subtitle">Prepare the data</span>
+</td>
+</tr>
+<tr data-index="18" data-listing-file-modified-sort="1747713292720" data-listing-reading-time-sort="1" data-listing-word-count-sort="28" data-listing-title-sort="Prepare ENCODE ATAC/DNase Peaks 04" data-listing-filename-sort="region_ocr_04_export_metadata_R.ipynb">
+<td>
+<a href="./notebooks/05_prepare_region/region_ocr_04_export_metadata_R.html" class="title listing-title">Prepare ENCODE ATAC/DNase Peaks 04</a>
+</td>
+<td>
+<span class="listing-subtitle">Generate metadata for the peak file</span>
+</td>
+</tr>
+<tr data-index="19" data-listing-file-modified-sort="1747713292722" data-listing-reading-time-sort="1" data-listing-word-count-sort="33" data-listing-title-sort="Prepare ENCODE ATAC/DNase Peaks 05" data-listing-filename-sort="region_ocr_05_explore_data_R.ipynb">
+<td>
+<a href="./notebooks/05_prepare_region/region_ocr_05_explore_data_R.html" class="title listing-title">Prepare ENCODE ATAC/DNase Peaks 05</a>
+</td>
+<td>
+<span class="listing-subtitle">Explore and visualize the data</span>
+</td>
+</tr>
+<tr data-index="20" data-listing-file-modified-sort="1747713292727" data-listing-reading-time-sort="1" data-listing-word-count-sort="60" data-listing-title-sort="Prepare ENCODE ATAC/DNase Peaks 06" data-listing-filename-sort="region_ocr_06_explore_comparison_R.ipynb">
+<td>
+<a href="./notebooks/05_prepare_region/region_ocr_06_explore_comparison_R.html" class="title listing-title">Prepare ENCODE ATAC/DNase Peaks 06</a>
+</td>
+<td>
+<span class="listing-subtitle">Generate metadata for the peak file</span>
+</td>
+</tr>
+<tr data-index="21" data-listing-file-modified-sort="1747713292781" data-listing-reading-time-sort="1" data-listing-word-count-sort="31" data-listing-title-sort="Prepare ENCODE Chromatin State 01" data-listing-filename-sort="region_chromstate_01_create_download_script_R.ipynb">
+<td>
+<a href="./notebooks/05_prepare_region/region_chromstate_01_create_download_script_R.html" class="title listing-title">Prepare ENCODE Chromatin State 01</a>
+</td>
+<td>
+<span class="listing-subtitle">Generate download script to download the data</span>
+</td>
+</tr>
+<tr data-index="22" data-listing-file-modified-sort="1747713292782" data-listing-reading-time-sort="1" data-listing-word-count-sort="19" data-listing-title-sort="Prepare ENCODE Chromatin State 02" data-listing-filename-sort="region_chromstate_02_execute_download_script_SH.ipynb">
+<td>
+<a href="./notebooks/05_prepare_region/region_chromstate_02_execute_download_script_SH.html" class="title listing-title">Prepare ENCODE Chromatin State 02</a>
+</td>
+<td>
+<span class="listing-subtitle">Download the data</span>
+</td>
+</tr>
+<tr data-index="23" data-listing-file-modified-sort="1747713292783" data-listing-reading-time-sort="1" data-listing-word-count-sort="72" data-listing-title-sort="Prepare ENCODE Chromatin State 03" data-listing-filename-sort="region_chromstate_03_export_data_R.ipynb">
+<td>
+<a href="./notebooks/05_prepare_region/region_chromstate_03_export_data_R.html" class="title listing-title">Prepare ENCODE Chromatin State 03</a>
+</td>
+<td>
+<span class="listing-subtitle">Prepare region files</span>
+</td>
+</tr>
+<tr data-index="24" data-listing-file-modified-sort="1747713292785" data-listing-reading-time-sort="1" data-listing-word-count-sort="6" data-listing-title-sort="Prepare ENCODE Chromatin State 04" data-listing-filename-sort="region_chromstate_04_export_metadata_R.ipynb">
+<td>
+<a href="./notebooks/05_prepare_region/region_chromstate_04_export_metadata_R.html" class="title listing-title">Prepare ENCODE Chromatin State 04</a>
+</td>
+<td>
+<span class="listing-subtitle">Create metadata table for downstream analysis</span>
+</td>
+</tr>
+<tr data-index="25" data-listing-file-modified-sort="1747713292786" data-listing-reading-time-sort="1" data-listing-word-count-sort="14" data-listing-title-sort="Prepare ENCODE Chromatin State 05" data-listing-filename-sort="region_chromstate_05_explore_data_R.ipynb">
+<td>
+<a href="./notebooks/05_prepare_region/region_chromstate_05_explore_data_R.html" class="title listing-title">Prepare ENCODE Chromatin State 05</a>
+</td>
+<td>
+<span class="listing-subtitle">Explore and visualize the data</span>
+</td>
+</tr>
+<tr data-index="26" data-listing-file-modified-sort="1747713292895" data-listing-reading-time-sort="1" data-listing-word-count-sort="2" data-listing-title-sort="Prepare Junke peak call region 01" data-listing-filename-sort="region_enhancer_junke_01_view_data_SH.ipynb">
+<td>
+<a href="./notebooks/05_prepare_region/region_enhancer_junke_01_view_data_SH.html" class="title listing-title">Prepare Junke peak call region 01</a>
+</td>
+<td>
+<span class="listing-subtitle">View files</span>
+</td>
+</tr>
+<tr data-index="27" data-listing-file-modified-sort="1747713292897" data-listing-reading-time-sort="1" data-listing-word-count-sort="4" data-listing-title-sort="Prepare Junke peak call region 02" data-listing-filename-sort="region_enhancer_junke_02_decompress_data_SH.ipynb">
+<td>
+<a href="./notebooks/05_prepare_region/region_enhancer_junke_02_decompress_data_SH.html" class="title listing-title">Prepare Junke peak call region 02</a>
+</td>
+<td>
+<span class="listing-subtitle">Decompress files</span>
+</td>
+</tr>
+<tr data-index="28" data-listing-file-modified-sort="1747713292899" data-listing-reading-time-sort="1" data-listing-word-count-sort="25" data-listing-title-sort="Prepare Junke peak call region 03" data-listing-filename-sort="region_enhancer_junke_03_export_data_R.ipynb">
+<td>
+<a href="./notebooks/05_prepare_region/region_enhancer_junke_03_export_data_R.html" class="title listing-title">Prepare Junke peak call region 03</a>
+</td>
+<td>
+<span class="listing-subtitle">Prepare data</span>
+</td>
+</tr>
+<tr data-index="29" data-listing-file-modified-sort="1747713292901" data-listing-reading-time-sort="1" data-listing-word-count-sort="6" data-listing-title-sort="Prepare Junke peak call region 05" data-listing-filename-sort="region_enhancer_junke_04_export_metadata_R.ipynb">
+<td>
+<a href="./notebooks/05_prepare_region/region_enhancer_junke_04_export_metadata_R.html" class="title listing-title">Prepare Junke peak call region 05</a>
+</td>
+<td>
+<span class="listing-subtitle">Generate metadata of the peak file</span>
+</td>
+</tr>
+<tr data-index="30" data-listing-file-modified-sort="1747713292924" data-listing-reading-time-sort="1" data-listing-word-count-sort="36" data-listing-title-sort="Prepare Junke peak call region 05" data-listing-filename-sort="region_enhancer_junke_05_explore_data_R.ipynb">
+<td>
+<a href="./notebooks/05_prepare_region/region_enhancer_junke_05_explore_data_R.html" class="title listing-title">Prepare Junke peak call region 05</a>
+</td>
+<td>
+<span class="listing-subtitle">Explore and visualize the data</span>
+</td>
+</tr>
+<tr data-index="31" data-listing-file-modified-sort="1747713292839" data-listing-reading-time-sort="1" data-listing-word-count-sort="54" data-listing-title-sort="Prepare TF Modules 01" data-listing-filename-sort="region_tfmodule_01_export_data_R.ipynb">
+<td>
+<a href="./notebooks/05_prepare_region/region_tfmodule_01_export_data_R.html" class="title listing-title">Prepare TF Modules 01</a>
+</td>
+<td>
+<span class="listing-subtitle">Export the data</span>
+</td>
+</tr>
+<tr data-index="32" data-listing-file-modified-sort="1747713292840" data-listing-reading-time-sort="1" data-listing-word-count-sort="6" data-listing-title-sort="Prepare TF Modules 02" data-listing-filename-sort="region_tfmodule_02_export_metadata_R.ipynb">
+<td>
+<a href="./notebooks/05_prepare_region/region_tfmodule_02_export_metadata_R.html" class="title listing-title">Prepare TF Modules 02</a>
+</td>
+<td>
+<span class="listing-subtitle">Create metadata table for downstream analysis</span>
+</td>
+</tr>
+<tr data-index="33" data-listing-file-modified-sort="1747713292841" data-listing-reading-time-sort="1" data-listing-word-count-sort="49" data-listing-title-sort="Prepare TF Modules 03" data-listing-filename-sort="region_tfmodule_03_explore_data_R.ipynb">
+<td>
+<a href="./notebooks/05_prepare_region/region_tfmodule_03_explore_data_R.html" class="title listing-title">Prepare TF Modules 03</a>
+</td>
+<td>
+<span class="listing-subtitle">Explore and visualize the data</span>
+</td>
+</tr>
+<tr data-index="34" data-listing-file-modified-sort="1747713292662" data-listing-reading-time-sort="1" data-listing-word-count-sort="116" data-listing-title-sort="Prepare TSS annotation 01" data-listing-filename-sort="region_tss_01_pol2_export_data_R.ipynb">
+<td>
+<a href="./notebooks/05_prepare_region/region_tss_01_pol2_export_data_R.html" class="title listing-title">Prepare TSS annotation 01</a>
+</td>
+<td>
+<span class="listing-subtitle">Prepare K562 TSS annotation</span>
+</td>
+</tr>
+<tr data-index="35" data-listing-file-modified-sort="1747713292663" data-listing-reading-time-sort="1" data-listing-word-count-sort="6" data-listing-title-sort="Prepare TSS annotation 02" data-listing-filename-sort="region_tss_02_pol2_export_metadata_R.ipynb">
+<td>
+<a href="./notebooks/05_prepare_region/region_tss_02_pol2_export_metadata_R.html" class="title listing-title">Prepare TSS annotation 02</a>
+</td>
+<td>
+<span class="listing-subtitle">Create metadata table for downstream analysis</span>
+</td>
+</tr>
+<tr data-index="36" data-listing-file-modified-sort="1747713292665" data-listing-reading-time-sort="1" data-listing-word-count-sort="18" data-listing-title-sort="Prepare TSS annotation 03" data-listing-filename-sort="region_tss_03_pol2_explore_data_R.ipynb">
+<td>
+<a href="./notebooks/05_prepare_region/region_tss_03_pol2_explore_data_R.html" class="title listing-title">Prepare TSS annotation 03</a>
+</td>
+<td>
+<span class="listing-subtitle">Explore and visualize the data</span>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+<nav id="notebooks_05_prepare_region-pagination" class="listing-pagination" aria-label="Page Navigation">
+  <ul class="pagination"></ul>
+</nav>
+</div>
+</section>
+</section>
+<section id="analysis" class="level1">
+<h1>Analysis</h1>
 <section id="step-starrmpra-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="step-starrmpra-analysis">Step: STARR/MPRA Analysis</h2>
 </section>
@@ -904,8 +1251,9 @@ No matching items
 <li>Quantitative comparison across assays</li>
 </ul>
 </section>
-<section id="testing" class="level2">
-<h2 class="anchored" data-anchor-id="testing">Testing</h2>
+</section>
+<section id="testing" class="level1">
+<h1>Testing</h1>
 <p>Below is a test notebook</p>
 <div id="listing-notebooks_test" class="quarto-listing quarto-listing-container-table">
 <div class="listing-actions-group">

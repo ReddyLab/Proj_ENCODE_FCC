@@ -1,0 +1,49 @@
+---
+title: "Chromatin States and TF Modules"
+---
+
+There are a few existing ENCODE genome characterization annotation using ENCODE ChIP-seq data. In this study, the annotation we integrates consisted of types of annotation. One type of the annotation mainly focused on histone modifications, while the other used the co-localization information of transcription factors.
+
+# Chromatin states
+
+<definition of chromatin states>
+
+The two main chromatin state mapping that we used for FCC comparisons were cCREs and ChromHMM.
+
+## ENCODE candidate cis-regulatory elements (cCREs)
+
+After intersecting multiple genomic information (histone modifications, CTCF
+cCREs applied a series of if-else statements to classify regions into different chromatin states.
+
+## ENCODE ChromHMM chromatin states
+
+ChromHMM is a multivariate hidden Markov model trained on histone modifications to identify chromatin states.
+
+# TF co-association modules
+
+
+Apply topic modeling to group different TFs into modules and summarized the binding sites of each TF module.
+
+The TF co-occupancy maps / colocalization
+
+figure: TF co-binding matrix
+
+
+
+
+- "K562.full.region.assignments.txt" has numbered columns referring to the Module numbers (1-77) 
+    - Note that there are not 77 total modules because only modules with >500 regions were kept
+    - followed by “chr”, “start”, “end”, and “TF” columns which refer to the genomic positions and all TFs bound at that region
+
+- "K562.TFzscore.txt” contains the TFs that passed our thresholds to be considered in the module. 
+    - Note that a TF may be listed as bound to a module region in the above file, but if it did not pass the threshold it was not considered a module member. 
+    - Details on our thresholds are below: a TF is kept in that module if it passed the following two conditions:
+        - `TF z-score > 0`. 
+            - The `TF z-score` = (# of regions bound by TF in the module of interest – mean(# of regions bound per module))/SD(# regions bound per module). 
+        - `module z-score > 0`. 
+            - The `module z-score` = (# of regions bound within module by TF of interest) – mean (# of regions bound by each TF within module))/SD(# regions bound per TF within module)
+
+![](/figure/05_prepare_region/fig.summary.tf_module.png){ width=40% }
+
+![](/figure/05_prepare_region/fig.matrix.module_tf_mapping.png){ width=40% }
+

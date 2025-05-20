@@ -1,7 +1,11 @@
 project:
   type: website
   output-dir: docs
-  
+
+resources:
+  - figure/**
+  - table/**
+
 website:
   title: "ENCODE FCC Project"
   navbar:

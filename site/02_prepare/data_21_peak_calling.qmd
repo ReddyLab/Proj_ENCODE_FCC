@@ -2,6 +2,14 @@
 title: "Peak calling"
 ---
 
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+#| label:   "Set environment"
+
+FD_DOC = "../"
+FD_TAB = file.path(FD_DOC, "table")
+FD_FIG = file.path(FD_DOC, "figure")
+```
+
 This page provides an overview of the peak calling methodologies applied to our functional characterization data. Our approach incorporates the results from various screen analysis tools to ensure comprehensive analysis for assay comparisons.
 
 # Unified processing pipeline for peak calling in high-throughput reporter assays
@@ -17,18 +25,75 @@ tilingMPRA_OL45.tar.gz
 WHG_STARR_TR.tar.gz
 ```
 
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+#| label:   "FCC Metadata (STARR/MPRA)"
+#| tbl-cap: "FCC Metadata (STARR/MPRA)"
+
+txt_fdiry = file.path(FD_TAB, "05_prepare_region")
+txt_fname = "table.region.fcc_starrmpra_junke.count.tsv"
+txt_fpath = file.path(txt_fdiry, txt_fname)
+
+dat = readr::read_tsv(txt_fpath)
+knitr::kable(dat)
+```
+
+![](/figure/05_prepare_region/fig.region.fcc_starrmpra_junke.distribution.region_length.png){ width=60% }
+
+In this study we are going to use only "either direction" calls.
+
 # Applying ChIP-seq differential peak calling (csaw) on ATAC-STARR-seq assay
 
 The csaw tool was utilized for differential peak calling in ATAC-STARR assay data to identify cis-regulatory element from the chromatin accessible regions. This process was conducted by Alex.
 
-# Applying MACS on ATAC-STARR-seq input libraries
+```
+KS91 (6Dna4Rna) -> KSMerge (6Dna7Rna)	
+Number of significant regions increased. Negative regions increased more than positive regions.
 
-The MACS tool was applied to ASTARR input libraries to acquire the chromatin accessible regions. This process was conducted by Alex.
+Total number of regions: 
+352,944 -> 359,104
+
+Significant regions (-log10Q >= 3):
+87,695 -> 93,208
+
+Percentage of negative and positive:
+- Postive: 0.61 (53110) -> 0.53 (49041)
+- Negative: 0.39 (34585) -> 0.47 (44167)
+```
+
+![](/figure/05_prepare_region/fig.region.fcc_astarr_csaw.distribution.log2fc.png){ width=40% }
 
 # CRISPR activity screen analysis (CASA) on CRISPRi-HCR Flow-FISH data
 
 The [CASA](https://github.com/sjgosai/casa) analysis pipeline, developed by the Sabeti Lab, has been applied to CRISPRi-HCR Flow-FISH data to identify regulatory elements. The results of significant regions can be downloaded from the ENCODE portal as follows:
 
+The table is downloaded by [ENCODE FCC CRSIRPi HCR FlowFISH](https://www.encodeproject.org/search/?type=FunctionalCharacterizationExperiment&type=FunctionalCharacterizationSeries&type=TransgenicEnhancerExperiment&config=FunctionalCharacterization&datapoint=false&control_type!=*&status=released&assay_title=Flow-FISH+CRISPR+screen&lab.title=Pardis+Sabeti%2C+Broad)
+
+![](/figure/05_prepare_region/fig.region.fcc_crispri_hcrff.distribution.score.png){ width=40% }
+
+![](/figure/05_prepare_region/fig.region.fcc_crispri_hcrff.distribution.region_length.png){ width=40% }
+
 # Calling DHS regions using DESeq analysis for CRISPRi-Growth
 
 For the analysis of CRISPRi-Growth data, DHS (DNase I hypersensitive sites) regions with significant effect on cell fittness have been identified using DESeq analysis, performed by Alex.
+
+There are ~ 1M (1,092,166) guides designed to screen across ~111K (111,702) DHS regions in K562.
+
+Method: DESeq2 analysis on all guides -> log2 foldchange and p-values
+
+Significant: Guide with fdr_0_05
+
+We got 6424 DHS regions containing at least one significant guides.
+
+```
+#Guide  (Total):      1092166 
+#Region (Total):      111702 
+#Guide  (padj<=0.05): 8200 
+#Region (padj<=0.05): 6242 
+
+#Guide  (Signif): 6242 
+#Region (Signif): 6242 
+```
+
+![](/figure/05_prepare_region/fig.region.fcc_crispri_growth.distribution.log2fc.png){ width=40% }
+
+

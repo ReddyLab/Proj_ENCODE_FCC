@@ -1,7 +1,0 @@
----
-title: "Chromatin States"
----
-
-# ENCODE candidate cis-regulatory elements (cCREs)
-
-# ENCODE ChromHMM chromatin states

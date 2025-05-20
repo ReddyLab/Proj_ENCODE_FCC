@@ -76,4 +76,25 @@ Distribution of LMPRA Log2 fold change
 ## CRISPRi Growth screen (CRISPRi-Growth)
 
 ## CRISPR E2G benchmark data (CRISPR-E2G)
+```
+EPCrisprBenchmark_ensemble_data_GRCh38.tsv
+Biosample: K562
+Reference
+Ulirsch2016
+Gasperini et al., 2019
+Wakabayashi2016
+Schraivogel et al., 2020
+Klann2017
+Thakore2015
+Xie2017
+Fulco2019
+Qi2018
+Huang2018
+Xu2015
+Fulco2016
+
+#EP links = 10,412
+#Regulated     =   487 (~4.7% of total)
+#Not Regulated = 9,924
+```
 
