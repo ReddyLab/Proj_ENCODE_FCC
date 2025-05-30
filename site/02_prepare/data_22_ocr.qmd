@@ -50,8 +50,17 @@ Distribution of length
 [TODO] Use figure panel to include the distribution of GC content and accessibility (TPM)
 https://quarto.org/docs/authoring/figures.html
 
-![](/figure/05_prepare_region/fig.region.fcc_astarr_macs_input.distribution.region_length.below3k.png){ width=40% }
+![](/figure/05_prepare_region/fig.region.fcc_astarr_macs_input_narrowpeak.distribution.region_length.below3k.png){ width=40% }
 
+![](/figure/05_prepare_region/fig.region.fcc_astarr_macs_input_merge.distribution.region_length.below3k.png){ width=40% }
+
+Distribution of GC content
+
+![](/figure/21_region_summary/fig.region.fcc_astarr_macs_input_merge.distribution.gc_content.png){ width=40% }
+
+Distribution of TSS proximity
+
+![](/figure/21_region_summary/fig.region_pair.atac_tss.distribution.distance.png){ width=40% }
 
 # ENCODE K562 ATAC/DNase peaks
 
@@ -63,5 +72,16 @@ Distribution of length
 
 ![](/figure/05_prepare_region/fig.region.compare_ocr.distribution.chromosome.png){ width=40% }
 
+Size comparison
 
+|Assay            |Index_Experiment |Index_File  |Method                                |Count   |
+|:----------------|:----------------|:-----------|:-------------------------------------|:-------|
+|ATAC-STARR-Input |ENCSR312UQM      |.           |Overlap peaks by bp across replicates |150,042 |
+|ATAC-STARR-Input |ENCSR312UQM      |.           |Union peaks by bp across replicates   |246,852 |
+|DNase-seq        |ENCSR000EKS      |ENCFF274YGF |peaks                                 |118,721 |
+|DNase-seq        |ENCSR000EOT      |ENCFF185XRG |peaks                                 |159,277 |
+|ATAC-seq         |ENCSR483RKN      |ENCFF558BLC |pseudoreplicated peaks                |203,874 |
+|ATAC-seq         |ENCSR483RKN      |ENCFF925CYR |IDR thresholded peaks                 |123,009 |
+|ATAC-seq         |ENCSR868FGK      |ENCFF333TAT |pseudoreplicated peaks                |269,800 |
+|ATAC-seq         |ENCSR868FGK      |ENCFF948AFM |IDR thresholded peaks                 |181,340 |
 

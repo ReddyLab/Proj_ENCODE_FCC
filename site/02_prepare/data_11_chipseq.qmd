@@ -1,3 +1,65 @@
 ---
 title: "ChIP-seq TF/Histone"
 ---
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+#| label:   "Set environment"
+
+FD_DOC = "../"
+FD_TAB = file.path(FD_DOC, "table")
+FD_FIG = file.path(FD_DOC, "figure")
+```
+
+# ENCODE ChIP-seq histone modification
+
+There are 19 histone ChIP-seq experiments being download.
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+#| label:   "chipseq_metadata_histone"
+#| tbl-cap: "ChIP-seq Metadata (Histone)"
+
+txt_fdiry = file.path(FD_TAB, "03_prepare_chipseq")
+txt_fname = "table.chipseq_histone.metadata.files.tsv"
+txt_fpath = file.path(txt_fdiry, txt_fname)
+
+dat = readr::read_tsv(txt_fpath)
+
+DT::datatable(
+    dat,
+    options = list(
+        pageLength = 5,            # rows per page
+        lengthMenu = c(5,10,20,50), # options for setting "rows per page"
+        searchHighlight = TRUE      
+    ),
+    class = "stripe hover",
+    rownames = FALSE
+)
+```
+
+# ENCODE ChIP-seq transcription factor
+
+There are 720 transcription factors ChIP-seq experiments being download.
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+#| label:   "chipseq_metadata_tf"
+#| tbl-cap: "ChIP-seq Metadata (TF)"
+
+txt_fdiry = file.path(FD_TAB, "03_prepare_chipseq")
+txt_fname = "table.chipseq_tf.metadata.files.tsv"
+txt_fpath = file.path(txt_fdiry, txt_fname)
+
+dat = readr::read_tsv(txt_fpath)
+
+DT::datatable(
+    dat,
+    options = list(
+        pageLength = 5,            # rows per page
+        lengthMenu = c(5,10,20,50), # options for setting "rows per page"
+        searchHighlight = TRUE      
+    ),
+    class = "stripe hover",
+    rownames = FALSE
+)
+```
+
+
