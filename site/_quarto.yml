@@ -36,12 +36,11 @@ website:
         contents: 01_setup/*
       - section: "Prepare"
         contents: 02_prepare/*
-      - section: "FCC Summary"
-        contents: 11_fcc_summary/*
-      - section: "FCC Coverage"
-        contents: 12_fcc_coverage/*
-      - section: "FCC Comparison"
-      - section: "HiC Coverage"
+      - section: "Coverage of FCC"
+        contents: 11_region_coverage_fcc/*
+      - section: "Coverage of ChIP-seq"
+      - section: "Coverage of Hi-C"
+      - section: "Region Annotation"
       - section: "FCC vs HiC"
       - section: "Test Notebook"
         contents:

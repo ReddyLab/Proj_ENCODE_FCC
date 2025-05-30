@@ -7,6 +7,18 @@ listing:
     sort: title
     type: table
     page-size: 5
+  - id: notebooks_02_prepare_hic
+    contents: notebooks/02_prepare_hic
+    fields: [title, subtitle]
+    sort: title
+    type: table
+    page-size: 5
+  - id: notebooks_03_prepare_chipseq
+    contents: notebooks/03_prepare_chipseq
+    fields: [title, subtitle]
+    sort: title
+    type: table
+    page-size: 5
   - id: notebooks_04_prepare_annotation
     contents: notebooks/04_prepare_annotation
     fields: [title, subtitle]
@@ -15,6 +27,18 @@ listing:
     page-size: 5  
   - id: notebooks_05_prepare_region
     contents: notebooks/05_prepare_region
+    fields: [title, subtitle]
+    sort: title
+    type: table
+    page-size: 5  
+  - id: notebooks_21_region_summary
+    contents: notebooks/21_region_summary
+    fields: [title, subtitle]
+    sort: title
+    type: table
+    page-size: 5  
+  - id: notebooks_24_region_annotation
+    contents: notebooks/24_region_annotation
     fields: [title, subtitle]
     sort: title
     type: table
@@ -41,7 +65,13 @@ This part is mainly about
 
 ## Step: Preparing Hi-C data
 
+::: {#notebooks_02_prepare_hic}
+:::
+
 ## Step: Preparing ChIP-seq data
+
+::: {#notebooks_03_prepare_chipseq}
+:::
 
 ## Step: Preparing Annotations
 
@@ -53,19 +83,21 @@ This part is mainly about
 ::: {#notebooks_05_prepare_region}
 :::
 
-# Analysis
+# Region coverage and annotation
 
-## Step: STARR/MPRA Analysis
+## Step: Region summary
 
-## Step: CRISPR Analysis
+::: {#notebooks_21_region_summary}
+:::
 
-## Step: Hi-C Analysis
+## Step: Region coverage (FCC)
 
-## Step: Region Coverage
+## Step: Region coverage (ChIP-seq)
 
-## Step: Region Annotation
+## Step: Region annotation
 
-## Step: Integrative Analysis
+::: {#notebooks_24_region_annotation}
+:::
 
 This part is mainly about
 

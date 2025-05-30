@@ -41,6 +41,41 @@ knitr::kable(dat)
 
 In this study we are going to use only "either direction" calls.
 
+## Column descriptions
+
+- **Chrom**: Name of the chromosome
+- **ChromStart**: The starting position of the feature in the chromosome
+- **ChromEnd**: The ending position of the feature in the chromosome
+- **Name**: Name
+- **Score**: Z score based on mean(logFC of all the bins)
+- **Strand**: Strand
+- **Group**: Assay name
+    - ASTARR = ATAC-STARR
+    - WSTARR = Whole genome (WHG)-STARR
+    - LMPRA = Lenti-MPRA
+    - TMPRA = Tiling MPRA
+- **Label**: Assay name + direction (A/R)
+    - A: enhancer calls (`merged_enhancer_peaks_in_either_orientation.bed.gz`)
+    - R: repressive calls (`merged_repressor_peaks_in_either_orientation.bed.gz`)
+- **Dataset**: Assay dataset
+    - TR = Reddy lab (Tim Reddy); ATAC-STARR and WHG-STARR
+    - Nadav = Ahituv lab (Nadav Ahituv); Lenti-MPRA
+    - OL = dataset label from Tewhey lab; Tiling MPRA
+
+
+## Summary counts
+
+I am using the merged peak files of `in_either_orientation` in Junke peak files.
+
+|Assay          |Active (A) |Repressive (R) |
+|:--------------|:----------|:--------------|
+|ATAC-STARR-seq |35,505     |154,337        |
+|WHG-STARR-seq  |79,738     |62,201         |
+|Lenti-MPRA     |25,648     |485            |
+|Tiling-MPRA    |6,017      |254            |
+|eSTARR-seq     |150        |341            |
+
+
 # Applying ChIP-seq differential peak calling (csaw) on ATAC-STARR-seq assay
 
 The csaw tool was utilized for differential peak calling in ATAC-STARR assay data to identify cis-regulatory element from the chromatin accessible regions. This process was conducted by Alex.
@@ -95,5 +130,47 @@ We got 6424 DHS regions containing at least one significant guides.
 ```
 
 ![](/figure/05_prepare_region/fig.region.fcc_crispri_growth.distribution.log2fc.png){ width=40% }
+
+# ENCODE E2G Benchmark data
+
+Build ENCODE E2G model
+
+Logistic regression
+
+Train and test the E2G model using their collected “gold standard” dataset
+
+- 10,375 total element-gene pairs collected from previous studies.
+    - 472 “positive” unique element-gene pairs
+    - 9,903 “negative” element-gene pairs
+
+> To train and evaluate models, we aggregated a gold-standard dataset of 10,411 element-gene pairs tested with CRISPR in K562 erythroleukemia cells, an ENCODE Tier 1 cell line. We re-analyzed and harmonized data from previous studies that used genetic perturbations (mostly CRISPR interference (CRISPRi)) to inhibit candidate enhancers and measure effects on gene expression 9,19,23–25 (see Note S1). Importantly, we developed approaches to compute statistical power for every tested element-gene pair, identifying 472 “positive” unique element-gene pairs where CRISPR perturbation of the element led to a significant decrease in gene expression (–1 to –93% effects, Fig. S1.1f) and 9,938 “negative” element-gene pairs where no significant reduction in expression was observed despite the experiment having good power to detect >15-25% effects on gene expression (Note S1). We trained logistic regression classifiers to distinguish positives from negatives using hold-one-chromosome-out cross-validation. Then, we applied the trained model to all element-gene pairs across the genome and to new cell types. 
+
+![](/figure/05_prepare_region/fig.region.encode_e2g.distribution.score.png){ width=40% }
+
+```
+Biosample: K562
+Reference
+Ulirsch2016
+Gasperini et al., 2019
+Wakabayashi2016
+Schraivogel et al., 2020
+Klann2017
+Thakore2015
+Xie2017
+Fulco2019
+Qi2018
+Huang2018
+Xu2015
+Fulco2016
+```
+
+
+```
+Source       Count
+Fulco2016:    103
+Fulco2019:    3501
+Gasperini et al., 2019: 5318
+Schraivogel et al., 2020: 1306
+```
 
 
