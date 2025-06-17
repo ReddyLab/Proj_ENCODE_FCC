@@ -1,0 +1,18 @@
+---
+title: "TSS"
+---
+
+# TSS
+
+There are total 11,892 TSS
+
+[Link](/02_prepare/data_23_others.qmd)
+
+Number of regions with TSS
+```
+$fcc_astarr_macs_input_overlap
+[1] 13732     5
+
+$fcc_astarr_macs_input_union
+[1] 15182     5
+```

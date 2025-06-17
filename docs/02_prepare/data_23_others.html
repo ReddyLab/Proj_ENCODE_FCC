@@ -348,12 +348,21 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Coverage of ChIP-seq</span></span>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Coverage of Hi-C</span></span>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Region Annotation</span></span>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Region Annotation</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../13_region_annotation/region_annot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TSS</span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
@@ -361,13 +370,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
  <span class="menu-text">Test Notebook</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notebooks/test/test_notebook.html" class="sidebar-item-text sidebar-link">
@@ -460,7 +469,14 @@ dat = dat %&gt;% dplyr::filter(TPM &gt; NUM_TPM_CUTOFF)</code></pre>
 </section>
 <section id="essential-gene" class="level1">
 <h1>Essential gene</h1>
+<p>DepMap: The Cancer Dependency Map project aims to identify cancer vulnerabilities by systematically profiling cancer cell lines and determining which genes are essential for their survival.</p>
+<p>Achilles: Project Achilles, a part of DepMap, focuses on identifying and cataloging gene essentiality in cancer cell lines using techniques like shRNA and CRISPR-Cas9.</p>
+<p>AchillesCommonEssentialControls: These are genes that are commonly essential across many cancer cell lines, used as positive controls in Project Achilles to assess the quality and reliability of the data. They help researchers ensure that the experimental setup is working as expected and that essential genes are behaving as predicted.</p>
+<p>note:</p>
+<p>AchillesCommonEssentialControls specifically from the second quarter of 2024 (v24Q2) data release</p>
+<p>This list is used for quality control and normalization purposes in the Achilles pipeline, as common essential genes are expected to show consistent dependency across cell lines.</p>
 <p>demap.v24Q2.AchillesCommonEssentialControls.csv</p>
+<p>Total: 1,247 genes</p>
 
 
 </section>
