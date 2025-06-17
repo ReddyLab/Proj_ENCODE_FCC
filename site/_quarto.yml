@@ -39,8 +39,8 @@ website:
       - section: "Coverage of FCC"
         contents: 11_region_coverage_fcc/*
       - section: "Coverage of ChIP-seq"
-      - section: "Coverage of Hi-C"
       - section: "Region Annotation"
+        contents: 13_region_annotation/*
       - section: "FCC vs HiC"
       - section: "Test Notebook"
         contents:

@@ -69,5 +69,19 @@ detail numbers
 
 # Essential gene
 
+DepMap: The Cancer Dependency Map project aims to identify cancer vulnerabilities by systematically profiling cancer cell lines and determining which genes are essential for their survival.
+
+Achilles: Project Achilles, a part of DepMap, focuses on identifying and cataloging gene essentiality in cancer cell lines using techniques like shRNA and CRISPR-Cas9.
+
+AchillesCommonEssentialControls: These are genes that are commonly essential across many cancer cell lines, used as positive controls in Project Achilles to assess the quality and reliability of the data. They help researchers ensure that the experimental setup is working as expected and that essential genes are behaving as predicted.
+
+note: 
+
+AchillesCommonEssentialControls specifically from the second quarter of 2024 (v24Q2) data release
+
+This list is used for quality control and normalization purposes in the Achilles pipeline, as common essential genes are expected to show consistent dependency across cell lines.
+
 demap.v24Q2.AchillesCommonEssentialControls.csv
+
+Total: 1,247 genes
 
