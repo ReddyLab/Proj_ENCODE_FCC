@@ -252,7 +252,8 @@ ul.task-list li input[type="checkbox"] {
 
     const options = {
       valueNames: ['listing-title','listing-subtitle',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      
+      page: 5,
+    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
       searchColumns: ["listing-title","listing-author"],
     };
 
@@ -619,11 +620,45 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./13_region_annotation/region_annot.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">TSS</span></a>
+  <a href="./13_region_annotation/region_annot_01_genome.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Intersect/Summarize genomic annotaions by accessible regions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13_region_annotation/region_annot_02_peak_calls.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Intersect/Summarize FCC peak calls by accessible regions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13_region_annotation/region_annot_03_starrmpra_vote2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Proximal/Distal-Active/Repressive CREs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13_region_annotation/region_annot_04_starrmpracrispr_vote2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Full CREs from STARR/MPRA/CRISPR assays</span></a>
   </div>
 </li>
       </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">FCC correlation</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">FCC comparison</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">FCC enrichment</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">FCC UMAP/Cluster</span></span>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
@@ -631,13 +666,13 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false">
  <span class="menu-text">Test Notebook</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./notebooks/test/test_notebook.html" class="sidebar-item-text sidebar-link">
@@ -929,7 +964,7 @@ Subtitle
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-file-modified-sort="1748610448215" data-listing-reading-time-sort="1" data-listing-word-count-sort="21" data-listing-title-sort="Prepare Hi-C data 01 (in situ Hi-C)" data-listing-filename-sort="hic_insitu_01_create_download_script_R.ipynb">
+<tr data-index="0" data-listing-file-modified-sort="1750774454390" data-listing-reading-time-sort="1" data-listing-word-count-sort="21" data-listing-title-sort="Prepare Hi-C data 01 (in situ Hi-C)" data-listing-filename-sort="hic_insitu_01_create_download_script_R.ipynb">
 <td>
 <a href="./notebooks/02_prepare_hic/hic_insitu_01_create_download_script_R.html" class="title listing-title">Prepare Hi-C data 01 (in situ Hi-C)</a>
 </td>
@@ -937,7 +972,7 @@ Subtitle
 <span class="listing-subtitle">Generate download script to download the data</span>
 </td>
 </tr>
-<tr data-index="1" data-listing-file-modified-sort="1748610448248" data-listing-reading-time-sort="1" data-listing-word-count-sort="21" data-listing-title-sort="Prepare Hi-C data 01 (intact Hi-C)" data-listing-filename-sort="hic_intact_01_create_download_script_R.ipynb">
+<tr data-index="1" data-listing-file-modified-sort="1750774454398" data-listing-reading-time-sort="1" data-listing-word-count-sort="21" data-listing-title-sort="Prepare Hi-C data 01 (intact Hi-C)" data-listing-filename-sort="hic_intact_01_create_download_script_R.ipynb">
 <td>
 <a href="./notebooks/02_prepare_hic/hic_intact_01_create_download_script_R.html" class="title listing-title">Prepare Hi-C data 01 (intact Hi-C)</a>
 </td>
@@ -945,7 +980,7 @@ Subtitle
 <span class="listing-subtitle">Generate download script to download the data</span>
 </td>
 </tr>
-<tr data-index="2" data-listing-file-modified-sort="1748610448288" data-listing-reading-time-sort="1" data-listing-word-count-sort="9" data-listing-title-sort="Prepare Hi-C data 01 (intact Hi-C; deep)" data-listing-filename-sort="hic_intact_deep_01_download_data_SH.ipynb">
+<tr data-index="2" data-listing-file-modified-sort="1750774454406" data-listing-reading-time-sort="1" data-listing-word-count-sort="9" data-listing-title-sort="Prepare Hi-C data 01 (intact Hi-C; deep)" data-listing-filename-sort="hic_intact_deep_01_download_data_SH.ipynb">
 <td>
 <a href="./notebooks/02_prepare_hic/hic_intact_deep_01_download_data_SH.html" class="title listing-title">Prepare Hi-C data 01 (intact Hi-C; deep)</a>
 </td>
@@ -953,7 +988,7 @@ Subtitle
 <span class="listing-subtitle">Download data</span>
 </td>
 </tr>
-<tr data-index="3" data-listing-file-modified-sort="1748610448219" data-listing-reading-time-sort="1" data-listing-word-count-sort="16" data-listing-title-sort="Prepare Hi-C data 02 (in situ Hi-C)" data-listing-filename-sort="hic_insitu_02_execute_download_data_SH.ipynb">
+<tr data-index="3" data-listing-file-modified-sort="1750774454391" data-listing-reading-time-sort="1" data-listing-word-count-sort="16" data-listing-title-sort="Prepare Hi-C data 02 (in situ Hi-C)" data-listing-filename-sort="hic_insitu_02_execute_download_data_SH.ipynb">
 <td>
 <a href="./notebooks/02_prepare_hic/hic_insitu_02_execute_download_data_SH.html" class="title listing-title">Prepare Hi-C data 02 (in situ Hi-C)</a>
 </td>
@@ -961,7 +996,7 @@ Subtitle
 <span class="listing-subtitle">Download the data</span>
 </td>
 </tr>
-<tr data-index="4" data-listing-file-modified-sort="1748610448252" data-listing-reading-time-sort="1" data-listing-word-count-sort="16" data-listing-title-sort="Prepare Hi-C data 02 (intact Hi-C)" data-listing-filename-sort="hic_intact_02_execute_download_script_SH.ipynb">
+<tr data-index="4" data-listing-file-modified-sort="1750774454399" data-listing-reading-time-sort="1" data-listing-word-count-sort="16" data-listing-title-sort="Prepare Hi-C data 02 (intact Hi-C)" data-listing-filename-sort="hic_intact_02_execute_download_script_SH.ipynb">
 <td>
 <a href="./notebooks/02_prepare_hic/hic_intact_02_execute_download_script_SH.html" class="title listing-title">Prepare Hi-C data 02 (intact Hi-C)</a>
 </td>
@@ -969,7 +1004,7 @@ Subtitle
 <span class="listing-subtitle">Download the data</span>
 </td>
 </tr>
-<tr data-index="5" data-listing-file-modified-sort="1748610448301" data-listing-reading-time-sort="1" data-listing-word-count-sort="6" data-listing-title-sort="Prepare Hi-C data 02 (intact Hi-C; deep)" data-listing-filename-sort="hic_intact_deep_02_check_download_data_SH.ipynb">
+<tr data-index="5" data-listing-file-modified-sort="1750774454407" data-listing-reading-time-sort="1" data-listing-word-count-sort="6" data-listing-title-sort="Prepare Hi-C data 02 (intact Hi-C; deep)" data-listing-filename-sort="hic_intact_deep_02_check_download_data_SH.ipynb">
 <td>
 <a href="./notebooks/02_prepare_hic/hic_intact_deep_02_check_download_data_SH.html" class="title listing-title">Prepare Hi-C data 02 (intact Hi-C; deep)</a>
 </td>
@@ -977,7 +1012,7 @@ Subtitle
 <span class="listing-subtitle">Check downloaded data</span>
 </td>
 </tr>
-<tr data-index="6" data-listing-file-modified-sort="1748610448225" data-listing-reading-time-sort="1" data-listing-word-count-sort="8" data-listing-title-sort="Prepare Hi-C data 03 (in situ Hi-C)" data-listing-filename-sort="hic_insitu_03_check_download_data_SH.ipynb">
+<tr data-index="6" data-listing-file-modified-sort="1750774454391" data-listing-reading-time-sort="1" data-listing-word-count-sort="8" data-listing-title-sort="Prepare Hi-C data 03 (in situ Hi-C)" data-listing-filename-sort="hic_insitu_03_check_download_data_SH.ipynb">
 <td>
 <a href="./notebooks/02_prepare_hic/hic_insitu_03_check_download_data_SH.html" class="title listing-title">Prepare Hi-C data 03 (in situ Hi-C)</a>
 </td>
@@ -985,7 +1020,7 @@ Subtitle
 <span class="listing-subtitle">Check downloaded data</span>
 </td>
 </tr>
-<tr data-index="7" data-listing-file-modified-sort="1748610448256" data-listing-reading-time-sort="1" data-listing-word-count-sort="8" data-listing-title-sort="Prepare Hi-C data 03 (intact Hi-C)" data-listing-filename-sort="hic_intact_03_check_download_data_SH.ipynb">
+<tr data-index="7" data-listing-file-modified-sort="1750774454400" data-listing-reading-time-sort="1" data-listing-word-count-sort="8" data-listing-title-sort="Prepare Hi-C data 03 (intact Hi-C)" data-listing-filename-sort="hic_intact_03_check_download_data_SH.ipynb">
 <td>
 <a href="./notebooks/02_prepare_hic/hic_intact_03_check_download_data_SH.html" class="title listing-title">Prepare Hi-C data 03 (intact Hi-C)</a>
 </td>
@@ -993,7 +1028,7 @@ Subtitle
 <span class="listing-subtitle">Check downloaded data</span>
 </td>
 </tr>
-<tr data-index="8" data-listing-file-modified-sort="1748610448229" data-listing-reading-time-sort="1" data-listing-word-count-sort="18" data-listing-title-sort="Prepare Hi-C data 11 (in situ Hi-C)" data-listing-filename-sort="hic_insitu_11_export_region_loop_R.ipynb">
+<tr data-index="8" data-listing-file-modified-sort="1750774454392" data-listing-reading-time-sort="1" data-listing-word-count-sort="18" data-listing-title-sort="Prepare Hi-C data 11 (in situ Hi-C)" data-listing-filename-sort="hic_insitu_11_export_region_loop_R.ipynb">
 <td>
 <a href="./notebooks/02_prepare_hic/hic_insitu_11_export_region_loop_R.html" class="title listing-title">Prepare Hi-C data 11 (in situ Hi-C)</a>
 </td>
@@ -1001,7 +1036,7 @@ Subtitle
 <span class="listing-subtitle">Prepare data (Loop)</span>
 </td>
 </tr>
-<tr data-index="9" data-listing-file-modified-sort="1748610448273" data-listing-reading-time-sort="1" data-listing-word-count-sort="27" data-listing-title-sort="Prepare Hi-C data 11 (intact Hi-C)" data-listing-filename-sort="hic_intact_11_export_region_loop_R.ipynb">
+<tr data-index="9" data-listing-file-modified-sort="1750774454401" data-listing-reading-time-sort="1" data-listing-word-count-sort="27" data-listing-title-sort="Prepare Hi-C data 11 (intact Hi-C)" data-listing-filename-sort="hic_intact_11_export_region_loop_R.ipynb">
 <td>
 <a href="./notebooks/02_prepare_hic/hic_intact_11_export_region_loop_R.html" class="title listing-title">Prepare Hi-C data 11 (intact Hi-C)</a>
 </td>
@@ -1009,7 +1044,7 @@ Subtitle
 <span class="listing-subtitle">Prepare data (Loop)</span>
 </td>
 </tr>
-<tr data-index="10" data-listing-file-modified-sort="1748610448336" data-listing-reading-time-sort="1" data-listing-word-count-sort="27" data-listing-title-sort="Prepare Hi-C data 11 (intact Hi-C; deep)" data-listing-filename-sort="hic_intact_deep_11_export_region_loop_R.ipynb">
+<tr data-index="10" data-listing-file-modified-sort="1750774454408" data-listing-reading-time-sort="1" data-listing-word-count-sort="27" data-listing-title-sort="Prepare Hi-C data 11 (intact Hi-C; deep)" data-listing-filename-sort="hic_intact_deep_11_export_region_loop_R.ipynb">
 <td>
 <a href="./notebooks/02_prepare_hic/hic_intact_deep_11_export_region_loop_R.html" class="title listing-title">Prepare Hi-C data 11 (intact Hi-C; deep)</a>
 </td>
@@ -1017,7 +1052,7 @@ Subtitle
 <span class="listing-subtitle">Prepare data (Loop)</span>
 </td>
 </tr>
-<tr data-index="11" data-listing-file-modified-sort="1748610448234" data-listing-reading-time-sort="1" data-listing-word-count-sort="14" data-listing-title-sort="Prepare Hi-C data 12 (in situ Hi-C)" data-listing-filename-sort="hic_insitu_12_export_region_TAD_R.ipynb">
+<tr data-index="11" data-listing-file-modified-sort="1750774454393" data-listing-reading-time-sort="1" data-listing-word-count-sort="14" data-listing-title-sort="Prepare Hi-C data 12 (in situ Hi-C)" data-listing-filename-sort="hic_insitu_12_export_region_TAD_R.ipynb">
 <td>
 <a href="./notebooks/02_prepare_hic/hic_insitu_12_export_region_TAD_R.html" class="title listing-title">Prepare Hi-C data 12 (in situ Hi-C)</a>
 </td>
@@ -1025,7 +1060,7 @@ Subtitle
 <span class="listing-subtitle">Prepare data (TAD)</span>
 </td>
 </tr>
-<tr data-index="12" data-listing-file-modified-sort="1748610448276" data-listing-reading-time-sort="1" data-listing-word-count-sort="14" data-listing-title-sort="Prepare Hi-C data 12 (intact Hi-C)" data-listing-filename-sort="hic_intact_12_export_region_TAD_R.ipynb">
+<tr data-index="12" data-listing-file-modified-sort="1750774454402" data-listing-reading-time-sort="1" data-listing-word-count-sort="14" data-listing-title-sort="Prepare Hi-C data 12 (intact Hi-C)" data-listing-filename-sort="hic_intact_12_export_region_TAD_R.ipynb">
 <td>
 <a href="./notebooks/02_prepare_hic/hic_intact_12_export_region_TAD_R.html" class="title listing-title">Prepare Hi-C data 12 (intact Hi-C)</a>
 </td>
@@ -1033,7 +1068,7 @@ Subtitle
 <span class="listing-subtitle">Prepare data (TAD)</span>
 </td>
 </tr>
-<tr data-index="13" data-listing-file-modified-sort="1748610448339" data-listing-reading-time-sort="1" data-listing-word-count-sort="9" data-listing-title-sort="Prepare Hi-C data 12 (intact Hi-C; deep)" data-listing-filename-sort="hic_intact_deep_12_export_metadata_R.ipynb">
+<tr data-index="13" data-listing-file-modified-sort="1750774454409" data-listing-reading-time-sort="1" data-listing-word-count-sort="9" data-listing-title-sort="Prepare Hi-C data 12 (intact Hi-C; deep)" data-listing-filename-sort="hic_intact_deep_12_export_metadata_R.ipynb">
 <td>
 <a href="./notebooks/02_prepare_hic/hic_intact_deep_12_export_metadata_R.html" class="title listing-title">Prepare Hi-C data 12 (intact Hi-C; deep)</a>
 </td>
@@ -1041,7 +1076,7 @@ Subtitle
 <span class="listing-subtitle">Create metadata</span>
 </td>
 </tr>
-<tr data-index="14" data-listing-file-modified-sort="1748610448237" data-listing-reading-time-sort="1" data-listing-word-count-sort="9" data-listing-title-sort="Prepare Hi-C data 13 (in situ Hi-C)" data-listing-filename-sort="hic_insitu_13_export_metadata_R.ipynb">
+<tr data-index="14" data-listing-file-modified-sort="1750774454394" data-listing-reading-time-sort="1" data-listing-word-count-sort="9" data-listing-title-sort="Prepare Hi-C data 13 (in situ Hi-C)" data-listing-filename-sort="hic_insitu_13_export_metadata_R.ipynb">
 <td>
 <a href="./notebooks/02_prepare_hic/hic_insitu_13_export_metadata_R.html" class="title listing-title">Prepare Hi-C data 13 (in situ Hi-C)</a>
 </td>
@@ -1049,7 +1084,7 @@ Subtitle
 <span class="listing-subtitle">Create metadata</span>
 </td>
 </tr>
-<tr data-index="15" data-listing-file-modified-sort="1748610448279" data-listing-reading-time-sort="1" data-listing-word-count-sort="9" data-listing-title-sort="Prepare Hi-C data 13 (intact Hi-C)" data-listing-filename-sort="hic_intact_13_export_metadata_R.ipynb">
+<tr data-index="15" data-listing-file-modified-sort="1750774454403" data-listing-reading-time-sort="1" data-listing-word-count-sort="9" data-listing-title-sort="Prepare Hi-C data 13 (intact Hi-C)" data-listing-filename-sort="hic_intact_13_export_metadata_R.ipynb">
 <td>
 <a href="./notebooks/02_prepare_hic/hic_intact_13_export_metadata_R.html" class="title listing-title">Prepare Hi-C data 13 (intact Hi-C)</a>
 </td>
@@ -1057,7 +1092,7 @@ Subtitle
 <span class="listing-subtitle">Create metadata</span>
 </td>
 </tr>
-<tr data-index="16" data-listing-file-modified-sort="1748610448240" data-listing-reading-time-sort="1" data-listing-word-count-sort="23" data-listing-title-sort="Prepare Hi-C data 21 (in situ Hi-C)" data-listing-filename-sort="hic_insitu_21_explore_region_loop_R.ipynb">
+<tr data-index="16" data-listing-file-modified-sort="1750774454395" data-listing-reading-time-sort="1" data-listing-word-count-sort="23" data-listing-title-sort="Prepare Hi-C data 21 (in situ Hi-C)" data-listing-filename-sort="hic_insitu_21_explore_region_loop_R.ipynb">
 <td>
 <a href="./notebooks/02_prepare_hic/hic_insitu_21_explore_region_loop_R.html" class="title listing-title">Prepare Hi-C data 21 (in situ Hi-C)</a>
 </td>
@@ -1065,7 +1100,7 @@ Subtitle
 <span class="listing-subtitle">Explore data (Loop)</span>
 </td>
 </tr>
-<tr data-index="17" data-listing-file-modified-sort="1748610448282" data-listing-reading-time-sort="1" data-listing-word-count-sort="23" data-listing-title-sort="Prepare Hi-C data 21 (intact Hi-C)" data-listing-filename-sort="hic_intact_21_explore_region_loop_R.ipynb">
+<tr data-index="17" data-listing-file-modified-sort="1750774454404" data-listing-reading-time-sort="1" data-listing-word-count-sort="23" data-listing-title-sort="Prepare Hi-C data 21 (intact Hi-C)" data-listing-filename-sort="hic_intact_21_explore_region_loop_R.ipynb">
 <td>
 <a href="./notebooks/02_prepare_hic/hic_intact_21_explore_region_loop_R.html" class="title listing-title">Prepare Hi-C data 21 (intact Hi-C)</a>
 </td>
@@ -1073,7 +1108,7 @@ Subtitle
 <span class="listing-subtitle">Explore data (Loop)</span>
 </td>
 </tr>
-<tr data-index="18" data-listing-file-modified-sort="1748610448341" data-listing-reading-time-sort="1" data-listing-word-count-sort="44" data-listing-title-sort="Prepare Hi-C data 21 (intact Hi-C; deep)" data-listing-filename-sort="hic_intact_deep_21_explore_region_loop_R.ipynb">
+<tr data-index="18" data-listing-file-modified-sort="1750774454410" data-listing-reading-time-sort="1" data-listing-word-count-sort="44" data-listing-title-sort="Prepare Hi-C data 21 (intact Hi-C; deep)" data-listing-filename-sort="hic_intact_deep_21_explore_region_loop_R.ipynb">
 <td>
 <a href="./notebooks/02_prepare_hic/hic_intact_deep_21_explore_region_loop_R.html" class="title listing-title">Prepare Hi-C data 21 (intact Hi-C; deep)</a>
 </td>
@@ -1081,7 +1116,7 @@ Subtitle
 <span class="listing-subtitle">Explore data (Loop)</span>
 </td>
 </tr>
-<tr data-index="19" data-listing-file-modified-sort="1748610448243" data-listing-reading-time-sort="1" data-listing-word-count-sort="14" data-listing-title-sort="Prepare Hi-C data 22 (in situ Hi-C)" data-listing-filename-sort="hic_insitu_22_explore_region_TAD_R.ipynb">
+<tr data-index="19" data-listing-file-modified-sort="1750774454397" data-listing-reading-time-sort="1" data-listing-word-count-sort="14" data-listing-title-sort="Prepare Hi-C data 22 (in situ Hi-C)" data-listing-filename-sort="hic_insitu_22_explore_region_TAD_R.ipynb">
 <td>
 <a href="./notebooks/02_prepare_hic/hic_insitu_22_explore_region_TAD_R.html" class="title listing-title">Prepare Hi-C data 22 (in situ Hi-C)</a>
 </td>
@@ -1089,7 +1124,7 @@ Subtitle
 <span class="listing-subtitle">Explore data (TAD)</span>
 </td>
 </tr>
-<tr data-index="20" data-listing-file-modified-sort="1748610448286" data-listing-reading-time-sort="1" data-listing-word-count-sort="14" data-listing-title-sort="Prepare Hi-C data 22 (intact Hi-C)" data-listing-filename-sort="hic_intact_22_explore_region_TAD_R.ipynb">
+<tr data-index="20" data-listing-file-modified-sort="1750774454405" data-listing-reading-time-sort="1" data-listing-word-count-sort="14" data-listing-title-sort="Prepare Hi-C data 22 (intact Hi-C)" data-listing-filename-sort="hic_intact_22_explore_region_TAD_R.ipynb">
 <td>
 <a href="./notebooks/02_prepare_hic/hic_intact_22_explore_region_TAD_R.html" class="title listing-title">Prepare Hi-C data 22 (intact Hi-C)</a>
 </td>
@@ -1097,7 +1132,7 @@ Subtitle
 <span class="listing-subtitle">Explore data (TAD)</span>
 </td>
 </tr>
-<tr data-index="21" data-listing-file-modified-sort="1748610448343" data-listing-reading-time-sort="1" data-listing-word-count-sort="2" data-listing-title-sort="Prepare Hi-C data 22 (intact Hi-C; deep)" data-listing-filename-sort="hic_intact_deep_22_explore_matrix_PY.ipynb">
+<tr data-index="21" data-listing-file-modified-sort="1750774454412" data-listing-reading-time-sort="1" data-listing-word-count-sort="2" data-listing-title-sort="Prepare Hi-C data 22 (intact Hi-C; deep)" data-listing-filename-sort="hic_intact_deep_22_explore_matrix_PY.ipynb">
 <td>
 <a href="./notebooks/02_prepare_hic/hic_intact_deep_22_explore_matrix_PY.html" class="title listing-title">Prepare Hi-C data 22 (intact Hi-C; deep)</a>
 </td>
@@ -1105,7 +1140,7 @@ Subtitle
 <span class="listing-subtitle">Explore data (Matrix)</span>
 </td>
 </tr>
-<tr data-index="22" data-listing-file-modified-sort="1748610448247" data-listing-reading-time-sort="1" data-listing-word-count-sort="2" data-listing-title-sort="Prepare Hi-C data 23 (in situ Hi-C)" data-listing-filename-sort="hic_insitu_23_explore_matrix_PY.ipynb">
+<tr data-index="22" data-listing-file-modified-sort="1750774454398" data-listing-reading-time-sort="1" data-listing-word-count-sort="2" data-listing-title-sort="Prepare Hi-C data 23 (in situ Hi-C)" data-listing-filename-sort="hic_insitu_23_explore_matrix_PY.ipynb">
 <td>
 <a href="./notebooks/02_prepare_hic/hic_insitu_23_explore_matrix_PY.html" class="title listing-title">Prepare Hi-C data 23 (in situ Hi-C)</a>
 </td>
@@ -1154,7 +1189,7 @@ Subtitle
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-file-modified-sort="1748610451941" data-listing-reading-time-sort="1" data-listing-word-count-sort="52" data-listing-title-sort="Prepare ENCODE ChIP-seq Histone 01" data-listing-filename-sort="chip_histone_01_create_download_script_R.ipynb">
+<tr data-index="0" data-listing-file-modified-sort="1750774456094" data-listing-reading-time-sort="1" data-listing-word-count-sort="52" data-listing-title-sort="Prepare ENCODE ChIP-seq Histone 01" data-listing-filename-sort="chip_histone_01_create_download_script_R.ipynb">
 <td>
 <a href="./notebooks/03_prepare_chipseq/chip_histone_01_create_download_script_R.html" class="title listing-title">Prepare ENCODE ChIP-seq Histone 01</a>
 </td>
@@ -1162,7 +1197,7 @@ Subtitle
 <span class="listing-subtitle">Generate download script to download the data</span>
 </td>
 </tr>
-<tr data-index="1" data-listing-file-modified-sort="1748610451943" data-listing-reading-time-sort="1" data-listing-word-count-sort="18" data-listing-title-sort="Prepare ENCODE ChIP-seq Histone 02" data-listing-filename-sort="chip_histone_02_execute_download_files_SH.ipynb">
+<tr data-index="1" data-listing-file-modified-sort="1750774456096" data-listing-reading-time-sort="1" data-listing-word-count-sort="18" data-listing-title-sort="Prepare ENCODE ChIP-seq Histone 02" data-listing-filename-sort="chip_histone_02_execute_download_files_SH.ipynb">
 <td>
 <a href="./notebooks/03_prepare_chipseq/chip_histone_02_execute_download_files_SH.html" class="title listing-title">Prepare ENCODE ChIP-seq Histone 02</a>
 </td>
@@ -1170,7 +1205,7 @@ Subtitle
 <span class="listing-subtitle">Download the data</span>
 </td>
 </tr>
-<tr data-index="2" data-listing-file-modified-sort="1748610451944" data-listing-reading-time-sort="1" data-listing-word-count-sort="17" data-listing-title-sort="Prepare ENCODE ChIP-seq Histone 03" data-listing-filename-sort="chip_histone_03_check_download_files_R.ipynb">
+<tr data-index="2" data-listing-file-modified-sort="1750774456097" data-listing-reading-time-sort="1" data-listing-word-count-sort="17" data-listing-title-sort="Prepare ENCODE ChIP-seq Histone 03" data-listing-filename-sort="chip_histone_03_check_download_files_R.ipynb">
 <td>
 <a href="./notebooks/03_prepare_chipseq/chip_histone_03_check_download_files_R.html" class="title listing-title">Prepare ENCODE ChIP-seq Histone 03</a>
 </td>
@@ -1178,7 +1213,7 @@ Subtitle
 <span class="listing-subtitle">Check download files</span>
 </td>
 </tr>
-<tr data-index="3" data-listing-file-modified-sort="1748610451945" data-listing-reading-time-sort="1" data-listing-word-count-sort="28" data-listing-title-sort="Prepare ENCODE ChIP-seq Histone 11" data-listing-filename-sort="chip_histone_11_export_region_SH.ipynb">
+<tr data-index="3" data-listing-file-modified-sort="1750774456097" data-listing-reading-time-sort="1" data-listing-word-count-sort="28" data-listing-title-sort="Prepare ENCODE ChIP-seq Histone 11" data-listing-filename-sort="chip_histone_11_export_region_SH.ipynb">
 <td>
 <a href="./notebooks/03_prepare_chipseq/chip_histone_11_export_region_SH.html" class="title listing-title">Prepare ENCODE ChIP-seq Histone 11</a>
 </td>
@@ -1186,7 +1221,15 @@ Subtitle
 <span class="listing-subtitle">Export region data to <code>result</code> folder</span>
 </td>
 </tr>
-<tr data-index="4" data-listing-file-modified-sort="1748610451947" data-listing-reading-time-sort="1" data-listing-word-count-sort="11" data-listing-title-sort="Prepare ENCODE ChIP-seq Histone 12" data-listing-filename-sort="chip_histone_12_export_signal_SH.ipynb">
+<tr data-index="4" data-listing-file-modified-sort="1750774456212" data-listing-reading-time-sort="1" data-listing-word-count-sort="104" data-listing-title-sort="Prepare ENCODE ChIP-seq Histone 11" data-listing-filename-sort="chip_tf_full_11_export_region_SH.ipynb">
+<td>
+<a href="./notebooks/03_prepare_chipseq/chip_tf_full_11_export_region_SH.html" class="title listing-title">Prepare ENCODE ChIP-seq Histone 11</a>
+</td>
+<td>
+<span class="listing-subtitle">Export region data to <code>result</code> folder</span>
+</td>
+</tr>
+<tr data-index="5" data-listing-file-modified-sort="1750774456098" data-listing-reading-time-sort="1" data-listing-word-count-sort="11" data-listing-title-sort="Prepare ENCODE ChIP-seq Histone 12" data-listing-filename-sort="chip_histone_12_export_signal_SH.ipynb">
 <td>
 <a href="./notebooks/03_prepare_chipseq/chip_histone_12_export_signal_SH.html" class="title listing-title">Prepare ENCODE ChIP-seq Histone 12</a>
 </td>
@@ -1194,7 +1237,15 @@ Subtitle
 <span class="listing-subtitle">Export signal data to <code>result</code> folder</span>
 </td>
 </tr>
-<tr data-index="5" data-listing-file-modified-sort="1748610451948" data-listing-reading-time-sort="1" data-listing-word-count-sort="39" data-listing-title-sort="Prepare ENCODE ChIP-seq Histone 13" data-listing-filename-sort="chip_histone_13_export_metadata_region_R.ipynb">
+<tr data-index="6" data-listing-file-modified-sort="1750774456213" data-listing-reading-time-sort="1" data-listing-word-count-sort="11" data-listing-title-sort="Prepare ENCODE ChIP-seq Histone 12" data-listing-filename-sort="chip_tf_full_12_export_signal_SH.ipynb">
+<td>
+<a href="./notebooks/03_prepare_chipseq/chip_tf_full_12_export_signal_SH.html" class="title listing-title">Prepare ENCODE ChIP-seq Histone 12</a>
+</td>
+<td>
+<span class="listing-subtitle">Export signal data to <code>result</code> folder</span>
+</td>
+</tr>
+<tr data-index="7" data-listing-file-modified-sort="1750774456099" data-listing-reading-time-sort="1" data-listing-word-count-sort="39" data-listing-title-sort="Prepare ENCODE ChIP-seq Histone 13" data-listing-filename-sort="chip_histone_13_export_metadata_region_R.ipynb">
 <td>
 <a href="./notebooks/03_prepare_chipseq/chip_histone_13_export_metadata_region_R.html" class="title listing-title">Prepare ENCODE ChIP-seq Histone 13</a>
 </td>
@@ -1202,7 +1253,15 @@ Subtitle
 <span class="listing-subtitle">Create metadata table of region</span>
 </td>
 </tr>
-<tr data-index="6" data-listing-file-modified-sort="1748610451950" data-listing-reading-time-sort="1" data-listing-word-count-sort="9" data-listing-title-sort="Prepare ENCODE ChIP-seq Histone 14" data-listing-filename-sort="chip_histone_14_export_metadata_signal_R.ipynb">
+<tr data-index="8" data-listing-file-modified-sort="1750774456213" data-listing-reading-time-sort="1" data-listing-word-count-sort="39" data-listing-title-sort="Prepare ENCODE ChIP-seq Histone 13" data-listing-filename-sort="chip_tf_full_13_export_metadata_region_R.ipynb">
+<td>
+<a href="./notebooks/03_prepare_chipseq/chip_tf_full_13_export_metadata_region_R.html" class="title listing-title">Prepare ENCODE ChIP-seq Histone 13</a>
+</td>
+<td>
+<span class="listing-subtitle">Create metadata table of region</span>
+</td>
+</tr>
+<tr data-index="9" data-listing-file-modified-sort="1750774456100" data-listing-reading-time-sort="1" data-listing-word-count-sort="15" data-listing-title-sort="Prepare ENCODE ChIP-seq Histone 14" data-listing-filename-sort="chip_histone_14_export_metadata_signal_R.ipynb">
 <td>
 <a href="./notebooks/03_prepare_chipseq/chip_histone_14_export_metadata_signal_R.html" class="title listing-title">Prepare ENCODE ChIP-seq Histone 14</a>
 </td>
@@ -1210,7 +1269,15 @@ Subtitle
 <span class="listing-subtitle">Create metadata table of signal</span>
 </td>
 </tr>
-<tr data-index="7" data-listing-file-modified-sort="1748610452020" data-listing-reading-time-sort="1" data-listing-word-count-sort="49" data-listing-title-sort="Prepare ENCODE ChIP-seq Subset 01" data-listing-filename-sort="chip_tf_subset_01_create_download_script_R.ipynb">
+<tr data-index="10" data-listing-file-modified-sort="1750774456214" data-listing-reading-time-sort="1" data-listing-word-count-sort="15" data-listing-title-sort="Prepare ENCODE ChIP-seq Histone 14" data-listing-filename-sort="chip_tf_full_14_export_metadata_signal_R.ipynb">
+<td>
+<a href="./notebooks/03_prepare_chipseq/chip_tf_full_14_export_metadata_signal_R.html" class="title listing-title">Prepare ENCODE ChIP-seq Histone 14</a>
+</td>
+<td>
+<span class="listing-subtitle">Create metadata table of signal</span>
+</td>
+</tr>
+<tr data-index="11" data-listing-file-modified-sort="1750774456153" data-listing-reading-time-sort="1" data-listing-word-count-sort="49" data-listing-title-sort="Prepare ENCODE ChIP-seq Subset 01" data-listing-filename-sort="chip_tf_subset_01_create_download_script_R.ipynb">
 <td>
 <a href="./notebooks/03_prepare_chipseq/chip_tf_subset_01_create_download_script_R.html" class="title listing-title">Prepare ENCODE ChIP-seq Subset 01</a>
 </td>
@@ -1218,7 +1285,7 @@ Subtitle
 <span class="listing-subtitle">Generate download script to download the data</span>
 </td>
 </tr>
-<tr data-index="8" data-listing-file-modified-sort="1748610452025" data-listing-reading-time-sort="1" data-listing-word-count-sort="5" data-listing-title-sort="Prepare ENCODE ChIP-seq Subset 02" data-listing-filename-sort="chip_tf_subset_02_subset_execute_download_SH.ipynb">
+<tr data-index="12" data-listing-file-modified-sort="1750774456154" data-listing-reading-time-sort="1" data-listing-word-count-sort="5" data-listing-title-sort="Prepare ENCODE ChIP-seq Subset 02" data-listing-filename-sort="chip_tf_subset_02_subset_execute_download_SH.ipynb">
 <td>
 <a href="./notebooks/03_prepare_chipseq/chip_tf_subset_02_subset_execute_download_SH.html" class="title listing-title">Prepare ENCODE ChIP-seq Subset 02</a>
 </td>
@@ -1226,7 +1293,7 @@ Subtitle
 <span class="listing-subtitle">Download the data</span>
 </td>
 </tr>
-<tr data-index="9" data-listing-file-modified-sort="1748610452028" data-listing-reading-time-sort="1" data-listing-word-count-sort="24" data-listing-title-sort="Prepare ENCODE ChIP-seq Subset 03" data-listing-filename-sort="chip_tf_subset_03_export_data_SH.ipynb">
+<tr data-index="13" data-listing-file-modified-sort="1750774456154" data-listing-reading-time-sort="1" data-listing-word-count-sort="24" data-listing-title-sort="Prepare ENCODE ChIP-seq Subset 03" data-listing-filename-sort="chip_tf_subset_03_export_data_SH.ipynb">
 <td>
 <a href="./notebooks/03_prepare_chipseq/chip_tf_subset_03_export_data_SH.html" class="title listing-title">Prepare ENCODE ChIP-seq Subset 03</a>
 </td>
@@ -1234,12 +1301,44 @@ Subtitle
 <span class="listing-subtitle">Sort data and export to <code>result</code> folder</span>
 </td>
 </tr>
-<tr data-index="10" data-listing-file-modified-sort="1748610452034" data-listing-reading-time-sort="1" data-listing-word-count-sort="34" data-listing-title-sort="Prepare ENCODE ChIP-seq Subset 04" data-listing-filename-sort="chip_tf_subset_04_export_metadata_R.ipynb">
+<tr data-index="14" data-listing-file-modified-sort="1750774456155" data-listing-reading-time-sort="1" data-listing-word-count-sort="34" data-listing-title-sort="Prepare ENCODE ChIP-seq Subset 04" data-listing-filename-sort="chip_tf_subset_04_export_metadata_R.ipynb">
 <td>
 <a href="./notebooks/03_prepare_chipseq/chip_tf_subset_04_export_metadata_R.html" class="title listing-title">Prepare ENCODE ChIP-seq Subset 04</a>
 </td>
 <td>
 <span class="listing-subtitle">Create metadata table for downstream analysis</span>
+</td>
+</tr>
+<tr data-index="15" data-listing-file-modified-sort="1750774456208" data-listing-reading-time-sort="1" data-listing-word-count-sort="45" data-listing-title-sort="Prepare ENCODE ChIP-seq TF 01" data-listing-filename-sort="chip_tf_full_01_create_download_script_R.ipynb">
+<td>
+<a href="./notebooks/03_prepare_chipseq/chip_tf_full_01_create_download_script_R.html" class="title listing-title">Prepare ENCODE ChIP-seq TF 01</a>
+</td>
+<td>
+<span class="listing-subtitle">Generate download script to download the data</span>
+</td>
+</tr>
+<tr data-index="16" data-listing-file-modified-sort="1750774456209" data-listing-reading-time-sort="1" data-listing-word-count-sort="106" data-listing-title-sort="Prepare ENCODE ChIP-seq TF 02" data-listing-filename-sort="chip_tf_full_02_execute_download_region_SH.ipynb">
+<td>
+<a href="./notebooks/03_prepare_chipseq/chip_tf_full_02_execute_download_region_SH.html" class="title listing-title">Prepare ENCODE ChIP-seq TF 02</a>
+</td>
+<td>
+<span class="listing-subtitle">Download the data (Region)</span>
+</td>
+</tr>
+<tr data-index="17" data-listing-file-modified-sort="1750774456210" data-listing-reading-time-sort="2" data-listing-word-count-sort="202" data-listing-title-sort="Prepare ENCODE ChIP-seq TF 02" data-listing-filename-sort="chip_tf_full_03_execute_download_signal_fold_change_SH.ipynb">
+<td>
+<a href="./notebooks/03_prepare_chipseq/chip_tf_full_03_execute_download_signal_fold_change_SH.html" class="title listing-title">Prepare ENCODE ChIP-seq TF 02</a>
+</td>
+<td>
+<span class="listing-subtitle">Download the data (Signal fold change)</span>
+</td>
+</tr>
+<tr data-index="18" data-listing-file-modified-sort="1750774456211" data-listing-reading-time-sort="1" data-listing-word-count-sort="17" data-listing-title-sort="Prepare ENCODE ChIP-seq TF 03" data-listing-filename-sort="chip_tf_full_04_check_download_files_R.ipynb">
+<td>
+<a href="./notebooks/03_prepare_chipseq/chip_tf_full_04_check_download_files_R.html" class="title listing-title">Prepare ENCODE ChIP-seq TF 03</a>
+</td>
+<td>
+<span class="listing-subtitle">Check download files</span>
 </td>
 </tr>
 </tbody>
@@ -1283,7 +1382,7 @@ Subtitle
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-file-modified-sort="1748610455149" data-listing-reading-time-sort="1" data-listing-word-count-sort="30" data-listing-title-sort="Prepare ENCODE RNA-seq 01" data-listing-filename-sort="rnaseq_01_total_create_download_script_R.ipynb">
+<tr data-index="0" data-listing-file-modified-sort="1750774457814" data-listing-reading-time-sort="1" data-listing-word-count-sort="30" data-listing-title-sort="Prepare ENCODE RNA-seq 01" data-listing-filename-sort="rnaseq_01_total_create_download_script_R.ipynb">
 <td>
 <a href="./notebooks/04_prepare_annotation/rnaseq_01_total_create_download_script_R.html" class="title listing-title">Prepare ENCODE RNA-seq 01</a>
 </td>
@@ -1291,7 +1390,7 @@ Subtitle
 <span class="listing-subtitle">Generate download script to download the data</span>
 </td>
 </tr>
-<tr data-index="1" data-listing-file-modified-sort="1748610455172" data-listing-reading-time-sort="1" data-listing-word-count-sort="14" data-listing-title-sort="Prepare ENCODE RNA-seq 02" data-listing-filename-sort="rnaseq_02_total_execute_download_script_SH.ipynb">
+<tr data-index="1" data-listing-file-modified-sort="1750774457815" data-listing-reading-time-sort="1" data-listing-word-count-sort="14" data-listing-title-sort="Prepare ENCODE RNA-seq 02" data-listing-filename-sort="rnaseq_02_total_execute_download_script_SH.ipynb">
 <td>
 <a href="./notebooks/04_prepare_annotation/rnaseq_02_total_execute_download_script_SH.html" class="title listing-title">Prepare ENCODE RNA-seq 02</a>
 </td>
@@ -1299,7 +1398,7 @@ Subtitle
 <span class="listing-subtitle">Download the data</span>
 </td>
 </tr>
-<tr data-index="2" data-listing-file-modified-sort="1748610455183" data-listing-reading-time-sort="1" data-listing-word-count-sort="19" data-listing-title-sort="Prepare ENCODE RNA-seq 03" data-listing-filename-sort="rnaseq_03_total_explore_data_R.ipynb">
+<tr data-index="2" data-listing-file-modified-sort="1750774457816" data-listing-reading-time-sort="1" data-listing-word-count-sort="19" data-listing-title-sort="Prepare ENCODE RNA-seq 03" data-listing-filename-sort="rnaseq_03_total_explore_data_R.ipynb">
 <td>
 <a href="./notebooks/04_prepare_annotation/rnaseq_03_total_explore_data_R.html" class="title listing-title">Prepare ENCODE RNA-seq 03</a>
 </td>
@@ -1345,7 +1444,7 @@ Subtitle
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-file-modified-sort="1748610460020" data-listing-reading-time-sort="1" data-listing-word-count-sort="10" data-listing-title-sort="Prepare ASTARR CSAW Peaks 01" data-listing-filename-sort="region_astarr_csaw_01_acquire_data_SH.ipynb">
+<tr data-index="0" data-listing-file-modified-sort="1750774461210" data-listing-reading-time-sort="1" data-listing-word-count-sort="10" data-listing-title-sort="Prepare ASTARR CSAW Peaks 01" data-listing-filename-sort="region_astarr_csaw_01_acquire_data_SH.ipynb">
 <td>
 <a href="./notebooks/05_prepare_region/region_astarr_csaw_01_acquire_data_SH.html" class="title listing-title">Prepare ASTARR CSAW Peaks 01</a>
 </td>
@@ -1353,7 +1452,7 @@ Subtitle
 <span class="listing-subtitle">Acquire data</span>
 </td>
 </tr>
-<tr data-index="1" data-listing-file-modified-sort="1748610460026" data-listing-reading-time-sort="1" data-listing-word-count-sort="16" data-listing-title-sort="Prepare ASTARR CSAW Peaks 02" data-listing-filename-sort="region_astarr_csaw_02_export_data_R.ipynb">
+<tr data-index="1" data-listing-file-modified-sort="1750774461211" data-listing-reading-time-sort="1" data-listing-word-count-sort="16" data-listing-title-sort="Prepare ASTARR CSAW Peaks 02" data-listing-filename-sort="region_astarr_csaw_02_export_data_R.ipynb">
 <td>
 <a href="./notebooks/05_prepare_region/region_astarr_csaw_02_export_data_R.html" class="title listing-title">Prepare ASTARR CSAW Peaks 02</a>
 </td>
@@ -1361,7 +1460,7 @@ Subtitle
 <span class="listing-subtitle">Prepare data</span>
 </td>
 </tr>
-<tr data-index="2" data-listing-file-modified-sort="1748610460027" data-listing-reading-time-sort="1" data-listing-word-count-sort="6" data-listing-title-sort="Prepare ASTARR CSAW Peaks 03" data-listing-filename-sort="region_astarr_csaw_03_export_metadata_R.ipynb">
+<tr data-index="2" data-listing-file-modified-sort="1750774461212" data-listing-reading-time-sort="1" data-listing-word-count-sort="6" data-listing-title-sort="Prepare ASTARR CSAW Peaks 03" data-listing-filename-sort="region_astarr_csaw_03_export_metadata_R.ipynb">
 <td>
 <a href="./notebooks/05_prepare_region/region_astarr_csaw_03_export_metadata_R.html" class="title listing-title">Prepare ASTARR CSAW Peaks 03</a>
 </td>
@@ -1369,7 +1468,7 @@ Subtitle
 <span class="listing-subtitle">Create metadata</span>
 </td>
 </tr>
-<tr data-index="3" data-listing-file-modified-sort="1748610460029" data-listing-reading-time-sort="1" data-listing-word-count-sort="42" data-listing-title-sort="Prepare ASTARR CSAW Peaks 03" data-listing-filename-sort="region_astarr_csaw_04_explore_data_R.ipynb">
+<tr data-index="3" data-listing-file-modified-sort="1750774461213" data-listing-reading-time-sort="1" data-listing-word-count-sort="42" data-listing-title-sort="Prepare ASTARR CSAW Peaks 03" data-listing-filename-sort="region_astarr_csaw_04_explore_data_R.ipynb">
 <td>
 <a href="./notebooks/05_prepare_region/region_astarr_csaw_04_explore_data_R.html" class="title listing-title">Prepare ASTARR CSAW Peaks 03</a>
 </td>
@@ -1377,7 +1476,7 @@ Subtitle
 <span class="listing-subtitle">Explore the data</span>
 </td>
 </tr>
-<tr data-index="4" data-listing-file-modified-sort="1748610459880" data-listing-reading-time-sort="2" data-listing-word-count-sort="204" data-listing-title-sort="Prepare ASTARR Input MACS Peaks (Merged) 01" data-listing-filename-sort="region_astarr_macs_merge_01_export_data_R.ipynb">
+<tr data-index="4" data-listing-file-modified-sort="1750774461152" data-listing-reading-time-sort="2" data-listing-word-count-sort="204" data-listing-title-sort="Prepare ASTARR Input MACS Peaks (Merged) 01" data-listing-filename-sort="region_astarr_macs_merge_01_export_data_R.ipynb">
 <td>
 <a href="./notebooks/05_prepare_region/region_astarr_macs_merge_01_export_data_R.html" class="title listing-title">Prepare ASTARR Input MACS Peaks (Merged) 01</a>
 </td>
@@ -1385,7 +1484,7 @@ Subtitle
 <span class="listing-subtitle">Prepare K562 accessible regions</span>
 </td>
 </tr>
-<tr data-index="5" data-listing-file-modified-sort="1748610459883" data-listing-reading-time-sort="1" data-listing-word-count-sort="10" data-listing-title-sort="Prepare ASTARR Input MACS Peaks (Merged) 02" data-listing-filename-sort="region_astarr_macs_merge_02_export_metadata_R.ipynb">
+<tr data-index="5" data-listing-file-modified-sort="1750774461153" data-listing-reading-time-sort="1" data-listing-word-count-sort="10" data-listing-title-sort="Prepare ASTARR Input MACS Peaks (Merged) 02" data-listing-filename-sort="region_astarr_macs_merge_02_export_metadata_R.ipynb">
 <td>
 <a href="./notebooks/05_prepare_region/region_astarr_macs_merge_02_export_metadata_R.html" class="title listing-title">Prepare ASTARR Input MACS Peaks (Merged) 02</a>
 </td>
@@ -1393,7 +1492,7 @@ Subtitle
 <span class="listing-subtitle">Create metadata table for downstream analysis</span>
 </td>
 </tr>
-<tr data-index="6" data-listing-file-modified-sort="1748610459888" data-listing-reading-time-sort="1" data-listing-word-count-sort="23" data-listing-title-sort="Prepare ASTARR Input MACS Peaks (Merged) 03" data-listing-filename-sort="region_astarr_macs_merge_03_explore_data_R.ipynb">
+<tr data-index="6" data-listing-file-modified-sort="1750774461154" data-listing-reading-time-sort="1" data-listing-word-count-sort="23" data-listing-title-sort="Prepare ASTARR Input MACS Peaks (Merged) 03" data-listing-filename-sort="region_astarr_macs_merge_03_explore_data_R.ipynb">
 <td>
 <a href="./notebooks/05_prepare_region/region_astarr_macs_merge_03_explore_data_R.html" class="title listing-title">Prepare ASTARR Input MACS Peaks (Merged) 03</a>
 </td>
@@ -1401,7 +1500,7 @@ Subtitle
 <span class="listing-subtitle">Explore and visualize the data</span>
 </td>
 </tr>
-<tr data-index="7" data-listing-file-modified-sort="1748610459892" data-listing-reading-time-sort="1" data-listing-word-count-sort="25" data-listing-title-sort="Prepare ASTARR Input MACS Peaks (Replicates) 01" data-listing-filename-sort="region_astarr_macs_narrowpeak_01_export_data_R.ipynb">
+<tr data-index="7" data-listing-file-modified-sort="1750774461155" data-listing-reading-time-sort="1" data-listing-word-count-sort="25" data-listing-title-sort="Prepare ASTARR Input MACS Peaks (Replicates) 01" data-listing-filename-sort="region_astarr_macs_narrowpeak_01_export_data_R.ipynb">
 <td>
 <a href="./notebooks/05_prepare_region/region_astarr_macs_narrowpeak_01_export_data_R.html" class="title listing-title">Prepare ASTARR Input MACS Peaks (Replicates) 01</a>
 </td>
@@ -1409,7 +1508,7 @@ Subtitle
 <span class="listing-subtitle">Prepare K562 accessible regions</span>
 </td>
 </tr>
-<tr data-index="8" data-listing-file-modified-sort="1748610459909" data-listing-reading-time-sort="1" data-listing-word-count-sort="6" data-listing-title-sort="Prepare ASTARR Input MACS Peaks (Replicates) 02" data-listing-filename-sort="region_astarr_macs_narrowpeak_02_metadata_R.ipynb">
+<tr data-index="8" data-listing-file-modified-sort="1750774461156" data-listing-reading-time-sort="1" data-listing-word-count-sort="6" data-listing-title-sort="Prepare ASTARR Input MACS Peaks (Replicates) 02" data-listing-filename-sort="region_astarr_macs_narrowpeak_02_metadata_R.ipynb">
 <td>
 <a href="./notebooks/05_prepare_region/region_astarr_macs_narrowpeak_02_metadata_R.html" class="title listing-title">Prepare ASTARR Input MACS Peaks (Replicates) 02</a>
 </td>
@@ -1417,7 +1516,7 @@ Subtitle
 <span class="listing-subtitle">Create metadata</span>
 </td>
 </tr>
-<tr data-index="9" data-listing-file-modified-sort="1748610459943" data-listing-reading-time-sort="1" data-listing-word-count-sort="26" data-listing-title-sort="Prepare ASTARR Input MACS Peaks (Replicates) 03" data-listing-filename-sort="region_astarr_macs_narrowpeak_03_explore_data_R.ipynb">
+<tr data-index="9" data-listing-file-modified-sort="1750774461157" data-listing-reading-time-sort="1" data-listing-word-count-sort="26" data-listing-title-sort="Prepare ASTARR Input MACS Peaks (Replicates) 03" data-listing-filename-sort="region_astarr_macs_narrowpeak_03_explore_data_R.ipynb">
 <td>
 <a href="./notebooks/05_prepare_region/region_astarr_macs_narrowpeak_03_explore_data_R.html" class="title listing-title">Prepare ASTARR Input MACS Peaks (Replicates) 03</a>
 </td>
@@ -1425,7 +1524,7 @@ Subtitle
 <span class="listing-subtitle">Explore and visualize the data</span>
 </td>
 </tr>
-<tr data-index="10" data-listing-file-modified-sort="1748610460564" data-listing-reading-time-sort="1" data-listing-word-count-sort="38" data-listing-title-sort="Prepare CRISPRi Growth data 01" data-listing-filename-sort="region_crispri_growth_01_export_data_R.ipynb">
+<tr data-index="10" data-listing-file-modified-sort="1750774461555" data-listing-reading-time-sort="1" data-listing-word-count-sort="38" data-listing-title-sort="Prepare CRISPRi Growth data 01" data-listing-filename-sort="region_crispri_growth_01_export_data_R.ipynb">
 <td>
 <a href="./notebooks/05_prepare_region/region_crispri_growth_01_export_data_R.html" class="title listing-title">Prepare CRISPRi Growth data 01</a>
 </td>
@@ -1433,7 +1532,7 @@ Subtitle
 <span class="listing-subtitle">Prepare data</span>
 </td>
 </tr>
-<tr data-index="11" data-listing-file-modified-sort="1748610460565" data-listing-reading-time-sort="1" data-listing-word-count-sort="7" data-listing-title-sort="Prepare CRISPRi Growth data 02" data-listing-filename-sort="region_crispri_growth_02_export_metadata_R.ipynb">
+<tr data-index="11" data-listing-file-modified-sort="1750774461556" data-listing-reading-time-sort="1" data-listing-word-count-sort="7" data-listing-title-sort="Prepare CRISPRi Growth data 02" data-listing-filename-sort="region_crispri_growth_02_export_metadata_R.ipynb">
 <td>
 <a href="./notebooks/05_prepare_region/region_crispri_growth_02_export_metadata_R.html" class="title listing-title">Prepare CRISPRi Growth data 02</a>
 </td>
@@ -1441,7 +1540,7 @@ Subtitle
 <span class="listing-subtitle">Generate metadata of the peak file</span>
 </td>
 </tr>
-<tr data-index="12" data-listing-file-modified-sort="1748610460567" data-listing-reading-time-sort="1" data-listing-word-count-sort="30" data-listing-title-sort="Prepare CRISPRi Growth data 03" data-listing-filename-sort="region_crispri_growth_03_explore_data_R.ipynb">
+<tr data-index="12" data-listing-file-modified-sort="1750774461557" data-listing-reading-time-sort="1" data-listing-word-count-sort="30" data-listing-title-sort="Prepare CRISPRi Growth data 03" data-listing-filename-sort="region_crispri_growth_03_explore_data_R.ipynb">
 <td>
 <a href="./notebooks/05_prepare_region/region_crispri_growth_03_explore_data_R.html" class="title listing-title">Prepare CRISPRi Growth data 03</a>
 </td>
@@ -1449,7 +1548,7 @@ Subtitle
 <span class="listing-subtitle">Explore and visualize the data</span>
 </td>
 </tr>
-<tr data-index="13" data-listing-file-modified-sort="1748610460692" data-listing-reading-time-sort="1" data-listing-word-count-sort="52" data-listing-title-sort="Prepare CRISPRi HCRFF data 01" data-listing-filename-sort="region_crispri_hcrff_01_create_download_script_R.ipynb">
+<tr data-index="13" data-listing-file-modified-sort="1750774461609" data-listing-reading-time-sort="1" data-listing-word-count-sort="52" data-listing-title-sort="Prepare CRISPRi HCRFF data 01" data-listing-filename-sort="region_crispri_hcrff_01_create_download_script_R.ipynb">
 <td>
 <a href="./notebooks/05_prepare_region/region_crispri_hcrff_01_create_download_script_R.html" class="title listing-title">Prepare CRISPRi HCRFF data 01</a>
 </td>
@@ -1457,7 +1556,7 @@ Subtitle
 <span class="listing-subtitle">Generate download script to download the data</span>
 </td>
 </tr>
-<tr data-index="14" data-listing-file-modified-sort="1748610460697" data-listing-reading-time-sort="1" data-listing-word-count-sort="14" data-listing-title-sort="Prepare CRISPRi HCRFF data 02" data-listing-filename-sort="region_crispri_hcrff_02_execute_download_script_SH.ipynb">
+<tr data-index="14" data-listing-file-modified-sort="1750774461610" data-listing-reading-time-sort="1" data-listing-word-count-sort="14" data-listing-title-sort="Prepare CRISPRi HCRFF data 02" data-listing-filename-sort="region_crispri_hcrff_02_execute_download_script_SH.ipynb">
 <td>
 <a href="./notebooks/05_prepare_region/region_crispri_hcrff_02_execute_download_script_SH.html" class="title listing-title">Prepare CRISPRi HCRFF data 02</a>
 </td>
@@ -1465,7 +1564,7 @@ Subtitle
 <span class="listing-subtitle">Download the data</span>
 </td>
 </tr>
-<tr data-index="15" data-listing-file-modified-sort="1748610460699" data-listing-reading-time-sort="1" data-listing-word-count-sort="29" data-listing-title-sort="Prepare CRISPRi HCRFF data 03" data-listing-filename-sort="region_crispri_hcrff_03_export_data_R.ipynb">
+<tr data-index="15" data-listing-file-modified-sort="1750774461611" data-listing-reading-time-sort="1" data-listing-word-count-sort="34" data-listing-title-sort="Prepare CRISPRi HCRFF data 03" data-listing-filename-sort="region_crispri_hcrff_03_export_data_R.ipynb">
 <td>
 <a href="./notebooks/05_prepare_region/region_crispri_hcrff_03_export_data_R.html" class="title listing-title">Prepare CRISPRi HCRFF data 03</a>
 </td>
@@ -1473,7 +1572,7 @@ Subtitle
 <span class="listing-subtitle">Prepare the data</span>
 </td>
 </tr>
-<tr data-index="16" data-listing-file-modified-sort="1748610460700" data-listing-reading-time-sort="1" data-listing-word-count-sort="6" data-listing-title-sort="Prepare CRISPRi HCRFF data 04" data-listing-filename-sort="region_crispri_hcrff_04_export_metadata_R.ipynb">
+<tr data-index="16" data-listing-file-modified-sort="1750774461612" data-listing-reading-time-sort="1" data-listing-word-count-sort="6" data-listing-title-sort="Prepare CRISPRi HCRFF data 04" data-listing-filename-sort="region_crispri_hcrff_04_export_metadata_R.ipynb">
 <td>
 <a href="./notebooks/05_prepare_region/region_crispri_hcrff_04_export_metadata_R.html" class="title listing-title">Prepare CRISPRi HCRFF data 04</a>
 </td>
@@ -1481,7 +1580,7 @@ Subtitle
 <span class="listing-subtitle">Generate metadata for the peak file</span>
 </td>
 </tr>
-<tr data-index="17" data-listing-file-modified-sort="1748610460702" data-listing-reading-time-sort="1" data-listing-word-count-sort="33" data-listing-title-sort="Prepare CRISPRi HCRFF data 05" data-listing-filename-sort="region_crispri_hcrff_05_explore_data_R.ipynb">
+<tr data-index="17" data-listing-file-modified-sort="1750774461613" data-listing-reading-time-sort="1" data-listing-word-count-sort="33" data-listing-title-sort="Prepare CRISPRi HCRFF data 05" data-listing-filename-sort="region_crispri_hcrff_05_explore_data_R.ipynb">
 <td>
 <a href="./notebooks/05_prepare_region/region_crispri_hcrff_05_explore_data_R.html" class="title listing-title">Prepare CRISPRi HCRFF data 05</a>
 </td>
@@ -1489,7 +1588,7 @@ Subtitle
 <span class="listing-subtitle">Explore and visualize the data</span>
 </td>
 </tr>
-<tr data-index="18" data-listing-file-modified-sort="1748610460229" data-listing-reading-time-sort="1" data-listing-word-count-sort="31" data-listing-title-sort="Prepare ENCODE ATAC/DNase Peaks 01" data-listing-filename-sort="region_ocr_01_create_download_script_R.ipynb">
+<tr data-index="18" data-listing-file-modified-sort="1750774461321" data-listing-reading-time-sort="1" data-listing-word-count-sort="31" data-listing-title-sort="Prepare ENCODE ATAC/DNase Peaks 01" data-listing-filename-sort="region_ocr_01_create_download_script_R.ipynb">
 <td>
 <a href="./notebooks/05_prepare_region/region_ocr_01_create_download_script_R.html" class="title listing-title">Prepare ENCODE ATAC/DNase Peaks 01</a>
 </td>
@@ -1497,7 +1596,7 @@ Subtitle
 <span class="listing-subtitle">Generate download script to download the data</span>
 </td>
 </tr>
-<tr data-index="19" data-listing-file-modified-sort="1748610460242" data-listing-reading-time-sort="1" data-listing-word-count-sort="14" data-listing-title-sort="Prepare ENCODE ATAC/DNase Peaks 02" data-listing-filename-sort="region_ocr_02_execute_download_script_SH.ipynb">
+<tr data-index="19" data-listing-file-modified-sort="1750774461322" data-listing-reading-time-sort="1" data-listing-word-count-sort="14" data-listing-title-sort="Prepare ENCODE ATAC/DNase Peaks 02" data-listing-filename-sort="region_ocr_02_execute_download_script_SH.ipynb">
 <td>
 <a href="./notebooks/05_prepare_region/region_ocr_02_execute_download_script_SH.html" class="title listing-title">Prepare ENCODE ATAC/DNase Peaks 02</a>
 </td>
@@ -1505,7 +1604,7 @@ Subtitle
 <span class="listing-subtitle">Download the data</span>
 </td>
 </tr>
-<tr data-index="20" data-listing-file-modified-sort="1748610460243" data-listing-reading-time-sort="1" data-listing-word-count-sort="27" data-listing-title-sort="Prepare ENCODE ATAC/DNase Peaks 03" data-listing-filename-sort="region_ocr_03_export_data_SH.ipynb">
+<tr data-index="20" data-listing-file-modified-sort="1750774461323" data-listing-reading-time-sort="1" data-listing-word-count-sort="27" data-listing-title-sort="Prepare ENCODE ATAC/DNase Peaks 03" data-listing-filename-sort="region_ocr_03_export_data_SH.ipynb">
 <td>
 <a href="./notebooks/05_prepare_region/region_ocr_03_export_data_SH.html" class="title listing-title">Prepare ENCODE ATAC/DNase Peaks 03</a>
 </td>
@@ -1513,7 +1612,7 @@ Subtitle
 <span class="listing-subtitle">Prepare the data</span>
 </td>
 </tr>
-<tr data-index="21" data-listing-file-modified-sort="1748610460247" data-listing-reading-time-sort="1" data-listing-word-count-sort="28" data-listing-title-sort="Prepare ENCODE ATAC/DNase Peaks 04" data-listing-filename-sort="region_ocr_04_export_metadata_R.ipynb">
+<tr data-index="21" data-listing-file-modified-sort="1750774461324" data-listing-reading-time-sort="1" data-listing-word-count-sort="28" data-listing-title-sort="Prepare ENCODE ATAC/DNase Peaks 04" data-listing-filename-sort="region_ocr_04_export_metadata_R.ipynb">
 <td>
 <a href="./notebooks/05_prepare_region/region_ocr_04_export_metadata_R.html" class="title listing-title">Prepare ENCODE ATAC/DNase Peaks 04</a>
 </td>
@@ -1521,7 +1620,7 @@ Subtitle
 <span class="listing-subtitle">Generate metadata for the peak file</span>
 </td>
 </tr>
-<tr data-index="22" data-listing-file-modified-sort="1748610460249" data-listing-reading-time-sort="1" data-listing-word-count-sort="33" data-listing-title-sort="Prepare ENCODE ATAC/DNase Peaks 05" data-listing-filename-sort="region_ocr_05_explore_data_R.ipynb">
+<tr data-index="22" data-listing-file-modified-sort="1750774461325" data-listing-reading-time-sort="1" data-listing-word-count-sort="33" data-listing-title-sort="Prepare ENCODE ATAC/DNase Peaks 05" data-listing-filename-sort="region_ocr_05_explore_data_R.ipynb">
 <td>
 <a href="./notebooks/05_prepare_region/region_ocr_05_explore_data_R.html" class="title listing-title">Prepare ENCODE ATAC/DNase Peaks 05</a>
 </td>
@@ -1529,7 +1628,7 @@ Subtitle
 <span class="listing-subtitle">Explore and visualize the data</span>
 </td>
 </tr>
-<tr data-index="23" data-listing-file-modified-sort="1748610460270" data-listing-reading-time-sort="1" data-listing-word-count-sort="60" data-listing-title-sort="Prepare ENCODE ATAC/DNase Peaks 06" data-listing-filename-sort="region_ocr_06_compare_genomic_R.ipynb">
+<tr data-index="23" data-listing-file-modified-sort="1750774461329" data-listing-reading-time-sort="1" data-listing-word-count-sort="60" data-listing-title-sort="Prepare ENCODE ATAC/DNase Peaks 06" data-listing-filename-sort="region_ocr_06_compare_genomic_R.ipynb">
 <td>
 <a href="./notebooks/05_prepare_region/region_ocr_06_compare_genomic_R.html" class="title listing-title">Prepare ENCODE ATAC/DNase Peaks 06</a>
 </td>
@@ -1537,7 +1636,7 @@ Subtitle
 <span class="listing-subtitle">Comparison-genomic distribution</span>
 </td>
 </tr>
-<tr data-index="24" data-listing-file-modified-sort="1748610460279" data-listing-reading-time-sort="1" data-listing-word-count-sort="19" data-listing-title-sort="Prepare ENCODE ATAC/DNase Peaks 07" data-listing-filename-sort="region_ocr_07_compare_count_R.ipynb">
+<tr data-index="24" data-listing-file-modified-sort="1750774461332" data-listing-reading-time-sort="1" data-listing-word-count-sort="19" data-listing-title-sort="Prepare ENCODE ATAC/DNase Peaks 07" data-listing-filename-sort="region_ocr_07_compare_count_R.ipynb">
 <td>
 <a href="./notebooks/05_prepare_region/region_ocr_07_compare_count_R.html" class="title listing-title">Prepare ENCODE ATAC/DNase Peaks 07</a>
 </td>
@@ -1545,7 +1644,7 @@ Subtitle
 <span class="listing-subtitle">Comparison-region counts</span>
 </td>
 </tr>
-<tr data-index="25" data-listing-file-modified-sort="1748610460333" data-listing-reading-time-sort="1" data-listing-word-count-sort="31" data-listing-title-sort="Prepare ENCODE Chromatin State 01" data-listing-filename-sort="region_chromstate_01_create_download_script_R.ipynb">
+<tr data-index="25" data-listing-file-modified-sort="1750774461385" data-listing-reading-time-sort="1" data-listing-word-count-sort="31" data-listing-title-sort="Prepare ENCODE Chromatin State 01" data-listing-filename-sort="region_chromstate_01_create_download_script_R.ipynb">
 <td>
 <a href="./notebooks/05_prepare_region/region_chromstate_01_create_download_script_R.html" class="title listing-title">Prepare ENCODE Chromatin State 01</a>
 </td>
@@ -1553,7 +1652,7 @@ Subtitle
 <span class="listing-subtitle">Generate download script to download the data</span>
 </td>
 </tr>
-<tr data-index="26" data-listing-file-modified-sort="1748610460336" data-listing-reading-time-sort="1" data-listing-word-count-sort="19" data-listing-title-sort="Prepare ENCODE Chromatin State 02" data-listing-filename-sort="region_chromstate_02_execute_download_script_SH.ipynb">
+<tr data-index="26" data-listing-file-modified-sort="1750774461386" data-listing-reading-time-sort="1" data-listing-word-count-sort="19" data-listing-title-sort="Prepare ENCODE Chromatin State 02" data-listing-filename-sort="region_chromstate_02_execute_download_script_SH.ipynb">
 <td>
 <a href="./notebooks/05_prepare_region/region_chromstate_02_execute_download_script_SH.html" class="title listing-title">Prepare ENCODE Chromatin State 02</a>
 </td>
@@ -1561,7 +1660,7 @@ Subtitle
 <span class="listing-subtitle">Download the data</span>
 </td>
 </tr>
-<tr data-index="27" data-listing-file-modified-sort="1748610460337" data-listing-reading-time-sort="1" data-listing-word-count-sort="72" data-listing-title-sort="Prepare ENCODE Chromatin State 03" data-listing-filename-sort="region_chromstate_03_export_data_R.ipynb">
+<tr data-index="27" data-listing-file-modified-sort="1750774461387" data-listing-reading-time-sort="1" data-listing-word-count-sort="72" data-listing-title-sort="Prepare ENCODE Chromatin State 03" data-listing-filename-sort="region_chromstate_03_export_data_R.ipynb">
 <td>
 <a href="./notebooks/05_prepare_region/region_chromstate_03_export_data_R.html" class="title listing-title">Prepare ENCODE Chromatin State 03</a>
 </td>
@@ -1569,7 +1668,7 @@ Subtitle
 <span class="listing-subtitle">Prepare region files</span>
 </td>
 </tr>
-<tr data-index="28" data-listing-file-modified-sort="1748610460344" data-listing-reading-time-sort="1" data-listing-word-count-sort="6" data-listing-title-sort="Prepare ENCODE Chromatin State 04" data-listing-filename-sort="region_chromstate_04_export_metadata_R.ipynb">
+<tr data-index="28" data-listing-file-modified-sort="1750774461388" data-listing-reading-time-sort="1" data-listing-word-count-sort="6" data-listing-title-sort="Prepare ENCODE Chromatin State 04" data-listing-filename-sort="region_chromstate_04_export_metadata_R.ipynb">
 <td>
 <a href="./notebooks/05_prepare_region/region_chromstate_04_export_metadata_R.html" class="title listing-title">Prepare ENCODE Chromatin State 04</a>
 </td>
@@ -1577,7 +1676,7 @@ Subtitle
 <span class="listing-subtitle">Create metadata table for downstream analysis</span>
 </td>
 </tr>
-<tr data-index="29" data-listing-file-modified-sort="1748610460345" data-listing-reading-time-sort="1" data-listing-word-count-sort="14" data-listing-title-sort="Prepare ENCODE Chromatin State 05" data-listing-filename-sort="region_chromstate_05_explore_data_R.ipynb">
+<tr data-index="29" data-listing-file-modified-sort="1750774461389" data-listing-reading-time-sort="1" data-listing-word-count-sort="14" data-listing-title-sort="Prepare ENCODE Chromatin State 05" data-listing-filename-sort="region_chromstate_05_explore_data_R.ipynb">
 <td>
 <a href="./notebooks/05_prepare_region/region_chromstate_05_explore_data_R.html" class="title listing-title">Prepare ENCODE Chromatin State 05</a>
 </td>
@@ -1585,7 +1684,7 @@ Subtitle
 <span class="listing-subtitle">Explore and visualize the data</span>
 </td>
 </tr>
-<tr data-index="30" data-listing-file-modified-sort="1748610460758" data-listing-reading-time-sort="1" data-listing-word-count-sort="35" data-listing-title-sort="Prepare ENCODE E2G data 01" data-listing-filename-sort="region_encode_e2g_EPBenchmark_01_export_data_R.ipynb">
+<tr data-index="30" data-listing-file-modified-sort="1750774461666" data-listing-reading-time-sort="1" data-listing-word-count-sort="35" data-listing-title-sort="Prepare ENCODE E2G data 01" data-listing-filename-sort="region_encode_e2g_EPBenchmark_01_export_data_R.ipynb">
 <td>
 <a href="./notebooks/05_prepare_region/region_encode_e2g_EPBenchmark_01_export_data_R.html" class="title listing-title">Prepare ENCODE E2G data 01</a>
 </td>
@@ -1593,7 +1692,7 @@ Subtitle
 <span class="listing-subtitle">Arrange region data</span>
 </td>
 </tr>
-<tr data-index="31" data-listing-file-modified-sort="1748610460768" data-listing-reading-time-sort="1" data-listing-word-count-sort="6" data-listing-title-sort="Prepare ENCODE E2G data 02" data-listing-filename-sort="region_encode_e2g_EPBenchmark_02_export_metadata_R.ipynb">
+<tr data-index="31" data-listing-file-modified-sort="1750774461667" data-listing-reading-time-sort="1" data-listing-word-count-sort="6" data-listing-title-sort="Prepare ENCODE E2G data 02" data-listing-filename-sort="region_encode_e2g_EPBenchmark_02_export_metadata_R.ipynb">
 <td>
 <a href="./notebooks/05_prepare_region/region_encode_e2g_EPBenchmark_02_export_metadata_R.html" class="title listing-title">Prepare ENCODE E2G data 02</a>
 </td>
@@ -1601,7 +1700,7 @@ Subtitle
 <span class="listing-subtitle">Create metadata table</span>
 </td>
 </tr>
-<tr data-index="32" data-listing-file-modified-sort="1748610460802" data-listing-reading-time-sort="1" data-listing-word-count-sort="31" data-listing-title-sort="Prepare ENCODE E2G data 03" data-listing-filename-sort="region_encode_e2g_EPBenchmark_03_explore_R.ipynb">
+<tr data-index="32" data-listing-file-modified-sort="1750774461668" data-listing-reading-time-sort="1" data-listing-word-count-sort="31" data-listing-title-sort="Prepare ENCODE E2G data 03" data-listing-filename-sort="region_encode_e2g_EPBenchmark_03_explore_R.ipynb">
 <td>
 <a href="./notebooks/05_prepare_region/region_encode_e2g_EPBenchmark_03_explore_R.html" class="title listing-title">Prepare ENCODE E2G data 03</a>
 </td>
@@ -1609,7 +1708,7 @@ Subtitle
 <span class="listing-subtitle">Explore and summarize data</span>
 </td>
 </tr>
-<tr data-index="33" data-listing-file-modified-sort="1748610460482" data-listing-reading-time-sort="1" data-listing-word-count-sort="2" data-listing-title-sort="Prepare Junke peak call region 01" data-listing-filename-sort="region_enhancer_junke_01_view_data_SH.ipynb">
+<tr data-index="33" data-listing-file-modified-sort="1750774461498" data-listing-reading-time-sort="1" data-listing-word-count-sort="2" data-listing-title-sort="Prepare Junke peak call region 01" data-listing-filename-sort="region_enhancer_junke_01_view_data_SH.ipynb">
 <td>
 <a href="./notebooks/05_prepare_region/region_enhancer_junke_01_view_data_SH.html" class="title listing-title">Prepare Junke peak call region 01</a>
 </td>
@@ -1617,7 +1716,7 @@ Subtitle
 <span class="listing-subtitle">View files</span>
 </td>
 </tr>
-<tr data-index="34" data-listing-file-modified-sort="1748610460485" data-listing-reading-time-sort="1" data-listing-word-count-sort="4" data-listing-title-sort="Prepare Junke peak call region 02" data-listing-filename-sort="region_enhancer_junke_02_decompress_data_SH.ipynb">
+<tr data-index="34" data-listing-file-modified-sort="1750774461499" data-listing-reading-time-sort="1" data-listing-word-count-sort="4" data-listing-title-sort="Prepare Junke peak call region 02" data-listing-filename-sort="region_enhancer_junke_02_decompress_data_SH.ipynb">
 <td>
 <a href="./notebooks/05_prepare_region/region_enhancer_junke_02_decompress_data_SH.html" class="title listing-title">Prepare Junke peak call region 02</a>
 </td>
@@ -1625,7 +1724,7 @@ Subtitle
 <span class="listing-subtitle">Decompress files</span>
 </td>
 </tr>
-<tr data-index="35" data-listing-file-modified-sort="1748610460486" data-listing-reading-time-sort="1" data-listing-word-count-sort="25" data-listing-title-sort="Prepare Junke peak call region 03" data-listing-filename-sort="region_enhancer_junke_03_export_data_R.ipynb">
+<tr data-index="35" data-listing-file-modified-sort="1750774461500" data-listing-reading-time-sort="1" data-listing-word-count-sort="31" data-listing-title-sort="Prepare Junke peak call region 03" data-listing-filename-sort="region_enhancer_junke_03_export_data_R.ipynb">
 <td>
 <a href="./notebooks/05_prepare_region/region_enhancer_junke_03_export_data_R.html" class="title listing-title">Prepare Junke peak call region 03</a>
 </td>
@@ -1633,7 +1732,7 @@ Subtitle
 <span class="listing-subtitle">Prepare data</span>
 </td>
 </tr>
-<tr data-index="36" data-listing-file-modified-sort="1748610460487" data-listing-reading-time-sort="1" data-listing-word-count-sort="6" data-listing-title-sort="Prepare Junke peak call region 04" data-listing-filename-sort="region_enhancer_junke_04_export_metadata_R.ipynb">
+<tr data-index="36" data-listing-file-modified-sort="1750774461501" data-listing-reading-time-sort="1" data-listing-word-count-sort="6" data-listing-title-sort="Prepare Junke peak call region 04" data-listing-filename-sort="region_enhancer_junke_04_export_metadata_R.ipynb">
 <td>
 <a href="./notebooks/05_prepare_region/region_enhancer_junke_04_export_metadata_R.html" class="title listing-title">Prepare Junke peak call region 04</a>
 </td>
@@ -1641,7 +1740,7 @@ Subtitle
 <span class="listing-subtitle">Generate metadata of the peak file</span>
 </td>
 </tr>
-<tr data-index="37" data-listing-file-modified-sort="1748610460492" data-listing-reading-time-sort="1" data-listing-word-count-sort="39" data-listing-title-sort="Prepare Junke peak call region 05" data-listing-filename-sort="region_enhancer_junke_05_explore_data_R.ipynb">
+<tr data-index="37" data-listing-file-modified-sort="1750774461502" data-listing-reading-time-sort="1" data-listing-word-count-sort="39" data-listing-title-sort="Prepare Junke peak call region 05" data-listing-filename-sort="region_enhancer_junke_05_explore_data_R.ipynb">
 <td>
 <a href="./notebooks/05_prepare_region/region_enhancer_junke_05_explore_data_R.html" class="title listing-title">Prepare Junke peak call region 05</a>
 </td>
@@ -1649,7 +1748,7 @@ Subtitle
 <span class="listing-subtitle">Explore and visualize the data</span>
 </td>
 </tr>
-<tr data-index="38" data-listing-file-modified-sort="1748610460881" data-listing-reading-time-sort="1" data-listing-word-count-sort="36" data-listing-title-sort="Prepare Metadata for Looping" data-listing-filename-sort="region_summary_metadata_R.ipynb">
+<tr data-index="38" data-listing-file-modified-sort="1750774461721" data-listing-reading-time-sort="1" data-listing-word-count-sort="36" data-listing-title-sort="Prepare Metadata for Looping" data-listing-filename-sort="region_summary_metadata_R.ipynb">
 <td>
 <a href="./notebooks/05_prepare_region/region_summary_metadata_R.html" class="title listing-title">Prepare Metadata for Looping</a>
 </td>
@@ -1657,7 +1756,7 @@ Subtitle
 <span class="listing-subtitle">Summarize multiple metadata</span>
 </td>
 </tr>
-<tr data-index="39" data-listing-file-modified-sort="1748610460419" data-listing-reading-time-sort="1" data-listing-word-count-sort="54" data-listing-title-sort="Prepare TF Modules 01" data-listing-filename-sort="region_tfmodule_01_export_data_R.ipynb">
+<tr data-index="39" data-listing-file-modified-sort="1750774461442" data-listing-reading-time-sort="1" data-listing-word-count-sort="54" data-listing-title-sort="Prepare TF Modules 01" data-listing-filename-sort="region_tfmodule_01_export_data_R.ipynb">
 <td>
 <a href="./notebooks/05_prepare_region/region_tfmodule_01_export_data_R.html" class="title listing-title">Prepare TF Modules 01</a>
 </td>
@@ -1665,7 +1764,7 @@ Subtitle
 <span class="listing-subtitle">Export the data</span>
 </td>
 </tr>
-<tr data-index="40" data-listing-file-modified-sort="1748610460422" data-listing-reading-time-sort="1" data-listing-word-count-sort="6" data-listing-title-sort="Prepare TF Modules 02" data-listing-filename-sort="region_tfmodule_02_export_metadata_R.ipynb">
+<tr data-index="40" data-listing-file-modified-sort="1750774461443" data-listing-reading-time-sort="1" data-listing-word-count-sort="6" data-listing-title-sort="Prepare TF Modules 02" data-listing-filename-sort="region_tfmodule_02_export_metadata_R.ipynb">
 <td>
 <a href="./notebooks/05_prepare_region/region_tfmodule_02_export_metadata_R.html" class="title listing-title">Prepare TF Modules 02</a>
 </td>
@@ -1673,7 +1772,7 @@ Subtitle
 <span class="listing-subtitle">Create metadata table for downstream analysis</span>
 </td>
 </tr>
-<tr data-index="41" data-listing-file-modified-sort="1748610460424" data-listing-reading-time-sort="1" data-listing-word-count-sort="49" data-listing-title-sort="Prepare TF Modules 03" data-listing-filename-sort="region_tfmodule_03_explore_data_R.ipynb">
+<tr data-index="41" data-listing-file-modified-sort="1750774461445" data-listing-reading-time-sort="1" data-listing-word-count-sort="49" data-listing-title-sort="Prepare TF Modules 03" data-listing-filename-sort="region_tfmodule_03_explore_data_R.ipynb">
 <td>
 <a href="./notebooks/05_prepare_region/region_tfmodule_03_explore_data_R.html" class="title listing-title">Prepare TF Modules 03</a>
 </td>
@@ -1681,7 +1780,7 @@ Subtitle
 <span class="listing-subtitle">Explore and visualize the data</span>
 </td>
 </tr>
-<tr data-index="42" data-listing-file-modified-sort="1748610460132" data-listing-reading-time-sort="1" data-listing-word-count-sort="116" data-listing-title-sort="Prepare TSS annotation 01" data-listing-filename-sort="region_tss_01_pol2_export_data_R.ipynb">
+<tr data-index="42" data-listing-file-modified-sort="1750774461266" data-listing-reading-time-sort="1" data-listing-word-count-sort="116" data-listing-title-sort="Prepare TSS annotation 01" data-listing-filename-sort="region_tss_01_pol2_export_data_R.ipynb">
 <td>
 <a href="./notebooks/05_prepare_region/region_tss_01_pol2_export_data_R.html" class="title listing-title">Prepare TSS annotation 01</a>
 </td>
@@ -1689,7 +1788,7 @@ Subtitle
 <span class="listing-subtitle">Prepare K562 TSS annotation</span>
 </td>
 </tr>
-<tr data-index="43" data-listing-file-modified-sort="1748610460158" data-listing-reading-time-sort="1" data-listing-word-count-sort="6" data-listing-title-sort="Prepare TSS annotation 02" data-listing-filename-sort="region_tss_02_pol2_export_metadata_R.ipynb">
+<tr data-index="43" data-listing-file-modified-sort="1750774461267" data-listing-reading-time-sort="1" data-listing-word-count-sort="6" data-listing-title-sort="Prepare TSS annotation 02" data-listing-filename-sort="region_tss_02_pol2_export_metadata_R.ipynb">
 <td>
 <a href="./notebooks/05_prepare_region/region_tss_02_pol2_export_metadata_R.html" class="title listing-title">Prepare TSS annotation 02</a>
 </td>
@@ -1697,7 +1796,7 @@ Subtitle
 <span class="listing-subtitle">Create metadata table for downstream analysis</span>
 </td>
 </tr>
-<tr data-index="44" data-listing-file-modified-sort="1748610460160" data-listing-reading-time-sort="1" data-listing-word-count-sort="18" data-listing-title-sort="Prepare TSS annotation 03" data-listing-filename-sort="region_tss_03_pol2_explore_data_R.ipynb">
+<tr data-index="44" data-listing-file-modified-sort="1750774461268" data-listing-reading-time-sort="1" data-listing-word-count-sort="18" data-listing-title-sort="Prepare TSS annotation 03" data-listing-filename-sort="region_tss_03_pol2_explore_data_R.ipynb">
 <td>
 <a href="./notebooks/05_prepare_region/region_tss_03_pol2_explore_data_R.html" class="title listing-title">Prepare TSS annotation 03</a>
 </td>
@@ -1749,7 +1848,7 @@ Subtitle
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-file-modified-sort="1748610463891" data-listing-reading-time-sort="1" data-listing-word-count-sort="13" data-listing-title-sort="Calculate GC% of ATAC regions 01" data-listing-filename-sort="region_closest_01_atac_tss_calc_SH.ipynb">
+<tr data-index="0" data-listing-file-modified-sort="1750774466043" data-listing-reading-time-sort="1" data-listing-word-count-sort="13" data-listing-title-sort="Calculate GC% of ATAC regions 01" data-listing-filename-sort="region_closest_01_atac_tss_calc_SH.ipynb">
 <td>
 <a href="./notebooks/21_region_summary/region_closest_01_atac_tss_calc_SH.html" class="title listing-title">Calculate GC% of ATAC regions 01</a>
 </td>
@@ -1757,7 +1856,7 @@ Subtitle
 <span class="listing-subtitle">Run bedtools nuc</span>
 </td>
 </tr>
-<tr data-index="1" data-listing-file-modified-sort="1748610463892" data-listing-reading-time-sort="1" data-listing-word-count-sort="13" data-listing-title-sort="Calculate GC% of ATAC regions 01" data-listing-filename-sort="region_closest_01_atac_tss_SH.ipynb">
+<tr data-index="1" data-listing-file-modified-sort="1750774466044" data-listing-reading-time-sort="1" data-listing-word-count-sort="13" data-listing-title-sort="Calculate GC% of ATAC regions 01" data-listing-filename-sort="region_closest_01_atac_tss_SH.ipynb">
 <td>
 <a href="./notebooks/21_region_summary/region_closest_01_atac_tss_SH.html" class="title listing-title">Calculate GC% of ATAC regions 01</a>
 </td>
@@ -1765,7 +1864,7 @@ Subtitle
 <span class="listing-subtitle">Run bedtools nuc</span>
 </td>
 </tr>
-<tr data-index="2" data-listing-file-modified-sort="1748610463953" data-listing-reading-time-sort="1" data-listing-word-count-sort="11" data-listing-title-sort="Calculate GC% of ATAC regions 01" data-listing-filename-sort="region_nuc_01_atac_SH.ipynb">
+<tr data-index="2" data-listing-file-modified-sort="1750774466099" data-listing-reading-time-sort="1" data-listing-word-count-sort="11" data-listing-title-sort="Calculate GC% of ATAC regions 01" data-listing-filename-sort="region_nuc_01_atac_SH.ipynb">
 <td>
 <a href="./notebooks/21_region_summary/region_nuc_01_atac_SH.html" class="title listing-title">Calculate GC% of ATAC regions 01</a>
 </td>
@@ -1773,7 +1872,7 @@ Subtitle
 <span class="listing-subtitle">Run bedtools nuc</span>
 </td>
 </tr>
-<tr data-index="3" data-listing-file-modified-sort="1748610463960" data-listing-reading-time-sort="1" data-listing-word-count-sort="8" data-listing-title-sort="Prepare TF Modules 01" data-listing-filename-sort="region_nuc_02_atac_export_R.ipynb">
+<tr data-index="3" data-listing-file-modified-sort="1750774466100" data-listing-reading-time-sort="1" data-listing-word-count-sort="8" data-listing-title-sort="Prepare TF Modules 01" data-listing-filename-sort="region_nuc_02_atac_export_R.ipynb">
 <td>
 <a href="./notebooks/21_region_summary/region_nuc_02_atac_export_R.html" class="title listing-title">Prepare TF Modules 01</a>
 </td>
@@ -1781,7 +1880,7 @@ Subtitle
 <span class="listing-subtitle">Explore the data</span>
 </td>
 </tr>
-<tr data-index="4" data-listing-file-modified-sort="1748610463963" data-listing-reading-time-sort="1" data-listing-word-count-sort="27" data-listing-title-sort="Prepare TF Modules 01" data-listing-filename-sort="region_nuc_03_atac_explore_R.ipynb">
+<tr data-index="4" data-listing-file-modified-sort="1750774466101" data-listing-reading-time-sort="1" data-listing-word-count-sort="27" data-listing-title-sort="Prepare TF Modules 01" data-listing-filename-sort="region_nuc_03_atac_explore_R.ipynb">
 <td>
 <a href="./notebooks/21_region_summary/region_nuc_03_atac_explore_R.html" class="title listing-title">Prepare TF Modules 01</a>
 </td>
@@ -1789,7 +1888,7 @@ Subtitle
 <span class="listing-subtitle">Explore the data</span>
 </td>
 </tr>
-<tr data-index="5" data-listing-file-modified-sort="1748610463894" data-listing-reading-time-sort="1" data-listing-word-count-sort="5" data-listing-title-sort="Region annotation 11 (ASTARR MACS peaks)" data-listing-filename-sort="region_closest_02_atac_tss_pair_R.ipynb">
+<tr data-index="5" data-listing-file-modified-sort="1750774466044" data-listing-reading-time-sort="1" data-listing-word-count-sort="5" data-listing-title-sort="Region annotation 11 (ASTARR MACS peaks)" data-listing-filename-sort="region_closest_02_atac_tss_pair_R.ipynb">
 <td>
 <a href="./notebooks/21_region_summary/region_closest_02_atac_tss_pair_R.html" class="title listing-title">Region annotation 11 (ASTARR MACS peaks)</a>
 </td>
@@ -1797,7 +1896,7 @@ Subtitle
 <span class="listing-subtitle">Summarize annotations (Main)</span>
 </td>
 </tr>
-<tr data-index="6" data-listing-file-modified-sort="1748610463898" data-listing-reading-time-sort="1" data-listing-word-count-sort="13" data-listing-title-sort="Region annotation 11 (ASTARR MACS peaks)" data-listing-filename-sort="region_closest_03_atac_tss_summary_R.ipynb">
+<tr data-index="6" data-listing-file-modified-sort="1750774466045" data-listing-reading-time-sort="1" data-listing-word-count-sort="13" data-listing-title-sort="Region annotation 11 (ASTARR MACS peaks)" data-listing-filename-sort="region_closest_03_atac_tss_summary_R.ipynb">
 <td>
 <a href="./notebooks/21_region_summary/region_closest_03_atac_tss_summary_R.html" class="title listing-title">Region annotation 11 (ASTARR MACS peaks)</a>
 </td>
@@ -1805,7 +1904,7 @@ Subtitle
 <span class="listing-subtitle">Summarize annotations (Main)</span>
 </td>
 </tr>
-<tr data-index="7" data-listing-file-modified-sort="1748610463900" data-listing-reading-time-sort="1" data-listing-word-count-sort="42" data-listing-title-sort="Region annotation 11 (ASTARR MACS peaks)" data-listing-filename-sort="region_closest_04_atac_tss_explore_R.ipynb">
+<tr data-index="7" data-listing-file-modified-sort="1750774466046" data-listing-reading-time-sort="1" data-listing-word-count-sort="42" data-listing-title-sort="Region annotation 11 (ASTARR MACS peaks)" data-listing-filename-sort="region_closest_04_atac_tss_explore_R.ipynb">
 <td>
 <a href="./notebooks/21_region_summary/region_closest_04_atac_tss_explore_R.html" class="title listing-title">Region annotation 11 (ASTARR MACS peaks)</a>
 </td>
@@ -1860,7 +1959,7 @@ Subtitle
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-file-modified-sort="1748610472771" data-listing-reading-time-sort="1" data-listing-word-count-sort="14" data-listing-title-sort="Annotation of ATAC (ASTARR Input) 01" data-listing-filename-sort="region_astarr_input_01_intersect_main_SH.ipynb">
+<tr data-index="0" data-listing-file-modified-sort="1750774529655" data-listing-reading-time-sort="1" data-listing-word-count-sort="14" data-listing-title-sort="Annotation of ATAC (ASTARR Input) 01" data-listing-filename-sort="region_astarr_input_01_intersect_main_SH.ipynb">
 <td>
 <a href="./notebooks/24_region_annotation/region_astarr_input_01_intersect_main_SH.html" class="title listing-title">Annotation of ATAC (ASTARR Input) 01</a>
 </td>
@@ -1868,7 +1967,7 @@ Subtitle
 <span class="listing-subtitle">Intersection (Main)</span>
 </td>
 </tr>
-<tr data-index="1" data-listing-file-modified-sort="1748610472781" data-listing-reading-time-sort="1" data-listing-word-count-sort="14" data-listing-title-sort="Annotation of ATAC (ASTARR Input) 02" data-listing-filename-sort="region_astarr_input_02_intersect_hic_SH.ipynb">
+<tr data-index="1" data-listing-file-modified-sort="1750774529656" data-listing-reading-time-sort="1" data-listing-word-count-sort="14" data-listing-title-sort="Annotation of ATAC (ASTARR Input) 02" data-listing-filename-sort="region_astarr_input_02_intersect_hic_SH.ipynb">
 <td>
 <a href="./notebooks/24_region_annotation/region_astarr_input_02_intersect_hic_SH.html" class="title listing-title">Annotation of ATAC (ASTARR Input) 02</a>
 </td>
@@ -1876,7 +1975,7 @@ Subtitle
 <span class="listing-subtitle">Intersection (Hi-C)</span>
 </td>
 </tr>
-<tr data-index="2" data-listing-file-modified-sort="1748610472784" data-listing-reading-time-sort="1" data-listing-word-count-sort="14" data-listing-title-sort="Annotation of ATAC (ASTARR Input) 03" data-listing-filename-sort="region_astarr_input_03_intersect_chipseq_subset_SH.ipynb">
+<tr data-index="2" data-listing-file-modified-sort="1750774529658" data-listing-reading-time-sort="1" data-listing-word-count-sort="14" data-listing-title-sort="Annotation of ATAC (ASTARR Input) 03" data-listing-filename-sort="region_astarr_input_03_intersect_chipseq_subset_SH.ipynb">
 <td>
 <a href="./notebooks/24_region_annotation/region_astarr_input_03_intersect_chipseq_subset_SH.html" class="title listing-title">Annotation of ATAC (ASTARR Input) 03</a>
 </td>
@@ -1884,7 +1983,7 @@ Subtitle
 <span class="listing-subtitle">Intersection (ChIP-seq Subset)</span>
 </td>
 </tr>
-<tr data-index="3" data-listing-file-modified-sort="1748610472785" data-listing-reading-time-sort="1" data-listing-word-count-sort="14" data-listing-title-sort="Annotation of ATAC (ASTARR Input) 04" data-listing-filename-sort="region_astarr_input_04_intersect_chipseq_histone_SH.ipynb">
+<tr data-index="3" data-listing-file-modified-sort="1750774529658" data-listing-reading-time-sort="1" data-listing-word-count-sort="14" data-listing-title-sort="Annotation of ATAC (ASTARR Input) 04" data-listing-filename-sort="region_astarr_input_04_intersect_chipseq_histone_SH.ipynb">
 <td>
 <a href="./notebooks/24_region_annotation/region_astarr_input_04_intersect_chipseq_histone_SH.html" class="title listing-title">Annotation of ATAC (ASTARR Input) 04</a>
 </td>
@@ -1892,7 +1991,7 @@ Subtitle
 <span class="listing-subtitle">Intersection (ChIP-seq Histone)</span>
 </td>
 </tr>
-<tr data-index="4" data-listing-file-modified-sort="1748610472788" data-listing-reading-time-sort="1" data-listing-word-count-sort="14" data-listing-title-sort="Annotation of ATAC (ASTARR Input) 05" data-listing-filename-sort="region_astarr_input_05_intersect_chipseq_full_SH.ipynb">
+<tr data-index="4" data-listing-file-modified-sort="1750774529660" data-listing-reading-time-sort="1" data-listing-word-count-sort="14" data-listing-title-sort="Annotation of ATAC (ASTARR Input) 05" data-listing-filename-sort="region_astarr_input_05_intersect_chipseq_full_SH.ipynb">
 <td>
 <a href="./notebooks/24_region_annotation/region_astarr_input_05_intersect_chipseq_full_SH.html" class="title listing-title">Annotation of ATAC (ASTARR Input) 05</a>
 </td>
@@ -1900,11 +1999,238 @@ Subtitle
 <span class="listing-subtitle">Intersection (ChIP-seq TF Full)</span>
 </td>
 </tr>
+<tr data-index="5" data-listing-file-modified-sort="1750774529764" data-listing-reading-time-sort="1" data-listing-word-count-sort="22" data-listing-title-sort="Annotation of ATAC (ASTARR Input) 11" data-listing-filename-sort="region_astarr_input_11_arrange_main_R.ipynb">
+<td>
+<a href="./notebooks/24_region_annotation/region_astarr_input_11_arrange_main_R.html" class="title listing-title">Annotation of ATAC (ASTARR Input) 11</a>
+</td>
+<td>
+<span class="listing-subtitle">Arrange region pairs (Main)</span>
+</td>
+</tr>
+<tr data-index="6" data-listing-file-modified-sort="1750774529817" data-listing-reading-time-sort="1" data-listing-word-count-sort="28" data-listing-title-sort="Annotation of ATAC (ASTARR Input) 21" data-listing-filename-sort="region_astarr_input_21_export_01_fcc_starrmpra_junke_R.ipynb">
+<td>
+<a href="./notebooks/24_region_annotation/region_astarr_input_21_export_01_fcc_starrmpra_junke_R.html" class="title listing-title">Annotation of ATAC (ASTARR Input) 21</a>
+</td>
+<td>
+<span class="listing-subtitle">01 Summarize ATAC w/ STARR/MRPA peaks</span>
+</td>
+</tr>
+<tr data-index="7" data-listing-file-modified-sort="1750774529818" data-listing-reading-time-sort="1" data-listing-word-count-sort="21" data-listing-title-sort="Annotation of ATAC (ASTARR Input) 21" data-listing-filename-sort="region_astarr_input_21_export_02_fcc_crispri_hcrff_R.ipynb">
+<td>
+<a href="./notebooks/24_region_annotation/region_astarr_input_21_export_02_fcc_crispri_hcrff_R.html" class="title listing-title">Annotation of ATAC (ASTARR Input) 21</a>
+</td>
+<td>
+<span class="listing-subtitle">02 Summarize ATAC w/ CRISPRi-HCR FlowFISH CASA peaks</span>
+</td>
+</tr>
+<tr data-index="8" data-listing-file-modified-sort="1750774529819" data-listing-reading-time-sort="1" data-listing-word-count-sort="29" data-listing-title-sort="Annotation of ATAC (ASTARR Input) 21" data-listing-filename-sort="region_astarr_input_21_export_03_fcc_crispri_growth_R.ipynb">
+<td>
+<a href="./notebooks/24_region_annotation/region_astarr_input_21_export_03_fcc_crispri_growth_R.html" class="title listing-title">Annotation of ATAC (ASTARR Input) 21</a>
+</td>
+<td>
+<span class="listing-subtitle">03 Summarize ATAC w/ CRISPRi-Growth significant DHS</span>
+</td>
+</tr>
+<tr data-index="9" data-listing-file-modified-sort="1750774529820" data-listing-reading-time-sort="1" data-listing-word-count-sort="44" data-listing-title-sort="Annotation of ATAC (ASTARR Input) 21" data-listing-filename-sort="region_astarr_input_21_export_04_genome_tss_R.ipynb">
+<td>
+<a href="./notebooks/24_region_annotation/region_astarr_input_21_export_04_genome_tss_R.html" class="title listing-title">Annotation of ATAC (ASTARR Input) 21</a>
+</td>
+<td>
+<span class="listing-subtitle">04 Summarize ATAC w/ TSS</span>
+</td>
+</tr>
+<tr data-index="10" data-listing-file-modified-sort="1750774529821" data-listing-reading-time-sort="1" data-listing-word-count-sort="25" data-listing-title-sort="Annotation of ATAC (ASTARR Input) 21" data-listing-filename-sort="region_astarr_input_21_export_05_encode_e2g_R.ipynb">
+<td>
+<a href="./notebooks/24_region_annotation/region_astarr_input_21_export_05_encode_e2g_R.html" class="title listing-title">Annotation of ATAC (ASTARR Input) 21</a>
+</td>
+<td>
+<span class="listing-subtitle">05 Summarize ATAC w/ ENCODE E2G links</span>
+</td>
+</tr>
+<tr data-index="11" data-listing-file-modified-sort="1750774529821" data-listing-reading-time-sort="1" data-listing-word-count-sort="24" data-listing-title-sort="Annotation of ATAC (ASTARR Input) 21" data-listing-filename-sort="region_astarr_input_21_export_06_encode_chromstates_R.ipynb">
+<td>
+<a href="./notebooks/24_region_annotation/region_astarr_input_21_export_06_encode_chromstates_R.html" class="title listing-title">Annotation of ATAC (ASTARR Input) 21</a>
+</td>
+<td>
+<span class="listing-subtitle">06 Summarize ATAC w/ ENCODE chromatin states</span>
+</td>
+</tr>
+<tr data-index="12" data-listing-file-modified-sort="1750774529828" data-listing-reading-time-sort="1" data-listing-word-count-sort="31" data-listing-title-sort="Annotation of ATAC (ASTARR Input) 21" data-listing-filename-sort="region_astarr_input_22_explore_06_encode_chromstates_R.ipynb">
+<td>
+<a href="./notebooks/24_region_annotation/region_astarr_input_22_explore_06_encode_chromstates_R.html" class="title listing-title">Annotation of ATAC (ASTARR Input) 21</a>
+</td>
+<td>
+<span class="listing-subtitle">06 Explore/Visualize ATAC w/ ENCODE chromatin states</span>
+</td>
+</tr>
+<tr data-index="13" data-listing-file-modified-sort="1750774529823" data-listing-reading-time-sort="1" data-listing-word-count-sort="36" data-listing-title-sort="Annotation of ATAC (ASTARR Input) 22" data-listing-filename-sort="region_astarr_input_22_explore_01_fcc_starrmpra_junke_R.ipynb">
+<td>
+<a href="./notebooks/24_region_annotation/region_astarr_input_22_explore_01_fcc_starrmpra_junke_R.html" class="title listing-title">Annotation of ATAC (ASTARR Input) 22</a>
+</td>
+<td>
+<span class="listing-subtitle">01 Explore/Visualize ATAC w/ STARR/MRPA peaks</span>
+</td>
+</tr>
+<tr data-index="14" data-listing-file-modified-sort="1750774529824" data-listing-reading-time-sort="1" data-listing-word-count-sort="33" data-listing-title-sort="Annotation of ATAC (ASTARR Input) 22" data-listing-filename-sort="region_astarr_input_22_explore_02_fcc_crispri_hcrff_R.ipynb">
+<td>
+<a href="./notebooks/24_region_annotation/region_astarr_input_22_explore_02_fcc_crispri_hcrff_R.html" class="title listing-title">Annotation of ATAC (ASTARR Input) 22</a>
+</td>
+<td>
+<span class="listing-subtitle">02 Explore/Visualize ATAC w/ CRISPRi-HCR FlowFISH CASA peaks</span>
+</td>
+</tr>
+<tr data-index="15" data-listing-file-modified-sort="1750774529825" data-listing-reading-time-sort="1" data-listing-word-count-sort="17" data-listing-title-sort="Annotation of ATAC (ASTARR Input) 22" data-listing-filename-sort="region_astarr_input_22_explore_03_fcc_crispri_growth_R.ipynb">
+<td>
+<a href="./notebooks/24_region_annotation/region_astarr_input_22_explore_03_fcc_crispri_growth_R.html" class="title listing-title">Annotation of ATAC (ASTARR Input) 22</a>
+</td>
+<td>
+<span class="listing-subtitle">03 Explore/Visualize ATAC w/ CRISPRi-Growth significant DHS</span>
+</td>
+</tr>
+<tr data-index="16" data-listing-file-modified-sort="1750774529826" data-listing-reading-time-sort="1" data-listing-word-count-sort="51" data-listing-title-sort="Annotation of ATAC (ASTARR Input) 22" data-listing-filename-sort="region_astarr_input_22_explore_04_genome_tss_R.ipynb">
+<td>
+<a href="./notebooks/24_region_annotation/region_astarr_input_22_explore_04_genome_tss_R.html" class="title listing-title">Annotation of ATAC (ASTARR Input) 22</a>
+</td>
+<td>
+<span class="listing-subtitle">04 Explore/Visualize ATAC w/ TSS</span>
+</td>
+</tr>
+<tr data-index="17" data-listing-file-modified-sort="1750774529827" data-listing-reading-time-sort="1" data-listing-word-count-sort="26" data-listing-title-sort="Annotation of ATAC (ASTARR Input) 22" data-listing-filename-sort="region_astarr_input_22_explore_05_encode_e2g_R.ipynb">
+<td>
+<a href="./notebooks/24_region_annotation/region_astarr_input_22_explore_05_encode_e2g_R.html" class="title listing-title">Annotation of ATAC (ASTARR Input) 22</a>
+</td>
+<td>
+<span class="listing-subtitle">05 Explore/Visualize ATAC w/ ENCODE E2G links</span>
+</td>
+</tr>
+<tr data-index="18" data-listing-file-modified-sort="1750774529880" data-listing-reading-time-sort="1" data-listing-word-count-sort="12" data-listing-title-sort="Annotation of ATAC (ASTARR Input) 31" data-listing-filename-sort="region_astarr_input_31_summarize_e2g_regulation_R.ipynb">
+<td>
+<a href="./notebooks/24_region_annotation/region_astarr_input_31_summarize_e2g_regulation_R.html" class="title listing-title">Annotation of ATAC (ASTARR Input) 31</a>
+</td>
+<td>
+<span class="listing-subtitle">Summarize regions with E2G regulated links</span>
+</td>
+</tr>
+<tr data-index="19" data-listing-file-modified-sort="1750774529881" data-listing-reading-time-sort="1" data-listing-word-count-sort="12" data-listing-title-sort="Annotation of ATAC (ASTARR Input) 32" data-listing-filename-sort="region_astarr_input_32_summarize_e2g_score_R.ipynb">
+<td>
+<a href="./notebooks/24_region_annotation/region_astarr_input_32_summarize_e2g_score_R.html" class="title listing-title">Annotation of ATAC (ASTARR Input) 32</a>
+</td>
+<td>
+<span class="listing-subtitle">Summarize scores with E2G regulated links</span>
+</td>
+</tr>
+<tr data-index="20" data-listing-file-modified-sort="1750774529882" data-listing-reading-time-sort="1" data-listing-word-count-sort="18" data-listing-title-sort="Annotation of ATAC (ASTARR Input) 33" data-listing-filename-sort="region_astarr_input_33_explore_e2g_regulation_R.ipynb">
+<td>
+<a href="./notebooks/24_region_annotation/region_astarr_input_33_explore_e2g_regulation_R.html" class="title listing-title">Annotation of ATAC (ASTARR Input) 33</a>
+</td>
+<td>
+<span class="listing-subtitle">Explore/Visualize regions with E2G regulated links</span>
+</td>
+</tr>
+<tr data-index="21" data-listing-file-modified-sort="1750774529884" data-listing-reading-time-sort="1" data-listing-word-count-sort="18" data-listing-title-sort="Annotation of ATAC (ASTARR Input) 34" data-listing-filename-sort="region_astarr_input_34_explore_e2g_score_R.ipynb">
+<td>
+<a href="./notebooks/24_region_annotation/region_astarr_input_34_explore_e2g_score_R.html" class="title listing-title">Annotation of ATAC (ASTARR Input) 34</a>
+</td>
+<td>
+<span class="listing-subtitle">Explore/Visualize scores with E2G regulated links</span>
+</td>
+</tr>
+<tr data-index="22" data-listing-file-modified-sort="1750774529936" data-listing-reading-time-sort="1" data-listing-word-count-sort="48" data-listing-title-sort="Annotation of ATAC (ASTARR Input) 41" data-listing-filename-sort="region_astarr_input_41_summarize_fcc_starrmpra_direction_R.ipynb">
+<td>
+<a href="./notebooks/24_region_annotation/region_astarr_input_41_summarize_fcc_starrmpra_direction_R.html" class="title listing-title">Annotation of ATAC (ASTARR Input) 41</a>
+</td>
+<td>
+<span class="listing-subtitle">Summarize assay direction from STARR/MPRA</span>
+</td>
+</tr>
+<tr data-index="23" data-listing-file-modified-sort="1750774529937" data-listing-reading-time-sort="1" data-listing-word-count-sort="21" data-listing-title-sort="Annotation of ATAC (ASTARR Input) 42" data-listing-filename-sort="region_astarr_input_42_summarize_fcc_starrmpra_assayvote_R.ipynb">
+<td>
+<a href="./notebooks/24_region_annotation/region_astarr_input_42_summarize_fcc_starrmpra_assayvote_R.html" class="title listing-title">Annotation of ATAC (ASTARR Input) 42</a>
+</td>
+<td>
+<span class="listing-subtitle">Summarize assay votes from STARR/MPRA by directions</span>
+</td>
+</tr>
+<tr data-index="24" data-listing-file-modified-sort="1750774529938" data-listing-reading-time-sort="1" data-listing-word-count-sort="21" data-listing-title-sort="Annotation of ATAC (ASTARR Input) 42" data-listing-filename-sort="region_astarr_input_42_summarize_fcc_starrmpra_assayvote_rmAR_R.ipynb">
+<td>
+<a href="./notebooks/24_region_annotation/region_astarr_input_42_summarize_fcc_starrmpra_assayvote_rmAR_R.html" class="title listing-title">Annotation of ATAC (ASTARR Input) 42</a>
+</td>
+<td>
+<span class="listing-subtitle">Summarize assay votes from STARR/MPRA by directions (remove AR)</span>
+</td>
+</tr>
+<tr data-index="25" data-listing-file-modified-sort="1750774529939" data-listing-reading-time-sort="1" data-listing-word-count-sort="48" data-listing-title-sort="Annotation of ATAC (ASTARR Input) 43" data-listing-filename-sort="region_astarr_input_43_summarize_fcc_starrmpra_group_R.ipynb">
+<td>
+<a href="./notebooks/24_region_annotation/region_astarr_input_43_summarize_fcc_starrmpra_group_R.html" class="title listing-title">Annotation of ATAC (ASTARR Input) 43</a>
+</td>
+<td>
+<span class="listing-subtitle">Define proximal/distal-active/repressive CREs</span>
+</td>
+</tr>
+<tr data-index="26" data-listing-file-modified-sort="1750774529940" data-listing-reading-time-sort="1" data-listing-word-count-sort="29" data-listing-title-sort="Annotation of ATAC (ASTARR Input) 44" data-listing-filename-sort="region_astarr_input_44_explore_fcc_starrmpra_nuc_R.ipynb">
+<td>
+<a href="./notebooks/24_region_annotation/region_astarr_input_44_explore_fcc_starrmpra_nuc_R.html" class="title listing-title">Annotation of ATAC (ASTARR Input) 44</a>
+</td>
+<td>
+<span class="listing-subtitle">Explore/Visualize distribution of GC content and length</span>
+</td>
+</tr>
+<tr data-index="27" data-listing-file-modified-sort="1750774529942" data-listing-reading-time-sort="1" data-listing-word-count-sort="12" data-listing-title-sort="Annotation of ATAC (ASTARR Input) 45" data-listing-filename-sort="region_astarr_input_45_explore_fcc_starrmpra_count_by_direciont_R.ipynb">
+<td>
+<a href="./notebooks/24_region_annotation/region_astarr_input_45_explore_fcc_starrmpra_count_by_direciont_R.html" class="title listing-title">Annotation of ATAC (ASTARR Input) 45</a>
+</td>
+<td>
+<span class="listing-subtitle">Explore/Visualize STARR/MPRA CRE counts by assay direction</span>
+</td>
+</tr>
+<tr data-index="28" data-listing-file-modified-sort="1750774529943" data-listing-reading-time-sort="1" data-listing-word-count-sort="36" data-listing-title-sort="Annotation of ATAC (ASTARR Input) 46" data-listing-filename-sort="region_astarr_input_46_explore_fcc_starrmpra_count_by_assay_R.ipynb">
+<td>
+<a href="./notebooks/24_region_annotation/region_astarr_input_46_explore_fcc_starrmpra_count_by_assay_R.html" class="title listing-title">Annotation of ATAC (ASTARR Input) 46</a>
+</td>
+<td>
+<span class="listing-subtitle">Explore/Visualize STARR/MPRA CRE counts by assay</span>
+</td>
+</tr>
+<tr data-index="29" data-listing-file-modified-sort="1750774529997" data-listing-reading-time-sort="1" data-listing-word-count-sort="12" data-listing-title-sort="Annotation of ATAC (ASTARR Input) 51" data-listing-filename-sort="region_astarr_input_51_summarize_fcc_starrmpracrispr_concat_R.ipynb">
+<td>
+<a href="./notebooks/24_region_annotation/region_astarr_input_51_summarize_fcc_starrmpracrispr_concat_R.html" class="title listing-title">Annotation of ATAC (ASTARR Input) 51</a>
+</td>
+<td>
+<span class="listing-subtitle">Concatenate ATAC with significant peaks of STARR/MPRA/CRISPR</span>
+</td>
+</tr>
+<tr data-index="30" data-listing-file-modified-sort="1750774529998" data-listing-reading-time-sort="1" data-listing-word-count-sort="75" data-listing-title-sort="Annotation of ATAC (ASTARR Input) 52" data-listing-filename-sort="region_astarr_input_52_summarize_fcc_starrmpracrispr_assayvote_R.ipynb">
+<td>
+<a href="./notebooks/24_region_annotation/region_astarr_input_52_summarize_fcc_starrmpracrispr_assayvote_R.html" class="title listing-title">Annotation of ATAC (ASTARR Input) 52</a>
+</td>
+<td>
+<span class="listing-subtitle">Summarize assay votes of STARR/MPRA/CRISPR</span>
+</td>
+</tr>
+<tr data-index="31" data-listing-file-modified-sort="1750774529999" data-listing-reading-time-sort="1" data-listing-word-count-sort="21" data-listing-title-sort="Annotation of ATAC (ASTARR Input) 53" data-listing-filename-sort="region_astarr_input_53_explore_fcc_starrmpracrispr_count_by_assay_R.ipynb">
+<td>
+<a href="./notebooks/24_region_annotation/region_astarr_input_53_explore_fcc_starrmpracrispr_count_by_assay_R.html" class="title listing-title">Annotation of ATAC (ASTARR Input) 53</a>
+</td>
+<td>
+<span class="listing-subtitle">Explore/Visualize STARR/MPRA/CRISPR CRE counts by assays</span>
+</td>
+</tr>
+<tr data-index="32" data-listing-file-modified-sort="1750774529944" data-listing-reading-time-sort="1" data-listing-word-count-sort="18" data-listing-title-sort="FCC Peak calls" data-listing-filename-sort="region_astarr_input_47_explore_fcc_starrmpra_count_by_group_R.ipynb">
+<td>
+<a href="./notebooks/24_region_annotation/region_astarr_input_47_explore_fcc_starrmpra_count_by_group_R.html" class="title listing-title">FCC Peak calls</a>
+</td>
+<td>
+<span class="listing-subtitle">export annotation</span>
+</td>
+</tr>
 </tbody>
 </table>
 <div class="listing-no-matching d-none">
 No matching items
 </div>
+<nav id="notebooks_24_region_annotation-pagination" class="listing-pagination" aria-label="Page Navigation">
+  <ul class="pagination"></ul>
+</nav>
 </div>
 <p>This part is mainly about</p>
 <ul>

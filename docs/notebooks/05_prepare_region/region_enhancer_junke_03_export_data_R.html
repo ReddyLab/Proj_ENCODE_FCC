@@ -395,11 +395,45 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../13_region_annotation/region_annot.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">TSS</span></a>
+  <a href="../../13_region_annotation/region_annot_01_genome.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Intersect/Summarize genomic annotaions by accessible regions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../13_region_annotation/region_annot_02_peak_calls.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Intersect/Summarize FCC peak calls by accessible regions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../13_region_annotation/region_annot_03_starrmpra_vote2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Proximal/Distal-Active/Repressive CREs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../13_region_annotation/region_annot_04_starrmpracrispr_vote2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Full CREs from STARR/MPRA/CRISPR assays</span></a>
   </div>
 </li>
       </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">FCC correlation</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">FCC comparison</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">FCC enrichment</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">FCC UMAP/Cluster</span></span>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
@@ -407,13 +441,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false">
  <span class="menu-text">Test Notebook</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../notebooks/test/test_notebook.html" class="sidebar-item-text sidebar-link">
@@ -1275,7 +1309,7 @@ chr21 chr22  chr3  chr4  chr5  chr6  chr7  chr8  chr9  chrM  chrX
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="do">### set directory</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>txt_folder <span class="ot">=</span> <span class="st">"fcc_starrmpra_junke"</span></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>txt_fdiry  <span class="ot">=</span> <span class="fu">file.path</span>(FD_RES, <span class="st">"region"</span>, txt_folder, <span class="st">"summary"</span>)</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>txt_fname <span class="ot">=</span> <span class="fu">paste</span>(<span class="st">"K562.hg38"</span>, <span class="st">"Merge"</span>, <span class="st">"junke"</span>, <span class="st">"tsv"</span>, <span class="at">sep =</span> <span class="st">"."</span>)</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>txt_fname <span class="ot">=</span> <span class="fu">paste</span>(<span class="st">"K562.hg38"</span>, <span class="st">"STARRMPRA"</span>, <span class="st">"junke"</span>, <span class="st">"tsv"</span>, <span class="at">sep =</span> <span class="st">"."</span>)</span>
 <span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>txt_fpath <span class="ot">=</span> <span class="fu">file.path</span>(txt_fdiry, txt_fname)</span>
 <span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(txt_fname)</span>
 <span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a></span>
@@ -1284,22 +1318,41 @@ chr21 chr22  chr3  chr4  chr5  chr6  chr7  chr8  chr9  chrM  chrX
 <span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a><span class="fu">write_tsv</span>(dat, txt_fpath)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "K562.hg38.Merge.junke.tsv"</code></pre>
+<pre><code>[1] "K562.hg38.STARRMPRA.junke.tsv"</code></pre>
 </div>
 </div>
-<p><strong>Save metatable</strong></p>
-<div id="ad5d1a48-165f-4e67-9600-9a21f7397c60" class="cell" data-execution_count="15">
+<p><strong>Save a copy to the reference folder</strong></p>
+<div id="929ff0b0-fcd6-400d-927d-8ec7fef54c05" class="cell" data-execution_count="15">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="do">### set directory</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>txt_folder <span class="ot">=</span> <span class="st">"fcc_starrmpra_junke"</span></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>txt_fdiry  <span class="ot">=</span> <span class="fu">file.path</span>(FD_RES, <span class="st">"region"</span>, txt_folder, <span class="st">"summary"</span>)</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>txt_fname <span class="ot">=</span> <span class="st">"metadata.tsv"</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>txt_folder <span class="ot">=</span> <span class="st">"fcc_region_collect"</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>txt_fdiry  <span class="ot">=</span> <span class="fu">file.path</span>(FD_REF, txt_folder)</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>txt_fname <span class="ot">=</span> <span class="fu">paste</span>(<span class="st">"K562.hg38"</span>, <span class="st">"STARRMPRA"</span>, <span class="st">"junke"</span>, <span class="st">"tsv"</span>, <span class="at">sep =</span> <span class="st">"."</span>)</span>
 <span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>txt_fpath <span class="ot">=</span> <span class="fu">file.path</span>(txt_fdiry, txt_fname)</span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="do">### write metadata table</span></span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat_meta</span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="fu">write_tsv</span>(dat, txt_fpath)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(txt_fname)</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="do">### write table</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat_region_merge</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="fu">write_tsv</span>(dat, txt_fpath)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "K562.hg38.STARRMPRA.junke.tsv"</code></pre>
+</div>
+</div>
+<p><strong>Save metatable</strong></p>
+<div id="ad5d1a48-165f-4e67-9600-9a21f7397c60" class="cell" data-execution_count="16">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="do">### set directory</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>txt_folder <span class="ot">=</span> <span class="st">"fcc_starrmpra_junke"</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>txt_fdiry  <span class="ot">=</span> <span class="fu">file.path</span>(FD_RES, <span class="st">"region"</span>, txt_folder, <span class="st">"summary"</span>)</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>txt_fname <span class="ot">=</span> <span class="st">"metadata.tsv"</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>txt_fpath <span class="ot">=</span> <span class="fu">file.path</span>(txt_fdiry, txt_fname)</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="do">### write metadata table</span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat_meta</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a><span class="fu">write_tsv</span>(dat, txt_fpath)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 

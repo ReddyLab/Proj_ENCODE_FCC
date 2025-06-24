@@ -41,6 +41,11 @@ website:
       - section: "Coverage of ChIP-seq"
       - section: "Region Annotation"
         contents: 13_region_annotation/*
+      - section: "FCC correlation"
+      - section: "FCC comparison"
+      - section: "FCC enrichment"
+        contents: 24_fcc_enrichment/*
+      - section: "FCC UMAP/Cluster"
       - section: "FCC vs HiC"
       - section: "Test Notebook"
         contents:
