@@ -73,6 +73,9 @@ Distribution of LMPRA Log2 fold change
 
 ## CRISPRi-HCR FlowFISH (CRISPRi-HCRFF)
 
+[ENCODE Link](https://www.encodeproject.org/search/?type=FunctionalCharacterizationExperiment&type=FunctionalCharacterizationSeries&type=TransgenicEnhancerExperiment&config=FunctionalCharacterization&datapoint=false&control_type!=*&status=released&assay_title=Flow-FISH+CRISPR+screen&lab.title=Pardis+Sabeti%2C+Broad)
+
+
 ## CRISPRi Growth screen (CRISPRi-Growth)
 
 ## CRISPR E2G benchmark data (CRISPR-E2G)

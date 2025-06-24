@@ -68,6 +68,11 @@ fun_display_table = function(dat){
         IRdisplay::display_html()
 }
 
+### helper function to show table
+fun_markdown_table = function(dat){
+    dat %>% kableExtra::kable("markdown")    
+}
+
 ### helper function to get genome location
 fun_gen_region = function(txt_chrom, num_chrom_start, num_chrom_end){
     txt_chrom_start = format(num_chrom_start, scientific = FALSE)
@@ -135,6 +140,20 @@ fun_str_map_assay = function(vec_txt_assay){
     vec_txt_replace = c(
         "ATAC-STARR", "WHG-STARR", "Lenti-MPRA", "Tiling-MPRA", 
         "CRISPRi-HCR FlowFISH", "CRISPRi-Growth"
+    )
+    vec_txt_output = fun_str_map_match(vec_txt_assay, vec_txt_pattern, vec_txt_replace)
+    return(vec_txt_output)
+}
+
+### helper function to match ATAC region
+fun_str_map_atac = function(vec_txt_assay){
+    vec_txt_pattern = c(
+        "fcc_astarr_macs_input_overlap", 
+        "fcc_astarr_macs_input_union"
+    )
+    vec_txt_replace = c(
+        "ATAC (Overlap)", 
+        "ATAC (Union)"   
     )
     vec_txt_output = fun_str_map_match(vec_txt_assay, vec_txt_pattern, vec_txt_replace)
     return(vec_txt_output)

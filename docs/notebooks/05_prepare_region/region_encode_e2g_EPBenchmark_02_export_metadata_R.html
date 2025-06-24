@@ -395,11 +395,45 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../13_region_annotation/region_annot.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">TSS</span></a>
+  <a href="../../13_region_annotation/region_annot_01_genome.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Intersect/Summarize genomic annotaions by accessible regions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../13_region_annotation/region_annot_02_peak_calls.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Intersect/Summarize FCC peak calls by accessible regions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../13_region_annotation/region_annot_03_starrmpra_vote2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Proximal/Distal-Active/Repressive CREs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../13_region_annotation/region_annot_04_starrmpracrispr_vote2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Full CREs from STARR/MPRA/CRISPR assays</span></a>
   </div>
 </li>
       </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">FCC correlation</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">FCC comparison</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">FCC enrichment</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">FCC UMAP/Cluster</span></span>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
@@ -407,13 +441,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false">
  <span class="menu-text">Test Notebook</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../notebooks/test/test_notebook.html" class="sidebar-item-text sidebar-link">
@@ -461,7 +495,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p><strong>Set environment</strong></p>
-<div id="c8337ad8-c746-4941-beb2-a0793f1884ee" class="cell" data-tags="[]" data-execution_count="4">
+<div id="c8337ad8-c746-4941-beb2-a0793f1884ee" class="cell" data-tags="[]" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>(<span class="fu">suppressWarnings</span>(<span class="fu">source</span>(<span class="st">"../run_config_project_sing.R"</span>)))</span>
@@ -487,7 +521,7 @@ PROJECT REF     (FD_REF): /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/references
 </div>
 </div>
 <p><strong>Set global variables</strong></p>
-<div id="0f56cbeb-b40d-40b2-ab19-053a126995c5" class="cell" data-execution_count="5">
+<div id="0f56cbeb-b40d-40b2-ab19-053a126995c5" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>TXT_FOLDER_REGION <span class="ot">=</span> <span class="st">"encode_e2g_benchmark"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -495,7 +529,7 @@ PROJECT REF     (FD_REF): /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/references
 </div>
 <section id="define-file-labeling" class="level2">
 <h2 class="anchored" data-anchor-id="define-file-labeling">Define file labeling</h2>
-<div id="26b2cf26-d54b-4219-89c4-a25c2b90fbde" class="cell" data-execution_count="6">
+<div id="26b2cf26-d54b-4219-89c4-a25c2b90fbde" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="do">### set directory</span></span>
@@ -513,7 +547,7 @@ PROJECT REF     (FD_REF): /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/references
 <pre><code>[1] "K562.hg38.ENCODE_E2G.benchmark.bed.gz"</code></pre>
 </div>
 </div>
-<div id="5bbac504-875a-4e2f-a7a2-0d33e752526b" class="cell" data-execution_count="7">
+<div id="5bbac504-875a-4e2f-a7a2-0d33e752526b" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="do">### init info table</span></span>

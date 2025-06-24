@@ -1,0 +1,23 @@
+---
+title: "Intersect/Summarize genomic annotaions by accessible regions"
+---
+
+# TSS
+
+There are total 11,892 TSS
+
+[Link](/02_prepare/data_23_others.qmd)
+
+|Group           |Location (Total) |ATAC (Overlap) |ATAC (Union) |
+|:---------------|:----------------|:--------------|:------------|
+|TSS_Pol2_RNAseq |11,823           |9,649          |9,788        |
+
+figure: GC & Length distribution: TSS vs Not-TSS
+
+![](/figure/24_region_annotation/fig.region_annot.astarr_input_overlap.genome_tss.distribution.gc_content.png){ width=40% }
+
+![](/figure/24_region_annotation/fig.region_annot.astarr_input_overlap.genome_tss.distribution.length.png){ width=40% }
+
+# ENCODE cCREs
+
+# ENCODE ChromHMM

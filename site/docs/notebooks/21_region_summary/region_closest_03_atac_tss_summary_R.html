@@ -57,7 +57,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -100,6 +100,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 <link rel="stylesheet" href="../../styles.css">
@@ -392,11 +395,45 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../13_region_annotation/region_annot.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">TSS</span></a>
+  <a href="../../13_region_annotation/region_annot_01_genome.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Intersect/Summarize genomic annotaions by accessible regions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../13_region_annotation/region_annot_02_peak_calls.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Intersect/Summarize FCC peak calls by accessible regions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../13_region_annotation/region_annot_03_starrmpra_vote2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Proximal/Distal-Active/Repressive CREs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../13_region_annotation/region_annot_04_starrmpracrispr_vote2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Full CREs from STARR/MPRA/CRISPR assays</span></a>
   </div>
 </li>
       </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">FCC correlation</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">FCC comparison</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">FCC enrichment</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">FCC UMAP/Cluster</span></span>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
@@ -404,13 +441,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false">
  <span class="menu-text">Test Notebook</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../notebooks/test/test_notebook.html" class="sidebar-item-text sidebar-link">
@@ -499,7 +536,7 @@ PROJECT REF     (FD_REF): /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/references
 </details>
 </div>
 <p><strong>Process each data</strong></p>
-<div id="12e41475-2ce3-4345-90c6-207c7a340921" class="cell" data-execution_count="3">
+<div id="12e41475-2ce3-4345-90c6-207c7a340921" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="do">### init</span></span>
@@ -535,7 +572,7 @@ PROJECT REF     (FD_REF): /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/references
 <span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>    <span class="fu">colnames</span>(dat) <span class="ot">=</span> <span class="fu">c</span>(</span>
 <span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Chrom"</span>, <span class="st">"ChromStart"</span>, <span class="st">"ChromEnd"</span>, <span class="st">"Region"</span>,</span>
 <span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Annotation_A"</span>, <span class="st">"Annotation_B"</span>,</span>
-<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Distance"</span></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Distance2TSS"</span></span>
 <span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>    )</span>
 <span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>    dat_region_rename <span class="ot">=</span> dat</span>
 <span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>    </span>
@@ -543,7 +580,7 @@ PROJECT REF     (FD_REF): /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/references
 <span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat_region_rename</span>
 <span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span></span>
 <span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
-<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>            <span class="at">Label_TSS_Proximity =</span> <span class="fu">fun_label_by_tss_proximity</span>(Distance),</span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>            <span class="at">TSS_Proximity =</span> <span class="fu">fun_label_by_tss_proximity</span>(Distance2TSS),</span>
 <span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>        )</span>
 <span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a>    dat_region_summary <span class="ot">=</span> dat</span>
 <span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a></span>
@@ -563,6 +600,157 @@ PROJECT REF     (FD_REF): /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/references
 
 Save: /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/region_closest/fcc_astarr_macs_input_union/summary/region.summary.genome_tss.tsv 
 </code></pre>
+</div>
+</div>
+<div id="3bcbe0ad-4bfa-41c7-80ae-1dbc2d75fd31" class="cell" data-execution_count="4">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dat_region_pair)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>A tibble: 6 × 15</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" scope="col">Chrom_A</th>
+<th data-quarto-table-cell-role="th" scope="col">ChromStart_A</th>
+<th data-quarto-table-cell-role="th" scope="col">ChromEnd_A</th>
+<th data-quarto-table-cell-role="th" scope="col">Region_A</th>
+<th data-quarto-table-cell-role="th" scope="col">Chrom_B</th>
+<th data-quarto-table-cell-role="th" scope="col">ChromStart_B</th>
+<th data-quarto-table-cell-role="th" scope="col">ChromEnd_B</th>
+<th data-quarto-table-cell-role="th" scope="col">Region_B</th>
+<th data-quarto-table-cell-role="th" scope="col">Gene_B</th>
+<th data-quarto-table-cell-role="th" scope="col">Score_B</th>
+<th data-quarto-table-cell-role="th" scope="col">Group_B</th>
+<th data-quarto-table-cell-role="th" scope="col">Label_B</th>
+<th data-quarto-table-cell-role="th" scope="col">Distance</th>
+<th data-quarto-table-cell-role="th" scope="col">Annotation_A</th>
+<th data-quarto-table-cell-role="th" scope="col">Annotation_B</th>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>chr1</td>
+<td>10038</td>
+<td>10405</td>
+<td>chr1:10038-10405</td>
+<td>chr1</td>
+<td>11873</td>
+<td>11874</td>
+<td>chr1:11873-11874</td>
+<td>DDX11L1</td>
+<td>0.00023</td>
+<td>TSS_Pol2</td>
+<td>DDX11L1</td>
+<td>1469</td>
+<td>fcc_astarr_macs_input_overlap</td>
+<td>genome_tss_pol2</td>
+</tr>
+<tr class="even">
+<td>chr1</td>
+<td>14282</td>
+<td>14614</td>
+<td>chr1:14282-14614</td>
+<td>chr1</td>
+<td>11873</td>
+<td>11874</td>
+<td>chr1:11873-11874</td>
+<td>DDX11L1</td>
+<td>0.00023</td>
+<td>TSS_Pol2</td>
+<td>DDX11L1</td>
+<td>2409</td>
+<td>fcc_astarr_macs_input_overlap</td>
+<td>genome_tss_pol2</td>
+</tr>
+<tr class="odd">
+<td>chr1</td>
+<td>16025</td>
+<td>16338</td>
+<td>chr1:16025-16338</td>
+<td>chr1</td>
+<td>17436</td>
+<td>17437</td>
+<td>chr1:17436-17437</td>
+<td>MIR6859-1</td>
+<td>9.43812</td>
+<td>TSS_Pol2</td>
+<td>MIR6859-1</td>
+<td>1099</td>
+<td>fcc_astarr_macs_input_overlap</td>
+<td>genome_tss_pol2</td>
+</tr>
+<tr class="even">
+<td>chr1</td>
+<td>16025</td>
+<td>16338</td>
+<td>chr1:16025-16338</td>
+<td>chr1</td>
+<td>17436</td>
+<td>17437</td>
+<td>chr1:17436-17437</td>
+<td>MIR6859-2</td>
+<td>9.43812</td>
+<td>TSS_Pol2</td>
+<td>MIR6859-2</td>
+<td>1099</td>
+<td>fcc_astarr_macs_input_overlap</td>
+<td>genome_tss_pol2</td>
+</tr>
+<tr class="odd">
+<td>chr1</td>
+<td>16025</td>
+<td>16338</td>
+<td>chr1:16025-16338</td>
+<td>chr1</td>
+<td>17436</td>
+<td>17437</td>
+<td>chr1:17436-17437</td>
+<td>MIR6859-3</td>
+<td>9.43812</td>
+<td>TSS_Pol2</td>
+<td>MIR6859-3</td>
+<td>1099</td>
+<td>fcc_astarr_macs_input_overlap</td>
+<td>genome_tss_pol2</td>
+</tr>
+<tr class="even">
+<td>chr1</td>
+<td>16025</td>
+<td>16338</td>
+<td>chr1:16025-16338</td>
+<td>chr1</td>
+<td>17436</td>
+<td>17437</td>
+<td>chr1:17436-17437</td>
+<td>MIR6859-4</td>
+<td>9.43812</td>
+<td>TSS_Pol2</td>
+<td>MIR6859-4</td>
+<td>1099</td>
+<td>fcc_astarr_macs_input_overlap</td>
+<td>genome_tss_pol2</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 
