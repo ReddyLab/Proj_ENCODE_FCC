@@ -338,44 +338,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/011_region_ocr_astarr_KS91.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (ASTARR KS91)</span></a>
+  <a href="../../11_region_coverage_fcc/01_region_coverage_fcc_screen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FCC coverage at ATAC/DHS regions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/012_region_ocr_astarr_KS274.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (ASTARR KS274)</span></a>
+  <a href="../../11_region_coverage_fcc/02_region_coverage_fcc_scatter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Whole genome comparison of FCC assays</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/02_region_ocr_wstarr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (WSTARR)</span></a>
+  <a href="../../11_region_coverage_fcc/03_region_coverage_fcc_correlation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Rank normalized FCC effect size</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/03_region_ocr_tmpra.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (TMPRA)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/04_region_ocr_lmpra.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (LMPRA)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/05_region_ocr_crispri_hcrff.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (CRISPRi-HCRFF)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/06_region_ocr_crispri_growth.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (CRISPRi-Growth)</span></a>
+  <a href="../../11_region_coverage_fcc/04_region_coverage_fcc_comparison.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Comparisons of FCC across genome annotations</span></a>
   </div>
 </li>
       </ul>
@@ -764,7 +746,8 @@ $fcc_astarr_macs_input_union
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_annot_import</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> lst[[<span class="dv">1</span>]]</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(Region_Count <span class="sc">&gt;</span> <span class="dv">1</span>, Group <span class="sc">==</span> <span class="st">"TSS_Pol2_RNAseq"</span>) <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co">#dat %&gt;% dplyr::filter(Region_Count &gt; 1, Group == "TSS_Pol2_RNAseq") %&gt;% head(3)</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(Region_Count <span class="sc">&gt;</span> <span class="dv">1</span>, Group <span class="sc">==</span> <span class="st">"TSS_Pol2"</span>) <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true">
@@ -802,34 +785,34 @@ $fcc_astarr_macs_input_union
 <td>23170223</td>
 <td>chr1:23167385-23170223</td>
 <td>fcc_astarr_macs_input_overlap</td>
-<td>genome_tss_pol2_rnaseq</td>
-<td>TSS_Pol2_RNAseq</td>
+<td>genome_tss_pol2</td>
+<td>TSS_Pol2</td>
 <td>LUZP1</td>
 <td>chr1:23168856-23168857;chr1:23168858-23168859</td>
 <td>2</td>
 </tr>
 <tr class="even">
 <td>chr1</td>
+<td>120069078</td>
+<td>120069775</td>
+<td>chr1:120069078-120069775</td>
+<td>fcc_astarr_macs_input_overlap</td>
+<td>genome_tss_pol2</td>
+<td>TSS_Pol2</td>
+<td>NOTCH2</td>
+<td>chr1:120069662-120069663;chr1:120069703-120069704</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>chr1</td>
 <td>145607800</td>
 <td>145608529</td>
 <td>chr1:145607800-145608529</td>
 <td>fcc_astarr_macs_input_overlap</td>
-<td>genome_tss_pol2_rnaseq</td>
-<td>TSS_Pol2_RNAseq</td>
+<td>genome_tss_pol2</td>
+<td>TSS_Pol2</td>
 <td>GPR89A</td>
 <td>chr1:145607959-145607960;chr1:145607987-145607988</td>
-<td>2</td>
-</tr>
-<tr class="odd">
-<td>chr10</td>
-<td>50067706</td>
-<td>50068460</td>
-<td>chr10:50067706-50068460</td>
-<td>fcc_astarr_macs_input_overlap</td>
-<td>genome_tss_pol2_rnaseq</td>
-<td>TSS_Pol2_RNAseq</td>
-<td>WASHC2A</td>
-<td>chr10:50067887-50067888;chr10:50067953-50067954</td>
 <td>2</td>
 </tr>
 </tbody>
@@ -886,25 +869,26 @@ $fcc_astarr_macs_input_union
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="do">### arrange tables</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_annot_import</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">lapply</span>(lst, <span class="cf">function</span>(dat){</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(Group <span class="sc">==</span> <span class="st">"TSS_Pol2_RNAseq"</span>)</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(dat)</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="do">### assign and show</span></span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>lst_dat_region_annot_arrange <span class="ot">=</span> lst</span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>res <span class="ot">=</span> <span class="fu">lapply</span>(lst, dim)</span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res)</span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> lst[[<span class="dv">1</span>]]</span>
-<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a><span class="fu">fun_display_table</span>(<span class="fu">head</span>(dat, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">#dat = dat %&gt;% dplyr::filter(Group == "TSS_Pol2_RNAseq")</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(Group <span class="sc">==</span> <span class="st">"TSS_Pol2"</span>)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(dat)</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="do">### assign and show</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>lst_dat_region_annot_arrange <span class="ot">=</span> lst</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>res <span class="ot">=</span> <span class="fu">lapply</span>(lst, dim)</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res)</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> lst[[<span class="dv">1</span>]]</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a><span class="fu">fun_display_table</span>(<span class="fu">head</span>(dat, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>$fcc_astarr_macs_input_overlap
-[1] 10817    10
+[1] 16109    10
 
 $fcc_astarr_macs_input_union
-[1] 10968    10
+[1] 17697    10
 </code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -926,38 +910,38 @@ $fcc_astarr_macs_input_union
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">chr1</td>
-<td style="text-align: right;">28934</td>
-<td style="text-align: right;">29499</td>
-<td style="text-align: left;">chr1:28934-29499</td>
+<td style="text-align: right;">17288</td>
+<td style="text-align: right;">17689</td>
+<td style="text-align: left;">chr1:17288-17689</td>
 <td style="text-align: left;">fcc_astarr_macs_input_overlap</td>
-<td style="text-align: left;">genome_tss_pol2_rnaseq</td>
-<td style="text-align: left;">TSS_Pol2_RNAseq</td>
-<td style="text-align: left;">WASH7P</td>
-<td style="text-align: left;">chr1:29370-29371</td>
+<td style="text-align: left;">genome_tss_pol2</td>
+<td style="text-align: left;">TSS_Pol2</td>
+<td style="text-align: left;">MIR6859-1</td>
+<td style="text-align: left;">chr1:17436-17437</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">chr1</td>
-<td style="text-align: right;">826796</td>
-<td style="text-align: right;">828040</td>
-<td style="text-align: left;">chr1:826796-828040</td>
+<td style="text-align: right;">17288</td>
+<td style="text-align: right;">17689</td>
+<td style="text-align: left;">chr1:17288-17689</td>
 <td style="text-align: left;">fcc_astarr_macs_input_overlap</td>
-<td style="text-align: left;">genome_tss_pol2_rnaseq</td>
-<td style="text-align: left;">TSS_Pol2_RNAseq</td>
-<td style="text-align: left;">LINC00115</td>
-<td style="text-align: left;">chr1:827522-827523</td>
+<td style="text-align: left;">genome_tss_pol2</td>
+<td style="text-align: left;">TSS_Pol2</td>
+<td style="text-align: left;">MIR6859-2</td>
+<td style="text-align: left;">chr1:17436-17437</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">chr1</td>
-<td style="text-align: right;">826796</td>
-<td style="text-align: right;">828040</td>
-<td style="text-align: left;">chr1:826796-828040</td>
+<td style="text-align: right;">17288</td>
+<td style="text-align: right;">17689</td>
+<td style="text-align: left;">chr1:17288-17689</td>
 <td style="text-align: left;">fcc_astarr_macs_input_overlap</td>
-<td style="text-align: left;">genome_tss_pol2_rnaseq</td>
-<td style="text-align: left;">TSS_Pol2_RNAseq</td>
-<td style="text-align: left;">LINC01128</td>
-<td style="text-align: left;">chr1:827590-827591</td>
+<td style="text-align: left;">genome_tss_pol2</td>
+<td style="text-align: left;">TSS_Pol2</td>
+<td style="text-align: left;">MIR6859-3</td>
+<td style="text-align: left;">chr1:17436-17437</td>
 <td style="text-align: right;">1</td>
 </tr>
 </tbody>
@@ -1031,17 +1015,17 @@ $fcc_astarr_macs_input_union
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Region</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">TSS_Pol2_RNAseq</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">TSS_Pol2</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">fcc_astarr_macs_input_overlap</td>
-<td style="text-align: right;">10817</td>
+<td style="text-align: right;">16109</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">fcc_astarr_macs_input_union</td>
-<td style="text-align: right;">10968</td>
+<td style="text-align: right;">17697</td>
 </tr>
 </tbody>
 </table>
@@ -1081,10 +1065,10 @@ $fcc_astarr_macs_input_union
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>$fcc_astarr_macs_input_overlap
-[1] 10817    11
+[1] 16109    11
 
 $fcc_astarr_macs_input_union
-[1] 10968    11
+[1] 17697    11
 </code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -1107,40 +1091,40 @@ $fcc_astarr_macs_input_union
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">chr1</td>
-<td style="text-align: right;">28934</td>
-<td style="text-align: right;">29499</td>
-<td style="text-align: left;">chr1:28934-29499</td>
+<td style="text-align: right;">17288</td>
+<td style="text-align: right;">17689</td>
+<td style="text-align: left;">chr1:17288-17689</td>
 <td style="text-align: left;">fcc_astarr_macs_input_overlap</td>
-<td style="text-align: left;">genome_tss_pol2_rnaseq</td>
-<td style="text-align: left;">TSS_Pol2_RNAseq</td>
-<td style="text-align: left;">WASH7P</td>
-<td style="text-align: left;">chr1:29370-29371</td>
+<td style="text-align: left;">genome_tss_pol2</td>
+<td style="text-align: left;">TSS_Pol2</td>
+<td style="text-align: left;">MIR6859-1</td>
+<td style="text-align: left;">chr1:17436-17437</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">chr1</td>
-<td style="text-align: right;">826796</td>
-<td style="text-align: right;">828040</td>
-<td style="text-align: left;">chr1:826796-828040</td>
+<td style="text-align: right;">17288</td>
+<td style="text-align: right;">17689</td>
+<td style="text-align: left;">chr1:17288-17689</td>
 <td style="text-align: left;">fcc_astarr_macs_input_overlap</td>
-<td style="text-align: left;">genome_tss_pol2_rnaseq</td>
-<td style="text-align: left;">TSS_Pol2_RNAseq</td>
-<td style="text-align: left;">LINC00115</td>
-<td style="text-align: left;">chr1:827522-827523</td>
+<td style="text-align: left;">genome_tss_pol2</td>
+<td style="text-align: left;">TSS_Pol2</td>
+<td style="text-align: left;">MIR6859-2</td>
+<td style="text-align: left;">chr1:17436-17437</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">chr1</td>
-<td style="text-align: right;">826796</td>
-<td style="text-align: right;">828040</td>
-<td style="text-align: left;">chr1:826796-828040</td>
+<td style="text-align: right;">17288</td>
+<td style="text-align: right;">17689</td>
+<td style="text-align: left;">chr1:17288-17689</td>
 <td style="text-align: left;">fcc_astarr_macs_input_overlap</td>
-<td style="text-align: left;">genome_tss_pol2_rnaseq</td>
-<td style="text-align: left;">TSS_Pol2_RNAseq</td>
-<td style="text-align: left;">LINC01128</td>
-<td style="text-align: left;">chr1:827590-827591</td>
+<td style="text-align: left;">genome_tss_pol2</td>
+<td style="text-align: left;">TSS_Pol2</td>
+<td style="text-align: left;">MIR6859-3</td>
+<td style="text-align: left;">chr1:17436-17437</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 </tr>
@@ -1195,15 +1179,15 @@ $fcc_astarr_macs_input_union
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">fcc_astarr_macs_input_overlap</td>
-<td style="text-align: left;">TSS_Pol2_RNAseq</td>
-<td style="text-align: right;">9576</td>
-<td style="text-align: right;">1241</td>
+<td style="text-align: left;">TSS_Pol2</td>
+<td style="text-align: right;">14867</td>
+<td style="text-align: right;">1242</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">fcc_astarr_macs_input_union</td>
-<td style="text-align: left;">TSS_Pol2_RNAseq</td>
-<td style="text-align: right;">9727</td>
-<td style="text-align: right;">1241</td>
+<td style="text-align: left;">TSS_Pol2</td>
+<td style="text-align: right;">16455</td>
+<td style="text-align: right;">1242</td>
 </tr>
 </tbody>
 </table>
@@ -1236,10 +1220,10 @@ $fcc_astarr_macs_input_union
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>$fcc_astarr_macs_input_overlap
-[1] 9649    5
+[1] 13732     5
 
 $fcc_astarr_macs_input_union
-[1] 9788    5
+[1] 15182     5
 </code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -1256,23 +1240,23 @@ $fcc_astarr_macs_input_union
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">chr1</td>
+<td style="text-align: right;">17288</td>
+<td style="text-align: right;">17689</td>
+<td style="text-align: left;">chr1:17288-17689</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">chr1</td>
 <td style="text-align: right;">28934</td>
 <td style="text-align: right;">29499</td>
 <td style="text-align: left;">chr1:28934-29499</td>
 <td style="text-align: right;">1</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">chr1</td>
-<td style="text-align: right;">826796</td>
-<td style="text-align: right;">828040</td>
-<td style="text-align: left;">chr1:826796-828040</td>
-<td style="text-align: right;">1</td>
-</tr>
 <tr class="odd">
 <td style="text-align: left;">chr1</td>
-<td style="text-align: right;">876493</td>
-<td style="text-align: right;">877795</td>
-<td style="text-align: left;">chr1:876493-877795</td>
+<td style="text-align: right;">778233</td>
+<td style="text-align: right;">779389</td>
+<td style="text-align: left;">chr1:778233-779389</td>
 <td style="text-align: right;">1</td>
 </tr>
 </tbody>
@@ -1300,17 +1284,17 @@ $fcc_astarr_macs_input_union
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Region</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">TSS_Pol2_RNAseq</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">TSS_Pol2</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">fcc_astarr_macs_input_overlap</td>
-<td style="text-align: right;">9649</td>
+<td style="text-align: right;">13732</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">fcc_astarr_macs_input_union</td>
-<td style="text-align: right;">9788</td>
+<td style="text-align: right;">15182</td>
 </tr>
 </tbody>
 </table>

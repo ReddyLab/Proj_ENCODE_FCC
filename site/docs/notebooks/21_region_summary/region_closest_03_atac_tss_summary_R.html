@@ -338,44 +338,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/011_region_ocr_astarr_KS91.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (ASTARR KS91)</span></a>
+  <a href="../../11_region_coverage_fcc/01_region_coverage_fcc_screen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FCC coverage at ATAC/DHS regions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/012_region_ocr_astarr_KS274.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (ASTARR KS274)</span></a>
+  <a href="../../11_region_coverage_fcc/02_region_coverage_fcc_scatter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Whole genome comparison of FCC assays</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/02_region_ocr_wstarr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (WSTARR)</span></a>
+  <a href="../../11_region_coverage_fcc/03_region_coverage_fcc_correlation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Rank normalized FCC effect size</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/03_region_ocr_tmpra.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (TMPRA)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/04_region_ocr_lmpra.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (LMPRA)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/05_region_ocr_crispri_hcrff.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (CRISPRi-HCRFF)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/06_region_ocr_crispri_growth.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (CRISPRi-Growth)</span></a>
+  <a href="../../11_region_coverage_fcc/04_region_coverage_fcc_comparison.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Comparisons of FCC across genome annotations</span></a>
   </div>
 </li>
       </ul>
@@ -466,7 +448,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#import-arrange-and-save-data" id="toc-import-arrange-and-save-data" class="nav-link active" data-scroll-target="#import-arrange-and-save-data">Import, arrange, and save data</a></li>
+  <li><a href="#prepare" id="toc-prepare" class="nav-link active" data-scroll-target="#prepare">Prepare</a></li>
+  <li><a href="#import-data" id="toc-import-data" class="nav-link" data-scroll-target="#import-data">Import data</a></li>
+  <li><a href="#arrange-table" id="toc-arrange-table" class="nav-link" data-scroll-target="#arrange-table">Arrange table</a></li>
+  <li><a href="#tss-proximity" id="toc-tss-proximity" class="nav-link" data-scroll-target="#tss-proximity">TSS Proximity</a></li>
+  <li><a href="#export-results" id="toc-export-results" class="nav-link" data-scroll-target="#export-results">Export results</a></li>
+  <li><a href="#import-arrange-and-save-data" id="toc-import-arrange-and-save-data" class="nav-link" data-scroll-target="#import-arrange-and-save-data">Import, arrange, and save data</a></li>
   </ul>
 </nav>
     </div>
@@ -519,81 +506,520 @@ PROJECT REF     (FD_REF): /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/references
 </code></pre>
 </div>
 </div>
+<section id="prepare" class="level2">
+<h2 class="anchored" data-anchor-id="prepare">Prepare</h2>
+<p><strong>Set global variable</strong></p>
+<div id="400d32df-429d-4d25-b732-bbce1f80cefe" class="cell" data-execution_count="3">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>vec <span class="ot">=</span> <span class="fu">c</span>(</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"fcc_astarr_macs_input_overlap"</span>,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"fcc_astarr_macs_input_union"</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(vec) <span class="ot">=</span> vec</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>VEC_TXT_FOLDER <span class="ot">=</span> vec</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(txt <span class="cf">in</span> vec){<span class="fu">cat</span>(txt, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>fcc_astarr_macs_input_overlap 
+fcc_astarr_macs_input_union </code></pre>
+</div>
+</div>
+<div id="d5216f63-8572-4b60-a456-a11823905035" class="cell" data-execution_count="5">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>TXT_FNAME_INP <span class="ot">=</span> <span class="st">"region.pair.genome_tss.tsv"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p><strong>View files</strong></p>
+<div id="2b04f70f-c489-478f-8aee-7a8e30329a27" class="cell" data-execution_count="6">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>txt_fdiry <span class="ot">=</span> <span class="fu">file.path</span>(FD_RES, <span class="st">"region_closest"</span>, <span class="st">"*"</span>, <span class="st">"summary"</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>txt_fname <span class="ot">=</span> TXT_FNAME_INP</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>txt_fglob <span class="ot">=</span> <span class="fu">file.path</span>(txt_fdiry, txt_fname)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>vec <span class="ot">=</span> <span class="fu">Sys.glob</span>(txt_fglob)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(txt <span class="cf">in</span> vec){<span class="fu">cat</span>(txt, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>/data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/region_closest/fcc_astarr_macs_input_overlap/summary/region.pair.genome_tss.tsv 
+/data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/region_closest/fcc_astarr_macs_input_union/summary/region.pair.genome_tss.tsv </code></pre>
+</div>
+</div>
+</section>
+<section id="import-data" class="level2">
+<h2 class="anchored" data-anchor-id="import-data">Import data</h2>
+<div id="173f441f-efa9-4706-a91d-2473bbaab4d5" class="cell" data-execution_count="7">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="do">### loop to import data</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">lapply</span>(VEC_TXT_FOLDER, <span class="cf">function</span>(txt_folder){</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="do">### set file directory</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    txt_fdiry <span class="ot">=</span> <span class="fu">file.path</span>(FD_RES, <span class="st">"region_closest"</span>, txt_folder, <span class="st">"summary"</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    txt_fname <span class="ot">=</span> TXT_FNAME_INP</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    txt_fpath <span class="ot">=</span> <span class="fu">file.path</span>(txt_fdiry, txt_fname)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="do">### read table</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> <span class="fu">read_tsv</span>(txt_fpath, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(dat)</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="do">### assign and show</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>lst_dat_region_annot_import <span class="ot">=</span> lst</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>res <span class="ot">=</span> <span class="fu">lapply</span>(lst, dim)</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res)</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> lst[[<span class="dv">1</span>]]</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="fu">fun_display_table</span>(<span class="fu">head</span>(dat, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>$fcc_astarr_macs_input_overlap
+[1] 304915     15
+
+$fcc_astarr_macs_input_union
+[1] 499336     15
+</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Chrom_A</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart_A</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd_A</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Region_A</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Chrom_B</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart_B</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd_B</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Region_B</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Gene_B</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Score_B</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Group_B</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Label_B</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Distance</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Annotation_A</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Annotation_B</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">chr1</td>
+<td style="text-align: right;">10038</td>
+<td style="text-align: right;">10405</td>
+<td style="text-align: left;">chr1:10038-10405</td>
+<td style="text-align: left;">chr1</td>
+<td style="text-align: right;">11873</td>
+<td style="text-align: right;">11874</td>
+<td style="text-align: left;">chr1:11873-11874</td>
+<td style="text-align: left;">DDX11L1</td>
+<td style="text-align: right;">0.00023</td>
+<td style="text-align: left;">TSS_Pol2</td>
+<td style="text-align: left;">DDX11L1</td>
+<td style="text-align: right;">1469</td>
+<td style="text-align: left;">fcc_astarr_macs_input_overlap</td>
+<td style="text-align: left;">genome_tss_pol2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">chr1</td>
+<td style="text-align: right;">14282</td>
+<td style="text-align: right;">14614</td>
+<td style="text-align: left;">chr1:14282-14614</td>
+<td style="text-align: left;">chr1</td>
+<td style="text-align: right;">11873</td>
+<td style="text-align: right;">11874</td>
+<td style="text-align: left;">chr1:11873-11874</td>
+<td style="text-align: left;">DDX11L1</td>
+<td style="text-align: right;">0.00023</td>
+<td style="text-align: left;">TSS_Pol2</td>
+<td style="text-align: left;">DDX11L1</td>
+<td style="text-align: right;">2409</td>
+<td style="text-align: left;">fcc_astarr_macs_input_overlap</td>
+<td style="text-align: left;">genome_tss_pol2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">chr1</td>
+<td style="text-align: right;">16025</td>
+<td style="text-align: right;">16338</td>
+<td style="text-align: left;">chr1:16025-16338</td>
+<td style="text-align: left;">chr1</td>
+<td style="text-align: right;">17436</td>
+<td style="text-align: right;">17437</td>
+<td style="text-align: left;">chr1:17436-17437</td>
+<td style="text-align: left;">MIR6859-1</td>
+<td style="text-align: right;">9.43812</td>
+<td style="text-align: left;">TSS_Pol2</td>
+<td style="text-align: left;">MIR6859-1</td>
+<td style="text-align: right;">1099</td>
+<td style="text-align: left;">fcc_astarr_macs_input_overlap</td>
+<td style="text-align: left;">genome_tss_pol2</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="arrange-table" class="level2">
+<h2 class="anchored" data-anchor-id="arrange-table">Arrange table</h2>
+<div id="22678aae-c8c4-474c-a32a-f163c901e8fd" class="cell" data-execution_count="17">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="do">### setup column name mappign</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>vec_txt_cname1 <span class="ot">=</span> <span class="fu">c</span>(</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Chrom_A"</span>, <span class="st">"ChromStart_A"</span>, <span class="st">"ChromEnd_A"</span>, <span class="st">"Region_A"</span>, </span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Annotation_A"</span>, <span class="st">"Annotation_B"</span>,</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Region_B"</span>, </span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Score_B"</span>,</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Gene_B"</span>,</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Distance"</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>vec_txt_cname2 <span class="ot">=</span> <span class="fu">c</span>(</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Chrom"</span>, <span class="st">"ChromStart"</span>, <span class="st">"ChromEnd"</span>, <span class="st">"Region"</span>, </span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Annotation_A"</span>, <span class="st">"Annotation_B"</span>,</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Region_TSS"</span>,</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Score_Pol2"</span>,</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Gene"</span>,</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Distance2TSS"</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>vec <span class="ot">=</span> vec_txt_cname1</span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(vec) <span class="ot">=</span> vec_txt_cname2</span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>vec_txt_lookup <span class="ot">=</span> vec</span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a><span class="do">### loop and arrange table</span></span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_annot_import</span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">lapply</span>(lst, <span class="cf">function</span>(dat){</span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> </span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="fu">all_of</span>(vec_txt_cname1)) <span class="sc">%&gt;%</span></span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">rename</span>(<span class="fu">all_of</span>(vec_txt_lookup))</span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(dat)</span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a><span class="do">### assign and show</span></span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a>lst_dat_region_annot_arrange <span class="ot">=</span> lst</span>
+<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a>res <span class="ot">=</span> <span class="fu">lapply</span>(lst, dim)</span>
+<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res)</span>
+<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> lst[[<span class="dv">1</span>]]</span>
+<span id="cb10-39"><a href="#cb10-39" aria-hidden="true" tabindex="-1"></a><span class="fu">fun_display_table</span>(<span class="fu">head</span>(dat, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>$fcc_astarr_macs_input_overlap
+[1] 304915     10
+
+$fcc_astarr_macs_input_union
+[1] 499336     10
+</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Region</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Annotation_A</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Annotation_B</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Region_TSS</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Score_Pol2</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Gene</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Distance2TSS</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">chr1</td>
+<td style="text-align: right;">10038</td>
+<td style="text-align: right;">10405</td>
+<td style="text-align: left;">chr1:10038-10405</td>
+<td style="text-align: left;">fcc_astarr_macs_input_overlap</td>
+<td style="text-align: left;">genome_tss_pol2</td>
+<td style="text-align: left;">chr1:11873-11874</td>
+<td style="text-align: right;">0.00023</td>
+<td style="text-align: left;">DDX11L1</td>
+<td style="text-align: right;">1469</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">chr1</td>
+<td style="text-align: right;">14282</td>
+<td style="text-align: right;">14614</td>
+<td style="text-align: left;">chr1:14282-14614</td>
+<td style="text-align: left;">fcc_astarr_macs_input_overlap</td>
+<td style="text-align: left;">genome_tss_pol2</td>
+<td style="text-align: left;">chr1:11873-11874</td>
+<td style="text-align: right;">0.00023</td>
+<td style="text-align: left;">DDX11L1</td>
+<td style="text-align: right;">2409</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">chr1</td>
+<td style="text-align: right;">16025</td>
+<td style="text-align: right;">16338</td>
+<td style="text-align: left;">chr1:16025-16338</td>
+<td style="text-align: left;">fcc_astarr_macs_input_overlap</td>
+<td style="text-align: left;">genome_tss_pol2</td>
+<td style="text-align: left;">chr1:17436-17437</td>
+<td style="text-align: right;">9.43812</td>
+<td style="text-align: left;">MIR6859-1</td>
+<td style="text-align: right;">1099</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="tss-proximity" class="level2">
+<h2 class="anchored" data-anchor-id="tss-proximity">TSS Proximity</h2>
+<p><strong>Helper function for labeling region based on their TSS proximity</strong></p>
+<div id="c0461511-f885-4f44-a268-9de84f3b8dee" class="cell" data-execution_count="18">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>fun_label_tss_proximity <span class="ot">=</span> <span class="cf">function</span>(vec_num_distance){</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    vec_txt_label <span class="ot">=</span> <span class="fu">ifelse</span>(</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>        vec_num_distance <span class="sc">&lt;=</span> <span class="dv">2000</span>,</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Proximal"</span>,</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Distal"</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(vec_txt_label)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p><strong>Define TSS proximity</strong></p>
+<div id="c0ec3954-3455-4ad9-9230-cd41dbf769b2" class="cell" data-execution_count="19">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="do">### loop and arrange table</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_annot_arrange</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">lapply</span>(lst, <span class="cf">function</span>(dat){</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">TSS_Proximity =</span> <span class="fu">fun_label_tss_proximity</span>(Distance2TSS),</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(dat)</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="do">### assign and show</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>lst_dat_region_annot_result <span class="ot">=</span> lst</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>res <span class="ot">=</span> <span class="fu">lapply</span>(lst, dim)</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res)</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> lst[[<span class="dv">1</span>]]</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a><span class="fu">fun_display_table</span>(<span class="fu">head</span>(dat, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>$fcc_astarr_macs_input_overlap
+[1] 304915     11
+
+$fcc_astarr_macs_input_union
+[1] 499336     11
+</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Region</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Annotation_A</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Annotation_B</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Region_TSS</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Score_Pol2</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Gene</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Distance2TSS</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">TSS_Proximity</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">chr1</td>
+<td style="text-align: right;">10038</td>
+<td style="text-align: right;">10405</td>
+<td style="text-align: left;">chr1:10038-10405</td>
+<td style="text-align: left;">fcc_astarr_macs_input_overlap</td>
+<td style="text-align: left;">genome_tss_pol2</td>
+<td style="text-align: left;">chr1:11873-11874</td>
+<td style="text-align: right;">0.00023</td>
+<td style="text-align: left;">DDX11L1</td>
+<td style="text-align: right;">1469</td>
+<td style="text-align: left;">Proximal</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">chr1</td>
+<td style="text-align: right;">14282</td>
+<td style="text-align: right;">14614</td>
+<td style="text-align: left;">chr1:14282-14614</td>
+<td style="text-align: left;">fcc_astarr_macs_input_overlap</td>
+<td style="text-align: left;">genome_tss_pol2</td>
+<td style="text-align: left;">chr1:11873-11874</td>
+<td style="text-align: right;">0.00023</td>
+<td style="text-align: left;">DDX11L1</td>
+<td style="text-align: right;">2409</td>
+<td style="text-align: left;">Distal</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">chr1</td>
+<td style="text-align: right;">16025</td>
+<td style="text-align: right;">16338</td>
+<td style="text-align: left;">chr1:16025-16338</td>
+<td style="text-align: left;">fcc_astarr_macs_input_overlap</td>
+<td style="text-align: left;">genome_tss_pol2</td>
+<td style="text-align: left;">chr1:17436-17437</td>
+<td style="text-align: right;">9.43812</td>
+<td style="text-align: left;">MIR6859-1</td>
+<td style="text-align: right;">1099</td>
+<td style="text-align: left;">Proximal</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="export-results" class="level2">
+<h2 class="anchored" data-anchor-id="export-results">Export results</h2>
+<div id="915658e0-75d2-4532-8f2f-302b8cd6494d" class="cell" data-execution_count="23">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (txt_folder <span class="cf">in</span> VEC_TXT_FOLDER){</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="do">### get table</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    dat_region_annot_result <span class="ot">=</span> lst_dat_region_annot_result[[txt_folder]]</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="do">### set file directory</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    txt_fdiry <span class="ot">=</span> <span class="fu">file.path</span>(FD_RES, <span class="st">"region_closest"</span>, txt_folder, <span class="st">"summary"</span>)</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dir.create</span>(txt_fdiry, <span class="at">showWarnings =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>    <span class="do">### save for each annotation</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat_region_annot_result</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>    lst <span class="ot">=</span> <span class="fu">split</span>(dat, dat<span class="sc">$</span>Annotation_B)</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (txt_label <span class="cf">in</span> <span class="fu">names</span>(lst)){</span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>        <span class="do">### set file directory</span></span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>        txt_fname <span class="ot">=</span> <span class="fu">paste</span>(<span class="st">"region.summary"</span>, txt_label, <span class="st">"tsv"</span>, <span class="at">sep =</span> <span class="st">"."</span>)</span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>        txt_fpath <span class="ot">=</span> <span class="fu">file.path</span>(txt_fdiry, txt_fname)</span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>        <span class="do">### save table</span></span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>        dat <span class="ot">=</span> lst[[txt_label]]</span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>        dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> </span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>            dplyr<span class="sc">::</span><span class="fu">arrange</span>(Chrom, ChromStart, ChromEnd) <span class="sc">%&gt;%</span></span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>            dplyr<span class="sc">::</span><span class="fu">distinct</span>()</span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>        <span class="fu">write_tsv</span>(dat, txt_fpath)</span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a>        <span class="do">### show progress</span></span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>        <span class="fu">cat</span>(<span class="st">"Save file:"</span>, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a>        <span class="fu">cat</span>(<span class="st">"Folder:"</span>, txt_folder, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a>        <span class="fu">cat</span>(<span class="st">"Label: "</span>, txt_label,  <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a>        <span class="fu">cat</span>(txt_fpath,    <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb15-31"><a href="#cb15-31" aria-hidden="true" tabindex="-1"></a>        <span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb15-32"><a href="#cb15-32" aria-hidden="true" tabindex="-1"></a>        <span class="fu">flush.console</span>()</span>
+<span id="cb15-33"><a href="#cb15-33" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb15-34"><a href="#cb15-34" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Save file: 
+Folder: fcc_astarr_macs_input_overlap 
+Label:  genome_tss_pol2 
+/data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/region_closest/fcc_astarr_macs_input_overlap/summary/region.summary.genome_tss_pol2.tsv 
+
+Save file: 
+Folder: fcc_astarr_macs_input_overlap 
+Label:  genome_tss_pol2_rnaseq 
+/data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/region_closest/fcc_astarr_macs_input_overlap/summary/region.summary.genome_tss_pol2_rnaseq.tsv 
+
+Save file: 
+Folder: fcc_astarr_macs_input_union 
+Label:  genome_tss_pol2 
+/data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/region_closest/fcc_astarr_macs_input_union/summary/region.summary.genome_tss_pol2.tsv 
+
+Save file: 
+Folder: fcc_astarr_macs_input_union 
+Label:  genome_tss_pol2_rnaseq 
+/data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/region_closest/fcc_astarr_macs_input_union/summary/region.summary.genome_tss_pol2_rnaseq.tsv 
+</code></pre>
+</div>
+</div>
+</section>
 <section id="import-arrange-and-save-data" class="level2">
 <h2 class="anchored" data-anchor-id="import-arrange-and-save-data">Import, arrange, and save data</h2>
 <p><strong>Helper function for labeling region based on their TSS proximity</strong></p>
 <div id="ad6a23e9-2431-4e70-af9c-a40787527a8e" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>fun_label_by_tss_proximity <span class="ot">=</span> <span class="cf">function</span>(vec_num_distance){</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    vec_txt_label <span class="ot">=</span> <span class="fu">ifelse</span>(</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        vec_num_distance <span class="sc">&lt;=</span> <span class="dv">2000</span>,</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Proximal"</span>,</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Distal"</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(vec_txt_label)</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>fun_label_by_tss_proximity <span class="ot">=</span> <span class="cf">function</span>(vec_num_distance){</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    vec_txt_label <span class="ot">=</span> <span class="fu">ifelse</span>(</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>        vec_num_distance <span class="sc">&lt;=</span> <span class="dv">2000</span>,</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Proximal"</span>,</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Distal"</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(vec_txt_label)</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p><strong>Process each data</strong></p>
-<div id="12e41475-2ce3-4345-90c6-207c7a340921" class="cell" data-execution_count="5">
+<div id="12e41475-2ce3-4345-90c6-207c7a340921" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="do">### init</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>vec_txt_region_label <span class="ot">=</span> <span class="fu">c</span>(</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"fcc_astarr_macs_input_overlap"</span>,</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"fcc_astarr_macs_input_union"</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="do">### loop through each region pair file</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (txt_region_label <span class="cf">in</span>  vec_txt_region_label){</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="do">### set file directory</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    txt_fdiry <span class="ot">=</span> <span class="fu">file.path</span>(</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>        FD_RES, </span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">"region_closest"</span>,</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>        txt_region_label,</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>        <span class="st">"summary"</span></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    txt_fname <span class="ot">=</span> <span class="st">"region.pair.genome_tss.tsv"</span></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    txt_fpath <span class="ot">=</span> <span class="fu">file.path</span>(txt_fdiry, txt_fname)</span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>    dat_region_pair <span class="ot">=</span> <span class="fu">read_tsv</span>(txt_fpath, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    <span class="do">### select and rename columns</span></span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat_region_pair</span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> </span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">filter</span>(Annotation_B <span class="sc">==</span> <span class="st">"genome_tss_pol2_rnaseq"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">select</span>(</span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>            Chrom_A, ChromStart_A, ChromEnd_A, Region_A, </span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>            Annotation_A, Annotation_B,</span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>            Distance</span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>        ) <span class="sc">%&gt;%</span> </span>
-<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">distinct</span>()</span>
-<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>    <span class="fu">colnames</span>(dat) <span class="ot">=</span> <span class="fu">c</span>(</span>
-<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Chrom"</span>, <span class="st">"ChromStart"</span>, <span class="st">"ChromEnd"</span>, <span class="st">"Region"</span>,</span>
-<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Annotation_A"</span>, <span class="st">"Annotation_B"</span>,</span>
-<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Distance2TSS"</span></span>
-<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>    dat_region_rename <span class="ot">=</span> dat</span>
-<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>    <span class="do">### add label</span></span>
-<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat_region_rename</span>
-<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span></span>
-<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
-<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>            <span class="at">TSS_Proximity =</span> <span class="fu">fun_label_by_tss_proximity</span>(Distance2TSS),</span>
-<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>        )</span>
-<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a>    dat_region_summary <span class="ot">=</span> dat</span>
-<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a>    <span class="do">### write table</span></span>
-<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a>    txt_fname <span class="ot">=</span> <span class="st">"region.summary.genome_tss.tsv"</span></span>
-<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a>    txt_fpath <span class="ot">=</span> <span class="fu">file.path</span>(txt_fdiry, txt_fname)</span>
-<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat_region_summary</span>
-<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a>    <span class="fu">write_tsv</span>(dat, txt_fpath)</span>
-<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a>    <span class="do">### show progress</span></span>
-<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"Save:"</span>, txt_fpath, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="do">### init</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>vec_txt_region_label <span class="ot">=</span> <span class="fu">c</span>(</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"fcc_astarr_macs_input_overlap"</span>,</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"fcc_astarr_macs_input_union"</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="do">### loop through each region pair file</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (txt_region_label <span class="cf">in</span>  vec_txt_region_label){</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>    <span class="do">### set file directory</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>    txt_fdiry <span class="ot">=</span> <span class="fu">file.path</span>(</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>        FD_RES, </span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">"region_closest"</span>,</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>        txt_region_label,</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>        <span class="st">"summary"</span></span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>    txt_fname <span class="ot">=</span> <span class="st">"region.pair.genome_tss.tsv"</span></span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>    txt_fpath <span class="ot">=</span> <span class="fu">file.path</span>(txt_fdiry, txt_fname)</span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>    dat_region_pair <span class="ot">=</span> <span class="fu">read_tsv</span>(txt_fpath, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>    <span class="do">### select and rename columns</span></span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat_region_pair</span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> </span>
+<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">filter</span>(Annotation_B <span class="sc">==</span> <span class="st">"genome_tss_pol2"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a>        <span class="co">#dplyr::filter(Annotation_B == "genome_tss_pol2_rnaseq") %&gt;%</span></span>
+<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">select</span>(</span>
+<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a>            Chrom_A, ChromStart_A, ChromEnd_A, Region_A, </span>
+<span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a>            Annotation_A, Annotation_B,</span>
+<span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a>            Distance</span>
+<span id="cb18-30"><a href="#cb18-30" aria-hidden="true" tabindex="-1"></a>        ) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-31"><a href="#cb18-31" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">distinct</span>()</span>
+<span id="cb18-32"><a href="#cb18-32" aria-hidden="true" tabindex="-1"></a>    <span class="fu">colnames</span>(dat) <span class="ot">=</span> <span class="fu">c</span>(</span>
+<span id="cb18-33"><a href="#cb18-33" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Chrom"</span>, <span class="st">"ChromStart"</span>, <span class="st">"ChromEnd"</span>, <span class="st">"Region"</span>,</span>
+<span id="cb18-34"><a href="#cb18-34" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Annotation_A"</span>, <span class="st">"Annotation_B"</span>,</span>
+<span id="cb18-35"><a href="#cb18-35" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Distance2TSS"</span></span>
+<span id="cb18-36"><a href="#cb18-36" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb18-37"><a href="#cb18-37" aria-hidden="true" tabindex="-1"></a>    dat_region_rename <span class="ot">=</span> dat</span>
+<span id="cb18-38"><a href="#cb18-38" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb18-39"><a href="#cb18-39" aria-hidden="true" tabindex="-1"></a>    <span class="do">### add label</span></span>
+<span id="cb18-40"><a href="#cb18-40" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat_region_rename</span>
+<span id="cb18-41"><a href="#cb18-41" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span></span>
+<span id="cb18-42"><a href="#cb18-42" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb18-43"><a href="#cb18-43" aria-hidden="true" tabindex="-1"></a>            <span class="at">TSS_Proximity =</span> <span class="fu">fun_label_by_tss_proximity</span>(Distance2TSS),</span>
+<span id="cb18-44"><a href="#cb18-44" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb18-45"><a href="#cb18-45" aria-hidden="true" tabindex="-1"></a>    dat_region_summary <span class="ot">=</span> dat</span>
+<span id="cb18-46"><a href="#cb18-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-47"><a href="#cb18-47" aria-hidden="true" tabindex="-1"></a>    <span class="do">### write table</span></span>
+<span id="cb18-48"><a href="#cb18-48" aria-hidden="true" tabindex="-1"></a>    txt_fname <span class="ot">=</span> <span class="st">"region.summary.genome_tss.tsv"</span></span>
+<span id="cb18-49"><a href="#cb18-49" aria-hidden="true" tabindex="-1"></a>    txt_fpath <span class="ot">=</span> <span class="fu">file.path</span>(txt_fdiry, txt_fname)</span>
+<span id="cb18-50"><a href="#cb18-50" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat_region_summary</span>
+<span id="cb18-51"><a href="#cb18-51" aria-hidden="true" tabindex="-1"></a>    <span class="fu">write_tsv</span>(dat, txt_fpath)</span>
+<span id="cb18-52"><a href="#cb18-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-53"><a href="#cb18-53" aria-hidden="true" tabindex="-1"></a>    <span class="do">### show progress</span></span>
+<span id="cb18-54"><a href="#cb18-54" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"Save:"</span>, txt_fpath, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb18-55"><a href="#cb18-55" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb18-56"><a href="#cb18-56" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Save: /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/region_closest/fcc_astarr_macs_input_overlap/summary/region.summary.genome_tss.tsv 
@@ -605,7 +1031,7 @@ Save: /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/region_closest/fcc_astarr
 <div id="3bcbe0ad-4bfa-41c7-80ae-1dbc2d75fd31" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dat_region_pair)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dat_region_pair)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true">

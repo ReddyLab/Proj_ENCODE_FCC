@@ -1,0 +1,17 @@
+---
+title: "Whole genome comparison of FCC assays"
+---
+
+# FCC effect sizes
+
+![](/figure/22_region_coverage_fcc_score/fig.region_coverage_fcc.histogram.zscore.grid.png){ width=40% }
+
+# Pairwise correlation plot across reporter assays
+
+![](/figure/22_region_coverage_fcc_score/fig.region_coverage_fcc.scatter_hex.zscore.grid.png){ width=40% }
+
+# Summarize STARR/MPRA/CRISPRi across all regions
+
+fig.region_coverage_fcc.fcc_starrmpracrispri.ranknorm.overlap.png
+
+fig.region_coverage_fcc.fcc_starrmpracrispri.ranknorm.png

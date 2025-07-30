@@ -74,14 +74,14 @@ Distribution of length
 
 Size comparison
 
-|Assay            |Index_Experiment |Index_File  |Method                                |Count   |
-|:----------------|:----------------|:-----------|:-------------------------------------|:-------|
-|ATAC-STARR-Input |ENCSR312UQM      |.           |Overlap peaks by bp across replicates |150,042 |
-|ATAC-STARR-Input |ENCSR312UQM      |.           |Union peaks by bp across replicates   |246,852 |
-|DNase-seq        |ENCSR000EKS      |ENCFF274YGF |peaks                                 |118,721 |
-|DNase-seq        |ENCSR000EOT      |ENCFF185XRG |peaks                                 |159,277 |
-|ATAC-seq         |ENCSR483RKN      |ENCFF558BLC |pseudoreplicated peaks                |203,874 |
-|ATAC-seq         |ENCSR483RKN      |ENCFF925CYR |IDR thresholded peaks                 |123,009 |
-|ATAC-seq         |ENCSR868FGK      |ENCFF333TAT |pseudoreplicated peaks                |269,800 |
-|ATAC-seq         |ENCSR868FGK      |ENCFF948AFM |IDR thresholded peaks                 |181,340 |
+|Assay            |Index_Experiment |Index_File  |Method                                |Count_Row |Count_Region |
+|:----------------|:----------------|:-----------|:-------------------------------------|:---------|:------------|
+|ATAC-STARR-Input |ENCSR312UQM      |.           |Overlap peaks by bp across replicates |150,042   |150,042      |
+|ATAC-STARR-Input |ENCSR312UQM      |.           |Union peaks by bp across replicates   |246,852   |246,852      |
+|DNase-seq        |ENCSR000EKS      |ENCFF274YGF |peaks                                 |118,721   |118,721      |
+|DNase-seq        |ENCSR000EOT      |ENCFF185XRG |peaks                                 |159,277   |159,277      |
+|ATAC-seq         |ENCSR483RKN      |ENCFF558BLC |pseudoreplicated peaks                |203,874   |107,082      |
+|ATAC-seq         |ENCSR483RKN      |ENCFF925CYR |IDR thresholded peaks                 |123,009   |51,861       |
+|ATAC-seq         |ENCSR868FGK      |ENCFF333TAT |pseudoreplicated peaks                |269,800   |161,693      |
+|ATAC-seq         |ENCSR868FGK      |ENCFF948AFM |IDR thresholded peaks                 |181,340   |90,015       |
 

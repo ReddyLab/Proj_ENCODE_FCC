@@ -338,44 +338,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/011_region_ocr_astarr_KS91.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (ASTARR KS91)</span></a>
+  <a href="../../11_region_coverage_fcc/01_region_coverage_fcc_screen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FCC coverage at ATAC/DHS regions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/012_region_ocr_astarr_KS274.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (ASTARR KS274)</span></a>
+  <a href="../../11_region_coverage_fcc/02_region_coverage_fcc_scatter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Whole genome comparison of FCC assays</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/02_region_ocr_wstarr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (WSTARR)</span></a>
+  <a href="../../11_region_coverage_fcc/03_region_coverage_fcc_correlation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Rank normalized FCC effect size</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/03_region_ocr_tmpra.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (TMPRA)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/04_region_ocr_lmpra.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (LMPRA)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/05_region_ocr_crispri_hcrff.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (CRISPRi-HCRFF)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/06_region_ocr_crispri_growth.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (CRISPRi-Growth)</span></a>
+  <a href="../../11_region_coverage_fcc/04_region_coverage_fcc_comparison.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Comparisons of FCC across genome annotations</span></a>
   </div>
 </li>
       </ul>
@@ -717,18 +699,18 @@ $fcc_astarr_macs_input_union
 <td style="text-align: right;">10038</td>
 <td style="text-align: right;">10405</td>
 <td style="text-align: left;">chr1:10038-10405</td>
-<td style="text-align: right;">18966</td>
-<td style="text-align: left;">Distal</td>
+<td style="text-align: right;">1469</td>
+<td style="text-align: left;">Proximal</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: left;">Inactive</td>
-<td style="text-align: left;">Distal:Inactive</td>
+<td style="text-align: left;">Proximal:Inactive</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">chr1</td>
 <td style="text-align: right;">14282</td>
 <td style="text-align: right;">14614</td>
 <td style="text-align: left;">chr1:14282-14614</td>
-<td style="text-align: right;">14757</td>
+<td style="text-align: right;">2409</td>
 <td style="text-align: left;">Distal</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: left;">Inactive</td>
@@ -739,11 +721,11 @@ $fcc_astarr_macs_input_union
 <td style="text-align: right;">16025</td>
 <td style="text-align: right;">16338</td>
 <td style="text-align: left;">chr1:16025-16338</td>
-<td style="text-align: right;">13033</td>
-<td style="text-align: left;">Distal</td>
+<td style="text-align: right;">1099</td>
+<td style="text-align: left;">Proximal</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: left;">Inactive</td>
-<td style="text-align: left;">Distal:Inactive</td>
+<td style="text-align: left;">Proximal:Inactive</td>
 </tr>
 </tbody>
 </table>
@@ -1188,7 +1170,7 @@ $Repressive
 <span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_col</span>() <span class="sc">+</span></span>
 <span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_cowplot</span>() <span class="sc">+</span></span>
 <span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">background_grid</span>() <span class="sc">+</span></span>
-<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Count (K)"</span>, <span class="at">y =</span> <span class="st">""</span>, <span class="at">title =</span> <span class="st">"STARR/MPRA CREs across assays"</span>) <span class="sc">+</span></span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Count (in thousands)"</span>, <span class="at">y =</span> <span class="st">""</span>, <span class="at">title =</span> <span class="st">"STARR/MPRA CREs across assays"</span>) <span class="sc">+</span></span>
 <span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>    theme_text</span>
 <span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a><span class="do">### assign and show</span></span>
@@ -1314,7 +1296,7 @@ $Repressive
 </table>
 </div>
 </div>
-<div id="4bc8ee0f-c6cd-4150-ada3-a581dd73ecf6" class="cell" data-execution_count="17">
+<div id="4bc8ee0f-c6cd-4150-ada3-a581dd73ecf6" class="cell" data-execution_count="38">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>fun <span class="ot">=</span> <span class="cf">function</span>(num){</span>
@@ -1330,25 +1312,37 @@ $Repressive
 <span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(num)</span>
 <span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat_region_ratio</span>
-<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a>dat<span class="sc">$</span>Percent <span class="ot">=</span> <span class="fu">sapply</span>(dat<span class="sc">$</span>Percent, fun)</span>
-<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> </span>
-<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(Group, Direction_Assay, Percent) <span class="sc">%&gt;%</span></span>
-<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">Percent =</span> <span class="fu">paste0</span>(Percent, <span class="st">"%"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a>    tidyr<span class="sc">::</span><span class="fu">spread</span>(Direction_Assay, Percent)</span>
-<span id="cb28-21"><a href="#cb28-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-22"><a href="#cb28-22" aria-hidden="true" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> kableExtra<span class="sc">::</span><span class="fu">kable</span>(<span class="st">"markdown"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a><span class="do">### arrange percentage</span></span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat_region_ratio</span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>dat<span class="sc">$</span>Percent <span class="ot">=</span> <span class="fu">sapply</span>(dat<span class="sc">$</span>Percent, fun)</span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a><span class="do">### arrange percentage; tidy -&gt; wide form</span></span>
+<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> </span>
+<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb28-21"><a href="#cb28-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">Assay   =</span> Group,</span>
+<span id="cb28-22"><a href="#cb28-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">Count   =</span> Total,</span>
+<span id="cb28-23"><a href="#cb28-23" aria-hidden="true" tabindex="-1"></a>        <span class="at">Percent =</span> <span class="fu">paste0</span>(Percent, <span class="st">"%"</span>)</span>
+<span id="cb28-24"><a href="#cb28-24" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb28-25"><a href="#cb28-25" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(Assay, Count, Direction_Assay, Percent) <span class="sc">%&gt;%</span></span>
+<span id="cb28-26"><a href="#cb28-26" aria-hidden="true" tabindex="-1"></a>    tidyr<span class="sc">::</span><span class="fu">spread</span>(Direction_Assay, Percent)</span>
+<span id="cb28-27"><a href="#cb28-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-28"><a href="#cb28-28" aria-hidden="true" tabindex="-1"></a><span class="do">### arrange row order and count</span></span>
+<span id="cb28-29"><a href="#cb28-29" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> </span>
+<span id="cb28-30"><a href="#cb28-30" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">arrange</span>(<span class="fu">desc</span>(Count)) <span class="sc">%&gt;%</span></span>
+<span id="cb28-31"><a href="#cb28-31" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">Count =</span> scales<span class="sc">::</span><span class="fu">comma</span>(Count))</span>
+<span id="cb28-32"><a href="#cb28-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-33"><a href="#cb28-33" aria-hidden="true" tabindex="-1"></a><span class="do">### show the results</span></span>
+<span id="cb28-34"><a href="#cb28-34" aria-hidden="true" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> kableExtra<span class="sc">::</span><span class="fu">kable</span>(<span class="st">"markdown"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <pre><code>
 
-|Group  |Active |Repressive |
-|:------|:------|:----------|
-|ASTARR |69%    |31%        |
-|LMPRA  |99%    |1%         |
-|TMPRA  |99.7%  |0.3%       |
-|WSTARR |90%    |10%        |</code></pre>
+|Assay  |Count  |Active |Repressive |
+|:------|:------|:------|:----------|
+|WSTARR |16,283 |90%    |10%        |
+|ASTARR |14,220 |69%    |31%        |
+|LMPRA  |12,764 |99%    |1%         |
+|TMPRA  |360    |99.7%  |0.3%       |</code></pre>
 </div>
 </div>
 <div id="b3ee974b-4966-41d8-b900-d2f4c1c27a3c" class="cell" data-execution_count="18">
@@ -1466,10 +1460,10 @@ $Repressive
 <span id="cb34-18"><a href="#cb34-18" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<strong>pdf:</strong> 2
+<strong>agg_record_1159174958:</strong> 2
 </div>
 <div class="cell-output cell-output-display">
-<strong>pdf:</strong> 2
+<strong>agg_record_1159174958:</strong> 2
 </div>
 </div>
 <p><strong>Active</strong></p>
@@ -1533,10 +1527,10 @@ $Repressive
 <span id="cb37-18"><a href="#cb37-18" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<strong>pdf:</strong> 2
+<strong>agg_record_2080325609:</strong> 2
 </div>
 <div class="cell-output cell-output-display">
-<strong>pdf:</strong> 2
+<strong>agg_record_2080325609:</strong> 2
 </div>
 </div>
 <p><strong>Repressive</strong></p>
@@ -1600,10 +1594,10 @@ $Repressive
 <span id="cb40-18"><a href="#cb40-18" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<strong>pdf:</strong> 2
+<strong>agg_record_1859176938:</strong> 2
 </div>
 <div class="cell-output cell-output-display">
-<strong>pdf:</strong> 2
+<strong>agg_record_1859176938:</strong> 2
 </div>
 </div>
 <div id="722e625c-a6d8-45a9-b960-5b306c79421f" class="cell" data-execution_count="26">

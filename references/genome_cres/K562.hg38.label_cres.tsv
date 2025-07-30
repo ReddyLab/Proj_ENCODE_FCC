@@ -1,0 +1,28 @@
+Chrom	ChromStart	ChromEnd	Region	Name	Type	Target	Target_TSS	Description	Reference	Note
+chrX	48,785,794	48,786,722	chrX:48,785,794-48,786,722	GATA1 promoter	promoter	GATA1	GATA1|chrX:48786589-48786590	GATA1 promoter	Fulco et al., 2016; Reilly et al., 2021	known CREs
+chrX	48,782,614	48,783,539	chrX:48,782,614-48,783,539	GATA1 enhancer	enhancer	GATA1	GATA1|chrX:48786589-48786590	GATA1 Hematopoietic Enhancer 	Fulco et al., 2016; Reilly et al., 2021	known CREs
+chrX	48,801,698	48,802,997	chrX:48,801,698-48,802,997	HDAC6 promoter/enhancer	promoter,enhancer	HDAC6	HDAC6|chrX:48802066-48802067	HDAC6 promoter and enhancer	Fulco et al., 2016; Reilly et al., 2021	known CREs
+chr8	127,735,050	127,736,592	chr8:127,735,050-127,736,592	MYC promoter	promoter	MYC	MYC|chr8:127736230-127736231	MYC promoter	Fulco et al., 2016; Reilly et al., 2021	known CREs
+chr8	127,898,376	127,899,697	chr8:127,898,376-127,899,697	MYC E1	enhancer	MYC	MYC|chr8:127736230-127736231	intragenic enhancer within PVT1	Fulco et al., 2016; Reilly et al., 2021	known CREs
+chr8	127,959,692	127,960,934	chr8:127,959,692-127,960,934	MYC E2	enhancer	MYC	MYC|chr8:127736230-127736231	intragenic enhancer within PVT1	Fulco et al., 2016; Reilly et al., 2021	known CREs
+chr8	128,044,581	128,045,649	chr8:128,044,581-128,045,649	MYC E3	enhancer	MYC	MYC|chr8:127736230-127736231	intragenic enhancer within PVT1	Fulco et al., 2016; Reilly et al., 2021	known CREs
+chr8	128,048,133	128,049,661	chr8:128,048,133-128,049,661	MYC E4	enhancer	MYC	MYC|chr8:127736230-127736231	intragenic enhancer within PVT1	Fulco et al., 2016; Reilly et al., 2021	known CREs
+chr11	5,269,504	5,270,633	chr11:5,269,504-5,270,633	HBE1 promoter	promoter	HBE1	HBE1|chr11:5269945-5269946	HBE1 promoter		known CREs
+chr11	5,275,456	5,276,164	chr11:5,275,456-5,276,164	LCR HS1	enhancer	HBE1	HBE1|chr11:5269945-5269946	locus control region HS1		known CREs
+chr11	5,280,585	5,281,266	chr11:5,280,585-5,281,266	LCR HS2	enhancer	HBE1	HBE1|chr11:5269945-5269946	locus control region HS2		known CREs
+chr11	5,284,436	5,285,126	chr11:5,284,436-5,285,126	LCR HS3	enhancer	HBE1	HBE1|chr11:5269945-5269946	locus control region HS3		known CREs
+chr11	5,287,811	5,288,582	chr11:5,287,811-5,288,582	LCR HS4	enhancer	HBE1	HBE1|chr11:5269945-5269946	locus control region HS4		known CREs
+chr11	5,291,316	5,291,710	chr11:5,291,316-5,291,710	LCR HS5	enhancer	HBE1	HBE1|chr11:5269945-5269946	locus control region HS5		known CREs
+chr11	61,814,761	61,817,324	chr11:61,814,761-61,817,324	FADS1/2 promoter	promoter	FADS1;FADS2	FADS1|chr11:61817003-61817004;FADS2|chr11:61816202-61816203	FADS1/2 promoter	Reilly et al., 2021	known CREs
+chr11	61,890,534	61,892,307	chr11:61,890,534-61,892,307	FADS3 promoter	promoter	FADS3	FADS3|chr11:61891545-61891546	FADS3 promoter	Reilly et al., 2021	known CREs
+chr11	61,834,153	61,835,279	chr11:61,834,153-61,835,279	FADS1/2/3 enhancer	enhancer	FADS1;FADS2;FADS3	FADS1|chr11:61817003-61817004;FADS2|chr11:61816202-61816203;FADS3|chr11:61891545-61891546	intragenic enhancer within FADS2; contains rs174575, which has been identified as an allele-specific enhancer that upregulates FADS2 expression	Reilly et al., 2021;Tian et al., 2020	known CREs
+chr11	61,841,565	61,842,800	chr11:61,841,565-61,842,800	FADS1/2/3 enhancer	enhancer	FADS1;FADS2;FADS3	FADS1|chr11:61817003-61817004;FADS2|chr11:61816202-61816203;FADS3|chr11:61891545-61891546	intragenic enhancer within FADS2	Reilly et al., 2021	known CREs
+chr11	33,868,743	33,871,363	chr11:33,868,743-33,871,363	LMO2 promoter	promoter	LMO2	LMO2|chr11:33869878-33869879	LMO2 promoter	Reilly et al., 2021	known CREs
+chr11	33,881,914	33,882,345	chr11:33,881,914-33,882,345	LMO2 CRE 1	enhancer	LMO2	LMO2|chr11:33869878-33869879	LMO2 CRE 1	Reilly et al., 2021	known CREs
+chr11	33,936,820	33,937,819	chr11:33,936,820-33,937,819	LMO2 CRE 2	enhancer	LMO2	LMO2|chr11:33869878-33869879	LMO2 CRE 2	Reilly et al., 2021	known CREs
+chr11	33,941,508	33,942,212	chr11:33,941,508-33,942,212	LMO2 CRE 3	enhancer	LMO2	LMO2|chr11:33869878-33869879	LMO2 CRE 3	Reilly et al., 2021	known CREs
+chr11	33,944,533	33,945,260	chr11:33,944,533-33,945,260	LMO2 CRE 4	enhancer	LMO2	LMO2|chr11:33869878-33869879	LMO2 CRE 4	Reilly et al., 2021	known CREs
+chr6	135,322,912	135,323,679	chr6:135,322,912-135,323,679	MYB enhancer	enhancer	MYB	MYB|chr6:135181307-135181308	intragenic enhancer within AHI1; labeled as MYB-enh-3 in Xie et al., 2019; labeled as E1 in Dieter Weichenhan et al., 2023	Xie et al., 2019; Dieter Weichenhan et al., 2023	known CREs
+chrX	47,619,427	47,620,388	chrX:47,619,427-47,620,388	SYN1 promoter	silencer	SYN1	SYN1|chrX:47619857-47619858	SYN1 gene transcription is suppressed via REST binding to SYN1 promoter in non-neural tissues	Paonessa et al., 2013	tested CREs
+chr11	113,474,091	113,475,450	chr11:113,474,091-113,475,450	DRD2 promoter	silencer	DRD2	DRD2|chr11:113,475,398-113,475,399			tested CREs
+chr11	61,869,604	61,871,777	chr11:61,869,604-61,871,777	FADS1 enhancer/FADS3 silencer	enhancer,silencer	FADS1;FADS3	FADS1|chr11:61817003-61817004;FADS3|chr11:61891545-61891546		Reilly et al., 2021	tested CREs

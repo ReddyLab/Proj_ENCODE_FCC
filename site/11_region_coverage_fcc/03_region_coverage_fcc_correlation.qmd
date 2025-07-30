@@ -1,0 +1,32 @@
+---
+title: "Rank normalized FCC effect size"
+---
+
+# Comparing regions screened by STARR/MPRA
+
+$$\text{RankNorm}(x_i) = \frac{\text{rank}(x_i)−1}{n−1}$$
+
+fig.region_coverage_fcc.fcc_starrmpra_ranknorm.fcc_crispri.atac.png
+fig.region_coverage_fcc.fcc_starrmpra_log2fc.fcc_crispri.atac.png
+
+# Appending CRISPR and region accessibility to STARR/MPRA comparison
+
+fig.region_coverage_fcc.fcc_starrmpra_ranknorm.fcc_crispri.atac.png
+fig.region_coverage_fcc.fcc_starrmpra_log2fc.fcc_crispri.atac.png
+
+# Split by proximal and distal
+
+we know that there are different overall properties for proximal and distal
+for example, in p
+
+distribution of ATAC for proximal and distal
+distribution of GC for proximal and distal
+
+if we split them into proximal and distal
+
+fig.region_coverage_fcc.fcc_starrmpra_ranknorm.fcc_crispri.atac.proximal.png
+fig.region_coverage_fcc.fcc_starrmpra_ranknorm.fcc_crispri.atac.distal.png
+
+# CRISPR ~ STARR/MPRA
+
+

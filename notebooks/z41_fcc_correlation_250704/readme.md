@@ -1,0 +1,7 @@
+- ranknorm of STARR/MPRA
+- integrate plot of STARR/MPRA/CRISPR
+    - test adding ENCODE E2G
+- CRISPR ~ STARR/MPRA
+    - boxplot/density/violin
+    - ROC
+- optional: marginal gain of STARR/MPRA?

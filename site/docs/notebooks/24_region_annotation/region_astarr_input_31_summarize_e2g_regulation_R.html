@@ -338,44 +338,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/011_region_ocr_astarr_KS91.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (ASTARR KS91)</span></a>
+  <a href="../../11_region_coverage_fcc/01_region_coverage_fcc_screen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FCC coverage at ATAC/DHS regions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/012_region_ocr_astarr_KS274.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (ASTARR KS274)</span></a>
+  <a href="../../11_region_coverage_fcc/02_region_coverage_fcc_scatter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Whole genome comparison of FCC assays</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/02_region_ocr_wstarr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (WSTARR)</span></a>
+  <a href="../../11_region_coverage_fcc/03_region_coverage_fcc_correlation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Rank normalized FCC effect size</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/03_region_ocr_tmpra.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (TMPRA)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/04_region_ocr_lmpra.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (LMPRA)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/05_region_ocr_crispri_hcrff.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (CRISPRi-HCRFF)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/06_region_ocr_crispri_growth.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (CRISPRi-Growth)</span></a>
+  <a href="../../11_region_coverage_fcc/04_region_coverage_fcc_comparison.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Comparisons of FCC across genome annotations</span></a>
   </div>
 </li>
       </ul>
@@ -582,23 +564,22 @@ fcc_astarr_macs_input_union </code></pre>
 <span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> <span class="fu">read_tsv</span>(txt_fpath, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(dat)</span>
 <span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(lst) <span class="ot">=</span> VEC_TXT_FOLDER</span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="do">### assign and show</span></span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>lst_dat_region_annot_import <span class="ot">=</span> lst</span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>res <span class="ot">=</span> <span class="fu">lapply</span>(lst, dim)</span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res)</span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> lst[[<span class="dv">1</span>]]</span>
-<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a><span class="fu">fun_display_table</span>(<span class="fu">head</span>(dat, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="do">### assign and show</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>lst_dat_region_annot_import <span class="ot">=</span> lst</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>res <span class="ot">=</span> <span class="fu">lapply</span>(lst, dim)</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res)</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> lst[[<span class="dv">1</span>]]</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="fu">fun_display_table</span>(<span class="fu">head</span>(dat, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>$fcc_astarr_macs_input_overlap
-[1] 8770   11
+[1] 8770   12
 
 $fcc_astarr_macs_input_union
-[1] 9229   11
+[1] 9229   12
 </code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -613,6 +594,7 @@ $fcc_astarr_macs_input_union
 <th style="text-align: left;" data-quarto-table-cell-role="th">Label</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Target</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Zcore</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">NLog10P</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Regulated</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Source</th>
@@ -628,6 +610,7 @@ $fcc_astarr_macs_input_union
 <td style="text-align: left;">Regulated:TRUE</td>
 <td style="text-align: left;">CEP104</td>
 <td style="text-align: right;">-0.2934319</td>
+<td style="text-align: right;">-4.705144</td>
 <td style="text-align: right;">2.395344</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: left;">Ulirsch2016</td>
@@ -641,6 +624,7 @@ $fcc_astarr_macs_input_union
 <td style="text-align: left;">Regulated:TRUE</td>
 <td style="text-align: left;">LRRC47</td>
 <td style="text-align: right;">-0.3311781</td>
+<td style="text-align: right;">-5.331209</td>
 <td style="text-align: right;">2.109514</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: left;">Ulirsch2016</td>
@@ -654,6 +638,7 @@ $fcc_astarr_macs_input_union
 <td style="text-align: left;">Regulated:TRUE</td>
 <td style="text-align: left;">SMIM1</td>
 <td style="text-align: right;">-0.4720192</td>
+<td style="text-align: right;">-7.667223</td>
 <td style="text-align: right;">3.192703</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: left;">Ulirsch2016</td>

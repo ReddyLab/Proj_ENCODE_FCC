@@ -158,3 +158,13 @@ fun_str_map_atac = function(vec_txt_assay){
     vec_txt_output = fun_str_map_match(vec_txt_assay, vec_txt_pattern, vec_txt_replace)
     return(vec_txt_output)
 }
+
+### helper function to save pheatmap plot
+save_pheatmap_pdf <- function(x, filename, width=7, height=7) {
+    stopifnot(!missing(x))
+    stopifnot(!missing(filename))
+    pdf(filename, width=width, height=height)
+    grid::grid.newpage()
+    grid::grid.draw(x$gtable)
+    dev.off()
+}

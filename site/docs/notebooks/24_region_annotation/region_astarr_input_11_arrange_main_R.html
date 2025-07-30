@@ -338,44 +338,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/011_region_ocr_astarr_KS91.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (ASTARR KS91)</span></a>
+  <a href="../../11_region_coverage_fcc/01_region_coverage_fcc_screen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FCC coverage at ATAC/DHS regions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/012_region_ocr_astarr_KS274.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (ASTARR KS274)</span></a>
+  <a href="../../11_region_coverage_fcc/02_region_coverage_fcc_scatter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Whole genome comparison of FCC assays</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/02_region_ocr_wstarr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (WSTARR)</span></a>
+  <a href="../../11_region_coverage_fcc/03_region_coverage_fcc_correlation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Rank normalized FCC effect size</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/03_region_ocr_tmpra.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (TMPRA)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/04_region_ocr_lmpra.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (LMPRA)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/05_region_ocr_crispri_hcrff.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (CRISPRi-HCRFF)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/06_region_ocr_crispri_growth.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (CRISPRi-Growth)</span></a>
+  <a href="../../11_region_coverage_fcc/04_region_coverage_fcc_comparison.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Comparisons of FCC across genome annotations</span></a>
   </div>
 </li>
       </ul>
@@ -536,7 +518,8 @@ metadata.label.chipseq_subset.tsv
 metadata.label.chipseq_tf_full.tsv 
 metadata.label.hic.tsv 
 metadata.label.main.tsv 
-metadata.label.ocr.tsv </code></pre>
+metadata.label.ocr.tsv 
+metadata.label.region_for_analysis.tsv </code></pre>
 </div>
 </div>
 <div id="90e3d146-096f-4125-b3d4-b1150f88a1ef" class="cell" data-execution_count="3">
@@ -605,7 +588,7 @@ metadata.label.ocr.tsv </code></pre>
 </details>
 <div class="cell-output cell-output-display">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>A spec_tbl_df: 24 × 4</caption>
+<caption>A spec_tbl_df: 25 × 4</caption>
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" scope="col">Folder</th>
@@ -748,18 +731,24 @@ metadata.label.ocr.tsv </code></pre>
 <td>/data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/region/fcc_starrmpra_junke/K562.hg38.WSTARR.junke.bed.gz</td>
 </tr>
 <tr class="even">
+<td>genome_cres</td>
+<td>K562.hg38.label_cres.bed.gz</td>
+<td>genome_cres</td>
+<td>/data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/region/genome_cres/K562.hg38.label_cres.bed.gz</td>
+</tr>
+<tr class="odd">
 <td>genome_tss</td>
 <td>K562.hg38.TSS.selected_by_highest_Pol2_signal.bed.gz</td>
 <td>genome_tss_pol2</td>
 <td>/data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/region/genome_tss/K562.hg38.TSS.selected_by_highest_Pol2_signal.bed.gz</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>genome_tss</td>
 <td>K562.hg38.TSS.selected_by_highest_Pol2_signal.filtered_by_RNAseq_TPM.bed.gz</td>
 <td>genome_tss_pol2_rnaseq</td>
 <td>/data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/region/genome_tss/K562.hg38.TSS.selected_by_highest_Pol2_signal.filtered_by_RNAseq_TPM.bed.gz</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>module_tf_shannon</td>
 <td>K562.hg38.TF_Module.bed.gz</td>
 <td>module_tf_shannon</td>
@@ -825,8 +814,8 @@ metadata.label.ocr.tsv </code></pre>
 
 encode_e2g_benchmark 
  [1] "Chrom"      "ChromStart" "ChromEnd"   "Name"       "Score"     
- [6] "Region"     "Target"     "NLog10P"    "Regulated"  "Source"    
-[11] "Group"      "Label"     
+ [6] "Zcore"      "Region"     "Target"     "NLog10P"    "Regulated" 
+[11] "Source"     "Group"      "Label"     
 
 fcc_astarr_csaw 
  [1] "Chrom"            "ChromStart"       "ChromEnd"         "Name"            
@@ -850,6 +839,11 @@ fcc_crispri_hcrff
 fcc_starrmpra_junke 
 [1] "Chrom"      "ChromStart" "ChromEnd"   "Name"       "Score"     
 [6] "Strand"     "Group"      "Label"      "Dataset"   
+
+genome_cres 
+ [1] "Chrom"       "ChromStart"  "ChromEnd"    "Region"      "Name"       
+ [6] "Type"        "Target"      "Target_TSS"  "Description" "Reference"  
+[11] "Note"        "Group"       "Label"      
 
 genome_tss 
 [1] "Chrom"      "ChromStart" "ChromEnd"   "Region"     "Gene"      
@@ -921,6 +915,7 @@ fcc_astarr_macs_narrowpeak
 fcc_crispri_growth 
 fcc_crispri_hcrff 
 fcc_starrmpra_junke 
+genome_cres 
 genome_tss 
 module_tf_shannon </code></pre>
 </div>
@@ -1183,6 +1178,20 @@ FName2: region.intersect.summary.fcc_starrmpra_junke.tsv
 ===========================================
 Read annotation... 
 Region A: fcc_astarr_macs_merge | fcc_astarr_macs_input_overlap 
+Region B: genome_cres 
+FDiry:    
+[1] "/data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/region_annotation/fcc_astarr_macs_input_overlap/genome_cres"
+FName:    
+[1] "fcc_astarr_macs_input_overlap.genome_cres.bed.gz"
+
+Save annotation... 
+FDiry:  /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/region_annotation/fcc_astarr_macs_input_overlap/summary 
+FName1: region.intersect.pair.genome_cres.tsv 
+FName2: region.intersect.summary.genome_cres.tsv 
+
+===========================================
+Read annotation... 
+Region A: fcc_astarr_macs_merge | fcc_astarr_macs_input_overlap 
 Region B: genome_tss 
 FDiry:    
 [1] "/data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/region_annotation/fcc_astarr_macs_input_overlap/genome_tss"
@@ -1324,6 +1333,20 @@ FName2: region.intersect.summary.fcc_starrmpra_junke.tsv
 ===========================================
 Read annotation... 
 Region A: fcc_astarr_macs_merge | fcc_astarr_macs_input_union 
+Region B: genome_cres 
+FDiry:    
+[1] "/data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/region_annotation/fcc_astarr_macs_input_union/genome_cres"
+FName:    
+[1] "fcc_astarr_macs_input_union.genome_cres.bed.gz"
+
+Save annotation... 
+FDiry:  /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/region_annotation/fcc_astarr_macs_input_union/summary 
+FName1: region.intersect.pair.genome_cres.tsv 
+FName2: region.intersect.summary.genome_cres.tsv 
+
+===========================================
+Read annotation... 
+Region A: fcc_astarr_macs_merge | fcc_astarr_macs_input_union 
 Region B: genome_tss 
 FDiry:    
 [1] "/data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/region_annotation/fcc_astarr_macs_input_union/genome_tss"
@@ -1355,7 +1378,7 @@ FName2: region.intersect.summary.module_tf_shannon.tsv
 </section>
 <section id="review" class="level2">
 <h2 class="anchored" data-anchor-id="review">Review</h2>
-<div id="3cc1bb9b-dc83-4697-9960-50df5a99adda" class="cell" data-execution_count="15">
+<div id="3cc1bb9b-dc83-4697-9960-50df5a99adda" class="cell" data-execution_count="11">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dat_region_annot_pair)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1498,7 +1521,7 @@ FName2: region.intersect.summary.module_tf_shannon.tsv
 </table>
 </div>
 </div>
-<div id="8905ab16-b683-4ef3-a0f1-9b573f67dfea" class="cell" data-execution_count="16">
+<div id="8905ab16-b683-4ef3-a0f1-9b573f67dfea" class="cell" data-execution_count="12">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dat_region_annot_summary)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>

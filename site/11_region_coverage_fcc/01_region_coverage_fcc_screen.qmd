@@ -1,0 +1,65 @@
+---
+title: "FCC coverage at ATAC/DHS regions"
+---
+
+# STARR-seq and Tiling MPRA
+
+fragment counts across accessible regions
+
+regions with extreme low fragments were filtered using EdgeR
+
+the log2 fold change of each regions were calculated using DEseq2
+
+![](/figure/22_region_coverage_fcc_score/fig.region_coverage_fcc.scatter_hex.zscore.input_vs_output.astarr.png){ width=40% }
+
+![](/figure/22_region_coverage_fcc_score/fig.region_coverage_fcc.scatter_hex.zscore.input_vs_output.wstarr.png){ width=40% }
+
+# Lenti-MPRA
+
+The log2 fold change were first standardized to z scores using the negative controls (random shuffled seqeunces)
+
+# CRISPRi-HCR FlowFISH
+
+The log2 fold change of guides were standardized to z scores for each target respectively. 
+
+After standardization, the safe-targeting guides were filtered. 
+
+The mean of z scores were calculated for each target across accessible regions.
+
+![](/figure/22_region_coverage_fcc_score/fig.region_coverage_fcc.heatmap.zscore.crispri_hcrff.target.total.png){ width=40% }
+
+![](/figure/22_region_coverage_fcc_score/fig.region_coverage_fcc.heatmap.zscore.crispri_hcrff.target.filtered.png){ width=40% }
+
+
+# CRISPRi-Growth screen
+
+The log2 fold change of guides were standardized to z scores
+
+The mean of z scores were calculated for each target across accessible regions.
+
+# Summarize region coverage
+
+Genome coverage of FCC assays
+Table: number of ATAC regions screened in each assay
+
+|Assay          |ATAC (Overlap) |ATAC (Union) |
+|:--------------|:--------------|:------------|
+|ATAC           |150,041        |246,852      |
+|ASTARR         |150,040        |246,850      |
+|WSTARR         |146,594        |241,031      |
+|CRISPRi-Growth |72,743         |80,288       |
+|LMPRA          |61,478         |68,497       |
+|TMPRA          |1,148          |1,722        |
+|CRISPRi-HCRFF  |925            |1,330        |
+
+Table: ratio = divided by total ATAC
+Set ATAC as 100%; how many percentage of regions are screened by each assay?
+
+|Assay          |ATAC (Overlap) |ATAC (Union) |
+|:--------------|:--------------|:------------|
+|ASTARR         |100%           |100%         |
+|WSTARR         |98%            |98%          |
+|CRISPRi-Growth |48%            |33%          |
+|LMPRA          |41%            |28%          |
+|TMPRA          |0.8%           |0.7%         |
+|CRISPRi-HCRFF  |0.6%           |0.5%         |
