@@ -140,3 +140,7 @@ log/
 log
 config/
 config
+
+# avoid large files in the past
+/notebooks/44_region_umap_cluster/fig.region_umap.astarr_input_overlap.fcc_starrmpracrispr_vote2.scatterplot.label_chromhmm.concat.svg
+/notebooks/45_fcc_enrichment/fig.fcc_starrmpra_group.astarr_input_overlap.coverage.chipseq.heatmap.svg
