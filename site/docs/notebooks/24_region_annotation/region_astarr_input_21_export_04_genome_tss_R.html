@@ -824,12 +824,12 @@ $fcc_astarr_macs_input_union
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="do">### set file directory</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>txt_fdiry <span class="ot">=</span> <span class="fu">file.path</span>(FD_REF, <span class="st">"genome_gene"</span>)</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>txt_fname <span class="ot">=</span> <span class="st">"demap.v24Q2.AchillesCommonEssentialControls.csv"</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>txt_fdiry <span class="ot">=</span> <span class="fu">file.path</span>(FD_RES, <span class="st">"annotation"</span>, <span class="st">"gene_essential"</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>txt_fname <span class="ot">=</span> <span class="st">"demap.v24Q2.AchillesCommonEssentialControls.tsv"</span></span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>txt_fpath <span class="ot">=</span> <span class="fu">file.path</span>(txt_fdiry, txt_fname)</span>
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="do">### read table</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> <span class="fu">read_csv</span>(txt_fpath, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> <span class="fu">read_tsv</span>(txt_fpath, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="do">### assign and show</span></span>
 <span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>dat_gene_essential_import <span class="ot">=</span> dat</span>
@@ -837,24 +837,36 @@ $fcc_astarr_macs_input_union
 <span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="fu">fun_display_table</span>(<span class="fu">head</span>(dat, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1247    1</code></pre>
+<pre><code>[1] 1247    4</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Gene</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Source</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Version</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">File</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">AAMP (14)</td>
+<td style="text-align: left;">AAMP</td>
+<td style="text-align: left;">demap</td>
+<td style="text-align: left;">v24Q2</td>
+<td style="text-align: left;">AchillesCommonEssentialControls</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">AARS1 (16)</td>
+<td style="text-align: left;">AARS1</td>
+<td style="text-align: left;">demap</td>
+<td style="text-align: left;">v24Q2</td>
+<td style="text-align: left;">AchillesCommonEssentialControls</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">AASDHPPT (60496)</td>
+<td style="text-align: left;">AASDHPPT</td>
+<td style="text-align: left;">demap</td>
+<td style="text-align: left;">v24Q2</td>
+<td style="text-align: left;">AchillesCommonEssentialControls</td>
 </tr>
 </tbody>
 </table>
@@ -948,67 +960,20 @@ $fcc_astarr_macs_input_union
 </table>
 </div>
 </div>
-<p><strong>Arrange region intersected pairs</strong></p>
-<div id="e9948f14-d15f-428c-832c-c98e4d4d7441" class="cell" data-execution_count="11">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat_gene_essential_import</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> tidyr<span class="sc">::</span><span class="fu">separate</span>(<span class="at">col=</span><span class="st">"Gene"</span>, <span class="at">into=</span><span class="fu">c</span>(<span class="st">"Gene"</span>, <span class="st">"Note"</span>), <span class="at">sep =</span> <span class="st">" "</span>)</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>dat_gene_essential_arrange <span class="ot">=</span> dat</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="fu">fun_display_table</span>(<span class="fu">head</span>(dat))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display">
-<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">Gene</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Note</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">AAMP</td>
-<td style="text-align: left;">(14)</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">AARS1</td>
-<td style="text-align: left;">(16)</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">AASDHPPT</td>
-<td style="text-align: left;">(60496)</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">ABCB7</td>
-<td style="text-align: left;">(22)</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">ABCE1</td>
-<td style="text-align: left;">(6059)</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">ABCF1</td>
-<td style="text-align: left;">(23)</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
 <p><strong>Explore: Group</strong></p>
-<div id="0be065bd-41a3-4ece-8a13-37eeccedead4" class="cell" data-execution_count="12">
+<div id="0be065bd-41a3-4ece-8a13-37eeccedead4" class="cell" data-execution_count="11">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_annot_arrange</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">lapply</span>(lst, <span class="cf">function</span>(dat){</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    res <span class="ot">=</span> <span class="fu">table</span>(dat<span class="sc">$</span>Group, <span class="at">dnn =</span> <span class="st">"Group"</span>)</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> <span class="fu">as.data.frame</span>(res)</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(dat)</span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> <span class="fu">bind_rows</span>(lst, <span class="at">.id =</span> <span class="st">"Region"</span>)</span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> tidyr<span class="sc">::</span><span class="fu">spread</span>(Group, Freq)</span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="fu">fun_display_table</span>(dat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_annot_arrange</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">lapply</span>(lst, <span class="cf">function</span>(dat){</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    res <span class="ot">=</span> <span class="fu">table</span>(dat<span class="sc">$</span>Group, <span class="at">dnn =</span> <span class="st">"Group"</span>)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> <span class="fu">as.data.frame</span>(res)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(dat)</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> <span class="fu">bind_rows</span>(lst, <span class="at">.id =</span> <span class="st">"Region"</span>)</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> tidyr<span class="sc">::</span><span class="fu">spread</span>(Group, Freq)</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="fu">fun_display_table</span>(dat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
@@ -1034,34 +999,34 @@ $fcc_astarr_macs_input_union
 </section>
 <section id="process-add-gene-essentiality" class="level2">
 <h2 class="anchored" data-anchor-id="process-add-gene-essentiality">Process: Add gene essentiality</h2>
-<div id="a4c9ec9c-0861-4ba1-a1d8-1f207ee677a8" class="cell" data-execution_count="13">
+<div id="a4c9ec9c-0861-4ba1-a1d8-1f207ee677a8" class="cell" data-execution_count="12">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="do">### get essential gene list</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat_gene_essential_arrange</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>vec <span class="ot">=</span> dat<span class="sc">$</span>Gene</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>vec_txt_gene <span class="ot">=</span> vec</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_annot_arrange</span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">lapply</span>(lst, <span class="cf">function</span>(dat){</span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>    <span class="do">### assign essential label</span></span>
-<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> </span>
-<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">rowwise</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">Essential =</span> Label <span class="sc">%in%</span> vec_txt_gene) <span class="sc">%&gt;%</span></span>
-<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">ungroup</span>()</span>
-<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(dat)</span>
-<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a><span class="do">### assign and show</span></span>
-<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>lst_dat_region_annot_result <span class="ot">=</span> lst</span>
-<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>res <span class="ot">=</span> <span class="fu">lapply</span>(lst, dim)</span>
-<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res)</span>
-<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> lst[[<span class="dv">1</span>]]</span>
-<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a><span class="fu">fun_display_table</span>(<span class="fu">head</span>(dat, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="do">### get essential gene list</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat_gene_essential_import</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>vec <span class="ot">=</span> dat<span class="sc">$</span>Gene</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>vec_txt_gene <span class="ot">=</span> vec</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_annot_arrange</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">lapply</span>(lst, <span class="cf">function</span>(dat){</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>    <span class="do">### assign essential label</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> </span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">rowwise</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">Essential =</span> Label <span class="sc">%in%</span> vec_txt_gene) <span class="sc">%&gt;%</span></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">ungroup</span>()</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(dat)</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a><span class="do">### assign and show</span></span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>lst_dat_region_annot_result <span class="ot">=</span> lst</span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>res <span class="ot">=</span> <span class="fu">lapply</span>(lst, dim)</span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res)</span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> lst[[<span class="dv">1</span>]]</span>
+<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a><span class="fu">fun_display_table</span>(<span class="fu">head</span>(dat, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>$fcc_astarr_macs_input_overlap
@@ -1133,12 +1098,12 @@ $fcc_astarr_macs_input_union
 </div>
 </div>
 <p><strong>Check missing values</strong></p>
-<div id="6a3afd21-04d5-4684-b580-2155ad45a6d7" class="cell" data-execution_count="14">
+<div id="6a3afd21-04d5-4684-b580-2155ad45a6d7" class="cell" data-execution_count="13">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_annot_result</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">lapply</span>(lst, <span class="cf">function</span>(dat){<span class="fu">any</span>(<span class="fu">is.na</span>(dat))})</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(lst)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_annot_result</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">lapply</span>(lst, <span class="cf">function</span>(dat){<span class="fu">any</span>(<span class="fu">is.na</span>(dat))})</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(lst)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>$fcc_astarr_macs_input_overlap
@@ -1150,21 +1115,21 @@ $fcc_astarr_macs_input_union
 </div>
 </div>
 <p><strong>Explore: count essential genes</strong></p>
-<div id="1a668406-d3da-4543-bc58-214173e4656f" class="cell" data-execution_count="15">
+<div id="c5f73367-d6da-4f4c-bae3-460f20931cac" class="cell" data-execution_count="14">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_annot_result</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">lapply</span>(lst, <span class="cf">function</span>(dat){</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(Region, Group, Label, Essential) <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">distinct</span>()</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">Note =</span> <span class="fu">ifelse</span>(Essential, <span class="st">"Essential:TRUE"</span>, <span class="st">"Essential:FALSE"</span>))</span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    res <span class="ot">=</span> <span class="fu">table</span>(dat<span class="sc">$</span>Group, dat<span class="sc">$</span>Note, <span class="at">dnn =</span> <span class="fu">c</span>(<span class="st">"Group"</span>, <span class="st">"Note"</span>))</span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> <span class="fu">as.data.frame</span>(res)</span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(dat)</span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> <span class="fu">bind_rows</span>(lst, <span class="at">.id =</span> <span class="st">"Region"</span>)</span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> tidyr<span class="sc">::</span><span class="fu">spread</span>(Note, Freq)</span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a><span class="fu">fun_display_table</span>(dat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_annot_result</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">lapply</span>(lst, <span class="cf">function</span>(dat){</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(Region, Group, Label, Essential) <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">distinct</span>()</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">Note =</span> <span class="fu">ifelse</span>(Essential, <span class="st">"Essential:TRUE"</span>, <span class="st">"Essential:FALSE"</span>))</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    res <span class="ot">=</span> <span class="fu">table</span>(dat<span class="sc">$</span>Group, dat<span class="sc">$</span>Note, <span class="at">dnn =</span> <span class="fu">c</span>(<span class="st">"Group"</span>, <span class="st">"Note"</span>))</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> <span class="fu">as.data.frame</span>(res)</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(dat)</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> <span class="fu">bind_rows</span>(lst, <span class="at">.id =</span> <span class="st">"Region"</span>)</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> tidyr<span class="sc">::</span><span class="fu">spread</span>(Note, Freq)</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a><span class="fu">fun_display_table</span>(dat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
@@ -1196,27 +1161,27 @@ $fcc_astarr_macs_input_union
 </section>
 <section id="matrix" class="level2">
 <h2 class="anchored" data-anchor-id="matrix">Matrix</h2>
-<div id="2f63d5fb-40fd-4fe9-823c-bf7fd0b8f46d" class="cell" data-execution_count="16">
+<div id="2f63d5fb-40fd-4fe9-823c-bf7fd0b8f46d" class="cell" data-execution_count="15">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="do">### convert long to wide format</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_annot_arrange</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">lapply</span>(lst, <span class="cf">function</span>(dat){</span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">select</span>(Chrom, ChromStart, ChromEnd, Region) <span class="sc">%&gt;%</span></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">TSS =</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">distinct</span>()</span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(dat)</span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a><span class="do">### assign and show</span></span>
-<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>lst_dat_region_annot_matrix <span class="ot">=</span> lst</span>
-<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>res <span class="ot">=</span> <span class="fu">lapply</span>(lst, dim)</span>
-<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res)</span>
-<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> lst[[<span class="dv">1</span>]]</span>
-<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a><span class="fu">fun_display_table</span>(<span class="fu">head</span>(dat, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="do">### convert long to wide format</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_annot_arrange</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">lapply</span>(lst, <span class="cf">function</span>(dat){</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">select</span>(Chrom, ChromStart, ChromEnd, Region) <span class="sc">%&gt;%</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">TSS =</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">distinct</span>()</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(dat)</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a><span class="do">### assign and show</span></span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>lst_dat_region_annot_matrix <span class="ot">=</span> lst</span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>res <span class="ot">=</span> <span class="fu">lapply</span>(lst, dim)</span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res)</span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> lst[[<span class="dv">1</span>]]</span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a><span class="fu">fun_display_table</span>(<span class="fu">head</span>(dat, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>$fcc_astarr_macs_input_overlap
@@ -1264,20 +1229,20 @@ $fcc_astarr_macs_input_union
 </div>
 </div>
 <p><strong>Check: dimention should match unique region</strong></p>
-<div id="3a103849-05ab-4a4f-a206-fe513537dbed" class="cell" data-execution_count="17">
+<div id="3a103849-05ab-4a4f-a206-fe513537dbed" class="cell" data-execution_count="16">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_annot_arrange</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">lapply</span>(lst, <span class="cf">function</span>(dat){</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(Region, Group) <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">distinct</span>()</span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    res <span class="ot">=</span> <span class="fu">table</span>(dat<span class="sc">$</span>Group, <span class="at">dnn =</span> <span class="fu">c</span>(<span class="st">"Group"</span>))</span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> <span class="fu">as.data.frame</span>(res)</span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(dat)</span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> <span class="fu">bind_rows</span>(lst, <span class="at">.id =</span> <span class="st">"Region"</span>)</span>
-<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> tidyr<span class="sc">::</span><span class="fu">spread</span>(Group, Freq)</span>
-<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a><span class="fu">fun_display_table</span>(dat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_annot_arrange</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">lapply</span>(lst, <span class="cf">function</span>(dat){</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(Region, Group) <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">distinct</span>()</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    res <span class="ot">=</span> <span class="fu">table</span>(dat<span class="sc">$</span>Group, <span class="at">dnn =</span> <span class="fu">c</span>(<span class="st">"Group"</span>))</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> <span class="fu">as.data.frame</span>(res)</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(dat)</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> <span class="fu">bind_rows</span>(lst, <span class="at">.id =</span> <span class="st">"Region"</span>)</span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> tidyr<span class="sc">::</span><span class="fu">spread</span>(Group, Freq)</span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a><span class="fu">fun_display_table</span>(dat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
@@ -1303,39 +1268,39 @@ $fcc_astarr_macs_input_union
 </section>
 <section id="export-results" class="level2">
 <h2 class="anchored" data-anchor-id="export-results">Export results</h2>
-<div id="baaf8134-7432-4d2e-82ab-2f95855585da" class="cell" data-execution_count="18">
+<div id="baaf8134-7432-4d2e-82ab-2f95855585da" class="cell" data-execution_count="17">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (txt_folder <span class="cf">in</span> VEC_TXT_FOLDER){</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    <span class="do">### get table</span></span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    dat_region_annot_result <span class="ot">=</span> lst_dat_region_annot_result[[txt_folder]]</span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>    dat_region_annot_matrix <span class="ot">=</span> lst_dat_region_annot_matrix[[txt_folder]]</span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>    <span class="do">### set file directory</span></span>
-<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>    txt_fdiry <span class="ot">=</span> <span class="fu">file.path</span>(</span>
-<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>        FD_RES, </span>
-<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">"region_annotation"</span>, </span>
-<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>        txt_folder,</span>
-<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">"summary"</span></span>
-<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>    <span class="do">### write region annotation (long format)</span></span>
-<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a>    txt_fname <span class="ot">=</span> <span class="st">"region.annotation.genome_tss.tsv"</span></span>
-<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a>    txt_fpath <span class="ot">=</span> <span class="fu">file.path</span>(txt_fdiry, txt_fname)</span>
-<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat_region_annot_result</span>
-<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">arrange</span>(Chrom, ChromStart, ChromEnd)</span>
-<span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">write_tsv</span>(dat, txt_fpath)</span>
-<span id="cb27-22"><a href="#cb27-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-23"><a href="#cb27-23" aria-hidden="true" tabindex="-1"></a>    <span class="do">### write region annotation (wide format)</span></span>
-<span id="cb27-24"><a href="#cb27-24" aria-hidden="true" tabindex="-1"></a>    txt_fname <span class="ot">=</span> <span class="st">"matrix.annotation.genome_tss.tsv"</span></span>
-<span id="cb27-25"><a href="#cb27-25" aria-hidden="true" tabindex="-1"></a>    txt_fpath <span class="ot">=</span> <span class="fu">file.path</span>(txt_fdiry, txt_fname)</span>
-<span id="cb27-26"><a href="#cb27-26" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb27-27"><a href="#cb27-27" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat_region_annot_matrix</span>
-<span id="cb27-28"><a href="#cb27-28" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">arrange</span>(Chrom, ChromStart, ChromEnd)</span>
-<span id="cb27-29"><a href="#cb27-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">write_tsv</span>(dat, txt_fpath)</span>
-<span id="cb27-30"><a href="#cb27-30" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (txt_folder <span class="cf">in</span> VEC_TXT_FOLDER){</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    <span class="do">### get table</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    dat_region_annot_result <span class="ot">=</span> lst_dat_region_annot_result[[txt_folder]]</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>    dat_region_annot_matrix <span class="ot">=</span> lst_dat_region_annot_matrix[[txt_folder]]</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>    <span class="do">### set file directory</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>    txt_fdiry <span class="ot">=</span> <span class="fu">file.path</span>(</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>        FD_RES, </span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">"region_annotation"</span>, </span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>        txt_folder,</span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">"summary"</span></span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>    <span class="do">### write region annotation (long format)</span></span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a>    txt_fname <span class="ot">=</span> <span class="st">"region.annotation.genome_tss.tsv"</span></span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a>    txt_fpath <span class="ot">=</span> <span class="fu">file.path</span>(txt_fdiry, txt_fname)</span>
+<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat_region_annot_result</span>
+<span id="cb26-20"><a href="#cb26-20" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">arrange</span>(Chrom, ChromStart, ChromEnd)</span>
+<span id="cb26-21"><a href="#cb26-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">write_tsv</span>(dat, txt_fpath)</span>
+<span id="cb26-22"><a href="#cb26-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-23"><a href="#cb26-23" aria-hidden="true" tabindex="-1"></a>    <span class="do">### write region annotation (wide format)</span></span>
+<span id="cb26-24"><a href="#cb26-24" aria-hidden="true" tabindex="-1"></a>    txt_fname <span class="ot">=</span> <span class="st">"matrix.annotation.genome_tss.tsv"</span></span>
+<span id="cb26-25"><a href="#cb26-25" aria-hidden="true" tabindex="-1"></a>    txt_fpath <span class="ot">=</span> <span class="fu">file.path</span>(txt_fdiry, txt_fname)</span>
+<span id="cb26-26"><a href="#cb26-26" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb26-27"><a href="#cb26-27" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat_region_annot_matrix</span>
+<span id="cb26-28"><a href="#cb26-28" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">arrange</span>(Chrom, ChromStart, ChromEnd)</span>
+<span id="cb26-29"><a href="#cb26-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">write_tsv</span>(dat, txt_fpath)</span>
+<span id="cb26-30"><a href="#cb26-30" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 

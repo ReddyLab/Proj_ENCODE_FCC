@@ -454,13 +454,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#import-data" id="toc-import-data" class="nav-link" data-scroll-target="#import-data">Import data</a></li>
   <li><a href="#summarize-fcc-effect-sizes" id="toc-summarize-fcc-effect-sizes" class="nav-link" data-scroll-target="#summarize-fcc-effect-sizes">Summarize FCC effect sizes</a></li>
   </ul></li>
-  <li><a href="#process-lmpracrispri-hcrffcrispri-growth" id="toc-process-lmpracrispri-hcrffcrispri-growth" class="nav-link" data-scroll-target="#process-lmpracrispri-hcrffcrispri-growth">Process LMPRA/CRISPRi-HCRFF/CRISPRi-Growth</a>
+  <li><a href="#process-crispri-hcrffcrispri-growth" id="toc-process-crispri-hcrffcrispri-growth" class="nav-link" data-scroll-target="#process-crispri-hcrffcrispri-growth">Process CRISPRi-HCRFF/CRISPRi-Growth</a>
   <ul class="collapse">
   <li><a href="#import-data-1" id="toc-import-data-1" class="nav-link" data-scroll-target="#import-data-1">Import data</a></li>
   <li><a href="#summarize-fcc-effect-sizes-1" id="toc-summarize-fcc-effect-sizes-1" class="nav-link" data-scroll-target="#summarize-fcc-effect-sizes-1">Summarize FCC effect sizes</a></li>
   </ul></li>
+  <li><a href="#process-lmpra" id="toc-process-lmpra" class="nav-link" data-scroll-target="#process-lmpra">Process LMPRA</a>
+  <ul class="collapse">
+  <li><a href="#import-data-2" id="toc-import-data-2" class="nav-link" data-scroll-target="#import-data-2">Import data</a></li>
+  <li><a href="#summarize-fcc-effect-sizes-2" id="toc-summarize-fcc-effect-sizes-2" class="nav-link" data-scroll-target="#summarize-fcc-effect-sizes-2">Summarize FCC effect sizes</a></li>
+  </ul></li>
   <li><a href="#combine-scores-from-all-fcc-assays" id="toc-combine-scores-from-all-fcc-assays" class="nav-link" data-scroll-target="#combine-scores-from-all-fcc-assays">Combine scores from all FCC assays</a></li>
   <li><a href="#filter-assays-choose-one-across-different-astarr-assays" id="toc-filter-assays-choose-one-across-different-astarr-assays" class="nav-link" data-scroll-target="#filter-assays-choose-one-across-different-astarr-assays">Filter assays (choose one across different ASTARR assays)</a></li>
+  <li><a href="#arrange-shared-data" id="toc-arrange-shared-data" class="nav-link" data-scroll-target="#arrange-shared-data">Arrange shared data</a></li>
   <li><a href="#save-results" id="toc-save-results" class="nav-link" data-scroll-target="#save-results">Save results</a></li>
   </ul>
 </nav>
@@ -1248,28 +1254,26 @@ $fcc_astarr_macs_input_union
 </div>
 </section>
 </section>
-<section id="process-lmpracrispri-hcrffcrispri-growth" class="level2">
-<h2 class="anchored" data-anchor-id="process-lmpracrispri-hcrffcrispri-growth">Process LMPRA/CRISPRi-HCRFF/CRISPRi-Growth</h2>
+<section id="process-crispri-hcrffcrispri-growth" class="level2">
+<h2 class="anchored" data-anchor-id="process-crispri-hcrffcrispri-growth">Process CRISPRi-HCRFF/CRISPRi-Growth</h2>
 <p><strong>Prepare assay and file names</strong></p>
-<div id="0a2190ab-7c18-403b-b8b6-297344ad6fe0" class="cell" data-execution_count="14">
+<div id="dfb780d6-e097-4469-bfe7-4228a8ea4f7e" class="cell" data-execution_count="14">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>vec_txt_assay <span class="ot">=</span> <span class="fu">c</span>(</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"CRISPRi_FlowFISH_K562_Riley_JinWoo"</span>,</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"CRISPRi_Growth_K562_Gersbach_JinWoo"</span>, </span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"MPRA_Lenti_K562_Nadav_Vikram"</span></span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>vec <span class="ot">=</span> <span class="fu">c</span>(</span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"region.coverage.score.filtered.merge.tsv"</span>,</span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"region.coverage.score.tsv"</span>,</span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"region.coverage.score.tsv"</span></span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(vec) <span class="ot">=</span> vec_txt_assay</span>
-<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>vec_txt_fname <span class="ot">=</span> vec</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"CRISPRi_Growth_K562_Gersbach_JinWoo"</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>vec <span class="ot">=</span> <span class="fu">c</span>(</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"region.coverage.score.filtered.merge.tsv"</span>,</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"region.coverage.score.tsv"</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(vec) <span class="ot">=</span> vec_txt_assay</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>vec_txt_fname <span class="ot">=</span> vec</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p><strong>Check input files</strong></p>
-<div id="695ff5d3-b779-4bb0-8f5a-075aea5e1c9a" class="cell" data-execution_count="15">
+<div id="630ddd38-1fad-43a1-934a-9ee4626ce06a" class="cell" data-execution_count="15">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>txt_region <span class="ot">=</span> VEC_TXT_REGION[<span class="dv">1</span>]</span>
@@ -1281,11 +1285,10 @@ $fcc_astarr_macs_input_union
 <span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (txt <span class="cf">in</span> vec) {<span class="fu">cat</span>(txt, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>/data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/region_coverage_fcc_score/fcc_astarr_macs_input_overlap/CRISPRi_Growth_K562_Gersbach_JinWoo/summary/region.coverage.score.tsv 
-/data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/region_coverage_fcc_score/fcc_astarr_macs_input_overlap/MPRA_Lenti_K562_Nadav_Vikram/summary/region.coverage.score.tsv </code></pre>
+<pre><code>/data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/region_coverage_fcc_score/fcc_astarr_macs_input_overlap/CRISPRi_Growth_K562_Gersbach_JinWoo/summary/region.coverage.score.tsv </code></pre>
 </div>
 </div>
-<div id="bff527c8-65f6-4f34-b798-f0ad02663f30" class="cell" data-execution_count="16">
+<div id="73c53c31-e540-4bfb-921b-7529d18da493" class="cell" data-execution_count="16">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>txt_region <span class="ot">=</span> VEC_TXT_REGION[<span class="dv">1</span>]</span>
@@ -1302,7 +1305,7 @@ $fcc_astarr_macs_input_union
 </div>
 <section id="import-data-1" class="level3">
 <h3 class="anchored" data-anchor-id="import-data-1">Import data</h3>
-<div id="f44c6f39-3449-4824-b8e0-73f29fc66a09" class="cell" data-execution_count="17">
+<div id="03a7e21c-4771-4c9d-bebf-ab1dc65145fb" class="cell" data-execution_count="17">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">lapply</span>(VEC_TXT_REGION, <span class="cf">function</span>(txt_region){</span>
@@ -1329,7 +1332,7 @@ $fcc_astarr_macs_input_union
 <span id="cb26-22"><a href="#cb26-22" aria-hidden="true" tabindex="-1"></a>})  </span>
 <span id="cb26-23"><a href="#cb26-23" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-24"><a href="#cb26-24" aria-hidden="true" tabindex="-1"></a><span class="do">### assign and label</span></span>
-<span id="cb26-25"><a href="#cb26-25" aria-hidden="true" tabindex="-1"></a>lst_dat_region_score_other_import <span class="ot">=</span> lst</span>
+<span id="cb26-25"><a href="#cb26-25" aria-hidden="true" tabindex="-1"></a>lst_dat_region_score_crispri_import <span class="ot">=</span> lst</span>
 <span id="cb26-26"><a href="#cb26-26" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-27"><a href="#cb26-27" aria-hidden="true" tabindex="-1"></a>res <span class="ot">=</span> <span class="fu">lapply</span>(lst, dim)</span>
 <span id="cb26-28"><a href="#cb26-28" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res)</span>
@@ -1339,10 +1342,10 @@ $fcc_astarr_macs_input_union
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>$fcc_astarr_macs_input_overlap
-[1] 135146     16
+[1] 73668    15
 
 $fcc_astarr_macs_input_union
-[1] 150115     16
+[1] 81618    15
 </code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -1364,7 +1367,6 @@ $fcc_astarr_macs_input_union
 <th style="text-align: right;" data-quarto-table-cell-role="th">Median</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Max</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Min</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">AbsMax</th>
 </tr>
 </thead>
 <tbody>
@@ -1381,7 +1383,6 @@ $fcc_astarr_macs_input_union
 <td style="text-align: left;">CRISPRi_FlowFISH_K562_Riley_JinWoo</td>
 <td style="text-align: left;">CRISPRi-HCRFF</td>
 <td style="text-align: left;">CRISPRi-HCRFF</td>
-<td style="text-align: right;">NA</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">NA</td>
@@ -1402,7 +1403,6 @@ $fcc_astarr_macs_input_union
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">chr11</td>
@@ -1420,17 +1420,16 @@ $fcc_astarr_macs_input_union
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 <p><strong>Explore: count</strong></p>
-<div id="1d1a4c4b-04b1-44a6-bbcc-46b4d3b50500" class="cell" data-execution_count="18">
+<div id="0bf58ef2-5a43-44cb-b435-87253ea86198" class="cell" data-execution_count="18">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_score_other_import</span>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_score_crispri_import</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">lapply</span>(lst, <span class="cf">function</span>(dat){</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    res <span class="ot">=</span> <span class="fu">table</span>(dat<span class="sc">$</span>Assay_Group, <span class="at">dnn =</span> <span class="st">"Assay"</span>)</span>
 <span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> <span class="fu">as.data.frame</span>(res)</span>
@@ -1442,7 +1441,7 @@ $fcc_astarr_macs_input_union
 </details>
 <div class="cell-output cell-output-display">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>A data.frame: 3 × 3</caption>
+<caption>A data.frame: 2 × 3</caption>
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" scope="col">Assay</th>
@@ -1466,20 +1465,15 @@ $fcc_astarr_macs_input_union
 <td>925</td>
 <td>1330</td>
 </tr>
-<tr class="odd">
-<td>LMPRA</td>
-<td>61478</td>
-<td>68497</td>
-</tr>
 </tbody>
 </table>
 </div>
 </div>
 <p><strong>Explore: Missing data</strong></p>
-<div id="e04f4e90-8fa3-426e-a399-744212045d73" class="cell" data-execution_count="19">
+<div id="16f60555-61d8-479a-b2a9-ede4749f3eca" class="cell" data-execution_count="19">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_score_other_import</span>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_score_crispri_import</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">lapply</span>(lst, <span class="cf">function</span>(dat){</span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    lst <span class="ot">=</span> <span class="fu">lapply</span>(dat, <span class="cf">function</span>(vec){</span>
 <span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>        num <span class="ot">=</span> <span class="fu">sum</span>(<span class="fu">is.na</span>(vec))    </span>
@@ -1512,7 +1506,6 @@ $fcc_astarr_macs_input_union
 <th style="text-align: right;" data-quarto-table-cell-role="th">Median</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Max</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Min</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">AbsMax</th>
 </tr>
 </thead>
 <tbody>
@@ -1523,17 +1516,16 @@ $fcc_astarr_macs_input_union
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">61478</td>
-<td style="text-align: right;">61478</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">134221</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">72743</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">925</td>
 <td style="text-align: right;">925</td>
 <td style="text-align: right;">925</td>
-<td style="text-align: right;">73668</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">fcc_astarr_macs_input_union</td>
@@ -1542,17 +1534,16 @@ $fcc_astarr_macs_input_union
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">68497</td>
-<td style="text-align: right;">68497</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">148785</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">80288</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1330</td>
 <td style="text-align: right;">1330</td>
 <td style="text-align: right;">1330</td>
-<td style="text-align: right;">81618</td>
 </tr>
 </tbody>
 </table>
@@ -1561,10 +1552,10 @@ $fcc_astarr_macs_input_union
 </section>
 <section id="summarize-fcc-effect-sizes-1" class="level3">
 <h3 class="anchored" data-anchor-id="summarize-fcc-effect-sizes-1">Summarize FCC effect sizes</h3>
-<div id="c9beedd0-814d-4f08-abbe-9bdcaadd96c4" class="cell" data-execution_count="20">
+<div id="64d5e9a8-6887-4f73-8798-1b3e68b506c9" class="cell" data-execution_count="20">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_score_other_import</span>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_score_crispri_import</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">lapply</span>(lst, <span class="cf">function</span>(dat){</span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    <span class="do">### process scores</span></span>
 <span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> </span>
@@ -1594,7 +1585,7 @@ $fcc_astarr_macs_input_union
 <span id="cb30-28"><a href="#cb30-28" aria-hidden="true" tabindex="-1"></a>})  </span>
 <span id="cb30-29"><a href="#cb30-29" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb30-30"><a href="#cb30-30" aria-hidden="true" tabindex="-1"></a><span class="do">### assign and label</span></span>
-<span id="cb30-31"><a href="#cb30-31" aria-hidden="true" tabindex="-1"></a>lst_dat_region_score_other_arrange <span class="ot">=</span> lst</span>
+<span id="cb30-31"><a href="#cb30-31" aria-hidden="true" tabindex="-1"></a>lst_dat_region_score_crispri_arrange <span class="ot">=</span> lst</span>
 <span id="cb30-32"><a href="#cb30-32" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb30-33"><a href="#cb30-33" aria-hidden="true" tabindex="-1"></a>res <span class="ot">=</span> <span class="fu">lapply</span>(lst, dim)</span>
 <span id="cb30-34"><a href="#cb30-34" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res)</span>
@@ -1604,10 +1595,10 @@ $fcc_astarr_macs_input_union
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>$fcc_astarr_macs_input_overlap
-[1] 135146     11
+[1] 73668    11
 
 $fcc_astarr_macs_input_union
-[1] 150115     11
+[1] 81618    11
 </code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -1630,52 +1621,52 @@ $fcc_astarr_macs_input_union
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">chr1</td>
-<td style="text-align: right;">115429</td>
-<td style="text-align: right;">115969</td>
-<td style="text-align: left;">chr1:115429-115969</td>
-<td style="text-align: right;">2.0511008</td>
-<td style="text-align: right;">2.0511008</td>
+<td style="text-align: right;">605104</td>
+<td style="text-align: right;">605675</td>
+<td style="text-align: left;">chr1:605104-605675</td>
+<td style="text-align: right;">0.0904152</td>
+<td style="text-align: right;">0.0904152</td>
 <td style="text-align: left;">Mean(ZScore)</td>
 <td style="text-align: left;">Mean(ZScore)</td>
-<td style="text-align: left;">MPRA_Lenti_K562_Nadav_Vikram</td>
-<td style="text-align: left;">LMPRA</td>
-<td style="text-align: left;">LMPRA</td>
+<td style="text-align: left;">CRISPRi_Growth_K562_Gersbach_JinWoo</td>
+<td style="text-align: left;">CRISPRi-Growth</td>
+<td style="text-align: left;">CRISPRi-Growth</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">chr1</td>
-<td style="text-align: right;">138321</td>
-<td style="text-align: right;">139517</td>
-<td style="text-align: left;">chr1:138321-139517</td>
-<td style="text-align: right;">0.7368123</td>
-<td style="text-align: right;">0.7368123</td>
+<td style="text-align: right;">778233</td>
+<td style="text-align: right;">779389</td>
+<td style="text-align: left;">chr1:778233-779389</td>
+<td style="text-align: right;">0.1162065</td>
+<td style="text-align: right;">0.1162065</td>
 <td style="text-align: left;">Mean(ZScore)</td>
 <td style="text-align: left;">Mean(ZScore)</td>
-<td style="text-align: left;">MPRA_Lenti_K562_Nadav_Vikram</td>
-<td style="text-align: left;">LMPRA</td>
-<td style="text-align: left;">LMPRA</td>
+<td style="text-align: left;">CRISPRi_Growth_K562_Gersbach_JinWoo</td>
+<td style="text-align: left;">CRISPRi-Growth</td>
+<td style="text-align: left;">CRISPRi-Growth</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">chr1</td>
-<td style="text-align: right;">267910</td>
-<td style="text-align: right;">268557</td>
-<td style="text-align: left;">chr1:267910-268557</td>
-<td style="text-align: right;">0.5589114</td>
-<td style="text-align: right;">0.5589114</td>
+<td style="text-align: right;">817031</td>
+<td style="text-align: right;">817525</td>
+<td style="text-align: left;">chr1:817031-817525</td>
+<td style="text-align: right;">-0.2753540</td>
+<td style="text-align: right;">-0.2753540</td>
 <td style="text-align: left;">Mean(ZScore)</td>
 <td style="text-align: left;">Mean(ZScore)</td>
-<td style="text-align: left;">MPRA_Lenti_K562_Nadav_Vikram</td>
-<td style="text-align: left;">LMPRA</td>
-<td style="text-align: left;">LMPRA</td>
+<td style="text-align: left;">CRISPRi_Growth_K562_Gersbach_JinWoo</td>
+<td style="text-align: left;">CRISPRi-Growth</td>
+<td style="text-align: left;">CRISPRi-Growth</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 <p><strong>Explore: count</strong></p>
-<div id="00ae564d-e81b-4250-b57b-6f797129695d" class="cell" data-execution_count="21">
+<div id="20da89bf-394f-40c7-885d-1bdd4367b59d" class="cell" data-execution_count="21">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_score_other_arrange</span>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_score_crispri_arrange</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">lapply</span>(lst, <span class="cf">function</span>(dat){</span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    res <span class="ot">=</span> <span class="fu">table</span>(dat<span class="sc">$</span>Assay_Group, <span class="at">dnn =</span> <span class="st">"Assay"</span>)</span>
 <span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> <span class="fu">as.data.frame</span>(res)</span>
@@ -1687,7 +1678,7 @@ $fcc_astarr_macs_input_union
 </details>
 <div class="cell-output cell-output-display">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>A data.frame: 3 × 3</caption>
+<caption>A data.frame: 2 × 3</caption>
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" scope="col">Assay</th>
@@ -1711,20 +1702,15 @@ $fcc_astarr_macs_input_union
 <td>925</td>
 <td>1330</td>
 </tr>
-<tr class="odd">
-<td>LMPRA</td>
-<td>61478</td>
-<td>68497</td>
-</tr>
 </tbody>
 </table>
 </div>
 </div>
 <p><strong>Explore: Missing data</strong></p>
-<div id="04080245-c67a-45df-bf2c-54ab2e86148c" class="cell" data-execution_count="22">
+<div id="6f968de3-e234-44b2-a4b4-db7c45220dcc" class="cell" data-execution_count="22">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_score_other_arrange</span>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_score_crispri_arrange</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">lapply</span>(lst, <span class="cf">function</span>(dat){</span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>    lst <span class="ot">=</span> <span class="fu">lapply</span>(dat, <span class="cf">function</span>(vec){</span>
 <span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>        num <span class="ot">=</span> <span class="fu">sum</span>(<span class="fu">is.na</span>(vec))    </span>
@@ -1790,29 +1776,507 @@ $fcc_astarr_macs_input_union
 </div>
 </section>
 </section>
-<section id="combine-scores-from-all-fcc-assays" class="level2">
-<h2 class="anchored" data-anchor-id="combine-scores-from-all-fcc-assays">Combine scores from all FCC assays</h2>
-<div id="c7f1dcb0-7dc5-4f98-95fa-7094789f18a1" class="cell" data-execution_count="23">
+<section id="process-lmpra" class="level2">
+<h2 class="anchored" data-anchor-id="process-lmpra">Process LMPRA</h2>
+<p><strong>Prepare assay and file names</strong></p>
+<div id="5e42327e-5c26-40cf-9309-89ba9609f300" class="cell" data-execution_count="23">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">lapply</span>(VEC_TXT_REGION, <span class="cf">function</span>(txt_region){</span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    <span class="do">### get tables</span></span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    dat1 <span class="ot">=</span> lst_dat_region_score_deseq_arrange[[txt_region]]</span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>    dat2 <span class="ot">=</span> lst_dat_region_score_other_arrange[[txt_region]]</span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>    <span class="do">### combine tables</span></span>
-<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> <span class="fu">bind_rows</span>(dat1, dat2)</span>
-<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(dat)</span>
-<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a><span class="do">### assign and show</span></span>
-<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a>lst_dat_region_score_total <span class="ot">=</span> lst</span>
-<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a>res <span class="ot">=</span> <span class="fu">lapply</span>(lst, dim)</span>
-<span id="cb34-15"><a href="#cb34-15" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res)</span>
-<span id="cb34-16"><a href="#cb34-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-17"><a href="#cb34-17" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> lst[[<span class="dv">1</span>]]</span>
-<span id="cb34-18"><a href="#cb34-18" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dat, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>vec_txt_assay <span class="ot">=</span> <span class="fu">c</span>(</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"MPRA_Lenti_K562_Nadav_Vikram"</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>vec <span class="ot">=</span> <span class="fu">c</span>(</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"region.coverage.score.log2fc.tsv"</span></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(vec) <span class="ot">=</span> vec_txt_assay</span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>vec_txt_fname <span class="ot">=</span> vec</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p><strong>Check input files</strong></p>
+<div id="9c757c8c-aac4-4b03-afdd-71b57138b6a0" class="cell" data-execution_count="24">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>txt_region <span class="ot">=</span> VEC_TXT_REGION[<span class="dv">1</span>]</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>txt_assay  <span class="ot">=</span> vec_txt_assay[<span class="dv">1</span>]</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>txt_fdiry  <span class="ot">=</span> <span class="fu">file.path</span>(FD_RES, <span class="st">"region_coverage_fcc_score"</span>, txt_region)</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>txt_fname  <span class="ot">=</span> <span class="st">"region.coverage.score.*.tsv"</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>txt_fglob  <span class="ot">=</span> <span class="fu">file.path</span>(txt_fdiry, txt_assay, <span class="st">"summary"</span>, txt_fname)</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>vec <span class="ot">=</span> <span class="fu">Sys.glob</span>(txt_fglob)</span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (txt <span class="cf">in</span> vec) {<span class="fu">cat</span>(txt, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>/data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/region_coverage_fcc_score/fcc_astarr_macs_input_overlap/MPRA_Lenti_K562_Nadav_Vikram/summary/region.coverage.score.log2fc.tsv 
+/data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/region_coverage_fcc_score/fcc_astarr_macs_input_overlap/MPRA_Lenti_K562_Nadav_Vikram/summary/region.coverage.score.zscore.tsv </code></pre>
+</div>
+</div>
+<section id="import-data-2" class="level3">
+<h3 class="anchored" data-anchor-id="import-data-2">Import data</h3>
+<div id="f7fd657d-4ea9-494f-b7f9-68f6be235fa5" class="cell" data-execution_count="25">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">lapply</span>(VEC_TXT_REGION, <span class="cf">function</span>(txt_region){</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>    <span class="do">### loop through each assay and import table</span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    lst <span class="ot">=</span> <span class="fu">lapply</span>(vec_txt_assay, <span class="cf">function</span>(txt_assay){</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>        <span class="do">### set file glob</span></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>        txt_fdiry  <span class="ot">=</span> <span class="fu">file.path</span>(FD_RES, <span class="st">"region_coverage_fcc_score"</span>, txt_region, txt_assay, <span class="st">"summary"</span>)</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>        txt_fname <span class="ot">=</span> vec_txt_fname[txt_assay]</span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>        txt_fpath <span class="ot">=</span> <span class="fu">file.path</span>(txt_fdiry, txt_fname)</span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>        <span class="do">### import table</span></span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>        dat <span class="ot">=</span> <span class="fu">read_tsv</span>(txt_fpath, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>        dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a>            <span class="at">Assay_Folder =</span> <span class="fu">fun1</span>(txt_fpath),</span>
+<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a>            <span class="at">Assay_Group  =</span> <span class="fu">fun2</span>(txt_fpath),</span>
+<span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a>            <span class="at">Assay_Label  =</span> <span class="fu">fun3</span>(txt_fpath)</span>
+<span id="cb37-15"><a href="#cb37-15" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb37-16"><a href="#cb37-16" aria-hidden="true" tabindex="-1"></a>        <span class="fu">return</span>(dat)</span>
+<span id="cb37-17"><a href="#cb37-17" aria-hidden="true" tabindex="-1"></a>    }) </span>
+<span id="cb37-18"><a href="#cb37-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-19"><a href="#cb37-19" aria-hidden="true" tabindex="-1"></a>    <span class="do">### combine tables</span></span>
+<span id="cb37-20"><a href="#cb37-20" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> <span class="fu">bind_rows</span>(lst)</span>
+<span id="cb37-21"><a href="#cb37-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(dat)</span>
+<span id="cb37-22"><a href="#cb37-22" aria-hidden="true" tabindex="-1"></a>})  </span>
+<span id="cb37-23"><a href="#cb37-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-24"><a href="#cb37-24" aria-hidden="true" tabindex="-1"></a><span class="do">### assign and label</span></span>
+<span id="cb37-25"><a href="#cb37-25" aria-hidden="true" tabindex="-1"></a>lst_dat_region_score_lmpra_import <span class="ot">=</span> lst</span>
+<span id="cb37-26"><a href="#cb37-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-27"><a href="#cb37-27" aria-hidden="true" tabindex="-1"></a>res <span class="ot">=</span> <span class="fu">lapply</span>(lst, dim)</span>
+<span id="cb37-28"><a href="#cb37-28" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res)</span>
+<span id="cb37-29"><a href="#cb37-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-30"><a href="#cb37-30" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> lst[[<span class="dv">1</span>]]</span>
+<span id="cb37-31"><a href="#cb37-31" aria-hidden="true" tabindex="-1"></a><span class="fu">fun_display_table</span>(<span class="fu">head</span>(dat, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>$fcc_astarr_macs_input_overlap
+[1] 61478    13
+
+$fcc_astarr_macs_input_union
+[1] 68497    13
+</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Region</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Mean</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Median</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">AbsMax</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Max</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Min</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Count</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Assay_Folder</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Assay_Group</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Assay_Label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">chr1</td>
+<td style="text-align: right;">115429</td>
+<td style="text-align: right;">115969</td>
+<td style="text-align: left;">chr1:115429-115969</td>
+<td style="text-align: right;">0.040</td>
+<td style="text-align: right;">0.040</td>
+<td style="text-align: right;">0.040</td>
+<td style="text-align: right;">0.040</td>
+<td style="text-align: right;">0.040</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">MPRA_Lenti_K562_Nadav_Vikram</td>
+<td style="text-align: left;">LMPRA</td>
+<td style="text-align: left;">LMPRA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">chr1</td>
+<td style="text-align: right;">138321</td>
+<td style="text-align: right;">139517</td>
+<td style="text-align: left;">chr1:138321-139517</td>
+<td style="text-align: right;">-0.322</td>
+<td style="text-align: right;">-0.322</td>
+<td style="text-align: right;">-0.543</td>
+<td style="text-align: right;">-0.101</td>
+<td style="text-align: right;">-0.543</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">MPRA_Lenti_K562_Nadav_Vikram</td>
+<td style="text-align: left;">LMPRA</td>
+<td style="text-align: left;">LMPRA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">chr1</td>
+<td style="text-align: right;">267910</td>
+<td style="text-align: right;">268557</td>
+<td style="text-align: left;">chr1:267910-268557</td>
+<td style="text-align: right;">-0.371</td>
+<td style="text-align: right;">-0.371</td>
+<td style="text-align: right;">-0.967</td>
+<td style="text-align: right;">0.225</td>
+<td style="text-align: right;">-0.967</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">MPRA_Lenti_K562_Nadav_Vikram</td>
+<td style="text-align: left;">LMPRA</td>
+<td style="text-align: left;">LMPRA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><strong>Explore: count</strong></p>
+<div id="6d28bb85-d72b-4f37-86ef-292da97100c8" class="cell" data-execution_count="26">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_score_lmpra_import</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">lapply</span>(lst, <span class="cf">function</span>(dat){</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    res <span class="ot">=</span> <span class="fu">table</span>(dat<span class="sc">$</span>Assay_Group, <span class="at">dnn =</span> <span class="st">"Assay"</span>)</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> <span class="fu">as.data.frame</span>(res)</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(dat)</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> <span class="fu">bind_rows</span>(lst, <span class="at">.id =</span> <span class="st">"Folder"</span>)</span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> tidyr<span class="sc">::</span><span class="fu">spread</span>(Folder, Freq)</span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a><span class="fu">fun_display_table</span>(dat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Assay</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">fcc_astarr_macs_input_overlap</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">fcc_astarr_macs_input_union</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">LMPRA</td>
+<td style="text-align: right;">61478</td>
+<td style="text-align: right;">68497</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><strong>Explore: Missing data</strong></p>
+<div id="fe5c5a81-e268-4d1e-8912-f9e8a5c2ddcd" class="cell" data-execution_count="27">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_score_lmpra_import</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">lapply</span>(lst, <span class="cf">function</span>(dat){</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>    lst <span class="ot">=</span> <span class="fu">lapply</span>(dat, <span class="cf">function</span>(vec){</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>        num <span class="ot">=</span> <span class="fu">sum</span>(<span class="fu">is.na</span>(vec))    </span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>        <span class="fu">return</span>(num)</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>    vec <span class="ot">=</span> <span class="fu">unlist</span>(lst)</span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(vec)</span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> <span class="fu">bind_rows</span>(lst, <span class="at">.id =</span> <span class="st">"Folder"</span>)</span>
+<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a><span class="fu">fun_display_table</span>(dat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Folder</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Chrom</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Region</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Mean</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Median</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">AbsMax</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Max</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Min</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Count</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Assay_Folder</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Assay_Group</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Assay_Label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">fcc_astarr_macs_input_overlap</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">fcc_astarr_macs_input_union</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="summarize-fcc-effect-sizes-2" class="level3">
+<h3 class="anchored" data-anchor-id="summarize-fcc-effect-sizes-2">Summarize FCC effect sizes</h3>
+<div id="acf3120f-8063-4b16-9531-c4d71f3f1ec0" class="cell" data-execution_count="28">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_score_lmpra_import</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">lapply</span>(lst, <span class="cf">function</span>(dat){</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>    <span class="do">### process scores</span></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> </span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">group_by</span>(Assay_Group) <span class="sc">%&gt;%</span></span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">Score =</span> Mean,</span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">Zcore =</span> <span class="fu">as.vector</span>(<span class="fu">scale</span>(Mean)),</span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">Score_Label =</span> <span class="st">"Log2FC"</span>,</span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>            <span class="at">Zcore_Label =</span> <span class="st">"Scale(Log2FC)"</span></span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a>        ) <span class="sc">%&gt;%</span></span>
+<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">ungroup</span>()</span>
+<span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a>    <span class="do">### arrange results</span></span>
+<span id="cb41-15"><a href="#cb41-15" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> </span>
+<span id="cb41-16"><a href="#cb41-16" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">select</span>(</span>
+<span id="cb41-17"><a href="#cb41-17" aria-hidden="true" tabindex="-1"></a>            Chrom, ChromStart, ChromEnd, Region, </span>
+<span id="cb41-18"><a href="#cb41-18" aria-hidden="true" tabindex="-1"></a>            Score, </span>
+<span id="cb41-19"><a href="#cb41-19" aria-hidden="true" tabindex="-1"></a>            Zcore,</span>
+<span id="cb41-20"><a href="#cb41-20" aria-hidden="true" tabindex="-1"></a>            Score_Label,</span>
+<span id="cb41-21"><a href="#cb41-21" aria-hidden="true" tabindex="-1"></a>            Zcore_Label,</span>
+<span id="cb41-22"><a href="#cb41-22" aria-hidden="true" tabindex="-1"></a>            Assay_Folder,</span>
+<span id="cb41-23"><a href="#cb41-23" aria-hidden="true" tabindex="-1"></a>            Assay_Group,</span>
+<span id="cb41-24"><a href="#cb41-24" aria-hidden="true" tabindex="-1"></a>            Assay_Label</span>
+<span id="cb41-25"><a href="#cb41-25" aria-hidden="true" tabindex="-1"></a>        ) <span class="sc">%&gt;%</span></span>
+<span id="cb41-26"><a href="#cb41-26" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">arrange</span>(Chrom, ChromStart, ChromEnd)</span>
+<span id="cb41-27"><a href="#cb41-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(dat)</span>
+<span id="cb41-28"><a href="#cb41-28" aria-hidden="true" tabindex="-1"></a>})  </span>
+<span id="cb41-29"><a href="#cb41-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-30"><a href="#cb41-30" aria-hidden="true" tabindex="-1"></a><span class="do">### assign and label</span></span>
+<span id="cb41-31"><a href="#cb41-31" aria-hidden="true" tabindex="-1"></a>lst_dat_region_score_lmpra_arrange <span class="ot">=</span> lst</span>
+<span id="cb41-32"><a href="#cb41-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-33"><a href="#cb41-33" aria-hidden="true" tabindex="-1"></a>res <span class="ot">=</span> <span class="fu">lapply</span>(lst, dim)</span>
+<span id="cb41-34"><a href="#cb41-34" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res)</span>
+<span id="cb41-35"><a href="#cb41-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-36"><a href="#cb41-36" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> lst[[<span class="dv">1</span>]]</span>
+<span id="cb41-37"><a href="#cb41-37" aria-hidden="true" tabindex="-1"></a><span class="fu">fun_display_table</span>(<span class="fu">head</span>(dat, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>$fcc_astarr_macs_input_overlap
+[1] 61478    11
+
+$fcc_astarr_macs_input_union
+[1] 68497    11
+</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Chrom</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Region</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Zcore</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Score_Label</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Zcore_Label</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Assay_Folder</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Assay_Group</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Assay_Label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">chr1</td>
+<td style="text-align: right;">115429</td>
+<td style="text-align: right;">115969</td>
+<td style="text-align: left;">chr1:115429-115969</td>
+<td style="text-align: right;">0.040</td>
+<td style="text-align: right;">0.1663499</td>
+<td style="text-align: left;">Log2FC</td>
+<td style="text-align: left;">Scale(Log2FC)</td>
+<td style="text-align: left;">MPRA_Lenti_K562_Nadav_Vikram</td>
+<td style="text-align: left;">LMPRA</td>
+<td style="text-align: left;">LMPRA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">chr1</td>
+<td style="text-align: right;">138321</td>
+<td style="text-align: right;">139517</td>
+<td style="text-align: left;">chr1:138321-139517</td>
+<td style="text-align: right;">-0.322</td>
+<td style="text-align: right;">-0.5919431</td>
+<td style="text-align: left;">Log2FC</td>
+<td style="text-align: left;">Scale(Log2FC)</td>
+<td style="text-align: left;">MPRA_Lenti_K562_Nadav_Vikram</td>
+<td style="text-align: left;">LMPRA</td>
+<td style="text-align: left;">LMPRA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">chr1</td>
+<td style="text-align: right;">267910</td>
+<td style="text-align: right;">268557</td>
+<td style="text-align: left;">chr1:267910-268557</td>
+<td style="text-align: right;">-0.371</td>
+<td style="text-align: right;">-0.6945850</td>
+<td style="text-align: left;">Log2FC</td>
+<td style="text-align: left;">Scale(Log2FC)</td>
+<td style="text-align: left;">MPRA_Lenti_K562_Nadav_Vikram</td>
+<td style="text-align: left;">LMPRA</td>
+<td style="text-align: left;">LMPRA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><strong>Explore: count</strong></p>
+<div id="c3303c6b-1184-4bb5-ae04-103a5f98929c" class="cell" data-execution_count="29">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_score_lmpra_arrange</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">lapply</span>(lst, <span class="cf">function</span>(dat){</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>    res <span class="ot">=</span> <span class="fu">table</span>(dat<span class="sc">$</span>Assay_Group, <span class="at">dnn =</span> <span class="st">"Assay"</span>)</span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> <span class="fu">as.data.frame</span>(res)</span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(dat)</span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> <span class="fu">bind_rows</span>(lst, <span class="at">.id =</span> <span class="st">"Folder"</span>)</span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> tidyr<span class="sc">::</span><span class="fu">spread</span>(Folder, Freq)</span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>dat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>A data.frame: 1 × 3</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" scope="col">Assay</th>
+<th data-quarto-table-cell-role="th" scope="col">fcc_astarr_macs_input_overlap</th>
+<th data-quarto-table-cell-role="th" scope="col">fcc_astarr_macs_input_union</th>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th" scope="col">&lt;fct&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;int&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;int&gt;</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>LMPRA</td>
+<td>61478</td>
+<td>68497</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><strong>Explore: Missing data</strong></p>
+<div id="1b5fdb2f-72ad-4fe9-9459-22fc51168d02" class="cell" data-execution_count="30">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_score_lmpra_arrange</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">lapply</span>(lst, <span class="cf">function</span>(dat){</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>    lst <span class="ot">=</span> <span class="fu">lapply</span>(dat, <span class="cf">function</span>(vec){</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>        num <span class="ot">=</span> <span class="fu">sum</span>(<span class="fu">is.na</span>(vec))    </span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>        <span class="fu">return</span>(num)</span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a>    vec <span class="ot">=</span> <span class="fu">unlist</span>(lst)</span>
+<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(vec)</span>
+<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> <span class="fu">bind_rows</span>(lst, <span class="at">.id =</span> <span class="st">"Folder"</span>)</span>
+<span id="cb44-12"><a href="#cb44-12" aria-hidden="true" tabindex="-1"></a><span class="fu">fun_display_table</span>(dat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Folder</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Chrom</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromStart</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Region</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Zcore</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Score_Label</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Zcore_Label</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Assay_Folder</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Assay_Group</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Assay_Label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">fcc_astarr_macs_input_overlap</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">fcc_astarr_macs_input_union</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+</section>
+<section id="combine-scores-from-all-fcc-assays" class="level2">
+<h2 class="anchored" data-anchor-id="combine-scores-from-all-fcc-assays">Combine scores from all FCC assays</h2>
+<div id="c7f1dcb0-7dc5-4f98-95fa-7094789f18a1" class="cell" data-execution_count="31">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">lapply</span>(VEC_TXT_REGION, <span class="cf">function</span>(txt_region){</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>    <span class="do">### get tables</span></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>    dat1 <span class="ot">=</span> lst_dat_region_score_deseq_arrange[[txt_region]]</span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>    dat2 <span class="ot">=</span> lst_dat_region_score_lmpra_arrange[[txt_region]]</span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>    dat3 <span class="ot">=</span> lst_dat_region_score_crispri_arrange[[txt_region]]</span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>    <span class="do">### combine tables</span></span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> <span class="fu">bind_rows</span>(dat1, dat2, dat3)</span>
+<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(dat)</span>
+<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-12"><a href="#cb45-12" aria-hidden="true" tabindex="-1"></a><span class="do">### assign and show</span></span>
+<span id="cb45-13"><a href="#cb45-13" aria-hidden="true" tabindex="-1"></a>lst_dat_region_score_total <span class="ot">=</span> lst</span>
+<span id="cb45-14"><a href="#cb45-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-15"><a href="#cb45-15" aria-hidden="true" tabindex="-1"></a>res <span class="ot">=</span> <span class="fu">lapply</span>(lst, dim)</span>
+<span id="cb45-16"><a href="#cb45-16" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res)</span>
+<span id="cb45-17"><a href="#cb45-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-18"><a href="#cb45-18" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> lst[[<span class="dv">1</span>]]</span>
+<span id="cb45-19"><a href="#cb45-19" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dat, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>$fcc_astarr_macs_input_overlap
@@ -1898,18 +2362,18 @@ $fcc_astarr_macs_input_union
 </div>
 </div>
 <p><strong>Explore: count</strong></p>
-<div id="0866d66f-7849-4d67-ad78-0a0ef83dd017" class="cell" data-execution_count="24">
+<div id="9089bf54-40ce-4bbd-b769-2d0b97a89106" class="cell" data-execution_count="32">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_score_total</span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">lapply</span>(lst, <span class="cf">function</span>(dat){</span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>    res <span class="ot">=</span> <span class="fu">table</span>(dat<span class="sc">$</span>Assay_Group, <span class="at">dnn =</span> <span class="st">"Assay"</span>)</span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> <span class="fu">as.data.frame</span>(res)</span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(dat)</span>
-<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> <span class="fu">bind_rows</span>(lst, <span class="at">.id =</span> <span class="st">"Folder"</span>)</span>
-<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> tidyr<span class="sc">::</span><span class="fu">spread</span>(Folder, Freq)</span>
-<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>dat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_score_total</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">lapply</span>(lst, <span class="cf">function</span>(dat){</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>    res <span class="ot">=</span> <span class="fu">table</span>(dat<span class="sc">$</span>Assay_Group, <span class="at">dnn =</span> <span class="st">"Assay"</span>)</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> <span class="fu">as.data.frame</span>(res)</span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(dat)</span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> <span class="fu">bind_rows</span>(lst, <span class="at">.id =</span> <span class="st">"Folder"</span>)</span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> tidyr<span class="sc">::</span><span class="fu">spread</span>(Folder, Freq)</span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a>dat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true">
@@ -1974,34 +2438,34 @@ $fcc_astarr_macs_input_union
 </section>
 <section id="filter-assays-choose-one-across-different-astarr-assays" class="level2">
 <h2 class="anchored" data-anchor-id="filter-assays-choose-one-across-different-astarr-assays">Filter assays (choose one across different ASTARR assays)</h2>
-<div id="b09eac65-5dcc-48c4-abc6-b7815d9c4768" class="cell" data-execution_count="25">
+<div id="b09eac65-5dcc-48c4-abc6-b7815d9c4768" class="cell" data-execution_count="33">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="do">### init: assays</span></span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>vec_txt_assay <span class="ot">=</span> <span class="fu">c</span>(</span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"CRISPRi_FlowFISH_K562_Riley_JinWoo"</span>,</span>
-<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"CRISPRi_Growth_K562_Gersbach_JinWoo"</span>, </span>
-<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"MPRA_Lenti_K562_Nadav_Vikram"</span>, </span>
-<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"MPRA_Tiling_K562_Tewhey_Hannah"</span>, </span>
-<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"STARR_ATAC_K562_Reddy_KS91"</span>, </span>
-<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"STARR_WHG_K562_Reddy_A001"</span></span>
-<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a><span class="do">### filter score table by assays</span></span>
-<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_score_total</span>
-<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">lapply</span>(lst, <span class="cf">function</span>(dat){</span>
-<span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(Assay_Folder <span class="sc">%in%</span> vec_txt_assay)</span>
-<span id="cb37-15"><a href="#cb37-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(dat)</span>
-<span id="cb37-16"><a href="#cb37-16" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb37-17"><a href="#cb37-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-18"><a href="#cb37-18" aria-hidden="true" tabindex="-1"></a><span class="do">### assign and show</span></span>
-<span id="cb37-19"><a href="#cb37-19" aria-hidden="true" tabindex="-1"></a>lst_dat_region_score_final <span class="ot">=</span> lst</span>
-<span id="cb37-20"><a href="#cb37-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-21"><a href="#cb37-21" aria-hidden="true" tabindex="-1"></a>res <span class="ot">=</span> <span class="fu">lapply</span>(lst, dim)</span>
-<span id="cb37-22"><a href="#cb37-22" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res)</span>
-<span id="cb37-23"><a href="#cb37-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-24"><a href="#cb37-24" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> lst[[<span class="dv">1</span>]]</span>
-<span id="cb37-25"><a href="#cb37-25" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dat, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="do">### init: assays</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>vec_txt_assay <span class="ot">=</span> <span class="fu">c</span>(</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"CRISPRi_FlowFISH_K562_Riley_JinWoo"</span>,</span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"CRISPRi_Growth_K562_Gersbach_JinWoo"</span>, </span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"MPRA_Lenti_K562_Nadav_Vikram"</span>, </span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"MPRA_Tiling_K562_Tewhey_Hannah"</span>, </span>
+<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"STARR_ATAC_K562_Reddy_KS91"</span>, </span>
+<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"STARR_WHG_K562_Reddy_A001"</span></span>
+<span id="cb48-9"><a href="#cb48-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb48-10"><a href="#cb48-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-11"><a href="#cb48-11" aria-hidden="true" tabindex="-1"></a><span class="do">### filter score table by assays</span></span>
+<span id="cb48-12"><a href="#cb48-12" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_score_total</span>
+<span id="cb48-13"><a href="#cb48-13" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">lapply</span>(lst, <span class="cf">function</span>(dat){</span>
+<span id="cb48-14"><a href="#cb48-14" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(Assay_Folder <span class="sc">%in%</span> vec_txt_assay)</span>
+<span id="cb48-15"><a href="#cb48-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(dat)</span>
+<span id="cb48-16"><a href="#cb48-16" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb48-17"><a href="#cb48-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-18"><a href="#cb48-18" aria-hidden="true" tabindex="-1"></a><span class="do">### assign and show</span></span>
+<span id="cb48-19"><a href="#cb48-19" aria-hidden="true" tabindex="-1"></a>lst_dat_region_score_final <span class="ot">=</span> lst</span>
+<span id="cb48-20"><a href="#cb48-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-21"><a href="#cb48-21" aria-hidden="true" tabindex="-1"></a>res <span class="ot">=</span> <span class="fu">lapply</span>(lst, dim)</span>
+<span id="cb48-22"><a href="#cb48-22" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res)</span>
+<span id="cb48-23"><a href="#cb48-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-24"><a href="#cb48-24" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> lst[[<span class="dv">1</span>]]</span>
+<span id="cb48-25"><a href="#cb48-25" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dat, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>$fcc_astarr_macs_input_overlap
@@ -2087,18 +2551,18 @@ $fcc_astarr_macs_input_union
 </div>
 </div>
 <p><strong>Explore: count</strong></p>
-<div id="95275264-44d3-49e0-a3d8-67f48a09bbfb" class="cell" data-execution_count="26">
+<div id="95275264-44d3-49e0-a3d8-67f48a09bbfb" class="cell" data-execution_count="34">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_score_final</span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">lapply</span>(lst, <span class="cf">function</span>(dat){</span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    res <span class="ot">=</span> <span class="fu">table</span>(dat<span class="sc">$</span>Assay_Group, <span class="at">dnn =</span> <span class="st">"Assay"</span>)</span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> <span class="fu">as.data.frame</span>(res)</span>
-<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(dat)</span>
-<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> <span class="fu">bind_rows</span>(lst, <span class="at">.id =</span> <span class="st">"Folder"</span>)</span>
-<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> tidyr<span class="sc">::</span><span class="fu">spread</span>(Folder, Freq)</span>
-<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>dat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_score_final</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">lapply</span>(lst, <span class="cf">function</span>(dat){</span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>    res <span class="ot">=</span> <span class="fu">table</span>(dat<span class="sc">$</span>Assay_Group, <span class="at">dnn =</span> <span class="st">"Assay"</span>)</span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> <span class="fu">as.data.frame</span>(res)</span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(dat)</span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> <span class="fu">bind_rows</span>(lst, <span class="at">.id =</span> <span class="st">"Folder"</span>)</span>
+<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> tidyr<span class="sc">::</span><span class="fu">spread</span>(Folder, Freq)</span>
+<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a>dat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true">
@@ -2151,53 +2615,151 @@ $fcc_astarr_macs_input_union
 </div>
 </div>
 </section>
-<section id="save-results" class="level2">
-<h2 class="anchored" data-anchor-id="save-results">Save results</h2>
-<div id="47f12e23-d651-47df-a4bd-f607e2d17c33" class="cell" data-execution_count="27">
+<section id="arrange-shared-data" class="level2">
+<h2 class="anchored" data-anchor-id="arrange-shared-data">Arrange shared data</h2>
+<div id="adaeb65b-f86c-4169-9adc-707e0e05ffee" class="cell" data-execution_count="35">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (txt_region <span class="cf">in</span> VEC_TXT_REGION){</span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>    <span class="do">### get tables</span></span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>    dat_region_score_total <span class="ot">=</span> lst_dat_region_score_total[[txt_region]]</span>
-<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>    dat_region_score_final <span class="ot">=</span> lst_dat_region_score_final[[txt_region]]</span>
-<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>    <span class="do">### set file directory</span></span>
-<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>    txt_fdiry  <span class="ot">=</span> <span class="fu">file.path</span>(</span>
-<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>        FD_RES, </span>
-<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">"region_coverage_fcc_score"</span>, </span>
-<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>        txt_region, </span>
-<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">"summary"</span></span>
-<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dir.create</span>(txt_fdiry, <span class="at">showWarnings =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a>    <span class="co">#txt_cmd = paste("mkdir -p", txt_fdiry)</span></span>
-<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a>    <span class="co">#system(txt_cmd)</span></span>
-<span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb40-17"><a href="#cb40-17" aria-hidden="true" tabindex="-1"></a>    <span class="do">### save table with all FCC assays</span></span>
-<span id="cb40-18"><a href="#cb40-18" aria-hidden="true" tabindex="-1"></a>    txt_fname <span class="ot">=</span> <span class="st">"region.coverage.score.fcc.total.tsv"</span></span>
-<span id="cb40-19"><a href="#cb40-19" aria-hidden="true" tabindex="-1"></a>    txt_fpath <span class="ot">=</span> <span class="fu">file.path</span>(txt_fdiry, txt_fname)</span>
-<span id="cb40-20"><a href="#cb40-20" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat_region_score_total</span>
-<span id="cb40-21"><a href="#cb40-21" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">arrange</span>(Chrom, ChromStart, ChromEnd)</span>
-<span id="cb40-22"><a href="#cb40-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">write_tsv</span>(dat, txt_fpath)</span>
-<span id="cb40-23"><a href="#cb40-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-24"><a href="#cb40-24" aria-hidden="true" tabindex="-1"></a>    <span class="do">### show progress</span></span>
-<span id="cb40-25"><a href="#cb40-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"Save file"</span>, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb40-26"><a href="#cb40-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(txt_fdiry, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb40-27"><a href="#cb40-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(txt_fname, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb40-28"><a href="#cb40-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb40-29"><a href="#cb40-29" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb40-30"><a href="#cb40-30" aria-hidden="true" tabindex="-1"></a>    <span class="do">### save table with selected FCC assays</span></span>
-<span id="cb40-31"><a href="#cb40-31" aria-hidden="true" tabindex="-1"></a>    txt_fname <span class="ot">=</span> <span class="st">"region.coverage.score.fcc.final.tsv"</span></span>
-<span id="cb40-32"><a href="#cb40-32" aria-hidden="true" tabindex="-1"></a>    txt_fpath <span class="ot">=</span> <span class="fu">file.path</span>(txt_fdiry, txt_fname)</span>
-<span id="cb40-33"><a href="#cb40-33" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat_region_score_final</span>
-<span id="cb40-34"><a href="#cb40-34" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">arrange</span>(Chrom, ChromStart, ChromEnd)</span>
-<span id="cb40-35"><a href="#cb40-35" aria-hidden="true" tabindex="-1"></a>    <span class="fu">write_tsv</span>(dat, txt_fpath)</span>
-<span id="cb40-36"><a href="#cb40-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-37"><a href="#cb40-37" aria-hidden="true" tabindex="-1"></a>    <span class="do">### show progress</span></span>
-<span id="cb40-38"><a href="#cb40-38" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"Save file"</span>, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb40-39"><a href="#cb40-39" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(txt_fdiry, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb40-40"><a href="#cb40-40" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(txt_fname, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb40-41"><a href="#cb40-41" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb40-42"><a href="#cb40-42" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_score_final</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">lapply</span>(lst, <span class="cf">function</span>(dat){</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(</span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>        Chrom<span class="sc">:</span>Region,</span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>        Score, </span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>        Zcore, </span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a>        Score_Label, </span>
+<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a>        Zcore_Label, </span>
+<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a>        Assay_Label)</span>
+<span id="cb51-10"><a href="#cb51-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(dat)</span>
+<span id="cb51-11"><a href="#cb51-11" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb51-12"><a href="#cb51-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-13"><a href="#cb51-13" aria-hidden="true" tabindex="-1"></a><span class="do">### assign and show</span></span>
+<span id="cb51-14"><a href="#cb51-14" aria-hidden="true" tabindex="-1"></a>lst_dat_region_score_share <span class="ot">=</span> lst</span>
+<span id="cb51-15"><a href="#cb51-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-16"><a href="#cb51-16" aria-hidden="true" tabindex="-1"></a>res <span class="ot">=</span> <span class="fu">lapply</span>(lst, dim)</span>
+<span id="cb51-17"><a href="#cb51-17" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res)</span>
+<span id="cb51-18"><a href="#cb51-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-19"><a href="#cb51-19" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> lst[[<span class="dv">1</span>]]</span>
+<span id="cb51-20"><a href="#cb51-20" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dat, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>$fcc_astarr_macs_input_overlap
+[1] 432928      9
+
+$fcc_astarr_macs_input_union
+[1] 639718      9
+</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>A tibble: 3 × 9</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" scope="col">Chrom</th>
+<th data-quarto-table-cell-role="th" scope="col">ChromStart</th>
+<th data-quarto-table-cell-role="th" scope="col">ChromEnd</th>
+<th data-quarto-table-cell-role="th" scope="col">Region</th>
+<th data-quarto-table-cell-role="th" scope="col">Score</th>
+<th data-quarto-table-cell-role="th" scope="col">Zcore</th>
+<th data-quarto-table-cell-role="th" scope="col">Score_Label</th>
+<th data-quarto-table-cell-role="th" scope="col">Zcore_Label</th>
+<th data-quarto-table-cell-role="th" scope="col">Assay_Label</th>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>chr1</td>
+<td>10038</td>
+<td>10405</td>
+<td>chr1:10038-10405</td>
+<td>-2.23485265</td>
+<td>-3.5573621</td>
+<td>Log2FC</td>
+<td>Scale(Log2FC)</td>
+<td>ASTARR</td>
+</tr>
+<tr class="even">
+<td>chr1</td>
+<td>14282</td>
+<td>14614</td>
+<td>chr1:14282-14614</td>
+<td>0.03179044</td>
+<td>0.0361388</td>
+<td>Log2FC</td>
+<td>Scale(Log2FC)</td>
+<td>ASTARR</td>
+</tr>
+<tr class="odd">
+<td>chr1</td>
+<td>16025</td>
+<td>16338</td>
+<td>chr1:16025-16338</td>
+<td>-1.33934060</td>
+<td>-2.1376311</td>
+<td>Log2FC</td>
+<td>Scale(Log2FC)</td>
+<td>ASTARR</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="save-results" class="level2">
+<h2 class="anchored" data-anchor-id="save-results">Save results</h2>
+<div id="47f12e23-d651-47df-a4bd-f607e2d17c33" class="cell" data-execution_count="36">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (txt_region <span class="cf">in</span> VEC_TXT_REGION){</span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>    <span class="do">### get tables</span></span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>    dat_region_score_total <span class="ot">=</span> lst_dat_region_score_total[[txt_region]]</span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>    dat_region_score_final <span class="ot">=</span> lst_dat_region_score_final[[txt_region]]</span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a>    <span class="do">### set file directory</span></span>
+<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a>    txt_fdiry  <span class="ot">=</span> <span class="fu">file.path</span>(</span>
+<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a>        FD_RES, </span>
+<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">"region_coverage_fcc_score"</span>, </span>
+<span id="cb53-10"><a href="#cb53-10" aria-hidden="true" tabindex="-1"></a>        txt_region, </span>
+<span id="cb53-11"><a href="#cb53-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">"summary"</span></span>
+<span id="cb53-12"><a href="#cb53-12" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb53-13"><a href="#cb53-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dir.create</span>(txt_fdiry, <span class="at">showWarnings =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb53-14"><a href="#cb53-14" aria-hidden="true" tabindex="-1"></a>    txt_cmd <span class="ot">=</span> <span class="fu">paste</span>(<span class="st">"mkdir -p"</span>, txt_fdiry)</span>
+<span id="cb53-15"><a href="#cb53-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">system</span>(txt_cmd)</span>
+<span id="cb53-16"><a href="#cb53-16" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb53-17"><a href="#cb53-17" aria-hidden="true" tabindex="-1"></a>    <span class="do">### save table with all FCC assays</span></span>
+<span id="cb53-18"><a href="#cb53-18" aria-hidden="true" tabindex="-1"></a>    txt_fname <span class="ot">=</span> <span class="st">"region.coverage.score.fcc.total.tsv"</span></span>
+<span id="cb53-19"><a href="#cb53-19" aria-hidden="true" tabindex="-1"></a>    txt_fpath <span class="ot">=</span> <span class="fu">file.path</span>(txt_fdiry, txt_fname)</span>
+<span id="cb53-20"><a href="#cb53-20" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat_region_score_total</span>
+<span id="cb53-21"><a href="#cb53-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">write_tsv</span>(dat, txt_fpath)</span>
+<span id="cb53-22"><a href="#cb53-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-23"><a href="#cb53-23" aria-hidden="true" tabindex="-1"></a>    <span class="do">### show progress</span></span>
+<span id="cb53-24"><a href="#cb53-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"Save file"</span>, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb53-25"><a href="#cb53-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(txt_fdiry, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb53-26"><a href="#cb53-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(txt_fname, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb53-27"><a href="#cb53-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb53-28"><a href="#cb53-28" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb53-29"><a href="#cb53-29" aria-hidden="true" tabindex="-1"></a>    <span class="do">### save table with selected FCC assays</span></span>
+<span id="cb53-30"><a href="#cb53-30" aria-hidden="true" tabindex="-1"></a>    txt_fname <span class="ot">=</span> <span class="st">"region.coverage.score.fcc.final.tsv"</span></span>
+<span id="cb53-31"><a href="#cb53-31" aria-hidden="true" tabindex="-1"></a>    txt_fpath <span class="ot">=</span> <span class="fu">file.path</span>(txt_fdiry, txt_fname)</span>
+<span id="cb53-32"><a href="#cb53-32" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat_region_score_final</span>
+<span id="cb53-33"><a href="#cb53-33" aria-hidden="true" tabindex="-1"></a>    <span class="fu">write_tsv</span>(dat, txt_fpath)</span>
+<span id="cb53-34"><a href="#cb53-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-35"><a href="#cb53-35" aria-hidden="true" tabindex="-1"></a>    <span class="do">### show progress</span></span>
+<span id="cb53-36"><a href="#cb53-36" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"Save file"</span>, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb53-37"><a href="#cb53-37" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(txt_fdiry, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb53-38"><a href="#cb53-38" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(txt_fname, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb53-39"><a href="#cb53-39" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb53-40"><a href="#cb53-40" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Save file 
@@ -2218,6 +2780,25 @@ region.coverage.score.fcc.final.tsv
 </code></pre>
 </div>
 </div>
+<p><strong>Save a copy to reference</strong></p>
+<pre><code>txt_fdiry = file.path(FD_REF, "fcc_region_results")
+txt_fname = "region.coverage.score.fcc.share.atac_overlap.tsv"
+txt_fpath = file.path(txt_fdiry, txt_fname)
+
+idx = "fcc_astarr_macs_input_overlap"
+lst = lst_dat_region_score_share
+dat = lst[[idx]]
+
+write_tsv(dat, txt_fpath)</code></pre>
+<pre><code>txt_fdiry = file.path(FD_REF, "fcc_region_results")
+txt_fname = "region.coverage.score.fcc.share.atac_union.tsv"
+txt_fpath = file.path(txt_fdiry, txt_fname)
+
+idx = "fcc_astarr_macs_input_union"
+lst = lst_dat_region_score_share
+dat = lst[[idx]]
+
+write_tsv(dat, txt_fpath)</code></pre>
 
 
 </section>

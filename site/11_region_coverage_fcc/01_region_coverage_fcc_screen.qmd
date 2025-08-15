@@ -10,26 +10,29 @@ regions with extreme low fragments were filtered using EdgeR
 
 the log2 fold change of each regions were calculated using DEseq2
 
+The z score is calculated by standardizing the log2 fold change.
+
 ![](/figure/22_region_coverage_fcc_score/fig.region_coverage_fcc.scatter_hex.zscore.input_vs_output.astarr.png){ width=40% }
 
 ![](/figure/22_region_coverage_fcc_score/fig.region_coverage_fcc.scatter_hex.zscore.input_vs_output.wstarr.png){ width=40% }
 
 # Lenti-MPRA
 
-The log2 fold change were first standardized to z scores using the negative controls (random shuffled seqeunces)
+The log2 fold change were acquired from the Agarwal et al., 2025. The z score is calculated by standardizing the log2 fold change.
 
 # CRISPRi-HCR FlowFISH
 
 The log2 fold change of guides were standardized to z scores for each target respectively. 
 
-After standardization, the safe-targeting guides were filtered. 
+The mean of z scores were calculated for each target across accessible regions by excluding safe-targeting guides.
 
-The mean of z scores were calculated for each target across accessible regions.
+Coverage of CRISPRi-HCR FlowFISH across accessbile regions:
 
 ![](/figure/22_region_coverage_fcc_score/fig.region_coverage_fcc.heatmap.zscore.crispri_hcrff.target.total.png){ width=40% }
 
-![](/figure/22_region_coverage_fcc_score/fig.region_coverage_fcc.heatmap.zscore.crispri_hcrff.target.filtered.png){ width=40% }
+Safe-targeting guides Removed:
 
+![](/figure/22_region_coverage_fcc_score/fig.region_coverage_fcc.heatmap.zscore.crispri_hcrff.target.filtered.png){ width=40% }
 
 # CRISPRi-Growth screen
 
@@ -40,6 +43,7 @@ The mean of z scores were calculated for each target across accessible regions.
 # Summarize region coverage
 
 Genome coverage of FCC assays
+
 Table: number of ATAC regions screened in each assay
 
 |Assay          |ATAC (Overlap) |ATAC (Union) |
@@ -53,6 +57,7 @@ Table: number of ATAC regions screened in each assay
 |CRISPRi-HCRFF  |925            |1,330        |
 
 Table: ratio = divided by total ATAC
+
 Set ATAC as 100%; how many percentage of regions are screened by each assay?
 
 |Assay          |ATAC (Overlap) |ATAC (Union) |

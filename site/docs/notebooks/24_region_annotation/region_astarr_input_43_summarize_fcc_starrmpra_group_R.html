@@ -703,7 +703,7 @@ $fcc_astarr_macs_input_union
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">lapply</span>(VEC_TXT_FOLDER, <span class="cf">function</span>(txt_folder){</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="do">### set file directory</span></span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    txt_fdiry <span class="ot">=</span> <span class="fu">file.path</span>(FD_RES, <span class="st">"region_closest"</span>, txt_folder, <span class="st">"summary"</span>)</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    txt_fname <span class="ot">=</span> <span class="st">"region.summary.genome_tss_pol2.tsv"</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    txt_fname <span class="ot">=</span> <span class="st">"region.summary.genome_tss.tss_proximity.tsv"</span></span>
 <span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    txt_fpath <span class="ot">=</span> <span class="fu">file.path</span>(txt_fdiry, txt_fname)</span>
 <span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    <span class="do">### read table</span></span>
@@ -722,10 +722,10 @@ $fcc_astarr_macs_input_union
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>$fcc_astarr_macs_input_overlap
-[1] 153357     11
+[1] 304915     11
 
 $fcc_astarr_macs_input_union
-[1] 250787     11
+[1] 499336     11
 </code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -761,6 +761,19 @@ $fcc_astarr_macs_input_union
 </tr>
 <tr class="even">
 <td style="text-align: left;">chr1</td>
+<td style="text-align: right;">10038</td>
+<td style="text-align: right;">10405</td>
+<td style="text-align: left;">chr1:10038-10405</td>
+<td style="text-align: left;">fcc_astarr_macs_input_overlap</td>
+<td style="text-align: left;">genome_tss_pol2_rnaseq</td>
+<td style="text-align: left;">chr1:29370-29371</td>
+<td style="text-align: right;">0.00023</td>
+<td style="text-align: left;">WASH7P</td>
+<td style="text-align: right;">18966</td>
+<td style="text-align: left;">Distal</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">chr1</td>
 <td style="text-align: right;">14282</td>
 <td style="text-align: right;">14614</td>
 <td style="text-align: left;">chr1:14282-14614</td>
@@ -771,19 +784,6 @@ $fcc_astarr_macs_input_union
 <td style="text-align: left;">DDX11L1</td>
 <td style="text-align: right;">2409</td>
 <td style="text-align: left;">Distal</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">chr1</td>
-<td style="text-align: right;">16025</td>
-<td style="text-align: right;">16338</td>
-<td style="text-align: left;">chr1:16025-16338</td>
-<td style="text-align: left;">fcc_astarr_macs_input_overlap</td>
-<td style="text-align: left;">genome_tss_pol2</td>
-<td style="text-align: left;">chr1:17436-17437</td>
-<td style="text-align: right;">9.43812</td>
-<td style="text-align: left;">MIR6859-1</td>
-<td style="text-align: right;">1099</td>
-<td style="text-align: left;">Proximal</td>
 </tr>
 </tbody>
 </table>
@@ -928,26 +928,23 @@ $fcc_astarr_macs_input_union
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_dist2tss_import</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">lapply</span>(lst, <span class="cf">function</span>(dat){</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> </span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>        <span class="co">#dplyr::rename(</span></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>        <span class="co">#    "Distance2TSS" = "Distance", </span></span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>        <span class="co">#    "TSS_Proximity" = "Label_TSS_Proximity"</span></span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>        <span class="co">#) %&gt;% </span></span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">select</span>(</span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>            Chrom, ChromStart, ChromEnd, Region, </span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>            Distance2TSS, TSS_Proximity</span>
-<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>        ) <span class="sc">%&gt;%</span></span>
-<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">distinct</span>()</span>
-<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(dat)</span>
-<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">filter</span>(Annotation_B <span class="sc">==</span> <span class="st">"genome_tss_pol2"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">select</span>(</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>            Chrom, ChromStart, ChromEnd, Region, </span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>            Distance2TSS, TSS_Proximity</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>        ) <span class="sc">%&gt;%</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">distinct</span>()</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(dat)</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a><span class="do">### assign and show</span></span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>lst_dat_region_dist2tss_arrange <span class="ot">=</span> lst</span>
 <span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a><span class="do">### assign and show</span></span>
-<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>lst_dat_region_dist2tss_arrange <span class="ot">=</span> lst</span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>res <span class="ot">=</span> <span class="fu">lapply</span>(lst, dim)</span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res)</span>
 <span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>res <span class="ot">=</span> <span class="fu">lapply</span>(lst, dim)</span>
-<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res)</span>
-<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> lst[[<span class="dv">1</span>]]</span>
-<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a><span class="fu">fun_display_table</span>(<span class="fu">head</span>(dat, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> lst[[<span class="dv">1</span>]]</span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a><span class="fu">fun_display_table</span>(<span class="fu">head</span>(dat, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>$fcc_astarr_macs_input_overlap
@@ -1153,7 +1150,7 @@ $fcc_astarr_macs_input_union
 </div>
 </div>
 <p><strong>Explore: TSS x Direction</strong></p>
-<div id="630e2b7f-2975-41bd-bc04-036a16120b0a" class="cell" data-execution_count="14">
+<div id="5b0dd99b-dd0a-4823-bc8e-59c330aa673b" class="cell" data-execution_count="14">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_annot_result</span>
@@ -1226,7 +1223,7 @@ $fcc_astarr_macs_input_union
 </div>
 </div>
 <p><strong>Check: Missing, TSS proximity, and TSS overlap</strong></p>
-<div id="ed225a8e-9afb-4671-9bff-f8724e16b562" class="cell" data-execution_count="15">
+<div id="688a163d-c5eb-4ce1-bb91-48413dfc7e5f" class="cell" data-execution_count="15">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (txt_folder <span class="cf">in</span> VEC_TXT_FOLDER){</span>

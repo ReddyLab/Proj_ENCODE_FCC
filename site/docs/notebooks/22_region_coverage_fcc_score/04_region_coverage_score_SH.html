@@ -625,7 +625,7 @@ region_for_analysis K562.hg38.ENCSR868FGK.ENCFF948AFM.ATAC.bed.gz   atac_ENCFF94
 </div>
 </div>
 <p><strong>Test loop: Assay</strong></p>
-<div id="7b6b41c7-efe0-4127-968a-d7c4c404d092" class="cell" data-execution_count="7">
+<div id="7b6b41c7-efe0-4127-968a-d7c4c404d092" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ASSAY_NAME <span class="kw">in</span> <span class="va">${ASSAY_NAMES</span><span class="op">[@]</span><span class="va">}</span><span class="kw">;</span> <span class="cf">do</span></span>
@@ -634,17 +634,18 @@ region_for_analysis K562.hg38.ENCSR868FGK.ENCFF948AFM.ATAC.bed.gz   atac_ENCFF94
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> ==============================</span>
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">"Assay name: "</span> <span class="va">${ASSAY_NAME}</span></span>
 <span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="va">FD_INP</span><span class="op">=</span><span class="va">${FD_RES}</span>/<span class="va">${ASSAY_TYPE}</span>/<span class="va">${ASSAY_NAME}</span>/coverage</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="va">FP_INPS</span><span class="op">=</span><span class="va">($(</span><span class="fu">ls</span> <span class="va">${FD_INP}</span>/<span class="pp">*</span>hg38<span class="pp">*</span>ZScore<span class="pp">*</span>bed.gz<span class="va">))</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    <span class="co">### loop through each sample</span></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> FP_INP_B <span class="kw">in</span> <span class="va">${FP_INPS</span><span class="op">[@]</span><span class="va">}</span><span class="kw">;</span> <span class="cf">do</span></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>        <span class="va">FD_INP_B</span><span class="op">=</span><span class="va">$(</span><span class="fu">dirname</span>  <span class="va">${FP_INP_B})</span></span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>        <span class="va">FN_INP_B</span><span class="op">=</span><span class="va">$(</span><span class="fu">basename</span> <span class="va">${FP_INP_B})</span></span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>        <span class="bu">echo</span> <span class="va">${FD_INP_B}</span></span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>        <span class="bu">echo</span> <span class="va">${FN_INP_B}</span></span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">done</span></span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span></span>
-<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="co">#FP_INPS=($(ls ${FD_INP}/*hg38*ZScore*bed.gz))</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    <span class="va">FP_INPS</span><span class="op">=</span><span class="va">($(</span><span class="fu">ls</span> <span class="va">${FD_INP}</span>/<span class="pp">*</span>hg38<span class="pp">*</span>bed.gz<span class="va">))</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    <span class="co">### loop through each sample</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> FP_INP_B <span class="kw">in</span> <span class="va">${FP_INPS</span><span class="op">[@]</span><span class="va">}</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>        <span class="va">FD_INP_B</span><span class="op">=</span><span class="va">$(</span><span class="fu">dirname</span>  <span class="va">${FP_INP_B})</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>        <span class="va">FN_INP_B</span><span class="op">=</span><span class="va">$(</span><span class="fu">basename</span> <span class="va">${FP_INP_B})</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>        <span class="bu">echo</span> <span class="va">${FD_INP_B}</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>        <span class="bu">echo</span> <span class="va">${FN_INP_B}</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">done</span></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>==============================
@@ -662,12 +663,14 @@ CRISPRi_Growth_K562.hg38.ZScore.unstranded.bed.gz
 ==============================
 Assay name:  MPRA_Lenti_K562_Nadav_Vikram
 /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/assay_fcc/MPRA_Lenti_K562_Nadav_Vikram/coverage
+LMPRA_K562.hg38.Log2FC.stranded.bed.gz
+/data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/assay_fcc/MPRA_Lenti_K562_Nadav_Vikram/coverage
 LMPRA_K562.hg38.ZScore.stranded.bed.gz
 </code></pre>
 </div>
 </div>
 <p><strong>Test loop: Region + Assay</strong></p>
-<div id="812ccdda-d46d-4262-a9c2-8cc695d8bd8c" class="cell" data-execution_count="8">
+<div id="812ccdda-d46d-4262-a9c2-8cc695d8bd8c" class="cell" data-execution_count="9">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="bu">read</span> <span class="va">FOLDER_A</span> <span class="va">FNAME_A</span> <span class="va">LABEL_A</span> <span class="va">FPATH_A</span><span class="kw">;</span> <span class="cf">do</span></span>
@@ -682,44 +685,45 @@ LMPRA_K562.hg38.ZScore.stranded.bed.gz
 <span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>        <span class="co">### Set input file</span></span>
 <span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>        <span class="va">FD_INP</span><span class="op">=</span><span class="va">${FD_RES}</span>/<span class="va">${ASSAY_TYPE}</span>/<span class="va">${ASSAY_NAME}</span>/coverage</span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>        <span class="va">FP_INPS</span><span class="op">=</span><span class="va">($(</span><span class="fu">ls</span> <span class="va">${FD_INP}</span>/<span class="pp">*</span>hg38<span class="pp">*</span>ZScore<span class="pp">*</span>bed.gz<span class="va">))</span></span>
-<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>        <span class="co">### loop through each sample</span></span>
-<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> FP_INP_B <span class="kw">in</span> <span class="va">${FP_INPS</span><span class="op">[@]</span><span class="va">}</span><span class="kw">;</span> <span class="cf">do</span></span>
-<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>            <span class="co">### set input file</span></span>
-<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>            <span class="va">FD_INP_B</span><span class="op">=</span><span class="va">$(</span><span class="fu">dirname</span>  <span class="va">${FP_INP_B})</span></span>
-<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>            <span class="va">FN_INP_B</span><span class="op">=</span><span class="va">$(</span><span class="fu">basename</span> <span class="va">${FP_INP_B})</span></span>
-<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>            </span>
-<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>            <span class="co">### setup output file</span></span>
-<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>            <span class="va">FD_OUT</span><span class="op">=</span><span class="va">${FD_RES}</span>/region_coverage_fcc_score/<span class="va">${LABEL_A}</span>/<span class="va">${ASSAY_NAME}</span></span>
-<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>            <span class="va">FN_OUT</span><span class="op">=</span><span class="va">${FN_INP_B}</span></span>
-<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>            <span class="va">FP_OUT</span><span class="op">=</span><span class="va">${FD_OUT}</span>/<span class="va">${FN_OUT}</span></span>
-<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>            </span>
-<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>            <span class="co">### setup log file</span></span>
-<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>            <span class="va">FN_LOG</span><span class="op">=</span>region.coverage.<span class="va">${LABEL_A}</span>.<span class="va">${ASSAY_NAME}</span>.<span class="va">${FN_OUT}</span>.txt</span>
-<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a>            <span class="va">FP_LOG</span><span class="op">=</span><span class="va">${FD_LOG}</span>/<span class="va">${FN_LOG}</span></span>
-<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a>            </span>
-<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a>            <span class="co">### show progress</span></span>
-<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span> ==============================</span>
-<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span> <span class="st">"Region folder:"</span> <span class="va">${FOLDER_A}</span></span>
-<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span> <span class="st">"Region label: "</span> <span class="va">${LABEL_A}</span></span>
-<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span> <span class="st">"Assay  name:  "</span> <span class="va">${ASSAY_NAME}</span></span>
-<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span></span>
-<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span> <span class="st">"Input fdiry:  "</span> <span class="va">${FD_INP_A</span><span class="op">/</span><span class="va">${FD_RES}</span><span class="op">/</span><span class="st">'${FD_RES}'</span><span class="va">}</span></span>
-<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span> <span class="st">"Input fname:  "</span> <span class="va">${FN_INP_A}</span></span>
-<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span> <span class="st">"Input fdiry:  "</span> <span class="va">${FD_INP_B</span><span class="op">/</span><span class="va">${FD_RES}</span><span class="op">/</span><span class="st">'${FD_RES}'</span><span class="va">}</span></span>
-<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span> <span class="st">"Input fname:  "</span> <span class="va">${FN_INP_B}</span></span>
-<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span></span>
-<span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span> <span class="st">"Output fdiry: "</span> <span class="va">${FD_OUT</span><span class="op">/</span><span class="va">${FD_RES}</span><span class="op">/</span><span class="st">'${FD_RES}'</span><span class="va">}</span></span>
-<span id="cb14-43"><a href="#cb14-43" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span> <span class="st">"Output fname: "</span> <span class="va">${FN_OUT}</span></span>
-<span id="cb14-44"><a href="#cb14-44" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span></span>
-<span id="cb14-45"><a href="#cb14-45" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span> <span class="st">"Log file:"</span> <span class="st">'${FD_LOG}/'</span><span class="va">${FN_LOG}</span></span>
-<span id="cb14-46"><a href="#cb14-46" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span></span>
-<span id="cb14-47"><a href="#cb14-47" aria-hidden="true" tabindex="-1"></a>        <span class="cf">done</span></span>
-<span id="cb14-48"><a href="#cb14-48" aria-hidden="true" tabindex="-1"></a>    <span class="cf">done</span></span>
-<span id="cb14-49"><a href="#cb14-49" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span> <span class="op">&lt;</span> <span class="op">&lt;(</span><span class="fu">cat</span> <span class="va">${FP_REGION_LABEL}</span> <span class="kw">|</span> <span class="fu">awk</span> <span class="st">'NR &gt;=2 {print}'</span> <span class="kw">|</span> <span class="fu">head</span> <span class="at">-n</span> 1<span class="op">)</span>    </span>
-<span id="cb14-50"><a href="#cb14-50" aria-hidden="true" tabindex="-1"></a><span class="co">#done &lt; &lt;(cat ${FP_REGION_LABEL} | awk 'NR &gt;=2 {print}')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>        <span class="va">FP_INPS</span><span class="op">=</span><span class="va">($(</span><span class="fu">ls</span> <span class="va">${FD_INP}</span>/<span class="pp">*</span>hg38<span class="pp">*</span>bed.gz<span class="va">))</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>        <span class="co">#FP_INPS=($(ls ${FD_INP}/*hg38*ZScore*bed.gz))</span></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>        <span class="co">### loop through each sample</span></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> FP_INP_B <span class="kw">in</span> <span class="va">${FP_INPS</span><span class="op">[@]</span><span class="va">}</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>            <span class="co">### set input file</span></span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>            <span class="va">FD_INP_B</span><span class="op">=</span><span class="va">$(</span><span class="fu">dirname</span>  <span class="va">${FP_INP_B})</span></span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>            <span class="va">FN_INP_B</span><span class="op">=</span><span class="va">$(</span><span class="fu">basename</span> <span class="va">${FP_INP_B})</span></span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>            <span class="co">### setup output file</span></span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>            <span class="va">FD_OUT</span><span class="op">=</span><span class="va">${FD_RES}</span>/region_coverage_fcc_score/<span class="va">${LABEL_A}</span>/<span class="va">${ASSAY_NAME}</span></span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>            <span class="va">FN_OUT</span><span class="op">=</span><span class="va">${FN_INP_B}</span></span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>            <span class="va">FP_OUT</span><span class="op">=</span><span class="va">${FD_OUT}</span>/<span class="va">${FN_OUT}</span></span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>            <span class="co">### setup log file</span></span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a>            <span class="va">FN_LOG</span><span class="op">=</span>region.coverage.<span class="va">${LABEL_A}</span>.<span class="va">${ASSAY_NAME}</span>.<span class="va">${FN_OUT}</span>.txt</span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a>            <span class="va">FP_LOG</span><span class="op">=</span><span class="va">${FD_LOG}</span>/<span class="va">${FN_LOG}</span></span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a>            <span class="co">### show progress</span></span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span> ==============================</span>
+<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span> <span class="st">"Region folder:"</span> <span class="va">${FOLDER_A}</span></span>
+<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span> <span class="st">"Region label: "</span> <span class="va">${LABEL_A}</span></span>
+<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span> <span class="st">"Assay  name:  "</span> <span class="va">${ASSAY_NAME}</span></span>
+<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span></span>
+<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span> <span class="st">"Input fdiry:  "</span> <span class="va">${FD_INP_A</span><span class="op">/</span><span class="va">${FD_RES}</span><span class="op">/</span><span class="st">'${FD_RES}'</span><span class="va">}</span></span>
+<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span> <span class="st">"Input fname:  "</span> <span class="va">${FN_INP_A}</span></span>
+<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span> <span class="st">"Input fdiry:  "</span> <span class="va">${FD_INP_B</span><span class="op">/</span><span class="va">${FD_RES}</span><span class="op">/</span><span class="st">'${FD_RES}'</span><span class="va">}</span></span>
+<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span> <span class="st">"Input fname:  "</span> <span class="va">${FN_INP_B}</span></span>
+<span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span></span>
+<span id="cb14-43"><a href="#cb14-43" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span> <span class="st">"Output fdiry: "</span> <span class="va">${FD_OUT</span><span class="op">/</span><span class="va">${FD_RES}</span><span class="op">/</span><span class="st">'${FD_RES}'</span><span class="va">}</span></span>
+<span id="cb14-44"><a href="#cb14-44" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span> <span class="st">"Output fname: "</span> <span class="va">${FN_OUT}</span></span>
+<span id="cb14-45"><a href="#cb14-45" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span></span>
+<span id="cb14-46"><a href="#cb14-46" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span> <span class="st">"Log file:"</span> <span class="st">'${FD_LOG}/'</span><span class="va">${FN_LOG}</span></span>
+<span id="cb14-47"><a href="#cb14-47" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span></span>
+<span id="cb14-48"><a href="#cb14-48" aria-hidden="true" tabindex="-1"></a>        <span class="cf">done</span></span>
+<span id="cb14-49"><a href="#cb14-49" aria-hidden="true" tabindex="-1"></a>    <span class="cf">done</span></span>
+<span id="cb14-50"><a href="#cb14-50" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span> <span class="op">&lt;</span> <span class="op">&lt;(</span><span class="fu">cat</span> <span class="va">${FP_REGION_LABEL}</span> <span class="kw">|</span> <span class="fu">awk</span> <span class="st">'NR &gt;=2 {print}'</span> <span class="kw">|</span> <span class="fu">head</span> <span class="at">-n</span> 1<span class="op">)</span>    </span>
+<span id="cb14-51"><a href="#cb14-51" aria-hidden="true" tabindex="-1"></a><span class="co">#done &lt; &lt;(cat ${FP_REGION_LABEL} | awk 'NR &gt;=2 {print}')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>==============================
@@ -766,6 +770,21 @@ Output fdiry:  ${FD_RES}/region_coverage_fcc_score/fcc_astarr_macs_input_overlap
 Output fname:  CRISPRi_Growth_K562.hg38.ZScore.unstranded.bed.gz
 
 Log file: ${FD_LOG}/region.coverage.fcc_astarr_macs_input_overlap.CRISPRi_Growth_K562_Gersbach_JinWoo.CRISPRi_Growth_K562.hg38.ZScore.unstranded.bed.gz.txt
+
+==============================
+Region folder: region_for_analysis
+Region label:  fcc_astarr_macs_input_overlap
+Assay  name:   MPRA_Lenti_K562_Nadav_Vikram
+
+Input fdiry:   ${FD_RES}/region/region_for_analysis
+Input fname:   K562.hg38.ASTARR.macs.KS91.input.rep_all.max_overlaps.q5.bed.gz
+Input fdiry:   ${FD_RES}/assay_fcc/MPRA_Lenti_K562_Nadav_Vikram/coverage
+Input fname:   LMPRA_K562.hg38.Log2FC.stranded.bed.gz
+
+Output fdiry:  ${FD_RES}/region_coverage_fcc_score/fcc_astarr_macs_input_overlap/MPRA_Lenti_K562_Nadav_Vikram
+Output fname:  LMPRA_K562.hg38.Log2FC.stranded.bed.gz
+
+Log file: ${FD_LOG}/region.coverage.fcc_astarr_macs_input_overlap.MPRA_Lenti_K562_Nadav_Vikram.LMPRA_K562.hg38.Log2FC.stranded.bed.gz.txt
 
 ==============================
 Region folder: region_for_analysis
@@ -788,7 +807,7 @@ Log file: ${FD_LOG}/region.coverage.fcc_astarr_macs_input_overlap.MPRA_Lenti_K56
 <section id="execute-1" class="level2">
 <h2 class="anchored" data-anchor-id="execute-1">Execute</h2>
 <p><strong>Check</strong></p>
-<div id="a8adbaa4-8e49-4c90-afad-ffacb8f8e6e1" class="cell" data-execution_count="9">
+<div id="a8adbaa4-8e49-4c90-afad-ffacb8f8e6e1" class="cell" data-execution_count="10">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">${FP_CNF}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -798,7 +817,7 @@ Log file: ${FD_LOG}/region.coverage.fcc_astarr_macs_input_overlap.MPRA_Lenti_K56
 </div>
 </div>
 <p><strong>RUN</strong></p>
-<div id="5d5427fc-2062-40f2-a0f8-93e19ad4a9e1" class="cell" data-execution_count="10">
+<div id="5d5427fc-2062-40f2-a0f8-93e19ad4a9e1" class="cell" data-execution_count="11">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">### init: set executable</span></span>
@@ -818,53 +837,54 @@ Log file: ${FD_LOG}/region.coverage.fcc_astarr_macs_input_overlap.MPRA_Lenti_K56
 <span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>        <span class="co">### Set input file</span></span>
 <span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>        <span class="va">FD_INP</span><span class="op">=</span><span class="va">${FD_RES}</span>/<span class="va">${ASSAY_TYPE}</span>/<span class="va">${ASSAY_NAME}</span>/coverage</span>
-<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>        <span class="va">FP_INPS</span><span class="op">=</span><span class="va">($(</span><span class="fu">ls</span> <span class="va">${FD_INP}</span>/<span class="pp">*</span>hg38<span class="pp">*</span>ZScore<span class="pp">*</span>bed.gz<span class="va">))</span></span>
-<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a>        <span class="co">### loop through each sample</span></span>
-<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> FP_INP_B <span class="kw">in</span> <span class="va">${FP_INPS</span><span class="op">[@]</span><span class="va">}</span><span class="kw">;</span> <span class="cf">do</span></span>
-<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a>            <span class="co">### set input file</span></span>
-<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a>            <span class="va">FD_INP_B</span><span class="op">=</span><span class="va">$(</span><span class="fu">dirname</span>  <span class="va">${FP_INP_B})</span></span>
-<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a>            <span class="va">FN_INP_B</span><span class="op">=</span><span class="va">$(</span><span class="fu">basename</span> <span class="va">${FP_INP_B})</span></span>
-<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a>            </span>
-<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a>            <span class="co">### setup output file</span></span>
-<span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a>            <span class="va">FD_OUT</span><span class="op">=</span><span class="va">${FD_RES}</span>/region_coverage_fcc_score/<span class="va">${LABEL_A}</span>/<span class="va">${ASSAY_NAME}</span></span>
-<span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a>            <span class="va">FN_OUT</span><span class="op">=</span><span class="va">${FN_INP_B}</span></span>
-<span id="cb18-30"><a href="#cb18-30" aria-hidden="true" tabindex="-1"></a>            <span class="va">FP_OUT</span><span class="op">=</span><span class="va">${FD_OUT}</span>/<span class="va">${FN_OUT}</span></span>
-<span id="cb18-31"><a href="#cb18-31" aria-hidden="true" tabindex="-1"></a>            </span>
-<span id="cb18-32"><a href="#cb18-32" aria-hidden="true" tabindex="-1"></a>            <span class="co">### setup log file</span></span>
-<span id="cb18-33"><a href="#cb18-33" aria-hidden="true" tabindex="-1"></a>            <span class="va">FN_LOG</span><span class="op">=</span>region.coverage.<span class="va">${LABEL_A}</span>.<span class="va">${ASSAY_NAME}</span>.<span class="va">${FN_OUT}</span>.txt</span>
-<span id="cb18-34"><a href="#cb18-34" aria-hidden="true" tabindex="-1"></a>            <span class="va">FP_LOG</span><span class="op">=</span><span class="va">${FD_LOG}</span>/<span class="va">${FN_LOG}</span></span>
-<span id="cb18-35"><a href="#cb18-35" aria-hidden="true" tabindex="-1"></a>            </span>
-<span id="cb18-36"><a href="#cb18-36" aria-hidden="true" tabindex="-1"></a>            <span class="co">### show progress</span></span>
-<span id="cb18-37"><a href="#cb18-37" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span> ==============================</span>
-<span id="cb18-38"><a href="#cb18-38" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span> <span class="st">"Region folder:"</span> <span class="va">${FOLDER_A}</span></span>
-<span id="cb18-39"><a href="#cb18-39" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span> <span class="st">"Region label: "</span> <span class="va">${LABEL_A}</span></span>
-<span id="cb18-40"><a href="#cb18-40" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span> <span class="st">"Assay  name:  "</span> <span class="va">${ASSAY_NAME}</span></span>
-<span id="cb18-41"><a href="#cb18-41" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span></span>
-<span id="cb18-42"><a href="#cb18-42" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span> <span class="st">"Input fdiry:  "</span> <span class="va">${FD_INP_A</span><span class="op">/</span><span class="va">${FD_RES}</span><span class="op">/</span><span class="st">'${FD_RES}'</span><span class="va">}</span></span>
-<span id="cb18-43"><a href="#cb18-43" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span> <span class="st">"Input fname:  "</span> <span class="va">${FN_INP_A}</span></span>
-<span id="cb18-44"><a href="#cb18-44" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span> <span class="st">"Input fdiry:  "</span> <span class="va">${FD_INP_B</span><span class="op">/</span><span class="va">${FD_RES}</span><span class="op">/</span><span class="st">'${FD_RES}'</span><span class="va">}</span></span>
-<span id="cb18-45"><a href="#cb18-45" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span> <span class="st">"Input fname:  "</span> <span class="va">${FN_INP_B}</span></span>
-<span id="cb18-46"><a href="#cb18-46" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span></span>
-<span id="cb18-47"><a href="#cb18-47" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span> <span class="st">"Output fdiry: "</span> <span class="va">${FD_OUT</span><span class="op">/</span><span class="va">${FD_RES}</span><span class="op">/</span><span class="st">'${FD_RES}'</span><span class="va">}</span></span>
-<span id="cb18-48"><a href="#cb18-48" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span> <span class="st">"Output fname: "</span> <span class="va">${FN_OUT}</span></span>
-<span id="cb18-49"><a href="#cb18-49" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span></span>
-<span id="cb18-50"><a href="#cb18-50" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span> <span class="st">"Log file:"</span> <span class="st">'${FD_LOG}/'</span><span class="va">${FN_LOG}</span></span>
-<span id="cb18-51"><a href="#cb18-51" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span></span>
-<span id="cb18-52"><a href="#cb18-52" aria-hidden="true" tabindex="-1"></a>            </span>
-<span id="cb18-53"><a href="#cb18-53" aria-hidden="true" tabindex="-1"></a>            <span class="co">### execute</span></span>
-<span id="cb18-54"><a href="#cb18-54" aria-hidden="true" tabindex="-1"></a>            <span class="fu">mkdir</span> <span class="at">-p</span> <span class="va">${FD_OUT}</span></span>
-<span id="cb18-55"><a href="#cb18-55" aria-hidden="true" tabindex="-1"></a>            <span class="ex">sbatch</span> <span class="dt">\</span></span>
-<span id="cb18-56"><a href="#cb18-56" aria-hidden="true" tabindex="-1"></a>                <span class="at">--cpus-per-task</span> 4 <span class="dt">\</span></span>
-<span id="cb18-57"><a href="#cb18-57" aria-hidden="true" tabindex="-1"></a>                <span class="at">--mem</span> 10G <span class="dt">\</span></span>
-<span id="cb18-58"><a href="#cb18-58" aria-hidden="true" tabindex="-1"></a>                <span class="at">--output</span> <span class="va">${FP_LOG}</span> <span class="dt">\</span></span>
-<span id="cb18-59"><a href="#cb18-59" aria-hidden="true" tabindex="-1"></a>                <span class="va">${FP_EXE}</span> <span class="va">${FP_CNF}</span> <span class="va">${FP_INP_A}</span> <span class="va">${FP_INP_B}</span> <span class="va">${FP_OUT}</span></span>
-<span id="cb18-60"><a href="#cb18-60" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span></span>
-<span id="cb18-61"><a href="#cb18-61" aria-hidden="true" tabindex="-1"></a>        <span class="cf">done</span></span>
-<span id="cb18-62"><a href="#cb18-62" aria-hidden="true" tabindex="-1"></a>    <span class="cf">done</span></span>
-<span id="cb18-63"><a href="#cb18-63" aria-hidden="true" tabindex="-1"></a><span class="co">#done &lt; &lt;(cat ${FP_REGION_LABEL} | awk 'NR &gt;=2 {print}' | head -n 1)    </span></span>
-<span id="cb18-64"><a href="#cb18-64" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span> <span class="op">&lt;</span> <span class="op">&lt;(</span><span class="fu">cat</span> <span class="va">${FP_REGION_LABEL}</span> <span class="kw">|</span> <span class="fu">awk</span> <span class="st">'NR &gt;=2 {print}'</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>        <span class="va">FP_INPS</span><span class="op">=</span><span class="va">($(</span><span class="fu">ls</span> <span class="va">${FD_INP}</span>/<span class="pp">*</span>hg38<span class="pp">*</span>bed.gz<span class="va">))</span></span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>        <span class="co">#FP_INPS=($(ls ${FD_INP}/*hg38*ZScore*bed.gz))</span></span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>        <span class="co">### loop through each sample</span></span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> FP_INP_B <span class="kw">in</span> <span class="va">${FP_INPS</span><span class="op">[@]</span><span class="va">}</span><span class="kw">;</span> <span class="cf">do</span></span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a>            <span class="co">### set input file</span></span>
+<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a>            <span class="va">FD_INP_B</span><span class="op">=</span><span class="va">$(</span><span class="fu">dirname</span>  <span class="va">${FP_INP_B})</span></span>
+<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a>            <span class="va">FN_INP_B</span><span class="op">=</span><span class="va">$(</span><span class="fu">basename</span> <span class="va">${FP_INP_B})</span></span>
+<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a>            <span class="co">### setup output file</span></span>
+<span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a>            <span class="va">FD_OUT</span><span class="op">=</span><span class="va">${FD_RES}</span>/region_coverage_fcc_score/<span class="va">${LABEL_A}</span>/<span class="va">${ASSAY_NAME}</span></span>
+<span id="cb18-30"><a href="#cb18-30" aria-hidden="true" tabindex="-1"></a>            <span class="va">FN_OUT</span><span class="op">=</span><span class="va">${FN_INP_B}</span></span>
+<span id="cb18-31"><a href="#cb18-31" aria-hidden="true" tabindex="-1"></a>            <span class="va">FP_OUT</span><span class="op">=</span><span class="va">${FD_OUT}</span>/<span class="va">${FN_OUT}</span></span>
+<span id="cb18-32"><a href="#cb18-32" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb18-33"><a href="#cb18-33" aria-hidden="true" tabindex="-1"></a>            <span class="co">### setup log file</span></span>
+<span id="cb18-34"><a href="#cb18-34" aria-hidden="true" tabindex="-1"></a>            <span class="va">FN_LOG</span><span class="op">=</span>region.coverage.<span class="va">${LABEL_A}</span>.<span class="va">${ASSAY_NAME}</span>.<span class="va">${FN_OUT}</span>.txt</span>
+<span id="cb18-35"><a href="#cb18-35" aria-hidden="true" tabindex="-1"></a>            <span class="va">FP_LOG</span><span class="op">=</span><span class="va">${FD_LOG}</span>/<span class="va">${FN_LOG}</span></span>
+<span id="cb18-36"><a href="#cb18-36" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb18-37"><a href="#cb18-37" aria-hidden="true" tabindex="-1"></a>            <span class="co">### show progress</span></span>
+<span id="cb18-38"><a href="#cb18-38" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span> ==============================</span>
+<span id="cb18-39"><a href="#cb18-39" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span> <span class="st">"Region folder:"</span> <span class="va">${FOLDER_A}</span></span>
+<span id="cb18-40"><a href="#cb18-40" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span> <span class="st">"Region label: "</span> <span class="va">${LABEL_A}</span></span>
+<span id="cb18-41"><a href="#cb18-41" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span> <span class="st">"Assay  name:  "</span> <span class="va">${ASSAY_NAME}</span></span>
+<span id="cb18-42"><a href="#cb18-42" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span></span>
+<span id="cb18-43"><a href="#cb18-43" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span> <span class="st">"Input fdiry:  "</span> <span class="va">${FD_INP_A</span><span class="op">/</span><span class="va">${FD_RES}</span><span class="op">/</span><span class="st">'${FD_RES}'</span><span class="va">}</span></span>
+<span id="cb18-44"><a href="#cb18-44" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span> <span class="st">"Input fname:  "</span> <span class="va">${FN_INP_A}</span></span>
+<span id="cb18-45"><a href="#cb18-45" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span> <span class="st">"Input fdiry:  "</span> <span class="va">${FD_INP_B</span><span class="op">/</span><span class="va">${FD_RES}</span><span class="op">/</span><span class="st">'${FD_RES}'</span><span class="va">}</span></span>
+<span id="cb18-46"><a href="#cb18-46" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span> <span class="st">"Input fname:  "</span> <span class="va">${FN_INP_B}</span></span>
+<span id="cb18-47"><a href="#cb18-47" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span></span>
+<span id="cb18-48"><a href="#cb18-48" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span> <span class="st">"Output fdiry: "</span> <span class="va">${FD_OUT</span><span class="op">/</span><span class="va">${FD_RES}</span><span class="op">/</span><span class="st">'${FD_RES}'</span><span class="va">}</span></span>
+<span id="cb18-49"><a href="#cb18-49" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span> <span class="st">"Output fname: "</span> <span class="va">${FN_OUT}</span></span>
+<span id="cb18-50"><a href="#cb18-50" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span></span>
+<span id="cb18-51"><a href="#cb18-51" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span> <span class="st">"Log file:"</span> <span class="st">'${FD_LOG}/'</span><span class="va">${FN_LOG}</span></span>
+<span id="cb18-52"><a href="#cb18-52" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span></span>
+<span id="cb18-53"><a href="#cb18-53" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb18-54"><a href="#cb18-54" aria-hidden="true" tabindex="-1"></a>            <span class="co">### execute</span></span>
+<span id="cb18-55"><a href="#cb18-55" aria-hidden="true" tabindex="-1"></a>            <span class="fu">mkdir</span> <span class="at">-p</span> <span class="va">${FD_OUT}</span></span>
+<span id="cb18-56"><a href="#cb18-56" aria-hidden="true" tabindex="-1"></a>            <span class="ex">sbatch</span> <span class="dt">\</span></span>
+<span id="cb18-57"><a href="#cb18-57" aria-hidden="true" tabindex="-1"></a>                <span class="at">--cpus-per-task</span> 4 <span class="dt">\</span></span>
+<span id="cb18-58"><a href="#cb18-58" aria-hidden="true" tabindex="-1"></a>                <span class="at">--mem</span> 10G <span class="dt">\</span></span>
+<span id="cb18-59"><a href="#cb18-59" aria-hidden="true" tabindex="-1"></a>                <span class="at">--output</span> <span class="va">${FP_LOG}</span> <span class="dt">\</span></span>
+<span id="cb18-60"><a href="#cb18-60" aria-hidden="true" tabindex="-1"></a>                <span class="va">${FP_EXE}</span> <span class="va">${FP_CNF}</span> <span class="va">${FP_INP_A}</span> <span class="va">${FP_INP_B}</span> <span class="va">${FP_OUT}</span></span>
+<span id="cb18-61"><a href="#cb18-61" aria-hidden="true" tabindex="-1"></a>            <span class="bu">echo</span></span>
+<span id="cb18-62"><a href="#cb18-62" aria-hidden="true" tabindex="-1"></a>        <span class="cf">done</span></span>
+<span id="cb18-63"><a href="#cb18-63" aria-hidden="true" tabindex="-1"></a>    <span class="cf">done</span></span>
+<span id="cb18-64"><a href="#cb18-64" aria-hidden="true" tabindex="-1"></a><span class="co">#done &lt; &lt;(cat ${FP_REGION_LABEL} | awk 'NR &gt;=2 {print}' | head -n 1)    </span></span>
+<span id="cb18-65"><a href="#cb18-65" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span> <span class="op">&lt;</span> <span class="op">&lt;(</span><span class="fu">cat</span> <span class="va">${FP_REGION_LABEL}</span> <span class="kw">|</span> <span class="fu">awk</span> <span class="st">'NR &gt;=2 {print}'</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>==============================
@@ -882,7 +902,7 @@ Output fname:  CRISPRi_HCRFF_K562.hg38.ZScore.filtered.unstranded.bed.gz
 
 Log file: ${FD_LOG}/region.coverage.fcc_astarr_macs_input_overlap.CRISPRi_FlowFISH_K562_Riley_JinWoo.CRISPRi_HCRFF_K562.hg38.ZScore.filtered.unstranded.bed.gz.txt
 
-Submitted batch job 301826
+Submitted batch job 310360
 
 ==============================
 Region folder: region_for_analysis
@@ -899,7 +919,7 @@ Output fname:  CRISPRi_HCRFF_K562.hg38.ZScore.unstranded.bed.gz
 
 Log file: ${FD_LOG}/region.coverage.fcc_astarr_macs_input_overlap.CRISPRi_FlowFISH_K562_Riley_JinWoo.CRISPRi_HCRFF_K562.hg38.ZScore.unstranded.bed.gz.txt
 
-Submitted batch job 301827
+Submitted batch job 310361
 
 ==============================
 Region folder: region_for_analysis
@@ -916,7 +936,24 @@ Output fname:  CRISPRi_Growth_K562.hg38.ZScore.unstranded.bed.gz
 
 Log file: ${FD_LOG}/region.coverage.fcc_astarr_macs_input_overlap.CRISPRi_Growth_K562_Gersbach_JinWoo.CRISPRi_Growth_K562.hg38.ZScore.unstranded.bed.gz.txt
 
-Submitted batch job 301828
+Submitted batch job 310362
+
+==============================
+Region folder: region_for_analysis
+Region label:  fcc_astarr_macs_input_overlap
+Assay  name:   MPRA_Lenti_K562_Nadav_Vikram
+
+Input fdiry:   ${FD_RES}/region/region_for_analysis
+Input fname:   K562.hg38.ASTARR.macs.KS91.input.rep_all.max_overlaps.q5.bed.gz
+Input fdiry:   ${FD_RES}/assay_fcc/MPRA_Lenti_K562_Nadav_Vikram/coverage
+Input fname:   LMPRA_K562.hg38.Log2FC.stranded.bed.gz
+
+Output fdiry:  ${FD_RES}/region_coverage_fcc_score/fcc_astarr_macs_input_overlap/MPRA_Lenti_K562_Nadav_Vikram
+Output fname:  LMPRA_K562.hg38.Log2FC.stranded.bed.gz
+
+Log file: ${FD_LOG}/region.coverage.fcc_astarr_macs_input_overlap.MPRA_Lenti_K562_Nadav_Vikram.LMPRA_K562.hg38.Log2FC.stranded.bed.gz.txt
+
+Submitted batch job 310363
 
 ==============================
 Region folder: region_for_analysis
@@ -933,7 +970,7 @@ Output fname:  LMPRA_K562.hg38.ZScore.stranded.bed.gz
 
 Log file: ${FD_LOG}/region.coverage.fcc_astarr_macs_input_overlap.MPRA_Lenti_K562_Nadav_Vikram.LMPRA_K562.hg38.ZScore.stranded.bed.gz.txt
 
-Submitted batch job 301829
+Submitted batch job 310364
 
 ==============================
 Region folder: region_for_analysis
@@ -950,7 +987,7 @@ Output fname:  CRISPRi_HCRFF_K562.hg38.ZScore.filtered.unstranded.bed.gz
 
 Log file: ${FD_LOG}/region.coverage.fcc_astarr_macs_input_union.CRISPRi_FlowFISH_K562_Riley_JinWoo.CRISPRi_HCRFF_K562.hg38.ZScore.filtered.unstranded.bed.gz.txt
 
-Submitted batch job 301830
+Submitted batch job 310365
 
 ==============================
 Region folder: region_for_analysis
@@ -967,7 +1004,7 @@ Output fname:  CRISPRi_HCRFF_K562.hg38.ZScore.unstranded.bed.gz
 
 Log file: ${FD_LOG}/region.coverage.fcc_astarr_macs_input_union.CRISPRi_FlowFISH_K562_Riley_JinWoo.CRISPRi_HCRFF_K562.hg38.ZScore.unstranded.bed.gz.txt
 
-Submitted batch job 301831
+Submitted batch job 310366
 
 ==============================
 Region folder: region_for_analysis
@@ -984,7 +1021,24 @@ Output fname:  CRISPRi_Growth_K562.hg38.ZScore.unstranded.bed.gz
 
 Log file: ${FD_LOG}/region.coverage.fcc_astarr_macs_input_union.CRISPRi_Growth_K562_Gersbach_JinWoo.CRISPRi_Growth_K562.hg38.ZScore.unstranded.bed.gz.txt
 
-Submitted batch job 301832
+Submitted batch job 310367
+
+==============================
+Region folder: region_for_analysis
+Region label:  fcc_astarr_macs_input_union
+Assay  name:   MPRA_Lenti_K562_Nadav_Vikram
+
+Input fdiry:   ${FD_RES}/region/region_for_analysis
+Input fname:   K562.hg38.ASTARR.macs.KS91.input.rep_all.union.q5.bed.gz
+Input fdiry:   ${FD_RES}/assay_fcc/MPRA_Lenti_K562_Nadav_Vikram/coverage
+Input fname:   LMPRA_K562.hg38.Log2FC.stranded.bed.gz
+
+Output fdiry:  ${FD_RES}/region_coverage_fcc_score/fcc_astarr_macs_input_union/MPRA_Lenti_K562_Nadav_Vikram
+Output fname:  LMPRA_K562.hg38.Log2FC.stranded.bed.gz
+
+Log file: ${FD_LOG}/region.coverage.fcc_astarr_macs_input_union.MPRA_Lenti_K562_Nadav_Vikram.LMPRA_K562.hg38.Log2FC.stranded.bed.gz.txt
+
+Submitted batch job 310368
 
 ==============================
 Region folder: region_for_analysis
@@ -1001,7 +1055,7 @@ Output fname:  LMPRA_K562.hg38.ZScore.stranded.bed.gz
 
 Log file: ${FD_LOG}/region.coverage.fcc_astarr_macs_input_union.MPRA_Lenti_K562_Nadav_Vikram.LMPRA_K562.hg38.ZScore.stranded.bed.gz.txt
 
-Submitted batch job 301833
+Submitted batch job 310369
 
 ==============================
 Region folder: region_for_analysis
@@ -1018,7 +1072,7 @@ Output fname:  CRISPRi_HCRFF_K562.hg38.ZScore.filtered.unstranded.bed.gz
 
 Log file: ${FD_LOG}/region.coverage.dnase_ENCFF274YGF.CRISPRi_FlowFISH_K562_Riley_JinWoo.CRISPRi_HCRFF_K562.hg38.ZScore.filtered.unstranded.bed.gz.txt
 
-Submitted batch job 301834
+Submitted batch job 310370
 
 ==============================
 Region folder: region_for_analysis
@@ -1035,7 +1089,7 @@ Output fname:  CRISPRi_HCRFF_K562.hg38.ZScore.unstranded.bed.gz
 
 Log file: ${FD_LOG}/region.coverage.dnase_ENCFF274YGF.CRISPRi_FlowFISH_K562_Riley_JinWoo.CRISPRi_HCRFF_K562.hg38.ZScore.unstranded.bed.gz.txt
 
-Submitted batch job 301835
+Submitted batch job 310371
 
 ==============================
 Region folder: region_for_analysis
@@ -1052,7 +1106,24 @@ Output fname:  CRISPRi_Growth_K562.hg38.ZScore.unstranded.bed.gz
 
 Log file: ${FD_LOG}/region.coverage.dnase_ENCFF274YGF.CRISPRi_Growth_K562_Gersbach_JinWoo.CRISPRi_Growth_K562.hg38.ZScore.unstranded.bed.gz.txt
 
-Submitted batch job 301836
+Submitted batch job 310372
+
+==============================
+Region folder: region_for_analysis
+Region label:  dnase_ENCFF274YGF
+Assay  name:   MPRA_Lenti_K562_Nadav_Vikram
+
+Input fdiry:   ${FD_RES}/region/region_for_analysis
+Input fname:   K562.hg38.ENCSR000EKS.ENCFF274YGF.DNase.bed.gz
+Input fdiry:   ${FD_RES}/assay_fcc/MPRA_Lenti_K562_Nadav_Vikram/coverage
+Input fname:   LMPRA_K562.hg38.Log2FC.stranded.bed.gz
+
+Output fdiry:  ${FD_RES}/region_coverage_fcc_score/dnase_ENCFF274YGF/MPRA_Lenti_K562_Nadav_Vikram
+Output fname:  LMPRA_K562.hg38.Log2FC.stranded.bed.gz
+
+Log file: ${FD_LOG}/region.coverage.dnase_ENCFF274YGF.MPRA_Lenti_K562_Nadav_Vikram.LMPRA_K562.hg38.Log2FC.stranded.bed.gz.txt
+
+Submitted batch job 310373
 
 ==============================
 Region folder: region_for_analysis
@@ -1069,7 +1140,7 @@ Output fname:  LMPRA_K562.hg38.ZScore.stranded.bed.gz
 
 Log file: ${FD_LOG}/region.coverage.dnase_ENCFF274YGF.MPRA_Lenti_K562_Nadav_Vikram.LMPRA_K562.hg38.ZScore.stranded.bed.gz.txt
 
-Submitted batch job 301837
+Submitted batch job 310374
 
 ==============================
 Region folder: region_for_analysis
@@ -1086,7 +1157,7 @@ Output fname:  CRISPRi_HCRFF_K562.hg38.ZScore.filtered.unstranded.bed.gz
 
 Log file: ${FD_LOG}/region.coverage.dnase_ENCFF185XRG.CRISPRi_FlowFISH_K562_Riley_JinWoo.CRISPRi_HCRFF_K562.hg38.ZScore.filtered.unstranded.bed.gz.txt
 
-Submitted batch job 301838
+Submitted batch job 310375
 
 ==============================
 Region folder: region_for_analysis
@@ -1103,7 +1174,7 @@ Output fname:  CRISPRi_HCRFF_K562.hg38.ZScore.unstranded.bed.gz
 
 Log file: ${FD_LOG}/region.coverage.dnase_ENCFF185XRG.CRISPRi_FlowFISH_K562_Riley_JinWoo.CRISPRi_HCRFF_K562.hg38.ZScore.unstranded.bed.gz.txt
 
-Submitted batch job 301839
+Submitted batch job 310376
 
 ==============================
 Region folder: region_for_analysis
@@ -1120,7 +1191,24 @@ Output fname:  CRISPRi_Growth_K562.hg38.ZScore.unstranded.bed.gz
 
 Log file: ${FD_LOG}/region.coverage.dnase_ENCFF185XRG.CRISPRi_Growth_K562_Gersbach_JinWoo.CRISPRi_Growth_K562.hg38.ZScore.unstranded.bed.gz.txt
 
-Submitted batch job 301840
+Submitted batch job 310377
+
+==============================
+Region folder: region_for_analysis
+Region label:  dnase_ENCFF185XRG
+Assay  name:   MPRA_Lenti_K562_Nadav_Vikram
+
+Input fdiry:   ${FD_RES}/region/region_for_analysis
+Input fname:   K562.hg38.ENCSR000EOT.ENCFF185XRG.DNase.bed.gz
+Input fdiry:   ${FD_RES}/assay_fcc/MPRA_Lenti_K562_Nadav_Vikram/coverage
+Input fname:   LMPRA_K562.hg38.Log2FC.stranded.bed.gz
+
+Output fdiry:  ${FD_RES}/region_coverage_fcc_score/dnase_ENCFF185XRG/MPRA_Lenti_K562_Nadav_Vikram
+Output fname:  LMPRA_K562.hg38.Log2FC.stranded.bed.gz
+
+Log file: ${FD_LOG}/region.coverage.dnase_ENCFF185XRG.MPRA_Lenti_K562_Nadav_Vikram.LMPRA_K562.hg38.Log2FC.stranded.bed.gz.txt
+
+Submitted batch job 310378
 
 ==============================
 Region folder: region_for_analysis
@@ -1137,7 +1225,7 @@ Output fname:  LMPRA_K562.hg38.ZScore.stranded.bed.gz
 
 Log file: ${FD_LOG}/region.coverage.dnase_ENCFF185XRG.MPRA_Lenti_K562_Nadav_Vikram.LMPRA_K562.hg38.ZScore.stranded.bed.gz.txt
 
-Submitted batch job 301841
+Submitted batch job 310379
 
 ==============================
 Region folder: region_for_analysis
@@ -1154,7 +1242,7 @@ Output fname:  CRISPRi_HCRFF_K562.hg38.ZScore.filtered.unstranded.bed.gz
 
 Log file: ${FD_LOG}/region.coverage.atac_ENCFF558BLC.CRISPRi_FlowFISH_K562_Riley_JinWoo.CRISPRi_HCRFF_K562.hg38.ZScore.filtered.unstranded.bed.gz.txt
 
-Submitted batch job 301842
+Submitted batch job 310380
 
 ==============================
 Region folder: region_for_analysis
@@ -1171,7 +1259,7 @@ Output fname:  CRISPRi_HCRFF_K562.hg38.ZScore.unstranded.bed.gz
 
 Log file: ${FD_LOG}/region.coverage.atac_ENCFF558BLC.CRISPRi_FlowFISH_K562_Riley_JinWoo.CRISPRi_HCRFF_K562.hg38.ZScore.unstranded.bed.gz.txt
 
-Submitted batch job 301843
+Submitted batch job 310381
 
 ==============================
 Region folder: region_for_analysis
@@ -1188,7 +1276,24 @@ Output fname:  CRISPRi_Growth_K562.hg38.ZScore.unstranded.bed.gz
 
 Log file: ${FD_LOG}/region.coverage.atac_ENCFF558BLC.CRISPRi_Growth_K562_Gersbach_JinWoo.CRISPRi_Growth_K562.hg38.ZScore.unstranded.bed.gz.txt
 
-Submitted batch job 301844
+Submitted batch job 310382
+
+==============================
+Region folder: region_for_analysis
+Region label:  atac_ENCFF558BLC
+Assay  name:   MPRA_Lenti_K562_Nadav_Vikram
+
+Input fdiry:   ${FD_RES}/region/region_for_analysis
+Input fname:   K562.hg38.ENCSR483RKN.ENCFF558BLC.ATAC.bed.gz
+Input fdiry:   ${FD_RES}/assay_fcc/MPRA_Lenti_K562_Nadav_Vikram/coverage
+Input fname:   LMPRA_K562.hg38.Log2FC.stranded.bed.gz
+
+Output fdiry:  ${FD_RES}/region_coverage_fcc_score/atac_ENCFF558BLC/MPRA_Lenti_K562_Nadav_Vikram
+Output fname:  LMPRA_K562.hg38.Log2FC.stranded.bed.gz
+
+Log file: ${FD_LOG}/region.coverage.atac_ENCFF558BLC.MPRA_Lenti_K562_Nadav_Vikram.LMPRA_K562.hg38.Log2FC.stranded.bed.gz.txt
+
+Submitted batch job 310383
 
 ==============================
 Region folder: region_for_analysis
@@ -1205,7 +1310,7 @@ Output fname:  LMPRA_K562.hg38.ZScore.stranded.bed.gz
 
 Log file: ${FD_LOG}/region.coverage.atac_ENCFF558BLC.MPRA_Lenti_K562_Nadav_Vikram.LMPRA_K562.hg38.ZScore.stranded.bed.gz.txt
 
-Submitted batch job 301845
+Submitted batch job 310384
 
 ==============================
 Region folder: region_for_analysis
@@ -1222,7 +1327,7 @@ Output fname:  CRISPRi_HCRFF_K562.hg38.ZScore.filtered.unstranded.bed.gz
 
 Log file: ${FD_LOG}/region.coverage.atac_ENCFF925CYR.CRISPRi_FlowFISH_K562_Riley_JinWoo.CRISPRi_HCRFF_K562.hg38.ZScore.filtered.unstranded.bed.gz.txt
 
-Submitted batch job 301846
+Submitted batch job 310385
 
 ==============================
 Region folder: region_for_analysis
@@ -1239,7 +1344,7 @@ Output fname:  CRISPRi_HCRFF_K562.hg38.ZScore.unstranded.bed.gz
 
 Log file: ${FD_LOG}/region.coverage.atac_ENCFF925CYR.CRISPRi_FlowFISH_K562_Riley_JinWoo.CRISPRi_HCRFF_K562.hg38.ZScore.unstranded.bed.gz.txt
 
-Submitted batch job 301847
+Submitted batch job 310386
 
 ==============================
 Region folder: region_for_analysis
@@ -1256,7 +1361,24 @@ Output fname:  CRISPRi_Growth_K562.hg38.ZScore.unstranded.bed.gz
 
 Log file: ${FD_LOG}/region.coverage.atac_ENCFF925CYR.CRISPRi_Growth_K562_Gersbach_JinWoo.CRISPRi_Growth_K562.hg38.ZScore.unstranded.bed.gz.txt
 
-Submitted batch job 301848
+Submitted batch job 310387
+
+==============================
+Region folder: region_for_analysis
+Region label:  atac_ENCFF925CYR
+Assay  name:   MPRA_Lenti_K562_Nadav_Vikram
+
+Input fdiry:   ${FD_RES}/region/region_for_analysis
+Input fname:   K562.hg38.ENCSR483RKN.ENCFF925CYR.ATAC.bed.gz
+Input fdiry:   ${FD_RES}/assay_fcc/MPRA_Lenti_K562_Nadav_Vikram/coverage
+Input fname:   LMPRA_K562.hg38.Log2FC.stranded.bed.gz
+
+Output fdiry:  ${FD_RES}/region_coverage_fcc_score/atac_ENCFF925CYR/MPRA_Lenti_K562_Nadav_Vikram
+Output fname:  LMPRA_K562.hg38.Log2FC.stranded.bed.gz
+
+Log file: ${FD_LOG}/region.coverage.atac_ENCFF925CYR.MPRA_Lenti_K562_Nadav_Vikram.LMPRA_K562.hg38.Log2FC.stranded.bed.gz.txt
+
+Submitted batch job 310388
 
 ==============================
 Region folder: region_for_analysis
@@ -1273,7 +1395,7 @@ Output fname:  LMPRA_K562.hg38.ZScore.stranded.bed.gz
 
 Log file: ${FD_LOG}/region.coverage.atac_ENCFF925CYR.MPRA_Lenti_K562_Nadav_Vikram.LMPRA_K562.hg38.ZScore.stranded.bed.gz.txt
 
-Submitted batch job 301849
+Submitted batch job 310389
 
 ==============================
 Region folder: region_for_analysis
@@ -1290,7 +1412,7 @@ Output fname:  CRISPRi_HCRFF_K562.hg38.ZScore.filtered.unstranded.bed.gz
 
 Log file: ${FD_LOG}/region.coverage.atac_ENCFF333TAT.CRISPRi_FlowFISH_K562_Riley_JinWoo.CRISPRi_HCRFF_K562.hg38.ZScore.filtered.unstranded.bed.gz.txt
 
-Submitted batch job 301850
+Submitted batch job 310390
 
 ==============================
 Region folder: region_for_analysis
@@ -1307,7 +1429,7 @@ Output fname:  CRISPRi_HCRFF_K562.hg38.ZScore.unstranded.bed.gz
 
 Log file: ${FD_LOG}/region.coverage.atac_ENCFF333TAT.CRISPRi_FlowFISH_K562_Riley_JinWoo.CRISPRi_HCRFF_K562.hg38.ZScore.unstranded.bed.gz.txt
 
-Submitted batch job 301851
+Submitted batch job 310391
 
 ==============================
 Region folder: region_for_analysis
@@ -1324,7 +1446,24 @@ Output fname:  CRISPRi_Growth_K562.hg38.ZScore.unstranded.bed.gz
 
 Log file: ${FD_LOG}/region.coverage.atac_ENCFF333TAT.CRISPRi_Growth_K562_Gersbach_JinWoo.CRISPRi_Growth_K562.hg38.ZScore.unstranded.bed.gz.txt
 
-Submitted batch job 301852
+Submitted batch job 310392
+
+==============================
+Region folder: region_for_analysis
+Region label:  atac_ENCFF333TAT
+Assay  name:   MPRA_Lenti_K562_Nadav_Vikram
+
+Input fdiry:   ${FD_RES}/region/region_for_analysis
+Input fname:   K562.hg38.ENCSR868FGK.ENCFF333TAT.ATAC.bed.gz
+Input fdiry:   ${FD_RES}/assay_fcc/MPRA_Lenti_K562_Nadav_Vikram/coverage
+Input fname:   LMPRA_K562.hg38.Log2FC.stranded.bed.gz
+
+Output fdiry:  ${FD_RES}/region_coverage_fcc_score/atac_ENCFF333TAT/MPRA_Lenti_K562_Nadav_Vikram
+Output fname:  LMPRA_K562.hg38.Log2FC.stranded.bed.gz
+
+Log file: ${FD_LOG}/region.coverage.atac_ENCFF333TAT.MPRA_Lenti_K562_Nadav_Vikram.LMPRA_K562.hg38.Log2FC.stranded.bed.gz.txt
+
+Submitted batch job 310393
 
 ==============================
 Region folder: region_for_analysis
@@ -1341,7 +1480,7 @@ Output fname:  LMPRA_K562.hg38.ZScore.stranded.bed.gz
 
 Log file: ${FD_LOG}/region.coverage.atac_ENCFF333TAT.MPRA_Lenti_K562_Nadav_Vikram.LMPRA_K562.hg38.ZScore.stranded.bed.gz.txt
 
-Submitted batch job 301853
+Submitted batch job 310394
 
 ==============================
 Region folder: region_for_analysis
@@ -1358,7 +1497,7 @@ Output fname:  CRISPRi_HCRFF_K562.hg38.ZScore.filtered.unstranded.bed.gz
 
 Log file: ${FD_LOG}/region.coverage.atac_ENCFF948AFM.CRISPRi_FlowFISH_K562_Riley_JinWoo.CRISPRi_HCRFF_K562.hg38.ZScore.filtered.unstranded.bed.gz.txt
 
-Submitted batch job 301854
+Submitted batch job 310395
 
 ==============================
 Region folder: region_for_analysis
@@ -1375,7 +1514,7 @@ Output fname:  CRISPRi_HCRFF_K562.hg38.ZScore.unstranded.bed.gz
 
 Log file: ${FD_LOG}/region.coverage.atac_ENCFF948AFM.CRISPRi_FlowFISH_K562_Riley_JinWoo.CRISPRi_HCRFF_K562.hg38.ZScore.unstranded.bed.gz.txt
 
-Submitted batch job 301855
+Submitted batch job 310396
 
 ==============================
 Region folder: region_for_analysis
@@ -1392,7 +1531,24 @@ Output fname:  CRISPRi_Growth_K562.hg38.ZScore.unstranded.bed.gz
 
 Log file: ${FD_LOG}/region.coverage.atac_ENCFF948AFM.CRISPRi_Growth_K562_Gersbach_JinWoo.CRISPRi_Growth_K562.hg38.ZScore.unstranded.bed.gz.txt
 
-Submitted batch job 301856
+Submitted batch job 310397
+
+==============================
+Region folder: region_for_analysis
+Region label:  atac_ENCFF948AFM
+Assay  name:   MPRA_Lenti_K562_Nadav_Vikram
+
+Input fdiry:   ${FD_RES}/region/region_for_analysis
+Input fname:   K562.hg38.ENCSR868FGK.ENCFF948AFM.ATAC.bed.gz
+Input fdiry:   ${FD_RES}/assay_fcc/MPRA_Lenti_K562_Nadav_Vikram/coverage
+Input fname:   LMPRA_K562.hg38.Log2FC.stranded.bed.gz
+
+Output fdiry:  ${FD_RES}/region_coverage_fcc_score/atac_ENCFF948AFM/MPRA_Lenti_K562_Nadav_Vikram
+Output fname:  LMPRA_K562.hg38.Log2FC.stranded.bed.gz
+
+Log file: ${FD_LOG}/region.coverage.atac_ENCFF948AFM.MPRA_Lenti_K562_Nadav_Vikram.LMPRA_K562.hg38.Log2FC.stranded.bed.gz.txt
+
+Submitted batch job 310398
 
 ==============================
 Region folder: region_for_analysis
@@ -1409,7 +1565,7 @@ Output fname:  LMPRA_K562.hg38.ZScore.stranded.bed.gz
 
 Log file: ${FD_LOG}/region.coverage.atac_ENCFF948AFM.MPRA_Lenti_K562_Nadav_Vikram.LMPRA_K562.hg38.ZScore.stranded.bed.gz.txt
 
-Submitted batch job 301857
+Submitted batch job 310399
 </code></pre>
 </div>
 </div>

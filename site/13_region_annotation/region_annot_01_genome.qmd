@@ -4,9 +4,15 @@ title: "Intersect/Summarize genomic annotaions by accessible regions"
 
 # TSS
 
+To-do: change the intepretation of different TSS group
+
 There are total 11,892 TSS
 
 [Link](/02_prepare/data_23_others.qmd)
+
+|Group    |Location (Total) |ATAC (Overlap) |ATAC (Union) |
+|:--------|:----------------|:--------------|:------------|
+|TSS_Pol2 |28,563           |13,732         |15,182       |
 
 |Group           |Location (Total) |ATAC (Overlap) |ATAC (Union) |
 |:---------------|:----------------|:--------------|:------------|

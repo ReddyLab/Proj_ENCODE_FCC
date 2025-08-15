@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>… – ENCODE FCC Project</title>
+<title>Region Coverage (FCC) 72 – ENCODE FCC Project</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -165,7 +165,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">…</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Region Coverage (FCC) 72</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -453,8 +453,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#explore-pairwise-scatter-plot" id="toc-explore-pairwise-scatter-plot" class="nav-link" data-scroll-target="#explore-pairwise-scatter-plot">Explore: pairwise scatter plot</a></li>
   <li><a href="#explore-hex-scatter-plot" id="toc-explore-hex-scatter-plot" class="nav-link" data-scroll-target="#explore-hex-scatter-plot">Explore: hex scatter plot</a>
   <ul class="collapse">
-  <li><a href="#test" id="toc-test" class="nav-link" data-scroll-target="#test">Test</a></li>
-  <li><a href="#loop" id="toc-loop" class="nav-link" data-scroll-target="#loop">Loop</a></li>
+  <li><a href="#test-astarr-vs-wstarr" id="toc-test-astarr-vs-wstarr" class="nav-link" data-scroll-target="#test-astarr-vs-wstarr">Test: ASTARR vs WSTARR</a></li>
+  <li><a href="#loop-through-each-combination-of-assays" id="toc-loop-through-each-combination-of-assays" class="nav-link" data-scroll-target="#loop-through-each-combination-of-assays">Loop through each combination of assays</a></li>
   </ul></li>
   <li><a href="#export-results" id="toc-export-results" class="nav-link" data-scroll-target="#export-results">Export results</a></li>
   </ul>
@@ -465,8 +465,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">…</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li></ul></div></div>
-<p class="subtitle lead">combine ATAC, setup total, final, and share verion of table</p>
+<div class="quarto-title-block"><div><h1 class="title">Region Coverage (FCC) 72</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li></ul></div></div>
+<p class="subtitle lead">Pairwise scatter hex plots of FCC assays</p>
 </div>
 
 
@@ -540,6 +540,7 @@ fcc_astarr_macs_input_union </code></pre>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>/data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/region_coverage_fcc_score/fcc_astarr_macs_input_overlap/summary/region.coverage.score.fcc.final.tsv 
+/data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/region_coverage_fcc_score/fcc_astarr_macs_input_overlap/summary/region.coverage.score.fcc.test.tsv 
 /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/region_coverage_fcc_score/fcc_astarr_macs_input_overlap/summary/region.coverage.score.fcc.total.tsv </code></pre>
 </div>
 </div>
@@ -655,7 +656,7 @@ $fcc_astarr_macs_input_union
 </table>
 </div>
 </div>
-<p><strong>Explore</strong></p>
+<p><strong>Check: region counts</strong></p>
 <div id="cefe1997-db36-41f9-ada9-7ca3a8874fef" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
@@ -892,8 +893,8 @@ $fcc_astarr_macs_input_union
 </section>
 <section id="explore-hex-scatter-plot" class="level2">
 <h2 class="anchored" data-anchor-id="explore-hex-scatter-plot">Explore: hex scatter plot</h2>
-<section id="test" class="level3">
-<h3 class="anchored" data-anchor-id="test">Test</h3>
+<section id="test-astarr-vs-wstarr" class="level3">
+<h3 class="anchored" data-anchor-id="test-astarr-vs-wstarr">Test: ASTARR vs WSTARR</h3>
 <div id="98ad5c5d-9236-46fb-9e11-c72a5672b6c7" class="cell" data-execution_count="9">
 <details class="code-fold">
 <summary>Code</summary>
@@ -987,27 +988,27 @@ $fcc_astarr_macs_input_union
 <span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">xlim</span>(vec_num_range1) <span class="sc">+</span></span>
 <span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylim</span>(vec_num_range2)</span>
 <span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repr.plot.height=</span><span class="dv">6</span>, <span class="at">repr.plot.width=</span><span class="dv">7</span>)</span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repr.plot.height=</span><span class="dv">5</span>, <span class="at">repr.plot.width=</span><span class="dv">6</span>)</span>
 <span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(gpt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning message:
 “Removed 74 rows containing non-finite outside the scale range (`stat_binhex()`).”
 Warning message:
-“Removed 4 rows containing missing values or values outside the scale range
-(`geom_hex()`).”</code></pre>
+“Removed 4 rows containing missing values or values outside the scale range (`geom_hex()`).”</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="73_region_coverage_zscore_pairwise_R_files/figure-html/cell-12-output-2.png" width="420" height="360" class="figure-img"></p>
+<p><img src="73_region_coverage_zscore_pairwise_R_files/figure-html/cell-12-output-2.png" width="360" height="300" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="loop" class="level3">
-<h3 class="anchored" data-anchor-id="loop">Loop</h3>
+<section id="loop-through-each-combination-of-assays" class="level3">
+<h3 class="anchored" data-anchor-id="loop-through-each-combination-of-assays">Loop through each combination of assays</h3>
+<p><strong>Set assays</strong></p>
 <div id="211dc94d-45a8-41bf-bb15-7b4fbb959ff6" class="cell" data-execution_count="12">
 <details class="code-fold">
 <summary>Code</summary>
@@ -1017,6 +1018,7 @@ Warning message:
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>vec_txt_assay <span class="ot">=</span> vec</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
+<p><strong>Get assay pairs</strong></p>
 <div id="c77b90ee-bcf1-4a4b-89db-e77dd43e69c1" class="cell" data-execution_count="13">
 <details class="code-fold">
 <summary>Code</summary>
@@ -1119,6 +1121,7 @@ Warning message:
 "CRISPRi_Growth_CRISPRi_HCRFF" </code></pre>
 </div>
 </div>
+<p><strong>Loop through each pair and generate plot</strong></p>
 <div id="35d1020b-fcbf-46d0-a022-d42011223ef6" class="cell" data-execution_count="15">
 <details class="code-fold">
 <summary>Code</summary>
@@ -1173,8 +1176,7 @@ Warning message:
 <pre><code>Warning message:
 “Removed 38 rows containing non-finite outside the scale range (`stat_binhex()`).”
 Warning message:
-“Removed 7 rows containing missing values or values outside the scale range
-(`geom_hex()`).”</code></pre>
+“Removed 5 rows containing missing values or values outside the scale range (`geom_hex()`).”</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <div>
@@ -1206,20 +1208,17 @@ Warning message:
 <pre><code>Warning message:
 “Removed 38 rows containing non-finite outside the scale range (`stat_binhex()`).”
 Warning message:
-“Removed 7 rows containing missing values or values outside the scale range
-(`geom_hex()`).”
+“Removed 5 rows containing missing values or values outside the scale range (`geom_hex()`).”
 Warning message:
 “Removed 3 rows containing non-finite outside the scale range (`stat_binhex()`).”
 Warning message:
 “Removed 74 rows containing non-finite outside the scale range (`stat_binhex()`).”
 Warning message:
-“Removed 4 rows containing missing values or values outside the scale range
-(`geom_hex()`).”
+“Removed 4 rows containing missing values or values outside the scale range (`geom_hex()`).”
 Warning message:
 “Removed 46 rows containing non-finite outside the scale range (`stat_binhex()`).”
 Warning message:
-“Removed 2 rows containing missing values or values outside the scale range
-(`geom_hex()`).”
+“Removed 2 rows containing missing values or values outside the scale range (`geom_hex()`).”
 Warning message:
 “Removed 3 rows containing non-finite outside the scale range (`stat_binhex()`).”
 Warning message:
@@ -1227,13 +1226,11 @@ Warning message:
 Warning message:
 “Removed 41 rows containing non-finite outside the scale range (`stat_binhex()`).”
 Warning message:
-“Removed 4 rows containing missing values or values outside the scale range
-(`geom_hex()`).”
+“Removed 3 rows containing missing values or values outside the scale range (`geom_hex()`).”
 Warning message:
 “Removed 24 rows containing non-finite outside the scale range (`stat_binhex()`).”
 Warning message:
-“Removed 1 row containing missing values or values outside the scale range
-(`geom_hex()`).”
+“Removed 1 row containing missing values or values outside the scale range (`geom_hex()`).”
 Warning message:
 “Removed 3 rows containing non-finite outside the scale range (`stat_binhex()`).”
 Warning message:
@@ -1247,8 +1244,7 @@ Warning message:
 Warning message:
 “Removed 5 rows containing non-finite outside the scale range (`stat_binhex()`).”
 Warning message:
-“Removed 1 row containing missing values or values outside the scale range
-(`geom_hex()`).”</code></pre>
+“Removed 1 row containing missing values or values outside the scale range (`geom_hex()`).”</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <div>
@@ -1281,7 +1277,7 @@ Warning message:
 </details>
 </div>
 <p><strong>Save each scatter plot</strong></p>
-<div id="7a2d32a5-4c32-41c8-8ad0-ebf90519c315" class="cell" data-execution_count="19">
+<div id="7a2d32a5-4c32-41c8-8ad0-ebf90519c315" class="cell" data-execution_count="18">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repr.plot.height=</span><span class="dv">5</span>, <span class="at">repr.plot.width=</span><span class="dv">5</span>)</span>

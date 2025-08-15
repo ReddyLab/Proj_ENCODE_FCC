@@ -446,19 +446,21 @@ ul.task-list li input[type="checkbox"] {
 <p>fragment counts across accessible regions</p>
 <p>regions with extreme low fragments were filtered using EdgeR</p>
 <p>the log2 fold change of each regions were calculated using DEseq2</p>
+<p>The z score is calculated by standardizing the log2 fold change.</p>
 <p><img src="../figure/22_region_coverage_fcc_score/fig.region_coverage_fcc.scatter_hex.zscore.input_vs_output.astarr.png" class="img-fluid" style="width:40.0%"></p>
 <p><img src="../figure/22_region_coverage_fcc_score/fig.region_coverage_fcc.scatter_hex.zscore.input_vs_output.wstarr.png" class="img-fluid" style="width:40.0%"></p>
 </section>
 <section id="lenti-mpra" class="level1">
 <h1>Lenti-MPRA</h1>
-<p>The log2 fold change were first standardized to z scores using the negative controls (random shuffled seqeunces)</p>
+<p>The log2 fold change were acquired from the Agarwal et al., 2025. The z score is calculated by standardizing the log2 fold change.</p>
 </section>
 <section id="crispri-hcr-flowfish" class="level1">
 <h1>CRISPRi-HCR FlowFISH</h1>
 <p>The log2 fold change of guides were standardized to z scores for each target respectively.</p>
-<p>After standardization, the safe-targeting guides were filtered.</p>
-<p>The mean of z scores were calculated for each target across accessible regions.</p>
+<p>The mean of z scores were calculated for each target across accessible regions by excluding safe-targeting guides.</p>
+<p>Coverage of CRISPRi-HCR FlowFISH across accessbile regions:</p>
 <p><img src="../figure/22_region_coverage_fcc_score/fig.region_coverage_fcc.heatmap.zscore.crispri_hcrff.target.total.png" class="img-fluid" style="width:40.0%"></p>
+<p>Safe-targeting guides Removed:</p>
 <p><img src="../figure/22_region_coverage_fcc_score/fig.region_coverage_fcc.heatmap.zscore.crispri_hcrff.target.filtered.png" class="img-fluid" style="width:40.0%"></p>
 </section>
 <section id="crispri-growth-screen" class="level1">
@@ -468,9 +470,9 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="summarize-region-coverage" class="level1">
 <h1>Summarize region coverage</h1>
-<p>Genome coverage of FCC assays Table: number of ATAC regions screened in each assay</p>
+<p>Genome coverage of FCC assays</p>
 <table class="caption-top table">
-<caption>ratio = divided by total ATAC Set ATAC as 100%; how many percentage of regions are screened by each assay?</caption>
+<caption>number of ATAC regions screened in each assay</caption>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Assay</th>
@@ -516,6 +518,8 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
+<p>Table: ratio = divided by total ATAC</p>
+<p>Set ATAC as 100%; how many percentage of regions are screened by each assay?</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">

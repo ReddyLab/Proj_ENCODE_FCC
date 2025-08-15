@@ -67,6 +67,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -442,6 +471,7 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="comparing-regions-screened-by-starrmpra" class="level1">
 <h1>Comparing regions screened by STARR/MPRA</h1>
+<p><span class="math display">\[\text{RankNorm}(x_i) = \frac{\text{rank}(x_i)−1}{n−1}\]</span></p>
 <p>fig.region_coverage_fcc.fcc_starrmpra_ranknorm.fcc_crispri.atac.png fig.region_coverage_fcc.fcc_starrmpra_log2fc.fcc_crispri.atac.png</p>
 </section>
 <section id="appending-crispr-and-region-accessibility-to-starrmpra-comparison" class="level1">

@@ -168,3 +168,22 @@ save_pheatmap_pdf <- function(x, filename, width=7, height=7) {
     grid::grid.draw(x$gtable)
     dev.off()
 }
+
+### helper function to mode of continuous values
+
+
+### helper function to calculate Cliff's delta
+fun_cliffs_delta = function(x, y) {
+    n_x = length(x)
+    n_y = length(y)
+    
+    ### all pairwise comparisons
+    cmp = outer(x, y, FUN = function(a, b){sign(a - b)})
+    
+    ### Count comparisons
+    vec_num_greater = sum(cmp == 1)
+    vec_num_less    = sum(cmp == -1)
+    
+    num_delta = (vec_num_greater - vec_num_less) / (n_x * n_y)
+    return(num_delta)
+}

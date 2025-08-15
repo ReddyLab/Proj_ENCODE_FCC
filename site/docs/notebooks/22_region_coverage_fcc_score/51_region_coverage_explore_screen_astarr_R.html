@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Region Coverage (FCC) 51 – ENCODE FCC Project</title>
+<title>Region Coverage (FCC) 52 – ENCODE FCC Project</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -165,7 +165,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Region Coverage (FCC) 51</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Region Coverage (FCC) 52</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -458,8 +458,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Region Coverage (FCC) 51</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li></ul></div></div>
-<p class="subtitle lead">Screen regions in ASTARR</p>
+<div class="quarto-title-block"><div><h1 class="title">Region Coverage (FCC) 52</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li></ul></div></div>
+<p class="subtitle lead">Screen regions in WSTARR</p>
 </div>
 
 
@@ -477,7 +477,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p><strong>Set environment</strong></p>
-<div id="e8e29142-a0e6-479f-9d72-92381891dc55" class="cell" data-tags="[]" data-execution_count="9">
+<div id="e8e29142-a0e6-479f-9d72-92381891dc55" class="cell" data-tags="[]" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>(<span class="fu">suppressWarnings</span>(<span class="fu">source</span>(<span class="st">"../run_config_project_sing.R"</span>)))</span>
@@ -503,7 +503,7 @@ PROJECT REF     (FD_REF): /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/references
 </div>
 </div>
 <p><strong>Check: region directory</strong></p>
-<div id="3dfc009b-fb5c-4887-84d4-0b257c0db859" class="cell" data-execution_count="10">
+<div id="3dfc009b-fb5c-4887-84d4-0b257c0db859" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>txt_fdiry <span class="ot">=</span> <span class="fu">file.path</span>(FD_RES, <span class="st">"region_coverage_fcc_score"</span>)</span>
@@ -523,7 +523,7 @@ fcc_astarr_macs_input_union </code></pre>
 </div>
 </div>
 <p><strong>Check: assay directory</strong></p>
-<div id="7bc1ac26-b126-4241-a916-319890ff595b" class="cell" data-execution_count="11">
+<div id="7bc1ac26-b126-4241-a916-319890ff595b" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>txt_folder <span class="ot">=</span> <span class="st">"fcc_astarr_macs_input_union"</span></span>
@@ -546,7 +546,7 @@ summary </code></pre>
 <section id="prepare" class="level2">
 <h2 class="anchored" data-anchor-id="prepare">Prepare</h2>
 <p><strong>Set global variable</strong></p>
-<div id="d06281c8-cae8-4378-8459-67865e654d47" class="cell" data-execution_count="12">
+<div id="d06281c8-cae8-4378-8459-67865e654d47" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>vec <span class="ot">=</span> <span class="fu">c</span>(</span>
@@ -563,14 +563,14 @@ summary </code></pre>
 fcc_astarr_macs_input_union </code></pre>
 </div>
 </div>
-<div id="2fe774a1-9334-4382-83a1-5d56c5763698" class="cell" data-execution_count="13">
+<div id="2fe774a1-9334-4382-83a1-5d56c5763698" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>TXT_ASSAY <span class="ot">=</span> <span class="st">"STARR_ATAC_K562_Reddy_KS91"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p><strong>View files</strong></p>
-<div id="18ed37e2-a6bc-4586-a559-f135136c584e" class="cell" data-execution_count="14">
+<div id="18ed37e2-a6bc-4586-a559-f135136c584e" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>txt_assay  <span class="ot">=</span> TXT_ASSAY</span>
@@ -596,7 +596,7 @@ region.coverage.summary.tsv </code></pre>
 </section>
 <section id="import-data" class="level2">
 <h2 class="anchored" data-anchor-id="import-data">Import data</h2>
-<div id="9c26efa7-6cea-45e5-b9f0-2736baf202bb" class="cell" data-execution_count="15">
+<div id="9c26efa7-6cea-45e5-b9f0-2736baf202bb" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="do">### loop to import data</span></span>

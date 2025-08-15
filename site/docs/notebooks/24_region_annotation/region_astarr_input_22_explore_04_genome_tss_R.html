@@ -529,7 +529,12 @@ fcc_astarr_macs_input_union </code></pre>
 <div id="6f132f8b-976a-48c7-945b-f360ac085559" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>TXT_FNAME_ANNOT <span class="ot">=</span> <span class="st">"region.annotation.genome_tss.tsv"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>TXT_FNAME_ANNOT  <span class="ot">=</span> <span class="st">"region.annotation.genome_tss.tsv"</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>TXT_FNAME_REGION <span class="ot">=</span> <span class="st">"K562.hg38.TSS.selected_by_highest_Pol2_signal.tsv"</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#TXT_FNAME_REGION = "K562.hg38.TSS.selected_by_highest_Pol2_signal.filtered_by_RNAseq_TPM.tsv"</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>TXT_TSS_ANNOT   <span class="ot">=</span> <span class="st">"genome_tss_pol2"</span> </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>TXT_TSS_LABEL   <span class="ot">=</span> <span class="st">"TSS_Pol2"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p><strong>View files</strong></p>
@@ -579,10 +584,10 @@ fcc_astarr_macs_input_union </code></pre>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>$fcc_astarr_macs_input_overlap
-[1] 10817    11
+[1] 16109    11
 
 $fcc_astarr_macs_input_union
-[1] 10968    11
+[1] 17697    11
 </code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -605,40 +610,40 @@ $fcc_astarr_macs_input_union
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">chr1</td>
-<td style="text-align: right;">28934</td>
-<td style="text-align: right;">29499</td>
-<td style="text-align: left;">chr1:28934-29499</td>
+<td style="text-align: right;">17288</td>
+<td style="text-align: right;">17689</td>
+<td style="text-align: left;">chr1:17288-17689</td>
 <td style="text-align: left;">fcc_astarr_macs_input_overlap</td>
-<td style="text-align: left;">genome_tss_pol2_rnaseq</td>
-<td style="text-align: left;">TSS_Pol2_RNAseq</td>
-<td style="text-align: left;">WASH7P</td>
-<td style="text-align: left;">chr1:29370-29371</td>
+<td style="text-align: left;">genome_tss_pol2</td>
+<td style="text-align: left;">TSS_Pol2</td>
+<td style="text-align: left;">MIR6859-1</td>
+<td style="text-align: left;">chr1:17436-17437</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">chr1</td>
-<td style="text-align: right;">826796</td>
-<td style="text-align: right;">828040</td>
-<td style="text-align: left;">chr1:826796-828040</td>
+<td style="text-align: right;">17288</td>
+<td style="text-align: right;">17689</td>
+<td style="text-align: left;">chr1:17288-17689</td>
 <td style="text-align: left;">fcc_astarr_macs_input_overlap</td>
-<td style="text-align: left;">genome_tss_pol2_rnaseq</td>
-<td style="text-align: left;">TSS_Pol2_RNAseq</td>
-<td style="text-align: left;">LINC00115</td>
-<td style="text-align: left;">chr1:827522-827523</td>
+<td style="text-align: left;">genome_tss_pol2</td>
+<td style="text-align: left;">TSS_Pol2</td>
+<td style="text-align: left;">MIR6859-2</td>
+<td style="text-align: left;">chr1:17436-17437</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">chr1</td>
-<td style="text-align: right;">826796</td>
-<td style="text-align: right;">828040</td>
-<td style="text-align: left;">chr1:826796-828040</td>
+<td style="text-align: right;">17288</td>
+<td style="text-align: right;">17689</td>
+<td style="text-align: left;">chr1:17288-17689</td>
 <td style="text-align: left;">fcc_astarr_macs_input_overlap</td>
-<td style="text-align: left;">genome_tss_pol2_rnaseq</td>
-<td style="text-align: left;">TSS_Pol2_RNAseq</td>
-<td style="text-align: left;">LINC01128</td>
-<td style="text-align: left;">chr1:827590-827591</td>
+<td style="text-align: left;">genome_tss_pol2</td>
+<td style="text-align: left;">TSS_Pol2</td>
+<td style="text-align: left;">MIR6859-3</td>
+<td style="text-align: left;">chr1:17436-17437</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: left;">FALSE</td>
 </tr>
@@ -654,7 +659,7 @@ $fcc_astarr_macs_input_union
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">lapply</span>(VEC_TXT_FOLDER, <span class="cf">function</span>(txt_folder){</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="do">### set file directory</span></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    txt_fdiry <span class="ot">=</span> <span class="fu">file.path</span>(FD_RES, <span class="st">"region_closest"</span>, txt_folder, <span class="st">"summary"</span>)</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    txt_fname <span class="ot">=</span> <span class="st">"region.summary.genome_tss.tsv"</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    txt_fname <span class="ot">=</span> <span class="st">"region.summary.genome_tss.tss_proximity.tsv"</span></span>
 <span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    txt_fpath <span class="ot">=</span> <span class="fu">file.path</span>(txt_fdiry, txt_fname)</span>
 <span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="do">### read table</span></span>
@@ -674,10 +679,10 @@ $fcc_astarr_macs_input_union
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>$fcc_astarr_macs_input_overlap
-[1] 150042      8
+[1] 304915     11
 
 $fcc_astarr_macs_input_union
-[1] 246852      8
+[1] 499336     11
 </code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -690,6 +695,9 @@ $fcc_astarr_macs_input_union
 <th style="text-align: left;" data-quarto-table-cell-role="th">Region</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Annotation_A</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Annotation_B</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Region_TSS</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Score_Pol2</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Gene</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Distance2TSS</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">TSS_Proximity</th>
 </tr>
@@ -701,28 +709,37 @@ $fcc_astarr_macs_input_union
 <td style="text-align: right;">10405</td>
 <td style="text-align: left;">chr1:10038-10405</td>
 <td style="text-align: left;">fcc_astarr_macs_input_overlap</td>
+<td style="text-align: left;">genome_tss_pol2</td>
+<td style="text-align: left;">chr1:11873-11874</td>
+<td style="text-align: right;">0.00023</td>
+<td style="text-align: left;">DDX11L1</td>
+<td style="text-align: right;">1469</td>
+<td style="text-align: left;">Proximal</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">chr1</td>
+<td style="text-align: right;">10038</td>
+<td style="text-align: right;">10405</td>
+<td style="text-align: left;">chr1:10038-10405</td>
+<td style="text-align: left;">fcc_astarr_macs_input_overlap</td>
 <td style="text-align: left;">genome_tss_pol2_rnaseq</td>
+<td style="text-align: left;">chr1:29370-29371</td>
+<td style="text-align: right;">0.00023</td>
+<td style="text-align: left;">WASH7P</td>
 <td style="text-align: right;">18966</td>
 <td style="text-align: left;">Distal</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">chr1</td>
 <td style="text-align: right;">14282</td>
 <td style="text-align: right;">14614</td>
 <td style="text-align: left;">chr1:14282-14614</td>
 <td style="text-align: left;">fcc_astarr_macs_input_overlap</td>
-<td style="text-align: left;">genome_tss_pol2_rnaseq</td>
-<td style="text-align: right;">14757</td>
-<td style="text-align: left;">Distal</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">chr1</td>
-<td style="text-align: right;">16025</td>
-<td style="text-align: right;">16338</td>
-<td style="text-align: left;">chr1:16025-16338</td>
-<td style="text-align: left;">fcc_astarr_macs_input_overlap</td>
-<td style="text-align: left;">genome_tss_pol2_rnaseq</td>
-<td style="text-align: right;">13033</td>
+<td style="text-align: left;">genome_tss_pol2</td>
+<td style="text-align: left;">chr1:11873-11874</td>
+<td style="text-align: right;">0.00023</td>
+<td style="text-align: left;">DDX11L1</td>
+<td style="text-align: right;">2409</td>
 <td style="text-align: left;">Distal</td>
 </tr>
 </tbody>
@@ -806,13 +823,13 @@ $fcc_astarr_macs_input_union
 </table>
 </div>
 </div>
-<p><strong>Read region</strong></p>
+<p><strong>import region</strong></p>
 <div id="0c03e9a2-cedd-4061-b68f-56ed864b9cd0" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="do">### set file directory</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>txt_fdiry <span class="ot">=</span> <span class="fu">file.path</span>(FD_RES, <span class="st">"region"</span>, <span class="st">"genome_tss"</span>, <span class="st">"summary"</span>)</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>txt_fname <span class="ot">=</span> <span class="st">"K562.hg38.TSS.selected_by_highest_Pol2_signal.filtered_by_RNAseq_TPM.tsv"</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>txt_fname <span class="ot">=</span> TXT_FNAME_REGION</span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>txt_fpath <span class="ot">=</span> <span class="fu">file.path</span>(txt_fdiry, txt_fname)</span>
 <span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="do">### read table</span></span>
@@ -824,7 +841,7 @@ $fcc_astarr_macs_input_union
 <span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="fu">fun_display_table</span>(<span class="fu">head</span>(dat, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 11892     8</code></pre>
+<pre><code>[1] 29330     8</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
@@ -843,33 +860,33 @@ $fcc_astarr_macs_input_union
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">chr1</td>
-<td style="text-align: right;">29370</td>
-<td style="text-align: right;">29371</td>
-<td style="text-align: left;">chr1:29370-29371</td>
-<td style="text-align: left;">WASH7P</td>
+<td style="text-align: right;">11873</td>
+<td style="text-align: right;">11874</td>
+<td style="text-align: left;">chr1:11873-11874</td>
+<td style="text-align: left;">DDX11L1</td>
 <td style="text-align: right;">0.00023</td>
-<td style="text-align: left;">TSS_Pol2_RNAseq</td>
-<td style="text-align: left;">WASH7P</td>
+<td style="text-align: left;">TSS_Pol2</td>
+<td style="text-align: left;">DDX11L1</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">chr1</td>
-<td style="text-align: right;">827522</td>
-<td style="text-align: right;">827523</td>
-<td style="text-align: left;">chr1:827522-827523</td>
-<td style="text-align: left;">LINC00115</td>
-<td style="text-align: right;">64.46560</td>
-<td style="text-align: left;">TSS_Pol2_RNAseq</td>
-<td style="text-align: left;">LINC00115</td>
+<td style="text-align: right;">17436</td>
+<td style="text-align: right;">17437</td>
+<td style="text-align: left;">chr1:17436-17437</td>
+<td style="text-align: left;">MIR6859-1</td>
+<td style="text-align: right;">9.43812</td>
+<td style="text-align: left;">TSS_Pol2</td>
+<td style="text-align: left;">MIR6859-1</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">chr1</td>
-<td style="text-align: right;">827590</td>
-<td style="text-align: right;">827591</td>
-<td style="text-align: left;">chr1:827590-827591</td>
-<td style="text-align: left;">LINC01128</td>
-<td style="text-align: right;">64.46030</td>
-<td style="text-align: left;">TSS_Pol2_RNAseq</td>
-<td style="text-align: left;">LINC01128</td>
+<td style="text-align: right;">17436</td>
+<td style="text-align: right;">17437</td>
+<td style="text-align: left;">chr1:17436-17437</td>
+<td style="text-align: left;">MIR6859-2</td>
+<td style="text-align: right;">9.43812</td>
+<td style="text-align: left;">TSS_Pol2</td>
+<td style="text-align: left;">MIR6859-2</td>
 </tr>
 </tbody>
 </table>
@@ -878,42 +895,147 @@ $fcc_astarr_macs_input_union
 </section>
 <section id="arrange-table" class="level2">
 <h2 class="anchored" data-anchor-id="arrange-table">Arrange table</h2>
-<div id="9765317c-c70e-4f6c-8ec3-7e87ca14a00d" class="cell" data-execution_count="9">
+<p><strong>Arrange annotation</strong></p>
+<div id="467eb7f9-f41e-41ef-ad03-70dae331c392" class="cell" data-execution_count="31">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">lapply</span>(VEC_TXT_FOLDER, <span class="cf">function</span>(txt_folder){</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="do">### get tables</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    dat_region_annot <span class="ot">=</span> lst_dat_region_annot_import[[txt_folder]]</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    dat_region_dist  <span class="ot">=</span> lst_dat_region_dist_import[[txt_folder]]</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    dat_region_nuc   <span class="ot">=</span> lst_dat_region_nuc_import[[txt_folder]]</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    <span class="do">### arrange TSS annotation</span></span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat_region_annot</span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">TSS =</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(Region, TSS) <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">distinct</span>()</span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>    dat_region_annot_arrange <span class="ot">=</span> dat</span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>    <span class="do">### arrange TSS proximity</span></span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat_region_dist</span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(Region, Distance2TSS, TSS_Proximity) <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">distinct</span>()</span>
-<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>    dat_region_dist_arrange <span class="ot">=</span> dat</span>
-<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>    <span class="do">### join the arranged table with GC content</span></span>
-<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat_region_nuc</span>
-<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span></span>
-<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">left_join</span>(dat_region_dist_arrange,  <span class="at">by =</span> <span class="st">"Region"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">left_join</span>(dat_region_annot_arrange, <span class="at">by =</span> <span class="st">"Region"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>        <span class="fu">replace</span>(<span class="fu">is.na</span>(.), <span class="dv">0</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(dat)</span>
-<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a><span class="do">### assign and show</span></span>
-<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a>lst_dat_region_annot_arrange <span class="ot">=</span> lst</span>
-<span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a>res <span class="ot">=</span> <span class="fu">lapply</span>(lst, dim)</span>
-<span id="cb16-30"><a href="#cb16-30" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res)</span>
-<span id="cb16-31"><a href="#cb16-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-32"><a href="#cb16-32" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> lst[[<span class="dv">1</span>]]</span>
-<span id="cb16-33"><a href="#cb16-33" aria-hidden="true" tabindex="-1"></a><span class="fu">fun_display_table</span>(<span class="fu">head</span>(dat, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_annot_import</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">lapply</span>(lst, <span class="cf">function</span>(dat){</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> </span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">TSS =</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">select</span>(Region, TSS) <span class="sc">%&gt;%</span> </span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">distinct</span>()</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(dat)</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="do">### assign and show</span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>lst_dat_region_annot_arrange <span class="ot">=</span> lst</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>res <span class="ot">=</span> <span class="fu">lapply</span>(lst, dim)</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res)</span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> lst[[<span class="dv">1</span>]]</span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a><span class="fu">fun_display_table</span>(<span class="fu">head</span>(dat, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>$fcc_astarr_macs_input_overlap
+[1] 13732     2
+
+$fcc_astarr_macs_input_union
+[1] 15182     2
+</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Region</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">TSS</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">chr1:17288-17689</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">chr1:28934-29499</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">chr1:778233-779389</td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><strong>Select TSS for proximity</strong></p>
+<div id="0c300c64-f62a-4f3b-a3a4-5919a524aade" class="cell" data-execution_count="30">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_dist_import</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">lapply</span>(lst, <span class="cf">function</span>(dat){</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(Annotation_B <span class="sc">==</span> TXT_TSS_ANNOT)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> </span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">select</span>(Region, Distance2TSS, TSS_Proximity) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">distinct</span>()</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(dat)</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="do">### assign and show</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>lst_dat_region_dist_arrange <span class="ot">=</span> lst</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>res <span class="ot">=</span> <span class="fu">lapply</span>(lst, dim)</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res)</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> lst[[<span class="dv">1</span>]]</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a><span class="fu">fun_display_table</span>(<span class="fu">head</span>(dat, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>$fcc_astarr_macs_input_overlap
+[1] 150042      3
+
+$fcc_astarr_macs_input_union
+[1] 246852      3
+</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Region</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Distance2TSS</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">TSS_Proximity</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">chr1:10038-10405</td>
+<td style="text-align: right;">1469</td>
+<td style="text-align: left;">Proximal</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">chr1:14282-14614</td>
+<td style="text-align: right;">2409</td>
+<td style="text-align: left;">Distal</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">chr1:16025-16338</td>
+<td style="text-align: right;">1099</td>
+<td style="text-align: left;">Proximal</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><strong>Arrange and join the tables</strong></p>
+<div id="9765317c-c70e-4f6c-8ec3-7e87ca14a00d" class="cell" data-execution_count="32">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">lapply</span>(VEC_TXT_FOLDER, <span class="cf">function</span>(txt_folder){</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    <span class="do">### get tables</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    dat_region_annot <span class="ot">=</span> lst_dat_region_annot_arrange[[txt_folder]]</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    dat_region_dist  <span class="ot">=</span> lst_dat_region_dist_arrange[[txt_folder]]</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    dat_region_nuc   <span class="ot">=</span> lst_dat_region_nuc_import[[txt_folder]]</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>    <span class="do">### join the arranged table with GC content</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat_region_nuc</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">left_join</span>(dat_region_dist,  <span class="at">by =</span> <span class="st">"Region"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">left_join</span>(dat_region_annot, <span class="at">by =</span> <span class="st">"Region"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>        <span class="fu">replace</span>(<span class="fu">is.na</span>(.), <span class="dv">0</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(dat)</span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a><span class="do">### assign and show</span></span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>lst_dat_region_annot_arrange <span class="ot">=</span> lst</span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>res <span class="ot">=</span> <span class="fu">lapply</span>(lst, dim)</span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res)</span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> lst[[<span class="dv">1</span>]]</span>
+<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a><span class="fu">fun_display_table</span>(<span class="fu">head</span>(dat, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>$fcc_astarr_macs_input_overlap
@@ -946,8 +1068,8 @@ $fcc_astarr_macs_input_union
 <td style="text-align: left;">chr1:10038-10405</td>
 <td style="text-align: right;">0.523161</td>
 <td style="text-align: right;">367</td>
-<td style="text-align: right;">18966</td>
-<td style="text-align: left;">Distal</td>
+<td style="text-align: right;">1469</td>
+<td style="text-align: left;">Proximal</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
@@ -957,7 +1079,7 @@ $fcc_astarr_macs_input_union
 <td style="text-align: left;">chr1:14282-14614</td>
 <td style="text-align: right;">0.578313</td>
 <td style="text-align: right;">332</td>
-<td style="text-align: right;">14757</td>
+<td style="text-align: right;">2409</td>
 <td style="text-align: left;">Distal</td>
 <td style="text-align: right;">0</td>
 </tr>
@@ -968,8 +1090,8 @@ $fcc_astarr_macs_input_union
 <td style="text-align: left;">chr1:16025-16338</td>
 <td style="text-align: right;">0.587859</td>
 <td style="text-align: right;">313</td>
-<td style="text-align: right;">13033</td>
-<td style="text-align: left;">Distal</td>
+<td style="text-align: right;">1099</td>
+<td style="text-align: left;">Proximal</td>
 <td style="text-align: right;">0</td>
 </tr>
 </tbody>
@@ -977,23 +1099,23 @@ $fcc_astarr_macs_input_union
 </div>
 </div>
 <p><strong>Check</strong></p>
-<div id="ea80d5da-6f6b-44d0-a9b8-e47c2ecc48d7" class="cell" data-execution_count="10">
+<div id="ea80d5da-6f6b-44d0-a9b8-e47c2ecc48d7" class="cell" data-execution_count="33">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_annot_import</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">lapply</span>(lst, <span class="cf">function</span>(dat){<span class="fu">table</span>(dat<span class="sc">$</span>Group)})</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(lst)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_annot_import</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">lapply</span>(lst, <span class="cf">function</span>(dat){<span class="fu">table</span>(dat<span class="sc">$</span>Group)})</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(lst)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>$fcc_astarr_macs_input_overlap
 
-TSS_Pol2_RNAseq 
-          10817 
+TSS_Pol2 
+   16109 
 
 $fcc_astarr_macs_input_union
 
-TSS_Pol2_RNAseq 
-          10968 
+TSS_Pol2 
+   17697 
 </code></pre>
 </div>
 </div>
@@ -1001,17 +1123,17 @@ TSS_Pol2_RNAseq
 <section id="explore-count-table" class="level2">
 <h2 class="anchored" data-anchor-id="explore-count-table">Explore: Count table</h2>
 <p><strong>Total peaks</strong></p>
-<div id="91fe03ed-0bd9-4a97-a596-54a9ef7a7082" class="cell" data-execution_count="11">
+<div id="91fe03ed-0bd9-4a97-a596-54a9ef7a7082" class="cell" data-execution_count="34">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat_region_original</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(Region, Group) <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">distinct</span>()</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>res <span class="ot">=</span> <span class="fu">table</span>(dat<span class="sc">$</span>Group, <span class="at">dnn =</span> <span class="st">"Group"</span>)</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> <span class="fu">as.data.frame</span>(res)</span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>dat_region_peak_count <span class="ot">=</span> dat</span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="fu">fun_display_table</span>(dat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat_region_original</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(Region, Group) <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">distinct</span>()</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>res <span class="ot">=</span> <span class="fu">table</span>(dat<span class="sc">$</span>Group, <span class="at">dnn =</span> <span class="st">"Group"</span>)</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> <span class="fu">as.data.frame</span>(res)</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>dat_region_peak_count <span class="ot">=</span> dat</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="fu">fun_display_table</span>(dat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
@@ -1023,29 +1145,29 @@ TSS_Pol2_RNAseq
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">TSS_Pol2_RNAseq</td>
-<td style="text-align: right;">11823</td>
+<td style="text-align: left;">TSS_Pol2</td>
+<td style="text-align: right;">28563</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 <p><strong>Count ATAC regions annotated</strong></p>
-<div id="f0ba16b0-277a-4e0c-a8aa-1fa2e5c29b49" class="cell" data-execution_count="12">
+<div id="f0ba16b0-277a-4e0c-a8aa-1fa2e5c29b49" class="cell" data-execution_count="35">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_annot_import</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">lapply</span>(lst, <span class="cf">function</span>(dat){</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(Region, Group) <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">distinct</span>()</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    res <span class="ot">=</span> <span class="fu">table</span>(dat<span class="sc">$</span>Group, <span class="at">dnn =</span> <span class="st">"Group"</span>)</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> <span class="fu">as.data.frame</span>(res)</span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(dat)</span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> <span class="fu">bind_rows</span>(lst, <span class="at">.id =</span> <span class="st">"Region"</span>)</span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a><span class="do">### assign and show</span></span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>dat_region_annot_count <span class="ot">=</span> dat</span>
-<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a><span class="fu">fun_display_table</span>(dat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_annot_import</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">lapply</span>(lst, <span class="cf">function</span>(dat){</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(Region, Group) <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">distinct</span>()</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    res <span class="ot">=</span> <span class="fu">table</span>(dat<span class="sc">$</span>Group, <span class="at">dnn =</span> <span class="st">"Group"</span>)</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> <span class="fu">as.data.frame</span>(res)</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(dat)</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> <span class="fu">bind_rows</span>(lst, <span class="at">.id =</span> <span class="st">"Region"</span>)</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a><span class="do">### assign and show</span></span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>dat_region_annot_count <span class="ot">=</span> dat</span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a><span class="fu">fun_display_table</span>(dat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
@@ -1059,183 +1181,183 @@ TSS_Pol2_RNAseq
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">fcc_astarr_macs_input_overlap</td>
-<td style="text-align: left;">TSS_Pol2_RNAseq</td>
-<td style="text-align: right;">9649</td>
+<td style="text-align: left;">TSS_Pol2</td>
+<td style="text-align: right;">13732</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">fcc_astarr_macs_input_union</td>
-<td style="text-align: left;">TSS_Pol2_RNAseq</td>
-<td style="text-align: right;">9788</td>
+<td style="text-align: left;">TSS_Pol2</td>
+<td style="text-align: right;">15182</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 <p><strong>Summarize</strong></p>
-<div id="f30647c8-e941-4f0c-bef3-b72dcf983d70" class="cell" data-execution_count="13">
+<div id="f30647c8-e941-4f0c-bef3-b72dcf983d70" class="cell" data-execution_count="36">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>tmp <span class="ot">=</span> dat_region_peak_count</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>tmp <span class="ot">=</span> tmp <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">Freq =</span> scales<span class="sc">::</span><span class="fu">comma</span>(Freq))</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(tmp) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Group"</span>, <span class="st">"Location (Total)"</span>)</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat_region_annot_count</span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> </span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">Region =</span> <span class="fu">fun_str_map_atac</span>(Region)) <span class="sc">%&gt;%</span></span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">Freq   =</span> scales<span class="sc">::</span><span class="fu">comma</span>(Freq)) <span class="sc">%&gt;%</span></span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>    tidyr<span class="sc">::</span><span class="fu">spread</span>(Region, Freq)</span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> tmp <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">right_join</span>(dat, <span class="at">by =</span> <span class="st">"Group"</span>)</span>
-<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> kableExtra<span class="sc">::</span><span class="fu">kable</span>(<span class="st">"markdown"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>tmp <span class="ot">=</span> dat_region_peak_count</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>tmp <span class="ot">=</span> tmp <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">Freq =</span> scales<span class="sc">::</span><span class="fu">comma</span>(Freq))</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(tmp) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Group"</span>, <span class="st">"Location (Total)"</span>)</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat_region_annot_count</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> </span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">Region =</span> <span class="fu">fun_str_map_atac</span>(Region)) <span class="sc">%&gt;%</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">Freq   =</span> scales<span class="sc">::</span><span class="fu">comma</span>(Freq)) <span class="sc">%&gt;%</span></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>    tidyr<span class="sc">::</span><span class="fu">spread</span>(Region, Freq)</span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> tmp <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">right_join</span>(dat, <span class="at">by =</span> <span class="st">"Group"</span>)</span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> kableExtra<span class="sc">::</span><span class="fu">kable</span>(<span class="st">"markdown"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <pre><code>
 
-|Group           |Location (Total) |ATAC (Overlap) |ATAC (Union) |
-|:---------------|:----------------|:--------------|:------------|
-|TSS_Pol2_RNAseq |11,823           |9,649          |9,788        |</code></pre>
+|Group    |Location (Total) |ATAC (Overlap) |ATAC (Union) |
+|:--------|:----------------|:--------------|:------------|
+|TSS_Pol2 |28,563           |13,732         |15,182       |</code></pre>
 </div>
 </div>
 </section>
 <section id="gc-content-and-region-length-distribution" class="level2">
 <h2 class="anchored" data-anchor-id="gc-content-and-region-length-distribution">GC content and region length distribution</h2>
 <p><strong>Set plot style</strong></p>
-<div id="600df81d-8018-4319-ad44-70c34c551572" class="cell" data-execution_count="14">
+<div id="600df81d-8018-4319-ad44-70c34c551572" class="cell" data-execution_count="37">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="do">### set text size</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>theme_text <span class="ot">=</span> <span class="fu">theme</span>(</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">title      =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>),</span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>),</span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text  =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>),</span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">#legend.title = element_text(size = 16),</span></span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.title =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.text  =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>)</span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a><span class="do">### set color</span></span>
-<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>vec_txt_color  <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"TSS-Overlapped"</span> <span class="ot">=</span> <span class="st">"#fb8072"</span>, <span class="st">"Not-Overlapped"</span> <span class="ot">=</span> <span class="st">"grey50"</span>)</span>
-<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>theme_color <span class="ot">=</span> <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> vec_txt_color)</span>
-<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a><span class="do">### set factor order</span></span>
-<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>vec_txt_direct <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"TSS-Overlapped"</span>, <span class="st">"Not-Overlapped"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="do">### set text size</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>theme_text <span class="ot">=</span> <span class="fu">theme</span>(</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">title      =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>),</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>),</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text  =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>),</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">#legend.title = element_text(size = 16),</span></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.title =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.text  =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>)</span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="do">### set color</span></span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>vec_txt_color  <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"TSS-Overlapped"</span> <span class="ot">=</span> <span class="st">"#fb8072"</span>, <span class="st">"Not-Overlapped"</span> <span class="ot">=</span> <span class="st">"grey50"</span>)</span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a>theme_color <span class="ot">=</span> <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> vec_txt_color)</span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a><span class="do">### set factor order</span></span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>vec_txt_direct <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"TSS-Overlapped"</span>, <span class="st">"Not-Overlapped"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p><strong>Distribution of GC content</strong></p>
-<div id="b52219c4-245b-43e0-992b-8e0d60232fbb" class="cell" data-execution_count="15">
+<div id="b52219c4-245b-43e0-992b-8e0d60232fbb" class="cell" data-execution_count="38">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="do">### get table and set factor</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_annot_arrange</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> lst[[<span class="st">"fcc_astarr_macs_input_overlap"</span>]]</span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> </span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">Label =</span> <span class="fu">ifelse</span>(TSS, <span class="st">"TSS-Overlapped"</span>, <span class="st">"Not-Overlapped"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">Label =</span> <span class="fu">factor</span>(Label, <span class="at">levels=</span><span class="fu">rev</span>(vec_txt_direct)))</span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="do">### generate plot</span></span>
-<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>gpt <span class="ot">=</span> <span class="fu">ggplot</span>(dat, <span class="fu">aes</span>(<span class="at">x=</span>pGC, <span class="at">fill=</span>Label)) <span class="sc">+</span> </span>
-<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span> </span>
-<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_cowplot</span>() <span class="sc">+</span> </span>
-<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">background_grid</span>() <span class="sc">+</span></span>
-<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>    theme_color <span class="sc">+</span></span>
-<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>    theme_text <span class="sc">+</span></span>
-<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"GC Content"</span>, <span class="at">y =</span> <span class="st">"Density"</span>, <span class="at">title =</span> <span class="st">"ATAC overlapped with TSS"</span>)</span>
-<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a><span class="do">### assign and show</span></span>
-<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a>gpt_export_nuc <span class="ot">=</span> gpt</span>
-<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repr.plot.height =</span> <span class="dv">4</span>, <span class="at">repr.plot.width =</span> <span class="dv">7</span>)</span>
-<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(gpt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="do">### get table and set factor</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_annot_arrange</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> lst[[<span class="st">"fcc_astarr_macs_input_overlap"</span>]]</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> </span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">Label =</span> <span class="fu">ifelse</span>(TSS, <span class="st">"TSS-Overlapped"</span>, <span class="st">"Not-Overlapped"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">Label =</span> <span class="fu">factor</span>(Label, <span class="at">levels=</span><span class="fu">rev</span>(vec_txt_direct)))</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a><span class="do">### generate plot</span></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>gpt <span class="ot">=</span> <span class="fu">ggplot</span>(dat, <span class="fu">aes</span>(<span class="at">x=</span>pGC, <span class="at">fill=</span>Label)) <span class="sc">+</span> </span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span> </span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_cowplot</span>() <span class="sc">+</span> </span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">background_grid</span>() <span class="sc">+</span></span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>    theme_color <span class="sc">+</span></span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>    theme_text <span class="sc">+</span></span>
+<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"GC Content"</span>, <span class="at">y =</span> <span class="st">"Density"</span>, <span class="at">title =</span> <span class="st">"ATAC overlapped with TSS"</span>)</span>
+<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a><span class="do">### assign and show</span></span>
+<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a>gpt_export_nuc <span class="ot">=</span> gpt</span>
+<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repr.plot.height =</span> <span class="dv">4</span>, <span class="at">repr.plot.width =</span> <span class="dv">7</span>)</span>
+<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(gpt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="region_astarr_input_22_explore_04_genome_tss_R_files/figure-html/cell-16-output-1.png" width="420" height="240" class="figure-img"></p>
+<p><img src="region_astarr_input_22_explore_04_genome_tss_R_files/figure-html/cell-18-output-1.png" width="420" height="240" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
-<div id="09c7567a-adca-4e1c-936b-2abeac0d773c" class="cell" data-execution_count="16">
+<div id="09c7567a-adca-4e1c-936b-2abeac0d773c" class="cell" data-execution_count="39">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="do">### get table and set factor</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_annot_arrange</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> lst[[<span class="st">"fcc_astarr_macs_input_overlap"</span>]]</span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> </span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">Label =</span> <span class="fu">ifelse</span>(TSS, <span class="st">"TSS-Overlapped"</span>, <span class="st">"Not-Overlapped"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">Label =</span> <span class="fu">factor</span>(Label, <span class="at">levels=</span><span class="fu">rev</span>(vec_txt_direct)))</span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a><span class="do">### generate plot</span></span>
-<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>gpt <span class="ot">=</span> <span class="fu">ggplot</span>(dat, <span class="fu">aes</span>(<span class="at">x=</span>Length<span class="sc">/</span><span class="dv">1000</span>, <span class="at">fill=</span>Label)) <span class="sc">+</span> </span>
-<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span> </span>
-<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_cowplot</span>() <span class="sc">+</span> </span>
-<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">background_grid</span>() <span class="sc">+</span></span>
-<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>    theme_color <span class="sc">+</span></span>
-<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>    theme_text <span class="sc">+</span></span>
-<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Length (kb)"</span>, <span class="at">y =</span> <span class="st">"Density"</span>, <span class="at">title =</span> <span class="st">"ATAC overlapped with TSS"</span>)</span>
-<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a><span class="do">### assign and show</span></span>
-<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a>gpt_export_length <span class="ot">=</span> gpt</span>
-<span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repr.plot.height =</span> <span class="dv">4</span>, <span class="at">repr.plot.width =</span> <span class="dv">7</span>)</span>
-<span id="cb26-20"><a href="#cb26-20" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(gpt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="do">### get table and set factor</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_annot_arrange</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> lst[[<span class="st">"fcc_astarr_macs_input_overlap"</span>]]</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> </span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">Label =</span> <span class="fu">ifelse</span>(TSS, <span class="st">"TSS-Overlapped"</span>, <span class="st">"Not-Overlapped"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">Label =</span> <span class="fu">factor</span>(Label, <span class="at">levels=</span><span class="fu">rev</span>(vec_txt_direct)))</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a><span class="do">### generate plot</span></span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>gpt <span class="ot">=</span> <span class="fu">ggplot</span>(dat, <span class="fu">aes</span>(<span class="at">x=</span>Length<span class="sc">/</span><span class="dv">1000</span>, <span class="at">fill=</span>Label)) <span class="sc">+</span> </span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span> </span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_cowplot</span>() <span class="sc">+</span> </span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">background_grid</span>() <span class="sc">+</span></span>
+<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>    theme_color <span class="sc">+</span></span>
+<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a>    theme_text <span class="sc">+</span></span>
+<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Length (kb)"</span>, <span class="at">y =</span> <span class="st">"Density"</span>, <span class="at">title =</span> <span class="st">"ATAC overlapped with TSS"</span>)</span>
+<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a><span class="do">### assign and show</span></span>
+<span id="cb30-18"><a href="#cb30-18" aria-hidden="true" tabindex="-1"></a>gpt_export_length <span class="ot">=</span> gpt</span>
+<span id="cb30-19"><a href="#cb30-19" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repr.plot.height =</span> <span class="dv">4</span>, <span class="at">repr.plot.width =</span> <span class="dv">7</span>)</span>
+<span id="cb30-20"><a href="#cb30-20" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(gpt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="region_astarr_input_22_explore_04_genome_tss_R_files/figure-html/cell-17-output-1.png" width="420" height="240" class="figure-img"></p>
+<p><img src="region_astarr_input_22_explore_04_genome_tss_R_files/figure-html/cell-19-output-1.png" width="420" height="240" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <p><strong>Save plots</strong></p>
-<div id="445f3065-c7df-4925-acb3-14debb7448a0" class="cell" data-execution_count="17">
+<div id="445f3065-c7df-4925-acb3-14debb7448a0" class="cell" data-execution_count="40">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>plt_export <span class="ot">=</span> gpt_export_nuc</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>txt_export <span class="ot">=</span> <span class="st">"fig.region_annot.astarr_input_overlap.genome_tss.distribution.gc_content"</span></span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>txt_fdiry <span class="ot">=</span> <span class="st">"./"</span></span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>txt_fname <span class="ot">=</span> <span class="fu">paste</span>(txt_export, <span class="st">"png"</span>, <span class="at">sep =</span> <span class="st">"."</span>)</span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>txt_fpath <span class="ot">=</span> <span class="fu">file.path</span>(txt_fdiry, txt_fname)</span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(txt_fpath, plt_export, <span class="at">height =</span> <span class="dv">4</span>, <span class="at">width =</span> <span class="dv">7</span>, <span class="at">units =</span> <span class="st">"in"</span>)</span>
-<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>txt_fdiry <span class="ot">=</span> <span class="st">"./"</span></span>
-<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>txt_fname <span class="ot">=</span> <span class="fu">paste</span>(txt_export, <span class="st">"svg"</span>, <span class="at">sep =</span> <span class="st">"."</span>)</span>
-<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>txt_fpath <span class="ot">=</span> <span class="fu">file.path</span>(txt_fdiry, txt_fname)</span>
-<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(txt_fpath, plt_export, <span class="at">height =</span> <span class="dv">4</span>, <span class="at">width =</span> <span class="dv">7</span>, <span class="at">units =</span> <span class="st">"in"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>plt_export <span class="ot">=</span> gpt_export_nuc</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>txt_export <span class="ot">=</span> <span class="st">"fig.region_annot.astarr_input_overlap.genome_tss.distribution.gc_content"</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>txt_fdiry <span class="ot">=</span> <span class="st">"./"</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>txt_fname <span class="ot">=</span> <span class="fu">paste</span>(txt_export, <span class="st">"png"</span>, <span class="at">sep =</span> <span class="st">"."</span>)</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>txt_fpath <span class="ot">=</span> <span class="fu">file.path</span>(txt_fdiry, txt_fname)</span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(txt_fpath, plt_export, <span class="at">height =</span> <span class="dv">4</span>, <span class="at">width =</span> <span class="dv">7</span>, <span class="at">units =</span> <span class="st">"in"</span>)</span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>txt_fdiry <span class="ot">=</span> <span class="st">"./"</span></span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>txt_fname <span class="ot">=</span> <span class="fu">paste</span>(txt_export, <span class="st">"svg"</span>, <span class="at">sep =</span> <span class="st">"."</span>)</span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>txt_fpath <span class="ot">=</span> <span class="fu">file.path</span>(txt_fdiry, txt_fname)</span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(txt_fpath, plt_export, <span class="at">height =</span> <span class="dv">4</span>, <span class="at">width =</span> <span class="dv">7</span>, <span class="at">units =</span> <span class="st">"in"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div id="42405c07-a4df-4fbc-b1e5-43101354a7d1" class="cell" data-execution_count="18">
+<div id="42405c07-a4df-4fbc-b1e5-43101354a7d1" class="cell" data-execution_count="41">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>plt_export <span class="ot">=</span> gpt_export_length</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>txt_export <span class="ot">=</span> <span class="st">"fig.region_annot.astarr_input_overlap.genome_tss.distribution.length"</span></span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>txt_fdiry <span class="ot">=</span> <span class="st">"./"</span></span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>txt_fname <span class="ot">=</span> <span class="fu">paste</span>(txt_export, <span class="st">"png"</span>, <span class="at">sep =</span> <span class="st">"."</span>)</span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>txt_fpath <span class="ot">=</span> <span class="fu">file.path</span>(txt_fdiry, txt_fname)</span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(txt_fpath, plt_export, <span class="at">height =</span> <span class="dv">4</span>, <span class="at">width =</span> <span class="dv">7</span>, <span class="at">units =</span> <span class="st">"in"</span>)</span>
-<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>txt_fdiry <span class="ot">=</span> <span class="st">"./"</span></span>
-<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>txt_fname <span class="ot">=</span> <span class="fu">paste</span>(txt_export, <span class="st">"svg"</span>, <span class="at">sep =</span> <span class="st">"."</span>)</span>
-<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>txt_fpath <span class="ot">=</span> <span class="fu">file.path</span>(txt_fdiry, txt_fname)</span>
-<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(txt_fpath, plt_export, <span class="at">height =</span> <span class="dv">4</span>, <span class="at">width =</span> <span class="dv">7</span>, <span class="at">units =</span> <span class="st">"in"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>plt_export <span class="ot">=</span> gpt_export_length</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>txt_export <span class="ot">=</span> <span class="st">"fig.region_annot.astarr_input_overlap.genome_tss.distribution.length"</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>txt_fdiry <span class="ot">=</span> <span class="st">"./"</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>txt_fname <span class="ot">=</span> <span class="fu">paste</span>(txt_export, <span class="st">"png"</span>, <span class="at">sep =</span> <span class="st">"."</span>)</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>txt_fpath <span class="ot">=</span> <span class="fu">file.path</span>(txt_fdiry, txt_fname)</span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(txt_fpath, plt_export, <span class="at">height =</span> <span class="dv">4</span>, <span class="at">width =</span> <span class="dv">7</span>, <span class="at">units =</span> <span class="st">"in"</span>)</span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>txt_fdiry <span class="ot">=</span> <span class="st">"./"</span></span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>txt_fname <span class="ot">=</span> <span class="fu">paste</span>(txt_export, <span class="st">"svg"</span>, <span class="at">sep =</span> <span class="st">"."</span>)</span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>txt_fpath <span class="ot">=</span> <span class="fu">file.path</span>(txt_fdiry, txt_fname)</span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(txt_fpath, plt_export, <span class="at">height =</span> <span class="dv">4</span>, <span class="at">width =</span> <span class="dv">7</span>, <span class="at">units =</span> <span class="st">"in"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
 <section id="sanity-check" class="level2">
 <h2 class="anchored" data-anchor-id="sanity-check">Sanity check</h2>
 <p><strong>Check</strong></p>
-<div id="2638c1be-f7d7-4aed-86a8-8c2bcaebec03" class="cell" data-execution_count="19">
+<div id="2638c1be-f7d7-4aed-86a8-8c2bcaebec03" class="cell" data-execution_count="42">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (txt_folder <span class="cf">in</span> VEC_TXT_FOLDER){</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"Region:"</span>, txt_folder, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    dat_region_annot <span class="ot">=</span> lst_dat_region_annot_import[[txt_folder]]</span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    dat_region_dist  <span class="ot">=</span> lst_dat_region_dist_import[[txt_folder]]</span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    dat_region_nuc   <span class="ot">=</span> lst_dat_region_nuc_import[[txt_folder]]</span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"Check:"</span>, <span class="fu">all</span>(dat_region_annot<span class="sc">$</span>Region <span class="sc">%in%</span> dat_region_nuc<span class="sc">$</span>Region), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"Check:"</span>, <span class="fu">all</span>(dat_region_nuc<span class="sc">$</span>Region <span class="sc">==</span> dat_region_dist<span class="sc">$</span>Region),    <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (txt_folder <span class="cf">in</span> VEC_TXT_FOLDER){</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"Region:"</span>, txt_folder, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>    dat_region_annot <span class="ot">=</span> lst_dat_region_annot_arrange[[txt_folder]]</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>    dat_region_dist  <span class="ot">=</span> lst_dat_region_dist_arrange[[txt_folder]]</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>    dat_region_nuc   <span class="ot">=</span> lst_dat_region_nuc_import[[txt_folder]]</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"Check:"</span>, <span class="fu">all</span>(dat_region_annot<span class="sc">$</span>Region <span class="sc">%in%</span> dat_region_nuc<span class="sc">$</span>Region), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"Check:"</span>, <span class="fu">all</span>(dat_region_nuc<span class="sc">$</span>Region <span class="sc">==</span> dat_region_dist<span class="sc">$</span>Region),    <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Region: fcc_astarr_macs_input_overlap 
@@ -1247,34 +1369,34 @@ Check: TRUE </code></pre>
 </div>
 </div>
 <p><strong>Check: TSS proximity and TSS overlap: Overlapped with TSS &lt;-&gt; Distance to TSS == 0</strong></p>
-<div id="698f2d41-8e45-48b2-8eea-cb0ff322bbca" class="cell" data-execution_count="20">
+<div id="698f2d41-8e45-48b2-8eea-cb0ff322bbca" class="cell" data-execution_count="43">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (txt_folder <span class="cf">in</span> VEC_TXT_FOLDER){</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"Region:"</span>, txt_folder, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> lst_dat_region_annot_arrange[[txt_folder]]</span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>    <span class="do">### check missing values</span></span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"Missing?"</span>, <span class="fu">any</span>(<span class="fu">is.na</span>(dat)), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>    <span class="do">### check TSS annotation and distance</span></span>
-<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"If D==0:"</span>, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>    tmp <span class="ot">=</span> dat <span class="sc">%&gt;%</span> </span>
-<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">filter</span>(Distance2TSS <span class="sc">==</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">Note =</span> <span class="fu">ifelse</span>(TSS <span class="sc">==</span> <span class="dv">1</span>, <span class="st">"TSS==1"</span>, <span class="st">"TSS!=1"</span>))</span>
-<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a>    res <span class="ot">=</span> <span class="fu">table</span>(tmp<span class="sc">$</span>Note)</span>
-<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(res)</span>
-<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb31-18"><a href="#cb31-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"If TSS==1:"</span>, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb31-19"><a href="#cb31-19" aria-hidden="true" tabindex="-1"></a>    tmp <span class="ot">=</span> dat <span class="sc">%&gt;%</span> </span>
-<span id="cb31-20"><a href="#cb31-20" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">filter</span>(TSS <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb31-21"><a href="#cb31-21" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">Note =</span> <span class="fu">ifelse</span>(Distance2TSS <span class="sc">==</span> <span class="dv">0</span>, <span class="st">"D==0"</span>, <span class="st">"D&gt;0"</span>))</span>
-<span id="cb31-22"><a href="#cb31-22" aria-hidden="true" tabindex="-1"></a>    res <span class="ot">=</span> <span class="fu">table</span>(tmp<span class="sc">$</span>Note)</span>
-<span id="cb31-23"><a href="#cb31-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(res)</span>
-<span id="cb31-24"><a href="#cb31-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb31-25"><a href="#cb31-25" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (txt_folder <span class="cf">in</span> VEC_TXT_FOLDER){</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"Region:"</span>, txt_folder, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> lst_dat_region_annot_arrange[[txt_folder]]</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>    <span class="do">### check missing values</span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"Missing?"</span>, <span class="fu">any</span>(<span class="fu">is.na</span>(dat)), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>    <span class="do">### check TSS annotation and distance</span></span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"If D==0:"</span>, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>    tmp <span class="ot">=</span> dat <span class="sc">%&gt;%</span> </span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">filter</span>(Distance2TSS <span class="sc">==</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">Note =</span> <span class="fu">ifelse</span>(TSS <span class="sc">==</span> <span class="dv">1</span>, <span class="st">"TSS==1"</span>, <span class="st">"TSS!=1"</span>))</span>
+<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a>    res <span class="ot">=</span> <span class="fu">table</span>(tmp<span class="sc">$</span>Note)</span>
+<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(res)</span>
+<span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb35-17"><a href="#cb35-17" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb35-18"><a href="#cb35-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"If TSS==1:"</span>, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb35-19"><a href="#cb35-19" aria-hidden="true" tabindex="-1"></a>    tmp <span class="ot">=</span> dat <span class="sc">%&gt;%</span> </span>
+<span id="cb35-20"><a href="#cb35-20" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">filter</span>(TSS <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb35-21"><a href="#cb35-21" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">Note =</span> <span class="fu">ifelse</span>(Distance2TSS <span class="sc">==</span> <span class="dv">0</span>, <span class="st">"D==0"</span>, <span class="st">"D&gt;0"</span>))</span>
+<span id="cb35-22"><a href="#cb35-22" aria-hidden="true" tabindex="-1"></a>    res <span class="ot">=</span> <span class="fu">table</span>(tmp<span class="sc">$</span>Note)</span>
+<span id="cb35-23"><a href="#cb35-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(res)</span>
+<span id="cb35-24"><a href="#cb35-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb35-25"><a href="#cb35-25" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Region: fcc_astarr_macs_input_overlap 
@@ -1283,12 +1405,12 @@ Missing? FALSE
 If D==0: 
 
 TSS==1 
-  9649 
+ 13732 
 
 If TSS==1: 
 
-D==0 
-9649 
+ D==0 
+13732 
 
 Region: fcc_astarr_macs_input_union 
 Missing? FALSE 
@@ -1296,12 +1418,12 @@ Missing? FALSE
 If D==0: 
 
 TSS==1 
-  9788 
+ 15182 
 
 If TSS==1: 
 
-D==0 
-9788 
+ D==0 
+15182 
 </code></pre>
 </div>
 </div>

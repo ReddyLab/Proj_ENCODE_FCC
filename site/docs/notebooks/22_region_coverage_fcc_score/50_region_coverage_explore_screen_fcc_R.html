@@ -541,8 +541,8 @@ fcc_astarr_macs_input_union </code></pre>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>/data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/region_coverage_fcc_score/fcc_astarr_macs_input_overlap/summary/region.coverage.score.atac.tsv 
-/data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/region_coverage_fcc_score/fcc_astarr_macs_input_overlap/summary/region.coverage.score.concat.tsv 
 /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/region_coverage_fcc_score/fcc_astarr_macs_input_overlap/summary/region.coverage.score.fcc.final.tsv 
+/data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/region_coverage_fcc_score/fcc_astarr_macs_input_overlap/summary/region.coverage.score.fcc.test.tsv 
 /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/region_coverage_fcc_score/fcc_astarr_macs_input_overlap/summary/region.coverage.score.fcc.total.tsv </code></pre>
 </div>
 </div>
@@ -690,15 +690,15 @@ $fcc_astarr_macs_input_union
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>$fcc_astarr_macs_input_overlap
-[1] 150041     10
+[1] 150041     12
 
 $fcc_astarr_macs_input_union
-[1] 246852     10
+[1] 246852     12
 </code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>A tibble: 3 × 10</caption>
+<caption>A tibble: 3 × 12</caption>
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th" scope="col">Chrom</th>
@@ -708,6 +708,8 @@ $fcc_astarr_macs_input_union
 <th data-quarto-table-cell-role="th" scope="col">Score</th>
 <th data-quarto-table-cell-role="th" scope="col">Score_Label</th>
 <th data-quarto-table-cell-role="th" scope="col">Score_Quantile</th>
+<th data-quarto-table-cell-role="th" scope="col">Zcore</th>
+<th data-quarto-table-cell-role="th" scope="col">Zcore_Label</th>
 <th data-quarto-table-cell-role="th" scope="col">Assay_Folder</th>
 <th data-quarto-table-cell-role="th" scope="col">Assay_Group</th>
 <th data-quarto-table-cell-role="th" scope="col">Assay_Label</th>
@@ -719,6 +721,8 @@ $fcc_astarr_macs_input_union
 <th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
 <th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
 <th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
+<th data-quarto-table-cell-role="th" scope="col">&lt;dbl&gt;</th>
 <th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
 <th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
 <th data-quarto-table-cell-role="th" scope="col">&lt;chr&gt;</th>
@@ -734,6 +738,8 @@ $fcc_astarr_macs_input_union
 <td>3.940038</td>
 <td>ASTARR Input TPM</td>
 <td>Q3</td>
+<td>-0.2608700</td>
+<td>scale(log2(TPM + 1)</td>
 <td>STARR_ATAC_K562_Reddy_KS91</td>
 <td>ASTARR_KS91</td>
 <td>ATAC</td>
@@ -746,6 +752,8 @@ $fcc_astarr_macs_input_union
 <td>2.841707</td>
 <td>ASTARR Input TPM</td>
 <td>Q2</td>
+<td>-0.6570534</td>
+<td>scale(log2(TPM + 1)</td>
 <td>STARR_ATAC_K562_Reddy_KS91</td>
 <td>ASTARR_KS91</td>
 <td>ATAC</td>
@@ -758,6 +766,8 @@ $fcc_astarr_macs_input_union
 <td>3.830812</td>
 <td>ASTARR Input TPM</td>
 <td>Q3</td>
+<td>-0.2960970</td>
+<td>scale(log2(TPM + 1)</td>
 <td>STARR_ATAC_K562_Reddy_KS91</td>
 <td>ASTARR_KS91</td>
 <td>ATAC</td>
@@ -860,7 +870,7 @@ $fcc_astarr_macs_input_union
 </section>
 <section id="calculate-total-and-ratio-of-counts" class="level2">
 <h2 class="anchored" data-anchor-id="calculate-total-and-ratio-of-counts">Calculate total and ratio of counts</h2>
-<div id="ae847aa0-85f3-4364-94e4-f9a214e63e60" class="cell" data-execution_count="8">
+<div id="ae847aa0-85f3-4364-94e4-f9a214e63e60" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_score_merge</span>
@@ -1008,7 +1018,7 @@ $fcc_astarr_macs_input_union
 </section>
 <section id="explore-count-regions-screened-by-each-assay" class="level2">
 <h2 class="anchored" data-anchor-id="explore-count-regions-screened-by-each-assay">Explore: Count regions screened by each assay</h2>
-<div id="27128d05-2c2c-480b-9be0-efc60be16a73" class="cell" data-execution_count="13">
+<div id="27128d05-2c2c-480b-9be0-efc60be16a73" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat_region_score_ratio</span>
@@ -1060,7 +1070,7 @@ $fcc_astarr_macs_input_union
 </table>
 </div>
 </div>
-<div id="8ef08695-217d-45f8-af37-2c8a6c2c4357" class="cell" data-execution_count="14">
+<div id="8ef08695-217d-45f8-af37-2c8a6c2c4357" class="cell" data-execution_count="9">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat_region_score_ratio</span>
@@ -1090,7 +1100,7 @@ $fcc_astarr_macs_input_union
 <section id="explore-ratio-of-regions-screened-by-each-assay" class="level2">
 <h2 class="anchored" data-anchor-id="explore-ratio-of-regions-screened-by-each-assay">Explore: Ratio of regions screened by each assay</h2>
 <p><strong>Helper function for showing percentage</strong></p>
-<div id="ac033377-9873-4c02-9e3e-ddc694026fef" class="cell" data-execution_count="18">
+<div id="ac033377-9873-4c02-9e3e-ddc694026fef" class="cell" data-execution_count="10">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>fun_inner <span class="ot">=</span> <span class="cf">function</span>(num){</span>
@@ -1113,7 +1123,7 @@ $fcc_astarr_macs_input_union
 </details>
 </div>
 <p><strong>Calculate ratio and percentage</strong></p>
-<div id="b5011d15-d255-4a41-bbb3-8c183ac14ef5" class="cell" data-execution_count="19">
+<div id="b5011d15-d255-4a41-bbb3-8c183ac14ef5" class="cell" data-execution_count="11">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="do">### init</span></span>
@@ -1160,7 +1170,7 @@ $fcc_astarr_macs_input_union
 </section>
 <section id="explore-summarize" class="level2">
 <h2 class="anchored" data-anchor-id="explore-summarize">Explore: Summarize</h2>
-<div id="3251e345-2136-4323-9791-3ed9d4c264d2" class="cell" data-execution_count="23">
+<div id="3251e345-2136-4323-9791-3ed9d4c264d2" class="cell" data-execution_count="12">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="do">### init</span></span>
