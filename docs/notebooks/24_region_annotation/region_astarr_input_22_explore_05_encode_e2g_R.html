@@ -338,44 +338,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/011_region_ocr_astarr_KS91.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (ASTARR KS91)</span></a>
+  <a href="../../11_region_coverage_fcc/01_region_coverage_fcc_screen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FCC coverage at ATAC/DHS regions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/012_region_ocr_astarr_KS274.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (ASTARR KS274)</span></a>
+  <a href="../../11_region_coverage_fcc/02_region_coverage_fcc_scatter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Whole genome comparison of FCC assays</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/02_region_ocr_wstarr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (WSTARR)</span></a>
+  <a href="../../11_region_coverage_fcc/03_region_coverage_fcc_correlation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Rank normalized FCC effect size</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/03_region_ocr_tmpra.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (TMPRA)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/04_region_ocr_lmpra.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (LMPRA)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/05_region_ocr_crispri_hcrff.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (CRISPRi-HCRFF)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/06_region_ocr_crispri_growth.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (CRISPRi-Growth)</span></a>
+  <a href="../../11_region_coverage_fcc/04_region_coverage_fcc_comparison.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Comparisons of FCC across genome annotations</span></a>
   </div>
 </li>
       </ul>
@@ -568,7 +550,7 @@ fcc_astarr_macs_input_union </code></pre>
 <section id="import-data" class="level2">
 <h2 class="anchored" data-anchor-id="import-data">Import data</h2>
 <p><strong>Read region annotation</strong></p>
-<div id="57cb3cb2-ab42-48ff-961f-de4db53751c0" class="cell" data-execution_count="6">
+<div id="57cb3cb2-ab42-48ff-961f-de4db53751c0" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="do">### loop to import data</span></span>
@@ -595,10 +577,10 @@ fcc_astarr_macs_input_union </code></pre>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>$fcc_astarr_macs_input_overlap
-[1] 8770   11
+[1] 8770   12
 
 $fcc_astarr_macs_input_union
-[1] 9229   11
+[1] 9229   12
 </code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -613,6 +595,7 @@ $fcc_astarr_macs_input_union
 <th style="text-align: left;" data-quarto-table-cell-role="th">Label</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Target</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Zcore</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">NLog10P</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Regulated</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Source</th>
@@ -628,6 +611,7 @@ $fcc_astarr_macs_input_union
 <td style="text-align: left;">Regulated:TRUE</td>
 <td style="text-align: left;">CEP104</td>
 <td style="text-align: right;">-0.2934319</td>
+<td style="text-align: right;">-4.705144</td>
 <td style="text-align: right;">2.395344</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: left;">Ulirsch2016</td>
@@ -641,6 +625,7 @@ $fcc_astarr_macs_input_union
 <td style="text-align: left;">Regulated:TRUE</td>
 <td style="text-align: left;">LRRC47</td>
 <td style="text-align: right;">-0.3311781</td>
+<td style="text-align: right;">-5.331209</td>
 <td style="text-align: right;">2.109514</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: left;">Ulirsch2016</td>
@@ -654,6 +639,7 @@ $fcc_astarr_macs_input_union
 <td style="text-align: left;">Regulated:TRUE</td>
 <td style="text-align: left;">SMIM1</td>
 <td style="text-align: right;">-0.4720192</td>
+<td style="text-align: right;">-7.667223</td>
 <td style="text-align: right;">3.192703</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: left;">Ulirsch2016</td>
@@ -663,7 +649,7 @@ $fcc_astarr_macs_input_union
 </div>
 </div>
 <p><strong>Read region</strong></p>
-<div id="acc9af87-9ea2-4b4f-80a3-f954e8ec6bef" class="cell" data-execution_count="7">
+<div id="acc9af87-9ea2-4b4f-80a3-f954e8ec6bef" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="do">### set file directory</span></span>
@@ -680,7 +666,7 @@ $fcc_astarr_macs_input_union
 <span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="fu">fun_display_table</span>(<span class="fu">head</span>(dat, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 10375    12</code></pre>
+<pre><code>[1] 10375    13</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
@@ -691,6 +677,7 @@ $fcc_astarr_macs_input_union
 <th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Zcore</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Region</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Target</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">NLog10P</th>
@@ -707,6 +694,7 @@ $fcc_astarr_macs_input_union
 <td style="text-align: right;">3775214</td>
 <td style="text-align: left;">CEP104|chr1:3691278-3691778:*</td>
 <td style="text-align: right;">-0.2934319</td>
+<td style="text-align: right;">-4.705144</td>
 <td style="text-align: left;">chr1:3774714-3775214</td>
 <td style="text-align: left;">CEP104</td>
 <td style="text-align: right;">2.395344</td>
@@ -721,6 +709,7 @@ $fcc_astarr_macs_input_union
 <td style="text-align: right;">3775214</td>
 <td style="text-align: left;">LRRC47|chr1:3691278-3691778:*</td>
 <td style="text-align: right;">-0.3311781</td>
+<td style="text-align: right;">-5.331209</td>
 <td style="text-align: left;">chr1:3774714-3775214</td>
 <td style="text-align: left;">LRRC47</td>
 <td style="text-align: right;">2.109514</td>
@@ -735,6 +724,7 @@ $fcc_astarr_macs_input_union
 <td style="text-align: right;">3775214</td>
 <td style="text-align: left;">SMIM1|chr1:3691278-3691778:*</td>
 <td style="text-align: right;">-0.4720192</td>
+<td style="text-align: right;">-7.667223</td>
 <td style="text-align: left;">chr1:3774714-3775214</td>
 <td style="text-align: left;">SMIM1</td>
 <td style="text-align: right;">3.192703</td>
@@ -751,7 +741,7 @@ $fcc_astarr_macs_input_union
 <section id="explore-count-table" class="level2">
 <h2 class="anchored" data-anchor-id="explore-count-table">Explore: Count table</h2>
 <p><strong>Total links and peaks</strong></p>
-<div id="14e0e1ac-5043-4b1f-a902-fc344d1f83b5" class="cell" data-execution_count="13">
+<div id="14e0e1ac-5043-4b1f-a902-fc344d1f83b5" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat_region_original</span>
@@ -775,7 +765,7 @@ $fcc_astarr_macs_input_union
 </div>
 </div>
 <p><strong>Regulated links and peaks</strong></p>
-<div id="8f7f4ce4-5fce-4861-aed0-5eb561c5424c" class="cell" data-execution_count="24">
+<div id="8f7f4ce4-5fce-4861-aed0-5eb561c5424c" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat_region_original</span>
@@ -805,7 +795,7 @@ $fcc_astarr_macs_input_union
 </table>
 </div>
 </div>
-<div id="6f90134f-c882-4611-8566-1f4299b7a7b6" class="cell" data-execution_count="25">
+<div id="6f90134f-c882-4611-8566-1f4299b7a7b6" class="cell" data-execution_count="9">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> dat_region_original</span>
@@ -836,7 +826,7 @@ $fcc_astarr_macs_input_union
 </div>
 </div>
 <p><strong>Region contains regulated links</strong></p>
-<div id="f696e10f-b6b4-4dde-ba3f-2f37aa9748be" class="cell" data-execution_count="26">
+<div id="f696e10f-b6b4-4dde-ba3f-2f37aa9748be" class="cell" data-execution_count="10">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_annot_import</span>
@@ -879,7 +869,7 @@ $fcc_astarr_macs_input_union
 </table>
 </div>
 </div>
-<div id="a1a12376-9d1d-438b-8fd9-65392a480d16" class="cell" data-execution_count="27">
+<div id="a1a12376-9d1d-438b-8fd9-65392a480d16" class="cell" data-execution_count="11">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_annot_import</span>
@@ -923,7 +913,7 @@ $fcc_astarr_macs_input_union
 </div>
 </div>
 <p><strong>Sumarize link count</strong></p>
-<div id="f40c12d3-1836-4e03-99b2-f5b261b5359a" class="cell" data-execution_count="28">
+<div id="f40c12d3-1836-4e03-99b2-f5b261b5359a" class="cell" data-execution_count="12">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>tmp <span class="ot">=</span> dat_region_link_count</span>
@@ -948,7 +938,7 @@ $fcc_astarr_macs_input_union
 </div>
 </div>
 <p><strong>Summarize peak count</strong></p>
-<div id="4a31dd26-e485-49e2-8a34-a459da8492db" class="cell" data-execution_count="29">
+<div id="4a31dd26-e485-49e2-8a34-a459da8492db" class="cell" data-execution_count="13">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>tmp <span class="ot">=</span> dat_region_peak_count</span>

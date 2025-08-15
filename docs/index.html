@@ -301,44 +301,26 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./11_region_coverage_fcc/011_region_ocr_astarr_KS91.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (ASTARR KS91)</span></a>
+  <a href="./11_region_coverage_fcc/01_region_coverage_fcc_screen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FCC coverage at ATAC/DHS regions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./11_region_coverage_fcc/012_region_ocr_astarr_KS274.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (ASTARR KS274)</span></a>
+  <a href="./11_region_coverage_fcc/02_region_coverage_fcc_scatter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Whole genome comparison of FCC assays</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./11_region_coverage_fcc/02_region_ocr_wstarr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (WSTARR)</span></a>
+  <a href="./11_region_coverage_fcc/03_region_coverage_fcc_correlation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Rank normalized FCC effect size</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./11_region_coverage_fcc/03_region_ocr_tmpra.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (TMPRA)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./11_region_coverage_fcc/04_region_ocr_lmpra.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (LMPRA)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./11_region_coverage_fcc/05_region_ocr_crispri_hcrff.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (CRISPRi-HCRFF)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./11_region_coverage_fcc/06_region_ocr_crispri_growth.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (CRISPRi-Growth)</span></a>
+  <a href="./11_region_coverage_fcc/04_region_coverage_fcc_comparison.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Comparisons of FCC across genome annotations</span></a>
   </div>
 </li>
       </ul>
@@ -493,7 +475,13 @@ ul.task-list li input[type="checkbox"] {
 <p>One of the main goal in this project is to better characterize cis-regulatory elements (CREs) by leveraging a wide range of FCC functional screens performed under a consistent biological condition (K562 steady state)</p>
 <p>To identify what factors could possibly make a region become functional, we compared significant regions to inactive regions by integrating multiple assays together. We first grouped CREs using the traditional proximal and distal categories. We then compared each group to inactive regions by designing an enrichment analysis based on propensity score-based covariate matching and permutation testing. These results allowed us to describe what factors were enriched in the regulatory regions.</p>
 <p>Recognizing that traditional CRE categories may not fully capture the complexity of regulatory mechanisms, we further applied unsupervised dimensionality reduction and clustering to ChIP-seq profiles, revealing distinct CRE subtypes with characteristic transcription factor and histone mark signatures. These results highlighted the biological heterogeneity of CREs and the need for more sophisticate classification/annotation of regulatory elements.</p>
-<iframe src="https://kueiko.shinyapps.io/fcc_umap_cluster/" width="100%" height="700" style="border:1px solid #ccc"></iframe>
+<p>```<code>{=html}</code></p>
+<pre><code>&lt;iframe
+  src="https://kueiko.shinyapps.io/fcc_umap_cluster/"
+  width="100%"
+  height="700"
+  style="border:1px solid #ccc"
+&gt;&lt;/iframe&gt;</code></pre>
 <p><a href="./analysis.html">Read the details of the analyses</a></p>
 </section>
 <section id="acknowledgement" class="level1">

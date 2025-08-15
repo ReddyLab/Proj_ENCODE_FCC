@@ -335,44 +335,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/011_region_ocr_astarr_KS91.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (ASTARR KS91)</span></a>
+  <a href="../../11_region_coverage_fcc/01_region_coverage_fcc_screen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FCC coverage at ATAC/DHS regions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/012_region_ocr_astarr_KS274.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (ASTARR KS274)</span></a>
+  <a href="../../11_region_coverage_fcc/02_region_coverage_fcc_scatter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Whole genome comparison of FCC assays</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/02_region_ocr_wstarr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (WSTARR)</span></a>
+  <a href="../../11_region_coverage_fcc/03_region_coverage_fcc_correlation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Rank normalized FCC effect size</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/03_region_ocr_tmpra.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (TMPRA)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/04_region_ocr_lmpra.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (LMPRA)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/05_region_ocr_crispri_hcrff.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (CRISPRi-HCRFF)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/06_region_ocr_crispri_growth.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (CRISPRi-Growth)</span></a>
+  <a href="../../11_region_coverage_fcc/04_region_coverage_fcc_comparison.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Comparisons of FCC across genome annotations</span></a>
   </div>
 </li>
       </ul>
@@ -553,11 +535,13 @@ fcc_screened
 fcc_starrmpra_junke
 fcc_table
 fcc_table_cluster
+genome_cres
 genome_tss
 hic_insitu_K562_ENCSR545YBD
 hic_intact_K562_deep
 hic_intact_K562_ENCSR479XDG
 module_tf_shannon
+region_for_analysis
 summary
 tmp</code></pre>
 </div>
@@ -574,7 +558,8 @@ metadata.label.chipseq_subset.tsv
 metadata.label.chipseq_tf_full.tsv
 metadata.label.hic.tsv
 metadata.label.main.tsv
-metadata.label.ocr.tsv</code></pre>
+metadata.label.ocr.tsv
+metadata.label.region_for_analysis.tsv</code></pre>
 </div>
 </div>
 <p><strong>View: Metatable label A</strong></p>
@@ -633,6 +618,7 @@ fcc_starrmpra_junke K562.hg38.eSTARR.junke.bed.gz   fcc_starrmpra_junke_estarr  
 fcc_starrmpra_junke K562.hg38.LMPRA.junke.bed.gz    fcc_starrmpra_junke_lmpra   /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/region/fcc_starrmpra_junke/K562.hg38.LMPRA.junke.bed.gz
 fcc_starrmpra_junke K562.hg38.TMPRA.junke.bed.gz    fcc_starrmpra_junke_tmpra   /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/region/fcc_starrmpra_junke/K562.hg38.TMPRA.junke.bed.gz
 fcc_starrmpra_junke K562.hg38.WSTARR.junke.bed.gz   fcc_starrmpra_junke_wstarr  /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/region/fcc_starrmpra_junke/K562.hg38.WSTARR.junke.bed.gz
+genome_cres K562.hg38.label_cres.bed.gz genome_cres /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/region/genome_cres/K562.hg38.label_cres.bed.gz
 genome_tss  K562.hg38.TSS.selected_by_highest_Pol2_signal.bed.gz    genome_tss_pol2 /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/region/genome_tss/K562.hg38.TSS.selected_by_highest_Pol2_signal.bed.gz
 genome_tss  K562.hg38.TSS.selected_by_highest_Pol2_signal.filtered_by_RNAseq_TPM.bed.gz genome_tss_pol2_rnaseq  /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/region/genome_tss/K562.hg38.TSS.selected_by_highest_Pol2_signal.filtered_by_RNAseq_TPM.bed.gz
 module_tf_shannon   K562.hg38.TF_Module.bed.gz  module_tf_shannon   /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/region/module_tf_shannon/K562.hg38.TF_Module.bed.gz</code></pre>
@@ -666,6 +652,7 @@ fcc_starrmpra_junke fcc_starrmpra_junke_estarr
 fcc_starrmpra_junke fcc_starrmpra_junke_lmpra
 fcc_starrmpra_junke fcc_starrmpra_junke_tmpra
 fcc_starrmpra_junke fcc_starrmpra_junke_wstarr
+genome_cres genome_cres
 genome_tss  genome_tss_pol2
 genome_tss  genome_tss_pol2_rnaseq
 module_tf_shannon   module_tf_shannon</code></pre>
@@ -842,7 +829,7 @@ Output:
 Log:
 - FPath: ${FD_LOG}/region.intersect.fcc_astarr_macs_input_overlap.encode_ccres_silencer_rest.txt
 
-Submitted batch job 279373
+Submitted batch job 305978
 
 ==============================
 Input:
@@ -854,7 +841,7 @@ Output:
 Log:
 - FPath: ${FD_LOG}/region.intersect.fcc_astarr_macs_input_overlap.encode_ccres_silencer_starr.txt
 
-Submitted batch job 279374
+Submitted batch job 305979
 
 ==============================
 Input:
@@ -866,7 +853,7 @@ Output:
 Log:
 - FPath: ${FD_LOG}/region.intersect.fcc_astarr_macs_input_overlap.encode_chromhmm_ENCFF106BGJ.txt
 
-Submitted batch job 279375
+Submitted batch job 305980
 
 ==============================
 Input:
@@ -878,7 +865,7 @@ Output:
 Log:
 - FPath: ${FD_LOG}/region.intersect.fcc_astarr_macs_input_overlap.encode_ccres_ENCFF286VQG.txt
 
-Submitted batch job 279376
+Submitted batch job 305981
 
 ==============================
 Input:
@@ -890,7 +877,7 @@ Output:
 Log:
 - FPath: ${FD_LOG}/region.intersect.fcc_astarr_macs_input_overlap.encode_e2g_benchmark.txt
 
-Submitted batch job 279377
+Submitted batch job 305982
 
 ==============================
 Input:
@@ -902,7 +889,7 @@ Output:
 Log:
 - FPath: ${FD_LOG}/region.intersect.fcc_astarr_macs_input_overlap.fcc_astarr_csaw_KS91.txt
 
-Submitted batch job 279378
+Submitted batch job 305983
 
 ==============================
 Input:
@@ -914,7 +901,7 @@ Output:
 Log:
 - FPath: ${FD_LOG}/region.intersect.fcc_astarr_macs_input_overlap.fcc_astarr_csaw_KSMerge.txt
 
-Submitted batch job 279379
+Submitted batch job 305984
 
 ==============================
 Input:
@@ -926,7 +913,7 @@ Output:
 Log:
 - FPath: ${FD_LOG}/region.intersect.fcc_astarr_macs_input_overlap.fcc_astarr_macs_input_rep1.txt
 
-Submitted batch job 279380
+Submitted batch job 305985
 
 ==============================
 Input:
@@ -938,7 +925,7 @@ Output:
 Log:
 - FPath: ${FD_LOG}/region.intersect.fcc_astarr_macs_input_overlap.fcc_astarr_macs_input_rep2.txt
 
-Submitted batch job 279381
+Submitted batch job 305986
 
 ==============================
 Input:
@@ -950,7 +937,7 @@ Output:
 Log:
 - FPath: ${FD_LOG}/region.intersect.fcc_astarr_macs_input_overlap.fcc_astarr_macs_input_rep3.txt
 
-Submitted batch job 279382
+Submitted batch job 305987
 
 ==============================
 Input:
@@ -962,7 +949,7 @@ Output:
 Log:
 - FPath: ${FD_LOG}/region.intersect.fcc_astarr_macs_input_overlap.fcc_astarr_macs_input_rep4.txt
 
-Submitted batch job 279383
+Submitted batch job 305988
 
 ==============================
 Input:
@@ -974,7 +961,7 @@ Output:
 Log:
 - FPath: ${FD_LOG}/region.intersect.fcc_astarr_macs_input_overlap.fcc_astarr_macs_input_rep5.txt
 
-Submitted batch job 279384
+Submitted batch job 305989
 
 ==============================
 Input:
@@ -986,7 +973,7 @@ Output:
 Log:
 - FPath: ${FD_LOG}/region.intersect.fcc_astarr_macs_input_overlap.fcc_astarr_macs_input_rep6.txt
 
-Submitted batch job 279385
+Submitted batch job 305990
 
 ==============================
 Input:
@@ -998,7 +985,7 @@ Output:
 Log:
 - FPath: ${FD_LOG}/region.intersect.fcc_astarr_macs_input_overlap.fcc_crispri_growth_signif.txt
 
-Submitted batch job 279386
+Submitted batch job 305991
 
 ==============================
 Input:
@@ -1010,7 +997,7 @@ Output:
 Log:
 - FPath: ${FD_LOG}/region.intersect.fcc_astarr_macs_input_overlap.fcc_crispri_growth_total.txt
 
-Submitted batch job 279387
+Submitted batch job 305992
 
 ==============================
 Input:
@@ -1022,7 +1009,7 @@ Output:
 Log:
 - FPath: ${FD_LOG}/region.intersect.fcc_astarr_macs_input_overlap.fcc_crispri_hcrff_casa.txt
 
-Submitted batch job 279388
+Submitted batch job 305993
 
 ==============================
 Input:
@@ -1034,7 +1021,7 @@ Output:
 Log:
 - FPath: ${FD_LOG}/region.intersect.fcc_astarr_macs_input_overlap.fcc_starrmpra_junke_astarr.txt
 
-Submitted batch job 279389
+Submitted batch job 305994
 
 ==============================
 Input:
@@ -1046,7 +1033,7 @@ Output:
 Log:
 - FPath: ${FD_LOG}/region.intersect.fcc_astarr_macs_input_overlap.fcc_starrmpra_junke_estarr.txt
 
-Submitted batch job 279390
+Submitted batch job 305995
 
 ==============================
 Input:
@@ -1058,7 +1045,7 @@ Output:
 Log:
 - FPath: ${FD_LOG}/region.intersect.fcc_astarr_macs_input_overlap.fcc_starrmpra_junke_lmpra.txt
 
-Submitted batch job 279391
+Submitted batch job 305996
 
 ==============================
 Input:
@@ -1070,7 +1057,7 @@ Output:
 Log:
 - FPath: ${FD_LOG}/region.intersect.fcc_astarr_macs_input_overlap.fcc_starrmpra_junke_tmpra.txt
 
-Submitted batch job 279392
+Submitted batch job 305997
 
 ==============================
 Input:
@@ -1082,7 +1069,19 @@ Output:
 Log:
 - FPath: ${FD_LOG}/region.intersect.fcc_astarr_macs_input_overlap.fcc_starrmpra_junke_wstarr.txt
 
-Submitted batch job 279393
+Submitted batch job 305998
+
+==============================
+Input:
+- Label A: fcc_astarr_macs_input_overlap
+- Label B: genome_cres
+Output:
+- FDiry: ${FD_RES}/region_annotation/fcc_astarr_macs_input_overlap/genome_cres
+- FName: fcc_astarr_macs_input_overlap.genome_cres.bed.gz
+Log:
+- FPath: ${FD_LOG}/region.intersect.fcc_astarr_macs_input_overlap.genome_cres.txt
+
+Submitted batch job 305999
 
 ==============================
 Input:
@@ -1094,7 +1093,7 @@ Output:
 Log:
 - FPath: ${FD_LOG}/region.intersect.fcc_astarr_macs_input_overlap.genome_tss_pol2.txt
 
-Submitted batch job 279394
+Submitted batch job 306000
 
 ==============================
 Input:
@@ -1106,7 +1105,7 @@ Output:
 Log:
 - FPath: ${FD_LOG}/region.intersect.fcc_astarr_macs_input_overlap.genome_tss_pol2_rnaseq.txt
 
-Submitted batch job 279395
+Submitted batch job 306001
 
 ==============================
 Input:
@@ -1118,7 +1117,7 @@ Output:
 Log:
 - FPath: ${FD_LOG}/region.intersect.fcc_astarr_macs_input_overlap.module_tf_shannon.txt
 
-Submitted batch job 279396
+Submitted batch job 306002
 
 ==============================
 Input:
@@ -1130,7 +1129,7 @@ Output:
 Log:
 - FPath: ${FD_LOG}/region.intersect.fcc_astarr_macs_input_union.encode_ccres_silencer_rest.txt
 
-Submitted batch job 279397
+Submitted batch job 306003
 
 ==============================
 Input:
@@ -1142,7 +1141,7 @@ Output:
 Log:
 - FPath: ${FD_LOG}/region.intersect.fcc_astarr_macs_input_union.encode_ccres_silencer_starr.txt
 
-Submitted batch job 279398
+Submitted batch job 306004
 
 ==============================
 Input:
@@ -1154,7 +1153,7 @@ Output:
 Log:
 - FPath: ${FD_LOG}/region.intersect.fcc_astarr_macs_input_union.encode_chromhmm_ENCFF106BGJ.txt
 
-Submitted batch job 279399
+Submitted batch job 306005
 
 ==============================
 Input:
@@ -1166,7 +1165,7 @@ Output:
 Log:
 - FPath: ${FD_LOG}/region.intersect.fcc_astarr_macs_input_union.encode_ccres_ENCFF286VQG.txt
 
-Submitted batch job 279400
+Submitted batch job 306006
 
 ==============================
 Input:
@@ -1178,7 +1177,7 @@ Output:
 Log:
 - FPath: ${FD_LOG}/region.intersect.fcc_astarr_macs_input_union.encode_e2g_benchmark.txt
 
-Submitted batch job 279401
+Submitted batch job 306007
 
 ==============================
 Input:
@@ -1190,7 +1189,7 @@ Output:
 Log:
 - FPath: ${FD_LOG}/region.intersect.fcc_astarr_macs_input_union.fcc_astarr_csaw_KS91.txt
 
-Submitted batch job 279402
+Submitted batch job 306008
 
 ==============================
 Input:
@@ -1202,7 +1201,7 @@ Output:
 Log:
 - FPath: ${FD_LOG}/region.intersect.fcc_astarr_macs_input_union.fcc_astarr_csaw_KSMerge.txt
 
-Submitted batch job 279403
+Submitted batch job 306009
 
 ==============================
 Input:
@@ -1214,7 +1213,7 @@ Output:
 Log:
 - FPath: ${FD_LOG}/region.intersect.fcc_astarr_macs_input_union.fcc_astarr_macs_input_rep1.txt
 
-Submitted batch job 279404
+Submitted batch job 306010
 
 ==============================
 Input:
@@ -1226,7 +1225,7 @@ Output:
 Log:
 - FPath: ${FD_LOG}/region.intersect.fcc_astarr_macs_input_union.fcc_astarr_macs_input_rep2.txt
 
-Submitted batch job 279405
+Submitted batch job 306011
 
 ==============================
 Input:
@@ -1238,7 +1237,7 @@ Output:
 Log:
 - FPath: ${FD_LOG}/region.intersect.fcc_astarr_macs_input_union.fcc_astarr_macs_input_rep3.txt
 
-Submitted batch job 279406
+Submitted batch job 306012
 
 ==============================
 Input:
@@ -1250,7 +1249,7 @@ Output:
 Log:
 - FPath: ${FD_LOG}/region.intersect.fcc_astarr_macs_input_union.fcc_astarr_macs_input_rep4.txt
 
-Submitted batch job 279407
+Submitted batch job 306013
 
 ==============================
 Input:
@@ -1262,7 +1261,7 @@ Output:
 Log:
 - FPath: ${FD_LOG}/region.intersect.fcc_astarr_macs_input_union.fcc_astarr_macs_input_rep5.txt
 
-Submitted batch job 279408
+Submitted batch job 306014
 
 ==============================
 Input:
@@ -1274,7 +1273,7 @@ Output:
 Log:
 - FPath: ${FD_LOG}/region.intersect.fcc_astarr_macs_input_union.fcc_astarr_macs_input_rep6.txt
 
-Submitted batch job 279409
+Submitted batch job 306015
 
 ==============================
 Input:
@@ -1286,7 +1285,7 @@ Output:
 Log:
 - FPath: ${FD_LOG}/region.intersect.fcc_astarr_macs_input_union.fcc_crispri_growth_signif.txt
 
-Submitted batch job 279410
+Submitted batch job 306016
 
 ==============================
 Input:
@@ -1298,7 +1297,7 @@ Output:
 Log:
 - FPath: ${FD_LOG}/region.intersect.fcc_astarr_macs_input_union.fcc_crispri_growth_total.txt
 
-Submitted batch job 279411
+Submitted batch job 306017
 
 ==============================
 Input:
@@ -1310,7 +1309,7 @@ Output:
 Log:
 - FPath: ${FD_LOG}/region.intersect.fcc_astarr_macs_input_union.fcc_crispri_hcrff_casa.txt
 
-Submitted batch job 279412
+Submitted batch job 306018
 
 ==============================
 Input:
@@ -1322,7 +1321,7 @@ Output:
 Log:
 - FPath: ${FD_LOG}/region.intersect.fcc_astarr_macs_input_union.fcc_starrmpra_junke_astarr.txt
 
-Submitted batch job 279413
+Submitted batch job 306019
 
 ==============================
 Input:
@@ -1334,7 +1333,7 @@ Output:
 Log:
 - FPath: ${FD_LOG}/region.intersect.fcc_astarr_macs_input_union.fcc_starrmpra_junke_estarr.txt
 
-Submitted batch job 279414
+Submitted batch job 306020
 
 ==============================
 Input:
@@ -1346,7 +1345,7 @@ Output:
 Log:
 - FPath: ${FD_LOG}/region.intersect.fcc_astarr_macs_input_union.fcc_starrmpra_junke_lmpra.txt
 
-Submitted batch job 279415
+Submitted batch job 306021
 
 ==============================
 Input:
@@ -1358,7 +1357,7 @@ Output:
 Log:
 - FPath: ${FD_LOG}/region.intersect.fcc_astarr_macs_input_union.fcc_starrmpra_junke_tmpra.txt
 
-Submitted batch job 279416
+Submitted batch job 306022
 
 ==============================
 Input:
@@ -1370,7 +1369,19 @@ Output:
 Log:
 - FPath: ${FD_LOG}/region.intersect.fcc_astarr_macs_input_union.fcc_starrmpra_junke_wstarr.txt
 
-Submitted batch job 279417
+Submitted batch job 306023
+
+==============================
+Input:
+- Label A: fcc_astarr_macs_input_union
+- Label B: genome_cres
+Output:
+- FDiry: ${FD_RES}/region_annotation/fcc_astarr_macs_input_union/genome_cres
+- FName: fcc_astarr_macs_input_union.genome_cres.bed.gz
+Log:
+- FPath: ${FD_LOG}/region.intersect.fcc_astarr_macs_input_union.genome_cres.txt
+
+Submitted batch job 306024
 
 ==============================
 Input:
@@ -1382,7 +1393,7 @@ Output:
 Log:
 - FPath: ${FD_LOG}/region.intersect.fcc_astarr_macs_input_union.genome_tss_pol2.txt
 
-Submitted batch job 279418
+Submitted batch job 306025
 
 ==============================
 Input:
@@ -1394,7 +1405,7 @@ Output:
 Log:
 - FPath: ${FD_LOG}/region.intersect.fcc_astarr_macs_input_union.genome_tss_pol2_rnaseq.txt
 
-Submitted batch job 279419
+Submitted batch job 306026
 
 ==============================
 Input:
@@ -1406,7 +1417,7 @@ Output:
 Log:
 - FPath: ${FD_LOG}/region.intersect.fcc_astarr_macs_input_union.module_tf_shannon.txt
 
-Submitted batch job 279420
+Submitted batch job 306027
 </code></pre>
 </div>
 </div>
@@ -1419,9 +1430,9 @@ Submitted batch job 279420
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> <span class="va">${FD_LOG}</span>/region.intersect.fcc_astarr_macs_input_overlap.encode_e2g_benchmark.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>Hostname:           plp-rcc-node-01
+<pre><code>Hostname:           plp-rcc-node-02
 Slurm Array Index: 
-Time Stamp:         06-02-25+11:51:21
+Time Stamp:         07-21-25+16:03:00
 
 Input:  /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/region/fcc_astarr_macs_merge/K562.hg38.ASTARR.macs.KS91.input.rep_all.max_overlaps.q5.bed.gz
 
@@ -1440,46 +1451,46 @@ chr1    181005  181854  chr1:181005-181854
 Input:  /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/region/encode_e2g_benchmark/K562.hg38.ENCODE_E2G.benchmark.bed.gz
 
 show first few lines of input
-chr1    3774714 3775214 CEP104|chr1:3691278-3691778:*   -0.293431866    chr1:3774714-3775214    CEP104  2.3953437547725875  TRUE    Ulirsch2016 E2G-Benchmark   Regulated:TRUE
-chr1    3774714 3775214 LRRC47|chr1:3691278-3691778:*   -0.331178093    chr1:3774714-3775214    LRRC47  2.109513702198715   TRUE    Ulirsch2016 E2G-Benchmark   Regulated:TRUE
-chr1    3774714 3775214 SMIM1|chr1:3691278-3691778:*    -0.472019217    chr1:3774714-3775214    SMIM1   3.1927024782384743  TRUE    Ulirsch2016 E2G-Benchmark   Regulated:TRUE
-chr1    3803570 3805848 LRRC47|chr1:3720134-3722412:.   -0.00147126515217055    chr1:3803570-3805848    LRRC47  3.542646476960444e-5    FALSE   Gasperini et al., 2019  E2G-Benchmark   Regulated:FALSE
-chr1    3803570 3805848 SMIM1|chr1:3720134-3722412:.    0.02567692399390253 chr1:3803570-3805848    SMIM1   0.002543853964790131    FALSE   Gasperini et al., 2019  E2G-Benchmark   Regulated:FALSE
-chr1    4126791 4127291 SMIM1|chr1:4186851-4187351:.    0.02338378715953637 chr1:4126791-4127291    SMIM1   0.0034020324885204794   FALSE   Gasperini et al., 2019  E2G-Benchmark   Regulated:FALSE
-chr1    5304578 5305078 RPL22|chr1:5364638-5365138:.    0.02672188376700024 chr1:5304578-5305078    RPL22   0.004330207730075751    FALSE   Gasperini et al., 2019  E2G-Benchmark   Regulated:FALSE
-chr1    8197448 8198244 PARK7|chr1:8257508-8258304:.    -0.01987717740799877    chr1:8197448-8198244    PARK7   0.019584924569034646    FALSE   Gasperini et al., 2019  E2G-Benchmark   Regulated:FALSE
-chr1    8858063 8858563 ENO1|chr1:8918122-8918622:. -0.10740945598182072    chr1:8858063-8858563    ENO1    2.356934408285695   TRUE    Gasperini et al., 2019  E2G-Benchmark   Regulated:TRUE
-chr1    8899850 8900350 PARK7|chr1:8959909-8960409:.    -0.0418823955064419 chr1:8899850-8900350    PARK7   0.01789484066353039 FALSE   Gasperini et al., 2019  E2G-Benchmark   Regulated:FALSE
+chr1    3774714 3775214 CEP104|chr1:3691278-3691778:*   -0.293431866    -4.705144009935936  chr1:3774714-3775214    CEP104  2.3953437547725875  TRUE    Ulirsch2016 E2G-Benchmark   Regulated:TRUE
+chr1    3774714 3775214 LRRC47|chr1:3691278-3691778:*   -0.331178093    -5.331209058740296  chr1:3774714-3775214    LRRC47  2.109513702198715   TRUE    Ulirsch2016 E2G-Benchmark   Regulated:TRUE
+chr1    3774714 3775214 SMIM1|chr1:3691278-3691778:*    -0.472019217    -7.66722280577575   chr1:3774714-3775214    SMIM1   3.1927024782384743  TRUE    Ulirsch2016 E2G-Benchmark   Regulated:TRUE
+chr1    3803570 3805848 LRRC47|chr1:3720134-3722412:.   -0.00147126515217055    0.13736191307317389 chr1:3803570-3805848    LRRC47  3.542646476960444e-5    FALSE   Gasperini et al., 2019  E2G-Benchmark   Regulated:FALSE
+chr1    3803570 3805848 SMIM1|chr1:3720134-3722412:.    0.02567692399390253 0.5876461855300268  chr1:3803570-3805848    SMIM1   0.002543853964790131    FALSE   Gasperini et al., 2019  E2G-Benchmark   Regulated:FALSE
+chr1    4126791 4127291 SMIM1|chr1:4186851-4187351:.    0.02338378715953637 0.5496118457237589  chr1:4126791-4127291    SMIM1   0.0034020324885204794   FALSE   Gasperini et al., 2019  E2G-Benchmark   Regulated:FALSE
+chr1    5304578 5305078 RPL22|chr1:5364638-5365138:.    0.02672188376700024 0.6049780579670524  chr1:5304578-5305078    RPL22   0.004330207730075751    FALSE   Gasperini et al., 2019  E2G-Benchmark   Regulated:FALSE
+chr1    8197448 8198244 PARK7|chr1:8257508-8258304:.    -0.01987717740799877    -0.16792153564698162    chr1:8197448-8198244    PARK7   0.019584924569034646    FALSE   Gasperini et al., 2019  E2G-Benchmark   Regulated:FALSE
+chr1    8858063 8858563 ENO1|chr1:8918122-8918622:. -0.10740945598182072    -1.6197461182013284 chr1:8858063-8858563    ENO1    2.356934408285695   TRUE    Gasperini et al., 2019  E2G-Benchmark   Regulated:TRUE
+chr1    8899850 8900350 PARK7|chr1:8959909-8960409:.    -0.0418823955064419 -0.5329036553897673 chr1:8899850-8900350    PARK7   0.01789484066353039 FALSE   Gasperini et al., 2019  E2G-Benchmark   Regulated:FALSE
 
 
 Output:  /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/region_annotation/fcc_astarr_macs_input_overlap/encode_e2g_benchmark/fcc_astarr_macs_input_overlap.encode_e2g_benchmark.bed.gz
 
 show first few lines of output:
-chr1    3774056 3776283 chr1:3774056-3776283    chr1    3774714 3775214 CEP104|chr1:3691278-3691778:*   -0.293431866    chr1:3774714-3775214    CEP104  2.3953437547725875  TRUE    Ulirsch2016 E2G-Benchmark   Regulated:TRUE  500
-chr1    3774056 3776283 chr1:3774056-3776283    chr1    3774714 3775214 LRRC47|chr1:3691278-3691778:*   -0.331178093    chr1:3774714-3775214    LRRC47  2.109513702198715   TRUE    Ulirsch2016 E2G-Benchmark   Regulated:TRUE  500
-chr1    3774056 3776283 chr1:3774056-3776283    chr1    3774714 3775214 SMIM1|chr1:3691278-3691778:*    -0.472019217    chr1:3774714-3775214    SMIM1   3.1927024782384743  TRUE    Ulirsch2016 E2G-Benchmark   Regulated:TRUE  500
-chr1    3803955 3806146 chr1:3803955-3806146    chr1    3803570 3805848 LRRC47|chr1:3720134-3722412:.   -0.00147126515217055    chr1:3803570-3805848    LRRC47  3.542646476960444e-5    FALSE   Gasperini et al., 2019  E2G-Benchmark   Regulated:FALSE 1893
-chr1    3803955 3806146 chr1:3803955-3806146    chr1    3803570 3805848 SMIM1|chr1:3720134-3722412:.    0.02567692399390253 chr1:3803570-3805848    SMIM1   0.002543853964790131    FALSE   Gasperini et al., 2019  E2G-Benchmark   Regulated:FALSE 1893
-chr1    4126841 4128109 chr1:4126841-4128109    chr1    4126791 4127291 SMIM1|chr1:4186851-4187351:.    0.02338378715953637 chr1:4126791-4127291    SMIM1   0.0034020324885204794   FALSE   Gasperini et al., 2019  E2G-Benchmark   Regulated:FALSE 450
-chr1    5304733 5305546 chr1:5304733-5305546    chr1    5304578 5305078 RPL22|chr1:5364638-5365138:.    0.02672188376700024 chr1:5304578-5305078    RPL22   0.004330207730075751    FALSE   Gasperini et al., 2019  E2G-Benchmark   Regulated:FALSE 345
-chr1    8197576 8198589 chr1:8197576-8198589    chr1    8197448 8198244 PARK7|chr1:8257508-8258304:.    -0.01987717740799877    chr1:8197448-8198244    PARK7   0.019584924569034646    FALSE   Gasperini et al., 2019  E2G-Benchmark   Regulated:FALSE 668
-chr1    8857787 8858608 chr1:8857787-8858608    chr1    8858063 8858563 ENO1|chr1:8918122-8918622:. -0.10740945598182072    chr1:8858063-8858563    ENO1    2.356934408285695   TRUE    Gasperini et al., 2019  E2G-Benchmark   Regulated:TRUE  500
-chr1    8899651 8900948 chr1:8899651-8900948    chr1    8899850 8900350 PARK7|chr1:8959909-8960409:.    -0.0418823955064419 chr1:8899850-8900350    PARK7   0.01789484066353039 FALSE   Gasperini et al., 2019  E2G-Benchmark   Regulated:FALSE 500
+chr1    3774056 3776283 chr1:3774056-3776283    chr1    3774714 3775214 CEP104|chr1:3691278-3691778:*   -0.293431866    -4.705144009935936  chr1:3774714-3775214    CEP104  2.3953437547725875  TRUE    Ulirsch2016 E2G-Benchmark   Regulated:TRUE  500
+chr1    3774056 3776283 chr1:3774056-3776283    chr1    3774714 3775214 LRRC47|chr1:3691278-3691778:*   -0.331178093    -5.331209058740296  chr1:3774714-3775214    LRRC47  2.109513702198715   TRUE    Ulirsch2016 E2G-Benchmark   Regulated:TRUE  500
+chr1    3774056 3776283 chr1:3774056-3776283    chr1    3774714 3775214 SMIM1|chr1:3691278-3691778:*    -0.472019217    -7.66722280577575   chr1:3774714-3775214    SMIM1   3.1927024782384743  TRUE    Ulirsch2016 E2G-Benchmark   Regulated:TRUE  500
+chr1    3803955 3806146 chr1:3803955-3806146    chr1    3803570 3805848 LRRC47|chr1:3720134-3722412:.   -0.00147126515217055    0.13736191307317389 chr1:3803570-3805848    LRRC47  3.542646476960444e-5    FALSE   Gasperini et al., 2019  E2G-Benchmark   Regulated:FALSE 1893
+chr1    3803955 3806146 chr1:3803955-3806146    chr1    3803570 3805848 SMIM1|chr1:3720134-3722412:.    0.02567692399390253 0.5876461855300268  chr1:3803570-3805848    SMIM1   0.002543853964790131    FALSE   Gasperini et al., 2019  E2G-Benchmark   Regulated:FALSE 1893
+chr1    4126841 4128109 chr1:4126841-4128109    chr1    4126791 4127291 SMIM1|chr1:4186851-4187351:.    0.02338378715953637 0.5496118457237589  chr1:4126791-4127291    SMIM1   0.0034020324885204794   FALSE   Gasperini et al., 2019  E2G-Benchmark   Regulated:FALSE 450
+chr1    5304733 5305546 chr1:5304733-5305546    chr1    5304578 5305078 RPL22|chr1:5364638-5365138:.    0.02672188376700024 0.6049780579670524  chr1:5304578-5305078    RPL22   0.004330207730075751    FALSE   Gasperini et al., 2019  E2G-Benchmark   Regulated:FALSE 345
+chr1    8197576 8198589 chr1:8197576-8198589    chr1    8197448 8198244 PARK7|chr1:8257508-8258304:.    -0.01987717740799877    -0.16792153564698162    chr1:8197448-8198244    PARK7   0.019584924569034646    FALSE   Gasperini et al., 2019  E2G-Benchmark   Regulated:FALSE 668
+chr1    8857787 8858608 chr1:8857787-8858608    chr1    8858063 8858563 ENO1|chr1:8918122-8918622:. -0.10740945598182072    -1.6197461182013284 chr1:8858063-8858563    ENO1    2.356934408285695   TRUE    Gasperini et al., 2019  E2G-Benchmark   Regulated:TRUE  500
+chr1    8899651 8900948 chr1:8899651-8900948    chr1    8899850 8900350 PARK7|chr1:8959909-8960409:.    -0.0418823955064419 -0.5329036553897673 chr1:8899850-8900350    PARK7   0.01789484066353039 FALSE   Gasperini et al., 2019  E2G-Benchmark   Regulated:FALSE 500
 
 
 Done!
-Run Time: 0 seconds</code></pre>
+Run Time: 4 seconds</code></pre>
 </div>
 </div>
-<div id="dbdf053a-b5dc-4205-8f8b-4b448dd5c0d3" class="cell" data-execution_count="11">
+<div id="dbdf053a-b5dc-4205-8f8b-4b448dd5c0d3" class="cell" data-execution_count="12">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> <span class="va">${FD_LOG}</span>/region.intersect.fcc_astarr_macs_input_union.fcc_astarr_csaw_KS91.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>Hostname:           plp-rcc-node-05
+<pre><code>Hostname:           plp-rcc-node-20
 Slurm Array Index: 
-Time Stamp:         05-30-25+08:40:32
+Time Stamp:         07-21-25+16:03:04
 
 Input:  /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/region/fcc_astarr_macs_merge/K562.hg38.ASTARR.macs.KS91.input.rep_all.union.q5.bed.gz
 
@@ -1526,18 +1537,18 @@ chr1    136071  137429  chr1:136071-137429  chr1    136226  136825  chr1:136226-
 
 
 Done!
-Run Time: 4 seconds</code></pre>
+Run Time: 11 seconds</code></pre>
 </div>
 </div>
-<div id="34ec3f7e-eabe-41b6-b792-208e1e404222" class="cell" data-execution_count="12">
+<div id="34ec3f7e-eabe-41b6-b792-208e1e404222" class="cell" data-execution_count="13">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> <span class="va">${FD_LOG}</span>/region.intersect.fcc_astarr_macs_input_union.fcc_astarr_macs_input_rep2.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>Hostname:           plp-rcc-node-05
+<pre><code>Hostname:           plp-rcc-node-20
 Slurm Array Index: 
-Time Stamp:         05-30-25+08:40:32
+Time Stamp:         07-21-25+16:03:04
 
 Input:  /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/region/fcc_astarr_macs_merge/K562.hg38.ASTARR.macs.KS91.input.rep_all.union.q5.bed.gz
 
@@ -1584,18 +1595,18 @@ chr1    180982  182087  chr1:180982-182087  chr1    180988  182058  chr1:180988-
 
 
 Done!
-Run Time: 3 seconds</code></pre>
+Run Time: 9 seconds</code></pre>
 </div>
 </div>
-<div id="9575bd23-ab8b-48c9-b09e-9c0cf0074488" class="cell" data-execution_count="13">
+<div id="9575bd23-ab8b-48c9-b09e-9c0cf0074488" class="cell" data-execution_count="14">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> <span class="va">${FD_LOG}</span>/region.intersect.fcc_astarr_macs_input_overlap.genome_tss_pol2_rnaseq.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>Hostname:           plp-rcc-node-04
+<pre><code>Hostname:           plp-rcc-node-19
 Slurm Array Index: 
-Time Stamp:         05-30-25+08:40:32
+Time Stamp:         07-21-25+16:03:03
 
 Input:  /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/region/fcc_astarr_macs_merge/K562.hg38.ASTARR.macs.KS91.input.rep_all.max_overlaps.q5.bed.gz
 
@@ -1642,18 +1653,18 @@ chr1    1115826 1116970 chr1:1115826-1116970    chr1    1116089 1116090 chr1:111
 
 
 Done!
-Run Time: 0 seconds</code></pre>
+Run Time: 4 seconds</code></pre>
 </div>
 </div>
-<div id="6a46c595-4547-44dc-80e6-241bded4b3db" class="cell" data-execution_count="14">
+<div id="6a46c595-4547-44dc-80e6-241bded4b3db" class="cell" data-execution_count="15">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> <span class="va">${FD_LOG}</span>/region.intersect.fcc_astarr_macs_input_union.module_tf_shannon.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>Hostname:           plp-rcc-node-06
+<pre><code>Hostname:           plp-rcc-node-05
 Slurm Array Index: 
-Time Stamp:         05-30-25+08:40:32
+Time Stamp:         07-21-25+16:03:03
 
 Input:  /data/reddylab/Kuei/repo/Proj_ENCODE_FCC/results/region/fcc_astarr_macs_merge/K562.hg38.ASTARR.macs.KS91.input.rep_all.union.q5.bed.gz
 
@@ -1700,7 +1711,7 @@ chr1    267853  268603  chr1:267853-268603  chr1    268005  268051  chr1:268005-
 
 
 Done!
-Run Time: 2 seconds</code></pre>
+Run Time: 4 seconds</code></pre>
 </div>
 </div>
 

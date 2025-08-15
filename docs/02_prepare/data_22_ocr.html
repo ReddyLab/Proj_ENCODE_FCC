@@ -301,44 +301,26 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../11_region_coverage_fcc/011_region_ocr_astarr_KS91.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (ASTARR KS91)</span></a>
+  <a href="../11_region_coverage_fcc/01_region_coverage_fcc_screen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FCC coverage at ATAC/DHS regions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../11_region_coverage_fcc/012_region_ocr_astarr_KS274.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (ASTARR KS274)</span></a>
+  <a href="../11_region_coverage_fcc/02_region_coverage_fcc_scatter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Whole genome comparison of FCC assays</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../11_region_coverage_fcc/02_region_ocr_wstarr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (WSTARR)</span></a>
+  <a href="../11_region_coverage_fcc/03_region_coverage_fcc_correlation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Rank normalized FCC effect size</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../11_region_coverage_fcc/03_region_ocr_tmpra.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (TMPRA)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../11_region_coverage_fcc/04_region_ocr_lmpra.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (LMPRA)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../11_region_coverage_fcc/05_region_ocr_crispri_hcrff.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (CRISPRi-HCRFF)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../11_region_coverage_fcc/06_region_ocr_crispri_growth.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (CRISPRi-Growth)</span></a>
+  <a href="../11_region_coverage_fcc/04_region_coverage_fcc_comparison.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Comparisons of FCC across genome annotations</span></a>
   </div>
 </li>
       </ul>
@@ -507,11 +489,12 @@ Length (90 percentile) = 1293 bp</code></pre>
 <p>Size comparison</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 18%">
-<col style="width: 18%">
-<col style="width: 13%">
-<col style="width: 41%">
-<col style="width: 8%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 11%">
+<col style="width: 35%">
+<col style="width: 9%">
+<col style="width: 12%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -519,7 +502,8 @@ Length (90 percentile) = 1293 bp</code></pre>
 <th style="text-align: left;">Index_Experiment</th>
 <th style="text-align: left;">Index_File</th>
 <th style="text-align: left;">Method</th>
-<th style="text-align: left;">Count</th>
+<th style="text-align: left;">Count_Row</th>
+<th style="text-align: left;">Count_Region</th>
 </tr>
 </thead>
 <tbody>
@@ -529,12 +513,14 @@ Length (90 percentile) = 1293 bp</code></pre>
 <td style="text-align: left;">.</td>
 <td style="text-align: left;">Overlap peaks by bp across replicates</td>
 <td style="text-align: left;">150,042</td>
+<td style="text-align: left;">150,042</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">ATAC-STARR-Input</td>
 <td style="text-align: left;">ENCSR312UQM</td>
 <td style="text-align: left;">.</td>
 <td style="text-align: left;">Union peaks by bp across replicates</td>
+<td style="text-align: left;">246,852</td>
 <td style="text-align: left;">246,852</td>
 </tr>
 <tr class="odd">
@@ -543,12 +529,14 @@ Length (90 percentile) = 1293 bp</code></pre>
 <td style="text-align: left;">ENCFF274YGF</td>
 <td style="text-align: left;">peaks</td>
 <td style="text-align: left;">118,721</td>
+<td style="text-align: left;">118,721</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">DNase-seq</td>
 <td style="text-align: left;">ENCSR000EOT</td>
 <td style="text-align: left;">ENCFF185XRG</td>
 <td style="text-align: left;">peaks</td>
+<td style="text-align: left;">159,277</td>
 <td style="text-align: left;">159,277</td>
 </tr>
 <tr class="odd">
@@ -557,6 +545,7 @@ Length (90 percentile) = 1293 bp</code></pre>
 <td style="text-align: left;">ENCFF558BLC</td>
 <td style="text-align: left;">pseudoreplicated peaks</td>
 <td style="text-align: left;">203,874</td>
+<td style="text-align: left;">107,082</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">ATAC-seq</td>
@@ -564,6 +553,7 @@ Length (90 percentile) = 1293 bp</code></pre>
 <td style="text-align: left;">ENCFF925CYR</td>
 <td style="text-align: left;">IDR thresholded peaks</td>
 <td style="text-align: left;">123,009</td>
+<td style="text-align: left;">51,861</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">ATAC-seq</td>
@@ -571,6 +561,7 @@ Length (90 percentile) = 1293 bp</code></pre>
 <td style="text-align: left;">ENCFF333TAT</td>
 <td style="text-align: left;">pseudoreplicated peaks</td>
 <td style="text-align: left;">269,800</td>
+<td style="text-align: left;">161,693</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">ATAC-seq</td>
@@ -578,6 +569,7 @@ Length (90 percentile) = 1293 bp</code></pre>
 <td style="text-align: left;">ENCFF948AFM</td>
 <td style="text-align: left;">IDR thresholded peaks</td>
 <td style="text-align: left;">181,340</td>
+<td style="text-align: left;">90,015</td>
 </tr>
 </tbody>
 </table>

@@ -338,44 +338,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/011_region_ocr_astarr_KS91.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (ASTARR KS91)</span></a>
+  <a href="../../11_region_coverage_fcc/01_region_coverage_fcc_screen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FCC coverage at ATAC/DHS regions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/012_region_ocr_astarr_KS274.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (ASTARR KS274)</span></a>
+  <a href="../../11_region_coverage_fcc/02_region_coverage_fcc_scatter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Whole genome comparison of FCC assays</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/02_region_ocr_wstarr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (WSTARR)</span></a>
+  <a href="../../11_region_coverage_fcc/03_region_coverage_fcc_correlation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Rank normalized FCC effect size</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/03_region_ocr_tmpra.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (TMPRA)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/04_region_ocr_lmpra.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (LMPRA)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/05_region_ocr_crispri_hcrff.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (CRISPRi-HCRFF)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../11_region_coverage_fcc/06_region_ocr_crispri_growth.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ATAC/DHS coverage (CRISPRi-Growth)</span></a>
+  <a href="../../11_region_coverage_fcc/04_region_coverage_fcc_comparison.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Comparisons of FCC across genome annotations</span></a>
   </div>
 </li>
       </ul>
@@ -569,7 +551,7 @@ fcc_astarr_macs_input_union </code></pre>
 <section id="import-data" class="level2">
 <h2 class="anchored" data-anchor-id="import-data">Import data</h2>
 <p><strong>Import region pairs</strong></p>
-<div id="9efc8b73-3acb-4a79-a11e-9efc5c76958b" class="cell" data-execution_count="11">
+<div id="9efc8b73-3acb-4a79-a11e-9efc5c76958b" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="do">### loop to import data</span></span>
@@ -596,10 +578,10 @@ fcc_astarr_macs_input_union </code></pre>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>$fcc_astarr_macs_input_overlap
-[1] 8770   19
+[1] 8770   20
 
 $fcc_astarr_macs_input_union
-[1] 9229   19
+[1] 9229   20
 </code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -615,6 +597,7 @@ $fcc_astarr_macs_input_union
 <th style="text-align: right;" data-quarto-table-cell-role="th">ChromEnd_B</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Name_B</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score_B</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Zcore_B</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Region_B</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Target_B</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">NLog10P_B</th>
@@ -638,6 +621,7 @@ $fcc_astarr_macs_input_union
 <td style="text-align: right;">3775214</td>
 <td style="text-align: left;">CEP104|chr1:3691278-3691778:*</td>
 <td style="text-align: right;">-0.2934319</td>
+<td style="text-align: right;">-4.705144</td>
 <td style="text-align: left;">chr1:3774714-3775214</td>
 <td style="text-align: left;">CEP104</td>
 <td style="text-align: right;">2.395344</td>
@@ -659,6 +643,7 @@ $fcc_astarr_macs_input_union
 <td style="text-align: right;">3775214</td>
 <td style="text-align: left;">LRRC47|chr1:3691278-3691778:*</td>
 <td style="text-align: right;">-0.3311781</td>
+<td style="text-align: right;">-5.331209</td>
 <td style="text-align: left;">chr1:3774714-3775214</td>
 <td style="text-align: left;">LRRC47</td>
 <td style="text-align: right;">2.109514</td>
@@ -680,6 +665,7 @@ $fcc_astarr_macs_input_union
 <td style="text-align: right;">3775214</td>
 <td style="text-align: left;">SMIM1|chr1:3691278-3691778:*</td>
 <td style="text-align: right;">-0.4720192</td>
+<td style="text-align: right;">-7.667223</td>
 <td style="text-align: left;">chr1:3774714-3775214</td>
 <td style="text-align: left;">SMIM1</td>
 <td style="text-align: right;">3.192703</td>
@@ -696,7 +682,7 @@ $fcc_astarr_macs_input_union
 </div>
 </div>
 <p><strong>Explore: count of overlap</strong></p>
-<div id="09c80b4d-0902-419b-bde7-351853769d98" class="cell" data-execution_count="16">
+<div id="09c80b4d-0902-419b-bde7-351853769d98" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_annot_import</span>
@@ -714,7 +700,7 @@ $fcc_astarr_macs_input_union
 </section>
 <section id="arrange-table" class="level2">
 <h2 class="anchored" data-anchor-id="arrange-table">Arrange table</h2>
-<div id="6adb930a-dda3-46a1-8d18-0ec352c3727f" class="cell" data-execution_count="17">
+<div id="6adb930a-dda3-46a1-8d18-0ec352c3727f" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="do">### init</span></span>
@@ -724,46 +710,48 @@ $fcc_astarr_macs_input_union
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Label_B"</span>,</span>
 <span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Target_B"</span>, </span>
 <span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Score_B"</span>, </span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"NLog10P_B"</span>,</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Regulated_B"</span>,</span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Source_B"</span></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>vec_txt_cname2 <span class="ot">=</span> <span class="fu">c</span>(</span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Chrom"</span>, <span class="st">"ChromStart"</span>, <span class="st">"ChromEnd"</span>, <span class="st">"Region"</span>,</span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Group"</span>, </span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Label"</span>,</span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Target"</span>, </span>
-<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Score"</span>, </span>
-<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">"NLog10P"</span>, </span>
-<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Regulated"</span>,</span>
-<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Source"</span></span>
-<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>vec_txt_loopup <span class="ot">=</span> <span class="fu">setNames</span>(vec_txt_cname1, vec_txt_cname2)</span>
-<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a><span class="do">### rename columns</span></span>
-<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_annot_import</span>
-<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">lapply</span>(lst, <span class="cf">function</span>(dat){</span>
-<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> </span>
-<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="sc">!!!</span>vec_txt_cname1) <span class="sc">%&gt;%</span> </span>
-<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">rename</span>(<span class="fu">all_of</span>(vec_txt_loopup))</span>
-<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(dat)</span>
-<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a><span class="do">### assign and show</span></span>
-<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a>lst_dat_region_annot_arrange <span class="ot">=</span> lst</span>
-<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a>res <span class="ot">=</span> <span class="fu">lapply</span>(lst, dim)</span>
-<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res)</span>
-<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> lst[[<span class="dv">1</span>]]</span>
-<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a><span class="fu">fun_display_table</span>(<span class="fu">head</span>(dat, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Zcore_B"</span>,</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"NLog10P_B"</span>,</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Regulated_B"</span>,</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Source_B"</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>vec_txt_cname2 <span class="ot">=</span> <span class="fu">c</span>(</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Chrom"</span>, <span class="st">"ChromStart"</span>, <span class="st">"ChromEnd"</span>, <span class="st">"Region"</span>,</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Group"</span>, </span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Label"</span>,</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Target"</span>, </span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Score"</span>, </span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Zcore"</span>,</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>    <span class="st">"NLog10P"</span>, </span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Regulated"</span>,</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Source"</span></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>vec_txt_loopup <span class="ot">=</span> <span class="fu">setNames</span>(vec_txt_cname1, vec_txt_cname2)</span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a><span class="do">### rename columns</span></span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_annot_import</span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> <span class="fu">lapply</span>(lst, <span class="cf">function</span>(dat){</span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">=</span> dat <span class="sc">%&gt;%</span> </span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="sc">!!!</span>vec_txt_cname1) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a>        dplyr<span class="sc">::</span><span class="fu">rename</span>(<span class="fu">all_of</span>(vec_txt_loopup))</span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(dat)</span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a><span class="do">### assign and show</span></span>
+<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a>lst_dat_region_annot_arrange <span class="ot">=</span> lst</span>
+<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a>res <span class="ot">=</span> <span class="fu">lapply</span>(lst, dim)</span>
+<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res)</span>
+<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> lst[[<span class="dv">1</span>]]</span>
+<span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a><span class="fu">fun_display_table</span>(<span class="fu">head</span>(dat, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>$fcc_astarr_macs_input_overlap
-[1] 8770   11
+[1] 8770   12
 
 $fcc_astarr_macs_input_union
-[1] 9229   11
+[1] 9229   12
 </code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -778,6 +766,7 @@ $fcc_astarr_macs_input_union
 <th style="text-align: left;" data-quarto-table-cell-role="th">Label</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Target</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Score</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Zcore</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">NLog10P</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Regulated</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Source</th>
@@ -793,6 +782,7 @@ $fcc_astarr_macs_input_union
 <td style="text-align: left;">Regulated:TRUE</td>
 <td style="text-align: left;">CEP104</td>
 <td style="text-align: right;">-0.2934319</td>
+<td style="text-align: right;">-4.705144</td>
 <td style="text-align: right;">2.395344</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: left;">Ulirsch2016</td>
@@ -806,6 +796,7 @@ $fcc_astarr_macs_input_union
 <td style="text-align: left;">Regulated:TRUE</td>
 <td style="text-align: left;">LRRC47</td>
 <td style="text-align: right;">-0.3311781</td>
+<td style="text-align: right;">-5.331209</td>
 <td style="text-align: right;">2.109514</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: left;">Ulirsch2016</td>
@@ -819,6 +810,7 @@ $fcc_astarr_macs_input_union
 <td style="text-align: left;">Regulated:TRUE</td>
 <td style="text-align: left;">SMIM1</td>
 <td style="text-align: right;">-0.4720192</td>
+<td style="text-align: right;">-7.667223</td>
 <td style="text-align: right;">3.192703</td>
 <td style="text-align: left;">TRUE</td>
 <td style="text-align: left;">Ulirsch2016</td>
@@ -828,7 +820,7 @@ $fcc_astarr_macs_input_union
 </div>
 </div>
 <p><strong>Explore: Regulated links</strong></p>
-<div id="3fc31071-5ec3-4208-bfc7-f905a6195104" class="cell" data-execution_count="18">
+<div id="3fc31071-5ec3-4208-bfc7-f905a6195104" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_annot_arrange</span>
@@ -870,7 +862,7 @@ $fcc_astarr_macs_input_union
 </div>
 </div>
 <p><strong>Explore: Regions with regulated links</strong></p>
-<div id="89553f7f-6502-45fb-9943-077a2c2b221a" class="cell" data-execution_count="19">
+<div id="89553f7f-6502-45fb-9943-077a2c2b221a" class="cell" data-execution_count="9">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_annot_arrange</span>
@@ -915,7 +907,7 @@ $fcc_astarr_macs_input_union
 </section>
 <section id="matrix" class="level2">
 <h2 class="anchored" data-anchor-id="matrix">Matrix</h2>
-<div id="b011a1f7-a3c3-43ff-8fbd-e35ae7c42941" class="cell" data-execution_count="20">
+<div id="b011a1f7-a3c3-43ff-8fbd-e35ae7c42941" class="cell" data-execution_count="10">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="do">### convert long to wide format</span></span>
@@ -997,7 +989,7 @@ $fcc_astarr_macs_input_union
 </div>
 </div>
 <p><strong>Explore: Significant rate</strong></p>
-<div id="00bbf4c6-ea7d-4e99-9e7f-78c051468eb3" class="cell" data-execution_count="21">
+<div id="00bbf4c6-ea7d-4e99-9e7f-78c051468eb3" class="cell" data-execution_count="11">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>lst <span class="ot">=</span> lst_dat_region_annot_matrix</span>
@@ -1042,7 +1034,7 @@ $fcc_astarr_macs_input_union
 </section>
 <section id="export-results" class="level2">
 <h2 class="anchored" data-anchor-id="export-results">Export results</h2>
-<div id="b4506f60-4475-45c0-a34e-5f2b8d680ddc" class="cell" data-execution_count="22">
+<div id="b4506f60-4475-45c0-a34e-5f2b8d680ddc" class="cell" data-execution_count="12">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (txt_folder <span class="cf">in</span> VEC_TXT_FOLDER){</span>
