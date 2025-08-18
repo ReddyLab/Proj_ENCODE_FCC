@@ -37,8 +37,26 @@ listing:
     sort: title
     type: table
     page-size: 5  
+  - id: notebooks_22_region_coverage_fcc_score
+    contents: notebooks/22_region_coverage_fcc_score
+    fields: [title, subtitle]
+    sort: title
+    type: table
+    page-size: 5  
   - id: notebooks_24_region_annotation
     contents: notebooks/24_region_annotation
+    fields: [title, subtitle]
+    sort: title
+    type: table
+    page-size: 5  
+  - id: notebooks_41_fcc_correlation
+    contents: notebooks/41_fcc_correlation
+    fields: [title, subtitle]
+    sort: title
+    type: table
+    page-size: 5  
+  - id: notebooks_42_fcc_comparison
+    contents: notebooks/42_fcc_comparison
     fields: [title, subtitle]
     sort: title
     type: table
@@ -91,6 +109,8 @@ This part is mainly about
 :::
 
 ## Step: Region coverage (FCC)
+::: {#notebooks_22_region_coverage_fcc_score}
+:::
 
 ## Step: Region coverage (ChIP-seq)
 
@@ -98,6 +118,15 @@ This part is mainly about
 
 ::: {#notebooks_24_region_annotation}
 :::
+
+## Step: FCC correlation
+::: {#notebooks_41_fcc_correlation}
+:::
+
+## Step: FCC comparison
+::: {#notebooks_42_fcc_comparison}
+:::
+
 
 This part is mainly about
 

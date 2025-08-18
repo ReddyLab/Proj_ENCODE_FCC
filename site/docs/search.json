@@ -6825,7 +6825,7 @@
     "href": "11_region_coverage_fcc/02_region_coverage_fcc_scatter.html",
     "title": "Whole genome comparison of FCC assays",
     "section": "",
-    "text": "FCC effect sizes\n\n\n\nPairwise correlation plot across reporter assays\n\n\n\nSummarize STARR/MPRA/CRISPRi across all regions\nfig.region_coverage_fcc.fcc_starrmpracrispri.ranknorm.overlap.png\nfig.region_coverage_fcc.fcc_starrmpracrispri.ranknorm.png",
+    "text": "FCC effect sizes\n\n\n\nPairwise correlation plot across reporter assays\n\n\n\n\n\nSummarize STARR/MPRA/CRISPRi across all regions\nfig.region_coverage_fcc.fcc_starrmpracrispri.ranknorm.overlap.png\nfig.region_coverage_fcc.fcc_starrmpracrispri.ranknorm.png",
     "crumbs": [
       "Home",
       "Coverage of FCC",
