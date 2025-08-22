@@ -4,7 +4,7 @@ title: "Whole genome comparison of FCC assays"
 
 # FCC effect sizes
 
-![](/figure/22_region_coverage_fcc_score/fig.region_coverage_fcc.histogram.zscore.grid.png){ width=60% }
+![](/figure/22_region_coverage_fcc_score/fig.region_coverage_fcc.scatter_hex.zscore.grid.starrmpra.crispri.png){ width=60% }
 
 # Pairwise correlation plot across reporter assays
 

@@ -4,6 +4,10 @@ title: "Rank normalized FCC effect size"
 
 # Comparing regions screened by STARR/MPRA
 
+Let's first focus on only STARR/MPRA assays
+
+![](/figure/22_region_coverage_fcc_score/fig.region_coverage_fcc.scatter_hex.zscore.grid.starrmpra.png){ width=60% }
+
 $$\text{RankNorm}(x_i) = \frac{\text{rank}(x_i)−1}{n−1}$$
 
 fig.region_coverage_fcc.fcc_starrmpra_ranknorm.fcc_crispri.atac.png
