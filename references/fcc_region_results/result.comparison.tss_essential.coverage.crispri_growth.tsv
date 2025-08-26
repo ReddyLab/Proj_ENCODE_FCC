@@ -1,0 +1,4 @@
+Analysis	Num_Perm	Observed_Diff	Pvalue	Cliffs_Delta
+Proximal:Essential > Proximal:Non-Essential	10000	0.40640575	0	0.38816739848677717
+Proximal:Non-Essential > Distal	10000	0.28175494999999995	0	0.4609483145191164
+(Proximal:Essential-Proximal:Non-Essential) > (Proximal:Non-Essential-Distal)	10000	0.12465080000000006	0.0272	0.037112
