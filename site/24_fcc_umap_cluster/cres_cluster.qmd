@@ -1,0 +1,12 @@
+---
+title: "Clutering of CREs"
+---
+
+# Clustering
+
+We evaluated clustering performance across k = 30–100 using modularity (Q), number of clusters, and stability (ARI). We observed that results were unstable at low k (30), while k = 50–100 gave consistent partitions (ARI 0.72–0.84). Within this stable regime, we selected k = 70 as a representative resolution, balancing interpretability (17 clusters) and modularity (Q = 0.76). Importantly, results at k = 50 and k = 100 were qualitatively similar, supporting robustness of our clustering.
+
+figure: ARI
+
+figure: number of cluster & Q vs k (number of neighbors)
+

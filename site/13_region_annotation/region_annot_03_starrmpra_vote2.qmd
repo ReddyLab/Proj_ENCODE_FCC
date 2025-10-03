@@ -68,6 +68,8 @@ upset plot (repressive)
 
 ![](/figure/24_region_annotation/fig.region_annot.astarr_input_overlap.fcc_starrmpra_vote2.upset.repressive.png){ width=40% }
 
+Question: How many TSS are significant in STARR/MPRA after vote 2 selection
+
 - brainstorm todo list
     - enrichment
         - number of TSS

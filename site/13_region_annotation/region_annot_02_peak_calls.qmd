@@ -99,3 +99,27 @@ Pairs that are also captured in CRISPRi-HCR FlowFISH
 score distribution
 
 ![](/figure/24_region_annotation/fig.region_annot.astarr_input_overlap_union.encode_e2g_benchmakr.distribution.score.png){ width=40% }
+
+# Hi-C loop
+
+For each ATAC region, we quantified physical connectivity by intersecting with HiCCUPS loop anchors.
+
+Loop count was defined as the number of distinct loops overlapping the region (counted once per loop, regardless of whether both anchors overlapped).
+
+Loop strength was summarized from the observed/expected enrichment values provided by HiCCUPS. For each overlapping loop, we calculated log₂(Observed/ExpectedDonut). A region’s loop score was then defined as the median of these values across all loops associated with the region.
+
+To account for skewed distributions and outliers, loop scores were standardized using a robust z-score, calculated as 
+(x−mode)/MAD
+(x−mode)/MAD, where MAD is the median absolute deviation scaled by 1.4826. This ensures that the peak of the distribution is centered at zero while reducing the influence of extreme values.
+
+loop count distribution
+
+loop score distribution
+
+we re-centered loop strength scores on the mode of the distribution and scaled by MAD to reduce skew and outlier effects
+
+loop link
+
+
+
+

@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='504.00pt' height='288.00pt' viewBox='0 0 504.00 288.00'>
+<g class='svglite'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+    .svglite text {
+      white-space: pre;
+    }
+    .svglite g.glyphgroup path {
+      fill: inherit;
+      stroke: none;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: none;'/>
+<defs>
+  <clipPath id='cpMC4wMHw1MDQuMDB8MC4wMHwyODguMDA='>
+    <rect x='0.00' y='0.00' width='504.00' height='288.00' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MC4wMHwyODguMDA=)'>
+</g>
+<defs>
+  <clipPath id='cpOTkuNDR8NDk3LjAzfDMwLjMyfDI0Mi4zOQ=='>
+    <rect x='99.44' y='30.32' width='397.58' height='212.07' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpOTkuNDR8NDk3LjAzfDMwLjMyfDI0Mi4zOQ==)'>
+<polyline points='99.44,212.10 497.03,212.10 ' style='stroke-width: 1.07; stroke: #D9D9D9; stroke-linecap: butt;' />
+<polyline points='99.44,161.60 497.03,161.60 ' style='stroke-width: 1.07; stroke: #D9D9D9; stroke-linecap: butt;' />
+<polyline points='99.44,111.11 497.03,111.11 ' style='stroke-width: 1.07; stroke: #D9D9D9; stroke-linecap: butt;' />
+<polyline points='99.44,60.62 497.03,60.62 ' style='stroke-width: 1.07; stroke: #D9D9D9; stroke-linecap: butt;' />
+<polyline points='177.76,242.39 177.76,30.32 ' style='stroke-width: 1.07; stroke: #D9D9D9; stroke-linecap: butt;' />
+<polyline points='298.23,242.39 298.23,30.32 ' style='stroke-width: 1.07; stroke: #D9D9D9; stroke-linecap: butt;' />
+<polyline points='418.71,242.39 418.71,30.32 ' style='stroke-width: 1.07; stroke: #D9D9D9; stroke-linecap: butt;' />
+<circle cx='408.31' cy='60.62' r='3.65' style='stroke-width: 0.90; fill: #000000;' />
+<circle cx='373.49' cy='111.11' r='3.65' style='stroke-width: 0.90; fill: #000000;' />
+<circle cx='397.78' cy='161.60' r='3.65' style='stroke-width: 0.90; fill: #000000;' />
+<circle cx='268.07' cy='212.10' r='3.65' style='stroke-width: 0.90; fill: #000000;' />
+<polyline points='427.80,68.19 427.80,53.04 ' style='stroke-width: 1.36; stroke-linecap: butt;' />
+<polyline points='427.80,60.62 388.81,60.62 ' style='stroke-width: 1.36; stroke-linecap: butt;' />
+<polyline points='388.81,68.19 388.81,53.04 ' style='stroke-width: 1.36; stroke-linecap: butt;' />
+<polyline points='386.90,118.68 386.90,103.54 ' style='stroke-width: 1.36; stroke-linecap: butt;' />
+<polyline points='386.90,111.11 360.09,111.11 ' style='stroke-width: 1.36; stroke-linecap: butt;' />
+<polyline points='360.09,118.68 360.09,103.54 ' style='stroke-width: 1.36; stroke-linecap: butt;' />
+<polyline points='415.51,169.18 415.51,154.03 ' style='stroke-width: 1.36; stroke-linecap: butt;' />
+<polyline points='415.51,161.60 380.05,161.60 ' style='stroke-width: 1.36; stroke-linecap: butt;' />
+<polyline points='380.05,169.18 380.05,154.03 ' style='stroke-width: 1.36; stroke-linecap: butt;' />
+<polyline points='402.71,219.67 402.71,204.52 ' style='stroke-width: 1.36; stroke-linecap: butt;' />
+<polyline points='402.71,212.10 133.43,212.10 ' style='stroke-width: 1.36; stroke-linecap: butt;' />
+<polyline points='133.43,219.67 133.43,204.52 ' style='stroke-width: 1.36; stroke-linecap: butt;' />
+<line x1='298.23' y1='242.39' x2='298.23' y2='30.32' style='stroke-width: 1.36; stroke-dasharray: 7.24,7.24; stroke-linecap: butt;' />
+</g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MC4wMHwyODguMDA=)'>
+<polyline points='99.44,242.39 99.44,30.32 ' style='stroke-width: 1.07; stroke-linecap: square;' />
+<text x='92.97' y='217.60' text-anchor='end' style='font-size: 16.00px; font-family: "Liberation Sans";' textLength='56.02px' lengthAdjust='spacingAndGlyphs'>TMPRA</text>
+<text x='92.97' y='167.11' text-anchor='end' style='font-size: 16.00px; font-family: "Liberation Sans";' textLength='68.17px' lengthAdjust='spacingAndGlyphs'>WSTARR</text>
+<text x='92.97' y='116.61' text-anchor='end' style='font-size: 16.00px; font-family: "Liberation Sans";' textLength='63.73px' lengthAdjust='spacingAndGlyphs'>ASTARR</text>
+<text x='92.97' y='66.12' text-anchor='end' style='font-size: 16.00px; font-family: "Liberation Sans";' textLength='55.14px' lengthAdjust='spacingAndGlyphs'>LMPRA</text>
+<polyline points='95.96,212.10 99.44,212.10 ' style='stroke-width: 1.07; stroke-linecap: butt;' />
+<polyline points='95.96,161.60 99.44,161.60 ' style='stroke-width: 1.07; stroke-linecap: butt;' />
+<polyline points='95.96,111.11 99.44,111.11 ' style='stroke-width: 1.07; stroke-linecap: butt;' />
+<polyline points='95.96,60.62 99.44,60.62 ' style='stroke-width: 1.07; stroke-linecap: butt;' />
+<polyline points='99.44,242.39 497.03,242.39 ' style='stroke-width: 1.07; stroke-linecap: square;' />
+<polyline points='177.76,245.88 177.76,242.39 ' style='stroke-width: 1.07; stroke-linecap: butt;' />
+<polyline points='298.23,245.88 298.23,242.39 ' style='stroke-width: 1.07; stroke-linecap: butt;' />
+<polyline points='418.71,245.88 418.71,242.39 ' style='stroke-width: 1.07; stroke-linecap: butt;' />
+<text x='177.76' y='259.88' text-anchor='middle' style='font-size: 16.00px; font-family: "Liberation Sans";' textLength='27.59px' lengthAdjust='spacingAndGlyphs'>-0.2</text>
+<text x='298.23' y='259.88' text-anchor='middle' style='font-size: 16.00px; font-family: "Liberation Sans";' textLength='22.27px' lengthAdjust='spacingAndGlyphs'>0.0</text>
+<text x='418.71' y='259.88' text-anchor='middle' style='font-size: 16.00px; font-family: "Liberation Sans";' textLength='22.27px' lengthAdjust='spacingAndGlyphs'>0.2</text>
+<text x='298.23' y='277.70' text-anchor='middle' style='font-size: 16.00px; font-family: "Liberation Sans";' textLength='299.55px' lengthAdjust='spacingAndGlyphs'>Log10 Odds Ratio (STARR/MPRA | ATAC)</text>
+<text x='99.44' y='19.55' style='font-size: 18.29px; font-weight: bold; font-family: "Liberation Sans";' textLength='396.89px' lengthAdjust='spacingAndGlyphs'>Marginal effect to predict CRISPR given ATAC</text>
+</g>
+</g>
+</svg>
