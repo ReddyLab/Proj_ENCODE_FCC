@@ -10,8 +10,9 @@
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
 ### source files
-source ${SCRIPT_DIR}/config_path_duke_rcc.sh
-source ${SCRIPT_DIR}/fun_util.sh
+#source ${SCRIPT_DIR}/config_path_duke_rcc.sh
+source "${SCRIPT_DIR}/config_path_altius.sh"
+source "${SCRIPT_DIR}/fun_util.sh"
 
 
 

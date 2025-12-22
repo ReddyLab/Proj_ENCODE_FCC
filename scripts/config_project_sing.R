@@ -22,11 +22,19 @@ SERVER  = "Singularity: singularity_proj_encode_fcc"
 #FD_DATA="/mount/data"
 #FD_RLAB="/mount/reddylab"
 
-FD_RLAB="/data/reddylab"
-FD_BASE="/data/reddylab/Kuei"
-FD_REPO="/data/reddylab/Kuei/repo"
-FD_WORK="/data/reddylab/Kuei/work"
-FD_DATA="/data/reddylab/Kuei/data"
+#FD_RLAB="/data/reddylab"
+#FD_BASE="/data/reddylab/Kuei"
+#FD_REPO="/data/reddylab/Kuei/repo"
+#FD_WORK="/data/reddylab/Kuei/work"
+#FD_DATA="/data/reddylab/Kuei/data"
+
+
+FD_RLAB="/net/seq/data2/projects/reddylab"
+FD_BASE="/net/seq/data2/projects/reddylab/Kuei"
+FD_REPO=file.path(FD_BASE, "repo")
+FD_WORK=file.path(FD_BASE, "work")
+FD_DATA=file.path(FD_BASE, "data")
+
 
 ### set project related paths
 FD_PRJ = file.path(FD_REPO, "Proj_ENCODE_FCC")
